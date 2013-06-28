@@ -10,14 +10,14 @@ import java.util.Iterator;
 
 final class HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.922 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.687 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
     public HeaderParser ()
     {
         //Synthesized constructor
     }
 
 
-        public static void parseCacheControl(String value, CacheControlHandler handler) {
+    public static void parseCacheControl(String value, CacheControlHandler handler) {
         int pos = 0;
         while (pos < value.length()) {
             int tokenStart = pos;
@@ -47,7 +47,7 @@ final class HeaderParser {
     }
 
     
-        private static int skipUntil(String input, int pos, String characters) {
+    private static int skipUntil(String input, int pos, String characters) {
         for (; pos < input.length(); pos++) {
             if (characters.indexOf(input.charAt(pos)) != -1) {
                 break;
@@ -57,7 +57,7 @@ final class HeaderParser {
     }
 
     
-        private static int skipWhitespace(String input, int pos) {
+    private static int skipWhitespace(String input, int pos) {
         for (; pos < input.length(); pos++) {
             char c = input.charAt(pos);
             if (c != ' ' && c != '\t') {
@@ -68,7 +68,7 @@ final class HeaderParser {
     }
 
     
-        public static int parseSeconds(String value) {
+    public static int parseSeconds(String value) {
         try {
             long seconds = Long.parseLong(value);
             if (seconds > Integer.MAX_VALUE) {

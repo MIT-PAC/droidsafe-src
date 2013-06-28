@@ -24,39 +24,39 @@ import javax.net.ssl.SSLException;
 import libcore.util.EmptyArray;
 
 public class DigitalSignature {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "1BC29B36F623BA82AAF6724FD3B16718", hash_generated_field = "B22BEAD2E03E6DC9EC1B452A01F5C921")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.042 -0400", hash_original_field = "1BC29B36F623BA82AAF6724FD3B16718", hash_generated_field = "B22BEAD2E03E6DC9EC1B452A01F5C921")
 
     private MessageDigest md5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "CA794FB2D950ACF25C964ECC35F2D7E2", hash_generated_field = "4A489BD95B8D8991536BCB0FDC9BD1C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.042 -0400", hash_original_field = "CA794FB2D950ACF25C964ECC35F2D7E2", hash_generated_field = "4A489BD95B8D8991536BCB0FDC9BD1C9")
 
     private MessageDigest sha;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "AC201FD270C3B96BEAB24F2829780AB2", hash_generated_field = "EDE925851E2EC9CBDC61CDF457BBC562")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.042 -0400", hash_original_field = "AC201FD270C3B96BEAB24F2829780AB2", hash_generated_field = "EDE925851E2EC9CBDC61CDF457BBC562")
 
     private Signature signature;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "08406A6E18BDF83010DDD1187251454D", hash_generated_field = "2FF9F58B969F4213F59ABA296D3A8FC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.042 -0400", hash_original_field = "08406A6E18BDF83010DDD1187251454D", hash_generated_field = "2FF9F58B969F4213F59ABA296D3A8FC3")
 
     private Cipher cipher;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "0AA9F2A2AD1505835EE3219279F6CE49", hash_generated_field = "ECDEF14A5FC64303858BAA6FBF50E641")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.043 -0400", hash_original_field = "0AA9F2A2AD1505835EE3219279F6CE49", hash_generated_field = "ECDEF14A5FC64303858BAA6FBF50E641")
 
     private byte[] md5_hash;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.836 -0400", hash_original_field = "628B7C89674C807D5623BDF0304CFF13", hash_generated_field = "433DF2E11EA67703110F7E1DEC3E0303")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.043 -0400", hash_original_field = "628B7C89674C807D5623BDF0304CFF13", hash_generated_field = "433DF2E11EA67703110F7E1DEC3E0303")
 
     private byte[] sha_hash;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.837 -0400", hash_original_method = "038F050AED1C1465ECEA892ABE879633", hash_generated_method = "6A2EDFD5C23B6E317C58CE59244CF569")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.043 -0400", hash_original_method = "038F050AED1C1465ECEA892ABE879633", hash_generated_method = "55647A25A70F774BD42C83E75B345092")
     public  DigitalSignature(String authType) {
         try 
         {
             sha = MessageDigest.getInstance("SHA-1");
             {
-                boolean var375059584495A158090778BAD6484C9D_123288030 = ("RSA".equals(authType));
+                boolean var375059584495A158090778BAD6484C9D_1406461488 = ("RSA".equals(authType));
                 {
                     md5 = MessageDigest.getInstance("MD5");
                     cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                     signature = null;
                 } //End block
                 {
-                    boolean var0EEB3843AA0677671237B5C645184A21_2085416132 = ("DSA".equals(authType));
+                    boolean var0EEB3843AA0677671237B5C645184A21_800062201 = ("DSA".equals(authType));
                     {
                         signature = Signature.getInstance("NONEwithDSA");
                         cipher = null;
@@ -103,7 +103,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.841 -0400", hash_original_method = "63DCB38A03804A8CF42B493B58B13DDC", hash_generated_method = "5DF1F160F081583358D132FB271CE1D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.044 -0400", hash_original_method = "63DCB38A03804A8CF42B493B58B13DDC", hash_generated_method = "5DF1F160F081583358D132FB271CE1D5")
     public void init(PrivateKey key) {
         try 
         {
@@ -134,7 +134,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.846 -0400", hash_original_method = "E5B57B76E0D4C32AD6E030FA95B32ACD", hash_generated_method = "C57026341C363377B44DF904832B768E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.044 -0400", hash_original_method = "E5B57B76E0D4C32AD6E030FA95B32ACD", hash_generated_method = "C57026341C363377B44DF904832B768E")
     public void init(Certificate cert) {
         try 
         {
@@ -165,7 +165,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.847 -0400", hash_original_method = "D74E9B3F4153C40FBC49F204F5B3A569", hash_generated_method = "8CBD35331EB45C56ED623A0C113F8C29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.045 -0400", hash_original_method = "D74E9B3F4153C40FBC49F204F5B3A569", hash_generated_method = "8CBD35331EB45C56ED623A0C113F8C29")
     public void update(byte[] data) {
         {
             sha.update(data);
@@ -184,7 +184,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.847 -0400", hash_original_method = "B9CA7162ECD9A3463C27E4B77DAB6CBA", hash_generated_method = "2581847F6C7AB0F9303F842275B2D775")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.045 -0400", hash_original_method = "B9CA7162ECD9A3463C27E4B77DAB6CBA", hash_generated_method = "2581847F6C7AB0F9303F842275B2D775")
     public void setMD5(byte[] data) {
         md5_hash = data;
         // ---------- Original Method ----------
@@ -192,7 +192,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.847 -0400", hash_original_method = "3BA66B7FA2FDB006FB2AA15DCD71C98C", hash_generated_method = "6D5B34CD82B069FE4DDB4F1367E06DCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.045 -0400", hash_original_method = "3BA66B7FA2FDB006FB2AA15DCD71C98C", hash_generated_method = "6D5B34CD82B069FE4DDB4F1367E06DCE")
     public void setSHA(byte[] data) {
         sha_hash = data;
         // ---------- Original Method ----------
@@ -200,7 +200,7 @@ public class DigitalSignature {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.893 -0400", hash_original_method = "15C049C524B86A812CBA705875D88ECC", hash_generated_method = "F1DFCAD0443CF8D6733580722E7F1211")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.046 -0400", hash_original_method = "15C049C524B86A812CBA705875D88ECC", hash_generated_method = "A3129E08C4C0113DBDCFCB000BB54649")
     public byte[] sign() {
         try 
         {
@@ -229,10 +229,10 @@ public class DigitalSignature {
                 } //End block
             } //End block
             {
-                byte[] var27992A18675E368FD486AB5E30CF33F6_24900401 = (signature.sign());
+                byte[] var27992A18675E368FD486AB5E30CF33F6_1868587797 = (signature.sign());
             } //End block
             {
-                byte[] var252117FE5F0DB0862FD7B87315DB100D_1582898082 = (cipher.doFinal());
+                byte[] var252117FE5F0DB0862FD7B87315DB100D_696173679 = (cipher.doFinal());
             } //End block
         } //End block
         catch (DigestException e)
@@ -243,20 +243,20 @@ public class DigitalSignature {
         { }
         catch (IllegalBlockSizeException e)
         { }
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_781020312 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_781020312;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1743605641 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1743605641;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.895 -0400", hash_original_method = "19503CD9A5095168C8826497974984EF", hash_generated_method = "6339CE98D915AC79FDAAF89E9716C2AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.047 -0400", hash_original_method = "19503CD9A5095168C8826497974984EF", hash_generated_method = "B4433C4249E3BFE33232FCB2C2D40362")
     public boolean verifySignature(byte[] data) {
         {
             try 
             {
                 signature.update(sha_hash);
-                boolean var71F224FF8F2F61BF06CFD2A39C834040_698472187 = (signature.verify(data));
+                boolean var71F224FF8F2F61BF06CFD2A39C834040_182440806 = (signature.verify(data));
             } //End block
             catch (SignatureException e)
             { }
@@ -283,11 +283,11 @@ public class DigitalSignature {
             {
                 md5_sha = sha_hash;
             } //End block
-            boolean varF1BA09B4F89BE8C64AF3F6EED36BEA58_234955430 = (Arrays.equals(decrypt, md5_sha));
+            boolean varF1BA09B4F89BE8C64AF3F6EED36BEA58_275681433 = (Arrays.equals(decrypt, md5_sha));
         } //End block
         addTaint(data[0]);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701616341 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701616341;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_879232586 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_879232586;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

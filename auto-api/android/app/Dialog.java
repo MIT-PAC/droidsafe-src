@@ -40,67 +40,67 @@ import android.view.accessibility.AccessibilityEvent;
 import java.lang.ref.WeakReference;
 
 public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.716 -0400", hash_original_field = "581D71027A593FE178E11F8CF96A261F", hash_generated_field = "8ACEFA51F1C212AC94944686D7E3BDFC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "581D71027A593FE178E11F8CF96A261F", hash_generated_field = "8ACEFA51F1C212AC94944686D7E3BDFC")
 
     private Activity mOwnerActivity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.733 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
     Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.734 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "83A062836C11DD52DC32F4325712F233")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "83A062836C11DD52DC32F4325712F233")
 
     WindowManager mWindowManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.734 -0400", hash_original_field = "F4214BE1FFE044F8CA79EEDDDED72016", hash_generated_field = "C6B08D42C8EA2CB56500460CAF662F4C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "F4214BE1FFE044F8CA79EEDDDED72016", hash_generated_field = "C6B08D42C8EA2CB56500460CAF662F4C")
 
     Window mWindow;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.735 -0400", hash_original_field = "90456FC221E7A82F02F5F0D86665E9D8", hash_generated_field = "B4A10D2FE94FCA7877DCD1F8197DA38F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "90456FC221E7A82F02F5F0D86665E9D8", hash_generated_field = "B4A10D2FE94FCA7877DCD1F8197DA38F")
 
     View mDecor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.736 -0400", hash_original_field = "6468B2E0460CFBFD40C03C7A36A45FDF", hash_generated_field = "7F8EF508978F38B8BCEC28D592DBFC22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "6468B2E0460CFBFD40C03C7A36A45FDF", hash_generated_field = "7F8EF508978F38B8BCEC28D592DBFC22")
 
     private ActionBarImpl mActionBar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.745 -0400", hash_original_field = "CBE9C1F82FCE1BB545B279BE8BBA93EE", hash_generated_field = "6123942D1383A17F765E6BC984B8086E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "CBE9C1F82FCE1BB545B279BE8BBA93EE", hash_generated_field = "6123942D1383A17F765E6BC984B8086E")
 
     protected boolean mCancelable = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.746 -0400", hash_original_field = "5EECE75098F1C3EE2E7D5C5604E7ABBE", hash_generated_field = "B13EDAE25BF4DFF139CD5FAE4D2A0A25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "5EECE75098F1C3EE2E7D5C5604E7ABBE", hash_generated_field = "B13EDAE25BF4DFF139CD5FAE4D2A0A25")
 
     private String mCancelAndDismissTaken;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.746 -0400", hash_original_field = "4D534CFD5536B7EAE26E671B61999A02", hash_generated_field = "76C74178C09C090FAEDAAD0E8B0CF7A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "4D534CFD5536B7EAE26E671B61999A02", hash_generated_field = "76C74178C09C090FAEDAAD0E8B0CF7A0")
 
     private Message mCancelMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.747 -0400", hash_original_field = "BE5032B19401D6C75DF159B7C44D7C01", hash_generated_field = "E192DE29CF3B86E1D4D51306D6613B44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "BE5032B19401D6C75DF159B7C44D7C01", hash_generated_field = "E192DE29CF3B86E1D4D51306D6613B44")
 
     private Message mDismissMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.751 -0400", hash_original_field = "9FDEEA4D408D357BE228AE1A75ED9410", hash_generated_field = "9DF7AF46D4C4365744738EB8C5D01451")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.378 -0400", hash_original_field = "9FDEEA4D408D357BE228AE1A75ED9410", hash_generated_field = "9DF7AF46D4C4365744738EB8C5D01451")
 
     private Message mShowMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.770 -0400", hash_original_field = "2A4FF7110738976278729426D6DBEF1F", hash_generated_field = "E9EAFA3F5F183CD7232E888DAC035728")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "2A4FF7110738976278729426D6DBEF1F", hash_generated_field = "E9EAFA3F5F183CD7232E888DAC035728")
 
     private OnKeyListener mOnKeyListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.771 -0400", hash_original_field = "721C926D9558D59E55B02399D96F5508", hash_generated_field = "AE31AA5AE388883F7650182C0E3C7933")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "721C926D9558D59E55B02399D96F5508", hash_generated_field = "AE31AA5AE388883F7650182C0E3C7933")
 
     private boolean mCreated = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.771 -0400", hash_original_field = "B150E8FC39372026A2B260E47009CF79", hash_generated_field = "524E990B3B93C6331366CC3FFD800C87")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "B150E8FC39372026A2B260E47009CF79", hash_generated_field = "524E990B3B93C6331366CC3FFD800C87")
 
     private boolean mShowing = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.772 -0400", hash_original_field = "D91530AF3D6C660AC2C0C8D4CBB2367B", hash_generated_field = "67D6DA73468F2D6E84B945FD38F1CC1D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "D91530AF3D6C660AC2C0C8D4CBB2367B", hash_generated_field = "67D6DA73468F2D6E84B945FD38F1CC1D")
 
     private boolean mCanceled = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.773 -0400", hash_original_field = "C5D62B7C4F8BE6B828DA51239EC692E0", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "C5D62B7C4F8BE6B828DA51239EC692E0", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
 
     private Thread mUiThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.773 -0400", hash_original_field = "6781893E9FA50A9B7103FD3F674E566B", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.379 -0400", hash_original_field = "6781893E9FA50A9B7103FD3F674E566B", hash_generated_field = "2C33E5889A8CDA732A297DBE7101DB89")
 
-    private Handler mHandler = new Handler();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.774 -0400", hash_original_field = "A7C53D678AF31C89461A94B80C89667F", hash_generated_field = "BE6770D46FDA6621A2256CC938B90138")
+    private final Handler mHandler = new Handler();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_field = "A7C53D678AF31C89461A94B80C89667F", hash_generated_field = "BE6770D46FDA6621A2256CC938B90138")
 
     private Handler mListenersHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.774 -0400", hash_original_field = "3B382D379664B509F22D0EB5D96F2BA8", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_field = "3B382D379664B509F22D0EB5D96F2BA8", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
 
     private ActionMode mActionMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.792 -0400", hash_original_field = "90764B7AE877EFFD33D3124ADF85860E", hash_generated_field = "FC2594D2D0CB9B44EDB03FDAE2CFC6D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_field = "90764B7AE877EFFD33D3124ADF85860E", hash_generated_field = "8FA22581A256DB33942DF76F392B65DC")
 
-    private Runnable mDismissAction = new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.791 -0400", hash_original_method = "BEE19A9C5B7D04B78955A3FD8170F1CA", hash_generated_method = "4B98EED19700DEC05BCE304A452DAE0F")
+    private final Runnable mDismissAction = new Runnable() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_method = "BEE19A9C5B7D04B78955A3FD8170F1CA", hash_generated_method = "4B98EED19700DEC05BCE304A452DAE0F")
         public void run() {
             dismissDialog();
             // ---------- Original Method ----------
@@ -110,7 +110,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.793 -0400", hash_original_method = "BC9D2F22217346E354BF7BFC78A2D0C2", hash_generated_method = "6CD06A2CC25407F07D3CFC5AD07F9ABC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.381 -0400", hash_original_method = "BC9D2F22217346E354BF7BFC78A2D0C2", hash_generated_method = "6CD06A2CC25407F07D3CFC5AD07F9ABC")
     public  Dialog(Context context) {
         this(context, 0, true);
         addTaint(context.getTaint());
@@ -118,7 +118,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.794 -0400", hash_original_method = "E8683E6729C8449A45D83189604DFAE9", hash_generated_method = "5CA78AFC53891D0639109A18F53ECD42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.381 -0400", hash_original_method = "E8683E6729C8449A45D83189604DFAE9", hash_generated_method = "5CA78AFC53891D0639109A18F53ECD42")
     public  Dialog(Context context, int theme) {
         this(context, theme, true);
         addTaint(context.getTaint());
@@ -127,19 +127,17 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.823 -0400", hash_original_method = "C6D5E1D2CF37954F320E3261297EC417", hash_generated_method = "959D8CDB5F1DCF6DCEC14DFCC3B6911C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.382 -0400", hash_original_method = "C6D5E1D2CF37954F320E3261297EC417", hash_generated_method = "D7EF38D11784D6996ECA2C460CC94A83")
       Dialog(Context context, int theme, boolean createContextWrapper) {
         {
-            TypedValue outValue;
-            outValue = new TypedValue();
+            TypedValue outValue = new TypedValue();
             context.getTheme().resolveAttribute(com.android.internal.R.attr.dialogTheme,
                     outValue, true);
             theme = outValue.resourceId;
         } //End block
         mContext = createContextWrapper ? new ContextThemeWrapper(context, theme) : context;
         mWindowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
-        Window w;
-        w = PolicyManager.makeNewWindow(mContext);
+        Window w = PolicyManager.makeNewWindow(mContext);
         mWindow = w;
         w.setCallback(this);
         w.setWindowManager(mWindowManager, null, null);
@@ -165,7 +163,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.825 -0400", hash_original_method = "845C16E53E1BE45A2BA7FF67CD257C6C", hash_generated_method = "8FF4AE7B837C1FEB8E9EA8FAA6828F71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.383 -0400", hash_original_method = "845C16E53E1BE45A2BA7FF67CD257C6C", hash_generated_method = "8FF4AE7B837C1FEB8E9EA8FAA6828F71")
     @Deprecated
     protected  Dialog(Context context, boolean cancelable,
             Message cancelCallback) {
@@ -179,7 +177,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.831 -0400", hash_original_method = "C9ADA56967BDAFB742C2181BE637639A", hash_generated_method = "C6A8EE2383DA47A24EC7C78C286387AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.384 -0400", hash_original_method = "C9ADA56967BDAFB742C2181BE637639A", hash_generated_method = "C6A8EE2383DA47A24EC7C78C286387AF")
     protected  Dialog(Context context, boolean cancelable,
             OnCancelListener cancelListener) {
         this(context);
@@ -193,29 +191,29 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.889 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "8BB11A738B62F79B357406E6194FEB01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.385 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "CF6E38CF11897DB75B82B62B3C27BD65")
     public final Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1384633046 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1384633046 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1384633046.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1384633046;
+        Context varB4EAC82CA7396A68D541C85D26508E83_172294133 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_172294133 = mContext;
+        varB4EAC82CA7396A68D541C85D26508E83_172294133.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_172294133;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.894 -0400", hash_original_method = "624FE63EC935EE8F7C5CD37954EA0AEA", hash_generated_method = "7ADFD54DC32002A6BA3B75D37F6A2F33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.386 -0400", hash_original_method = "624FE63EC935EE8F7C5CD37954EA0AEA", hash_generated_method = "0387E29C009C8728E843071D53B7F56D")
     public ActionBar getActionBar() {
-        ActionBar varB4EAC82CA7396A68D541C85D26508E83_1740451260 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1740451260 = mActionBar;
-        varB4EAC82CA7396A68D541C85D26508E83_1740451260.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1740451260;
+        ActionBar varB4EAC82CA7396A68D541C85D26508E83_195234825 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_195234825 = mActionBar;
+        varB4EAC82CA7396A68D541C85D26508E83_195234825.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_195234825;
         // ---------- Original Method ----------
         //return mActionBar;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.904 -0400", hash_original_method = "AEEF4868262FBFB181A318E6FDCF1973", hash_generated_method = "2225ED786D910828047D511078A525A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.387 -0400", hash_original_method = "AEEF4868262FBFB181A318E6FDCF1973", hash_generated_method = "2225ED786D910828047D511078A525A3")
     public final void setOwnerActivity(Activity activity) {
         mOwnerActivity = activity;
         getWindow().setVolumeControlStream(mOwnerActivity.getVolumeControlStream());
@@ -225,32 +223,32 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.917 -0400", hash_original_method = "D833D4731703AD671D7AED3C45CAE756", hash_generated_method = "079127A44C6241801F81AA2B8FD1787C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.388 -0400", hash_original_method = "D833D4731703AD671D7AED3C45CAE756", hash_generated_method = "1305BC9FD3B434B6BE1D2D0FA9F132C4")
     public final Activity getOwnerActivity() {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1002802153 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1002802153 = mOwnerActivity;
-        varB4EAC82CA7396A68D541C85D26508E83_1002802153.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1002802153;
+        Activity varB4EAC82CA7396A68D541C85D26508E83_101985217 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_101985217 = mOwnerActivity;
+        varB4EAC82CA7396A68D541C85D26508E83_101985217.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_101985217;
         // ---------- Original Method ----------
         //return mOwnerActivity;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.919 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "484DA1C29EC850543597D4E63C2102E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.389 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "D7F5A8A4AE8D69278613F8487CB42831")
     public boolean isShowing() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145477682 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_145477682;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625438776 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625438776;
         // ---------- Original Method ----------
         //return mShowing;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.926 -0400", hash_original_method = "079FA2E5CA600A12F7067E75E853F614", hash_generated_method = "0314DC8AF13CD1EAAE96723CAF05DC32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.390 -0400", hash_original_method = "079FA2E5CA600A12F7067E75E853F614", hash_generated_method = "A32807CF4D3F0475062EAF368D2D251B")
     public void show() {
         {
             {
                 {
-                    boolean varDF79E2FDC0F8C38E07A73A6CD2C66427_2029866822 = (mWindow.hasFeature(Window.FEATURE_ACTION_BAR));
+                    boolean varDF79E2FDC0F8C38E07A73A6CD2C66427_696354869 = (mWindow.hasFeature(Window.FEATURE_ACTION_BAR));
                     {
                         mWindow.invalidatePanelMenu(Window.FEATURE_ACTION_BAR);
                     } //End block
@@ -265,16 +263,14 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         onStart();
         mDecor = mWindow.getDecorView();
         {
-            boolean varF4E6C6330D33A37486BAA82B7DDC231D_2021207034 = (mActionBar == null && mWindow.hasFeature(Window.FEATURE_ACTION_BAR));
+            boolean varF4E6C6330D33A37486BAA82B7DDC231D_175559291 = (mActionBar == null && mWindow.hasFeature(Window.FEATURE_ACTION_BAR));
             {
                 mActionBar = new ActionBarImpl(this);
             } //End block
         } //End collapsed parenthetic
-        WindowManager.LayoutParams l;
-        l = mWindow.getAttributes();
+        WindowManager.LayoutParams l = mWindow.getAttributes();
         {
-            WindowManager.LayoutParams nl;
-            nl = new WindowManager.LayoutParams();
+            WindowManager.LayoutParams nl = new WindowManager.LayoutParams();
             nl.copyFrom(l);
             nl.softInputMode |=
                     WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION;
@@ -293,7 +289,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.948 -0400", hash_original_method = "4A0CDBB7EA97DC376E25E0EE43387CF4", hash_generated_method = "D960C5A95FEB753FEAD909D760B2CA18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.391 -0400", hash_original_method = "4A0CDBB7EA97DC376E25E0EE43387CF4", hash_generated_method = "D960C5A95FEB753FEAD909D760B2CA18")
     public void hide() {
         {
             mDecor.setVisibility(View.GONE);
@@ -305,10 +301,10 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.950 -0400", hash_original_method = "33443011198828BD072B057DA719765A", hash_generated_method = "216E6BE8A0B7DD7339A1EBA5D549BB65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.391 -0400", hash_original_method = "33443011198828BD072B057DA719765A", hash_generated_method = "3C9106BDBAF372AC4F0C8D0EB5C482C0")
     public void dismiss() {
         {
-            boolean varD46220B6DBDB2780BC14591AF2433BD7_1381926893 = (Thread.currentThread() != mUiThread);
+            boolean varD46220B6DBDB2780BC14591AF2433BD7_1903306396 = (Thread.currentThread() != mUiThread);
             {
                 mHandler.post(mDismissAction);
             } //End block
@@ -327,10 +323,10 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.967 -0400", hash_original_method = "4ECC78F105BA2AD2FA21893BA556AFFD", hash_generated_method = "6A16CABB6BE416A1CE9841E3EA117575")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.392 -0400", hash_original_method = "4ECC78F105BA2AD2FA21893BA556AFFD", hash_generated_method = "137709D9E71D78B85D688FD352F6319D")
      void dismissDialog() {
         {
-            boolean varAA9215BBF1FF733067DEC864B8F4AC12_1382196239 = (mWindow.isDestroyed());
+            boolean varAA9215BBF1FF733067DEC864B8F4AC12_480725743 = (mWindow.isDestroyed());
         } //End collapsed parenthetic
         try 
         {
@@ -370,7 +366,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.969 -0400", hash_original_method = "866BAFBEBC09B92D7388CA2F75E61BAD", hash_generated_method = "1EA55A4647FD1A132F53711D4AB8E09B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.393 -0400", hash_original_method = "866BAFBEBC09B92D7388CA2F75E61BAD", hash_generated_method = "1EA55A4647FD1A132F53711D4AB8E09B")
     private void sendDismissMessage() {
         {
             Message.obtain(mDismissMessage).sendToTarget();
@@ -382,7 +378,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.971 -0400", hash_original_method = "02D405BDD0443049D755381D9E715694", hash_generated_method = "FB6E6E412C3BA60E0F71F6858C0C0653")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.394 -0400", hash_original_method = "02D405BDD0443049D755381D9E715694", hash_generated_method = "FB6E6E412C3BA60E0F71F6858C0C0653")
     private void sendShowMessage() {
         {
             Message.obtain(mShowMessage).sendToTarget();
@@ -394,7 +390,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.985 -0400", hash_original_method = "CD27A7CE58254212F040E7B7DA65BCA4", hash_generated_method = "6838EEEF28CAB6EF9F4A845156456478")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.396 -0400", hash_original_method = "CD27A7CE58254212F040E7B7DA65BCA4", hash_generated_method = "6838EEEF28CAB6EF9F4A845156456478")
      void dispatchOnCreate(Bundle savedInstanceState) {
         {
             onCreate(savedInstanceState);
@@ -409,7 +405,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.986 -0400", hash_original_method = "B84ED822BC6011EB138B2F6F1D018FE5", hash_generated_method = "DE98DECCC817096DF1B839F626292181")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.397 -0400", hash_original_method = "B84ED822BC6011EB138B2F6F1D018FE5", hash_generated_method = "DE98DECCC817096DF1B839F626292181")
     protected void onCreate(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
@@ -417,7 +413,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.994 -0400", hash_original_method = "1B4F9BFF1D832A07D0E1F41D0B16D2FF", hash_generated_method = "BE9AD01CB83E36F19DAEE7EFF770DFAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.398 -0400", hash_original_method = "1B4F9BFF1D832A07D0E1F41D0B16D2FF", hash_generated_method = "BE9AD01CB83E36F19DAEE7EFF770DFAE")
     protected void onStart() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mActionBar.setShowHideAnimationEnabled(true);
@@ -426,7 +422,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.016 -0400", hash_original_method = "28173EE669492C23D10F671D2D034693", hash_generated_method = "EFC4CEDE95009F9A2C76BCB60E4786BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.398 -0400", hash_original_method = "28173EE669492C23D10F671D2D034693", hash_generated_method = "EFC4CEDE95009F9A2C76BCB60E4786BD")
     protected void onStop() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mActionBar.setShowHideAnimationEnabled(false);
@@ -435,19 +431,18 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.019 -0400", hash_original_method = "2D855197EA1046BD8EC8CA2E991844E1", hash_generated_method = "7167B61B981BD66C0217137ED9FAF30F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.399 -0400", hash_original_method = "2D855197EA1046BD8EC8CA2E991844E1", hash_generated_method = "85FDE83B84A5396E27940AFB933323BA")
     public Bundle onSaveInstanceState() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1344284124 = null; //Variable for return #1
-        Bundle bundle;
-        bundle = new Bundle();
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_542494666 = null; //Variable for return #1
+        Bundle bundle = new Bundle();
         bundle.putBoolean(DIALOG_SHOWING_TAG, mShowing);
         {
             bundle.putBundle(DIALOG_HIERARCHY_TAG, mWindow.saveHierarchyState());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1344284124 = bundle;
-        varB4EAC82CA7396A68D541C85D26508E83_1344284124.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1344284124;
+        varB4EAC82CA7396A68D541C85D26508E83_542494666 = bundle;
+        varB4EAC82CA7396A68D541C85D26508E83_542494666.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_542494666;
         // ---------- Original Method ----------
         //Bundle bundle = new Bundle();
         //bundle.putBoolean(DIALOG_SHOWING_TAG, mShowing);
@@ -458,15 +453,14 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.020 -0400", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "F217BF415FBA4C294C1ABDF3A1D19ADA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.400 -0400", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "63A963E62292755EDEFF51C9F2544A1E")
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        Bundle dialogHierarchyState;
-        dialogHierarchyState = savedInstanceState.getBundle(DIALOG_HIERARCHY_TAG);
+        final Bundle dialogHierarchyState = savedInstanceState.getBundle(DIALOG_HIERARCHY_TAG);
         dispatchOnCreate(savedInstanceState);
         mWindow.restoreHierarchyState(dialogHierarchyState);
         {
-            boolean varB08F34606D5FAE48568279D4B22B1AC4_293554259 = (savedInstanceState.getBoolean(DIALOG_SHOWING_TAG));
+            boolean varB08F34606D5FAE48568279D4B22B1AC4_1180929065 = (savedInstanceState.getBoolean(DIALOG_SHOWING_TAG));
             {
                 show();
             } //End block
@@ -485,41 +479,41 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.041 -0400", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "00796B6DFDB5C5A6462E0702BF2D96FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.401 -0400", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "2D3B6EE8FB798A72EB48646F15EB4142")
     public Window getWindow() {
-        Window varB4EAC82CA7396A68D541C85D26508E83_1530967460 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1530967460 = mWindow;
-        varB4EAC82CA7396A68D541C85D26508E83_1530967460.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1530967460;
+        Window varB4EAC82CA7396A68D541C85D26508E83_1247115004 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1247115004 = mWindow;
+        varB4EAC82CA7396A68D541C85D26508E83_1247115004.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1247115004;
         // ---------- Original Method ----------
         //return mWindow;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.043 -0400", hash_original_method = "44957F5326E5A87B91E438DCD3C71232", hash_generated_method = "18AD851B285D59C6388B7BCD60A1D8C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.402 -0400", hash_original_method = "44957F5326E5A87B91E438DCD3C71232", hash_generated_method = "7BFFBF733A35860BDAF03CA9F2930C4F")
     public View getCurrentFocus() {
-        View varB4EAC82CA7396A68D541C85D26508E83_2122720661 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2122720661 = mWindow != null ? mWindow.getCurrentFocus() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_2122720661.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2122720661;
+        View varB4EAC82CA7396A68D541C85D26508E83_994782925 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_994782925 = mWindow != null ? mWindow.getCurrentFocus() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_994782925.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_994782925;
         // ---------- Original Method ----------
         //return mWindow != null ? mWindow.getCurrentFocus() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.057 -0400", hash_original_method = "FBC1E026CFF410D335B7C0F9A45B0829", hash_generated_method = "6E35FF858784878F506A2EC1F75F9F57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.404 -0400", hash_original_method = "FBC1E026CFF410D335B7C0F9A45B0829", hash_generated_method = "60CC81366B413B28E05E9E3F22D399DE")
     public View findViewById(int id) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2045625755 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2045625755 = mWindow.findViewById(id);
+        View varB4EAC82CA7396A68D541C85D26508E83_641390192 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_641390192 = mWindow.findViewById(id);
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_2045625755.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2045625755;
+        varB4EAC82CA7396A68D541C85D26508E83_641390192.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_641390192;
         // ---------- Original Method ----------
         //return mWindow.findViewById(id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.059 -0400", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "5BA5DE54653E468ED261AF17341460E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.404 -0400", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "5BA5DE54653E468ED261AF17341460E4")
     public void setContentView(int layoutResID) {
         mWindow.setContentView(layoutResID);
         addTaint(layoutResID);
@@ -528,7 +522,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.070 -0400", hash_original_method = "64A976C0ECE03B8AD97B801012E7B71B", hash_generated_method = "83BB1502EB00C9A91C40A63992C5E5C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.407 -0400", hash_original_method = "64A976C0ECE03B8AD97B801012E7B71B", hash_generated_method = "83BB1502EB00C9A91C40A63992C5E5C7")
     public void setContentView(View view) {
         mWindow.setContentView(view);
         addTaint(view.getTaint());
@@ -537,7 +531,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.072 -0400", hash_original_method = "21FC0CE0727282A96780C185A7B70535", hash_generated_method = "775EDF340CB355EB7BAEEA14FC205BED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.408 -0400", hash_original_method = "21FC0CE0727282A96780C185A7B70535", hash_generated_method = "775EDF340CB355EB7BAEEA14FC205BED")
     public void setContentView(View view, ViewGroup.LayoutParams params) {
         mWindow.setContentView(view, params);
         addTaint(view.getTaint());
@@ -547,7 +541,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.073 -0400", hash_original_method = "54F8942E4EAEA6A93BE827863701CD23", hash_generated_method = "15B77E54CD19304DD85623BB759F93F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.409 -0400", hash_original_method = "54F8942E4EAEA6A93BE827863701CD23", hash_generated_method = "15B77E54CD19304DD85623BB759F93F1")
     public void addContentView(View view, ViewGroup.LayoutParams params) {
         mWindow.addContentView(view, params);
         addTaint(view.getTaint());
@@ -557,7 +551,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.088 -0400", hash_original_method = "A94A4616451E43B03E2FA5DD3DFB9ED3", hash_generated_method = "18EC9867F86BB156A1BB912D7DD6716A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.409 -0400", hash_original_method = "A94A4616451E43B03E2FA5DD3DFB9ED3", hash_generated_method = "18EC9867F86BB156A1BB912D7DD6716A")
     public void setTitle(CharSequence title) {
         mWindow.setTitle(title);
         mWindow.getAttributes().setTitle(title);
@@ -568,7 +562,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.098 -0400", hash_original_method = "0D914ED2883864B655DBF2629252A595", hash_generated_method = "B8F1170F5CE57BA5A12A340C7E51CDBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.410 -0400", hash_original_method = "0D914ED2883864B655DBF2629252A595", hash_generated_method = "B8F1170F5CE57BA5A12A340C7E51CDBA")
     public void setTitle(int titleId) {
         setTitle(mContext.getText(titleId));
         addTaint(titleId);
@@ -577,7 +571,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.113 -0400", hash_original_method = "EB61104CC8357BEAF109072385D21C38", hash_generated_method = "53E462B81E8989B0DB7A8874E90DF260")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.411 -0400", hash_original_method = "EB61104CC8357BEAF109072385D21C38", hash_generated_method = "31C0093A46353541C1184FDBEADA0823")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -585,8 +579,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         } //End block
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553999429 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_553999429;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562707089 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562707089;
         // ---------- Original Method ----------
         //if (keyCode == KeyEvent.KEYCODE_BACK) {
             //event.startTracking();
@@ -596,23 +590,23 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.124 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "6ED7AA1E5B2E4B30156433E313637D43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.412 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "7D7B32C8A7F968F96E1AFA61D86248A7")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1923503553 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1923503553;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432412779 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432412779;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.129 -0400", hash_original_method = "CFFAC7119271281C27F3BEDCE8D82CC2", hash_generated_method = "66750632878AA39FA04B8856532A7C16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.413 -0400", hash_original_method = "CFFAC7119271281C27F3BEDCE8D82CC2", hash_generated_method = "4D841728EF17D92E718AD6F62F053F38")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var0632AF553088255946876F04AB1E8E7D_44136518 = (keyCode == KeyEvent.KEYCODE_BACK && event.isTracking()
+            boolean var0632AF553088255946876F04AB1E8E7D_956329441 = (keyCode == KeyEvent.KEYCODE_BACK && event.isTracking()
                 && !event.isCanceled());
             {
                 onBackPressed();
@@ -620,8 +614,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         } //End collapsed parenthetic
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432768463 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432768463;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_314100893 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_314100893;
         // ---------- Original Method ----------
         //if (keyCode == KeyEvent.KEYCODE_BACK && event.isTracking()
                 //&& !event.isCanceled()) {
@@ -632,20 +626,20 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.131 -0400", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "D16BC732F0D92B7DD051B5CC2B88887D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.414 -0400", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "DEC42C112BBE2CAC3AF5979BF17236EB")
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(keyCode);
         addTaint(repeatCount);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1653171935 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1653171935;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1052446242 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1052446242;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.132 -0400", hash_original_method = "EAEAA0DB8B83D24D321D98459F4FA29E", hash_generated_method = "3E313C8978C5A46580C6435094C7FE54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.415 -0400", hash_original_method = "EAEAA0DB8B83D24D321D98459F4FA29E", hash_generated_method = "3E313C8978C5A46580C6435094C7FE54")
     public void onBackPressed() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -658,30 +652,30 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.149 -0400", hash_original_method = "2ECF3E4914B4B3BE2238F799B7435A51", hash_generated_method = "8FF7A0A78E90E9DBD79B0FBB8DAF40FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.417 -0400", hash_original_method = "2ECF3E4914B4B3BE2238F799B7435A51", hash_generated_method = "554C0FD3012FA51BC2C384B02FBAFC10")
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392838911 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392838911;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1551994150 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1551994150;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.154 -0400", hash_original_method = "5A4B1024EA76F961E6155B7F9E2B0909", hash_generated_method = "6367DBF72F2B8E2FC6E9052880444734")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.418 -0400", hash_original_method = "5A4B1024EA76F961E6155B7F9E2B0909", hash_generated_method = "D1B32029180D5CDA9FC91D068C9D0C1D")
     public boolean onTouchEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var31C1B547289343DCAE6EBC7208A847F8_982703566 = (mCancelable && mShowing && mWindow.shouldCloseOnTouch(mContext, event));
+            boolean var31C1B547289343DCAE6EBC7208A847F8_1469218934 = (mCancelable && mShowing && mWindow.shouldCloseOnTouch(mContext, event));
             {
                 cancel();
             } //End block
         } //End collapsed parenthetic
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233829469 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_233829469;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1904192056 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1904192056;
         // ---------- Original Method ----------
         //if (mCancelable && mShowing && mWindow.shouldCloseOnTouch(mContext, event)) {
             //cancel();
@@ -691,29 +685,29 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.165 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "440F02EED87742D44BA54ABA407C9226")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.419 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "BAADEDD1330ECB80DA86226A475B49E1")
     public boolean onTrackballEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1762673678 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1762673678;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1113159960 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1113159960;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.167 -0400", hash_original_method = "0E59A005881F30C798F764BCF32D89A3", hash_generated_method = "45AB7E5C879F97DBD8AE4C67F7E7A86D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.420 -0400", hash_original_method = "0E59A005881F30C798F764BCF32D89A3", hash_generated_method = "BA5DD93E9D7DECD417A0D2B15F3AA495")
     public boolean onGenericMotionEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682926764 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682926764;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1281036833 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1281036833;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.168 -0400", hash_original_method = "4EF468126ED8F0323D4288D03F894270", hash_generated_method = "6B6C48478E3743661D0D5A8E8111C607")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.420 -0400", hash_original_method = "4EF468126ED8F0323D4288D03F894270", hash_generated_method = "6B6C48478E3743661D0D5A8E8111C607")
     public void onWindowAttributesChanged(WindowManager.LayoutParams params) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -727,14 +721,14 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.197 -0400", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "15CE33052F85E41C1BB65E1E6B2C108A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.421 -0400", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "15CE33052F85E41C1BB65E1E6B2C108A")
     public void onContentChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.198 -0400", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "EEF2114A935228AD19BFEE6FAB48379F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.421 -0400", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "EEF2114A935228AD19BFEE6FAB48379F")
     public void onWindowFocusChanged(boolean hasFocus) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(hasFocus);
@@ -742,33 +736,33 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.207 -0400", hash_original_method = "D6E949EE9F0768F47016EEA4FC0347A8", hash_generated_method = "0E08FFA9282E502085CC6973CB60CDA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.422 -0400", hash_original_method = "D6E949EE9F0768F47016EEA4FC0347A8", hash_generated_method = "0E08FFA9282E502085CC6973CB60CDA1")
     public void onAttachedToWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.208 -0400", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "1328510831112E7A424EFCA8583CA87C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.422 -0400", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "1328510831112E7A424EFCA8583CA87C")
     public void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.213 -0400", hash_original_method = "1435B67C8334D2AC8987004B54F10264", hash_generated_method = "C1EAAC59CA7030A8FA475277F8A7C866")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.424 -0400", hash_original_method = "1435B67C8334D2AC8987004B54F10264", hash_generated_method = "09B1475D3C17816B4EC2A3D4A0E544E6")
     public boolean dispatchKeyEvent(KeyEvent event) {
         {
-            boolean var119FC86DBD10D0451AA68681D2661AF8_1527663714 = ((mOnKeyListener != null) && (mOnKeyListener.onKey(this, event.getKeyCode(), event)));
+            boolean var119FC86DBD10D0451AA68681D2661AF8_2103181864 = ((mOnKeyListener != null) && (mOnKeyListener.onKey(this, event.getKeyCode(), event)));
         } //End collapsed parenthetic
         {
-            boolean var524CC85D3B1F7496F0129E1D66C889FF_560231279 = (mWindow.superDispatchKeyEvent(event));
+            boolean var524CC85D3B1F7496F0129E1D66C889FF_1421210752 = (mWindow.superDispatchKeyEvent(event));
         } //End collapsed parenthetic
-        boolean var9A9ACA17DE81B47807106F3C8C61EFB2_927335582 = (event.dispatch(this, mDecor != null
+        boolean var9A9ACA17DE81B47807106F3C8C61EFB2_2009614606 = (event.dispatch(this, mDecor != null
                 ? mDecor.getKeyDispatcherState() : null, this)); //DSFIXME:  CODE0008: Nested ternary operator in expression
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2088031051 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2088031051;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1414900944 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1414900944;
         // ---------- Original Method ----------
         //if ((mOnKeyListener != null) && (mOnKeyListener.onKey(this, event.getKeyCode(), event))) {
             //return true;
@@ -781,15 +775,15 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.215 -0400", hash_original_method = "BA9D4031BD488C1D379B1950A362F8D4", hash_generated_method = "69FE1E94C6CAF6918406CDFB6F7B8A2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.425 -0400", hash_original_method = "BA9D4031BD488C1D379B1950A362F8D4", hash_generated_method = "4FBCEF58E5B5902BF5F3F4A4B52D6793")
     public boolean dispatchKeyShortcutEvent(KeyEvent event) {
         {
-            boolean var1506FC9A951093FEBE1E9D9D60B77FAA_199740083 = (mWindow.superDispatchKeyShortcutEvent(event));
+            boolean var1506FC9A951093FEBE1E9D9D60B77FAA_1336596871 = (mWindow.superDispatchKeyShortcutEvent(event));
         } //End collapsed parenthetic
-        boolean varB65319FC5255424F872A964CBDE1432E_492792714 = (onKeyShortcut(event.getKeyCode(), event));
+        boolean varB65319FC5255424F872A964CBDE1432E_535398356 = (onKeyShortcut(event.getKeyCode(), event));
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_561322770 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_561322770;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1823934466 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1823934466;
         // ---------- Original Method ----------
         //if (mWindow.superDispatchKeyShortcutEvent(event)) {
             //return true;
@@ -798,15 +792,15 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.242 -0400", hash_original_method = "D3052CDDAC0630315E0F5E7AF5478D0E", hash_generated_method = "023E42D499140AC082683DDF45084B53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.427 -0400", hash_original_method = "D3052CDDAC0630315E0F5E7AF5478D0E", hash_generated_method = "FD256DEAF80A4ED13024CEEA9FC66C09")
     public boolean dispatchTouchEvent(MotionEvent ev) {
         {
-            boolean var5240AC15FBF7E8C8943B586A077531B5_1311145985 = (mWindow.superDispatchTouchEvent(ev));
+            boolean var5240AC15FBF7E8C8943B586A077531B5_1669445923 = (mWindow.superDispatchTouchEvent(ev));
         } //End collapsed parenthetic
-        boolean var985DA2294C2CD7796EE4EFA7F3FBE91B_1843084603 = (onTouchEvent(ev));
+        boolean var985DA2294C2CD7796EE4EFA7F3FBE91B_316448939 = (onTouchEvent(ev));
         addTaint(ev.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829114222 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_829114222;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1668581164 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1668581164;
         // ---------- Original Method ----------
         //if (mWindow.superDispatchTouchEvent(ev)) {
             //return true;
@@ -815,15 +809,15 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.244 -0400", hash_original_method = "2B935C89EDDE71F28E7C978B3C9DCAB0", hash_generated_method = "4EBA9863596DD865F3E3499E5CCB104E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.428 -0400", hash_original_method = "2B935C89EDDE71F28E7C978B3C9DCAB0", hash_generated_method = "AEC73ABF3F90C8598956E7EBA8C5BFEC")
     public boolean dispatchTrackballEvent(MotionEvent ev) {
         {
-            boolean varF25A212D3CF06F711C8BBD649E0977F2_1376723657 = (mWindow.superDispatchTrackballEvent(ev));
+            boolean varF25A212D3CF06F711C8BBD649E0977F2_908062710 = (mWindow.superDispatchTrackballEvent(ev));
         } //End collapsed parenthetic
-        boolean varE24895B72E913D801FFC5B9D9055D482_1232349460 = (onTrackballEvent(ev));
+        boolean varE24895B72E913D801FFC5B9D9055D482_574135472 = (onTrackballEvent(ev));
         addTaint(ev.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_444945585 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_444945585;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97202806 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_97202806;
         // ---------- Original Method ----------
         //if (mWindow.superDispatchTrackballEvent(ev)) {
             //return true;
@@ -832,15 +826,15 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.259 -0400", hash_original_method = "B6AB9C2BD67E148832650E309163688C", hash_generated_method = "2C2DA80D07A0607EDA78AACBC8AD2EEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.429 -0400", hash_original_method = "B6AB9C2BD67E148832650E309163688C", hash_generated_method = "6A8EEFF5F1AFB47DB9830E73E9FFA1B2")
     public boolean dispatchGenericMotionEvent(MotionEvent ev) {
         {
-            boolean varC6CFD9FB7BF4B51FA19B29CFED05E764_1439741933 = (mWindow.superDispatchGenericMotionEvent(ev));
+            boolean varC6CFD9FB7BF4B51FA19B29CFED05E764_851254927 = (mWindow.superDispatchGenericMotionEvent(ev));
         } //End collapsed parenthetic
-        boolean var82ABE1E641E95D27D650D268E959F965_34512276 = (onGenericMotionEvent(ev));
+        boolean var82ABE1E641E95D27D650D268E959F965_860424612 = (onGenericMotionEvent(ev));
         addTaint(ev.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1230688763 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1230688763;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1072550138 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1072550138;
         // ---------- Original Method ----------
         //if (mWindow.superDispatchGenericMotionEvent(ev)) {
             //return true;
@@ -849,19 +843,17 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.266 -0400", hash_original_method = "3CC377981D86463D050A06CF1F7ED782", hash_generated_method = "56889C40AF1EB4756DFDA4E8AF044518")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.430 -0400", hash_original_method = "3CC377981D86463D050A06CF1F7ED782", hash_generated_method = "9CA71FABB804FBFB405ADD24BCA70EF4")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         event.setClassName(getClass().getName());
         event.setPackageName(mContext.getPackageName());
-        LayoutParams params;
-        params = getWindow().getAttributes();
-        boolean isFullScreen;
-        isFullScreen = (params.width == LayoutParams.MATCH_PARENT) &&
+        LayoutParams params = getWindow().getAttributes();
+        boolean isFullScreen = (params.width == LayoutParams.MATCH_PARENT) &&
             (params.height == LayoutParams.MATCH_PARENT);
         event.setFullScreen(isFullScreen);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048930018 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048930018;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989048551 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_989048551;
         // ---------- Original Method ----------
         //event.setClassName(getClass().getName());
         //event.setPackageName(mContext.getPackageName());
@@ -873,29 +865,29 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.278 -0400", hash_original_method = "8FB2859FE43E0606E21921E291A18BDA", hash_generated_method = "1721BDBD40809ECEBCE219734E8D9F52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.431 -0400", hash_original_method = "8FB2859FE43E0606E21921E291A18BDA", hash_generated_method = "D2A5C1AB21513413257BD9AF0E55D9D1")
     public View onCreatePanelView(int featureId) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_909166292 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_909166292 = null;
+        View varB4EAC82CA7396A68D541C85D26508E83_2026954972 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2026954972 = null;
         addTaint(featureId);
-        varB4EAC82CA7396A68D541C85D26508E83_909166292.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_909166292;
+        varB4EAC82CA7396A68D541C85D26508E83_2026954972.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2026954972;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.301 -0400", hash_original_method = "1B30E4AD9FCCEF2C81163B46B66D301C", hash_generated_method = "0F514D2A849390BE7DB3D7FDA46C0916")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.431 -0400", hash_original_method = "1B30E4AD9FCCEF2C81163B46B66D301C", hash_generated_method = "2D7C14DCEDA25DABA14A6A39A81BD060")
     public boolean onCreatePanelMenu(int featureId, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var3ADDFAB895A7216D8503161675C1D088_43278829 = (onCreateOptionsMenu(menu));
+            boolean var3ADDFAB895A7216D8503161675C1D088_499882259 = (onCreateOptionsMenu(menu));
         } //End block
         addTaint(featureId);
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_750298642 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_750298642;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869623819 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869623819;
         // ---------- Original Method ----------
         //if (featureId == Window.FEATURE_OPTIONS_PANEL) {
             //return onCreateOptionsMenu(menu);
@@ -904,19 +896,18 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.303 -0400", hash_original_method = "A95440A37102593BE255304F4188998E", hash_generated_method = "AFABA4BD579B04824148417F2216A8BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.432 -0400", hash_original_method = "A95440A37102593BE255304F4188998E", hash_generated_method = "E5F84B372201CD29DE65F8F09F7C22FC")
     public boolean onPreparePanel(int featureId, View view, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean goforit;
-            goforit = onPrepareOptionsMenu(menu);
-            boolean var7116118DD297E6C08BE1AD40992AA51A_1439219111 = (goforit && menu.hasVisibleItems());
+            boolean goforit = onPrepareOptionsMenu(menu);
+            boolean var7116118DD297E6C08BE1AD40992AA51A_1574985711 = (goforit && menu.hasVisibleItems());
         } //End block
         addTaint(featureId);
         addTaint(view.getTaint());
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1729034223 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1729034223;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1617360325 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1617360325;
         // ---------- Original Method ----------
         //if (featureId == Window.FEATURE_OPTIONS_PANEL && menu != null) {
             //boolean goforit = onPrepareOptionsMenu(menu);
@@ -926,7 +917,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.314 -0400", hash_original_method = "F5A72D2A4A42C0CE2781798802611276", hash_generated_method = "E512DDA1ABE64E46557F8C1B56CEA692")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.433 -0400", hash_original_method = "F5A72D2A4A42C0CE2781798802611276", hash_generated_method = "9A4FB3785B75DA396CCDB782123AB5CA")
     public boolean onMenuOpened(int featureId, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -934,8 +925,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         } //End block
         addTaint(featureId);
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142851571 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_142851571;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041942004 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2041942004;
         // ---------- Original Method ----------
         //if (featureId == Window.FEATURE_ACTION_BAR) {
             //mActionBar.dispatchMenuVisibilityChanged(true);
@@ -944,19 +935,19 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.427 -0400", hash_original_method = "CDCEA93B87CB4399825B767626A61473", hash_generated_method = "E51BBF09FAAB1C0ACE72EA86A25C60CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.435 -0400", hash_original_method = "CDCEA93B87CB4399825B767626A61473", hash_generated_method = "E8DA7203A2E618FC50D8C1935DCBF227")
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(featureId);
         addTaint(item.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79364279 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_79364279;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582393143 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582393143;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.429 -0400", hash_original_method = "20C3110FD341FFE95CFF6A6C95609D00", hash_generated_method = "649371478EDA55D24504EB4DA0FA2064")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.436 -0400", hash_original_method = "20C3110FD341FFE95CFF6A6C95609D00", hash_generated_method = "649371478EDA55D24504EB4DA0FA2064")
     public void onPanelClosed(int featureId, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -971,40 +962,40 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.430 -0400", hash_original_method = "F3CAA7B8E21AB403B530132B4E52A4EB", hash_generated_method = "A770346FE27C271A10CE96CEC01056DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.438 -0400", hash_original_method = "F3CAA7B8E21AB403B530132B4E52A4EB", hash_generated_method = "5B427224E6F03C8F95A872BACEE285B9")
     public boolean onCreateOptionsMenu(Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_91760397 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_91760397;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_707125651 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_707125651;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.442 -0400", hash_original_method = "BF0F08B18C75FC62D01E0D6DB107696E", hash_generated_method = "D6C831C52D8E8EB9B8D178ED17359B32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.439 -0400", hash_original_method = "BF0F08B18C75FC62D01E0D6DB107696E", hash_generated_method = "99B2F53E20C6CC96724B428265E60325")
     public boolean onPrepareOptionsMenu(Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1928932456 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1928932456;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25262015 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_25262015;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.466 -0400", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "BBF8DA1A5643E3584BA8A1CC1630AF14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.439 -0400", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "2A2E5D35E0987843EAEF5AFE897AEBA7")
     public boolean onOptionsItemSelected(MenuItem item) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(item.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1099855783 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1099855783;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1771234351 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1771234351;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.480 -0400", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "CC9F879215C8D6911F3F43FE45124EF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.440 -0400", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "CC9F879215C8D6911F3F43FE45124EF9")
     public void onOptionsMenuClosed(Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(menu.getTaint());
@@ -1012,7 +1003,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.481 -0400", hash_original_method = "756759165F6AB2C8C6E469E63BE14186", hash_generated_method = "8F36C449192E9A4FC8F578B78BE7C244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.440 -0400", hash_original_method = "756759165F6AB2C8C6E469E63BE14186", hash_generated_method = "8F36C449192E9A4FC8F578B78BE7C244")
     public void openOptionsMenu() {
         mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
         // ---------- Original Method ----------
@@ -1020,7 +1011,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.497 -0400", hash_original_method = "D12ED1735BBB9BCDCD831C99F03640D7", hash_generated_method = "249BD0BDCB652EF31D4B735086D0BDEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.441 -0400", hash_original_method = "D12ED1735BBB9BCDCD831C99F03640D7", hash_generated_method = "249BD0BDCB652EF31D4B735086D0BDEC")
     public void closeOptionsMenu() {
         mWindow.closePanel(Window.FEATURE_OPTIONS_PANEL);
         // ---------- Original Method ----------
@@ -1028,7 +1019,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.502 -0400", hash_original_method = "319389EBA801B290FB41D02473EB2E9E", hash_generated_method = "E3CB03CA5E4EB5916215E567B4276E95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.441 -0400", hash_original_method = "319389EBA801B290FB41D02473EB2E9E", hash_generated_method = "E3CB03CA5E4EB5916215E567B4276E95")
     public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
         // ---------- Original Method ----------
@@ -1036,7 +1027,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.519 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "170D9A5A5BFA1A654CA19943D4D0F496")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.442 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "170D9A5A5BFA1A654CA19943D4D0F496")
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(menu.getTaint());
@@ -1046,7 +1037,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.522 -0400", hash_original_method = "1A123249F7C2C892EA53E2F44D60C1FB", hash_generated_method = "0FEECD9EF1102B65D35844FDFD151864")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.442 -0400", hash_original_method = "1A123249F7C2C892EA53E2F44D60C1FB", hash_generated_method = "0FEECD9EF1102B65D35844FDFD151864")
     public void registerForContextMenu(View view) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         view.setOnCreateContextMenuListener(this);
@@ -1056,7 +1047,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.539 -0400", hash_original_method = "6A7E2B106BB1CEE7C3B668A773DE5A5B", hash_generated_method = "344591114B98358744F7FCF1C426D7AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.443 -0400", hash_original_method = "6A7E2B106BB1CEE7C3B668A773DE5A5B", hash_generated_method = "344591114B98358744F7FCF1C426D7AD")
     public void unregisterForContextMenu(View view) {
         view.setOnCreateContextMenuListener(null);
         addTaint(view.getTaint());
@@ -1065,7 +1056,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.540 -0400", hash_original_method = "D1451DBD5DFD14FAE397660897192E3C", hash_generated_method = "0E259D70C84DA1F0D8EA55F14095AA14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.444 -0400", hash_original_method = "D1451DBD5DFD14FAE397660897192E3C", hash_generated_method = "0E259D70C84DA1F0D8EA55F14095AA14")
     public void openContextMenu(View view) {
         view.showContextMenu();
         addTaint(view.getTaint());
@@ -1074,18 +1065,18 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.562 -0400", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "B7FDC9B568EE66607EC2A4D78AEC4E88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.445 -0400", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "4895A6DD8639162624E5DE11476F5063")
     public boolean onContextItemSelected(MenuItem item) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(item.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960895436 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_960895436;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766458666 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766458666;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.564 -0400", hash_original_method = "5C6F377B774E414E6D9422BBC7AAE81F", hash_generated_method = "F6A83BFE417F19EC2EE2F1DD7A9E9351")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.446 -0400", hash_original_method = "5C6F377B774E414E6D9422BBC7AAE81F", hash_generated_method = "F6A83BFE417F19EC2EE2F1DD7A9E9351")
     public void onContextMenuClosed(Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(menu.getTaint());
@@ -1093,23 +1084,21 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.576 -0400", hash_original_method = "38790ED2FB6D0EF1B7954716C7615F0D", hash_generated_method = "A5B32723AFD0A31D878299D699889026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.448 -0400", hash_original_method = "38790ED2FB6D0EF1B7954716C7615F0D", hash_generated_method = "F6B112404BF0ACED067D782012BD514F")
     public boolean onSearchRequested() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        SearchManager searchManager;
-        searchManager = (SearchManager) mContext
+        final SearchManager searchManager = (SearchManager) mContext
                 .getSystemService(Context.SEARCH_SERVICE);
-        ComponentName appName;
-        appName = getAssociatedActivity();
+        final ComponentName appName = getAssociatedActivity();
         {
-            boolean var39077EF7EA373069B451847B267FD676_1634287352 = (appName != null && searchManager.getSearchableInfo(appName) != null);
+            boolean var39077EF7EA373069B451847B267FD676_2020547250 = (appName != null && searchManager.getSearchableInfo(appName) != null);
             {
                 searchManager.startSearch(null, false, appName, null, false);
                 dismiss();
             } //End block
         } //End collapsed parenthetic
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736297212 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_736297212;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1761840934 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1761840934;
         // ---------- Original Method ----------
         //final SearchManager searchManager = (SearchManager) mContext
                 //.getSystemService(Context.SEARCH_SERVICE);
@@ -1124,27 +1113,27 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.586 -0400", hash_original_method = "5D1C131301342FA877A860064E23A1A6", hash_generated_method = "8B51B422EE2AB3CD603AB1F41D88B0C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.449 -0400", hash_original_method = "5D1C131301342FA877A860064E23A1A6", hash_generated_method = "6B0953CAB46962DEEE690BE016F954D1")
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1990249931 = null; //Variable for return #1
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1237729605 = null; //Variable for return #2
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1042599752 = null; //Variable for return #1
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1276795656 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1990249931 = mActionBar.startActionMode(callback);
+            varB4EAC82CA7396A68D541C85D26508E83_1042599752 = mActionBar.startActionMode(callback);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1237729605 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1276795656 = null;
         addTaint(callback.getTaint());
-        ActionMode varA7E53CE21691AB073D9660D615818899_322846501; //Final return value
+        ActionMode varA7E53CE21691AB073D9660D615818899_539774465; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_322846501 = varB4EAC82CA7396A68D541C85D26508E83_1990249931;
+                varA7E53CE21691AB073D9660D615818899_539774465 = varB4EAC82CA7396A68D541C85D26508E83_1042599752;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_322846501 = varB4EAC82CA7396A68D541C85D26508E83_1237729605;
+                varA7E53CE21691AB073D9660D615818899_539774465 = varB4EAC82CA7396A68D541C85D26508E83_1276795656;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_322846501.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_322846501;
+        varA7E53CE21691AB073D9660D615818899_539774465.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_539774465;
         // ---------- Original Method ----------
         //if (mActionBar != null) {
             //return mActionBar.startActionMode(callback);
@@ -1153,7 +1142,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.588 -0400", hash_original_method = "00C0B67E273850713F0D88B8DE976F73", hash_generated_method = "CC0EA6E92777768F9F821B7C1ECE81BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.450 -0400", hash_original_method = "00C0B67E273850713F0D88B8DE976F73", hash_generated_method = "CC0EA6E92777768F9F821B7C1ECE81BA")
     public void onActionModeStarted(ActionMode mode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mActionMode = mode;
@@ -1162,7 +1151,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.612 -0400", hash_original_method = "9FD315390CEABDE5B2497E2EE78C905A", hash_generated_method = "267373F481F3A04D55725F51391EFFC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.451 -0400", hash_original_method = "9FD315390CEABDE5B2497E2EE78C905A", hash_generated_method = "267373F481F3A04D55725F51391EFFC9")
     public void onActionModeFinished(ActionMode mode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -1176,13 +1165,11 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.621 -0400", hash_original_method = "2C0F3C4A58B092DBFC10EA72C5A7ED76", hash_generated_method = "BE39D9BAB46F36FEC970FE4E8280FB24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.452 -0400", hash_original_method = "2C0F3C4A58B092DBFC10EA72C5A7ED76", hash_generated_method = "0F9CBC496C7C0F5148E4DBCC6C89BA27")
     private ComponentName getAssociatedActivity() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_823389696 = null; //Variable for return #1
-        Activity activity;
-        activity = mOwnerActivity;
-        Context context;
-        context = getContext();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1465013391 = null; //Variable for return #1
+        Activity activity = mOwnerActivity;
+        Context context = getContext();
         {
             {
                 activity = (Activity) context;
@@ -1193,9 +1180,9 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
                         null;
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_823389696 = activity == null ? null : activity.getComponentName();
-        varB4EAC82CA7396A68D541C85D26508E83_823389696.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_823389696;
+        varB4EAC82CA7396A68D541C85D26508E83_1465013391 = activity == null ? null : activity.getComponentName();
+        varB4EAC82CA7396A68D541C85D26508E83_1465013391.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1465013391;
         // ---------- Original Method ----------
         //Activity activity = mOwnerActivity;
         //Context context = getContext();
@@ -1212,7 +1199,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.649 -0400", hash_original_method = "18F720E0A5C2702D89E6608BD6B708CA", hash_generated_method = "3C2EA7DA6ECB94A09F7FB8C9056E4114")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.452 -0400", hash_original_method = "18F720E0A5C2702D89E6608BD6B708CA", hash_generated_method = "3C2EA7DA6ECB94A09F7FB8C9056E4114")
     public void takeKeyEvents(boolean get) {
         mWindow.takeKeyEvents(get);
         addTaint(get);
@@ -1221,18 +1208,18 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.660 -0400", hash_original_method = "3CDF417FCD4F33EAE6CFCF0FB6D583A8", hash_generated_method = "32320F4291C2A516B24C08CFF043F4C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.453 -0400", hash_original_method = "3CDF417FCD4F33EAE6CFCF0FB6D583A8", hash_generated_method = "70AD9333853CD5425A08D591E25FADCF")
     public final boolean requestWindowFeature(int featureId) {
-        boolean varB82514052F40771017139C27F50D7D45_79251195 = (getWindow().requestFeature(featureId));
+        boolean varB82514052F40771017139C27F50D7D45_281048796 = (getWindow().requestFeature(featureId));
         addTaint(featureId);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1675869568 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1675869568;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502724875 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1502724875;
         // ---------- Original Method ----------
         //return getWindow().requestFeature(featureId);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.675 -0400", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "1D84D45038FD5866F8926E34F140C5A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.454 -0400", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "1D84D45038FD5866F8926E34F140C5A2")
     public final void setFeatureDrawableResource(int featureId, int resId) {
         getWindow().setFeatureDrawableResource(featureId, resId);
         addTaint(featureId);
@@ -1242,7 +1229,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.677 -0400", hash_original_method = "2E53659D6309BF8C5C8E8AD82BD6A577", hash_generated_method = "2B27B06D57220A2D7BDBB2E34E6E392C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.454 -0400", hash_original_method = "2E53659D6309BF8C5C8E8AD82BD6A577", hash_generated_method = "2B27B06D57220A2D7BDBB2E34E6E392C")
     public final void setFeatureDrawableUri(int featureId, Uri uri) {
         getWindow().setFeatureDrawableUri(featureId, uri);
         addTaint(featureId);
@@ -1252,7 +1239,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.679 -0400", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "F557D4B7A04B56974C87A9013515B72F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.455 -0400", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "F557D4B7A04B56974C87A9013515B72F")
     public final void setFeatureDrawable(int featureId, Drawable drawable) {
         getWindow().setFeatureDrawable(featureId, drawable);
         addTaint(featureId);
@@ -1262,7 +1249,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.689 -0400", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "04310BD6B9B4218E4C6AF4E9D6650F61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.456 -0400", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "04310BD6B9B4218E4C6AF4E9D6650F61")
     public final void setFeatureDrawableAlpha(int featureId, int alpha) {
         getWindow().setFeatureDrawableAlpha(featureId, alpha);
         addTaint(featureId);
@@ -1272,18 +1259,18 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.708 -0400", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "8DE819797ECC6BF7FB983DE610EB1397")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.458 -0400", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "D16237912EDAFEA5B27510467055F83B")
     public LayoutInflater getLayoutInflater() {
-        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_2047158963 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2047158963 = getWindow().getLayoutInflater();
-        varB4EAC82CA7396A68D541C85D26508E83_2047158963.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2047158963;
+        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_721905880 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_721905880 = getWindow().getLayoutInflater();
+        varB4EAC82CA7396A68D541C85D26508E83_721905880.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_721905880;
         // ---------- Original Method ----------
         //return getWindow().getLayoutInflater();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.714 -0400", hash_original_method = "C80CDCB014C953B0801E95FEB1706C5F", hash_generated_method = "99A166D313D0204F9E1B3BB77DF8F04A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.459 -0400", hash_original_method = "C80CDCB014C953B0801E95FEB1706C5F", hash_generated_method = "99A166D313D0204F9E1B3BB77DF8F04A")
     public void setCancelable(boolean flag) {
         mCancelable = flag;
         // ---------- Original Method ----------
@@ -1291,7 +1278,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.715 -0400", hash_original_method = "BD7DFECDBEA3F81451B9076CEFC17564", hash_generated_method = "E597A25CAB63B5D5D20442EDE74A5230")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.459 -0400", hash_original_method = "BD7DFECDBEA3F81451B9076CEFC17564", hash_generated_method = "E597A25CAB63B5D5D20442EDE74A5230")
     public void setCanceledOnTouchOutside(boolean cancel) {
         {
             mCancelable = true;
@@ -1306,7 +1293,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.717 -0400", hash_original_method = "4DD1D51C0E16D279CD855F2D66BA21A6", hash_generated_method = "04D5A6A3EA2A41A883B809CB24D2E65F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.460 -0400", hash_original_method = "4DD1D51C0E16D279CD855F2D66BA21A6", hash_generated_method = "04D5A6A3EA2A41A883B809CB24D2E65F")
     public void cancel() {
         {
             mCanceled = true;
@@ -1322,7 +1309,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.739 -0400", hash_original_method = "B6A3C715E726D4D77D298D569C13057A", hash_generated_method = "7A261DB80575EF8DC8F845C992F9F763")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.460 -0400", hash_original_method = "B6A3C715E726D4D77D298D569C13057A", hash_generated_method = "7A261DB80575EF8DC8F845C992F9F763")
     public void setOnCancelListener(final OnCancelListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
@@ -1349,7 +1336,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.742 -0400", hash_original_method = "774019D9ADE46FB9924B78D145C17F36", hash_generated_method = "3D496AF9B1B4D7260FDDA232E220A62F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.461 -0400", hash_original_method = "774019D9ADE46FB9924B78D145C17F36", hash_generated_method = "3D496AF9B1B4D7260FDDA232E220A62F")
     public void setCancelMessage(final Message msg) {
         mCancelMessage = msg;
         // ---------- Original Method ----------
@@ -1357,7 +1344,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.767 -0400", hash_original_method = "464A84E289A7DD535A8EA3034BC5D33F", hash_generated_method = "A0B01C16C706719BDDBBD3355AEA722B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.461 -0400", hash_original_method = "464A84E289A7DD535A8EA3034BC5D33F", hash_generated_method = "A0B01C16C706719BDDBBD3355AEA722B")
     public void setOnDismissListener(final OnDismissListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
@@ -1384,7 +1371,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.772 -0400", hash_original_method = "0B69163DC80B46ACDA2709DE4C77DC2F", hash_generated_method = "1FB93D4E451DF60586CA95B02D8839CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.462 -0400", hash_original_method = "0B69163DC80B46ACDA2709DE4C77DC2F", hash_generated_method = "1FB93D4E451DF60586CA95B02D8839CF")
     public void setOnShowListener(OnShowListener listener) {
         {
             mShowMessage = mListenersHandler.obtainMessage(SHOW, listener);
@@ -1401,7 +1388,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.785 -0400", hash_original_method = "2BD742B46509FC81ABA0DF4EC8F37AEC", hash_generated_method = "86E89A398CB75A38D126DF12BF88B627")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.462 -0400", hash_original_method = "2BD742B46509FC81ABA0DF4EC8F37AEC", hash_generated_method = "86E89A398CB75A38D126DF12BF88B627")
     public void setDismissMessage(final Message msg) {
         mDismissMessage = msg;
         // ---------- Original Method ----------
@@ -1409,7 +1396,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.787 -0400", hash_original_method = "4322D13EDCAAC15D5143567F42FC68A2", hash_generated_method = "A3ED50597C2A5B63C51740080B6C7E93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.463 -0400", hash_original_method = "4322D13EDCAAC15D5143567F42FC68A2", hash_generated_method = "16584DD95D50EDE665CF062E3298531C")
     public boolean takeCancelAndDismissListeners(String msg, final OnCancelListener cancel,
             final OnDismissListener dismiss) {
         {
@@ -1420,8 +1407,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         mCancelAndDismissTaken = msg;
         addTaint(cancel.getTaint());
         addTaint(dismiss.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630924742 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630924742;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188632570 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_188632570;
         // ---------- Original Method ----------
         //if (mCancelAndDismissTaken != null) {
             //mCancelAndDismissTaken = null;
@@ -1435,7 +1422,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.804 -0400", hash_original_method = "70729F29EB37CCBEC739A5986214C32F", hash_generated_method = "2764BD226534A1A95BF3BECEF1136ABC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.463 -0400", hash_original_method = "70729F29EB37CCBEC739A5986214C32F", hash_generated_method = "2764BD226534A1A95BF3BECEF1136ABC")
     public final void setVolumeControlStream(int streamType) {
         getWindow().setVolumeControlStream(streamType);
         addTaint(streamType);
@@ -1444,17 +1431,17 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.805 -0400", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "8B963C34913930F6A5D87AFD87140BE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.464 -0400", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "55A524AFB33FA561AF09B55712A0F84A")
     public final int getVolumeControlStream() {
-        int var10019DD6073F3F6675C482019A78518D_350508006 = (getWindow().getVolumeControlStream());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145738022 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145738022;
+        int var10019DD6073F3F6675C482019A78518D_301198917 = (getWindow().getVolumeControlStream());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624949681 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624949681;
         // ---------- Original Method ----------
         //return getWindow().getVolumeControlStream();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.807 -0400", hash_original_method = "A9C3EE1B48BA32717B6024C41DF4E1F6", hash_generated_method = "EEA474A83FE4C7A6A402FA07BCAB4982")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.464 -0400", hash_original_method = "A9C3EE1B48BA32717B6024C41DF4E1F6", hash_generated_method = "EEA474A83FE4C7A6A402FA07BCAB4982")
     public void setOnKeyListener(final OnKeyListener onKeyListener) {
         mOnKeyListener = onKeyListener;
         // ---------- Original Method ----------
@@ -1463,11 +1450,11 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
 
     
     private static final class ListenersHandler extends Handler {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.832 -0400", hash_original_field = "58806F2D99FD4DF33CF42E0C232738D7", hash_generated_field = "436872B12AE04B06D18A845CB0719BC2")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.465 -0400", hash_original_field = "58806F2D99FD4DF33CF42E0C232738D7", hash_generated_field = "436872B12AE04B06D18A845CB0719BC2")
 
         private WeakReference<DialogInterface> mDialog;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.835 -0400", hash_original_method = "92DAC0D6E122198BF26AB724936B6539", hash_generated_method = "DF7B51E0F2F5846DF16713C1A26DD53E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.465 -0400", hash_original_method = "92DAC0D6E122198BF26AB724936B6539", hash_generated_method = "DF7B51E0F2F5846DF16713C1A26DD53E")
         public  ListenersHandler(Dialog dialog) {
             mDialog = new WeakReference<DialogInterface>(dialog);
             // ---------- Original Method ----------
@@ -1475,7 +1462,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.838 -0400", hash_original_method = "0AC2BA822DE6E333F562D01CFB6CE49A", hash_generated_method = "2828C4C27220D31C29AC9562F6AB3134")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_method = "0AC2BA822DE6E333F562D01CFB6CE49A", hash_generated_method = "2828C4C27220D31C29AC9562F6AB3134")
         @Override
         public void handleMessage(Message msg) {
             //Begin case DISMISS 
@@ -1507,23 +1494,23 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.839 -0400", hash_original_field = "C8104907E2C15136387E1FF354F2E289", hash_generated_field = "AF1420DC8DD054A8C8AC9FF328783A41")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "C8104907E2C15136387E1FF354F2E289", hash_generated_field = "EFC22AB7F88AB7E35035F4D3FC081168")
 
-    private static String TAG = "Dialog";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.839 -0400", hash_original_field = "50C73827946947CD861F4B61AEA55633", hash_generated_field = "8BC158EB29226ED298B9C26CA4FB1ED9")
+    private static final String TAG = "Dialog";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "50C73827946947CD861F4B61AEA55633", hash_generated_field = "214E1AE6D64D144B8D5F29D5AF8A5A07")
 
-    private static int DISMISS = 0x43;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.856 -0400", hash_original_field = "9BA42FA53C623D78B24D53CDAE971C70", hash_generated_field = "572F635B5B3BBB4A58234F51E1654B73")
+    private static final int DISMISS = 0x43;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "9BA42FA53C623D78B24D53CDAE971C70", hash_generated_field = "5FAD2102A44A31CE5E01758518DF50F5")
 
-    private static int CANCEL = 0x44;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.857 -0400", hash_original_field = "7A4F616BE8122BA90E30406327492376", hash_generated_field = "0F3656B85C89B3B168121AEF556F3414")
+    private static final int CANCEL = 0x44;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "7A4F616BE8122BA90E30406327492376", hash_generated_field = "12A0D52245758771AF8948C47070B9C1")
 
-    private static int SHOW = 0x45;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.857 -0400", hash_original_field = "9D0239578906B64ECBA46B3D33341F50", hash_generated_field = "16F80A0AE9CF6786FF2C798745A9C593")
+    private static final int SHOW = 0x45;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "9D0239578906B64ECBA46B3D33341F50", hash_generated_field = "A896FC35ACED801674ADC56E7BBC39CB")
 
-    private static String DIALOG_SHOWING_TAG = "android:dialogShowing";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.858 -0400", hash_original_field = "9B9870DF294A5143109BE6CEAFCC0E45", hash_generated_field = "9378C8E09580AD3D596663DC434D50C2")
+    private static final String DIALOG_SHOWING_TAG = "android:dialogShowing";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.467 -0400", hash_original_field = "9B9870DF294A5143109BE6CEAFCC0E45", hash_generated_field = "7504B7324AA77CD343365D491A1E51D5")
 
-    private static String DIALOG_HIERARCHY_TAG = "android:dialogHierarchy";
+    private static final String DIALOG_HIERARCHY_TAG = "android:dialogHierarchy";
 }
 

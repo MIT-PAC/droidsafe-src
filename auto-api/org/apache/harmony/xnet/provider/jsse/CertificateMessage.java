@@ -16,17 +16,16 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 
 public class CertificateMessage extends Message {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.404 -0400", hash_original_field = "5C99E9C56C11BC780A27097694149CBA", hash_generated_field = "9B4CC3CF13ACA419D4B9B38AD77D3648")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.663 -0400", hash_original_field = "5C99E9C56C11BC780A27097694149CBA", hash_generated_field = "9B4CC3CF13ACA419D4B9B38AD77D3648")
 
     X509Certificate[] certs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.404 -0400", hash_original_field = "1BADBD8AD1CD27E7BFE9874C7A4827EB", hash_generated_field = "57935D50E807950C7290BDE1C251A925")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.663 -0400", hash_original_field = "1BADBD8AD1CD27E7BFE9874C7A4827EB", hash_generated_field = "57935D50E807950C7290BDE1C251A925")
 
     byte[][] encoded_certs;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.417 -0400", hash_original_method = "3441A786FC97408CA6232DAAE3F595DF", hash_generated_method = "0C618BEB7D70527927D39EA560DD165D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.663 -0400", hash_original_method = "3441A786FC97408CA6232DAAE3F595DF", hash_generated_method = "2E32D12CDEB20455FDA9A65C798DC95C")
     public  CertificateMessage(HandshakeIODataStream in, int length) throws IOException {
-        int l;
-        l = in.readUint24();
+        int l = in.readUint24();
         {
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR,
@@ -45,12 +44,9 @@ public class CertificateMessage extends Message {
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR", e);
         } //End block
-        ArrayList<X509Certificate> certsList;
-        certsList = new ArrayList<X509Certificate>();
-        int size;
-        size = 0;
-        int enc_size;
-        enc_size = 0;
+        ArrayList<X509Certificate> certsList = new ArrayList<X509Certificate>();
+        int size = 0;
+        int enc_size = 0;
         {
             size = in.readUint24();
             l -= 3;
@@ -77,7 +73,7 @@ public class CertificateMessage extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.419 -0400", hash_original_method = "A869E13906426823448DC988F0CB5F8A", hash_generated_method = "1C6B875D377CA6915A3A9D71F0CCE836")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.664 -0400", hash_original_method = "A869E13906426823448DC988F0CB5F8A", hash_generated_method = "5D74D22062F78243BD9A385D85CE0441")
     public  CertificateMessage(X509Certificate[] certs) {
         {
             this.certs = new X509Certificate[0];
@@ -88,8 +84,7 @@ public class CertificateMessage extends Message {
         {
             encoded_certs = new byte[certs.length][];
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     try 
                     {
@@ -105,8 +100,7 @@ public class CertificateMessage extends Message {
         } //End block
         length = 3 + 3 * encoded_certs.length;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 length += encoded_certs[i].length;
             } //End block
@@ -137,16 +131,14 @@ public class CertificateMessage extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.426 -0400", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "5F82DDABC1316F0102E04CB0ABD4E501")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.665 -0400", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "8B617EFC2BF9F120263BDC8492C54326")
     @Override
     public void send(HandshakeIODataStream out) {
-        int total_length;
-        total_length = 0;
+        int total_length = 0;
         {
             encoded_certs = new byte[certs.length][];
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     try 
                     {
@@ -162,16 +154,14 @@ public class CertificateMessage extends Message {
         } //End block
         total_length = 3 * encoded_certs.length;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 total_length += encoded_certs[i].length;
             } //End block
         } //End collapsed parenthetic
         out.writeUint24(total_length);
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 out.writeUint24(encoded_certs[i].length);
                 out.write(encoded_certs[i]);
@@ -183,22 +173,22 @@ public class CertificateMessage extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.427 -0400", hash_original_method = "B57A0154C34F76610C0A1E207F806B75", hash_generated_method = "AA1587BBBC4BE5659556BBB8CC9601A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.666 -0400", hash_original_method = "B57A0154C34F76610C0A1E207F806B75", hash_generated_method = "5475A7AF81B607BB2AF7872CD6A55B3A")
     public String getAuthType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_978705663 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_978705663 = certs[0].getPublicKey().getAlgorithm();
-        varB4EAC82CA7396A68D541C85D26508E83_978705663.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_978705663;
+        String varB4EAC82CA7396A68D541C85D26508E83_881853311 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_881853311 = certs[0].getPublicKey().getAlgorithm();
+        varB4EAC82CA7396A68D541C85D26508E83_881853311.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_881853311;
         // ---------- Original Method ----------
         //return certs[0].getPublicKey().getAlgorithm();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.430 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "015EBE5C7B09824CCCDB2DC3C7DF8D23")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.666 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "C373CA8E755119A8672F373431C29AB5")
     @Override
     public int getType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711403206 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711403206;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140631166 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140631166;
         // ---------- Original Method ----------
         //return Handshake.CERTIFICATE;
     }

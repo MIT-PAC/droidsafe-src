@@ -35,11 +35,11 @@ import java.util.List;
 import java.util.Locale;
 
 public class TtsEngines {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.975 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.444 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.987 -0400", hash_original_method = "E276758190DBE13181DF9330ABF915FA", hash_generated_method = "BBA0A4812D4E67B5F55600D1B9BB6415")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.445 -0400", hash_original_method = "E276758190DBE13181DF9330ABF915FA", hash_generated_method = "BBA0A4812D4E67B5F55600D1B9BB6415")
     public  TtsEngines(Context ctx) {
         mContext = ctx;
         // ---------- Original Method ----------
@@ -47,15 +47,14 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.987 -0400", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "4C97BC354ECAF9DB136A32B8ABFF4E42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.445 -0400", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "D643593D2B80A609089696EFB065B0B9")
     public String getDefaultEngine() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1684510666 = null; //Variable for return #1
-        String engine;
-        engine = getString(mContext.getContentResolver(),
+        String varB4EAC82CA7396A68D541C85D26508E83_1324162644 = null; //Variable for return #1
+        String engine = getString(mContext.getContentResolver(),
                 Settings.Secure.TTS_DEFAULT_SYNTH);
-        varB4EAC82CA7396A68D541C85D26508E83_1684510666 = isEngineInstalled(engine) ? engine : getHighestRankedEngineName();
-        varB4EAC82CA7396A68D541C85D26508E83_1684510666.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1684510666;
+        varB4EAC82CA7396A68D541C85D26508E83_1324162644 = isEngineInstalled(engine) ? engine : getHighestRankedEngineName();
+        varB4EAC82CA7396A68D541C85D26508E83_1324162644.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1324162644;
         // ---------- Original Method ----------
         //String engine = getString(mContext.getContentResolver(),
                 //Settings.Secure.TTS_DEFAULT_SYNTH);
@@ -63,30 +62,29 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.988 -0400", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "32CB0492379223D4293E57FD54301CEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.446 -0400", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "1415C61D89745054FC1C5A2EA7E64A34")
     public String getHighestRankedEngineName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1159911283 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_723299969 = null; //Variable for return #2
-        List<EngineInfo> engines;
-        engines = getEngines();
+        String varB4EAC82CA7396A68D541C85D26508E83_2132121950 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_296480276 = null; //Variable for return #2
+        final List<EngineInfo> engines = getEngines();
         {
-            boolean var1819F7731113A3DEF2529EB7CF4499F7_197757081 = (engines.size() > 0 && engines.get(0).system);
+            boolean var1819F7731113A3DEF2529EB7CF4499F7_756545012 = (engines.size() > 0 && engines.get(0).system);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1159911283 = engines.get(0).name;
+                varB4EAC82CA7396A68D541C85D26508E83_2132121950 = engines.get(0).name;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_723299969 = null;
-        String varA7E53CE21691AB073D9660D615818899_842251788; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_296480276 = null;
+        String varA7E53CE21691AB073D9660D615818899_1433199587; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_842251788 = varB4EAC82CA7396A68D541C85D26508E83_1159911283;
+                varA7E53CE21691AB073D9660D615818899_1433199587 = varB4EAC82CA7396A68D541C85D26508E83_2132121950;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_842251788 = varB4EAC82CA7396A68D541C85D26508E83_723299969;
+                varA7E53CE21691AB073D9660D615818899_1433199587 = varB4EAC82CA7396A68D541C85D26508E83_296480276;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_842251788.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_842251788;
+        varA7E53CE21691AB073D9660D615818899_1433199587.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1433199587;
         // ---------- Original Method ----------
         //final List<EngineInfo> engines = getEngines();
         //if (engines.size() > 0 && engines.get(0).system) {
@@ -96,37 +94,34 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.989 -0400", hash_original_method = "A5DBD894AAA6A5E1130078152956054E", hash_generated_method = "A52540360D6056302F6F486EF2A0B7B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.447 -0400", hash_original_method = "A5DBD894AAA6A5E1130078152956054E", hash_generated_method = "652BB4545B4B6735325473C49F03EF8C")
     public EngineInfo getEngineInfo(String packageName) {
-        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_137971039 = null; //Variable for return #1
-        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_2109348121 = null; //Variable for return #2
-        PackageManager pm;
-        pm = mContext.getPackageManager();
-        Intent intent;
-        intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
+        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_1966631029 = null; //Variable for return #1
+        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_1392118279 = null; //Variable for return #2
+        PackageManager pm = mContext.getPackageManager();
+        Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
         intent.setPackage(packageName);
-        List<ResolveInfo> resolveInfos;
-        resolveInfos = pm.queryIntentServices(intent,
+        List<ResolveInfo> resolveInfos = pm.queryIntentServices(intent,
                 PackageManager.MATCH_DEFAULT_ONLY);
         {
-            boolean var9DD3933FB7A2F34140789DF644619074_73391200 = (resolveInfos != null && resolveInfos.size() == 1);
+            boolean var9DD3933FB7A2F34140789DF644619074_591534322 = (resolveInfos != null && resolveInfos.size() == 1);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_137971039 = getEngineInfo(resolveInfos.get(0), pm);
+                varB4EAC82CA7396A68D541C85D26508E83_1966631029 = getEngineInfo(resolveInfos.get(0), pm);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_2109348121 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1392118279 = null;
         addTaint(packageName.getTaint());
-        EngineInfo varA7E53CE21691AB073D9660D615818899_1127838162; //Final return value
+        EngineInfo varA7E53CE21691AB073D9660D615818899_1929516886; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1127838162 = varB4EAC82CA7396A68D541C85D26508E83_137971039;
+                varA7E53CE21691AB073D9660D615818899_1929516886 = varB4EAC82CA7396A68D541C85D26508E83_1966631029;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1127838162 = varB4EAC82CA7396A68D541C85D26508E83_2109348121;
+                varA7E53CE21691AB073D9660D615818899_1929516886 = varB4EAC82CA7396A68D541C85D26508E83_1392118279;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1127838162.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1127838162;
+        varA7E53CE21691AB073D9660D615818899_1929516886.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1929516886;
         // ---------- Original Method ----------
         //PackageManager pm = mContext.getPackageManager();
         //Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
@@ -140,44 +135,39 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.994 -0400", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "8B202EDE5961AA2D4DB269635392D726")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.450 -0400", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "BAF401A4389E1DC0D5C80BCAB0861E6B")
     public List<EngineInfo> getEngines() {
-        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_875395544 = null; //Variable for return #1
-        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_387111567 = null; //Variable for return #2
-        PackageManager pm;
-        pm = mContext.getPackageManager();
-        Intent intent;
-        intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
-        List<ResolveInfo> resolveInfos;
-        resolveInfos = pm.queryIntentServices(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        varB4EAC82CA7396A68D541C85D26508E83_875395544 = Collections.emptyList();
-        List<EngineInfo> engines;
-        engines = new ArrayList<EngineInfo>(resolveInfos.size());
+        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_1917131985 = null; //Variable for return #1
+        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_1164059735 = null; //Variable for return #2
+        PackageManager pm = mContext.getPackageManager();
+        Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
+        List<ResolveInfo> resolveInfos = pm.queryIntentServices(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        varB4EAC82CA7396A68D541C85D26508E83_1917131985 = Collections.emptyList();
+        List<EngineInfo> engines = new ArrayList<EngineInfo>(resolveInfos.size());
         {
-            Iterator<ResolveInfo> varA26DD4CAE8F7472DF523963F56C59876_1860743639 = (resolveInfos).iterator();
-            varA26DD4CAE8F7472DF523963F56C59876_1860743639.hasNext();
-            ResolveInfo resolveInfo = varA26DD4CAE8F7472DF523963F56C59876_1860743639.next();
+            Iterator<ResolveInfo> varA26DD4CAE8F7472DF523963F56C59876_15060555 = (resolveInfos).iterator();
+            varA26DD4CAE8F7472DF523963F56C59876_15060555.hasNext();
+            ResolveInfo resolveInfo = varA26DD4CAE8F7472DF523963F56C59876_15060555.next();
             {
-                EngineInfo engine;
-                engine = getEngineInfo(resolveInfo, pm);
+                EngineInfo engine = getEngineInfo(resolveInfo, pm);
                 {
                     engines.add(engine);
                 } //End block
             } //End block
         } //End collapsed parenthetic
         Collections.sort(engines, EngineInfoComparator.INSTANCE);
-        varB4EAC82CA7396A68D541C85D26508E83_387111567 = engines;
-        List<EngineInfo> varA7E53CE21691AB073D9660D615818899_1983200616; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1164059735 = engines;
+        List<EngineInfo> varA7E53CE21691AB073D9660D615818899_935276861; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1983200616 = varB4EAC82CA7396A68D541C85D26508E83_875395544;
+                varA7E53CE21691AB073D9660D615818899_935276861 = varB4EAC82CA7396A68D541C85D26508E83_1917131985;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1983200616 = varB4EAC82CA7396A68D541C85D26508E83_387111567;
+                varA7E53CE21691AB073D9660D615818899_935276861 = varB4EAC82CA7396A68D541C85D26508E83_1164059735;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1983200616.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1983200616;
+        varA7E53CE21691AB073D9660D615818899_935276861.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_935276861;
         // ---------- Original Method ----------
         //PackageManager pm = mContext.getPackageManager();
         //Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
@@ -196,25 +186,24 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.994 -0400", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "1C54E78B1AD7FC12052A2816F312F22A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.450 -0400", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "7983B7022CC8422F8943622F260715C4")
     private boolean isSystemEngine(ServiceInfo info) {
-        ApplicationInfo appInfo;
-        appInfo = info.applicationInfo;
+        final ApplicationInfo appInfo = info.applicationInfo;
         addTaint(info.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1053319813 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1053319813;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_632401774 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_632401774;
         // ---------- Original Method ----------
         //final ApplicationInfo appInfo = info.applicationInfo;
         //return appInfo != null && (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.020 -0400", hash_original_method = "6576B103C8DDCA7E7096DC36C32D66CE", hash_generated_method = "1C49FA45686D955CAAFB0E71B5345F75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.451 -0400", hash_original_method = "6576B103C8DDCA7E7096DC36C32D66CE", hash_generated_method = "8511D648A415128570C115E168310EC3")
     public boolean isEngineInstalled(String engine) {
-        boolean varD11D9232D99EE58E44DC1B185B61381D_675278440 = (getEngineInfo(engine) != null);
+        boolean varD11D9232D99EE58E44DC1B185B61381D_462229730 = (getEngineInfo(engine) != null);
         addTaint(engine.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_846102502 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_846102502;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1197516295 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1197516295;
         // ---------- Original Method ----------
         //if (engine == null) {
             //return false;
@@ -223,48 +212,42 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.021 -0400", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "5EB5F0FCFAA635FCA29BBA135BACDB00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.451 -0400", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "7B28501A83D77AA53442E7E83AFA2B61")
     public Intent getSettingsIntent(String engine) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_619239144 = null; //Variable for return #1
-        Intent varB4EAC82CA7396A68D541C85D26508E83_126098291 = null; //Variable for return #2
-        PackageManager pm;
-        pm = mContext.getPackageManager();
-        Intent intent;
-        intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
+        Intent varB4EAC82CA7396A68D541C85D26508E83_650323356 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_2023708624 = null; //Variable for return #2
+        PackageManager pm = mContext.getPackageManager();
+        Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
         intent.setPackage(engine);
-        List<ResolveInfo> resolveInfos;
-        resolveInfos = pm.queryIntentServices(intent,
+        List<ResolveInfo> resolveInfos = pm.queryIntentServices(intent,
                 PackageManager.MATCH_DEFAULT_ONLY | PackageManager.GET_META_DATA);
         {
-            boolean var9DD3933FB7A2F34140789DF644619074_633871177 = (resolveInfos != null && resolveInfos.size() == 1);
+            boolean var9DD3933FB7A2F34140789DF644619074_446635137 = (resolveInfos != null && resolveInfos.size() == 1);
             {
-                ServiceInfo service;
-                service = resolveInfos.get(0).serviceInfo;
+                ServiceInfo service = resolveInfos.get(0).serviceInfo;
                 {
-                    String settings;
-                    settings = settingsActivityFromServiceInfo(service, pm);
+                    final String settings = settingsActivityFromServiceInfo(service, pm);
                     {
-                        Intent i;
-                        i = new Intent();
+                        Intent i = new Intent();
                         i.setClassName(engine, settings);
-                        varB4EAC82CA7396A68D541C85D26508E83_619239144 = i;
+                        varB4EAC82CA7396A68D541C85D26508E83_650323356 = i;
                     } //End block
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_126098291 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_2023708624 = null;
         addTaint(engine.getTaint());
-        Intent varA7E53CE21691AB073D9660D615818899_849780105; //Final return value
+        Intent varA7E53CE21691AB073D9660D615818899_482659564; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_849780105 = varB4EAC82CA7396A68D541C85D26508E83_619239144;
+                varA7E53CE21691AB073D9660D615818899_482659564 = varB4EAC82CA7396A68D541C85D26508E83_650323356;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_849780105 = varB4EAC82CA7396A68D541C85D26508E83_126098291;
+                varA7E53CE21691AB073D9660D615818899_482659564 = varB4EAC82CA7396A68D541C85D26508E83_2023708624;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_849780105.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_849780105;
+        varA7E53CE21691AB073D9660D615818899_482659564.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_482659564;
         // ---------- Original Method ----------
         //PackageManager pm = mContext.getPackageManager();
         //Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
@@ -286,62 +269,57 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.039 -0400", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "1B4BB7522CC26C4A2F6DB809DF68853D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.453 -0400", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "D11D5AB3988889F49DA856916DFEED20")
     private String settingsActivityFromServiceInfo(ServiceInfo si, PackageManager pm) {
-        String varB4EAC82CA7396A68D541C85D26508E83_936244219 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1021830410 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1532758148 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_738226027 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1102241141 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1611372228 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_648678421 = null; //Variable for return #7
-        XmlResourceParser parser;
-        parser = null;
+        String varB4EAC82CA7396A68D541C85D26508E83_1838170410 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_638096543 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_991848534 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_887935284 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1488528848 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_740552779 = null; //Variable for return #6
+        String varB4EAC82CA7396A68D541C85D26508E83_60471548 = null; //Variable for return #7
+        XmlResourceParser parser = null;
         try 
         {
             parser = si.loadXmlMetaData(pm, TextToSpeech.Engine.SERVICE_META_DATA);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_936244219 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1838170410 = null;
             } //End block
-            Resources res;
-            res = pm.getResourcesForApplication(si.applicationInfo);
+            final Resources res = pm.getResourcesForApplication(si.applicationInfo);
             int type;
             {
-                boolean var670879A2F0FFF8F0B25FD974769B483B_2022855485 = ((type = parser.next()) != XmlResourceParser.END_DOCUMENT);
+                boolean var670879A2F0FFF8F0B25FD974769B483B_481984128 = ((type = parser.next()) != XmlResourceParser.END_DOCUMENT);
                 {
                     {
                         {
-                            boolean varFA11C2F42D95D261E4941ADF07065428_1734522605 = (!XML_TAG_NAME.equals(parser.getName()));
+                            boolean varFA11C2F42D95D261E4941ADF07065428_1124716689 = (!XML_TAG_NAME.equals(parser.getName()));
                             {
-                                varB4EAC82CA7396A68D541C85D26508E83_1021830410 = null;
+                                varB4EAC82CA7396A68D541C85D26508E83_638096543 = null;
                             } //End block
                         } //End collapsed parenthetic
-                        AttributeSet attrs;
-                        attrs = Xml.asAttributeSet(parser);
-                        TypedArray array;
-                        array = res.obtainAttributes(attrs,
+                        final AttributeSet attrs = Xml.asAttributeSet(parser);
+                        final TypedArray array = res.obtainAttributes(attrs,
                             com.android.internal.R.styleable.TextToSpeechEngine);
-                        String settings;
-                        settings = array.getString(
+                        final String settings = array.getString(
                             com.android.internal.R.styleable.TextToSpeechEngine_settingsActivity);
                         array.recycle();
-                        varB4EAC82CA7396A68D541C85D26508E83_1532758148 = settings;
+                        varB4EAC82CA7396A68D541C85D26508E83_991848534 = settings;
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_738226027 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_887935284 = null;
         } //End block
         catch (NameNotFoundException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1102241141 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1488528848 = null;
         } //End block
         catch (XmlPullParserException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1611372228 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_740552779 = null;
         } //End block
         catch (IOException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_648678421 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_60471548 = null;
         } //End block
         finally 
         {
@@ -351,69 +329,66 @@ public class TtsEngines {
         } //End block
         addTaint(si.getTaint());
         addTaint(pm.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_2127331688; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_394978232; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_936244219;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_1838170410;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_1021830410;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_638096543;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_1532758148;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_991848534;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_738226027;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_887935284;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_1102241141;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_1488528848;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_1611372228;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_740552779;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2127331688 = varB4EAC82CA7396A68D541C85D26508E83_648678421;
+                varA7E53CE21691AB073D9660D615818899_394978232 = varB4EAC82CA7396A68D541C85D26508E83_60471548;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2127331688.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2127331688;
+        varA7E53CE21691AB073D9660D615818899_394978232.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_394978232;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.040 -0400", hash_original_method = "AAFB3DF5C9862013F914C97CA1EC4890", hash_generated_method = "81C3DF5D8A4A1BCCCDFD6AAB3AA5D46F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.454 -0400", hash_original_method = "AAFB3DF5C9862013F914C97CA1EC4890", hash_generated_method = "C3BBA2A6EAA2AACB41D6AE93A23F45E1")
     private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
-        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_565401147 = null; //Variable for return #1
-        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_1320322603 = null; //Variable for return #2
-        ServiceInfo service;
-        service = resolve.serviceInfo;
+        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_1743926769 = null; //Variable for return #1
+        EngineInfo varB4EAC82CA7396A68D541C85D26508E83_959249140 = null; //Variable for return #2
+        ServiceInfo service = resolve.serviceInfo;
         {
-            EngineInfo engine;
-            engine = new EngineInfo();
+            EngineInfo engine = new EngineInfo();
             engine.name = service.packageName;
-            CharSequence label;
-            label = service.loadLabel(pm);
+            CharSequence label = service.loadLabel(pm);
             engine.label = TextUtils.isEmpty(label) ? engine.name : label.toString();
             engine.icon = service.getIconResource();
             engine.priority = resolve.priority;
             engine.system = isSystemEngine(service);
-            varB4EAC82CA7396A68D541C85D26508E83_565401147 = engine;
+            varB4EAC82CA7396A68D541C85D26508E83_1743926769 = engine;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1320322603 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_959249140 = null;
         addTaint(resolve.getTaint());
         addTaint(pm.getTaint());
-        EngineInfo varA7E53CE21691AB073D9660D615818899_681735249; //Final return value
+        EngineInfo varA7E53CE21691AB073D9660D615818899_417452352; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_681735249 = varB4EAC82CA7396A68D541C85D26508E83_565401147;
+                varA7E53CE21691AB073D9660D615818899_417452352 = varB4EAC82CA7396A68D541C85D26508E83_1743926769;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_681735249 = varB4EAC82CA7396A68D541C85D26508E83_1320322603;
+                varA7E53CE21691AB073D9660D615818899_417452352 = varB4EAC82CA7396A68D541C85D26508E83_959249140;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_681735249.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_681735249;
+        varA7E53CE21691AB073D9660D615818899_417452352.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_417452352;
         // ---------- Original Method ----------
         //ServiceInfo service = resolve.serviceInfo;
         //if (service != null) {
@@ -430,24 +405,23 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.053 -0400", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "94B7DCF06487E1AE066E178F695619FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.454 -0400", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "8C946801A182CED6F0C4773F49113909")
     public String getLocalePrefForEngine(String engineName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_502862167 = null; //Variable for return #1
-        String locale;
-        locale = parseEnginePrefFromList(
+        String varB4EAC82CA7396A68D541C85D26508E83_1983215070 = null; //Variable for return #1
+        String locale = parseEnginePrefFromList(
                 getString(mContext.getContentResolver(), Settings.Secure.TTS_DEFAULT_LOCALE),
                 engineName);
         {
-            boolean var687197B3D19FCF75669D4532E67850C1_1736345552 = (TextUtils.isEmpty(locale));
+            boolean var687197B3D19FCF75669D4532E67850C1_888067568 = (TextUtils.isEmpty(locale));
             {
                 locale = getV1Locale();
             } //End block
         } //End collapsed parenthetic
         Log.d(TAG, "getLocalePrefForEngine(" + engineName + ")= " + locale);
-        varB4EAC82CA7396A68D541C85D26508E83_502862167 = locale;
+        varB4EAC82CA7396A68D541C85D26508E83_1983215070 = locale;
         addTaint(engineName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_502862167.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_502862167;
+        varB4EAC82CA7396A68D541C85D26508E83_1983215070.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1983215070;
         // ---------- Original Method ----------
         //String locale = parseEnginePrefFromList(
                 //getString(mContext.getContentResolver(), Settings.Secure.TTS_DEFAULT_LOCALE),
@@ -460,7 +434,7 @@ public class TtsEngines {
     }
 
     
-        public static String[] parseLocalePref(String pref) {
+    public static String[] parseLocalePref(String pref) {
         String[] returnVal = new String[] { "", "", ""};
         if (!TextUtils.isEmpty(pref)) {
             String[] split = pref.split(LOCALE_DELIMITER);
@@ -472,57 +446,52 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.076 -0400", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "C01106B0974563F9278593B6139A4CB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.455 -0400", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "32ACBAB2FA7340C5393340720AFB1D52")
     private String getV1Locale() {
-        String varB4EAC82CA7396A68D541C85D26508E83_797520991 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_336625171 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1371837613 = null; //Variable for return #3
-        ContentResolver cr;
-        cr = mContext.getContentResolver();
-        String lang;
-        lang = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_LANG);
-        String country;
-        country = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_COUNTRY);
-        String variant;
-        variant = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_VARIANT);
+        String varB4EAC82CA7396A68D541C85D26508E83_1617305565 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1638795011 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1276446575 = null; //Variable for return #3
+        final ContentResolver cr = mContext.getContentResolver();
+        final String lang = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_LANG);
+        final String country = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_COUNTRY);
+        final String variant = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_VARIANT);
         {
-            boolean var1A8AF987D7090BF21E59CC020666928D_56768303 = (TextUtils.isEmpty(lang));
+            boolean var1A8AF987D7090BF21E59CC020666928D_210785737 = (TextUtils.isEmpty(lang));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_797520991 = getDefaultLocale();
+                varB4EAC82CA7396A68D541C85D26508E83_1617305565 = getDefaultLocale();
             } //End block
         } //End collapsed parenthetic
-        String v1Locale;
-        v1Locale = lang;
+        String v1Locale = lang;
         {
-            boolean var1131EEE25553582BB000C21570B7E530_607288130 = (!TextUtils.isEmpty(country));
+            boolean var1131EEE25553582BB000C21570B7E530_2075185196 = (!TextUtils.isEmpty(country));
             {
                 v1Locale += LOCALE_DELIMITER + country;
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_336625171 = v1Locale;
+                varB4EAC82CA7396A68D541C85D26508E83_1638795011 = v1Locale;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var2AE2FA07CFAC0698DFBA08380E8EE573_1967511558 = (!TextUtils.isEmpty(variant));
+            boolean var2AE2FA07CFAC0698DFBA08380E8EE573_267947361 = (!TextUtils.isEmpty(variant));
             {
                 v1Locale += LOCALE_DELIMITER + variant;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1371837613 = v1Locale;
-        String varA7E53CE21691AB073D9660D615818899_1378879132; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1276446575 = v1Locale;
+        String varA7E53CE21691AB073D9660D615818899_2064356527; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1378879132 = varB4EAC82CA7396A68D541C85D26508E83_797520991;
+                varA7E53CE21691AB073D9660D615818899_2064356527 = varB4EAC82CA7396A68D541C85D26508E83_1617305565;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1378879132 = varB4EAC82CA7396A68D541C85D26508E83_336625171;
+                varA7E53CE21691AB073D9660D615818899_2064356527 = varB4EAC82CA7396A68D541C85D26508E83_1638795011;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1378879132 = varB4EAC82CA7396A68D541C85D26508E83_1371837613;
+                varA7E53CE21691AB073D9660D615818899_2064356527 = varB4EAC82CA7396A68D541C85D26508E83_1276446575;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1378879132.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1378879132;
+        varA7E53CE21691AB073D9660D615818899_2064356527.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2064356527;
         // ---------- Original Method ----------
         //final ContentResolver cr = mContext.getContentResolver();
         //final String lang = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_LANG);
@@ -544,51 +513,49 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.084 -0400", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "C30F69297A3A736402A4A291B9054B40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.457 -0400", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "5B88120D0D2E711C57A6C46623BACB75")
     private String getDefaultLocale() {
-        String varB4EAC82CA7396A68D541C85D26508E83_909742723 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1746503410 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_442774543 = null; //Variable for return #3
-        Locale locale;
-        locale = Locale.getDefault();
-        String defaultLocale;
-        defaultLocale = locale.getISO3Language();
+        String varB4EAC82CA7396A68D541C85D26508E83_1588904498 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2041742875 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2049835864 = null; //Variable for return #3
+        final Locale locale = Locale.getDefault();
+        String defaultLocale = locale.getISO3Language();
         {
-            boolean varB133EB656C0D5A870AC3D0136962B7D0_1640637902 = (TextUtils.isEmpty(defaultLocale));
+            boolean varB133EB656C0D5A870AC3D0136962B7D0_1747694694 = (TextUtils.isEmpty(defaultLocale));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_909742723 = "";
+                varB4EAC82CA7396A68D541C85D26508E83_1588904498 = "";
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var1D637D5D98C12045DF81F123BBBAD5ED_593001348 = (!TextUtils.isEmpty(locale.getISO3Country()));
+            boolean var1D637D5D98C12045DF81F123BBBAD5ED_982828602 = (!TextUtils.isEmpty(locale.getISO3Country()));
             {
                 defaultLocale += LOCALE_DELIMITER + locale.getISO3Country();
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1746503410 = defaultLocale;
+                varB4EAC82CA7396A68D541C85D26508E83_2041742875 = defaultLocale;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var3A36AF7705C26D85B1613F262B79562C_122309675 = (!TextUtils.isEmpty(locale.getVariant()));
+            boolean var3A36AF7705C26D85B1613F262B79562C_1655571975 = (!TextUtils.isEmpty(locale.getVariant()));
             {
                 defaultLocale += LOCALE_DELIMITER + locale.getVariant();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_442774543 = defaultLocale;
-        String varA7E53CE21691AB073D9660D615818899_1452935614; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_2049835864 = defaultLocale;
+        String varA7E53CE21691AB073D9660D615818899_1616003651; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1452935614 = varB4EAC82CA7396A68D541C85D26508E83_909742723;
+                varA7E53CE21691AB073D9660D615818899_1616003651 = varB4EAC82CA7396A68D541C85D26508E83_1588904498;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1452935614 = varB4EAC82CA7396A68D541C85D26508E83_1746503410;
+                varA7E53CE21691AB073D9660D615818899_1616003651 = varB4EAC82CA7396A68D541C85D26508E83_2041742875;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1452935614 = varB4EAC82CA7396A68D541C85D26508E83_442774543;
+                varA7E53CE21691AB073D9660D615818899_1616003651 = varB4EAC82CA7396A68D541C85D26508E83_2049835864;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1452935614.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1452935614;
+        varA7E53CE21691AB073D9660D615818899_1616003651.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1616003651;
         // ---------- Original Method ----------
         //final Locale locale = Locale.getDefault();
         //String defaultLocale = locale.getISO3Language();
@@ -608,7 +575,7 @@ public class TtsEngines {
     }
 
     
-        private static String parseEnginePrefFromList(String prefValue, String engineName) {
+    private static String parseEnginePrefFromList(String prefValue, String engineName) {
         if (TextUtils.isEmpty(prefValue)) {
             return null;
         }
@@ -625,17 +592,15 @@ public class TtsEngines {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.088 -0400", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "8BB13425D875E68276D7A9F92D6880B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.458 -0400", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "62F204F625F7D16D47A06B163A0A1AED")
     public synchronized void updateLocalePrefForEngine(String name, String newLocale) {
-        String prefList;
-        prefList = Settings.Secure.getString(mContext.getContentResolver(),
+        final String prefList = Settings.Secure.getString(mContext.getContentResolver(),
                 Settings.Secure.TTS_DEFAULT_LOCALE);
         {
             Log.d(TAG, "updateLocalePrefForEngine(" + name + ", " + newLocale +
                     "), originally: " + prefList);
         } //End block
-        String newPrefList;
-        newPrefList = updateValueInCommaSeparatedList(prefList,
+        final String newPrefList = updateValueInCommaSeparatedList(prefList,
                 name, newLocale);
         Log.d(TAG, "updateLocalePrefForEngine(), writing: " + newPrefList.toString());
         Settings.Secure.putString(mContext.getContentResolver(),
@@ -676,9 +641,7 @@ public class TtsEngines {
                 boolean found;
                 found = false;
                 {
-                    Iterator<String> varDE27625373240C1D73D7A1DA8ACFF196_1602869443 = (prefValues).iterator();
-                    varDE27625373240C1D73D7A1DA8ACFF196_1602869443.hasNext();
-                    String value = varDE27625373240C1D73D7A1DA8ACFF196_1602869443.next();
+                    String value = prefValues[0];
                     {
                         int delimiter;
                         delimiter = value.indexOf(':');
@@ -727,19 +690,19 @@ public class TtsEngines {
     
     private static class EngineInfoComparator implements Comparator<EngineInfo> {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.222 -0400", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "046E030CC996B69833C1997F8A404D60")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.460 -0400", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "046E030CC996B69833C1997F8A404D60")
         private  EngineInfoComparator() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "6A127E750298FE6EFFCD7A1F51E120E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "F4A15AA138A2BD8631A1CC9679F16E93")
         @Override
         public int compare(EngineInfo lhs, EngineInfo rhs) {
             addTaint(lhs.getTaint());
             addTaint(rhs.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416281039 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416281039;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_698220519 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_698220519;
             // ---------- Original Method ----------
             //if (lhs.system && !rhs.system) {
                 //return -1;
@@ -751,24 +714,24 @@ public class TtsEngines {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_field = "22942468BDA180222A2983F0C420C983", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_field = "22942468BDA180222A2983F0C420C983", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
 
         static EngineInfoComparator INSTANCE = new EngineInfoComparator();
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_field = "83DB52A3C8D0B140F75136D958DB3D67", hash_generated_field = "7A1862742764B4648D563A7617011A7C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_field = "83DB52A3C8D0B140F75136D958DB3D67", hash_generated_field = "C4D788B9A30DB979B4B514CACCF1BB4B")
 
-    private static String TAG = "TtsEngines";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "B7C4E93D97D072890A37A56076D870F8")
+    private static final String TAG = "TtsEngines";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
-    private static boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_field = "861A0D790598FEE23451761E6E4C316A", hash_generated_field = "B965729B908854670B14941DD93392A6")
+    private static final boolean DBG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_field = "861A0D790598FEE23451761E6E4C316A", hash_generated_field = "187C46D90E30A2E475FC964C28714A03")
 
-    private static String LOCALE_DELIMITER = "-";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.223 -0400", hash_original_field = "E761C2AF1B4C23BBB2D60DB5C2ADDF10", hash_generated_field = "5589CFFB76E299778DDAB0268CD87E9E")
+    private static final String LOCALE_DELIMITER = "-";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.461 -0400", hash_original_field = "E761C2AF1B4C23BBB2D60DB5C2ADDF10", hash_generated_field = "FD63E60582DCF4480EDEA7A7945C3DEB")
 
-    private static String XML_TAG_NAME = "tts-engine";
+    private static final String XML_TAG_NAME = "tts-engine";
 }
 

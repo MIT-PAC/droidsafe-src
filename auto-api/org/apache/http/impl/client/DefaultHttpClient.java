@@ -61,7 +61,7 @@ import org.apache.http.util.VersionInfo;
 
 public class DefaultHttpClient extends AbstractHttpClient {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.322 -0400", hash_original_method = "F1394B84DFE9E4D59F4D1D68B51FC2CF", hash_generated_method = "3BBF6A5C0750648D1DEC5ECAA9B7485F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.075 -0400", hash_original_method = "F1394B84DFE9E4D59F4D1D68B51FC2CF", hash_generated_method = "3BBF6A5C0750648D1DEC5ECAA9B7485F")
     public  DefaultHttpClient(
             final ClientConnectionManager conman,
             final HttpParams params) {
@@ -72,7 +72,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.332 -0400", hash_original_method = "E0C829A12DCA716ADA587F6BA150989E", hash_generated_method = "A34F47520AB5BD0BD2EF5BC301D9E340")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.076 -0400", hash_original_method = "E0C829A12DCA716ADA587F6BA150989E", hash_generated_method = "A34F47520AB5BD0BD2EF5BC301D9E340")
     public  DefaultHttpClient(final HttpParams params) {
         super(null, params);
         addTaint(params.getTaint());
@@ -80,36 +80,34 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.333 -0400", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "85C57FF144AEFA1152101B8C3A7B1643")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.078 -0400", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "85C57FF144AEFA1152101B8C3A7B1643")
     public  DefaultHttpClient() {
         super(null, null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.333 -0400", hash_original_method = "7CB663CBD5778E22C9AD8E80132ECD7C", hash_generated_method = "A3BA29678A2E4EFD51EB124E7144C81F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.081 -0400", hash_original_method = "7CB663CBD5778E22C9AD8E80132ECD7C", hash_generated_method = "10D51E27A20402CB9FFAF0D9294D7452")
     @Override
     protected HttpParams createHttpParams() {
-        HttpParams varB4EAC82CA7396A68D541C85D26508E83_730053850 = null; //Variable for return #1
-        HttpParams params;
-        params = new BasicHttpParams();
+        HttpParams varB4EAC82CA7396A68D541C85D26508E83_809088774 = null; //Variable for return #1
+        HttpParams params = new BasicHttpParams();
         HttpProtocolParams.setVersion(params, 
                 HttpVersion.HTTP_1_1);
         HttpProtocolParams.setContentCharset(params, 
                 HTTP.DEFAULT_CONTENT_CHARSET);
         HttpProtocolParams.setUseExpectContinue(params, 
                 false);
-        VersionInfo vi;
-        vi = VersionInfo.loadVersionInfo
+        final VersionInfo vi = VersionInfo.loadVersionInfo
             ("org.apache.http.client", getClass().getClassLoader());
         String release;
         release = vi.getRelease();
         release = VersionInfo.UNAVAILABLE;
         HttpProtocolParams.setUserAgent(params, 
                 "Apache-HttpClient/" + release + " (java 1.4)");
-        varB4EAC82CA7396A68D541C85D26508E83_730053850 = params;
-        varB4EAC82CA7396A68D541C85D26508E83_730053850.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_730053850;
+        varB4EAC82CA7396A68D541C85D26508E83_809088774 = params;
+        varB4EAC82CA7396A68D541C85D26508E83_809088774.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_809088774;
         // ---------- Original Method ----------
         //HttpParams params = new BasicHttpParams();
         //HttpProtocolParams.setVersion(params, 
@@ -128,45 +126,39 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.334 -0400", hash_original_method = "F3505412AB0839480CB671E1A4D22DAB", hash_generated_method = "507A1F8F8AEFFC5E8B19BDAEED0C5B76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.083 -0400", hash_original_method = "F3505412AB0839480CB671E1A4D22DAB", hash_generated_method = "0D36C90870AD71AEC6524DE920799310")
     @Override
     protected HttpRequestExecutor createRequestExecutor() {
-        HttpRequestExecutor varB4EAC82CA7396A68D541C85D26508E83_1211581296 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1211581296 = new HttpRequestExecutor();
-        varB4EAC82CA7396A68D541C85D26508E83_1211581296.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1211581296;
+        HttpRequestExecutor varB4EAC82CA7396A68D541C85D26508E83_1296915910 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1296915910 = new HttpRequestExecutor();
+        varB4EAC82CA7396A68D541C85D26508E83_1296915910.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1296915910;
         // ---------- Original Method ----------
         //return new HttpRequestExecutor();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.358 -0400", hash_original_method = "C42A8A1E8C3C461006C6920C87D13C0A", hash_generated_method = "5E997FDA1B9F5D0ACA25D80FC4F4FA13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.085 -0400", hash_original_method = "C42A8A1E8C3C461006C6920C87D13C0A", hash_generated_method = "A86F6CB3D5E1906C9C1595D112BB7592")
     @Override
     protected ClientConnectionManager createClientConnectionManager() {
-        ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_185408452 = null; //Variable for return #1
-        SchemeRegistry registry;
-        registry = new SchemeRegistry();
+        ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_909230021 = null; //Variable for return #1
+        SchemeRegistry registry = new SchemeRegistry();
         registry.register(
                 new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
         registry.register(
                 new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
-        ClientConnectionManager connManager;
-        connManager = null;
-        HttpParams params;
-        params = getParams();
-        ClientConnectionManagerFactory factory;
-        factory = null;
+        ClientConnectionManager connManager = null;
+        HttpParams params = getParams();
+        ClientConnectionManagerFactory factory = null;
         factory = (ClientConnectionManagerFactory) params
                 .getParameter(ClientPNames.CONNECTION_MANAGER_FACTORY);
         {
-            String className;
-            className = (String) params.getParameter(
+            String className = (String) params.getParameter(
                     ClientPNames.CONNECTION_MANAGER_FACTORY_CLASS_NAME);
             {
                 try 
                 {
-                    Class<?> clazz;
-                    clazz = Class.forName(className);
+                    Class<?> clazz = Class.forName(className);
                     factory = (ClientConnectionManagerFactory) clazz.newInstance();
                 } //End block
                 catch (ClassNotFoundException ex)
@@ -189,20 +181,19 @@ public class DefaultHttpClient extends AbstractHttpClient {
         {
             connManager = new SingleClientConnManager(getParams(), registry);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_185408452 = connManager;
-        varB4EAC82CA7396A68D541C85D26508E83_185408452.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_185408452;
+        varB4EAC82CA7396A68D541C85D26508E83_909230021 = connManager;
+        varB4EAC82CA7396A68D541C85D26508E83_909230021.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_909230021;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.359 -0400", hash_original_method = "25CB6129B8FDB94E4986C80A494E2B06", hash_generated_method = "E6561AEF9EB64276BF53441E06E3241C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.086 -0400", hash_original_method = "25CB6129B8FDB94E4986C80A494E2B06", hash_generated_method = "180E029899E0CB05A8CA242F45AA025F")
     @Override
     protected HttpContext createHttpContext() {
-        HttpContext varB4EAC82CA7396A68D541C85D26508E83_1938306431 = null; //Variable for return #1
-        HttpContext context;
-        context = new BasicHttpContext();
+        HttpContext varB4EAC82CA7396A68D541C85D26508E83_1327789205 = null; //Variable for return #1
+        HttpContext context = new BasicHttpContext();
         context.setAttribute(
                 ClientContext.AUTHSCHEME_REGISTRY, 
                 getAuthSchemes());
@@ -215,9 +206,9 @@ public class DefaultHttpClient extends AbstractHttpClient {
         context.setAttribute(
                 ClientContext.CREDS_PROVIDER, 
                 getCredentialsProvider());
-        varB4EAC82CA7396A68D541C85D26508E83_1938306431 = context;
-        varB4EAC82CA7396A68D541C85D26508E83_1938306431.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1938306431;
+        varB4EAC82CA7396A68D541C85D26508E83_1327789205 = context;
+        varB4EAC82CA7396A68D541C85D26508E83_1327789205.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1327789205;
         // ---------- Original Method ----------
         //HttpContext context = new BasicHttpContext();
         //context.setAttribute(
@@ -236,45 +227,44 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.360 -0400", hash_original_method = "D717E5D917BACE4DBA9E14F0AD65F48C", hash_generated_method = "99B0EE13EA145FFFF032325D525ADCEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.088 -0400", hash_original_method = "D717E5D917BACE4DBA9E14F0AD65F48C", hash_generated_method = "53AB2CEF945849538A2CD1C99FAA435A")
     @Override
     protected ConnectionReuseStrategy createConnectionReuseStrategy() {
-        ConnectionReuseStrategy varB4EAC82CA7396A68D541C85D26508E83_2119487759 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2119487759 = new DefaultConnectionReuseStrategy();
-        varB4EAC82CA7396A68D541C85D26508E83_2119487759.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2119487759;
+        ConnectionReuseStrategy varB4EAC82CA7396A68D541C85D26508E83_415482651 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_415482651 = new DefaultConnectionReuseStrategy();
+        varB4EAC82CA7396A68D541C85D26508E83_415482651.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_415482651;
         // ---------- Original Method ----------
         //return new DefaultConnectionReuseStrategy();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.360 -0400", hash_original_method = "EFD49BF95531A6CFB8AB7833D5492B46", hash_generated_method = "9CE8AFF7A5D6C4D7275180F646F2F047")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.089 -0400", hash_original_method = "EFD49BF95531A6CFB8AB7833D5492B46", hash_generated_method = "4B27B2034B482B0DCF2F710D56CC011E")
     @Override
     protected ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy() {
-        ConnectionKeepAliveStrategy varB4EAC82CA7396A68D541C85D26508E83_128378705 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_128378705 = new DefaultConnectionKeepAliveStrategy();
-        varB4EAC82CA7396A68D541C85D26508E83_128378705.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_128378705;
+        ConnectionKeepAliveStrategy varB4EAC82CA7396A68D541C85D26508E83_1410986516 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1410986516 = new DefaultConnectionKeepAliveStrategy();
+        varB4EAC82CA7396A68D541C85D26508E83_1410986516.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1410986516;
         // ---------- Original Method ----------
         //return new DefaultConnectionKeepAliveStrategy();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.361 -0400", hash_original_method = "75C52B493B32BA0931FDF11A10703B36", hash_generated_method = "CF951BB9C964FC9CE737CC63C91E1F76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.089 -0400", hash_original_method = "75C52B493B32BA0931FDF11A10703B36", hash_generated_method = "9DFF70408DBA9455BA2394BFEBA088E1")
     @Override
     protected AuthSchemeRegistry createAuthSchemeRegistry() {
-        AuthSchemeRegistry varB4EAC82CA7396A68D541C85D26508E83_2024657798 = null; //Variable for return #1
-        AuthSchemeRegistry registry;
-        registry = new AuthSchemeRegistry();
+        AuthSchemeRegistry varB4EAC82CA7396A68D541C85D26508E83_687003462 = null; //Variable for return #1
+        AuthSchemeRegistry registry = new AuthSchemeRegistry();
         registry.register(
                 AuthPolicy.BASIC, 
                 new BasicSchemeFactory());
         registry.register(
                 AuthPolicy.DIGEST, 
                 new DigestSchemeFactory());
-        varB4EAC82CA7396A68D541C85D26508E83_2024657798 = registry;
-        varB4EAC82CA7396A68D541C85D26508E83_2024657798.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2024657798;
+        varB4EAC82CA7396A68D541C85D26508E83_687003462 = registry;
+        varB4EAC82CA7396A68D541C85D26508E83_687003462.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_687003462;
         // ---------- Original Method ----------
         //AuthSchemeRegistry registry = new AuthSchemeRegistry();
         //registry.register(
@@ -287,12 +277,11 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.368 -0400", hash_original_method = "2986BF87A2DD05E6E31FCC1654EB03B5", hash_generated_method = "4EC8E75AEFFDC53BE336857767A0ABE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.090 -0400", hash_original_method = "2986BF87A2DD05E6E31FCC1654EB03B5", hash_generated_method = "15E6CF595125E2F1E31EDAECFAC68989")
     @Override
     protected CookieSpecRegistry createCookieSpecRegistry() {
-        CookieSpecRegistry varB4EAC82CA7396A68D541C85D26508E83_839359655 = null; //Variable for return #1
-        CookieSpecRegistry registry;
-        registry = new CookieSpecRegistry();
+        CookieSpecRegistry varB4EAC82CA7396A68D541C85D26508E83_1003459865 = null; //Variable for return #1
+        CookieSpecRegistry registry = new CookieSpecRegistry();
         registry.register(
                 CookiePolicy.BEST_MATCH, 
                 new BestMatchSpecFactory());
@@ -308,9 +297,9 @@ public class DefaultHttpClient extends AbstractHttpClient {
         registry.register(
                 CookiePolicy.RFC_2965, 
                 new RFC2965SpecFactory());
-        varB4EAC82CA7396A68D541C85D26508E83_839359655 = registry;
-        varB4EAC82CA7396A68D541C85D26508E83_839359655.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_839359655;
+        varB4EAC82CA7396A68D541C85D26508E83_1003459865 = registry;
+        varB4EAC82CA7396A68D541C85D26508E83_1003459865.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1003459865;
         // ---------- Original Method ----------
         //CookieSpecRegistry registry = new CookieSpecRegistry();
         //registry.register(
@@ -332,12 +321,11 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.369 -0400", hash_original_method = "2E7E8D0B83423FC6C240BF5D6DCBDE4D", hash_generated_method = "0BAB0017AD8BFD2036147D00DA65273F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.091 -0400", hash_original_method = "2E7E8D0B83423FC6C240BF5D6DCBDE4D", hash_generated_method = "91693999B00D6655E99F7C5F06E85779")
     @Override
     protected BasicHttpProcessor createHttpProcessor() {
-        BasicHttpProcessor varB4EAC82CA7396A68D541C85D26508E83_1736383358 = null; //Variable for return #1
-        BasicHttpProcessor httpproc;
-        httpproc = new BasicHttpProcessor();
+        BasicHttpProcessor varB4EAC82CA7396A68D541C85D26508E83_775442993 = null; //Variable for return #1
+        BasicHttpProcessor httpproc = new BasicHttpProcessor();
         httpproc.addInterceptor(new RequestDefaultHeaders());
         httpproc.addInterceptor(new RequestContent());
         httpproc.addInterceptor(new RequestTargetHost());
@@ -348,9 +336,9 @@ public class DefaultHttpClient extends AbstractHttpClient {
         httpproc.addInterceptor(new ResponseProcessCookies());
         httpproc.addInterceptor(new RequestTargetAuthentication());
         httpproc.addInterceptor(new RequestProxyAuthentication());
-        varB4EAC82CA7396A68D541C85D26508E83_1736383358 = httpproc;
-        varB4EAC82CA7396A68D541C85D26508E83_1736383358.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1736383358;
+        varB4EAC82CA7396A68D541C85D26508E83_775442993 = httpproc;
+        varB4EAC82CA7396A68D541C85D26508E83_775442993.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_775442993;
         // ---------- Original Method ----------
         //BasicHttpProcessor httpproc = new BasicHttpProcessor();
         //httpproc.addInterceptor(new RequestDefaultHeaders());
@@ -367,97 +355,97 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.370 -0400", hash_original_method = "060CC3B74841E3F6FC79CC89E59C47D3", hash_generated_method = "88E52A8B60D09C27A56FCAE427AF2D56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.092 -0400", hash_original_method = "060CC3B74841E3F6FC79CC89E59C47D3", hash_generated_method = "E7D460C108154C22C3389D2A6BBBEEB3")
     @Override
     protected HttpRequestRetryHandler createHttpRequestRetryHandler() {
-        HttpRequestRetryHandler varB4EAC82CA7396A68D541C85D26508E83_899305666 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_899305666 = new DefaultHttpRequestRetryHandler();
-        varB4EAC82CA7396A68D541C85D26508E83_899305666.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_899305666;
+        HttpRequestRetryHandler varB4EAC82CA7396A68D541C85D26508E83_1314373215 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1314373215 = new DefaultHttpRequestRetryHandler();
+        varB4EAC82CA7396A68D541C85D26508E83_1314373215.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1314373215;
         // ---------- Original Method ----------
         //return new DefaultHttpRequestRetryHandler();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.374 -0400", hash_original_method = "4B5E8754A7C96AB1D27440EE21EB62A0", hash_generated_method = "64A54300CB84E8C6706192E489A11FA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.093 -0400", hash_original_method = "4B5E8754A7C96AB1D27440EE21EB62A0", hash_generated_method = "C54C59B7D6C0C67E0690C3D60D02931E")
     @Override
     protected RedirectHandler createRedirectHandler() {
-        RedirectHandler varB4EAC82CA7396A68D541C85D26508E83_1204064463 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1204064463 = new DefaultRedirectHandler();
-        varB4EAC82CA7396A68D541C85D26508E83_1204064463.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1204064463;
+        RedirectHandler varB4EAC82CA7396A68D541C85D26508E83_79266915 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_79266915 = new DefaultRedirectHandler();
+        varB4EAC82CA7396A68D541C85D26508E83_79266915.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_79266915;
         // ---------- Original Method ----------
         //return new DefaultRedirectHandler();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.375 -0400", hash_original_method = "CE20EA4DC0B433CD2AE1F8D13D6593E2", hash_generated_method = "966423B7F3ADD9E2DB52CBC229A50780")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.096 -0400", hash_original_method = "CE20EA4DC0B433CD2AE1F8D13D6593E2", hash_generated_method = "C5F7AF582EF6FA59E206A1698421D70D")
     @Override
     protected AuthenticationHandler createTargetAuthenticationHandler() {
-        AuthenticationHandler varB4EAC82CA7396A68D541C85D26508E83_1853681219 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1853681219 = new DefaultTargetAuthenticationHandler();
-        varB4EAC82CA7396A68D541C85D26508E83_1853681219.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1853681219;
+        AuthenticationHandler varB4EAC82CA7396A68D541C85D26508E83_517207012 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_517207012 = new DefaultTargetAuthenticationHandler();
+        varB4EAC82CA7396A68D541C85D26508E83_517207012.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_517207012;
         // ---------- Original Method ----------
         //return new DefaultTargetAuthenticationHandler();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.382 -0400", hash_original_method = "B6E682DFDA0487EF6FFF82AF7B123D48", hash_generated_method = "8B95F94E7EA76F8AAFB09B0C53017DEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.097 -0400", hash_original_method = "B6E682DFDA0487EF6FFF82AF7B123D48", hash_generated_method = "BA720A5BA3F5989C8B57D24972E8D2B4")
     @Override
     protected AuthenticationHandler createProxyAuthenticationHandler() {
-        AuthenticationHandler varB4EAC82CA7396A68D541C85D26508E83_1962412379 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1962412379 = new DefaultProxyAuthenticationHandler();
-        varB4EAC82CA7396A68D541C85D26508E83_1962412379.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1962412379;
+        AuthenticationHandler varB4EAC82CA7396A68D541C85D26508E83_302291563 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_302291563 = new DefaultProxyAuthenticationHandler();
+        varB4EAC82CA7396A68D541C85D26508E83_302291563.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_302291563;
         // ---------- Original Method ----------
         //return new DefaultProxyAuthenticationHandler();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.393 -0400", hash_original_method = "EF2D14C866EAD04A4C29973169C02328", hash_generated_method = "F83F3CD30D4B301C216C20FDC4659B37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.099 -0400", hash_original_method = "EF2D14C866EAD04A4C29973169C02328", hash_generated_method = "EA9D12B7F3652C96FA1BB153AB0AE18D")
     @Override
     protected CookieStore createCookieStore() {
-        CookieStore varB4EAC82CA7396A68D541C85D26508E83_78204557 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_78204557 = new BasicCookieStore();
-        varB4EAC82CA7396A68D541C85D26508E83_78204557.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_78204557;
+        CookieStore varB4EAC82CA7396A68D541C85D26508E83_1525577528 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1525577528 = new BasicCookieStore();
+        varB4EAC82CA7396A68D541C85D26508E83_1525577528.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1525577528;
         // ---------- Original Method ----------
         //return new BasicCookieStore();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.393 -0400", hash_original_method = "7086A691E773C3CE0961AEAF5E488C24", hash_generated_method = "DE122FA3A98606270A04F27E9BAA4E1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.100 -0400", hash_original_method = "7086A691E773C3CE0961AEAF5E488C24", hash_generated_method = "03C69C0715DEFDB00C05EA3CB631564B")
     @Override
     protected CredentialsProvider createCredentialsProvider() {
-        CredentialsProvider varB4EAC82CA7396A68D541C85D26508E83_376260138 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_376260138 = new BasicCredentialsProvider();
-        varB4EAC82CA7396A68D541C85D26508E83_376260138.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_376260138;
+        CredentialsProvider varB4EAC82CA7396A68D541C85D26508E83_1988484199 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1988484199 = new BasicCredentialsProvider();
+        varB4EAC82CA7396A68D541C85D26508E83_1988484199.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1988484199;
         // ---------- Original Method ----------
         //return new BasicCredentialsProvider();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.393 -0400", hash_original_method = "0D3A0E833E374EE9EB01454019D72BDB", hash_generated_method = "891DBC324A0F9A486E86D54524592AB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.101 -0400", hash_original_method = "0D3A0E833E374EE9EB01454019D72BDB", hash_generated_method = "2F060EAFBFA4A184BEFA6DACCB66C2B4")
     @Override
     protected HttpRoutePlanner createHttpRoutePlanner() {
-        HttpRoutePlanner varB4EAC82CA7396A68D541C85D26508E83_976477052 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_976477052 = new ProxySelectorRoutePlanner(getConnectionManager().getSchemeRegistry(), null);
-        varB4EAC82CA7396A68D541C85D26508E83_976477052.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_976477052;
+        HttpRoutePlanner varB4EAC82CA7396A68D541C85D26508E83_956389606 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_956389606 = new ProxySelectorRoutePlanner(getConnectionManager().getSchemeRegistry(), null);
+        varB4EAC82CA7396A68D541C85D26508E83_956389606.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_956389606;
         // ---------- Original Method ----------
         //return new ProxySelectorRoutePlanner(getConnectionManager().getSchemeRegistry(), null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.394 -0400", hash_original_method = "B64DD33A238620F5CE58C192C71660B3", hash_generated_method = "D2EAF08FF63BAE8A70C5FE2823CF87C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.101 -0400", hash_original_method = "B64DD33A238620F5CE58C192C71660B3", hash_generated_method = "B957050FE5FBA873166BFA774281CD9F")
     @Override
     protected UserTokenHandler createUserTokenHandler() {
-        UserTokenHandler varB4EAC82CA7396A68D541C85D26508E83_130942242 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_130942242 = new DefaultUserTokenHandler();
-        varB4EAC82CA7396A68D541C85D26508E83_130942242.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_130942242;
+        UserTokenHandler varB4EAC82CA7396A68D541C85D26508E83_3482553 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_3482553 = new DefaultUserTokenHandler();
+        varB4EAC82CA7396A68D541C85D26508E83_3482553.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_3482553;
         // ---------- Original Method ----------
         //return new DefaultUserTokenHandler();
     }

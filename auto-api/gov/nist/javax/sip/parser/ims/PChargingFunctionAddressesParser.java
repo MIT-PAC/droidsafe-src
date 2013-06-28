@@ -17,7 +17,7 @@ import java.text.ParseException;
 
 public class PChargingFunctionAddressesParser extends ParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.625 -0400", hash_original_method = "E6802C10162BF9ECF1CA7A726DBBAC6F", hash_generated_method = "99B4FC5EC71086DA9B4D0A62B1EB4666")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.120 -0400", hash_original_method = "E6802C10162BF9ECF1CA7A726DBBAC6F", hash_generated_method = "99B4FC5EC71086DA9B4D0A62B1EB4666")
     public  PChargingFunctionAddressesParser(String charging) {
         super(charging);
         addTaint(charging.getTaint());
@@ -25,7 +25,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.625 -0400", hash_original_method = "D9D24A0C312DDEF7581D0ED53212D170", hash_generated_method = "B3C77CB743A80BBE679CA6123EBAE8BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.120 -0400", hash_original_method = "D9D24A0C312DDEF7581D0ED53212D170", hash_generated_method = "B3C77CB743A80BBE679CA6123EBAE8BA")
     protected  PChargingFunctionAddressesParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -33,24 +33,22 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.626 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "BBEF94EEDA0B1325EBB736A05A8ABB43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.120 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "01FC0C1E38D58F5430C8574271475B5E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_870666627 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1581434307 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
             headerName(TokenTypes.P_CHARGING_FUNCTION_ADDRESSES);
-            PChargingFunctionAddresses chargingFunctionAddresses;
-            chargingFunctionAddresses = new PChargingFunctionAddresses();
+            PChargingFunctionAddresses chargingFunctionAddresses = new PChargingFunctionAddresses();
             try 
             {
                 {
-                    boolean var053C2AA6A70B74FC601942C3CC901981_1753839769 = (lexer.lookAhead(0) != '\n');
+                    boolean var053C2AA6A70B74FC601942C3CC901981_1608228605 = (lexer.lookAhead(0) != '\n');
                     {
                         this.parseParameter(chargingFunctionAddresses);
                         this.lexer.SPorHT();
-                        char la;
-                        la = lexer.lookAhead(0);
+                        char la = lexer.lookAhead(0);
                         this.lexer.match(';');
                         this.lexer.SPorHT();
                     } //End block
@@ -61,26 +59,25 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
                 if (DroidSafeAndroidRuntime.control) throw ex;
             } //End block
             super.parse(chargingFunctionAddresses);
-            varB4EAC82CA7396A68D541C85D26508E83_870666627 = chargingFunctionAddresses;
+            varB4EAC82CA7396A68D541C85D26508E83_1581434307 = chargingFunctionAddresses;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_870666627.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_870666627;
+        varB4EAC82CA7396A68D541C85D26508E83_1581434307.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1581434307;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.631 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "77652FD738AE17AC03974B9CAC8EC1D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.121 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "6ADFC1626BA5C41D0E8341729BB381F2")
     protected void parseParameter(PChargingFunctionAddresses chargingFunctionAddresses) throws ParseException {
         dbg_enter("parseParameter");
         try 
         {
-            NameValue nv;
-            nv = this.nameValue('=');
+            NameValue nv = this.nameValue('=');
             chargingFunctionAddresses.setMultiParameter(nv);
         } //End block
         finally 
@@ -101,7 +98,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String r[] = {
                 "P-Charging-Function-Addresses: ccf=\"test str\"; ecf=token\n",
                 "P-Charging-Function-Addresses: ccf=192.1.1.1; ccf=192.1.1.2; ecf=192.1.1.3; ecf=192.1.1.4\n",

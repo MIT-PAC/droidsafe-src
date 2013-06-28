@@ -9,14 +9,14 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class WorkSource implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.733 -0400", hash_original_field = "1B2924E0CDC894FEA7E3856870275E70", hash_generated_field = "95F99CF2E70DB79AD069A36B506646F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.451 -0400", hash_original_field = "1B2924E0CDC894FEA7E3856870275E70", hash_generated_field = "95F99CF2E70DB79AD069A36B506646F2")
 
     int mNum;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.733 -0400", hash_original_field = "BAB32F5501A71BA4F005B5ED6F9F8852", hash_generated_field = "B112C188ED4E9EAAFE4ADD6E54143C39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.451 -0400", hash_original_field = "BAB32F5501A71BA4F005B5ED6F9F8852", hash_generated_field = "B112C188ED4E9EAAFE4ADD6E54143C39")
 
     int[] mUids;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.734 -0400", hash_original_method = "6347D93E04E74669648A802B7921C1D5", hash_generated_method = "34579F464897EDC33F63C29271A0F20D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.451 -0400", hash_original_method = "6347D93E04E74669648A802B7921C1D5", hash_generated_method = "34579F464897EDC33F63C29271A0F20D")
     public  WorkSource() {
         mNum = 0;
         // ---------- Original Method ----------
@@ -24,7 +24,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.734 -0400", hash_original_method = "B6F0D388FBB618146ABF158DEC8410C2", hash_generated_method = "2B2CBDD7050CD0D2B280BEFC95F6F92D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.452 -0400", hash_original_method = "B6F0D388FBB618146ABF158DEC8410C2", hash_generated_method = "2B2CBDD7050CD0D2B280BEFC95F6F92D")
     public  WorkSource(WorkSource orig) {
         {
             mNum = 0;
@@ -50,7 +50,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.745 -0400", hash_original_method = "98AF9D8E14FDBDB8400169325402879B", hash_generated_method = "F6CE4DF01FE9468953E5D5394F6AB656")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.452 -0400", hash_original_method = "98AF9D8E14FDBDB8400169325402879B", hash_generated_method = "F6CE4DF01FE9468953E5D5394F6AB656")
     public  WorkSource(int uid) {
         mNum = 1;
         mUids = new int[] { uid, 0 };
@@ -61,7 +61,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.746 -0400", hash_original_method = "01CB17D53B35B98697D0BEFEE05C5A5F", hash_generated_method = "CE554C44E884E79AE7BC84A4662B79EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.453 -0400", hash_original_method = "01CB17D53B35B98697D0BEFEE05C5A5F", hash_generated_method = "CE554C44E884E79AE7BC84A4662B79EE")
       WorkSource(Parcel in) {
         mNum = in.readInt();
         mUids = in.createIntArray();
@@ -71,26 +71,26 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.746 -0400", hash_original_method = "FA15A7D9EE41DC68B6DF2C6C4250D26C", hash_generated_method = "3122A8E5DF72CAB88C360F5F64B6BB12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "FA15A7D9EE41DC68B6DF2C6C4250D26C", hash_generated_method = "B7C66B4B4CD30AA50A635B997C8519A3")
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_188054422 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_188054422;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370521782 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370521782;
         // ---------- Original Method ----------
         //return mNum;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.746 -0400", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "2644B0F8144F45929B3D809A8F0E6BE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "16325A26267F1CFC70B4C1F395D35799")
     public int get(int index) {
         addTaint(index);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052486091 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052486091;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_383279622 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_383279622;
         // ---------- Original Method ----------
         //return mUids[index];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.751 -0400", hash_original_method = "FEFE1B40777B5F58606593D185335D3A", hash_generated_method = "1EAEB237ED25FBCAA4FB93E520500649")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.454 -0400", hash_original_method = "FEFE1B40777B5F58606593D185335D3A", hash_generated_method = "1EAEB237ED25FBCAA4FB93E520500649")
     public void clear() {
         mNum = 0;
         // ---------- Original Method ----------
@@ -98,21 +98,17 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.751 -0400", hash_original_method = "2F8EB035FA41CD52820ED0B16262B2FB", hash_generated_method = "206F62E14A3768A1D4BCC271BAA0E13A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.455 -0400", hash_original_method = "2F8EB035FA41CD52820ED0B16262B2FB", hash_generated_method = "942DC45A7BD3830136A8A073E825DF9A")
     public boolean diff(WorkSource other) {
-        int N;
-        N = mNum;
-        int[] uids1;
-        uids1 = mUids;
-        int[] uids2;
-        uids2 = other.mUids;
+        int N = mNum;
+        final int[] uids1 = mUids;
+        final int[] uids2 = other.mUids;
         {
-            int i;
-            i = 0;
+            int i = 0;
         } //End collapsed parenthetic
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121554864 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_121554864;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568482517 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568482517;
         // ---------- Original Method ----------
         //int N = mNum;
         //if (N != other.mNum) {
@@ -129,7 +125,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.752 -0400", hash_original_method = "0302228CCB49F7DB617DC3822F50D404", hash_generated_method = "1C9DD11F7FBA5A43E0FA65F5B6D485F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.455 -0400", hash_original_method = "0302228CCB49F7DB617DC3822F50D404", hash_generated_method = "1C9DD11F7FBA5A43E0FA65F5B6D485F6")
     public void set(WorkSource other) {
         {
             mNum = 0;
@@ -164,7 +160,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.758 -0400", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "43B6F6A796D183939A9CD97942DF4639")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.456 -0400", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "43B6F6A796D183939A9CD97942DF4639")
     public void set(int uid) {
         mNum = 1;
         mUids = new int[2];
@@ -176,35 +172,34 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.759 -0400", hash_original_method = "7CA4549360AB4144F4EE2A696452CCBF", hash_generated_method = "80BA5F1C4F2AC4C17EA0F43A8DCED9AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.457 -0400", hash_original_method = "7CA4549360AB4144F4EE2A696452CCBF", hash_generated_method = "6E299E7210EE947243D120732855083B")
     public WorkSource[] setReturningDiffs(WorkSource other) {
-        WorkSource[] varB4EAC82CA7396A68D541C85D26508E83_1077533879 = null; //Variable for return #1
-        WorkSource[] varB4EAC82CA7396A68D541C85D26508E83_1833087732 = null; //Variable for return #2
+        WorkSource[] varB4EAC82CA7396A68D541C85D26508E83_1985392344 = null; //Variable for return #1
+        WorkSource[] varB4EAC82CA7396A68D541C85D26508E83_1020866987 = null; //Variable for return #2
         {
             sNewbWork = null;
             sGoneWork = null;
             updateLocked(other, true, true);
             {
-                WorkSource[] diffs;
-                diffs = new WorkSource[2];
+                WorkSource[] diffs = new WorkSource[2];
                 diffs[0] = sNewbWork;
                 diffs[1] = sGoneWork;
-                varB4EAC82CA7396A68D541C85D26508E83_1077533879 = diffs;
+                varB4EAC82CA7396A68D541C85D26508E83_1985392344 = diffs;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1833087732 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1020866987 = null;
         } //End block
         addTaint(other.getTaint());
-        WorkSource[] varA7E53CE21691AB073D9660D615818899_2032607862; //Final return value
+        WorkSource[] varA7E53CE21691AB073D9660D615818899_1056253449; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2032607862 = varB4EAC82CA7396A68D541C85D26508E83_1077533879;
+                varA7E53CE21691AB073D9660D615818899_1056253449 = varB4EAC82CA7396A68D541C85D26508E83_1985392344;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2032607862 = varB4EAC82CA7396A68D541C85D26508E83_1833087732;
+                varA7E53CE21691AB073D9660D615818899_1056253449 = varB4EAC82CA7396A68D541C85D26508E83_1020866987;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2032607862.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2032607862;
+        varA7E53CE21691AB073D9660D615818899_1056253449.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1056253449;
         // ---------- Original Method ----------
         //synchronized (sTmpWorkSource) {
             //sNewbWork = null;
@@ -221,14 +216,14 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.765 -0400", hash_original_method = "8F95FC70B656D084C5E20FAE69C56CE9", hash_generated_method = "129A15D88B5EE783CFF9970D36D5F11E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.457 -0400", hash_original_method = "8F95FC70B656D084C5E20FAE69C56CE9", hash_generated_method = "FAC96EBEAA2F25C440B42C009A93AF74")
     public boolean add(WorkSource other) {
         {
-            boolean varC9CC0550B53A4704EEB106ABB66202CD_2696922 = (updateLocked(other, false, false));
+            boolean varC9CC0550B53A4704EEB106ABB66202CD_1721250670 = (updateLocked(other, false, false));
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573258231 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573258231;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436226796 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436226796;
         // ---------- Original Method ----------
         //synchronized (sTmpWorkSource) {
             //return updateLocked(other, false, false);
@@ -236,17 +231,17 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.770 -0400", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "B945126F2E79D5A007A9CA94310A2EAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.458 -0400", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "1B2E2B4F3C0CCA1D8D80751DDD08284D")
     public WorkSource addReturningNewbs(WorkSource other) {
-        WorkSource varB4EAC82CA7396A68D541C85D26508E83_1577963509 = null; //Variable for return #1
+        WorkSource varB4EAC82CA7396A68D541C85D26508E83_623238090 = null; //Variable for return #1
         {
             sNewbWork = null;
             updateLocked(other, false, true);
-            varB4EAC82CA7396A68D541C85D26508E83_1577963509 = sNewbWork;
+            varB4EAC82CA7396A68D541C85D26508E83_623238090 = sNewbWork;
         } //End block
         addTaint(other.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1577963509.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1577963509;
+        varB4EAC82CA7396A68D541C85D26508E83_623238090.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_623238090;
         // ---------- Original Method ----------
         //synchronized (sTmpWorkSource) {
             //sNewbWork = null;
@@ -256,14 +251,14 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.771 -0400", hash_original_method = "4279F5B1CF7891D9D61E24583D3B3149", hash_generated_method = "7CAABCEAF4B099762534D10314B5CA60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.459 -0400", hash_original_method = "4279F5B1CF7891D9D61E24583D3B3149", hash_generated_method = "49C612889AA3A77493F56DB821626CC8")
     public boolean add(int uid) {
         {
             sTmpWorkSource.mUids[0] = uid;
-            boolean varAC1E11671A2944B5AF8331CDFD6C8F9E_1337059151 = (updateLocked(sTmpWorkSource, false, false));
+            boolean varAC1E11671A2944B5AF8331CDFD6C8F9E_230961224 = (updateLocked(sTmpWorkSource, false, false));
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_67949922 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_67949922;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955925185 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_955925185;
         // ---------- Original Method ----------
         //synchronized (sTmpWorkSource) {
             //sTmpWorkSource.mUids[0] = uid;
@@ -272,17 +267,17 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.777 -0400", hash_original_method = "6E5D478DFA5CD5B5102A5F18DB42CF54", hash_generated_method = "9A7608D27CEEFEE8CBA25D4B447548A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.461 -0400", hash_original_method = "6E5D478DFA5CD5B5102A5F18DB42CF54", hash_generated_method = "91AEB7FEFC119B487DEACB4AF6E8FACA")
     public WorkSource addReturningNewbs(int uid) {
-        WorkSource varB4EAC82CA7396A68D541C85D26508E83_1349359008 = null; //Variable for return #1
+        WorkSource varB4EAC82CA7396A68D541C85D26508E83_1788797513 = null; //Variable for return #1
         {
             sNewbWork = null;
             sTmpWorkSource.mUids[0] = uid;
             updateLocked(sTmpWorkSource, false, true);
-            varB4EAC82CA7396A68D541C85D26508E83_1349359008 = sNewbWork;
+            varB4EAC82CA7396A68D541C85D26508E83_1788797513 = sNewbWork;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1349359008.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1349359008;
+        varB4EAC82CA7396A68D541C85D26508E83_1788797513.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1788797513;
         // ---------- Original Method ----------
         //synchronized (sTmpWorkSource) {
             //sNewbWork = null;
@@ -293,23 +288,16 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.780 -0400", hash_original_method = "9E40782544207F8788FDA35D02E6FE4F", hash_generated_method = "FA1CAC9146D5EEA498B217ACA0734215")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.462 -0400", hash_original_method = "9E40782544207F8788FDA35D02E6FE4F", hash_generated_method = "731F0CA06F3CB1A4D1BD5BEE86A229A2")
     public boolean remove(WorkSource other) {
-        int N1;
-        N1 = mNum;
-        int[] uids1;
-        uids1 = mUids;
-        int N2;
-        N2 = other.mNum;
-        int[] uids2;
-        uids2 = other.mUids;
-        boolean changed;
-        changed = false;
-        int i1;
-        i1 = 0;
+        int N1 = mNum;
+        final int[] uids1 = mUids;
+        final int N2 = other.mNum;
+        final int[] uids2 = other.mUids;
+        boolean changed = false;
+        int i1 = 0;
         {
-            int i2;
-            i2 = 0;
+            int i2 = 0;
             {
                 {
                     System.arraycopy(uids1, i1+1, uids1, i1, N1-i1);
@@ -318,8 +306,8 @@ public class WorkSource implements Parcelable {
         } //End collapsed parenthetic
         mNum = N1;
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649786950 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_649786950;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573465747 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573465747;
         // ---------- Original Method ----------
         //int N1 = mNum;
         //final int[] uids1 = mUids;
@@ -341,23 +329,16 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.793 -0400", hash_original_method = "34E034689DDCE68A5D27EE33789EB9C2", hash_generated_method = "3FBDD8C3670905357347ADEE3E4B86A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.464 -0400", hash_original_method = "34E034689DDCE68A5D27EE33789EB9C2", hash_generated_method = "6408D2ABFB584E551DF27175DAF9C30A")
     private boolean updateLocked(WorkSource other, boolean set, boolean returnNewbs) {
-        int N1;
-        N1 = mNum;
-        int[] uids1;
-        uids1 = mUids;
-        int N2;
-        N2 = other.mNum;
-        int[] uids2;
-        uids2 = other.mUids;
-        boolean changed;
-        changed = false;
-        int i1;
-        i1 = 0;
+        int N1 = mNum;
+        int[] uids1 = mUids;
+        final int N2 = other.mNum;
+        final int[] uids2 = other.mUids;
+        boolean changed = false;
+        int i1 = 0;
         {
-            int i2;
-            i2 = 0;
+            int i2 = 0;
             {
                 {
                     changed = true;
@@ -366,8 +347,7 @@ public class WorkSource implements Parcelable {
                         uids1[0] = uids2[i2];
                     } //End block
                     {
-                        int[] newuids;
-                        newuids = new int[(uids1.length*3)/2];
+                        int[] newuids = new int[(uids1.length*3)/2];
                         System.arraycopy(uids1, 0, newuids, 0, i1);
                         System.arraycopy(uids1, i1, newuids, i1+1, N1-i1);
                         uids1 = newuids;
@@ -388,8 +368,7 @@ public class WorkSource implements Parcelable {
                 } //End block
                 {
                     {
-                        int start;
-                        start = i1;
+                        int start = i1;
                         {
                             {
                                 sGoneWork = new WorkSource(uids1[i1]);
@@ -412,14 +391,14 @@ public class WorkSource implements Parcelable {
         addTaint(other.getTaint());
         addTaint(set);
         addTaint(returnNewbs);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860714325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860714325;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120900482 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120900482;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.795 -0400", hash_original_method = "E8ED9AF8451B0D2EC41EDBDBB476EE69", hash_generated_method = "84413536F996A2FDFFCB3A6BED63EADB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.464 -0400", hash_original_method = "E8ED9AF8451B0D2EC41EDBDBB476EE69", hash_generated_method = "1BB3249CF9083B2FB3F2147F833FD17D")
     private void addLocked(int uid) {
         {
             mUids = new int[4];
@@ -427,8 +406,7 @@ public class WorkSource implements Parcelable {
             mNum = 1;
         } //End block
         {
-            int[] newuids;
-            newuids = new int[(mNum*3)/2];
+            int[] newuids = new int[(mNum*3)/2];
             System.arraycopy(mUids, 0, newuids, 0, mNum);
             mUids = newuids;
         } //End block
@@ -450,17 +428,17 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.801 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8A9CF5C534183D1F410CFF9CA1D4714C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.465 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "66CF402C1AC9465ABEE574C1C0AEC852")
     @Override
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785467987 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785467987;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298678166 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298678166;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.801 -0400", hash_original_method = "69D1EA184FE758709BC28AF0EDE2AA21", hash_generated_method = "D36CFE4D17370B8DA9D2845BDF895235")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.465 -0400", hash_original_method = "69D1EA184FE758709BC28AF0EDE2AA21", hash_generated_method = "D36CFE4D17370B8DA9D2845BDF895235")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mNum);
@@ -473,16 +451,16 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.802 -0400", hash_original_field = "BA27BF38D3D82A5155F46269BC4D8A25", hash_generated_field = "5FB5E9D063B5DF0AC96A8C4475D188AD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.465 -0400", hash_original_field = "BA27BF38D3D82A5155F46269BC4D8A25", hash_generated_field = "AA8D498AF94840F5BEE625F2A0A49393")
 
-    static WorkSource sTmpWorkSource = new WorkSource(0);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.802 -0400", hash_original_field = "EC546D444E8E4921F1FBFBDF842DA624", hash_generated_field = "FB46B752A7E983AAF6CE799134A085F8")
+    static final WorkSource sTmpWorkSource = new WorkSource(0);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.466 -0400", hash_original_field = "EC546D444E8E4921F1FBFBDF842DA624", hash_generated_field = "FB46B752A7E983AAF6CE799134A085F8")
 
     static WorkSource sNewbWork;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.802 -0400", hash_original_field = "532D9BF1C1FD87F06BA4D428C5AF4B54", hash_generated_field = "05AD48EE2A9CAE7DE8142D70F4AB9C4F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.466 -0400", hash_original_field = "532D9BF1C1FD87F06BA4D428C5AF4B54", hash_generated_field = "05AD48EE2A9CAE7DE8142D70F4AB9C4F")
 
     static WorkSource sGoneWork;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.802 -0400", hash_original_field = "84CCBAA21E7B3524C16103FCC24A43F9", hash_generated_field = "54615A019D4B817EB6436269428289F0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.466 -0400", hash_original_field = "84CCBAA21E7B3524C16103FCC24A43F9", hash_generated_field = "54615A019D4B817EB6436269428289F0")
 
     public static final Parcelable.Creator<WorkSource> CREATOR
             = new Parcelable.Creator<WorkSource>() {
@@ -493,5 +471,15 @@ public class WorkSource implements Parcelable {
             return new WorkSource[size];
         }
     };
+    // orphaned legacy method
+    public WorkSource createFromParcel(Parcel in) {
+            return new WorkSource(in);
+        }
+    
+    // orphaned legacy method
+    public WorkSource[] newArray(int size) {
+            return new WorkSource[size];
+        }
+    
 }
 

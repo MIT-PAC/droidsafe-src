@@ -12,44 +12,44 @@ import javax.sip.header.*;
 import java.text.ParseException;
 
 public final class AcceptEncoding extends ParametersHeader implements AcceptEncodingHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.012 -0400", hash_original_field = "56FCF189DEA8F408DF7A954D27D868E1", hash_generated_field = "984A82245D6D3FDFD20ECFB9ACF6FE25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.793 -0400", hash_original_field = "56FCF189DEA8F408DF7A954D27D868E1", hash_generated_field = "984A82245D6D3FDFD20ECFB9ACF6FE25")
 
     protected String contentCoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.012 -0400", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "6F107BDA532202B5E7B29048E45E2E47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.793 -0400", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "6F107BDA532202B5E7B29048E45E2E47")
     public  AcceptEncoding() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.013 -0400", hash_original_method = "D7FA4A0D1D7B133EC4C2E19C83590E19", hash_generated_method = "19E76F06E1B8889672EA8517D377C499")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.794 -0400", hash_original_method = "D7FA4A0D1D7B133EC4C2E19C83590E19", hash_generated_method = "6B1A0DC04F1D305FEFA730D4B239674A")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1885965748 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1885965748 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1885965748.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1885965748;
+        String varB4EAC82CA7396A68D541C85D26508E83_1709799063 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1709799063 = encode(new StringBuffer()).toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1709799063.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1709799063;
         // ---------- Original Method ----------
         //return encode(new StringBuffer()).toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.040 -0400", hash_original_method = "98075621BFB1005208DC6FCAC63FC820", hash_generated_method = "FD92840A98E8E1669093A3E323AD7F0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.795 -0400", hash_original_method = "98075621BFB1005208DC6FCAC63FC820", hash_generated_method = "AE13B071572111ECF26C7A78ACBD973A")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1131222344 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_923361141 = null; //Variable for return #1
         {
             buffer.append(contentCoding);
         } //End block
         {
-            boolean var6EE855E3C41C4B08670E124CDE7B7E84_1752358429 = (parameters != null && !parameters.isEmpty());
+            boolean var6EE855E3C41C4B08670E124CDE7B7E84_1894192545 = (parameters != null && !parameters.isEmpty());
             {
                 buffer.append(SEMICOLON).append(parameters.encode());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1131222344 = buffer;
+        varB4EAC82CA7396A68D541C85D26508E83_923361141 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1131222344.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1131222344;
+        varB4EAC82CA7396A68D541C85D26508E83_923361141.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_923361141;
         // ---------- Original Method ----------
         //if (contentCoding != null) {
             //buffer.append(contentCoding);
@@ -61,28 +61,28 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.040 -0400", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "5630D556B707943B6CC6616537A9A335")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.795 -0400", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "BDC70F16F3115F25B1CF26057D36F931")
     public float getQValue() {
-        float varEF77CF42E481EDA9660BAA3A17253A3D_484097734 = (getParameterAsFloat("q"));
-        float var546ADE640B6EDFBC8A086EF31347E768_430146249 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_430146249;
+        float varEF77CF42E481EDA9660BAA3A17253A3D_1761140003 = (getParameterAsFloat("q"));
+        float var546ADE640B6EDFBC8A086EF31347E768_259273750 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_259273750;
         // ---------- Original Method ----------
         //return getParameterAsFloat("q");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.040 -0400", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "D662FE8794517B74059B9966B39E9B53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.796 -0400", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "4321E496F9EC6E91FBC20C569DAC3C24")
     public String getEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_852444693 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_852444693 = contentCoding;
-        varB4EAC82CA7396A68D541C85D26508E83_852444693.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_852444693;
+        String varB4EAC82CA7396A68D541C85D26508E83_1835607606 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1835607606 = contentCoding;
+        varB4EAC82CA7396A68D541C85D26508E83_1835607606.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1835607606;
         // ---------- Original Method ----------
         //return contentCoding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.041 -0400", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "595FA9BEF345126828385567ED9E1FB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.796 -0400", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "595FA9BEF345126828385567ED9E1FB9")
     public void setQValue(float q) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("qvalue out of range!");
         super.setParameter("q", q);
@@ -94,7 +94,7 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.041 -0400", hash_original_method = "F19AC8B3279BF898A8AFB974FE7AAE2D", hash_generated_method = "43BC18818B31C6B63B967DE38BA5BF62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.798 -0400", hash_original_method = "F19AC8B3279BF898A8AFB974FE7AAE2D", hash_generated_method = "43BC18818B31C6B63B967DE38BA5BF62")
     public void setEncoding(String encoding) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(" encoding parameter is null");
         contentCoding = encoding;
@@ -105,8 +105,8 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.041 -0400", hash_original_field = "0031F97100CEAAFDAA535A23985638A8", hash_generated_field = "A158EBDDDEED6AF7A00154A93A5A5E96")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.798 -0400", hash_original_field = "0031F97100CEAAFDAA535A23985638A8", hash_generated_field = "4930A84A156D9023318126D844288C58")
 
-    private static long serialVersionUID = -1476807565552873525L;
+    private static final long serialVersionUID = -1476807565552873525L;
 }
 

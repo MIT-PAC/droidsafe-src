@@ -17,14 +17,14 @@ import java.util.Iterator;
 import javax.sip.header.Parameters;
 
 public abstract class ParametersHeader extends SIPHeader implements javax.sip.header.Parameters, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.231 -0400", hash_original_field = "166E64F6C3677D0C513901242A3E702D", hash_generated_field = "B548841E6A98CD05129EEE1E20049B8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.869 -0400", hash_original_field = "166E64F6C3677D0C513901242A3E702D", hash_generated_field = "B548841E6A98CD05129EEE1E20049B8B")
 
     protected NameValueList parameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.231 -0400", hash_original_field = "F5FECD842ADEDCE379FA16D3177B6626", hash_generated_field = "2A6C410AA135B90D8494B5D88641CA12")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.869 -0400", hash_original_field = "F5FECD842ADEDCE379FA16D3177B6626", hash_generated_field = "2A6C410AA135B90D8494B5D88641CA12")
 
     protected DuplicateNameValueList duplicates;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.250 -0400", hash_original_method = "F0D4DB9CA1B200FF922CDFAC26AB7615", hash_generated_method = "10DB31FD032678791D17A89BE2F8FCA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.870 -0400", hash_original_method = "F0D4DB9CA1B200FF922CDFAC26AB7615", hash_generated_method = "10DB31FD032678791D17A89BE2F8FCA2")
     protected  ParametersHeader() {
         this.parameters = new NameValueList();
         this.duplicates = new DuplicateNameValueList();
@@ -34,7 +34,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.252 -0400", hash_original_method = "E4E2AFF581813A14FAEFEBD8E59AE8BB", hash_generated_method = "C702C968C109BB849D350860E774D845")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.870 -0400", hash_original_method = "E4E2AFF581813A14FAEFEBD8E59AE8BB", hash_generated_method = "C702C968C109BB849D350860E774D845")
     protected  ParametersHeader(String hdrName) {
         super(hdrName);
         this.parameters = new NameValueList();
@@ -46,7 +46,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.253 -0400", hash_original_method = "768F25D8932AE20C63265B0976D807A2", hash_generated_method = "015EEDF23CF4543C16124049631DFA75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.870 -0400", hash_original_method = "768F25D8932AE20C63265B0976D807A2", hash_generated_method = "015EEDF23CF4543C16124049631DFA75")
     protected  ParametersHeader(String hdrName, boolean sync) {
         super(hdrName);
         this.parameters = new NameValueList(sync);
@@ -58,52 +58,52 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.254 -0400", hash_original_method = "26B228E241B115E8361AA59B6E98DF15", hash_generated_method = "C4AAD0E21E851743D02C460A008DF132")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.871 -0400", hash_original_method = "26B228E241B115E8361AA59B6E98DF15", hash_generated_method = "C23F0C9E32A753298916F1181005A5EC")
     public String getParameter(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1297604875 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1297604875 = this.parameters.getParameter(name);
+        String varB4EAC82CA7396A68D541C85D26508E83_1499472325 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1499472325 = this.parameters.getParameter(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1297604875.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1297604875;
+        varB4EAC82CA7396A68D541C85D26508E83_1499472325.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1499472325;
         // ---------- Original Method ----------
         //return this.parameters.getParameter(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.254 -0400", hash_original_method = "950E84B179C4A06D00A5F96F379F35ED", hash_generated_method = "71E087C734A8223E408C6FC400902F1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.871 -0400", hash_original_method = "950E84B179C4A06D00A5F96F379F35ED", hash_generated_method = "27C7E754459441A2ECE0AB44B69F1962")
     public Object getParameterValue(String name) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_930443795 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_930443795 = this.parameters.getValue(name);
+        Object varB4EAC82CA7396A68D541C85D26508E83_2092828054 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2092828054 = this.parameters.getValue(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_930443795.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_930443795;
+        varB4EAC82CA7396A68D541C85D26508E83_2092828054.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2092828054;
         // ---------- Original Method ----------
         //return this.parameters.getValue(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.256 -0400", hash_original_method = "73DEE1BD3D15BA621CE057B5FCA7616C", hash_generated_method = "E31F5479B88C21E9E1A76BAF17A10230")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.872 -0400", hash_original_method = "73DEE1BD3D15BA621CE057B5FCA7616C", hash_generated_method = "1D8D912E0058DA7126C767B92875CEDB")
     public Iterator<String> getParameterNames() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1619218825 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1619218825 = parameters.getNames();
-        varB4EAC82CA7396A68D541C85D26508E83_1619218825.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1619218825;
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1802586470 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1802586470 = parameters.getNames();
+        varB4EAC82CA7396A68D541C85D26508E83_1802586470.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1802586470;
         // ---------- Original Method ----------
         //return parameters.getNames();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.257 -0400", hash_original_method = "FADD6078F02861D57363D501F4F9C95B", hash_generated_method = "24948B8DC0FE3EDA0E654F2CD75BAA2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.872 -0400", hash_original_method = "FADD6078F02861D57363D501F4F9C95B", hash_generated_method = "B5CB88527576EB0EFB158398BEAF1E6F")
     public boolean hasParameters() {
-        boolean var206E105C644276542211E959405EB155_2032606403 = (parameters != null && !parameters.isEmpty());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1106981345 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1106981345;
+        boolean var206E105C644276542211E959405EB155_1729426458 = (parameters != null && !parameters.isEmpty());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1205449139 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1205449139;
         // ---------- Original Method ----------
         //return parameters != null && !parameters.isEmpty();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.260 -0400", hash_original_method = "8227CAC727290506BDAB40EEA1175C4E", hash_generated_method = "4796F04AEF8035D0D20E3822001ACD07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.872 -0400", hash_original_method = "8227CAC727290506BDAB40EEA1175C4E", hash_generated_method = "4796F04AEF8035D0D20E3822001ACD07")
     public void removeParameter(String name) {
         this.parameters.delete(name);
         addTaint(name.getTaint());
@@ -112,10 +112,9 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.264 -0400", hash_original_method = "DC6AABD6CB8C91F923D2D5F7703B6CF1", hash_generated_method = "19DC519CF9CC75E1CAA4E79B636A8A1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.873 -0400", hash_original_method = "DC6AABD6CB8C91F923D2D5F7703B6CF1", hash_generated_method = "DFCAFA46A5180AB723E91B3BC6E756D0")
     public void setParameter(String name, String value) throws ParseException {
-        NameValue nv;
-        nv = parameters.getNameValue(name);
+        NameValue nv = parameters.getNameValue(name);
         {
             nv.setValueAsObject(value);
         } //End block
@@ -136,10 +135,9 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.272 -0400", hash_original_method = "982C7BF5F52C5CB066896B5A4FF02FB5", hash_generated_method = "E576818F61AB6673A7CA6D3492CF0F51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.873 -0400", hash_original_method = "982C7BF5F52C5CB066896B5A4FF02FB5", hash_generated_method = "C696B241B4C8AC0902DBA8B1B1000A49")
     public void setQuotedParameter(String name, String value) throws ParseException {
-        NameValue nv;
-        nv = parameters.getNameValue(name);
+        NameValue nv = parameters.getNameValue(name);
         {
             nv.setValueAsObject(value);
             nv.setQuotedValue();
@@ -164,10 +162,9 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.273 -0400", hash_original_method = "8F6FACDCF2BE80409FBAB3E7E4602B1E", hash_generated_method = "4566BB4FD5B0D09EA0699606EEC84104")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.874 -0400", hash_original_method = "8F6FACDCF2BE80409FBAB3E7E4602B1E", hash_generated_method = "19B9E47B9A4AE5BF2AA06C99B4357288")
     protected void setParameter(String name, int value) {
-        Integer val;
-        val = Integer.valueOf(value);
+        Integer val = Integer.valueOf(value);
         this.parameters.set(name,val);
         addTaint(name.getTaint());
         addTaint(value);
@@ -177,10 +174,9 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.273 -0400", hash_original_method = "A43053EB8AE25416B5AFA5C2C0F13D2F", hash_generated_method = "E699ECB6F7386888B56D36CEEAEED393")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.874 -0400", hash_original_method = "A43053EB8AE25416B5AFA5C2C0F13D2F", hash_generated_method = "1153AD397B0688F21A2325ADA4E30795")
     protected void setParameter(String name, boolean value) {
-        Boolean val;
-        val = Boolean.valueOf(value);
+        Boolean val = Boolean.valueOf(value);
         this.parameters.set(name,val);
         addTaint(name.getTaint());
         addTaint(value);
@@ -190,12 +186,10 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.282 -0400", hash_original_method = "9588AB5C73A4CC192FA4DE06D052A58D", hash_generated_method = "47C509B6ECAF5AB22778024F6C6F2131")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.875 -0400", hash_original_method = "9588AB5C73A4CC192FA4DE06D052A58D", hash_generated_method = "4F5B8B2355D8AA8F418978B6C81D08FF")
     protected void setParameter(String name, float value) {
-        Float val;
-        val = Float.valueOf(value);
-        NameValue nv;
-        nv = parameters.getNameValue(name);
+        Float val = Float.valueOf(value);
+        NameValue nv = parameters.getNameValue(name);
         {
             nv.setValueAsObject(val);
         } //End block
@@ -217,7 +211,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.283 -0400", hash_original_method = "69DF71CB140C2C1EC9DCD8B4F4E0A5EC", hash_generated_method = "C6FBDA35FCB170640D213ED199D09AC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.875 -0400", hash_original_method = "69DF71CB140C2C1EC9DCD8B4F4E0A5EC", hash_generated_method = "C6FBDA35FCB170640D213ED199D09AC6")
     protected void setParameter(String name, Object value) {
         this.parameters.set(name,value);
         addTaint(name.getTaint());
@@ -227,18 +221,18 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.284 -0400", hash_original_method = "0E176A220CDCDA920F0996E000E16A8D", hash_generated_method = "CB564F7D93CA9632D06A4DBFB51EE675")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.875 -0400", hash_original_method = "0E176A220CDCDA920F0996E000E16A8D", hash_generated_method = "9D287184309F2ECAB42B3826F9143CE3")
     public boolean hasParameter(String parameterName) {
-        boolean varC5B78D921DE741F88D07226445CC20BF_636920129 = (this.parameters.hasNameValue(parameterName));
+        boolean varC5B78D921DE741F88D07226445CC20BF_1231818570 = (this.parameters.hasNameValue(parameterName));
         addTaint(parameterName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_805329729 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_805329729;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_304448598 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_304448598;
         // ---------- Original Method ----------
         //return this.parameters.hasNameValue(parameterName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.296 -0400", hash_original_method = "65E5BFE21C1CDA8F26E2E41D0A6B9EA1", hash_generated_method = "3176E2C5AADE4344A52763E0CD3017CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.875 -0400", hash_original_method = "65E5BFE21C1CDA8F26E2E41D0A6B9EA1", hash_generated_method = "3176E2C5AADE4344A52763E0CD3017CC")
     public void removeParameters() {
         this.parameters = new NameValueList();
         // ---------- Original Method ----------
@@ -246,18 +240,18 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.297 -0400", hash_original_method = "49747860C8C48A5B3F7CFA7B7258A693", hash_generated_method = "3A807ED91D05984EF389EBE248C77D13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.876 -0400", hash_original_method = "49747860C8C48A5B3F7CFA7B7258A693", hash_generated_method = "D9958AF130AC6B51E35E614556E391CE")
     public NameValueList getParameters() {
-        NameValueList varB4EAC82CA7396A68D541C85D26508E83_1823134335 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1823134335 = parameters;
-        varB4EAC82CA7396A68D541C85D26508E83_1823134335.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1823134335;
+        NameValueList varB4EAC82CA7396A68D541C85D26508E83_1098970334 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1098970334 = parameters;
+        varB4EAC82CA7396A68D541C85D26508E83_1098970334.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1098970334;
         // ---------- Original Method ----------
         //return parameters;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.313 -0400", hash_original_method = "D7D233790E2C90411F60E8102439D486", hash_generated_method = "95CEF21560BF13AA85AED52BC508C1EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.876 -0400", hash_original_method = "D7D233790E2C90411F60E8102439D486", hash_generated_method = "95CEF21560BF13AA85AED52BC508C1EA")
     public void setParameter(NameValue nameValue) {
         this.parameters.set(nameValue);
         addTaint(nameValue.getTaint());
@@ -266,7 +260,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.313 -0400", hash_original_method = "4B4FC4972A60A318528A3B65D835B0D7", hash_generated_method = "4804A4F492C9506D4B5EB3825EC6EDA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.876 -0400", hash_original_method = "4B4FC4972A60A318528A3B65D835B0D7", hash_generated_method = "4804A4F492C9506D4B5EB3825EC6EDA1")
     public void setParameters(NameValueList parameters) {
         this.parameters = parameters;
         // ---------- Original Method ----------
@@ -274,20 +268,20 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.314 -0400", hash_original_method = "65FA1152003E641D893D3A6B303652A1", hash_generated_method = "494053B1660CB2BF3FE818B9D54E7B20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.877 -0400", hash_original_method = "65FA1152003E641D893D3A6B303652A1", hash_generated_method = "B46AB32622C8566AF10788E8DC29B514")
     protected int getParameterAsInt(String parameterName) {
         {
-            boolean var15D52F8A75DD53F4A7CAC37E640C8667_1846369562 = (this.getParameterValue(parameterName) != null);
+            boolean var15D52F8A75DD53F4A7CAC37E640C8667_125613165 = (this.getParameterValue(parameterName) != null);
             {
                 try 
                 {
                     {
-                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_1074915560 = (this.getParameterValue(parameterName) instanceof String);
+                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_1971576652 = (this.getParameterValue(parameterName) instanceof String);
                         {
-                            int varF47086191C2F0170A1295970D0989661_1925980351 = (Integer.parseInt(this.getParameter(parameterName)));
+                            int varF47086191C2F0170A1295970D0989661_1710993835 = (Integer.parseInt(this.getParameter(parameterName)));
                         } //End block
                         {
-                            int var282E9B6AF99C85ED568DE196DBA4C145_819281737 = (((Integer) getParameterValue(parameterName))
+                            int var282E9B6AF99C85ED568DE196DBA4C145_485502798 = (((Integer) getParameterValue(parameterName))
                         .intValue());
                         } //End block
                     } //End collapsed parenthetic
@@ -297,8 +291,8 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
             } //End block
         } //End collapsed parenthetic
         addTaint(parameterName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134631362 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134631362;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_294014281 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_294014281;
         // ---------- Original Method ----------
         //if (this.getParameterValue(parameterName) != null) {
             //try {
@@ -316,22 +310,22 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.315 -0400", hash_original_method = "9C527B386FBBF95319BB18882D2DDAF1", hash_generated_method = "CC765539713CA8D3625C1B57F8B2781F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.877 -0400", hash_original_method = "9C527B386FBBF95319BB18882D2DDAF1", hash_generated_method = "1B96A6B7A7508D663D79DA8ED9BBD1B9")
     protected int getParameterAsHexInt(String parameterName) {
         {
-            boolean var15D52F8A75DD53F4A7CAC37E640C8667_1486878420 = (this.getParameterValue(parameterName) != null);
+            boolean var15D52F8A75DD53F4A7CAC37E640C8667_308995514 = (this.getParameterValue(parameterName) != null);
             {
                 try 
                 {
                     {
-                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_250274677 = (this.getParameterValue(parameterName) instanceof String);
+                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_915350866 = (this.getParameterValue(parameterName) instanceof String);
                         {
-                            int varEC2CD9A8D8FD6ADF8EE74DC1AFDE6D7B_1615698251 = (Integer.parseInt(
+                            int varEC2CD9A8D8FD6ADF8EE74DC1AFDE6D7B_1321946093 = (Integer.parseInt(
                         this.getParameter(parameterName),
                         16));
                         } //End block
                         {
-                            int var282E9B6AF99C85ED568DE196DBA4C145_601714697 = (((Integer) getParameterValue(parameterName))
+                            int var282E9B6AF99C85ED568DE196DBA4C145_72453731 = (((Integer) getParameterValue(parameterName))
                         .intValue());
                         } //End block
                     } //End collapsed parenthetic
@@ -341,8 +335,8 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
             } //End block
         } //End collapsed parenthetic
         addTaint(parameterName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481465471 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481465471;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449119955 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449119955;
         // ---------- Original Method ----------
         //if (this.getParameterValue(parameterName) != null) {
             //try {
@@ -362,20 +356,20 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.316 -0400", hash_original_method = "B4454BBF4B067318BED7FA4306F23669", hash_generated_method = "E83188C058945FB117C911AE65DA5FBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.877 -0400", hash_original_method = "B4454BBF4B067318BED7FA4306F23669", hash_generated_method = "F97B024A6B67EC79D394BF97FF19F1EE")
     protected float getParameterAsFloat(String parameterName) {
         {
-            boolean var15D52F8A75DD53F4A7CAC37E640C8667_97174974 = (this.getParameterValue(parameterName) != null);
+            boolean var15D52F8A75DD53F4A7CAC37E640C8667_1422221372 = (this.getParameterValue(parameterName) != null);
             {
                 try 
                 {
                     {
-                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_1476957743 = (this.getParameterValue(parameterName) instanceof String);
+                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_1070921384 = (this.getParameterValue(parameterName) instanceof String);
                         {
-                            float varB1A9FACAFD025CE9E264CF06AE87B0F6_1567200267 = (Float.parseFloat(this.getParameter(parameterName)));
+                            float varB1A9FACAFD025CE9E264CF06AE87B0F6_905894846 = (Float.parseFloat(this.getParameter(parameterName)));
                         } //End block
                         {
-                            float var085B0D6C18304764784A3850D01C35F4_992399201 = (((Float) getParameterValue(parameterName))
+                            float var085B0D6C18304764784A3850D01C35F4_945908483 = (((Float) getParameterValue(parameterName))
                         .floatValue());
                         } //End block
                     } //End collapsed parenthetic
@@ -385,8 +379,8 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
             } //End block
         } //End collapsed parenthetic
         addTaint(parameterName.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_1648468710 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1648468710;
+        float var546ADE640B6EDFBC8A086EF31347E768_1387084064 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1387084064;
         // ---------- Original Method ----------
         //if (this.getParameterValue(parameterName) != null) {
             //try {
@@ -404,20 +398,20 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.326 -0400", hash_original_method = "82A00B489AC355D0514D4F867ADC7246", hash_generated_method = "97EA41ABE1F5CD0E1A2E1C9305077AA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.878 -0400", hash_original_method = "82A00B489AC355D0514D4F867ADC7246", hash_generated_method = "2F2F71B4AF6502A52D917DF6ECCDF25B")
     protected long getParameterAsLong(String parameterName) {
         {
-            boolean var15D52F8A75DD53F4A7CAC37E640C8667_156247331 = (this.getParameterValue(parameterName) != null);
+            boolean var15D52F8A75DD53F4A7CAC37E640C8667_852915376 = (this.getParameterValue(parameterName) != null);
             {
                 try 
                 {
                     {
-                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_768360141 = (this.getParameterValue(parameterName) instanceof String);
+                        boolean var6F7FA25DA7257F1EE30AEB9BF45F67F3_1937440264 = (this.getParameterValue(parameterName) instanceof String);
                         {
-                            long var50566DA681027A181C7A46693A3F8100_1397258055 = (Long.parseLong(this.getParameter(parameterName)));
+                            long var50566DA681027A181C7A46693A3F8100_1394095417 = (Long.parseLong(this.getParameter(parameterName)));
                         } //End block
                         {
-                            long varEE8BEF11E3C93C926EB44323DBDDC318_804522744 = (((Long) getParameterValue(parameterName))
+                            long varEE8BEF11E3C93C926EB44323DBDDC318_293028552 = (((Long) getParameterValue(parameterName))
                         .longValue());
                         } //End block
                     } //End collapsed parenthetic
@@ -427,8 +421,8 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
             } //End block
         } //End collapsed parenthetic
         addTaint(parameterName.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_231924132 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_231924132;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1982400527 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1982400527;
         // ---------- Original Method ----------
         //if (this.getParameterValue(parameterName) != null) {
             //try {
@@ -446,39 +440,38 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.336 -0400", hash_original_method = "2454B831ED2FA559675B54C9AA305ADF", hash_generated_method = "354EDB12AF7F143ACA741D76BE4C96A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.879 -0400", hash_original_method = "2454B831ED2FA559675B54C9AA305ADF", hash_generated_method = "445393A2DB3F563E093678249A5D74A7")
     protected GenericURI getParameterAsURI(String parameterName) {
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_1813390417 = null; //Variable for return #1
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_454755151 = null; //Variable for return #2
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_1909227689 = null; //Variable for return #3
-        Object val;
-        val = getParameterValue(parameterName);
-        varB4EAC82CA7396A68D541C85D26508E83_1813390417 = (GenericURI) val;
+        GenericURI varB4EAC82CA7396A68D541C85D26508E83_1601737369 = null; //Variable for return #1
+        GenericURI varB4EAC82CA7396A68D541C85D26508E83_750775909 = null; //Variable for return #2
+        GenericURI varB4EAC82CA7396A68D541C85D26508E83_482541509 = null; //Variable for return #3
+        Object val = getParameterValue(parameterName);
+        varB4EAC82CA7396A68D541C85D26508E83_1601737369 = (GenericURI) val;
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_454755151 = new GenericURI((String) val);
+                varB4EAC82CA7396A68D541C85D26508E83_750775909 = new GenericURI((String) val);
             } //End block
             catch (ParseException ex)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1909227689 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_482541509 = null;
             } //End block
         } //End block
         addTaint(parameterName.getTaint());
-        GenericURI varA7E53CE21691AB073D9660D615818899_465986692; //Final return value
+        GenericURI varA7E53CE21691AB073D9660D615818899_932089324; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_465986692 = varB4EAC82CA7396A68D541C85D26508E83_1813390417;
+                varA7E53CE21691AB073D9660D615818899_932089324 = varB4EAC82CA7396A68D541C85D26508E83_1601737369;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_465986692 = varB4EAC82CA7396A68D541C85D26508E83_454755151;
+                varA7E53CE21691AB073D9660D615818899_932089324 = varB4EAC82CA7396A68D541C85D26508E83_750775909;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_465986692 = varB4EAC82CA7396A68D541C85D26508E83_1909227689;
+                varA7E53CE21691AB073D9660D615818899_932089324 = varB4EAC82CA7396A68D541C85D26508E83_482541509;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_465986692.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_465986692;
+        varA7E53CE21691AB073D9660D615818899_932089324.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_932089324;
         // ---------- Original Method ----------
         //Object val = getParameterValue(parameterName);
         //if (val instanceof GenericURI)
@@ -493,19 +486,18 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.337 -0400", hash_original_method = "1DB3A708311EDCC43D7A461B84D39940", hash_generated_method = "C10F0A905C87BCB43013DD21407069BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.879 -0400", hash_original_method = "1DB3A708311EDCC43D7A461B84D39940", hash_generated_method = "E8216ECFBCDBD6809FA60BF28D9B8D39")
     protected boolean getParameterAsBoolean(String parameterName) {
-        Object val;
-        val = getParameterValue(parameterName);
+        Object val = getParameterValue(parameterName);
         {
-            boolean varA505FE4E58FB5F6420F72D84075BB90E_1538909680 = (((Boolean) val).booleanValue());
+            boolean varA505FE4E58FB5F6420F72D84075BB90E_1435783168 = (((Boolean) val).booleanValue());
         } //End block
         {
-            boolean varE9177BB9C3D6BE7B25464D9D7092C675_2078037881 = (Boolean.valueOf((String) val).booleanValue());
+            boolean varE9177BB9C3D6BE7B25464D9D7092C675_954555121 = (Boolean.valueOf((String) val).booleanValue());
         } //End block
         addTaint(parameterName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2125008288 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2125008288;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145724479 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145724479;
         // ---------- Original Method ----------
         //Object val = getParameterValue(parameterName);
         //if (val == null) {
@@ -519,27 +511,26 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.337 -0400", hash_original_method = "E1D4D51519E24D2E630FAA93B019FD38", hash_generated_method = "30D35BEF608C08A685237A7A63E0494C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.879 -0400", hash_original_method = "E1D4D51519E24D2E630FAA93B019FD38", hash_generated_method = "46D869439183BBAFFEDA4E41DD471760")
     public NameValue getNameValue(String parameterName) {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_171278655 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_171278655 = parameters.getNameValue(parameterName);
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_1720503068 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1720503068 = parameters.getNameValue(parameterName);
         addTaint(parameterName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_171278655.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_171278655;
+        varB4EAC82CA7396A68D541C85D26508E83_1720503068.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1720503068;
         // ---------- Original Method ----------
         //return parameters.getNameValue(parameterName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.341 -0400", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "2DAFC86D29F6C0F83467F63D7DE53669")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.880 -0400", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "C2C39293467ADA4716A3345881BFF3B9")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1331944141 = null; //Variable for return #1
-        ParametersHeader retval;
-        retval = (ParametersHeader) super.clone();
+        Object varB4EAC82CA7396A68D541C85D26508E83_77272049 = null; //Variable for return #1
+        ParametersHeader retval = (ParametersHeader) super.clone();
         retval.parameters = (NameValueList) this.parameters.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1331944141 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1331944141.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1331944141;
+        varB4EAC82CA7396A68D541C85D26508E83_77272049 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_77272049.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_77272049;
         // ---------- Original Method ----------
         //ParametersHeader retval = (ParametersHeader) super.clone();
         //if (this.parameters != null)
@@ -548,10 +539,9 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.341 -0400", hash_original_method = "386D6A280C48B0DE53357DBAEAE91419", hash_generated_method = "916A763886DDA65DEA2D7DDF4503C151")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.880 -0400", hash_original_method = "386D6A280C48B0DE53357DBAEAE91419", hash_generated_method = "6BD1CC80EF8C1DF45453779295B66496")
     public void setMultiParameter(String name, String value) {
-        NameValue nv;
-        nv = new NameValue();
+        NameValue nv = new NameValue();
         nv.setName(name);
         nv.setValue(value);
         duplicates.set(nv);
@@ -565,7 +555,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.341 -0400", hash_original_method = "7EC6FF3874184BDFD4677A471AD4F84B", hash_generated_method = "E2E2A6FDC73F11634D7811A988EAF7E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.880 -0400", hash_original_method = "7EC6FF3874184BDFD4677A471AD4F84B", hash_generated_method = "E2E2A6FDC73F11634D7811A988EAF7E6")
     public void setMultiParameter(NameValue nameValue) {
         this.duplicates.set(nameValue);
         addTaint(nameValue.getTaint());
@@ -574,63 +564,63 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.342 -0400", hash_original_method = "AA35E6B35A009A15DE022941ACB0B490", hash_generated_method = "A9F9DC7914B88282EE65FBB8CCAB1C13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.881 -0400", hash_original_method = "AA35E6B35A009A15DE022941ACB0B490", hash_generated_method = "E182B886AAE66EDC1DBF41999841B79F")
     public String getMultiParameter(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1541971815 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1541971815 = this.duplicates.getParameter(name);
+        String varB4EAC82CA7396A68D541C85D26508E83_1032615811 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1032615811 = this.duplicates.getParameter(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1541971815.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1541971815;
+        varB4EAC82CA7396A68D541C85D26508E83_1032615811.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1032615811;
         // ---------- Original Method ----------
         //return this.duplicates.getParameter(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.342 -0400", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "51ED47843C1C7E9225428F5D7CFFD70E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.881 -0400", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "C97E10D5759B39FC6F80DBCD7C116457")
     public DuplicateNameValueList getMultiParameters() {
-        DuplicateNameValueList varB4EAC82CA7396A68D541C85D26508E83_1581779997 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1581779997 = duplicates;
-        varB4EAC82CA7396A68D541C85D26508E83_1581779997.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1581779997;
+        DuplicateNameValueList varB4EAC82CA7396A68D541C85D26508E83_1908038532 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1908038532 = duplicates;
+        varB4EAC82CA7396A68D541C85D26508E83_1908038532.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1908038532;
         // ---------- Original Method ----------
         //return duplicates;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.343 -0400", hash_original_method = "19E7E271B86B1511C96CA4313B229FF4", hash_generated_method = "E638C321BEE110969045898006DDB9BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.882 -0400", hash_original_method = "19E7E271B86B1511C96CA4313B229FF4", hash_generated_method = "299D1EB49AC19B15ADAA16D216DA863F")
     public Object getMultiParameterValue(String name) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_462837332 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_462837332 = this.duplicates.getValue(name);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1017936735 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1017936735 = this.duplicates.getValue(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_462837332.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_462837332;
+        varB4EAC82CA7396A68D541C85D26508E83_1017936735.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1017936735;
         // ---------- Original Method ----------
         //return this.duplicates.getValue(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.343 -0400", hash_original_method = "66D882806A955FACE11E379F1822F80D", hash_generated_method = "ACBC48D7A1B0ED92965E000AB2DDAB41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.882 -0400", hash_original_method = "66D882806A955FACE11E379F1822F80D", hash_generated_method = "B8EECD398A94569B672354384594FBD2")
     public Iterator<String> getMultiParameterNames() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_2021959865 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2021959865 = duplicates.getNames();
-        varB4EAC82CA7396A68D541C85D26508E83_2021959865.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2021959865;
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_973243798 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_973243798 = duplicates.getNames();
+        varB4EAC82CA7396A68D541C85D26508E83_973243798.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_973243798;
         // ---------- Original Method ----------
         //return duplicates.getNames();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.343 -0400", hash_original_method = "99BB2C1C0575811C3E3EF00DA4E34F61", hash_generated_method = "E857E72646DAE7F20F497E2628F5E90E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.883 -0400", hash_original_method = "99BB2C1C0575811C3E3EF00DA4E34F61", hash_generated_method = "561494853059ECC1F16D2E9B7A06A796")
     public boolean hasMultiParameters() {
-        boolean varF545179EEFDFD4F932FA08EA4A09FA79_780130757 = (duplicates != null && !duplicates.isEmpty());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373551286 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373551286;
+        boolean varF545179EEFDFD4F932FA08EA4A09FA79_164993329 = (duplicates != null && !duplicates.isEmpty());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551950898 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_551950898;
         // ---------- Original Method ----------
         //return duplicates != null && !duplicates.isEmpty();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.344 -0400", hash_original_method = "7FB2DD7BAF4E3CE7B6C756EF57D6475D", hash_generated_method = "C59B0DEF0CC7FCD610491511E18ACBC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.883 -0400", hash_original_method = "7FB2DD7BAF4E3CE7B6C756EF57D6475D", hash_generated_method = "C59B0DEF0CC7FCD610491511E18ACBC9")
     public void removeMultiParameter(String name) {
         this.duplicates.delete(name);
         addTaint(name.getTaint());
@@ -639,18 +629,18 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.344 -0400", hash_original_method = "4900377F50A662E0A9B40AE1199FCE72", hash_generated_method = "87C13C6962CAFFEAA30F5F7C98D4B92F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.883 -0400", hash_original_method = "4900377F50A662E0A9B40AE1199FCE72", hash_generated_method = "6F6AA1132D293BBBD360B62AF86769D8")
     public boolean hasMultiParameter(String parameterName) {
-        boolean varD76A825B7B06EFFF1DA0D39A3D12471F_2147266044 = (this.duplicates.hasNameValue(parameterName));
+        boolean varD76A825B7B06EFFF1DA0D39A3D12471F_1080560297 = (this.duplicates.hasNameValue(parameterName));
         addTaint(parameterName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_827769985 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_827769985;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_780332928 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_780332928;
         // ---------- Original Method ----------
         //return this.duplicates.hasNameValue(parameterName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.344 -0400", hash_original_method = "2530F738F22D5C4CA96462C28290A063", hash_generated_method = "3241AA6292FA8FCBD80F737F272440C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.883 -0400", hash_original_method = "2530F738F22D5C4CA96462C28290A063", hash_generated_method = "3241AA6292FA8FCBD80F737F272440C2")
     public void removeMultiParameters() {
         this.duplicates = new DuplicateNameValueList();
         // ---------- Original Method ----------
@@ -658,44 +648,36 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.345 -0400", hash_original_method = "A37B23ECE5B3E77BF1561677FE6ED233", hash_generated_method = "1014161701221A7358D7FF86744248F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.884 -0400", hash_original_method = "A37B23ECE5B3E77BF1561677FE6ED233", hash_generated_method = "07A839E06341118D01BEF03B5D16370A")
     @SuppressWarnings("unchecked")
     protected final boolean equalParameters( Parameters other ) {
         {
-            Iterator i;
-            i = this.getParameterNames();
-            boolean var1611849CD1EE22EA22E4E7E3327E2E35_2133881292 = (i.hasNext());
+            Iterator i = this.getParameterNames();
+            boolean var1611849CD1EE22EA22E4E7E3327E2E35_1729189231 = (i.hasNext());
             {
-                String pname;
-                pname = (String) i.next();
-                String p1;
-                p1 = this.getParameter( pname );
-                String p2;
-                p2 = other.getParameter( pname );
+                String pname = (String) i.next();
+                String p1 = this.getParameter( pname );
+                String p2 = other.getParameter( pname );
                 {
-                    boolean var7F883A88AC881ECEB868D7432912E485_1522958033 = (p1 != null && !p1.equalsIgnoreCase(p2));
+                    boolean var7F883A88AC881ECEB868D7432912E485_1252099443 = (p1 != null && !p1.equalsIgnoreCase(p2));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator i;
-            i = other.getParameterNames();
-            boolean var1611849CD1EE22EA22E4E7E3327E2E35_929818030 = (i.hasNext());
+            Iterator i = other.getParameterNames();
+            boolean var1611849CD1EE22EA22E4E7E3327E2E35_688668165 = (i.hasNext());
             {
-                String pname;
-                pname = (String) i.next();
-                String p1;
-                p1 = other.getParameter( pname );
-                String p2;
-                p2 = this.getParameter( pname );
+                String pname = (String) i.next();
+                String p1 = other.getParameter( pname );
+                String p2 = this.getParameter( pname );
                 {
-                    boolean var7F883A88AC881ECEB868D7432912E485_799376956 = (p1 != null && !p1.equalsIgnoreCase(p2));
+                    boolean var7F883A88AC881ECEB868D7432912E485_273126591 = (p1 != null && !p1.equalsIgnoreCase(p2));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853860206 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853860206;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_613130187 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_613130187;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

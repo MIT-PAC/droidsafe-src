@@ -14,14 +14,14 @@ import gov.nist.javax.sip.address.*;
 
 public final class ReferredBy extends AddressParametersHeader implements ExtensionHeader, ReferredByHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.148 -0400", hash_original_method = "C3DEC8F418CE8BBD8D4ED1D7A2F51A12", hash_generated_method = "44B60B9435122CE6D895DDF9A9B319C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.058 -0400", hash_original_method = "C3DEC8F418CE8BBD8D4ED1D7A2F51A12", hash_generated_method = "44B60B9435122CE6D895DDF9A9B319C3")
     public  ReferredBy() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.148 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.058 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
@@ -30,44 +30,43 @@ public final class ReferredBy extends AddressParametersHeader implements Extensi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.165 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "C7D473F17FDDA54FAB7B7C24CF1FC656")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.059 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "3F856784577D68F063815F9F9DBD321B")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1686101333 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_203751252 = null; //Variable for return #2
-        varB4EAC82CA7396A68D541C85D26508E83_1686101333 = null;
-        String retval;
-        retval = "";
+        String varB4EAC82CA7396A68D541C85D26508E83_1303948878 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_296840262 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1303948878 = null;
+        String retval = "";
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1478446910 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_117432978 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += LESS_THAN;
             } //End block
         } //End collapsed parenthetic
         retval += address.encode();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_315941984 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_710073104 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += GREATER_THAN;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1649004137 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1358323999 = (!parameters.isEmpty());
             {
                 retval += SEMICOLON + parameters.encode();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_203751252 = retval;
-        String varA7E53CE21691AB073D9660D615818899_141926201; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_296840262 = retval;
+        String varA7E53CE21691AB073D9660D615818899_726704741; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_141926201 = varB4EAC82CA7396A68D541C85D26508E83_1686101333;
+                varA7E53CE21691AB073D9660D615818899_726704741 = varB4EAC82CA7396A68D541C85D26508E83_1303948878;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_141926201 = varB4EAC82CA7396A68D541C85D26508E83_203751252;
+                varA7E53CE21691AB073D9660D615818899_726704741 = varB4EAC82CA7396A68D541C85D26508E83_296840262;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_141926201.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_141926201;
+        varA7E53CE21691AB073D9660D615818899_726704741.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_726704741;
         // ---------- Original Method ----------
         //if (address == null)
             //return null;
@@ -86,10 +85,10 @@ public final class ReferredBy extends AddressParametersHeader implements Extensi
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.165 -0400", hash_original_field = "2F10AFAED544B12D512EC416C57EE12B", hash_generated_field = "53BFCEBE88DAA1CC27A27399F3FE4701")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.059 -0400", hash_original_field = "2F10AFAED544B12D512EC416C57EE12B", hash_generated_field = "C1F49009315AF076AF05EE2867D3FDEF")
 
-    private static long serialVersionUID = 3134344915465784267L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.165 -0400", hash_original_field = "2B901D53AC9F4437C27DC11F24B6E7E9", hash_generated_field = "BAA3173ECCDDFD8B4EF4E90187540A3C")
+    private static final long serialVersionUID = 3134344915465784267L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.059 -0400", hash_original_field = "2B901D53AC9F4437C27DC11F24B6E7E9", hash_generated_field = "BAA3173ECCDDFD8B4EF4E90187540A3C")
 
     public static final String NAME = "Referred-By";
 }

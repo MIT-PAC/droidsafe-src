@@ -15,7 +15,7 @@ import android.widget.ShareActionProvider;
 
 class ShareCompatICS {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.474 -0400", hash_original_method = "3660F8695EEB98A5E585F179E60ADEF2", hash_generated_method = "3660F8695EEB98A5E585F179E60ADEF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.220 -0400", hash_original_method = "3660F8695EEB98A5E585F179E60ADEF2", hash_generated_method = "3660F8695EEB98A5E585F179E60ADEF2")
     public ShareCompatICS ()
     {
         //Synthesized constructor
@@ -37,8 +37,8 @@ class ShareCompatICS {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.486 -0400", hash_original_field = "C557956304C0C74F10FAA1BDDC10CF76", hash_generated_field = "DD396DFA385513809889E97FE41352F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.220 -0400", hash_original_field = "C557956304C0C74F10FAA1BDDC10CF76", hash_generated_field = "95DACE398CE3A9191D58C77F0410A924")
 
-    private static String HISTORY_FILENAME_PREFIX = ".sharecompat_";
+    private static final String HISTORY_FILENAME_PREFIX = ".sharecompat_";
 }
 

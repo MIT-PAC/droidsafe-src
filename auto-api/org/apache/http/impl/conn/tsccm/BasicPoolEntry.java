@@ -14,11 +14,11 @@ import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.impl.conn.AbstractPoolEntry;
 
 public class BasicPoolEntry extends AbstractPoolEntry {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.983 -0400", hash_original_field = "B8AF13EA9C8FE890C9979A1FA8DBDE22", hash_generated_field = "E34C8060B8024F897E4DE2DDC540C297")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.657 -0400", hash_original_field = "B8AF13EA9C8FE890C9979A1FA8DBDE22", hash_generated_field = "E34C8060B8024F897E4DE2DDC540C297")
 
     private BasicPoolEntryRef reference;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.984 -0400", hash_original_method = "9CCB47DAF369299C60002AA9C328CEC6", hash_generated_method = "23DDE5D3D376F3B8A0FF723C07D06B55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.657 -0400", hash_original_method = "9CCB47DAF369299C60002AA9C328CEC6", hash_generated_method = "23DDE5D3D376F3B8A0FF723C07D06B55")
     public  BasicPoolEntry(ClientConnectionOperator op,
                           HttpRoute route,
                           ReferenceQueue<Object> queue) {
@@ -37,34 +37,34 @@ public class BasicPoolEntry extends AbstractPoolEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.985 -0400", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "F186572A6822C4AC7E1DE263CDC737A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.657 -0400", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "6556411A6F8E2EF0844D555E9F6A16FC")
     protected final OperatedClientConnection getConnection() {
-        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1259870861 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1259870861 = super.connection;
-        varB4EAC82CA7396A68D541C85D26508E83_1259870861.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1259870861;
+        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1174526571 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1174526571 = super.connection;
+        varB4EAC82CA7396A68D541C85D26508E83_1174526571.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1174526571;
         // ---------- Original Method ----------
         //return super.connection;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.989 -0400", hash_original_method = "F928965F3078B3981FAC8F2BBDABCB11", hash_generated_method = "E116C36D37B8BE423A4192F3515CA6B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.658 -0400", hash_original_method = "F928965F3078B3981FAC8F2BBDABCB11", hash_generated_method = "61F076276D5D4AAFFE21D52F158E9845")
     protected final HttpRoute getPlannedRoute() {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_2135037676 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2135037676 = super.route;
-        varB4EAC82CA7396A68D541C85D26508E83_2135037676.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2135037676;
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_992276023 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_992276023 = super.route;
+        varB4EAC82CA7396A68D541C85D26508E83_992276023.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_992276023;
         // ---------- Original Method ----------
         //return super.route;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.000 -0400", hash_original_method = "A5F0662ECC443ACB4B44B4D02A3B5BBC", hash_generated_method = "20BBC284E9D793F9CF95C97CC3787294")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.658 -0400", hash_original_method = "A5F0662ECC443ACB4B44B4D02A3B5BBC", hash_generated_method = "BAAF89CD3F146AD7656BE9978DE3D1C5")
     protected final BasicPoolEntryRef getWeakRef() {
-        BasicPoolEntryRef varB4EAC82CA7396A68D541C85D26508E83_1599399851 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1599399851 = this.reference;
-        varB4EAC82CA7396A68D541C85D26508E83_1599399851.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1599399851;
+        BasicPoolEntryRef varB4EAC82CA7396A68D541C85D26508E83_2079441992 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2079441992 = this.reference;
+        varB4EAC82CA7396A68D541C85D26508E83_2079441992.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2079441992;
         // ---------- Original Method ----------
         //return this.reference;
     }

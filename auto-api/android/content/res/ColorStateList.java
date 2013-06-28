@@ -21,31 +21,30 @@ import java.lang.ref.WeakReference;
 import java.util.Arrays;
 
 public class ColorStateList implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.264 -0400", hash_original_field = "90D2BFFC9D360D1A65ACEAB45ADBE457", hash_generated_field = "7D52F505B14BC667C4ED1C5AB261B59A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.522 -0400", hash_original_field = "90D2BFFC9D360D1A65ACEAB45ADBE457", hash_generated_field = "7D52F505B14BC667C4ED1C5AB261B59A")
 
     private int[][] mStateSpecs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.264 -0400", hash_original_field = "F5B754067786840AA79148E1DA0BE95F", hash_generated_field = "53BCC056E3008A06A88375FEB8668D58")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.522 -0400", hash_original_field = "F5B754067786840AA79148E1DA0BE95F", hash_generated_field = "53BCC056E3008A06A88375FEB8668D58")
 
     private int[] mColors;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.264 -0400", hash_original_field = "19E481D0B803854FFC562966D69D049D", hash_generated_field = "57E8521AC9CBFD385A5C49D98FB81CDC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.522 -0400", hash_original_field = "19E481D0B803854FFC562966D69D049D", hash_generated_field = "57E8521AC9CBFD385A5C49D98FB81CDC")
 
     private int mDefaultColor = 0xffff0000;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.279 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.523 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
     private  ColorStateList() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.283 -0400", hash_original_method = "16DE5E515D4E313298C804E12AA820B9", hash_generated_method = "4C16124068B0E6DF6D6C586756DFA957")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.523 -0400", hash_original_method = "16DE5E515D4E313298C804E12AA820B9", hash_generated_method = "46A2C1A839D611D2A6458B87B0FEA9BC")
     public  ColorStateList(int[][] states, int[] colors) {
         mStateSpecs = states;
         mColors = colors;
         {
             mDefaultColor = colors[0];
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     {
                         mDefaultColor = colors[i];
@@ -67,7 +66,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-        public static ColorStateList valueOf(int color) {
+    public static ColorStateList valueOf(int color) {
         synchronized (sCache) {
             WeakReference<ColorStateList> ref = sCache.get(color);
             ColorStateList csl = ref != null ? ref.get() : null;
@@ -81,7 +80,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-        public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
+    public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
         AttributeSet attrs = Xml.asAttributeSet(parser);
         int type;
         while ((type=parser.next()) != XmlPullParser.START_TAG
@@ -94,7 +93,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-        private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
+    private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
             AttributeSet attrs) throws XmlPullParserException, IOException {
         ColorStateList colorStateList;
         final String name = parser.getName();
@@ -109,24 +108,21 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.302 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "01C7E3CCAF1B3ABE15B70B5BC45154AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.525 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "EB747186EA8B3BD870D7A5A0C5E4381D")
     public ColorStateList withAlpha(int alpha) {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1699763142 = null; //Variable for return #1
-        int[] colors;
-        colors = new int[mColors.length];
-        int len;
-        len = colors.length;
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_103895614 = null; //Variable for return #1
+        int[] colors = new int[mColors.length];
+        int len = colors.length;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1699763142 = new ColorStateList(mStateSpecs, colors);
+        varB4EAC82CA7396A68D541C85D26508E83_103895614 = new ColorStateList(mStateSpecs, colors);
         addTaint(alpha);
-        varB4EAC82CA7396A68D541C85D26508E83_1699763142.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1699763142;
+        varB4EAC82CA7396A68D541C85D26508E83_103895614.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_103895614;
         // ---------- Original Method ----------
         //int[] colors = new int[mColors.length];
         //int len = colors.length;
@@ -142,7 +138,7 @@ public class ColorStateList implements Parcelable {
         int type;
         int innerDepth;
         innerDepth = parser.getDepth()+1;
-        int depth;
+        int depth = 0;
         int listAllocated;
         listAllocated = 20;
         int listSize;
@@ -230,34 +226,31 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.377 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "EEB51DD5031D17B8D05A3E2A1CB3E01A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.527 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "33C608D6131EAED1F1AE6B698C14377C")
     public boolean isStateful() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1479284137 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1479284137;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696671904 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_696671904;
         // ---------- Original Method ----------
         //return mStateSpecs.length > 1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.379 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "CE98501C1FCDB4688C249033083F35D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.528 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "BE309A20F90CED83CE2CA312D63144F1")
     public int getColorForState(int[] stateSet, int defaultColor) {
-        int setLength;
-        setLength = mStateSpecs.length;
+        final int setLength = mStateSpecs.length;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                int[] stateSpec;
-                stateSpec = mStateSpecs[i];
+                int[] stateSpec = mStateSpecs[i];
                 {
-                    boolean var0BC14A81E745300E188A9AE767EF71BA_1833810117 = (StateSet.stateSetMatches(stateSpec, stateSet));
+                    boolean var0BC14A81E745300E188A9AE767EF71BA_1695234420 = (StateSet.stateSetMatches(stateSpec, stateSet));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(stateSet[0]);
         addTaint(defaultColor);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135446615 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135446615;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281117553 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281117553;
         // ---------- Original Method ----------
         //final int setLength = mStateSpecs.length;
         //for (int i = 0; i < setLength; i++) {
@@ -270,24 +263,24 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.396 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "593CB4992F2FB40B7D0185C0FE93C946")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.529 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "A1261B3A44D48A736BA686A3021414F9")
     public int getDefaultColor() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494426274 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494426274;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079169662 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079169662;
         // ---------- Original Method ----------
         //return mDefaultColor;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.398 -0400", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "880F29A4E66B919C44038155EF04AF8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.530 -0400", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "8E0AAF6F0EAB6F3701BAF7E46A562F83")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1550066404 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1550066404 = "ColorStateList{" +
+        String varB4EAC82CA7396A68D541C85D26508E83_895378040 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_895378040 = "ColorStateList{" +
                "mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
                "mColors=" + Arrays.toString(mColors) +
                "mDefaultColor=" + mDefaultColor + '}';
-        varB4EAC82CA7396A68D541C85D26508E83_1550066404.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1550066404;
+        varB4EAC82CA7396A68D541C85D26508E83_895378040.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_895378040;
         // ---------- Original Method ----------
         //return "ColorStateList{" +
                //"mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
@@ -296,23 +289,21 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.399 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B3F837B54481F0E2C40B63E1D820C21A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.530 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FA2220AC860B5A28B259B2B1689BC67C")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_902510362 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_902510362;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039654779 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039654779;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.416 -0400", hash_original_method = "E1B2D8F50F6285FEE430316C6FD92D49", hash_generated_method = "ED402649C21C6FD8C71D9E19E5C1089F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.531 -0400", hash_original_method = "E1B2D8F50F6285FEE430316C6FD92D49", hash_generated_method = "12C276F1F67DD6CE000F5D90294DADB4")
     public void writeToParcel(Parcel dest, int flags) {
-        int N;
-        N = mStateSpecs.length;
+        final int N = mStateSpecs.length;
         dest.writeInt(N);
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 dest.writeIntArray(mStateSpecs[i]);
             } //End block
@@ -330,13 +321,13 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.417 -0400", hash_original_field = "080ED7BBEFB1373EE8C4DA7AC0219B51", hash_generated_field = "B6BA9D302B48E192D02514AC6629C083")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.531 -0400", hash_original_field = "080ED7BBEFB1373EE8C4DA7AC0219B51", hash_generated_field = "41F1B900ACFD3D3CE9828C8FBA43A76D")
 
-    private static int[][] EMPTY = new int[][] { new int[0] };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.417 -0400", hash_original_field = "38EF06A4AFF04E20ADCD0BEE948F04D6", hash_generated_field = "F59ACBA2B5293C2682DF1360075F35FC")
+    private static final int[][] EMPTY = new int[][] { new int[0] };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.531 -0400", hash_original_field = "38EF06A4AFF04E20ADCD0BEE948F04D6", hash_generated_field = "63E4E9738983D663C4BF9E32C63A6A40")
 
-    private static SparseArray<WeakReference<ColorStateList>> sCache = new SparseArray<WeakReference<ColorStateList>>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.417 -0400", hash_original_field = "1BBFF86921A48C3AD8A7B5472F436B50", hash_generated_field = "C7405A28A73CE53110DBA3CB822ABCA2")
+    private static final SparseArray<WeakReference<ColorStateList>> sCache = new SparseArray<WeakReference<ColorStateList>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.531 -0400", hash_original_field = "1BBFF86921A48C3AD8A7B5472F436B50", hash_generated_field = "C7405A28A73CE53110DBA3CB822ABCA2")
 
     public static final Parcelable.Creator<ColorStateList> CREATOR =
             new Parcelable.Creator<ColorStateList>() {
@@ -354,5 +345,21 @@ public class ColorStateList implements Parcelable {
             return new ColorStateList(stateSpecs, colors);
         }
     };
+    // orphaned legacy method
+    public ColorStateList createFromParcel(Parcel source) {
+            final int N = source.readInt();
+            int[][] stateSpecs = new int[N][];
+            for (int i=0; i<N; i++) {
+                stateSpecs[i] = source.createIntArray();
+            }
+            int[] colors = source.createIntArray();
+            return new ColorStateList(stateSpecs, colors);
+        }
+    
+    // orphaned legacy method
+    public ColorStateList[] newArray(int size) {
+            return new ColorStateList[size];
+        }
+    
 }
 

@@ -13,11 +13,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class JSONObject {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.497 -0400", hash_original_field = "1CF5E4F247CC69AF70109AE4475648CB", hash_generated_field = "4AEF8EB90733274F8DF38365152EB324")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.245 -0400", hash_original_field = "1CF5E4F247CC69AF70109AE4475648CB", hash_generated_field = "4AEF8EB90733274F8DF38365152EB324")
 
     private Map<String, Object> nameValuePairs;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.498 -0400", hash_original_method = "B0BA44B1CBEEB832685DE1D9CC551D36", hash_generated_method = "8AB77AFCB9DCE98AE75372C152EFAE46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.246 -0400", hash_original_method = "B0BA44B1CBEEB832685DE1D9CC551D36", hash_generated_method = "8AB77AFCB9DCE98AE75372C152EFAE46")
     public  JSONObject() {
         nameValuePairs = new HashMap<String, Object>();
         // ---------- Original Method ----------
@@ -25,17 +25,15 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.512 -0400", hash_original_method = "64F11EBDF44BE4F1CBC516D3CD1F34E9", hash_generated_method = "0DD588210D279066BAD51B68AB163F36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.249 -0400", hash_original_method = "64F11EBDF44BE4F1CBC516D3CD1F34E9", hash_generated_method = "9F92DAAEB007F89A0622D1FEF6712AA8")
     public  JSONObject(Map copyFrom) {
         this();
-        Map<?, ?> contentsTyped;
-        contentsTyped = (Map<?, ?>) copyFrom;
+        Map<?, ?> contentsTyped = (Map<?, ?>) copyFrom;
         {
             contentsTyped.entrySet().iterator().hasNext();
             Map.Entry<?, ?> entry = contentsTyped.entrySet().iterator().next();
             {
-                String key;
-                key = (String) entry.getKey();
+                String key = (String) entry.getKey();
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
                 } //End block
@@ -55,10 +53,9 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.512 -0400", hash_original_method = "E218F03BB03DC7D8503E0318225F7859", hash_generated_method = "DD6D211BB274906FE1177FEAE409B769")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.250 -0400", hash_original_method = "E218F03BB03DC7D8503E0318225F7859", hash_generated_method = "86E62E1D3821BEB224773FFC57ED9B06")
     public  JSONObject(JSONTokener readFrom) throws JSONException {
-        Object object;
-        object = readFrom.nextValue();
+        Object object = readFrom.nextValue();
         {
             this.nameValuePairs = ((JSONObject) object).nameValuePairs;
         } //End block
@@ -76,7 +73,7 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.530 -0400", hash_original_method = "27B9491B51940DE15585B798AFD3D304", hash_generated_method = "64C04C1F10C31248B34728372555B741")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.250 -0400", hash_original_method = "27B9491B51940DE15585B798AFD3D304", hash_generated_method = "64C04C1F10C31248B34728372555B741")
     public  JSONObject(String json) throws JSONException {
         this(new JSONTokener(json));
         addTaint(json.getTaint());
@@ -84,16 +81,15 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.559 -0400", hash_original_method = "D555E6715A2E6E4EC106278BB66ED891", hash_generated_method = "5E0F9BEE1495EAEBFEAA8A4CD27B0B8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.253 -0400", hash_original_method = "D555E6715A2E6E4EC106278BB66ED891", hash_generated_method = "448A0F738F553671816A43F8C720CF9F")
     public  JSONObject(JSONObject copyFrom, String[] names) throws JSONException {
         this();
         {
-            Iterator<String> var0B4471083E71D104FA84944F144C9814_448155609 = (names).iterator();
-            var0B4471083E71D104FA84944F144C9814_448155609.hasNext();
-            String name = var0B4471083E71D104FA84944F144C9814_448155609.next();
+            Iterator<String> var0B4471083E71D104FA84944F144C9814_1162077715 = (names).iterator();
+            var0B4471083E71D104FA84944F144C9814_1162077715.hasNext();
+            String name = var0B4471083E71D104FA84944F144C9814_1162077715.next();
             {
-                Object value;
-                value = copyFrom.opt(name);
+                Object value = copyFrom.opt(name);
                 {
                     nameValuePairs.put(name, value);
                 } //End block
@@ -111,102 +107,102 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.560 -0400", hash_original_method = "BB0C5A7042ADC1F8FC4BAA64EBFD2B52", hash_generated_method = "0E40554A4E37614ACE1445226B9A4B2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.253 -0400", hash_original_method = "BB0C5A7042ADC1F8FC4BAA64EBFD2B52", hash_generated_method = "B6E3F4AA80BED6DC447864F6424C8C8C")
     public int length() {
-        int var5BCA4F4CB72BD4E013D6A2FD0A5A950A_67475536 = (nameValuePairs.size());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_218110262 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_218110262;
+        int var5BCA4F4CB72BD4E013D6A2FD0A5A950A_68170779 = (nameValuePairs.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111526204 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111526204;
         // ---------- Original Method ----------
         //return nameValuePairs.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.561 -0400", hash_original_method = "43A124AF3EF8B2736A46103CC8729DE3", hash_generated_method = "5600E6BA9A9F97DAE8F578DB7DE8EBD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.254 -0400", hash_original_method = "43A124AF3EF8B2736A46103CC8729DE3", hash_generated_method = "78943B8116A83F93113D561B4FE013D4")
     public JSONObject put(String name, boolean value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1073452461 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_335461189 = null; //Variable for return #1
         nameValuePairs.put(checkName(name), value);
-        varB4EAC82CA7396A68D541C85D26508E83_1073452461 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_335461189 = this;
         addTaint(name.getTaint());
         addTaint(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1073452461.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1073452461;
+        varB4EAC82CA7396A68D541C85D26508E83_335461189.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_335461189;
         // ---------- Original Method ----------
         //nameValuePairs.put(checkName(name), value);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.561 -0400", hash_original_method = "FF23ECF2F7B3A424BD0CA2B446E9E0DB", hash_generated_method = "0EEA6B2E6A6080068BCEA28F718953F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.255 -0400", hash_original_method = "FF23ECF2F7B3A424BD0CA2B446E9E0DB", hash_generated_method = "98A047DB67C599351732AFC82AF0925B")
     public JSONObject put(String name, double value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_107051704 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1339256119 = null; //Variable for return #1
         nameValuePairs.put(checkName(name), JSON.checkDouble(value));
-        varB4EAC82CA7396A68D541C85D26508E83_107051704 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1339256119 = this;
         addTaint(name.getTaint());
         addTaint(value);
-        varB4EAC82CA7396A68D541C85D26508E83_107051704.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_107051704;
+        varB4EAC82CA7396A68D541C85D26508E83_1339256119.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1339256119;
         // ---------- Original Method ----------
         //nameValuePairs.put(checkName(name), JSON.checkDouble(value));
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.562 -0400", hash_original_method = "14B3109A64A28D2764163C4077CDC45D", hash_generated_method = "3AD2486B4F8AA6B5B646A4C733F8E127")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.256 -0400", hash_original_method = "14B3109A64A28D2764163C4077CDC45D", hash_generated_method = "3B3B26450C42E269BB887535675B4E66")
     public JSONObject put(String name, int value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1507380363 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1239323639 = null; //Variable for return #1
         nameValuePairs.put(checkName(name), value);
-        varB4EAC82CA7396A68D541C85D26508E83_1507380363 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1239323639 = this;
         addTaint(name.getTaint());
         addTaint(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1507380363.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1507380363;
+        varB4EAC82CA7396A68D541C85D26508E83_1239323639.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1239323639;
         // ---------- Original Method ----------
         //nameValuePairs.put(checkName(name), value);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.566 -0400", hash_original_method = "0E78BCAD739042DC347A7959C52D188A", hash_generated_method = "7E0F008AD0B9775DF01E1752755CDAC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.256 -0400", hash_original_method = "0E78BCAD739042DC347A7959C52D188A", hash_generated_method = "0E568502E2EA1D07719FE388709669C7")
     public JSONObject put(String name, long value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1074722482 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_560323806 = null; //Variable for return #1
         nameValuePairs.put(checkName(name), value);
-        varB4EAC82CA7396A68D541C85D26508E83_1074722482 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_560323806 = this;
         addTaint(name.getTaint());
         addTaint(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1074722482.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1074722482;
+        varB4EAC82CA7396A68D541C85D26508E83_560323806.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_560323806;
         // ---------- Original Method ----------
         //nameValuePairs.put(checkName(name), value);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.586 -0400", hash_original_method = "8B4C0C01745202135A0373E57DFB791E", hash_generated_method = "854954722F14B5E9DE6D6CDDA3852A07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.258 -0400", hash_original_method = "8B4C0C01745202135A0373E57DFB791E", hash_generated_method = "8A3AB92BD8E9CDB7B97E975D97463B13")
     public JSONObject put(String name, Object value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_827921158 = null; //Variable for return #1
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_2136991756 = null; //Variable for return #2
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_71644995 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1896455663 = null; //Variable for return #2
         {
             nameValuePairs.remove(name);
-            varB4EAC82CA7396A68D541C85D26508E83_827921158 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_71644995 = this;
         } //End block
         {
             JSON.checkDouble(((Number) value).doubleValue());
         } //End block
         nameValuePairs.put(checkName(name), value);
-        varB4EAC82CA7396A68D541C85D26508E83_2136991756 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1896455663 = this;
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        JSONObject varA7E53CE21691AB073D9660D615818899_1570024564; //Final return value
+        JSONObject varA7E53CE21691AB073D9660D615818899_1076530072; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1570024564 = varB4EAC82CA7396A68D541C85D26508E83_827921158;
+                varA7E53CE21691AB073D9660D615818899_1076530072 = varB4EAC82CA7396A68D541C85D26508E83_71644995;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1570024564 = varB4EAC82CA7396A68D541C85D26508E83_2136991756;
+                varA7E53CE21691AB073D9660D615818899_1076530072 = varB4EAC82CA7396A68D541C85D26508E83_1896455663;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1570024564.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1570024564;
+        varA7E53CE21691AB073D9660D615818899_1076530072.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1076530072;
         // ---------- Original Method ----------
         //if (value == null) {
             //nameValuePairs.remove(name);
@@ -220,27 +216,27 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.587 -0400", hash_original_method = "D9589667A2509A719F9DF68E891B85DD", hash_generated_method = "8AC372DF13EB6E405094111E4B650CDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.261 -0400", hash_original_method = "D9589667A2509A719F9DF68E891B85DD", hash_generated_method = "5CC750B8B8A11916D51A210DEF2CD03A")
     public JSONObject putOpt(String name, Object value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_123721336 = null; //Variable for return #1
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1968020942 = null; //Variable for return #2
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_802879368 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_582792162 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_123721336 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_802879368 = this;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1968020942 = put(name, value);
+        varB4EAC82CA7396A68D541C85D26508E83_582792162 = put(name, value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        JSONObject varA7E53CE21691AB073D9660D615818899_1821847600; //Final return value
+        JSONObject varA7E53CE21691AB073D9660D615818899_8100051; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1821847600 = varB4EAC82CA7396A68D541C85D26508E83_123721336;
+                varA7E53CE21691AB073D9660D615818899_8100051 = varB4EAC82CA7396A68D541C85D26508E83_802879368;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1821847600 = varB4EAC82CA7396A68D541C85D26508E83_1968020942;
+                varA7E53CE21691AB073D9660D615818899_8100051 = varB4EAC82CA7396A68D541C85D26508E83_582792162;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1821847600.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1821847600;
+        varA7E53CE21691AB073D9660D615818899_8100051.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_8100051;
         // ---------- Original Method ----------
         //if (name == null || value == null) {
             //return this;
@@ -249,44 +245,41 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.589 -0400", hash_original_method = "5A758AD2B70A18447D6617A35807B03B", hash_generated_method = "E05F391AA2035C956DB883C53E030ED2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.264 -0400", hash_original_method = "5A758AD2B70A18447D6617A35807B03B", hash_generated_method = "B8F64C35FC176E4946D2FE4B3E6D24EE")
     public JSONObject accumulate(String name, Object value) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1819945603 = null; //Variable for return #1
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_865143974 = null; //Variable for return #2
-        Object current;
-        current = nameValuePairs.get(checkName(name));
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_414561770 = null; //Variable for return #1
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_1474913090 = null; //Variable for return #2
+        Object current = nameValuePairs.get(checkName(name));
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1819945603 = put(name, value);
+            varB4EAC82CA7396A68D541C85D26508E83_414561770 = put(name, value);
         } //End block
         {
             JSON.checkDouble(((Number) value).doubleValue());
         } //End block
         {
-            JSONArray array;
-            array = (JSONArray) current;
+            JSONArray array = (JSONArray) current;
             array.put(value);
         } //End block
         {
-            JSONArray array;
-            array = new JSONArray();
+            JSONArray array = new JSONArray();
             array.put(current);
             array.put(value);
             nameValuePairs.put(name, array);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_865143974 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1474913090 = this;
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        JSONObject varA7E53CE21691AB073D9660D615818899_832931459; //Final return value
+        JSONObject varA7E53CE21691AB073D9660D615818899_858638701; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_832931459 = varB4EAC82CA7396A68D541C85D26508E83_1819945603;
+                varA7E53CE21691AB073D9660D615818899_858638701 = varB4EAC82CA7396A68D541C85D26508E83_414561770;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_832931459 = varB4EAC82CA7396A68D541C85D26508E83_865143974;
+                varA7E53CE21691AB073D9660D615818899_858638701 = varB4EAC82CA7396A68D541C85D26508E83_1474913090;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_832931459.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_832931459;
+        varA7E53CE21691AB073D9660D615818899_858638701.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_858638701;
         // ---------- Original Method ----------
         //Object current = nameValuePairs.get(checkName(name));
         //if (current == null) {
@@ -308,16 +301,16 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.591 -0400", hash_original_method = "1AA4BB08CA8C9DDACC6E60D58C017824", hash_generated_method = "7972B3DAE5C36E0E1EFBB37072880703")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.265 -0400", hash_original_method = "1AA4BB08CA8C9DDACC6E60D58C017824", hash_generated_method = "AAAA97869772F57B920F79F9F756E292")
      String checkName(String name) throws JSONException {
-        String varB4EAC82CA7396A68D541C85D26508E83_364349412 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_435806287 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new JSONException("Names must be non-null");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_364349412 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_435806287 = name;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_364349412.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_364349412;
+        varB4EAC82CA7396A68D541C85D26508E83_435806287.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_435806287;
         // ---------- Original Method ----------
         //if (name == null) {
             //throw new JSONException("Names must be non-null");
@@ -326,54 +319,52 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.592 -0400", hash_original_method = "BEB5EB52101798DC8AC0FA25480A2C90", hash_generated_method = "CAFF72E0C22670C987E9B1F93B24E4BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.266 -0400", hash_original_method = "BEB5EB52101798DC8AC0FA25480A2C90", hash_generated_method = "EBB1D6AF6CFA48BCA76BC2C2EB040F81")
     public Object remove(String name) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1049174764 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1049174764 = nameValuePairs.remove(name);
+        Object varB4EAC82CA7396A68D541C85D26508E83_443555416 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_443555416 = nameValuePairs.remove(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1049174764.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1049174764;
+        varB4EAC82CA7396A68D541C85D26508E83_443555416.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_443555416;
         // ---------- Original Method ----------
         //return nameValuePairs.remove(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.592 -0400", hash_original_method = "A1CD692FA856D7FF90D2024A71E93EE6", hash_generated_method = "BF3C5C004A7DFD0F19FB45A2249EA7FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.267 -0400", hash_original_method = "A1CD692FA856D7FF90D2024A71E93EE6", hash_generated_method = "C2B1B80F0738AC26DAA1DC6153F3E842")
     public boolean isNull(String name) {
-        Object value;
-        value = nameValuePairs.get(name);
+        Object value = nameValuePairs.get(name);
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117108629 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117108629;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510277079 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510277079;
         // ---------- Original Method ----------
         //Object value = nameValuePairs.get(name);
         //return value == null || value == NULL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.593 -0400", hash_original_method = "297E71AC76AEECD92DCC3FA05327BE46", hash_generated_method = "CBF4321B834A051F63D9A754B5E49525")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.268 -0400", hash_original_method = "297E71AC76AEECD92DCC3FA05327BE46", hash_generated_method = "F420FB9CA2AF4EB2B882CEB95AD5613E")
     public boolean has(String name) {
-        boolean varAECCD7AE3813DBC2EAACB91C7BEDAB3D_762309600 = (nameValuePairs.containsKey(name));
+        boolean varAECCD7AE3813DBC2EAACB91C7BEDAB3D_416482823 = (nameValuePairs.containsKey(name));
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572784567 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_572784567;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988825448 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1988825448;
         // ---------- Original Method ----------
         //return nameValuePairs.containsKey(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.603 -0400", hash_original_method = "C38AAF9284AEE2A94970713BC651F263", hash_generated_method = "7C3FD5B76871F7CC33D733FBBDA03AA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.269 -0400", hash_original_method = "C38AAF9284AEE2A94970713BC651F263", hash_generated_method = "F4A8BCC56EC0038A3D0FE4C2794CF2CD")
     public Object get(String name) throws JSONException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_889529122 = null; //Variable for return #1
-        Object result;
-        result = nameValuePairs.get(name);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1676054670 = null; //Variable for return #1
+        Object result = nameValuePairs.get(name);
         {
             if (DroidSafeAndroidRuntime.control) throw new JSONException("No value for " + name);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_889529122 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1676054670 = result;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_889529122.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_889529122;
+        varB4EAC82CA7396A68D541C85D26508E83_1676054670.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1676054670;
         // ---------- Original Method ----------
         //Object result = nameValuePairs.get(name);
         //if (result == null) {
@@ -383,30 +374,28 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.604 -0400", hash_original_method = "05A351DC7DE639568132A573A6E2106E", hash_generated_method = "3AEBBF6B72DCE3574A812CCFF8061EDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.269 -0400", hash_original_method = "05A351DC7DE639568132A573A6E2106E", hash_generated_method = "26BE8D6F52D9B8BDFEE59D47F070D08A")
     public Object opt(String name) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1640993743 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1640993743 = nameValuePairs.get(name);
+        Object varB4EAC82CA7396A68D541C85D26508E83_552002978 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_552002978 = nameValuePairs.get(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1640993743.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1640993743;
+        varB4EAC82CA7396A68D541C85D26508E83_552002978.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_552002978;
         // ---------- Original Method ----------
         //return nameValuePairs.get(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.605 -0400", hash_original_method = "7B38D2B2DBA3C433303B4D117D86E4E0", hash_generated_method = "69AA99B8400F26A3235E8E83F03B4B80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.270 -0400", hash_original_method = "7B38D2B2DBA3C433303B4D117D86E4E0", hash_generated_method = "99B53A4E1ADC703EE301360E6E7016F3")
     public boolean getBoolean(String name) throws JSONException {
-        Object object;
-        object = get(name);
-        Boolean result;
-        result = JSON.toBoolean(object);
+        Object object = get(name);
+        Boolean result = JSON.toBoolean(object);
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "boolean");
         } //End block
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1265594862 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1265594862;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648066840 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648066840;
         // ---------- Original Method ----------
         //Object object = get(name);
         //Boolean result = JSON.toBoolean(object);
@@ -417,27 +406,25 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.605 -0400", hash_original_method = "3DA4544CD80345F7570489979490BD16", hash_generated_method = "0DEF5C0FFD0BDC0B4681FA1FA6C35F38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.270 -0400", hash_original_method = "3DA4544CD80345F7570489979490BD16", hash_generated_method = "4521CDD539D9E57FDFC7109F39660397")
     public boolean optBoolean(String name) {
-        boolean var8BE80B6E9846B5FE1784886B30F81C14_2103507905 = (optBoolean(name, false));
+        boolean var8BE80B6E9846B5FE1784886B30F81C14_1518261956 = (optBoolean(name, false));
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119008500 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119008500;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1867783748 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1867783748;
         // ---------- Original Method ----------
         //return optBoolean(name, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.605 -0400", hash_original_method = "C49CAFC4CC69BC825D274D7317108A68", hash_generated_method = "D1FB2C685C4DC684596CBBEC3059B2EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.271 -0400", hash_original_method = "C49CAFC4CC69BC825D274D7317108A68", hash_generated_method = "42313478833BDAD88B465069E976D3EB")
     public boolean optBoolean(String name, boolean fallback) {
-        Object object;
-        object = opt(name);
-        Boolean result;
-        result = JSON.toBoolean(object);
+        Object object = opt(name);
+        Boolean result = JSON.toBoolean(object);
         addTaint(name.getTaint());
         addTaint(fallback);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_746880362 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_746880362;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779475065 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_779475065;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //Boolean result = JSON.toBoolean(object);
@@ -445,18 +432,16 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.616 -0400", hash_original_method = "0C60D6C72644A8965D87529BB9443348", hash_generated_method = "E71F1C8A1C6F3E03148848CC0C3413BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.271 -0400", hash_original_method = "0C60D6C72644A8965D87529BB9443348", hash_generated_method = "A7C3321FFED542924AE9B74C651DFBBF")
     public double getDouble(String name) throws JSONException {
-        Object object;
-        object = get(name);
-        Double result;
-        result = JSON.toDouble(object);
+        Object object = get(name);
+        Double result = JSON.toDouble(object);
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "double");
         } //End block
         addTaint(name.getTaint());
-        double varE8CD7DA078A86726031AD64F35F5A6C0_584032804 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_584032804;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_446705857 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_446705857;
         // ---------- Original Method ----------
         //Object object = get(name);
         //Double result = JSON.toDouble(object);
@@ -467,27 +452,25 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.616 -0400", hash_original_method = "B9CFB7D5CC2BB58B8CACB29638DEE6A6", hash_generated_method = "A7745108AC63DB9E0150BF7B3EE37464")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.272 -0400", hash_original_method = "B9CFB7D5CC2BB58B8CACB29638DEE6A6", hash_generated_method = "FA8FFA7C8CFEEF2EDB710CF44AA5F386")
     public double optDouble(String name) {
-        double varC56F0B477EEE0A41E1A76F177E961C03_962314190 = (optDouble(name, Double.NaN));
+        double varC56F0B477EEE0A41E1A76F177E961C03_213080590 = (optDouble(name, Double.NaN));
         addTaint(name.getTaint());
-        double varE8CD7DA078A86726031AD64F35F5A6C0_635100356 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_635100356;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_118566363 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_118566363;
         // ---------- Original Method ----------
         //return optDouble(name, Double.NaN);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.616 -0400", hash_original_method = "F525E9AC5AAC714EA253692C6DC9EE0E", hash_generated_method = "6477E93EDFEF2E890C0F701C366ABEB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.273 -0400", hash_original_method = "F525E9AC5AAC714EA253692C6DC9EE0E", hash_generated_method = "D6AAF085F8DCACB19541F1DEBDFE3F05")
     public double optDouble(String name, double fallback) {
-        Object object;
-        object = opt(name);
-        Double result;
-        result = JSON.toDouble(object);
+        Object object = opt(name);
+        Double result = JSON.toDouble(object);
         addTaint(name.getTaint());
         addTaint(fallback);
-        double varE8CD7DA078A86726031AD64F35F5A6C0_1165257024 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_1165257024;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_2046487653 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_2046487653;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //Double result = JSON.toDouble(object);
@@ -495,18 +478,16 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.617 -0400", hash_original_method = "06DD6202AFC58B0F1BA6F9DBAA37C5F3", hash_generated_method = "29E74EF4F7B595D8271273A850BE0E48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.273 -0400", hash_original_method = "06DD6202AFC58B0F1BA6F9DBAA37C5F3", hash_generated_method = "D3D179828C4BB9C155D5A2110F5B6F87")
     public int getInt(String name) throws JSONException {
-        Object object;
-        object = get(name);
-        Integer result;
-        result = JSON.toInteger(object);
+        Object object = get(name);
+        Integer result = JSON.toInteger(object);
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "int");
         } //End block
         addTaint(name.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238070477 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238070477;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881122596 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881122596;
         // ---------- Original Method ----------
         //Object object = get(name);
         //Integer result = JSON.toInteger(object);
@@ -517,27 +498,25 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.617 -0400", hash_original_method = "CF8C56AE8C6952FAAA48007CA568A3BF", hash_generated_method = "943E3EBFC39ECE0E11082EEA2EEB6E8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.274 -0400", hash_original_method = "CF8C56AE8C6952FAAA48007CA568A3BF", hash_generated_method = "1E18A81E9D184D7F6A98B7A8C9D595CE")
     public int optInt(String name) {
-        int var9479CC3C6E3D661742F54067B614174E_1622991183 = (optInt(name, 0));
+        int var9479CC3C6E3D661742F54067B614174E_628342518 = (optInt(name, 0));
         addTaint(name.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547341063 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547341063;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_118085881 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_118085881;
         // ---------- Original Method ----------
         //return optInt(name, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.626 -0400", hash_original_method = "FC3121A883EAF5555BD9C194D7925D34", hash_generated_method = "0701A943ABD6D186F3A00F5978212CC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.274 -0400", hash_original_method = "FC3121A883EAF5555BD9C194D7925D34", hash_generated_method = "9479CB9F4E19D47F7E71DD0E0707AC52")
     public int optInt(String name, int fallback) {
-        Object object;
-        object = opt(name);
-        Integer result;
-        result = JSON.toInteger(object);
+        Object object = opt(name);
+        Integer result = JSON.toInteger(object);
         addTaint(name.getTaint());
         addTaint(fallback);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755695240 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755695240;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771563004 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771563004;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //Integer result = JSON.toInteger(object);
@@ -545,18 +524,16 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.626 -0400", hash_original_method = "55ABC1042FFC5D7EF9272460461F1426", hash_generated_method = "C5DFD451A5F7FB67BC55173E4AB15103")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.275 -0400", hash_original_method = "55ABC1042FFC5D7EF9272460461F1426", hash_generated_method = "A80542EB2656CCA893D47F3E42AE6320")
     public long getLong(String name) throws JSONException {
-        Object object;
-        object = get(name);
-        Long result;
-        result = JSON.toLong(object);
+        Object object = get(name);
+        Long result = JSON.toLong(object);
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "long");
         } //End block
         addTaint(name.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_810937882 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_810937882;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1843117184 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1843117184;
         // ---------- Original Method ----------
         //Object object = get(name);
         //Long result = JSON.toLong(object);
@@ -567,27 +544,25 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.630 -0400", hash_original_method = "70DEF89A3C807E0937F5C9E9E3A1A203", hash_generated_method = "9860AE3F9A5F2FC87B1640083B926775")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.275 -0400", hash_original_method = "70DEF89A3C807E0937F5C9E9E3A1A203", hash_generated_method = "B723772746F32D5E2C11C00FDA3FBF5D")
     public long optLong(String name) {
-        long var4E3DB8E77FB5DFAD161FC7022FC765A8_1213501548 = (optLong(name, 0L));
+        long var4E3DB8E77FB5DFAD161FC7022FC765A8_1944248761 = (optLong(name, 0L));
         addTaint(name.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_807831537 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_807831537;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_499402849 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_499402849;
         // ---------- Original Method ----------
         //return optLong(name, 0L);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.630 -0400", hash_original_method = "C94BC7D2B7352E7323E9E58C53ACE476", hash_generated_method = "5DBC20D83523D347DD8DEAA374ABDD6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.276 -0400", hash_original_method = "C94BC7D2B7352E7323E9E58C53ACE476", hash_generated_method = "52479198AB8BB94F185FDD8FE19AFF8E")
     public long optLong(String name, long fallback) {
-        Object object;
-        object = opt(name);
-        Long result;
-        result = JSON.toLong(object);
+        Object object = opt(name);
+        Long result = JSON.toLong(object);
         addTaint(name.getTaint());
         addTaint(fallback);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1218265519 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1218265519;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1028934030 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1028934030;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //Long result = JSON.toLong(object);
@@ -595,20 +570,18 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.631 -0400", hash_original_method = "CC649536AC568087B4414076D420F027", hash_generated_method = "D912A04EFEE4612F092DEEDA8C15CB11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.277 -0400", hash_original_method = "CC649536AC568087B4414076D420F027", hash_generated_method = "1BFAB5F7524FF153FA62C9BAFE0EF991")
     public String getString(String name) throws JSONException {
-        String varB4EAC82CA7396A68D541C85D26508E83_379822961 = null; //Variable for return #1
-        Object object;
-        object = get(name);
-        String result;
-        result = JSON.toString(object);
+        String varB4EAC82CA7396A68D541C85D26508E83_1200061799 = null; //Variable for return #1
+        Object object = get(name);
+        String result = JSON.toString(object);
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "String");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_379822961 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1200061799 = result;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_379822961.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_379822961;
+        varB4EAC82CA7396A68D541C85D26508E83_1200061799.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1200061799;
         // ---------- Original Method ----------
         //Object object = get(name);
         //String result = JSON.toString(object);
@@ -619,30 +592,28 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.636 -0400", hash_original_method = "8B81E5CBB6FE92C9270C8AE14E1D248D", hash_generated_method = "A989A990AA1215FFB2F1652F78766480")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.278 -0400", hash_original_method = "8B81E5CBB6FE92C9270C8AE14E1D248D", hash_generated_method = "49BFFDFE0A82896EC958B4BA89B78B9D")
     public String optString(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1321900736 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1321900736 = optString(name, "");
+        String varB4EAC82CA7396A68D541C85D26508E83_1110632132 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1110632132 = optString(name, "");
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1321900736.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1321900736;
+        varB4EAC82CA7396A68D541C85D26508E83_1110632132.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1110632132;
         // ---------- Original Method ----------
         //return optString(name, "");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.636 -0400", hash_original_method = "B4BBF2951ACCBF79FD3FE8AB17DCAE83", hash_generated_method = "6E819A162D5935C01C33B28C35939873")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.279 -0400", hash_original_method = "B4BBF2951ACCBF79FD3FE8AB17DCAE83", hash_generated_method = "853EE96BB449B39077474C187A45A2C4")
     public String optString(String name, String fallback) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1761730200 = null; //Variable for return #1
-        Object object;
-        object = opt(name);
-        String result;
-        result = JSON.toString(object);
-        varB4EAC82CA7396A68D541C85D26508E83_1761730200 = result != null ? result : fallback;
+        String varB4EAC82CA7396A68D541C85D26508E83_531903119 = null; //Variable for return #1
+        Object object = opt(name);
+        String result = JSON.toString(object);
+        varB4EAC82CA7396A68D541C85D26508E83_531903119 = result != null ? result : fallback;
         addTaint(name.getTaint());
         addTaint(fallback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1761730200.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1761730200;
+        varB4EAC82CA7396A68D541C85D26508E83_531903119.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_531903119;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //String result = JSON.toString(object);
@@ -650,20 +621,19 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.647 -0400", hash_original_method = "1CE1CD2D1D65AA0859027B9575FA80C4", hash_generated_method = "AB942994BAF3131717876C2C6F8B6751")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.279 -0400", hash_original_method = "1CE1CD2D1D65AA0859027B9575FA80C4", hash_generated_method = "6B1BDD639EBCDA480EF91C5FA43B0E5A")
     public JSONArray getJSONArray(String name) throws JSONException {
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1791562837 = null; //Variable for return #1
-        Object object;
-        object = get(name);
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_580091994 = null; //Variable for return #1
+        Object object = get(name);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1791562837 = (JSONArray) object;
+            varB4EAC82CA7396A68D541C85D26508E83_580091994 = (JSONArray) object;
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "JSONArray");
         } //End block
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1791562837.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1791562837;
+        varB4EAC82CA7396A68D541C85D26508E83_580091994.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_580091994;
         // ---------- Original Method ----------
         //Object object = get(name);
         //if (object instanceof JSONArray) {
@@ -674,35 +644,33 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.648 -0400", hash_original_method = "576EFB0CB9E2FA91FCF1D9A3EF1337C6", hash_generated_method = "FD78BCB8B0F7B318690D4DBD56DE98B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.281 -0400", hash_original_method = "576EFB0CB9E2FA91FCF1D9A3EF1337C6", hash_generated_method = "AD048853EF980F72C60A555200ADF727")
     public JSONArray optJSONArray(String name) {
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_214213918 = null; //Variable for return #1
-        Object object;
-        object = opt(name);
-        varB4EAC82CA7396A68D541C85D26508E83_214213918 = object instanceof JSONArray ? (JSONArray) object : null;
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1761641368 = null; //Variable for return #1
+        Object object = opt(name);
+        varB4EAC82CA7396A68D541C85D26508E83_1761641368 = object instanceof JSONArray ? (JSONArray) object : null;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_214213918.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_214213918;
+        varB4EAC82CA7396A68D541C85D26508E83_1761641368.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1761641368;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //return object instanceof JSONArray ? (JSONArray) object : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.648 -0400", hash_original_method = "5326315C93466A3B1E8C695224A5B5FD", hash_generated_method = "09AC1779D526E5FDB4035DA3D1D3C39D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.282 -0400", hash_original_method = "5326315C93466A3B1E8C695224A5B5FD", hash_generated_method = "08707F2466AEF81CA0BE634A5A221E2A")
     public JSONObject getJSONObject(String name) throws JSONException {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_534236876 = null; //Variable for return #1
-        Object object;
-        object = get(name);
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_385592447 = null; //Variable for return #1
+        Object object = get(name);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_534236876 = (JSONObject) object;
+            varB4EAC82CA7396A68D541C85D26508E83_385592447 = (JSONObject) object;
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw JSON.typeMismatch(name, object, "JSONObject");
         } //End block
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_534236876.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_534236876;
+        varB4EAC82CA7396A68D541C85D26508E83_385592447.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_385592447;
         // ---------- Original Method ----------
         //Object object = get(name);
         //if (object instanceof JSONObject) {
@@ -713,61 +681,56 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.649 -0400", hash_original_method = "B736B3B7313026EC1CBB4CB1D3C2367D", hash_generated_method = "F226ED3D68E8306C81E152883EA68287")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.284 -0400", hash_original_method = "B736B3B7313026EC1CBB4CB1D3C2367D", hash_generated_method = "F36434DD18F603B98AC6CF10E5116866")
     public JSONObject optJSONObject(String name) {
-        JSONObject varB4EAC82CA7396A68D541C85D26508E83_198034713 = null; //Variable for return #1
-        Object object;
-        object = opt(name);
-        varB4EAC82CA7396A68D541C85D26508E83_198034713 = object instanceof JSONObject ? (JSONObject) object : null;
+        JSONObject varB4EAC82CA7396A68D541C85D26508E83_724145350 = null; //Variable for return #1
+        Object object = opt(name);
+        varB4EAC82CA7396A68D541C85D26508E83_724145350 = object instanceof JSONObject ? (JSONObject) object : null;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_198034713.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_198034713;
+        varB4EAC82CA7396A68D541C85D26508E83_724145350.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_724145350;
         // ---------- Original Method ----------
         //Object object = opt(name);
         //return object instanceof JSONObject ? (JSONObject) object : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.649 -0400", hash_original_method = "1E876AFA246F164144A4BA68FB0C8527", hash_generated_method = "0FD97F0F7F05AFB9B9FD06F106B34851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.288 -0400", hash_original_method = "1E876AFA246F164144A4BA68FB0C8527", hash_generated_method = "37850F20114F80CC9A9B93CEA056CAC4")
     public JSONArray toJSONArray(JSONArray names) throws JSONException {
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1528796896 = null; //Variable for return #1
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1605445258 = null; //Variable for return #2
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_581214306 = null; //Variable for return #3
-        JSONArray result;
-        result = new JSONArray();
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1379347425 = null; //Variable for return #1
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1846555544 = null; //Variable for return #2
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_291922586 = null; //Variable for return #3
+        JSONArray result = new JSONArray();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1528796896 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1379347425 = null;
         } //End block
-        int length;
-        length = names.length();
+        int length = names.length();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1605445258 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1846555544 = null;
         } //End block
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                String name;
-                name = JSON.toString(names.opt(i));
+                String name = JSON.toString(names.opt(i));
                 result.put(opt(name));
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_581214306 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_291922586 = result;
         addTaint(names.getTaint());
-        JSONArray varA7E53CE21691AB073D9660D615818899_727325145; //Final return value
+        JSONArray varA7E53CE21691AB073D9660D615818899_1515625872; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_727325145 = varB4EAC82CA7396A68D541C85D26508E83_1528796896;
+                varA7E53CE21691AB073D9660D615818899_1515625872 = varB4EAC82CA7396A68D541C85D26508E83_1379347425;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_727325145 = varB4EAC82CA7396A68D541C85D26508E83_1605445258;
+                varA7E53CE21691AB073D9660D615818899_1515625872 = varB4EAC82CA7396A68D541C85D26508E83_1846555544;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_727325145 = varB4EAC82CA7396A68D541C85D26508E83_581214306;
+                varA7E53CE21691AB073D9660D615818899_1515625872 = varB4EAC82CA7396A68D541C85D26508E83_291922586;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_727325145.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_727325145;
+        varA7E53CE21691AB073D9660D615818899_1515625872.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1515625872;
         // ---------- Original Method ----------
         //JSONArray result = new JSONArray();
         //if (names == null) {
@@ -785,25 +748,25 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.660 -0400", hash_original_method = "2D137981D66EA2E55940EA81187D393D", hash_generated_method = "9851E340709637EE4E2F0B973F8BBF66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.290 -0400", hash_original_method = "2D137981D66EA2E55940EA81187D393D", hash_generated_method = "85A13FC7942615FA60CA7908ED6D1561")
     public Iterator keys() {
-        Iterator varB4EAC82CA7396A68D541C85D26508E83_397589771 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_397589771 = nameValuePairs.keySet().iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_397589771.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_397589771;
+        Iterator varB4EAC82CA7396A68D541C85D26508E83_730728319 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_730728319 = nameValuePairs.keySet().iterator();
+        varB4EAC82CA7396A68D541C85D26508E83_730728319.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_730728319;
         // ---------- Original Method ----------
         //return nameValuePairs.keySet().iterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.663 -0400", hash_original_method = "3ECE715C4DC492B6D08AC6D2EACB5C9C", hash_generated_method = "57197634CA9EE3B8DE625EFA3D9BE9F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.291 -0400", hash_original_method = "3ECE715C4DC492B6D08AC6D2EACB5C9C", hash_generated_method = "34851AD3D303F35BF60858E55B980875")
     public JSONArray names() {
-        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1476864065 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1476864065 = nameValuePairs.isEmpty()
+        JSONArray varB4EAC82CA7396A68D541C85D26508E83_1300728514 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1300728514 = nameValuePairs.isEmpty()
                 ? null
                 : new JSONArray(new ArrayList<String>(nameValuePairs.keySet()));
-        varB4EAC82CA7396A68D541C85D26508E83_1476864065.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1476864065;
+        varB4EAC82CA7396A68D541C85D26508E83_1300728514.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1300728514;
         // ---------- Original Method ----------
         //return nameValuePairs.isEmpty()
                 //? null
@@ -811,54 +774,20 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.669 -0400", hash_original_method = "CC6BE78472EEEAF64E530CA9F9B14BB5", hash_generated_method = "41CBDCAEB741AB32EF87536C2CB63AB1")
-    @Override
-    public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_354338068 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_213412991 = null; //Variable for return #2
-        try 
-        {
-            JSONStringer stringer;
-            stringer = new JSONStringer();
-            writeTo(stringer);
-            varB4EAC82CA7396A68D541C85D26508E83_354338068 = stringer.toString();
-        } //End block
-        catch (JSONException e)
-        {
-            varB4EAC82CA7396A68D541C85D26508E83_213412991 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_430905633; //Final return value
-        switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_430905633 = varB4EAC82CA7396A68D541C85D26508E83_354338068;
-                break;
-            default:
-                varA7E53CE21691AB073D9660D615818899_430905633 = varB4EAC82CA7396A68D541C85D26508E83_213412991;
-                break;
+    @Override public String toString() {
+            return "null";
         }
-        varA7E53CE21691AB073D9660D615818899_430905633.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_430905633;
-        // ---------- Original Method ----------
-        //try {
-            //JSONStringer stringer = new JSONStringer();
-            //writeTo(stringer);
-            //return stringer.toString();
-        //} catch (JSONException e) {
-            //return null;
-        //}
-    }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.672 -0400", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "9E29300BD12A2124E976A5E63A2E8544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.292 -0400", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "16AC83AAF840B7980833D7A3217EE941")
     public String toString(int indentSpaces) throws JSONException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1551970203 = null; //Variable for return #1
-        JSONStringer stringer;
-        stringer = new JSONStringer(indentSpaces);
+        String varB4EAC82CA7396A68D541C85D26508E83_483980649 = null; //Variable for return #1
+        JSONStringer stringer = new JSONStringer(indentSpaces);
         writeTo(stringer);
-        varB4EAC82CA7396A68D541C85D26508E83_1551970203 = stringer.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_483980649 = stringer.toString();
         addTaint(indentSpaces);
-        varB4EAC82CA7396A68D541C85D26508E83_1551970203.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1551970203;
+        varB4EAC82CA7396A68D541C85D26508E83_483980649.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_483980649;
         // ---------- Original Method ----------
         //JSONStringer stringer = new JSONStringer(indentSpaces);
         //writeTo(stringer);
@@ -866,13 +795,13 @@ public class JSONObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.711 -0400", hash_original_method = "4318203F3538DC271461FDA2F00ABD52", hash_generated_method = "0595ECD8D1EB820E2F0A1B830C180349")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.298 -0400", hash_original_method = "4318203F3538DC271461FDA2F00ABD52", hash_generated_method = "F06F1A84AD35FB4EDD1090E2C6DB1E1A")
      void writeTo(JSONStringer stringer) throws JSONException {
         stringer.object();
         {
-            Iterator<Map.Entry<String, Object>> varAC53BD32903113FD541755067191E1E9_702839049 = (nameValuePairs.entrySet()).iterator();
-            varAC53BD32903113FD541755067191E1E9_702839049.hasNext();
-            Map.Entry<String, Object> entry = varAC53BD32903113FD541755067191E1E9_702839049.next();
+            Iterator<Map.Entry<String, Object>> varAC53BD32903113FD541755067191E1E9_6343729 = (nameValuePairs.entrySet()).iterator();
+            varAC53BD32903113FD541755067191E1E9_6343729.hasNext();
+            Map.Entry<String, Object> entry = varAC53BD32903113FD541755067191E1E9_6343729.next();
             {
                 stringer.key(entry.getKey()).value(entry.getValue());
             } //End block
@@ -888,7 +817,7 @@ public class JSONObject {
     }
 
     
-        public static String numberToString(Number number) throws JSONException {
+    public static String numberToString(Number number) throws JSONException {
         if (number == null) {
             throw new JSONException("Number must be non-null");
         }
@@ -905,7 +834,7 @@ public class JSONObject {
     }
 
     
-        public static String quote(String data) {
+    public static String quote(String data) {
         if (data == null) {
             return "\"\"";
         }
@@ -921,10 +850,10 @@ public class JSONObject {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.711 -0400", hash_original_field = "4F8E83C95CFEE5158C01389EEFC269AA", hash_generated_field = "619FB37967C1A8607A60ED714D99DE91")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.299 -0400", hash_original_field = "4F8E83C95CFEE5158C01389EEFC269AA", hash_generated_field = "1DBE8D3C6A9A7131154428322A8B1823")
 
-    private static Double NEGATIVE_ZERO = -0d;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.711 -0400", hash_original_field = "69D6A2BFA9970459DEF9916A4A819505", hash_generated_field = "3F3D3946D0FBB086C49E80D158F100D9")
+    private static final Double NEGATIVE_ZERO = -0d;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.299 -0400", hash_original_field = "69D6A2BFA9970459DEF9916A4A819505", hash_generated_field = "3F3D3946D0FBB086C49E80D158F100D9")
 
     public static final Object NULL = new Object() {
         @Override public boolean equals(Object o) {
@@ -934,5 +863,10 @@ public class JSONObject {
             return "null";
         }
     };
+    // orphaned legacy method
+    @Override public boolean equals(Object o) {
+            return o == this || o == null; 
+        }
+    
 }
 

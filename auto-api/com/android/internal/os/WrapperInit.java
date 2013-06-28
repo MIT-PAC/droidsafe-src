@@ -19,13 +19,13 @@ import dalvik.system.Zygote;
 
 public class WrapperInit {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.102 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.715 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
     private  WrapperInit() {
         // ---------- Original Method ----------
     }
 
     
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
             int fdNum = Integer.parseInt(args[0], 10);
             int targetSdkVersion = Integer.parseInt(args[1], 10);
@@ -50,7 +50,7 @@ public class WrapperInit {
     }
 
     
-        public static void execApplication(String invokeWith, String niceName,
+    public static void execApplication(String invokeWith, String niceName,
             int targetSdkVersion, FileDescriptor pipeFd, String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);
         command.append(" /system/bin/app_process /system/bin --application");
@@ -66,7 +66,7 @@ public class WrapperInit {
     }
 
     
-        public static void execStandalone(String invokeWith, String classPath, String className,
+    public static void execStandalone(String invokeWith, String classPath, String className,
             String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);
         command.append(" /system/bin/dalvikvm -classpath '").append(classPath);
@@ -76,8 +76,8 @@ public class WrapperInit {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.103 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.716 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "527BFEF4E332EB2DD2EA4CFDB3D09D89")
 
-    private static String TAG = "AndroidRuntime";
+    private final static String TAG = "AndroidRuntime";
 }
 

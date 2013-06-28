@@ -13,7 +13,7 @@ import android.view.View;
 
 class ViewCompatHC {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.446 -0400", hash_original_method = "BF0DFCE0766A40E3A6C3B46FD195E8FC", hash_generated_method = "BF0DFCE0766A40E3A6C3B46FD195E8FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.796 -0400", hash_original_method = "BF0DFCE0766A40E3A6C3B46FD195E8FC", hash_generated_method = "BF0DFCE0766A40E3A6C3B46FD195E8FC")
     public ViewCompatHC ()
     {
         //Synthesized constructor

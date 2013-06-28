@@ -12,14 +12,14 @@ import org.apache.http.protocol.HTTP;
 
 class CharArrayBuffers {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.635 -0400", hash_original_method = "757048C9429CD89F62E53746321F0081", hash_generated_method = "757048C9429CD89F62E53746321F0081")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.660 -0400", hash_original_method = "757048C9429CD89F62E53746321F0081", hash_generated_method = "757048C9429CD89F62E53746321F0081")
     public CharArrayBuffers ()
     {
         //Synthesized constructor
     }
 
 
-        static boolean containsIgnoreCaseTrimmed(CharArrayBuffer buffer,
+    static boolean containsIgnoreCaseTrimmed(CharArrayBuffer buffer,
             int beginIndex, final String str) {
         int len = buffer.length();
         char[] chars = buffer.buffer();
@@ -41,7 +41,7 @@ class CharArrayBuffers {
     }
 
     
-        static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
+    static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
         int beginIndex = 0;
         int endIndex = buffer.length();
         char[] chars = buffer.buffer();
@@ -58,7 +58,7 @@ class CharArrayBuffers {
     }
 
     
-        private static char toLower(char c) {
+    private static char toLower(char c) {
         if (c >= 'A' && c <= 'Z'){
             c += uppercaseAddon;
         }
@@ -66,8 +66,8 @@ class CharArrayBuffers {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.639 -0400", hash_original_field = "A72A9F2075F99CA53C967159767FC043", hash_generated_field = "2DD3A4AC05FA27E996922F2474ACEEA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.662 -0400", hash_original_field = "A72A9F2075F99CA53C967159767FC043", hash_generated_field = "B3E115C5CFE77FCACE5B31A27B8BA562")
 
-    static char uppercaseAddon = 'a' - 'A';
+    static final char uppercaseAddon = 'a' - 'A';
 }
 

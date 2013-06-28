@@ -12,11 +12,11 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public abstract class IccFileHandler extends Handler implements IccConstants {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.597 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.904 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
 
     protected PhoneBase phone;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.598 -0400", hash_original_method = "D43DCB164382547ACBC107CD3DAC237A", hash_generated_method = "B69471EEAB99E896BBF620126EB05566")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.904 -0400", hash_original_method = "D43DCB164382547ACBC107CD3DAC237A", hash_generated_method = "B69471EEAB99E896BBF620126EB05566")
     protected  IccFileHandler(PhoneBase phone) {
         super();
         this.phone = phone;
@@ -25,16 +25,15 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.598 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.598 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "C03FA8E8DEBCB3CC3244BCC48EF21DAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "580BC5C27CD831C928AE74ACF9549582")
     public void loadEFLinearFixed(int fileid, int recordNum, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
+        Message response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
                         new LoadLinearFixedContext(fileid, recordNum, onLoaded));
         phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
                         0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
@@ -50,10 +49,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.599 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "BD17FC239961041AE043659D0AA9A0A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "D42B2CA84B93F1C52549C33AFF7563DA")
     public void loadEFImgLinearFixed(int recordNum, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_READ_IMG_DONE,
+        Message response = obtainMessage(EVENT_READ_IMG_DONE,
                 new LoadLinearFixedContext(IccConstants.EF_IMG, recordNum,
                         onLoaded));
         phone.mCM.iccIO(COMMAND_GET_RESPONSE, IccConstants.EF_IMG, "img",
@@ -71,10 +69,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.599 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "51FC8D0DFF2ACDDE03415395325012EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.906 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "55472F8B31AE9A22BD86659F1F4B88DE")
     public void getEFLinearRecordSize(int fileid, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE,
+        Message response = obtainMessage(EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE,
                         new LoadLinearFixedContext(fileid, onLoaded));
         phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
                     0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
@@ -89,10 +86,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.599 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "A933EE2AF3D42464936EF43C2F4B93D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.906 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "6412069C1A73048CA8DE9088F792D013")
     public void loadEFLinearFixedAll(int fileid, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
+        Message response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
                         new LoadLinearFixedContext(fileid,onLoaded));
         phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
                         0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
@@ -106,10 +102,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.600 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "BB470E3987BAAC7830A6B454AF492D24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.907 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "A6EA63A6C6416D40D190B04B1AD41C41")
     public void loadEFTransparent(int fileid, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_GET_BINARY_SIZE_DONE,
+        Message response = obtainMessage(EVENT_GET_BINARY_SIZE_DONE,
                         fileid, 0, onLoaded);
         phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
                         0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
@@ -123,11 +118,10 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.600 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "68A4E2BA9F1804D3CEC6301763711CF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.908 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "9AFFF13B99C729FEDAEC406119053401")
     public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
             int length, Message onLoaded) {
-        Message response;
-        response = obtainMessage(EVENT_READ_ICON_DONE, fileid, 0,
+        Message response = obtainMessage(EVENT_READ_ICON_DONE, fileid, 0,
                 onLoaded);
         phone.mCM.iccIO(COMMAND_READ_BINARY, fileid, "img", highOffset, lowOffset,
                 length, null, null, response);
@@ -144,7 +138,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.600 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "AE8D22DD7D3FA6396C13767590052FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.909 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "AE8D22DD7D3FA6396C13767590052FCC")
     public void updateEFLinearFixed(int fileid, int recordNum, byte[] data,
             String pin2, Message onComplete) {
         phone.mCM.iccIO(COMMAND_UPDATE_RECORD, fileid, getEFPath(fileid),
@@ -162,7 +156,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.608 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "270B5E73C771D1D7317F0BCC67A20BDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.910 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "270B5E73C771D1D7317F0BCC67A20BDB")
     public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
         phone.mCM.iccIO(COMMAND_UPDATE_BINARY, fileid, getEFPath(fileid),
                         0, 0, data.length,
@@ -177,7 +171,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.622 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "927E19D6094B263F0E3182C74BEF8A0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.910 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "927E19D6094B263F0E3182C74BEF8A0B")
     private void sendResult(Message response, Object result, Throwable ex) {
         AsyncResult.forMessage(response, result, ex);
         response.sendToTarget();
@@ -193,12 +187,11 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.630 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "D5F87AC3D2D7F83FB51151E2D8B2F77C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.914 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "027EA784F1A6481F48C173353DFC471F")
     public void handleMessage(Message msg) {
         AsyncResult ar;
         IccIoResult result;
-        Message response;
-        response = null;
+        Message response = null;
         String str;
         LoadLinearFixedContext lc;
         IccException iccException;
@@ -493,40 +486,40 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.646 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "5D5D7D93C93346649ECF683B24CF886D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.915 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "50CE926CA5F37049A14EF5E9815853D9")
     protected String getCommonIccEFPath(int efid) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2007782678 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1944251486 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2138084570 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_532006660 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1160959065 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_826917832 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2047119746 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_837533096 = null; //Variable for return #4
         //Begin case EF_ADN EF_FDN EF_MSISDN EF_SDN EF_EXT1 EF_EXT2 EF_EXT3 
-        varB4EAC82CA7396A68D541C85D26508E83_2007782678 = MF_SIM + DF_TELECOM;
+        varB4EAC82CA7396A68D541C85D26508E83_1160959065 = MF_SIM + DF_TELECOM;
         //End case EF_ADN EF_FDN EF_MSISDN EF_SDN EF_EXT1 EF_EXT2 EF_EXT3 
         //Begin case EF_ICCID EF_PL 
-        varB4EAC82CA7396A68D541C85D26508E83_1944251486 = MF_SIM;
+        varB4EAC82CA7396A68D541C85D26508E83_826917832 = MF_SIM;
         //End case EF_ICCID EF_PL 
         //Begin case EF_IMG 
-        varB4EAC82CA7396A68D541C85D26508E83_2138084570 = MF_SIM + DF_TELECOM + DF_GRAPHICS;
+        varB4EAC82CA7396A68D541C85D26508E83_2047119746 = MF_SIM + DF_TELECOM + DF_GRAPHICS;
         //End case EF_IMG 
-        varB4EAC82CA7396A68D541C85D26508E83_532006660 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_837533096 = null;
         addTaint(efid);
-        String varA7E53CE21691AB073D9660D615818899_1569790007; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_557379850; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1569790007 = varB4EAC82CA7396A68D541C85D26508E83_2007782678;
+                varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_1160959065;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1569790007 = varB4EAC82CA7396A68D541C85D26508E83_1944251486;
+                varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_826917832;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1569790007 = varB4EAC82CA7396A68D541C85D26508E83_2138084570;
+                varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_2047119746;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1569790007 = varB4EAC82CA7396A68D541C85D26508E83_532006660;
+                varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_837533096;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1569790007.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1569790007;
+        varA7E53CE21691AB073D9660D615818899_557379850.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_557379850;
         // ---------- Original Method ----------
         //switch(efid) {
         //case EF_ADN:
@@ -557,29 +550,29 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
 
     
     static class LoadLinearFixedContext {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "1E3235258D1AA505A2572AF2B7877EBF", hash_generated_field = "48F4A49B3891A623660D9D89A749D7FD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "1E3235258D1AA505A2572AF2B7877EBF", hash_generated_field = "48F4A49B3891A623660D9D89A749D7FD")
 
         int efid;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "CA295049F4D4B86A33AD27D536F404C9", hash_generated_field = "448A06525EF8C132E28A8573FF9B2600")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "CA295049F4D4B86A33AD27D536F404C9", hash_generated_field = "448A06525EF8C132E28A8573FF9B2600")
 
         int recordNum;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "5BF8005FBC54CBD8FD3B1DD07A722DAC", hash_generated_field = "F30A01C2B6ADD522369D460AF8A04CE9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "5BF8005FBC54CBD8FD3B1DD07A722DAC", hash_generated_field = "F30A01C2B6ADD522369D460AF8A04CE9")
 
         int recordSize;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "2F5F454F98EAFD8B6FA7B7DDD9C0D375", hash_generated_field = "8940C0F4994601D31321FD5647CCE2C9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "2F5F454F98EAFD8B6FA7B7DDD9C0D375", hash_generated_field = "8940C0F4994601D31321FD5647CCE2C9")
 
         int countRecords;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "BB847FAFDB6A081B966FD76E5B4A5A46", hash_generated_field = "3FC49A57EDDE4CDC0FE7CAB1D79A6EF9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "BB847FAFDB6A081B966FD76E5B4A5A46", hash_generated_field = "3FC49A57EDDE4CDC0FE7CAB1D79A6EF9")
 
         boolean loadAll;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "ECD4FD81A15FB8610B3A4FC91F4CADEE", hash_generated_field = "20B78D0A5BE6006623DEB5273A81CD7C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "ECD4FD81A15FB8610B3A4FC91F4CADEE", hash_generated_field = "20B78D0A5BE6006623DEB5273A81CD7C")
 
         Message onLoaded;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.647 -0400", hash_original_field = "53E61336BB49EC978968786B07DEA50B", hash_generated_field = "0881DA448D3638C35BB652108D0CFFA3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.916 -0400", hash_original_field = "53E61336BB49EC978968786B07DEA50B", hash_generated_field = "0881DA448D3638C35BB652108D0CFFA3")
 
         ArrayList<byte[]> results;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.648 -0400", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "39DEDF6560E57782DF67CC79885DC1F4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.917 -0400", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "39DEDF6560E57782DF67CC79885DC1F4")
           LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
             this.efid = efid;
             this.recordNum = recordNum;
@@ -593,7 +586,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "94B3DA3648FF158F58E975BBA6C57772")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "94B3DA3648FF158F58E975BBA6C57772")
           LoadLinearFixedContext(int efid, Message onLoaded) {
             this.efid = efid;
             this.recordNum = 1;
@@ -611,119 +604,119 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "318A56FDDC0971A06DDAF82064AC442B", hash_generated_field = "2EB96A8DC1E5872EAF17C2402DF642F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "318A56FDDC0971A06DDAF82064AC442B", hash_generated_field = "3CC60D7DB30C18A0452D9C9FBB518575")
 
-    static protected int COMMAND_READ_BINARY = 0xb0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "34027F43B17C5807993431EB36EFC094", hash_generated_field = "33BC63AB7D56A3D4DE77F28860F82331")
+    static protected final int COMMAND_READ_BINARY = 0xb0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "34027F43B17C5807993431EB36EFC094", hash_generated_field = "52CE690B836D20CF1E855B08938321D5")
 
-    static protected int COMMAND_UPDATE_BINARY = 0xd6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "A8EB47362E5BD46BCD3E537FFB913C2A", hash_generated_field = "12252E2DC1E0D4FA5CCAC53C2B3C09B3")
+    static protected final int COMMAND_UPDATE_BINARY = 0xd6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "A8EB47362E5BD46BCD3E537FFB913C2A", hash_generated_field = "BC9C2764EDA638334784F399B103E9E0")
 
-    static protected int COMMAND_READ_RECORD = 0xb2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "5C96FC38E0457D0ACCCF02655BA6BACE", hash_generated_field = "97F8D6843D07C0A54BA327625F8A87C8")
+    static protected final int COMMAND_READ_RECORD = 0xb2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "5C96FC38E0457D0ACCCF02655BA6BACE", hash_generated_field = "8BF22C00B90ECE41C175F284E14EB6F8")
 
-    static protected int COMMAND_UPDATE_RECORD = 0xdc;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "762DBAEAF0DEEFAC7318EC3992F45222", hash_generated_field = "61CEF8A9285E5D4CBBA562E1EFBD8DA0")
+    static protected final int COMMAND_UPDATE_RECORD = 0xdc;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "762DBAEAF0DEEFAC7318EC3992F45222", hash_generated_field = "8B9C977412DD987F5424817123628799")
 
-    static protected int COMMAND_SEEK = 0xa2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "9E07D20045C9CCDC3AAA50366888CD96", hash_generated_field = "E78FBA7DFF326CFDBFB92CC39F866941")
+    static protected final int COMMAND_SEEK = 0xa2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "9E07D20045C9CCDC3AAA50366888CD96", hash_generated_field = "9C29D11CB02119C04CD878F24FD81DAA")
 
-    static protected int COMMAND_GET_RESPONSE = 0xc0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "4F2BF81F6166FA757C22344938E2EA18", hash_generated_field = "0EEA0A9BEC2D4C8463F4CA70D26ECBBD")
+    static protected final int COMMAND_GET_RESPONSE = 0xc0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.918 -0400", hash_original_field = "4F2BF81F6166FA757C22344938E2EA18", hash_generated_field = "AE4A7A14F63E2E0B4D9A7D7CBC69BBF3")
 
-    static protected int READ_RECORD_MODE_ABSOLUTE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "BAA5639619ADFED8619888117163DE5D", hash_generated_field = "DBC20E8925C84D9996F9F6D8AA00420E")
+    static protected final int READ_RECORD_MODE_ABSOLUTE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "BAA5639619ADFED8619888117163DE5D", hash_generated_field = "B134B87914AE417BA97C107B99B8CDB9")
 
-    static protected int EF_TYPE_TRANSPARENT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "E3D29FACCA57A330DE33B009B84315EA", hash_generated_field = "A9BD6D7F5192FCC8CE79BCB3388FD6CA")
+    static protected final int EF_TYPE_TRANSPARENT = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "E3D29FACCA57A330DE33B009B84315EA", hash_generated_field = "6E3709AF8775D792AC4A070C596F9861")
 
-    static protected int EF_TYPE_LINEAR_FIXED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "41AB7479E17711009D1C7B82FC85659A", hash_generated_field = "6AA65FE074B3E39054B4F9FB10EB969C")
+    static protected final int EF_TYPE_LINEAR_FIXED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "41AB7479E17711009D1C7B82FC85659A", hash_generated_field = "2394B70D9734050F861A3B3CB5C98303")
 
-    static protected int EF_TYPE_CYCLIC = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "0F57D71893501A3C31DC199F5F98BC8A", hash_generated_field = "A83DFF152FA5A9FC6FA29EB2E059619D")
+    static protected final int EF_TYPE_CYCLIC = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "0F57D71893501A3C31DC199F5F98BC8A", hash_generated_field = "4F6A96AD1CFA7A0B6F5F28A0AF40A03E")
 
-    static protected int TYPE_RFU = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "D56D54AA8ED30C719AA5B95D6FECB6B1", hash_generated_field = "8E8453AC53AD0336D401A2F1A761D1FE")
+    static protected final int TYPE_RFU = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "D56D54AA8ED30C719AA5B95D6FECB6B1", hash_generated_field = "C12E1BA59E42BE4005DF2464AFF7BDD8")
 
-    static protected int TYPE_MF = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "B3685F98E592A6107B4E2354D87A7193", hash_generated_field = "7F02BEE8730D59A1DAE3A515126D8206")
+    static protected final int TYPE_MF = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "B3685F98E592A6107B4E2354D87A7193", hash_generated_field = "17EDC54C4C805341C1E3BD385DADBD3F")
 
-    static protected int TYPE_DF = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "CFBA50CB9DCD254C3D2680FC7FB4BEF0", hash_generated_field = "48A7CF5F742EBF8600CE242CCBB6FC27")
+    static protected final int TYPE_DF = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "CFBA50CB9DCD254C3D2680FC7FB4BEF0", hash_generated_field = "A3CD59D6127DE19679D87A08B2F34045")
 
-    static protected int TYPE_EF = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "F6BB29AA53BBF9DE9C53F532B31EC6BC", hash_generated_field = "22A58521CD4B3D305D10AE3A50269C67")
+    static protected final int TYPE_EF = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "F6BB29AA53BBF9DE9C53F532B31EC6BC", hash_generated_field = "8B5DF3D8E3782991E722AD74CEABBA98")
 
-    static protected int GET_RESPONSE_EF_SIZE_BYTES = 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.665 -0400", hash_original_field = "C694B3C5B19B2B34343AE0527BD22FA0", hash_generated_field = "1B8DAA063004B25C8E7E078DE33A00DA")
+    static protected final int GET_RESPONSE_EF_SIZE_BYTES = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "C694B3C5B19B2B34343AE0527BD22FA0", hash_generated_field = "5F8D8623CED36DF566DA8C82F1CFAEAB")
 
-    static protected int GET_RESPONSE_EF_IMG_SIZE_BYTES = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "4B0F775CA9CA6342E43E72152035686B", hash_generated_field = "08E53BCCA31F6EE6AA73150A5B3B6C23")
+    static protected final int GET_RESPONSE_EF_IMG_SIZE_BYTES = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "4B0F775CA9CA6342E43E72152035686B", hash_generated_field = "6E588483220153E3A5CA5B13BFDBB87D")
 
-    static protected int RESPONSE_DATA_RFU_1 = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "A32BF89BB95C9B553DB1BE58928DC599", hash_generated_field = "D38EE4D6F3C2800076AA91012160FF40")
+    static protected final int RESPONSE_DATA_RFU_1 = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "A32BF89BB95C9B553DB1BE58928DC599", hash_generated_field = "B4E1945F68B64B65F65ABDC4D0578A48")
 
-    static protected int RESPONSE_DATA_RFU_2 = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "594B04AA21CBA125FDFB07D4713B5C85", hash_generated_field = "5E6B0C6A79A29D0657FCF621781884CA")
+    static protected final int RESPONSE_DATA_RFU_2 = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "594B04AA21CBA125FDFB07D4713B5C85", hash_generated_field = "8FF5EBA412756AC6E802E2BAC0FBDAED")
 
-    static protected int RESPONSE_DATA_FILE_SIZE_1 = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "1B5BDC6143ED0636944B7068258869F5", hash_generated_field = "3CF6B219FF5A4D5DF145FC59A8E80213")
+    static protected final int RESPONSE_DATA_FILE_SIZE_1 = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "1B5BDC6143ED0636944B7068258869F5", hash_generated_field = "DDB49D3A31C04577F0DB449EF1DD0448")
 
-    static protected int RESPONSE_DATA_FILE_SIZE_2 = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "0DD2C949F83F4738943FF1B5ACF8C437", hash_generated_field = "63243CB7C983F6720FA54E20C31DD7AD")
+    static protected final int RESPONSE_DATA_FILE_SIZE_2 = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "0DD2C949F83F4738943FF1B5ACF8C437", hash_generated_field = "7E722ABC4E41AE1CC40344A1978E9C0B")
 
-    static protected int RESPONSE_DATA_FILE_ID_1 = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "071187F6A4E0F0F915B06F13A6B6A412", hash_generated_field = "779C2EED6F956ABC43D9A551913A5C3F")
+    static protected final int RESPONSE_DATA_FILE_ID_1 = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "071187F6A4E0F0F915B06F13A6B6A412", hash_generated_field = "0AA73A2D770760EB67EB3D4FD789E7A4")
 
-    static protected int RESPONSE_DATA_FILE_ID_2 = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "A1B4879034CE46A3B92A2B159332FE69", hash_generated_field = "918A723A162B7CBDEE36603A9252261E")
+    static protected final int RESPONSE_DATA_FILE_ID_2 = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "A1B4879034CE46A3B92A2B159332FE69", hash_generated_field = "BA1B7DC7209FCB1EF51F72F887933559")
 
-    static protected int RESPONSE_DATA_FILE_TYPE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "50646660E26260B5AAF89C2543CFF5D0", hash_generated_field = "94BE770964F035DC1BB3A102149FC4CE")
+    static protected final int RESPONSE_DATA_FILE_TYPE = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.919 -0400", hash_original_field = "50646660E26260B5AAF89C2543CFF5D0", hash_generated_field = "8AA9EB145B76A6BF1DCD4275917932B3")
 
-    static protected int RESPONSE_DATA_RFU_3 = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "415D37C6141AAAB43B5318B9055D51D9", hash_generated_field = "6FF175E0C2D3E9BF4E395A33AB5EA4A4")
+    static protected final int RESPONSE_DATA_RFU_3 = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "415D37C6141AAAB43B5318B9055D51D9", hash_generated_field = "DE14F002E7E80FE2825FEC61B0815958")
 
-    static protected int RESPONSE_DATA_ACCESS_CONDITION_1 = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "8D2037AF738732656927C87452C17C35", hash_generated_field = "ED57C9CF16C44A220B68B21CD41D6E2A")
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_1 = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "8D2037AF738732656927C87452C17C35", hash_generated_field = "0CF86211F8BFE346CC8DCB9949EDB3A6")
 
-    static protected int RESPONSE_DATA_ACCESS_CONDITION_2 = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "DE4FE15B24745E56ED845352E73B6390", hash_generated_field = "3CA8D974BB534595CB506FC26FD413E3")
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_2 = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "DE4FE15B24745E56ED845352E73B6390", hash_generated_field = "42ECBE4F040FEC401BC6BE7771289E30")
 
-    static protected int RESPONSE_DATA_ACCESS_CONDITION_3 = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "679479BC539273DA14D64C466A924045", hash_generated_field = "2743980F6BE48ABBAAEB5ACBAC704D77")
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_3 = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "679479BC539273DA14D64C466A924045", hash_generated_field = "199F3CA72C4189885796724CED0A9AEF")
 
-    static protected int RESPONSE_DATA_FILE_STATUS = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "FB6C7EBC7E3B0D58F20E7FB6499386E0", hash_generated_field = "BE3D4455C164E3E048672B704FD16447")
+    static protected final int RESPONSE_DATA_FILE_STATUS = 11;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "FB6C7EBC7E3B0D58F20E7FB6499386E0", hash_generated_field = "DDE70B9F41C77A0C7A9BD50EB36912CD")
 
-    static protected int RESPONSE_DATA_LENGTH = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "CE3577A4E3C9AC05B0096D3981053858", hash_generated_field = "B57F833CBA02155CC4B0F962C75D3822")
+    static protected final int RESPONSE_DATA_LENGTH = 12;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "CE3577A4E3C9AC05B0096D3981053858", hash_generated_field = "01DFE7624519AD919AAD908A207C02D6")
 
-    static protected int RESPONSE_DATA_STRUCTURE = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "555EC3B6595CD9384E6D5DAD6097BD8E", hash_generated_field = "FAAE4BDBAB5F411F510C08A1489E5176")
+    static protected final int RESPONSE_DATA_STRUCTURE = 13;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "555EC3B6595CD9384E6D5DAD6097BD8E", hash_generated_field = "FC1BB9BEB6B9507CBA32136E897CC277")
 
-    static protected int RESPONSE_DATA_RECORD_LENGTH = 14;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "455E5DFCD1826703807B3D4D0C0756E8", hash_generated_field = "A7EEB32D7CBC5B1FAAD9856175D5BA83")
+    static protected final int RESPONSE_DATA_RECORD_LENGTH = 14;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "455E5DFCD1826703807B3D4D0C0756E8", hash_generated_field = "DC4EBC2D5D669A0166250BA81B924A01")
 
-    static protected int EVENT_GET_BINARY_SIZE_DONE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "57E4B85F881FE711BD1D7DF910A6C7ED", hash_generated_field = "1DEA71772000D53259995344593218AE")
+    static protected final int EVENT_GET_BINARY_SIZE_DONE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "57E4B85F881FE711BD1D7DF910A6C7ED", hash_generated_field = "6417995F1CCE3BD60EA55EC5D9BAF9EB")
 
-    static protected int EVENT_READ_BINARY_DONE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "F808224DEBCEFA849E63D39372A2F59C", hash_generated_field = "61DABF16A638479920598F47935E87EF")
+    static protected final int EVENT_READ_BINARY_DONE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "F808224DEBCEFA849E63D39372A2F59C", hash_generated_field = "8D7F7098D55C746BB788A8036B8F4D60")
 
-    static protected int EVENT_GET_RECORD_SIZE_DONE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "AD27EE89D714D1FF1AD713F4053E90E4", hash_generated_field = "A6957829B85B11F723CBF5F9832926CA")
+    static protected final int EVENT_GET_RECORD_SIZE_DONE = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "AD27EE89D714D1FF1AD713F4053E90E4", hash_generated_field = "E404E9022F0FA890A46E1100E27B724F")
 
-    static protected int EVENT_READ_RECORD_DONE = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "55F87A0FE0368FC595039E5B08D713F8", hash_generated_field = "9EC368296EB0A3A7FB6478A10A833B5F")
+    static protected final int EVENT_READ_RECORD_DONE = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "55F87A0FE0368FC595039E5B08D713F8", hash_generated_field = "947A21F99F735ED86DA9B734578677CA")
 
-    static protected int EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "C045E73937799748D4E6D53FEDEEFA3E", hash_generated_field = "6437BC528D7E546D39A1A159FE34D21F")
+    static protected final int EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "C045E73937799748D4E6D53FEDEEFA3E", hash_generated_field = "E159B90A57982AF312C9C8222FA36B34")
 
-    static protected int EVENT_READ_IMG_DONE = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.666 -0400", hash_original_field = "655C30EAAFB547A5CE2C813C7A826EC1", hash_generated_field = "CE818DD2D7073889D988A245AC30C9DA")
+    static protected final int EVENT_READ_IMG_DONE = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.920 -0400", hash_original_field = "655C30EAAFB547A5CE2C813C7A826EC1", hash_generated_field = "545706A6E283BA9001F4AD6AECCB60D0")
 
-    static protected int EVENT_READ_ICON_DONE = 10;
+    static protected final int EVENT_READ_ICON_DONE = 10;
 }
 

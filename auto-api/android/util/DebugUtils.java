@@ -12,13 +12,13 @@ import java.lang.reflect.InvocationTargetException;
 
 public class DebugUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.315 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.222 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
     public  DebugUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static boolean isObjectSelected(Object object) {
+    public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");
         if (s != null && s.length() > 0) {
@@ -57,7 +57,7 @@ public class DebugUtils {
     }
 
     
-        public static void buildShortClassTag(Object cls, StringBuilder out) {
+    public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");
         } else {

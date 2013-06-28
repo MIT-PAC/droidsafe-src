@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class DEROutputStream extends FilterOutputStream implements DERTags {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.213 -0400", hash_original_method = "D6882926F90F93A386C7D4D8D57DD786", hash_generated_method = "BFCE9163E9403BC3EAA2B2ADD4A25C35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.633 -0400", hash_original_method = "D6882926F90F93A386C7D4D8D57DD786", hash_generated_method = "BFCE9163E9403BC3EAA2B2ADD4A25C35")
     public  DEROutputStream(
         OutputStream    os) {
         super(os);
@@ -22,21 +22,18 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.237 -0400", hash_original_method = "9630CA34FB2F7F75F5B62885DAC93016", hash_generated_method = "9B87700EA55F698395EF980FA7631EB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.633 -0400", hash_original_method = "9630CA34FB2F7F75F5B62885DAC93016", hash_generated_method = "33172DC4CF8D9C0FCCF66E476C4787E8")
     private void writeLength(
         int length) throws IOException {
         {
-            int size;
-            size = 1;
-            int val;
-            val = length;
+            int size = 1;
+            int val = length;
             {
-                boolean var0FAB5FFCAEA021B44A1B0650ADAE3E30_1385422838 = ((val >>>= 8) != 0);
+                boolean var0FAB5FFCAEA021B44A1B0650ADAE3E30_1940588175 = ((val >>>= 8) != 0);
             } //End collapsed parenthetic
             write((byte)(size | 0x80));
             {
-                int i;
-                i = (size - 1) * 8;
+                int i = (size - 1) * 8;
                 i -= 8;
                 {
                     write((byte)(length >> i));
@@ -69,7 +66,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.237 -0400", hash_original_method = "6A5015CF78D45503CE00711383685F95", hash_generated_method = "8F28C5A299AA7681AA18ABD9BFAF5BD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.634 -0400", hash_original_method = "6A5015CF78D45503CE00711383685F95", hash_generated_method = "8F28C5A299AA7681AA18ABD9BFAF5BD1")
      void writeEncoded(
         int     tag,
         byte[]  bytes) throws IOException {
@@ -85,7 +82,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.238 -0400", hash_original_method = "ED4E90E4B3DD7ED52782F2B0BBD7912E", hash_generated_method = "A6B89D2EC9A708A9365D62BA79F98CDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.635 -0400", hash_original_method = "ED4E90E4B3DD7ED52782F2B0BBD7912E", hash_generated_method = "40D37B5C9C2C02ED2F1744EFFD45B000")
      void writeTag(int flags, int tagNo) throws IOException {
         {
             write(flags | tagNo);
@@ -96,10 +93,8 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
                 write(tagNo);
             } //End block
             {
-                byte[] stack;
-                stack = new byte[5];
-                int pos;
-                pos = stack.length;
+                byte[] stack = new byte[5];
+                int pos = stack.length;
                 stack[--pos] = (byte)(tagNo & 0x7F);
                 {
                     tagNo >>= 7;
@@ -139,7 +134,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.238 -0400", hash_original_method = "7680EF084FC261D5865A989D21C79F36", hash_generated_method = "59D50494BF39BDCDC2EEE041F0E2D606")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.636 -0400", hash_original_method = "7680EF084FC261D5865A989D21C79F36", hash_generated_method = "59D50494BF39BDCDC2EEE041F0E2D606")
      void writeEncoded(int flags, int tagNo, byte[] bytes) throws IOException {
         writeTag(flags, tagNo);
         writeLength(bytes.length);
@@ -154,7 +149,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.239 -0400", hash_original_method = "42317E86533FAE5B23E236AC0365BD25", hash_generated_method = "F9103E21E41CA9234FA57E1DA6B62BE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.638 -0400", hash_original_method = "42317E86533FAE5B23E236AC0365BD25", hash_generated_method = "F9103E21E41CA9234FA57E1DA6B62BE5")
     protected void writeNull() throws IOException {
         write(NULL);
         write(0x00);
@@ -164,7 +159,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.239 -0400", hash_original_method = "1AF5A1D8916987DB77C7DD8735718172", hash_generated_method = "CF599C6311E24EE668BF54BEB2BA583D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.639 -0400", hash_original_method = "1AF5A1D8916987DB77C7DD8735718172", hash_generated_method = "CF599C6311E24EE668BF54BEB2BA583D")
     public void write(byte[] buf) throws IOException {
         out.write(buf, 0, buf.length);
         addTaint(buf[0]);
@@ -173,7 +168,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.239 -0400", hash_original_method = "C3C674084F8E21E9786EAC52DFF53A81", hash_generated_method = "7228C05CDE4BF363BE54BB1267D40784")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.641 -0400", hash_original_method = "C3C674084F8E21E9786EAC52DFF53A81", hash_generated_method = "7228C05CDE4BF363BE54BB1267D40784")
     public void write(byte[] buf, int offSet, int len) throws IOException {
         out.write(buf, offSet, len);
         addTaint(buf[0]);
@@ -184,7 +179,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.252 -0400", hash_original_method = "F19F4C73BB689B28C331EE3D14B18253", hash_generated_method = "98E5D274A588319C7BFED4D78B32C24D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.643 -0400", hash_original_method = "F19F4C73BB689B28C331EE3D14B18253", hash_generated_method = "98E5D274A588319C7BFED4D78B32C24D")
     public void writeObject(
         Object    obj) throws IOException {
         {

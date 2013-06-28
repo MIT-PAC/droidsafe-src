@@ -16,24 +16,23 @@ import android.util.Pair;
 
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.004 -0400", hash_original_method = "896C9D78E64EAD9D50DC29D09D68C65A", hash_generated_method = "896C9D78E64EAD9D50DC29D09D68C65A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.990 -0400", hash_original_method = "896C9D78E64EAD9D50DC29D09D68C65A", hash_generated_method = "896C9D78E64EAD9D50DC29D09D68C65A")
     public DefaultDatabaseErrorHandler ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.196 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "8FDA2DBDB731C69ECC8283D6BB20B874")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.998 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "E988A6815B999D47675C94CED188A047")
     public void onCorruption(SQLiteDatabase dbObj) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varCC82C5DB1413B99E1CCAB065EFAB5770_792425416 = (!dbObj.isOpen());
+            boolean varCC82C5DB1413B99E1CCAB065EFAB5770_2122915704 = (!dbObj.isOpen());
             {
                 deleteDatabaseFile(dbObj.getPath());
             } //End block
         } //End collapsed parenthetic
-        List<Pair<String, String>> attachedDbs;
-        attachedDbs = null;
+        List<Pair<String, String>> attachedDbs = null;
         try 
         {
             try 
@@ -53,9 +52,9 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
         {
             {
                 {
-                    Iterator<Pair<String, String>> varAB3CF8EE812F512696CBC54246C34449_1907900048 = (attachedDbs).iterator();
-                    varAB3CF8EE812F512696CBC54246C34449_1907900048.hasNext();
-                    Pair<String, String> p = varAB3CF8EE812F512696CBC54246C34449_1907900048.next();
+                    Iterator<Pair<String, String>> varAB3CF8EE812F512696CBC54246C34449_2003576424 = (attachedDbs).iterator();
+                    varAB3CF8EE812F512696CBC54246C34449_2003576424.hasNext();
+                    Pair<String, String> p = varAB3CF8EE812F512696CBC54246C34449_2003576424.next();
                     {
                         deleteDatabaseFile(p.second);
                     } //End block
@@ -71,10 +70,10 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.198 -0400", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "0264B6C9B011B0CF3D89CDB3665F9866")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.999 -0400", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "8080052BEF74FEB056F07D9539B55980")
     private void deleteDatabaseFile(String fileName) {
         {
-            boolean var8E5C270C0C0207C35D217A26023CE022_1486356717 = (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0);
+            boolean var8E5C270C0C0207C35D217A26023CE022_1303810963 = (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0);
         } //End collapsed parenthetic
         try 
         {
@@ -96,8 +95,8 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.198 -0400", hash_original_field = "10759C745B09949ED080760414F4B85B", hash_generated_field = "3FF0D2B46B264EF96B5C422E4B041955")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.999 -0400", hash_original_field = "10759C745B09949ED080760414F4B85B", hash_generated_field = "23BA72495E1959CF9D5D5CA8183FBE7E")
 
-    private static String TAG = "DefaultDatabaseErrorHandler";
+    private static final String TAG = "DefaultDatabaseErrorHandler";
 }
 

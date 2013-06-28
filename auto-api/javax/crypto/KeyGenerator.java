@@ -17,17 +17,17 @@ import java.security.spec.AlgorithmParameterSpec;
 import org.apache.harmony.security.fortress.Engine;
 
 public class KeyGenerator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.843 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.101 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private Provider provider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.843 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "062ACE2CCE472120F5290B09DE19D1CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.101 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "062ACE2CCE472120F5290B09DE19D1CD")
 
     private KeyGeneratorSpi spiImpl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.843 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.101 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
     private String algorithm;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.844 -0400", hash_original_method = "CDE5B5D4C1159ABF8B3201BF166F4FB3", hash_generated_method = "C1D3A09E78029A99A573BDB52F727B3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.101 -0400", hash_original_method = "CDE5B5D4C1159ABF8B3201BF166F4FB3", hash_generated_method = "C1D3A09E78029A99A573BDB52F727B3D")
     protected  KeyGenerator(KeyGeneratorSpi keyGenSpi, Provider provider,
             String algorithm) {
         this.provider = provider;
@@ -40,29 +40,29 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.854 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "7A3CC208001916D0A05CF7D4111AFF48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.102 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "CC111E11489496B4D30D96005030FA65")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_291816560 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_291816560 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_291816560.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_291816560;
+        String varB4EAC82CA7396A68D541C85D26508E83_621494669 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_621494669 = algorithm;
+        varB4EAC82CA7396A68D541C85D26508E83_621494669.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_621494669;
         // ---------- Original Method ----------
         //return algorithm;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.854 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "063568000F3DC0D3493348C852BCB682")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.103 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "7EF7C6FC0DFA150256FDC9ACCF457737")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_1775477563 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1775477563 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_1775477563.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1775477563;
+        Provider varB4EAC82CA7396A68D541C85D26508E83_208930775 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_208930775 = provider;
+        varB4EAC82CA7396A68D541C85D26508E83_208930775.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_208930775;
         // ---------- Original Method ----------
         //return provider;
     }
 
     
-        public static final KeyGenerator getInstance(String algorithm) throws NoSuchAlgorithmException {
+    public static final KeyGenerator getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -71,7 +71,7 @@ public class KeyGenerator {
     }
 
     
-        public static final KeyGenerator getInstance(String algorithm,
+    public static final KeyGenerator getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException("Provider is null or empty");
@@ -84,7 +84,7 @@ public class KeyGenerator {
     }
 
     
-        public static final KeyGenerator getInstance(String algorithm,
+    public static final KeyGenerator getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider == null");
@@ -97,18 +97,18 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.862 -0400", hash_original_method = "0D649746A13B62933617343FF6CF66A5", hash_generated_method = "6AAF3DCFC13ABB6490C0DFA3B5723FC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.104 -0400", hash_original_method = "0D649746A13B62933617343FF6CF66A5", hash_generated_method = "FE9346BC012589B96070BEE4F1BD8B2C")
     public final SecretKey generateKey() {
-        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1216061985 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1216061985 = spiImpl.engineGenerateKey();
-        varB4EAC82CA7396A68D541C85D26508E83_1216061985.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1216061985;
+        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1687109677 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1687109677 = spiImpl.engineGenerateKey();
+        varB4EAC82CA7396A68D541C85D26508E83_1687109677.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1687109677;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateKey();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.862 -0400", hash_original_method = "17294700B35C898F2BBCFAFBE5495088", hash_generated_method = "C5CCB594359EEC484476CFFC9A769137")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.105 -0400", hash_original_method = "17294700B35C898F2BBCFAFBE5495088", hash_generated_method = "C5CCB594359EEC484476CFFC9A769137")
     public final void init(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         spiImpl.engineInit(params, RANDOM);
         addTaint(params.getTaint());
@@ -117,7 +117,7 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.863 -0400", hash_original_method = "EA2F3DD217CBA336387110AFDED2F185", hash_generated_method = "6AE8F9B2B3A5BC2E4EA848D56AA28BC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.105 -0400", hash_original_method = "EA2F3DD217CBA336387110AFDED2F185", hash_generated_method = "6AE8F9B2B3A5BC2E4EA848D56AA28BC6")
     public final void init(AlgorithmParameterSpec params, SecureRandom random) throws InvalidAlgorithmParameterException {
         spiImpl.engineInit(params, random);
         addTaint(params.getTaint());
@@ -127,7 +127,7 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.863 -0400", hash_original_method = "6A1F56561EFECC925D99D4402BD46267", hash_generated_method = "FFB3B1891E13FA0474D4BC7F88ED83E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.106 -0400", hash_original_method = "6A1F56561EFECC925D99D4402BD46267", hash_generated_method = "FFB3B1891E13FA0474D4BC7F88ED83E4")
     public final void init(int keysize) {
         spiImpl.engineInit(keysize, RANDOM);
         addTaint(keysize);
@@ -136,7 +136,7 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.867 -0400", hash_original_method = "CF9BC038E48C7FD5928A7551030B0A46", hash_generated_method = "1BF507580C86D99EC98F57F166DDDC9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.107 -0400", hash_original_method = "CF9BC038E48C7FD5928A7551030B0A46", hash_generated_method = "1BF507580C86D99EC98F57F166DDDC9F")
     public final void init(int keysize, SecureRandom random) {
         spiImpl.engineInit(keysize, random);
         addTaint(keysize);
@@ -146,7 +146,7 @@ public class KeyGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.876 -0400", hash_original_method = "E0B65F149BDE3033A715A5DC9A4C8256", hash_generated_method = "B1AD01FF3E3EC3A159600AAD9C17B58F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.107 -0400", hash_original_method = "E0B65F149BDE3033A715A5DC9A4C8256", hash_generated_method = "B1AD01FF3E3EC3A159600AAD9C17B58F")
     public final void init(SecureRandom random) {
         spiImpl.engineInit(random);
         addTaint(random.getTaint());
@@ -155,11 +155,11 @@ public class KeyGenerator {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.876 -0400", hash_original_field = "29AE157B38F3DDC8818475091B725813", hash_generated_field = "88D86B0568C87F66C44D2F86CCAEFF20")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.107 -0400", hash_original_field = "29AE157B38F3DDC8818475091B725813", hash_generated_field = "94DDEF4E1FF385576E6D52DD87DBDCAD")
 
-    private static Engine ENGINE = new Engine("KeyGenerator");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.876 -0400", hash_original_field = "9AE708A2321B1D064045F8FC9B284C5C", hash_generated_field = "473A20CDE6EFEE7D42F595BA5492FFB7")
+    private static final Engine ENGINE = new Engine("KeyGenerator");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.107 -0400", hash_original_field = "9AE708A2321B1D064045F8FC9B284C5C", hash_generated_field = "971A4862B04E3FBF4A69F43F59DCA289")
 
-    private static SecureRandom RANDOM = new SecureRandom();
+    private static final SecureRandom RANDOM = new SecureRandom();
 }
 

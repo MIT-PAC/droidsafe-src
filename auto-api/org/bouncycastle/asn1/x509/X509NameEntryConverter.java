@@ -16,29 +16,25 @@ import java.io.IOException;
 
 public abstract class X509NameEntryConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.258 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.281 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
     public X509NameEntryConverter ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.270 -0400", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "204D8000B84E26DAA591774CEF0D95FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.282 -0400", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "BCDC1AAC989C32774E21143B43B5BD2D")
     protected DERObject convertHexEncoded(
         String  str,
         int     off) throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_591924584 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_626445481 = null; //Variable for return #1
         str = Strings.toLowerCase(str);
-        byte[] data;
-        data = new byte[(str.length() - off) / 2];
+        byte[] data = new byte[(str.length() - off) / 2];
         {
-            int index;
-            index = 0;
+            int index = 0;
             {
-                char left;
-                left = str.charAt((index * 2) + off);
-                char right;
-                right = str.charAt((index * 2) + off + 1);
+                char left = str.charAt((index * 2) + off);
+                char right = str.charAt((index * 2) + off + 1);
                 {
                     data[index] = (byte)((left - '0') << 4);
                 } //End block
@@ -53,25 +49,24 @@ public abstract class X509NameEntryConverter {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        ASN1InputStream aIn;
-        aIn = new ASN1InputStream(data);
-        varB4EAC82CA7396A68D541C85D26508E83_591924584 = aIn.readObject();
+        ASN1InputStream aIn = new ASN1InputStream(data);
+        varB4EAC82CA7396A68D541C85D26508E83_626445481 = aIn.readObject();
         addTaint(str.getTaint());
         addTaint(off);
-        varB4EAC82CA7396A68D541C85D26508E83_591924584.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_591924584;
+        varB4EAC82CA7396A68D541C85D26508E83_626445481.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_626445481;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.271 -0400", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "8065471F1493EF20765438E483349A5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.282 -0400", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "BDEFDF66C42844978C2F8C647EEBC777")
     protected boolean canBePrintable(
         String  str) {
-        boolean varE4B9094FDD502E0BF184965135189B5D_1650707977 = (DERPrintableString.isPrintableString(str));
+        boolean varE4B9094FDD502E0BF184965135189B5D_746100636 = (DERPrintableString.isPrintableString(str));
         addTaint(str.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1872546820 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1872546820;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391944638 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391944638;
         // ---------- Original Method ----------
         //return DERPrintableString.isPrintableString(str);
     }

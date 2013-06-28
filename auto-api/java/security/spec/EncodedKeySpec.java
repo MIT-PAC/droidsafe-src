@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public abstract class EncodedKeySpec implements KeySpec {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.074 -0400", hash_original_field = "4567E7356B633148D4D0693AC01FDEEE", hash_generated_field = "3144F97D80A45FCBB127B551D71851A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.079 -0400", hash_original_field = "4567E7356B633148D4D0693AC01FDEEE", hash_generated_field = "3144F97D80A45FCBB127B551D71851A1")
 
     private byte[] encodedKey;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.075 -0400", hash_original_method = "AB5BB16CE68A0965872FC49BB9877C19", hash_generated_method = "31248C080AE7561C6892218AC4D58C46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.080 -0400", hash_original_method = "AB5BB16CE68A0965872FC49BB9877C19", hash_generated_method = "31248C080AE7561C6892218AC4D58C46")
     public  EncodedKeySpec(byte[] encodedKey) {
         this.encodedKey = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0,
@@ -25,13 +25,12 @@ public abstract class EncodedKeySpec implements KeySpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.075 -0400", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "A06991BDDF4DB0684D851D2177ADEA76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.080 -0400", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "4FB4AA41D8B335B4F4AC88027836A131")
     public byte[] getEncoded() {
-        byte[] ret;
-        ret = new byte[encodedKey.length];
+        byte[] ret = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0, ret, 0, ret.length);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1591457618 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1591457618;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_79874373 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_79874373;
         // ---------- Original Method ----------
         //byte[] ret = new byte[encodedKey.length];
         //System.arraycopy(encodedKey, 0, ret, 0, ret.length);

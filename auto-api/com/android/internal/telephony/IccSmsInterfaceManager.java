@@ -16,17 +16,17 @@ import java.util.List;
 import static android.telephony.SmsManager.STATUS_ON_ICC_FREE;
 
 public abstract class IccSmsInterfaceManager extends ISms.Stub {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.955 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "C5284483C4CF8ED630A2E2607ED30E12")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.110 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "C5284483C4CF8ED630A2E2607ED30E12")
 
     protected PhoneBase mPhone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.955 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.111 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
 
     protected Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.955 -0400", hash_original_field = "DBF05840F0B51F776B05018389E7959D", hash_generated_field = "AC8E6363A1434BE5D4DA002E7C8CA149")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.111 -0400", hash_original_field = "DBF05840F0B51F776B05018389E7959D", hash_generated_field = "AC8E6363A1434BE5D4DA002E7C8CA149")
 
     protected SMSDispatcher mDispatcher;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.955 -0400", hash_original_method = "78E99F4B2BD1DF9D391D1AFBEE29FD49", hash_generated_method = "24E2DDD26F72C69DBA3FD42FF9AA575D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.111 -0400", hash_original_method = "78E99F4B2BD1DF9D391D1AFBEE29FD49", hash_generated_method = "24E2DDD26F72C69DBA3FD42FF9AA575D")
     protected  IccSmsInterfaceManager(PhoneBase phone) {
         mPhone = phone;
         mContext = phone.getContext();
@@ -36,7 +36,7 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.955 -0400", hash_original_method = "D94224C2F430A720CDDDF796E6F87142", hash_generated_method = "AE9AF6E81C49F452E55781C7847130B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.111 -0400", hash_original_method = "D94224C2F430A720CDDDF796E6F87142", hash_generated_method = "AE9AF6E81C49F452E55781C7847130B5")
     protected void enforceReceiveAndSend(String message) {
         mContext.enforceCallingPermission(
                 "android.permission.RECEIVE_SMS", message);
@@ -51,14 +51,14 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.958 -0400", hash_original_method = "2CBD208E09A1050F1D8C833305F8E60D", hash_generated_method = "80529B384C71A772EB647B1011B0CCCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.112 -0400", hash_original_method = "2CBD208E09A1050F1D8C833305F8E60D", hash_generated_method = "D1E65063EF33F6E992AA996CEC83D0AB")
     public void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
         mPhone.getContext().enforceCallingPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_1564513414 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_2007757031 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
                 log("sendData: destAddr=" + destAddr + " scAddr=" + scAddr + " destPort=" +
                 destPort + " data='"+ HexDump.toHexString(data)  + "' sentIntent=" +
@@ -85,14 +85,14 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.958 -0400", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "2E86B488EC83139484ACA750CC21C3D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.112 -0400", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "B02F82C2C4DC619A26C97BB24E3481A1")
     public void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent) {
         mPhone.getContext().enforceCallingOrSelfPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_1899119259 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_281281466 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
                 log("sendText: destAddr=" + destAddr + " scAddr=" + scAddr +
                 " text='"+ text + "' sentIntent=" +
@@ -118,21 +118,20 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.989 -0400", hash_original_method = "D9EE0BE48B3A066597B9F477CD500C6B", hash_generated_method = "30EB4D31888D8B32EA0A265446AF192C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.119 -0400", hash_original_method = "D9EE0BE48B3A066597B9F477CD500C6B", hash_generated_method = "4967C9BF8EE202EA29EEE2483BE55DC7")
     public void sendMultipartText(String destAddr, String scAddr, List<String> parts,
             List<PendingIntent> sentIntents, List<PendingIntent> deliveryIntents) {
         mPhone.getContext().enforceCallingPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_31921522 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_1446068075 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
-                    Iterator<String> var4E9C8AFBA69334251664FB12D52EFE6A_1532846772 = (parts).iterator();
-                    var4E9C8AFBA69334251664FB12D52EFE6A_1532846772.hasNext();
-                    String part = var4E9C8AFBA69334251664FB12D52EFE6A_1532846772.next();
+                    Iterator<String> var4E9C8AFBA69334251664FB12D52EFE6A_1567999740 = (parts).iterator();
+                    var4E9C8AFBA69334251664FB12D52EFE6A_1567999740.hasNext();
+                    String part = var4E9C8AFBA69334251664FB12D52EFE6A_1567999740.next();
                     {
                         log("sendMultipartText: destAddr=" + destAddr + ", srAddr=" + scAddr +
                         ", part[" + (i++) + "]=" + part);
@@ -163,19 +162,16 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.998 -0400", hash_original_method = "26382ED0E59B10B13781F79838E812B0", hash_generated_method = "B738BBE68317D472BA471CAEA575EC6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.120 -0400", hash_original_method = "26382ED0E59B10B13781F79838E812B0", hash_generated_method = "73A9217025B518C166F028A9B3984EDB")
     protected ArrayList<SmsRawData> buildValidRawData(ArrayList<byte[]> messages) {
-        ArrayList<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_979158286 = null; //Variable for return #1
-        int count;
-        count = messages.size();
+        ArrayList<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_667137003 = null; //Variable for return #1
+        int count = messages.size();
         ArrayList<SmsRawData> ret;
         ret = new ArrayList<SmsRawData>(count);
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                byte[] ba;
-                ba = messages.get(i);
+                byte[] ba = messages.get(i);
                 {
                     ret.add(null);
                 } //End block
@@ -184,10 +180,10 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_979158286 = ret;
-        addTaint(messages.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_979158286.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_979158286;
+        varB4EAC82CA7396A68D541C85D26508E83_667137003 = ret;
+        addTaint(messages[0].getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_667137003.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_667137003;
         // ---------- Original Method ----------
         //int count = messages.size();
         //ArrayList<SmsRawData> ret;
@@ -204,23 +200,21 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.999 -0400", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "D43C9CC2708C6B7E249C36DDA445CAB2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.120 -0400", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "D36B7FD802088F78880B7F672FC3DADD")
     protected byte[] makeSmsRecordData(int status, byte[] pdu) {
-        byte[] data;
-        data = new byte[IccConstants.SMS_RECORD_LENGTH];
+        byte[] data = new byte[IccConstants.SMS_RECORD_LENGTH];
         data[0] = (byte)(status & 7);
         System.arraycopy(pdu, 0, data, 1, pdu.length);
         {
-            int j;
-            j = pdu.length+1;
+            int j = pdu.length+1;
             {
                 data[j] = -1;
             } //End block
         } //End collapsed parenthetic
         addTaint(status);
         addTaint(pdu[0]);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1911330578 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1911330578;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1394836766 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1394836766;
         // ---------- Original Method ----------
         //byte[] data = new byte[IccConstants.SMS_RECORD_LENGTH];
         //data[0] = (byte)(status & 7);

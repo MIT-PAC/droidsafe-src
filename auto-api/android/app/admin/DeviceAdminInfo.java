@@ -34,25 +34,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public final class DeviceAdminInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.797 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "2D4BD551D6F35F2FF0B83E0BB38D3A72")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.832 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "2D4BD551D6F35F2FF0B83E0BB38D3A72")
 
     ResolveInfo mReceiver;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.798 -0400", hash_original_field = "807A18BD291896E7D3B58F90DB9F75FD", hash_generated_field = "03850172BDDB3583B6C36063C483BA26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.832 -0400", hash_original_field = "807A18BD291896E7D3B58F90DB9F75FD", hash_generated_field = "03850172BDDB3583B6C36063C483BA26")
 
     boolean mVisible;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.799 -0400", hash_original_field = "930676CBE49D17827359BC4BBABCE218", hash_generated_field = "1401AC0E78CE2E5B04FC90A3723E0EBA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.832 -0400", hash_original_field = "930676CBE49D17827359BC4BBABCE218", hash_generated_field = "1401AC0E78CE2E5B04FC90A3723E0EBA")
 
     int mUsesPolicies;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.827 -0400", hash_original_method = "DA2A583494497907A2E88C8448FC887F", hash_generated_method = "5A1E5BD3AE8C2EA7EB497BDA8D3FB51B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.833 -0400", hash_original_method = "DA2A583494497907A2E88C8448FC887F", hash_generated_method = "328B8475C34A16960DD8A1D243B85E9C")
     public  DeviceAdminInfo(Context context, ResolveInfo receiver) throws XmlPullParserException, IOException {
         mReceiver = receiver;
-        ActivityInfo ai;
-        ai = receiver.activityInfo;
-        PackageManager pm;
-        pm = context.getPackageManager();
-        XmlResourceParser parser;
-        parser = null;
+        ActivityInfo ai = receiver.activityInfo;
+        PackageManager pm = context.getPackageManager();
+        XmlResourceParser parser = null;
         try 
         {
             parser = ai.loadXmlMetaData(pm, DeviceAdminReceiver.DEVICE_ADMIN_META_DATA);
@@ -60,51 +57,42 @@ public final class DeviceAdminInfo implements Parcelable {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("No "
                         + DeviceAdminReceiver.DEVICE_ADMIN_META_DATA + " meta-data");
             } //End block
-            Resources res;
-            res = pm.getResourcesForApplication(ai.applicationInfo);
-            AttributeSet attrs;
-            attrs = Xml.asAttributeSet(parser);
+            Resources res = pm.getResourcesForApplication(ai.applicationInfo);
+            AttributeSet attrs = Xml.asAttributeSet(parser);
             int type;
             {
-                boolean var995057C222283DCE9E465AE35974357A_170834029 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                boolean var995057C222283DCE9E465AE35974357A_1140508331 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                     && type != XmlPullParser.START_TAG);
             } //End collapsed parenthetic
-            String nodeName;
-            nodeName = parser.getName();
+            String nodeName = parser.getName();
             {
-                boolean varBDC9FBA0FE68CEEC67E40AC42EB09865_801751461 = (!"device-admin".equals(nodeName));
+                boolean varBDC9FBA0FE68CEEC67E40AC42EB09865_165295693 = (!"device-admin".equals(nodeName));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         "Meta-data does not start with device-admin tag");
                 } //End block
             } //End collapsed parenthetic
-            TypedArray sa;
-            sa = res.obtainAttributes(attrs,
+            TypedArray sa = res.obtainAttributes(attrs,
                     com.android.internal.R.styleable.DeviceAdmin);
             mVisible = sa.getBoolean(
                     com.android.internal.R.styleable.DeviceAdmin_visible, true);
             sa.recycle();
-            int outerDepth;
-            outerDepth = parser.getDepth();
+            int outerDepth = parser.getDepth();
             {
-                boolean var8956F460685E7D17F4EB87103FD834D7_1326120624 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                boolean var8956F460685E7D17F4EB87103FD834D7_1080496353 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                    && (type != XmlPullParser.END_TAG || parser.getDepth() > outerDepth));
                 {
-                    String tagName;
-                    tagName = parser.getName();
+                    String tagName = parser.getName();
                     {
-                        boolean varBB2EC4F1FAE99CCAACDF1005EBC6FBF7_571258909 = (tagName.equals("uses-policies"));
+                        boolean varBB2EC4F1FAE99CCAACDF1005EBC6FBF7_319856453 = (tagName.equals("uses-policies"));
                         {
-                            int innerDepth;
-                            innerDepth = parser.getDepth();
+                            int innerDepth = parser.getDepth();
                             {
-                                boolean var554531EF1BF3152A9E18038DDC877C21_1257666076 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                                boolean var554531EF1BF3152A9E18038DDC877C21_955461243 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                            && (type != XmlPullParser.END_TAG || parser.getDepth() > innerDepth));
                                 {
-                                    String policyName;
-                                    policyName = parser.getName();
-                                    Integer val;
-                                    val = sKnownPolicies.get(policyName);
+                                    String policyName = parser.getName();
+                                    Integer val = sKnownPolicies.get(policyName);
                                     {
                                         mUsesPolicies |= 1 << val.intValue();
                                     } //End block
@@ -130,7 +118,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.832 -0400", hash_original_method = "63AFCAD0BD5EA5852A2B80B7C90D81EC", hash_generated_method = "BB2740E4F064F8E201F116E2693410B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.834 -0400", hash_original_method = "63AFCAD0BD5EA5852A2B80B7C90D81EC", hash_generated_method = "BB2740E4F064F8E201F116E2693410B2")
       DeviceAdminInfo(Parcel source) {
         mReceiver = ResolveInfo.CREATOR.createFromParcel(source);
         mUsesPolicies = source.readInt();
@@ -140,83 +128,81 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.861 -0400", hash_original_method = "15D7F1C05476F5ABD61BE7FA06DD15FF", hash_generated_method = "EF944F914F47A5767EBF204A3F7C7B15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.835 -0400", hash_original_method = "15D7F1C05476F5ABD61BE7FA06DD15FF", hash_generated_method = "2E85565EF34E340C0C2FD73AF5B4111B")
     public String getPackageName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2144357245 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2144357245 = mReceiver.activityInfo.packageName;
-        varB4EAC82CA7396A68D541C85D26508E83_2144357245.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2144357245;
+        String varB4EAC82CA7396A68D541C85D26508E83_1300015829 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1300015829 = mReceiver.activityInfo.packageName;
+        varB4EAC82CA7396A68D541C85D26508E83_1300015829.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1300015829;
         // ---------- Original Method ----------
         //return mReceiver.activityInfo.packageName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.864 -0400", hash_original_method = "DA104755B25D83C27775D5E8DE9A1BBA", hash_generated_method = "83530D0D3C9C42F8E4BF3785B7D28088")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.836 -0400", hash_original_method = "DA104755B25D83C27775D5E8DE9A1BBA", hash_generated_method = "40A515F80D6ED29E6A0AF6FCB2AB1D6C")
     public String getReceiverName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1623748918 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1623748918 = mReceiver.activityInfo.name;
-        varB4EAC82CA7396A68D541C85D26508E83_1623748918.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1623748918;
+        String varB4EAC82CA7396A68D541C85D26508E83_578242418 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_578242418 = mReceiver.activityInfo.name;
+        varB4EAC82CA7396A68D541C85D26508E83_578242418.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_578242418;
         // ---------- Original Method ----------
         //return mReceiver.activityInfo.name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.879 -0400", hash_original_method = "841DC64081A3A73FAF123BE852CFB557", hash_generated_method = "D53BB9D058FB79C7E542C611440BAC9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.837 -0400", hash_original_method = "841DC64081A3A73FAF123BE852CFB557", hash_generated_method = "C4DE542067D3B85A52FDB894FDD9F9DE")
     public ActivityInfo getActivityInfo() {
-        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1849740515 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1849740515 = mReceiver.activityInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1849740515.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1849740515;
+        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1932643556 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1932643556 = mReceiver.activityInfo;
+        varB4EAC82CA7396A68D541C85D26508E83_1932643556.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1932643556;
         // ---------- Original Method ----------
         //return mReceiver.activityInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.890 -0400", hash_original_method = "D8CD91DC98C1B02E60FA507EA4460E94", hash_generated_method = "4A769EB29A4E9B7A830D93334C3EB5AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.838 -0400", hash_original_method = "D8CD91DC98C1B02E60FA507EA4460E94", hash_generated_method = "19AD680D94D6623F17DD9D96812F3EB5")
     public ComponentName getComponent() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_132654569 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_132654569 = new ComponentName(mReceiver.activityInfo.packageName,
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_701740722 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_701740722 = new ComponentName(mReceiver.activityInfo.packageName,
                 mReceiver.activityInfo.name);
-        varB4EAC82CA7396A68D541C85D26508E83_132654569.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_132654569;
+        varB4EAC82CA7396A68D541C85D26508E83_701740722.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_701740722;
         // ---------- Original Method ----------
         //return new ComponentName(mReceiver.activityInfo.packageName,
                 //mReceiver.activityInfo.name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.909 -0400", hash_original_method = "4FE582D960848B41E26F8E6C418819DF", hash_generated_method = "5BE6058ABDE022BD1FDE84EFC65F3D86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.839 -0400", hash_original_method = "4FE582D960848B41E26F8E6C418819DF", hash_generated_method = "E947B3D19AA1147B0247DACC3F779509")
     public CharSequence loadLabel(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1851745492 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1851745492 = mReceiver.loadLabel(pm);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1168980385 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1168980385 = mReceiver.loadLabel(pm);
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1851745492.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1851745492;
+        varB4EAC82CA7396A68D541C85D26508E83_1168980385.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1168980385;
         // ---------- Original Method ----------
         //return mReceiver.loadLabel(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.930 -0400", hash_original_method = "0302FD8CF05010F5CDB923C74BE177F9", hash_generated_method = "A1C6494A68BD43ECEB12833B750971E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.840 -0400", hash_original_method = "0302FD8CF05010F5CDB923C74BE177F9", hash_generated_method = "1A204FDC7A70D27BF5265B8C1F900D30")
     public CharSequence loadDescription(PackageManager pm) throws NotFoundException {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1700827007 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1191363425 = null; //Variable for return #1
         {
-            String packageName;
-            packageName = mReceiver.resolvePackageName;
-            ApplicationInfo applicationInfo;
-            applicationInfo = null;
+            String packageName = mReceiver.resolvePackageName;
+            ApplicationInfo applicationInfo = null;
             {
                 packageName = mReceiver.activityInfo.packageName;
                 applicationInfo = mReceiver.activityInfo.applicationInfo;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1700827007 = pm.getText(packageName,
+            varB4EAC82CA7396A68D541C85D26508E83_1191363425 = pm.getText(packageName,
                     mReceiver.activityInfo.descriptionRes, applicationInfo);
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException();
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1700827007.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1700827007;
+        varB4EAC82CA7396A68D541C85D26508E83_1191363425.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1191363425;
         // ---------- Original Method ----------
         //if (mReceiver.activityInfo.descriptionRes != 0) {
             //String packageName = mReceiver.resolvePackageName;
@@ -232,72 +218,69 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.935 -0400", hash_original_method = "0A539B1C4B2E8E617EDD9C83DE1E1B83", hash_generated_method = "66B95472B92CAD16A06D81C8C46AE5AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.841 -0400", hash_original_method = "0A539B1C4B2E8E617EDD9C83DE1E1B83", hash_generated_method = "AFE7EC34117A0CB4426B30DF86863CEF")
     public Drawable loadIcon(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_456589825 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_456589825 = mReceiver.loadIcon(pm);
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_262362135 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_262362135 = mReceiver.loadIcon(pm);
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_456589825.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_456589825;
+        varB4EAC82CA7396A68D541C85D26508E83_262362135.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_262362135;
         // ---------- Original Method ----------
         //return mReceiver.loadIcon(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.955 -0400", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "C40CB5C23E8FD05CA1CA1211D2236CBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.842 -0400", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "116561B8AB5301A4EBE4DFD20B2ACDEB")
     public boolean isVisible() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833204498 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_833204498;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_534638715 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_534638715;
         // ---------- Original Method ----------
         //return mVisible;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.956 -0400", hash_original_method = "E08C907F6F855F797C3DCE0727348F6B", hash_generated_method = "BAF74BB0DC1426CFC5ED343CF19216F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.842 -0400", hash_original_method = "E08C907F6F855F797C3DCE0727348F6B", hash_generated_method = "257A38FA2E443E305E88E9BF0C43540A")
     public boolean usesPolicy(int policyIdent) {
         addTaint(policyIdent);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663259438 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663259438;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372708478 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_372708478;
         // ---------- Original Method ----------
         //return (mUsesPolicies & (1<<policyIdent)) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.958 -0400", hash_original_method = "535AB0E7EF604572B28232B709525301", hash_generated_method = "32F57C18D611190E68A4D44E15CCF6E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.843 -0400", hash_original_method = "535AB0E7EF604572B28232B709525301", hash_generated_method = "37DC480A4FE710D8A84051E7B4653C43")
     public String getTagForPolicy(int policyIdent) {
-        String varB4EAC82CA7396A68D541C85D26508E83_883176078 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_883176078 = sRevKnownPolicies.get(policyIdent).tag;
+        String varB4EAC82CA7396A68D541C85D26508E83_102194484 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_102194484 = sRevKnownPolicies.get(policyIdent).tag;
         addTaint(policyIdent);
-        varB4EAC82CA7396A68D541C85D26508E83_883176078.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_883176078;
+        varB4EAC82CA7396A68D541C85D26508E83_102194484.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_102194484;
         // ---------- Original Method ----------
         //return sRevKnownPolicies.get(policyIdent).tag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.976 -0400", hash_original_method = "ED92B1C7E9AB1C3DE434E84362F61420", hash_generated_method = "562CD0A3F48F1EF0C50590666DAB3C53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.844 -0400", hash_original_method = "ED92B1C7E9AB1C3DE434E84362F61420", hash_generated_method = "8BC3D0557E67C0925D0C50ACCFA7F1C0")
     public ArrayList<PolicyInfo> getUsedPolicies() {
-        ArrayList<PolicyInfo> varB4EAC82CA7396A68D541C85D26508E83_897180046 = null; //Variable for return #1
-        ArrayList<PolicyInfo> res;
-        res = new ArrayList<PolicyInfo>();
+        ArrayList<PolicyInfo> varB4EAC82CA7396A68D541C85D26508E83_663302688 = null; //Variable for return #1
+        ArrayList<PolicyInfo> res = new ArrayList<PolicyInfo>();
         {
-            int i;
-            i = 0;
-            boolean varF1005D5C6AE4E2221C992F4E4F8202F3_495088404 = (i<sPoliciesDisplayOrder.size());
+            int i = 0;
+            boolean varF1005D5C6AE4E2221C992F4E4F8202F3_65745586 = (i<sPoliciesDisplayOrder.size());
             {
-                PolicyInfo pi;
-                pi = sPoliciesDisplayOrder.get(i);
+                PolicyInfo pi = sPoliciesDisplayOrder.get(i);
                 {
-                    boolean varEC2D8F41B9495C03BBAAB789B6756C67_1349569151 = (usesPolicy(pi.ident));
+                    boolean varEC2D8F41B9495C03BBAAB789B6756C67_1621368155 = (usesPolicy(pi.ident));
                     {
                         res.add(pi);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_897180046 = res;
-        varB4EAC82CA7396A68D541C85D26508E83_897180046.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_897180046;
+        varB4EAC82CA7396A68D541C85D26508E83_663302688 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_663302688.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_663302688;
         // ---------- Original Method ----------
         //ArrayList<PolicyInfo> res = new ArrayList<PolicyInfo>();
         //for (int i=0; i<sPoliciesDisplayOrder.size(); i++) {
@@ -310,7 +293,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.978 -0400", hash_original_method = "9540BEA2A1ABEB78FD332A0993AE68E4", hash_generated_method = "191DEE2CB5502CCB12D96C521844C486")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.845 -0400", hash_original_method = "9540BEA2A1ABEB78FD332A0993AE68E4", hash_generated_method = "191DEE2CB5502CCB12D96C521844C486")
     public void writePoliciesToXml(XmlSerializer out) throws IllegalArgumentException, IllegalStateException, IOException {
         out.attribute(null, "flags", Integer.toString(mUsesPolicies));
         addTaint(out.getTaint());
@@ -319,7 +302,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.980 -0400", hash_original_method = "8AE790C821B5E4F39ADC01FFE00626E1", hash_generated_method = "8C9590F7F9DB5EE5A22B3E48C1DCA69F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.846 -0400", hash_original_method = "8AE790C821B5E4F39ADC01FFE00626E1", hash_generated_method = "8C9590F7F9DB5EE5A22B3E48C1DCA69F")
     public void readPoliciesFromXml(XmlPullParser parser) throws XmlPullParserException, IOException {
         mUsesPolicies = Integer.parseInt(
                 parser.getAttributeValue(null, "flags"));
@@ -329,7 +312,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:55.998 -0400", hash_original_method = "B6CA0FCEADAF7A26300AC5E399081259", hash_generated_method = "88FFD06078DA5A57E9EC5F71341D3FD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.846 -0400", hash_original_method = "B6CA0FCEADAF7A26300AC5E399081259", hash_generated_method = "88FFD06078DA5A57E9EC5F71341D3FD9")
     public void dump(Printer pw, String prefix) {
         pw.println(prefix + "Receiver:");
         mReceiver.dump(pw, prefix + "  ");
@@ -341,19 +324,19 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.000 -0400", hash_original_method = "337DF8B9CB781ADE72580EF8EE42E4C5", hash_generated_method = "49DD9E089F7C50AE97AEAB32AB284DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.848 -0400", hash_original_method = "337DF8B9CB781ADE72580EF8EE42E4C5", hash_generated_method = "46FD8285CF937711B0EC7733CC032571")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_894436082 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_894436082 = "DeviceAdminInfo{" + mReceiver.activityInfo.name + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_894436082.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_894436082;
+        String varB4EAC82CA7396A68D541C85D26508E83_846141287 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_846141287 = "DeviceAdminInfo{" + mReceiver.activityInfo.name + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_846141287.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_846141287;
         // ---------- Original Method ----------
         //return "DeviceAdminInfo{" + mReceiver.activityInfo.name + "}";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.002 -0400", hash_original_method = "3425AE1C08CE1294933DDD04C3D7531A", hash_generated_method = "E4F4365FB5AB73A9C0DFE6CD20A0CCC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.849 -0400", hash_original_method = "3425AE1C08CE1294933DDD04C3D7531A", hash_generated_method = "E4F4365FB5AB73A9C0DFE6CD20A0CCC3")
     public void writeToParcel(Parcel dest, int flags) {
         mReceiver.writeToParcel(dest, flags);
         dest.writeInt(mUsesPolicies);
@@ -365,30 +348,30 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.021 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C974C4BFA147270D5D5C142BF5398C12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "88C13ED1AE7E78BC5B78447A7AA7DE74")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972052629 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972052629;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935234763 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935234763;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
     public static class PolicyInfo {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.021 -0400", hash_original_field = "67217D8B401CF5E72BBF5103D60F3E97", hash_generated_field = "3ED5BE6AB29FB35B15159E9F367B83D4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_field = "67217D8B401CF5E72BBF5103D60F3E97", hash_generated_field = "3ED5BE6AB29FB35B15159E9F367B83D4")
 
         public int ident;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.022 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "928ED6D003A1BBA8E668A5F46546830A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "928ED6D003A1BBA8E668A5F46546830A")
 
         public String tag;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.022 -0400", hash_original_field = "D304BA20E96D87411588EEABAC850E34", hash_generated_field = "4E631ABECBB784587134D99CABB6D578")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_field = "D304BA20E96D87411588EEABAC850E34", hash_generated_field = "4E631ABECBB784587134D99CABB6D578")
 
         public int label;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.022 -0400", hash_original_field = "67DAF92C833C41C95DB874E18FCB2786", hash_generated_field = "5C8D64BE7911844358CFF2EE4DECE98F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.850 -0400", hash_original_field = "67DAF92C833C41C95DB874E18FCB2786", hash_generated_field = "5C8D64BE7911844358CFF2EE4DECE98F")
 
         public int description;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.042 -0400", hash_original_method = "A90CA239E6D53FEA8EFED1E11D7512A4", hash_generated_method = "E3787431209518667B6BC2676B74AB95")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_method = "A90CA239E6D53FEA8EFED1E11D7512A4", hash_generated_method = "E3787431209518667B6BC2676B74AB95")
         public  PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
             ident = identIn;
             tag = tagIn;
@@ -406,43 +389,43 @@ public final class DeviceAdminInfo implements Parcelable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.043 -0400", hash_original_field = "BFCAA000FE160E5F7BB766375D4ADD22", hash_generated_field = "DF04598A674670183FF59D6CD9647C8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_field = "BFCAA000FE160E5F7BB766375D4ADD22", hash_generated_field = "EF54ADA6F74B065C52190993EC3B85DD")
 
-    static String TAG = "DeviceAdminInfo";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.044 -0400", hash_original_field = "725F9C73A34DE547E47E4F7957A81C07", hash_generated_field = "E9DCD048F5A6CCC8DFE12FD941C198E5")
+    static final String TAG = "DeviceAdminInfo";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_field = "725F9C73A34DE547E47E4F7957A81C07", hash_generated_field = "E9DCD048F5A6CCC8DFE12FD941C198E5")
 
     public static final int USES_POLICY_LIMIT_PASSWORD = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.044 -0400", hash_original_field = "863AD8CC348C390802665805D24E874C", hash_generated_field = "AE5A988FA3BA388E907590C417363EE7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_field = "863AD8CC348C390802665805D24E874C", hash_generated_field = "AE5A988FA3BA388E907590C417363EE7")
 
     public static final int USES_POLICY_WATCH_LOGIN = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.059 -0400", hash_original_field = "F52E3BCB4ED41E03A7E379585CCAC4B1", hash_generated_field = "7F4234536F6741F04549A2277B1EFC5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_field = "F52E3BCB4ED41E03A7E379585CCAC4B1", hash_generated_field = "7F4234536F6741F04549A2277B1EFC5E")
 
     public static final int USES_POLICY_RESET_PASSWORD = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.059 -0400", hash_original_field = "2D4E9DF54EDA4FED3ECE31EC26594C58", hash_generated_field = "067F511682A4B373E6E879C62919F307")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.851 -0400", hash_original_field = "2D4E9DF54EDA4FED3ECE31EC26594C58", hash_generated_field = "067F511682A4B373E6E879C62919F307")
 
     public static final int USES_POLICY_FORCE_LOCK = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.060 -0400", hash_original_field = "FA1308E3ECDDE25A3B149A68AA49ED37", hash_generated_field = "CA3D915D2D1C7DC903035A2E3ADB84C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "FA1308E3ECDDE25A3B149A68AA49ED37", hash_generated_field = "CA3D915D2D1C7DC903035A2E3ADB84C8")
 
     public static final int USES_POLICY_WIPE_DATA = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.060 -0400", hash_original_field = "3152B4EA535C17578AB6AC3680C46D2A", hash_generated_field = "BF7504138BD4B0F7F20156F0A1C27890")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "3152B4EA535C17578AB6AC3680C46D2A", hash_generated_field = "BF7504138BD4B0F7F20156F0A1C27890")
 
     public static final int USES_POLICY_SETS_GLOBAL_PROXY = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.061 -0400", hash_original_field = "EFE987220A950F180042948AD0FA3113", hash_generated_field = "649F755854D82F65F45D4A5450A5B1C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "EFE987220A950F180042948AD0FA3113", hash_generated_field = "649F755854D82F65F45D4A5450A5B1C1")
 
     public static final int USES_POLICY_EXPIRE_PASSWORD = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.061 -0400", hash_original_field = "C0622E07B90C8132AC5B5273F8C8C15B", hash_generated_field = "62C8687D0FBBB6D1C4927BFFEC3671FA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "C0622E07B90C8132AC5B5273F8C8C15B", hash_generated_field = "62C8687D0FBBB6D1C4927BFFEC3671FA")
 
     public static final int USES_ENCRYPTED_STORAGE = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.067 -0400", hash_original_field = "3029FC1DEC6F43C637710C1A1A244931", hash_generated_field = "AD7A455AB97C1169FE5F3ADEFB8A2B45")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "3029FC1DEC6F43C637710C1A1A244931", hash_generated_field = "AD7A455AB97C1169FE5F3ADEFB8A2B45")
 
     public static final int USES_POLICY_DISABLE_CAMERA = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.067 -0400", hash_original_field = "4CA518A70763CEC212339FA5C9F3C3A9", hash_generated_field = "5BE1EFEEF690A563A986877DACAE99BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "4CA518A70763CEC212339FA5C9F3C3A9", hash_generated_field = "5BE1EFEEF690A563A986877DACAE99BD")
 
     static ArrayList<PolicyInfo> sPoliciesDisplayOrder = new ArrayList<PolicyInfo>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.068 -0400", hash_original_field = "3C158DA5DE0145AF6111C2405D7D5C4F", hash_generated_field = "33B4C32B2D5C5AE03E24E067E342238A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "3C158DA5DE0145AF6111C2405D7D5C4F", hash_generated_field = "33B4C32B2D5C5AE03E24E067E342238A")
 
     static HashMap<String, Integer> sKnownPolicies = new HashMap<String, Integer>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.069 -0400", hash_original_field = "4E7CC588DEF8602DA2222A5E6E3CA75D", hash_generated_field = "154BC990F414FCC0C38CFD009DD9E193")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "4E7CC588DEF8602DA2222A5E6E3CA75D", hash_generated_field = "154BC990F414FCC0C38CFD009DD9E193")
 
     static SparseArray<PolicyInfo> sRevKnownPolicies = new SparseArray<PolicyInfo>();
     static {
@@ -480,7 +463,7 @@ public final class DeviceAdminInfo implements Parcelable {
         }
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.079 -0400", hash_original_field = "8388F181CBDE36845D31A8253E2A0818", hash_generated_field = "AE364B217CEEC3B0E90343DDAC8BFCA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.852 -0400", hash_original_field = "8388F181CBDE36845D31A8253E2A0818", hash_generated_field = "AE364B217CEEC3B0E90343DDAC8BFCA3")
 
     public static final Parcelable.Creator<DeviceAdminInfo> CREATOR =
             new Parcelable.Creator<DeviceAdminInfo>() {
@@ -492,5 +475,15 @@ public final class DeviceAdminInfo implements Parcelable {
             return new DeviceAdminInfo[size];
         }
     };
+    // orphaned legacy method
+    public DeviceAdminInfo createFromParcel(Parcel source) {
+            return new DeviceAdminInfo(source);
+        }
+    
+    // orphaned legacy method
+    public DeviceAdminInfo[] newArray(int size) {
+            return new DeviceAdminInfo[size];
+        }
+    
 }
 

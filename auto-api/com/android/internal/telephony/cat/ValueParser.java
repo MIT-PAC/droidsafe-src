@@ -16,14 +16,14 @@ import java.util.List;
 
 abstract class ValueParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.683 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.872 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
     public ValueParser ()
     {
         //Synthesized constructor
     }
 
 
-        static CommandDetails retrieveCommandDetails(ComprehensionTlv ctlv) throws ResultException {
+    static CommandDetails retrieveCommandDetails(ComprehensionTlv ctlv) throws ResultException {
         CommandDetails cmdDet = new CommandDetails();
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -39,7 +39,7 @@ abstract class ValueParser {
     }
 
     
-        static DeviceIdentities retrieveDeviceIdentities(ComprehensionTlv ctlv) throws ResultException {
+    static DeviceIdentities retrieveDeviceIdentities(ComprehensionTlv ctlv) throws ResultException {
         DeviceIdentities devIds = new DeviceIdentities();
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -53,7 +53,7 @@ abstract class ValueParser {
     }
 
     
-        static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
+    static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
         int timeInterval = 0;
         TimeUnit timeUnit = TimeUnit.SECOND;
         byte[] rawValue = ctlv.getRawValue();
@@ -68,7 +68,7 @@ abstract class ValueParser {
     }
 
     
-        static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
+    static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
         Item item = null;
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -88,7 +88,7 @@ abstract class ValueParser {
     }
 
     
-        static int retrieveItemId(ComprehensionTlv ctlv) throws ResultException {
+    static int retrieveItemId(ComprehensionTlv ctlv) throws ResultException {
         int id = 0;
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -101,7 +101,7 @@ abstract class ValueParser {
     }
 
     
-        static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
+    static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
         IconId id = new IconId();
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -115,7 +115,7 @@ abstract class ValueParser {
     }
 
     
-        static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv) throws ResultException {
+    static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv) throws ResultException {
         CatLog.d("ValueParser", "retrieveItemsIconId:");
         ItemsIconId id = new ItemsIconId();
         byte[] rawValue = ctlv.getRawValue();
@@ -134,7 +134,7 @@ abstract class ValueParser {
     }
 
     
-        static List<TextAttribute> retrieveTextAttribute(ComprehensionTlv ctlv) throws ResultException {
+    static List<TextAttribute> retrieveTextAttribute(ComprehensionTlv ctlv) throws ResultException {
         ArrayList<TextAttribute> lst = new ArrayList<TextAttribute>();
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -173,7 +173,7 @@ abstract class ValueParser {
     }
 
     
-        static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
+    static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
         if (ctlv != null) {
             byte[] rawValue = ctlv.getRawValue();
             int valueIndex = ctlv.getValueIndex();
@@ -194,7 +194,7 @@ abstract class ValueParser {
     }
 
     
-        static String retrieveTextString(ComprehensionTlv ctlv) throws ResultException {
+    static String retrieveTextString(ComprehensionTlv ctlv) throws ResultException {
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
         byte codingScheme = 0x00;

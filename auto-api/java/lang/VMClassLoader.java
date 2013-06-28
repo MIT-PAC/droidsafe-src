@@ -14,14 +14,14 @@ import java.util.List;
 
 class VMClassLoader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.744 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.490 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
     public VMClassLoader ()
     {
         //Synthesized constructor
     }
 
 
-        static URL getResource(String name) {
+    static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
             String urlStr = getBootClassPathResource(name, i);
@@ -37,7 +37,7 @@ class VMClassLoader {
     }
 
     
-        static List<URL> getResources(String name) {
+    static List<URL> getResources(String name) {
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
@@ -54,38 +54,39 @@ class VMClassLoader {
     }
 
     
-        static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        static Class getPrimitiveClass(char type) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    static Class getPrimitiveClass(char type) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        static Class findLoadedClass(ClassLoader cl, String name) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    static Class findLoadedClass(ClassLoader cl, String name) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        private static int getBootClassPathSize() {
-        return DSUtils.UNKNOWN_INT;
+    private static int getBootClassPathSize() {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467;
     }
 
     
-        private static String getBootClassPathResource(String name, int index) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static String getBootClassPathResource(String name, int index) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     

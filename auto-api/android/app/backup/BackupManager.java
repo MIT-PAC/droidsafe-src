@@ -16,11 +16,11 @@ import android.os.ServiceManager;
 import android.util.Log;
 
 public class BackupManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.988 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.518 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.001 -0400", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "0B376C856E6AD2AF391165CD38C9A30E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.518 -0400", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "0B376C856E6AD2AF391165CD38C9A30E")
     public  BackupManager(Context context) {
         mContext = context;
         // ---------- Original Method ----------
@@ -28,7 +28,7 @@ public class BackupManager {
     }
 
     
-        private static void checkServiceBinder() {
+    private static void checkServiceBinder() {
         if (sService == null) {
             sService = IBackupManager.Stub.asInterface(
                     ServiceManager.getService(Context.BACKUP_SERVICE));
@@ -36,7 +36,7 @@ public class BackupManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.003 -0400", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "9BA311BA7E54237547DCB21EA5B6F78C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.519 -0400", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "9BA311BA7E54237547DCB21EA5B6F78C")
     public void dataChanged() {
         checkServiceBinder();
         {
@@ -61,7 +61,7 @@ public class BackupManager {
     }
 
     
-        public static void dataChanged(String packageName) {
+    public static void dataChanged(String packageName) {
         checkServiceBinder();
         if (sService != null) {
             try {
@@ -73,18 +73,15 @@ public class BackupManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.033 -0400", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "B8DB8EA0E464DD5EED1B4321C3234519")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.522 -0400", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "0BCD43FA8464FD6407A9BD1288618D0E")
     public int requestRestore(RestoreObserver observer) {
-        int result;
-        result = -1;
+        int result = -1;
         checkServiceBinder();
         {
-            RestoreSession session;
-            session = null;
+            RestoreSession session = null;
             try 
             {
-                IRestoreSession binder;
-                binder = sService.beginRestoreSession(mContext.getPackageName(),
+                IRestoreSession binder = sService.beginRestoreSession(mContext.getPackageName(),
                         null);
                 session = new RestoreSession(mContext, binder);
                 result = session.restorePackage(mContext.getPackageName(), observer);
@@ -99,8 +96,8 @@ public class BackupManager {
             } //End block
         } //End block
         addTaint(observer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187393765 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187393765;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791170860 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791170860;
         // ---------- Original Method ----------
         //int result = -1;
         //checkServiceBinder();
@@ -123,25 +120,23 @@ public class BackupManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.048 -0400", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "C2D18908C6FB4C65772AA988F1C1B109")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.524 -0400", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "93EC8D190B0D8A026117809503995DB0")
     public RestoreSession beginRestoreSession() {
-        RestoreSession varB4EAC82CA7396A68D541C85D26508E83_515180257 = null; //Variable for return #1
-        RestoreSession session;
-        session = null;
+        RestoreSession varB4EAC82CA7396A68D541C85D26508E83_2109488870 = null; //Variable for return #1
+        RestoreSession session = null;
         checkServiceBinder();
         {
             try 
             {
-                IRestoreSession binder;
-                binder = sService.beginRestoreSession(null, null);
+                IRestoreSession binder = sService.beginRestoreSession(null, null);
                 session = new RestoreSession(mContext, binder);
             } //End block
             catch (RemoteException e)
             { }
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_515180257 = session;
-        varB4EAC82CA7396A68D541C85D26508E83_515180257.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_515180257;
+        varB4EAC82CA7396A68D541C85D26508E83_2109488870 = session;
+        varB4EAC82CA7396A68D541C85D26508E83_2109488870.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2109488870;
         // ---------- Original Method ----------
         //RestoreSession session = null;
         //checkServiceBinder();
@@ -157,10 +152,10 @@ public class BackupManager {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.049 -0400", hash_original_field = "A4EEA6554760A3C457438AA5B4D89B19", hash_generated_field = "184948296327761AA2960CFBE61B9EB6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.524 -0400", hash_original_field = "A4EEA6554760A3C457438AA5B4D89B19", hash_generated_field = "46BC9109135FC2CB00B0B600F09C9710")
 
-    private static String TAG = "BackupManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.049 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "A0386DA53DF2919548B4DED4A07BF9FC")
+    private static final String TAG = "BackupManager";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.524 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "A0386DA53DF2919548B4DED4A07BF9FC")
 
     private static IBackupManager sService;
 }

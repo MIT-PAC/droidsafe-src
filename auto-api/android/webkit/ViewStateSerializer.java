@@ -18,13 +18,13 @@ import java.io.OutputStream;
 
 class ViewStateSerializer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.422 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.724 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
     private  ViewStateSerializer() {
         // ---------- Original Method ----------
     }
 
     
-        static boolean serializeViewState(OutputStream stream, WebView web) throws IOException {
+    static boolean serializeViewState(OutputStream stream, WebView web) throws IOException {
         int baseLayer = web.getBaseLayer();
         if (baseLayer == 0) {
             return false;
@@ -38,7 +38,7 @@ class ViewStateSerializer {
     }
 
     
-        static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
+    static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
         DataInputStream dis = new DataInputStream(stream);
         int version = dis.readInt();
         if (version != VERSION) {
@@ -61,23 +61,23 @@ class ViewStateSerializer {
     }
 
     
-        private static boolean nativeSerializeViewState(int baseLayer,
+    private static boolean nativeSerializeViewState(int baseLayer,
             OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-        private static int nativeDeserializeViewState(
+    private static int nativeDeserializeViewState(
             InputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.423 -0400", hash_original_field = "324F32D1CC16C414475D1414D2041A3B", hash_generated_field = "082ABB0758BAA3B0F3EEFE889C918FE9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.725 -0400", hash_original_field = "324F32D1CC16C414475D1414D2041A3B", hash_generated_field = "16A3D3E1F1A46232673D292E95776672")
 
-    private static int WORKING_STREAM_STORAGE = 16 * 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.423 -0400", hash_original_field = "B2D9386FD77395AEBE0B153BAD0CF478", hash_generated_field = "9BB92AC0A8D083E958B24167BC63EF9A")
+    private static final int WORKING_STREAM_STORAGE = 16 * 1024;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.725 -0400", hash_original_field = "B2D9386FD77395AEBE0B153BAD0CF478", hash_generated_field = "C4C590CA9F059E3E20E236FD779C6637")
 
-    static int VERSION = 1;
+    static final int VERSION = 1;
 }
 

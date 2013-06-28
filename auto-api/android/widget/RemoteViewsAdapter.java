@@ -29,44 +29,44 @@ import com.android.internal.widget.IRemoteViewsAdapterConnection;
 import com.android.internal.widget.IRemoteViewsFactory;
 
 public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.318 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.319 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
 
     private Intent mIntent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.319 -0400", hash_original_field = "905A4BBD5E07D0C7A80D7BBC86A773FE", hash_generated_field = "B6D817E86C2105E427B243C6F2B8620A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "905A4BBD5E07D0C7A80D7BBC86A773FE", hash_generated_field = "B6D817E86C2105E427B243C6F2B8620A")
 
     private int mAppWidgetId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.319 -0400", hash_original_field = "C443A03F92046D0F01F0B3A84FC6B50F", hash_generated_field = "6C3DDC70E78FA863A6FCDBA124DEDF31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "C443A03F92046D0F01F0B3A84FC6B50F", hash_generated_field = "6C3DDC70E78FA863A6FCDBA124DEDF31")
 
     private LayoutInflater mLayoutInflater;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.319 -0400", hash_original_field = "94CA83B0A5EF3662095068A2D93D4E51", hash_generated_field = "BD40E8C59E7AC3257D3A47F00953ACF9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "94CA83B0A5EF3662095068A2D93D4E51", hash_generated_field = "BD40E8C59E7AC3257D3A47F00953ACF9")
 
     private RemoteViewsAdapterServiceConnection mServiceConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "2853390AFCDB24EF7B383440520C8195")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "2853390AFCDB24EF7B383440520C8195")
 
     private WeakReference<RemoteAdapterConnectionCallback> mCallback;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "FA75DB4B1A95A78968F552A9DCC88B0C", hash_generated_field = "6CEEDA92C0B838E0583FA20FED984233")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "FA75DB4B1A95A78968F552A9DCC88B0C", hash_generated_field = "6CEEDA92C0B838E0583FA20FED984233")
 
     private FixedSizeRemoteViewsCache mCache;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "D40837C5C96F2BC6FB8B15E5D5D9A8E4", hash_generated_field = "2CBB88FF54D1CB615E7672C77E0FDC22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "D40837C5C96F2BC6FB8B15E5D5D9A8E4", hash_generated_field = "2CBB88FF54D1CB615E7672C77E0FDC22")
 
     private boolean mNotifyDataSetChangedAfterOnServiceConnected = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "48E773D9FF4DCC371E25C83CB3C47074", hash_generated_field = "4BD04F08A083FFC0AD9FAED854002A9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "48E773D9FF4DCC371E25C83CB3C47074", hash_generated_field = "4BD04F08A083FFC0AD9FAED854002A9F")
 
     private RemoteViewsFrameLayoutRefSet mRequestedViews;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "057DFDF088887624A60064F086C80D70", hash_generated_field = "F80515F1CBDC27AC738FAA2D73C57FAC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "057DFDF088887624A60064F086C80D70", hash_generated_field = "F80515F1CBDC27AC738FAA2D73C57FAC")
 
     private HandlerThread mWorkerThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "6B46E04E2DA4F6D5AFFCE71F4C5D8248", hash_generated_field = "117A70523E02BF403FE90D6FEB3CF957")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "6B46E04E2DA4F6D5AFFCE71F4C5D8248", hash_generated_field = "117A70523E02BF403FE90D6FEB3CF957")
 
     private Handler mWorkerQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.320 -0400", hash_original_field = "C57F865EFE060D469EE2E4964E3F0FA8", hash_generated_field = "6EC87008C9BC7C9DBF6022010FD5DC7F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.177 -0400", hash_original_field = "C57F865EFE060D469EE2E4964E3F0FA8", hash_generated_field = "6EC87008C9BC7C9DBF6022010FD5DC7F")
 
     private Handler mMainQueue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.324 -0400", hash_original_method = "812B134D167B9B4075E3C9A16E9536C3", hash_generated_method = "5F79031D9622F845C6193F4F84A928E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.178 -0400", hash_original_method = "812B134D167B9B4075E3C9A16E9536C3", hash_generated_method = "86A1C8854E7D0FEFD3FE25FAAB1843B7")
     public  RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectionCallback callback) {
         mContext = context;
         mIntent = intent;
@@ -77,7 +77,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         } //End block
         mRequestedViews = new RemoteViewsFrameLayoutRefSet();
         {
-            boolean varC25279B3AE4B976D096FE6C4D3EF7578_1921403139 = (intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID));
+            boolean varC25279B3AE4B976D096FE6C4D3EF7578_1876627924 = (intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID));
             {
                 intent.removeExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID);
             } //End block
@@ -95,7 +95,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.324 -0400", hash_original_method = "448EC732CCF4B62AEFADFAF844C3E610", hash_generated_method = "F8018D33E104FFE245C3A165F87FBACB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.178 -0400", hash_original_method = "448EC732CCF4B62AEFADFAF844C3E610", hash_generated_method = "F8018D33E104FFE245C3A165F87FBACB")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -119,22 +119,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.325 -0400", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "1EF835109E15E210722FA51689CE9E04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.179 -0400", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "73969CE9A38357FAAA0B2AAE25D2A269")
     private void loadNextIndexInBackground() {
         mWorkerQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.325 -0400", hash_original_method = "4CF90A1CB7C420A204E3629193269707", hash_generated_method = "5253704636EBD6C61E3018C581D9C89C")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.179 -0400", hash_original_method = "4CF90A1CB7C420A204E3629193269707", hash_generated_method = "B504D8EE7FE58909376375607D1AEBAA")
             @Override
             public void run() {
                 {
-                    boolean varC0AB9EB04FA33F4F43E9EE96AC258E59_1224134083 = (mServiceConnection.isConnected());
+                    boolean varC0AB9EB04FA33F4F43E9EE96AC258E59_483653423 = (mServiceConnection.isConnected());
                     {
-                        int position;
-                        position = -1;
-                        boolean isRequested;
-                        isRequested = false;
+                        int position = -1;
+                        boolean isRequested = false;
                         {
-                            int[] res;
-                            res = mCache.getNextIndexToLoad();
+                            int[] res = mCache.getNextIndexToLoad();
                             position = res[0];
                             isRequested = res[1] > 0;
                         } //End block
@@ -170,10 +167,9 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.338 -0400", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "7C4AD895E2123E2F8CCCC603E0C40FA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.181 -0400", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "74B9F3E9E3FF9B3B0CDEB55AFDEC5720")
     private void processException(String method, Exception e) {
-        RemoteViewsMetaData metaData;
-        metaData = mCache.getMetaData();
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
         {
             metaData.reset();
         } //End block
@@ -181,7 +177,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             mCache.reset();
         } //End block
         mMainQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.338 -0400", hash_original_method = "20780F1316FA6B5AAEF80ABB110F8A58", hash_generated_method = "9658C6127F239982755926B1BF541104")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.180 -0400", hash_original_method = "20780F1316FA6B5AAEF80ABB110F8A58", hash_generated_method = "9658C6127F239982755926B1BF541104")
             @Override
             public void run() {
                 superNotifyDataSetChanged();
@@ -209,27 +205,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.339 -0400", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "299374A5441EE24A684829B9040C2B8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.181 -0400", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "8B174B3C23DBC7EF1A0AD594D638392B")
     private void updateTemporaryMetaData() {
-        IRemoteViewsFactory factory;
-        factory = mServiceConnection.getRemoteViewsFactory();
+        IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
         try 
         {
-            boolean hasStableIds;
-            hasStableIds = factory.hasStableIds();
-            int viewTypeCount;
-            viewTypeCount = factory.getViewTypeCount();
-            int count;
-            count = factory.getCount();
-            RemoteViews loadingView;
-            loadingView = factory.getLoadingView();
-            RemoteViews firstView;
-            firstView = null;
+            boolean hasStableIds = factory.hasStableIds();
+            int viewTypeCount = factory.getViewTypeCount();
+            int count = factory.getCount();
+            RemoteViews loadingView = factory.getLoadingView();
+            RemoteViews firstView = null;
             {
                 firstView = factory.getViewAt(0);
             } //End block
-            RemoteViewsMetaData tmpMetaData;
-            tmpMetaData = mCache.getTemporaryMetaData();
+            final RemoteViewsMetaData tmpMetaData = mCache.getTemporaryMetaData();
             {
                 tmpMetaData.hasStableIds = hasStableIds;
                 tmpMetaData.viewTypeCount = viewTypeCount + 1;
@@ -250,17 +239,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.340 -0400", hash_original_method = "5FA96F3EFCF6BBECAF668E31FDA609B8", hash_generated_method = "67E94DFF88543D26B9D8745E59716F58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.182 -0400", hash_original_method = "5FA96F3EFCF6BBECAF668E31FDA609B8", hash_generated_method = "E5D6B2AC6E2E0D45D831C36E87A3406C")
     private void updateRemoteViews(final int position, boolean isRequested) {
         {
-            boolean varB639375210F642D25B10B2BDC0461609_2010007627 = (!mServiceConnection.isConnected());
+            boolean varB639375210F642D25B10B2BDC0461609_1169042087 = (!mServiceConnection.isConnected());
         } //End collapsed parenthetic
-        IRemoteViewsFactory factory;
-        factory = mServiceConnection.getRemoteViewsFactory();
-        RemoteViews remoteViews;
-        remoteViews = null;
-        long itemId;
-        itemId = 0;
+        IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
+        RemoteViews remoteViews = null;
+        long itemId = 0;
         try 
         {
             remoteViews = factory.getViewAt(position);
@@ -272,12 +258,10 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         { }
         {
             mCache.insert(position, remoteViews, itemId, isRequested);
-            RemoteViews rv;
-            rv = remoteViews;
-            int typeId;
-            typeId = mCache.getMetaDataAt(position).typeId;
+            final RemoteViews rv = remoteViews;
+            final int typeId = mCache.getMetaDataAt(position).typeId;
             mMainQueue.post(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.339 -0400", hash_original_method = "893654825C9F0EE31547B34AB12EB1B2", hash_generated_method = "EC088C820250E0DE41EE3A77F29725DC")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.182 -0400", hash_original_method = "893654825C9F0EE31547B34AB12EB1B2", hash_generated_method = "EC088C820250E0DE41EE3A77F29725DC")
                 @Override
                 public void run() {
                     mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
@@ -293,23 +277,22 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.340 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "BCDD0287A4B2ACE0B1537688BEC7C43C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.183 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "597AD99A262A2D1E5C3CDAD8E7B3911D")
     public Intent getRemoteViewsServiceIntent() {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_680735742 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_680735742 = mIntent;
-        varB4EAC82CA7396A68D541C85D26508E83_680735742.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_680735742;
+        Intent varB4EAC82CA7396A68D541C85D26508E83_2146430325 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2146430325 = mIntent;
+        varB4EAC82CA7396A68D541C85D26508E83_2146430325.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2146430325;
         // ---------- Original Method ----------
         //return mIntent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.340 -0400", hash_original_method = "BD4FA508848CEC346AF576100841FA5B", hash_generated_method = "6492552218DE65D4C7AB52325813A20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.183 -0400", hash_original_method = "BD4FA508848CEC346AF576100841FA5B", hash_generated_method = "65EDC1A1D5E76D79758E6B33DA802209")
     public int getCount() {
-        RemoteViewsMetaData metaData;
-        metaData = mCache.getMetaData();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637962644 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637962644;
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193549803 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193549803;
         // ---------- Original Method ----------
         //final RemoteViewsMetaData metaData = mCache.getMetaData();
         //synchronized (metaData) {
@@ -318,31 +301,31 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.346 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "0372A538BE497DBF34CA8A85583C3368")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.184 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "68C8FCAEAF9E51AF1D61690B5B9109AA")
     public Object getItem(int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2112578186 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2112578186 = null;
+        Object varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null;
         addTaint(position);
-        varB4EAC82CA7396A68D541C85D26508E83_2112578186.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2112578186;
+        varB4EAC82CA7396A68D541C85D26508E83_2086008875.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2086008875;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.349 -0400", hash_original_method = "03B3187C996D144F3BCFDF9DFF16615D", hash_generated_method = "7C1E9940FA89265EF4FD1C7DDD4D0537")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.184 -0400", hash_original_method = "03B3187C996D144F3BCFDF9DFF16615D", hash_generated_method = "FBAD78DCA7590C6BB8A431B417620FB8")
     public long getItemId(int position) {
         {
             {
-                boolean varD27C3F53015470E371413C7BF03B06BD_1877447392 = (mCache.containsMetaDataAt(position));
+                boolean varD27C3F53015470E371413C7BF03B06BD_429053957 = (mCache.containsMetaDataAt(position));
                 {
-                    long var474C483542D84722B7B45BC8BD1B907D_1461662277 = (mCache.getMetaDataAt(position).itemId);
+                    long var474C483542D84722B7B45BC8BD1B907D_1193050118 = (mCache.getMetaDataAt(position).itemId);
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(position);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_324406756 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_324406756;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_797078989 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_797078989;
         // ---------- Original Method ----------
         //synchronized (mCache) {
             //if (mCache.containsMetaDataAt(position)) {
@@ -353,26 +336,24 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.355 -0400", hash_original_method = "BDCE0C462966DEB126F7FB99CEF6A82A", hash_generated_method = "8B02558401202BB31E60DB030595A0B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.184 -0400", hash_original_method = "BDCE0C462966DEB126F7FB99CEF6A82A", hash_generated_method = "0CFA14151E1F29338317584FC23431EC")
     public int getItemViewType(int position) {
-        int typeId;
-        typeId = 0;
+        int typeId = 0;
         {
             {
-                boolean varD27C3F53015470E371413C7BF03B06BD_492726259 = (mCache.containsMetaDataAt(position));
+                boolean varD27C3F53015470E371413C7BF03B06BD_1446391773 = (mCache.containsMetaDataAt(position));
                 {
                     typeId = mCache.getMetaDataAt(position).typeId;
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        RemoteViewsMetaData metaData;
-        metaData = mCache.getMetaData();
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
         {
-            int var12B2278118B10569F2BCEC86C96FBA64_2113689806 = (metaData.getMappedViewType(typeId));
+            int var12B2278118B10569F2BCEC86C96FBA64_1818323715 = (metaData.getMappedViewType(typeId));
         } //End block
         addTaint(position);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673777690 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673777690;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271212724 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271212724;
         // ---------- Original Method ----------
         //int typeId = 0;
         //synchronized (mCache) {
@@ -389,20 +370,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.356 -0400", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "41DCD99771FCFE62E4C422156498EBF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.185 -0400", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "5F912224AE493C63BF4F46FE50FB0C16")
     private int getConvertViewTypeId(View convertView) {
-        int typeId;
-        typeId = -1;
+        int typeId = -1;
         {
-            Object tag;
-            tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
+            Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
             {
                 typeId = (Integer) tag;
             } //End block
         } //End block
         addTaint(convertView.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772011362 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772011362;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1671834572 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1671834572;
         // ---------- Original Method ----------
         //int typeId = -1;
         //if (convertView != null) {
@@ -415,19 +394,16 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.368 -0400", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "0163D60156830FF357A64E6CA6811645")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.186 -0400", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "A51EE207865C445CE021E382769B7913")
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_115461119 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_416296811 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1447386300 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_1716854355 = null; //Variable for return #4
+        View varB4EAC82CA7396A68D541C85D26508E83_420227584 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_285300278 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1596293962 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_1153796650 = null; //Variable for return #4
         {
-            boolean isInCache;
-            isInCache = mCache.containsRemoteViewAt(position);
-            boolean isConnected;
-            isConnected = mServiceConnection.isConnected();
-            boolean hasNewItems;
-            hasNewItems = false;
+            boolean isInCache = mCache.containsRemoteViewAt(position);
+            boolean isConnected = mServiceConnection.isConnected();
+            boolean hasNewItems = false;
             {
                 requestBindService();
             } //End block
@@ -435,55 +411,45 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 hasNewItems = mCache.queuePositionsToBePreloadedFromRequestedPosition(position);
             } //End block
             {
-                View convertViewChild;
-                convertViewChild = null;
-                int convertViewTypeId;
-                convertViewTypeId = 0;
-                RemoteViewsFrameLayout layout;
-                layout = null;
+                View convertViewChild = null;
+                int convertViewTypeId = 0;
+                RemoteViewsFrameLayout layout = null;
                 {
                     layout = (RemoteViewsFrameLayout) convertView;
                     convertViewChild = layout.getChildAt(0);
                     convertViewTypeId = getConvertViewTypeId(convertViewChild);
                 } //End block
-                Context context;
-                context = parent.getContext();
-                RemoteViews rv;
-                rv = mCache.getRemoteViewsAt(position);
-                RemoteViewsIndexMetaData indexMetaData;
-                indexMetaData = mCache.getMetaDataAt(position);
+                Context context = parent.getContext();
+                RemoteViews rv = mCache.getRemoteViewsAt(position);
+                RemoteViewsIndexMetaData indexMetaData = mCache.getMetaDataAt(position);
                 indexMetaData.isRequested = true;
-                int typeId;
-                typeId = indexMetaData.typeId;
+                int typeId = indexMetaData.typeId;
                 try 
                 {
                     {
                         {
                             rv.reapply(context, convertViewChild);
-                            varB4EAC82CA7396A68D541C85D26508E83_115461119 = layout;
+                            varB4EAC82CA7396A68D541C85D26508E83_420227584 = layout;
                         } //End block
                         layout.removeAllViews();
                     } //End block
                     {
                         layout = new RemoteViewsFrameLayout(context);
                     } //End block
-                    View newView;
-                    newView = rv.apply(context, parent);
+                    View newView = rv.apply(context, parent);
                     newView.setTagInternal(com.android.internal.R.id.rowTypeId,
                             new Integer(typeId));
                     layout.addView(newView);
-                    varB4EAC82CA7396A68D541C85D26508E83_416296811 = layout;
+                    varB4EAC82CA7396A68D541C85D26508E83_285300278 = layout;
                 } //End block
                 catch (Exception e)
                 {
-                    RemoteViewsFrameLayout loadingView;
-                    loadingView = null;
-                    RemoteViewsMetaData metaData;
-                    metaData = mCache.getMetaData();
+                    RemoteViewsFrameLayout loadingView = null;
+                    final RemoteViewsMetaData metaData = mCache.getMetaData();
                     {
                         loadingView = metaData.createLoadingView(position, convertView, parent);
                     } //End block
-                    varB4EAC82CA7396A68D541C85D26508E83_1447386300 = loadingView;
+                    varB4EAC82CA7396A68D541C85D26508E83_1596293962 = loadingView;
                 } //End block
                 finally 
                 {
@@ -491,50 +457,47 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 } //End block
             } //End block
             {
-                RemoteViewsFrameLayout loadingView;
-                loadingView = null;
-                RemoteViewsMetaData metaData;
-                metaData = mCache.getMetaData();
+                RemoteViewsFrameLayout loadingView = null;
+                final RemoteViewsMetaData metaData = mCache.getMetaData();
                 {
                     loadingView = metaData.createLoadingView(position, convertView, parent);
                 } //End block
                 mRequestedViews.add(position, loadingView);
                 mCache.queueRequestedPositionToLoad(position);
                 loadNextIndexInBackground();
-                varB4EAC82CA7396A68D541C85D26508E83_1716854355 = loadingView;
+                varB4EAC82CA7396A68D541C85D26508E83_1153796650 = loadingView;
             } //End block
         } //End block
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_623850457; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_2147074219; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_623850457 = varB4EAC82CA7396A68D541C85D26508E83_115461119;
+                varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_420227584;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_623850457 = varB4EAC82CA7396A68D541C85D26508E83_416296811;
+                varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_285300278;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_623850457 = varB4EAC82CA7396A68D541C85D26508E83_1447386300;
+                varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_1596293962;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_623850457 = varB4EAC82CA7396A68D541C85D26508E83_1716854355;
+                varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_1153796650;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_623850457.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_623850457;
+        varA7E53CE21691AB073D9660D615818899_2147074219.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2147074219;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.370 -0400", hash_original_method = "E20153FA245BC3D829E7670B1CF87BF9", hash_generated_method = "83758B7BF20A2CE77F8E41D8D157B6BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.187 -0400", hash_original_method = "E20153FA245BC3D829E7670B1CF87BF9", hash_generated_method = "C6E91F6B5153A885573CB093E6AEA14B")
     public int getViewTypeCount() {
-        RemoteViewsMetaData metaData;
-        metaData = mCache.getMetaData();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896349861 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896349861;
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232963928 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232963928;
         // ---------- Original Method ----------
         //final RemoteViewsMetaData metaData = mCache.getMetaData();
         //synchronized (metaData) {
@@ -543,12 +506,11 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.370 -0400", hash_original_method = "30FBD60CD0291FCC8DBBE0ACB800AAAA", hash_generated_method = "91AFCBC10B2046F22AD9D2956B36BB00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.187 -0400", hash_original_method = "30FBD60CD0291FCC8DBBE0ACB800AAAA", hash_generated_method = "D32FC10FCE9C7E4994E4A747B17957FC")
     public boolean hasStableIds() {
-        RemoteViewsMetaData metaData;
-        metaData = mCache.getMetaData();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977088718 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_977088718;
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956675985 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_956675985;
         // ---------- Original Method ----------
         //final RemoteViewsMetaData metaData = mCache.getMetaData();
         //synchronized (metaData) {
@@ -557,20 +519,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.370 -0400", hash_original_method = "53D7DB97161C41CC976317DC7E27F456", hash_generated_method = "3911C127D4373B6DF266393B9B195269")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.187 -0400", hash_original_method = "53D7DB97161C41CC976317DC7E27F456", hash_generated_method = "A5AD6AAFD2B415616B04D74832392463")
     public boolean isEmpty() {
-        boolean var836519EBBA75D474236DD9A735C5C741_463874137 = (getCount() <= 0);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_363016836 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_363016836;
+        boolean var836519EBBA75D474236DD9A735C5C741_1133586890 = (getCount() <= 0);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129713018 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129713018;
         // ---------- Original Method ----------
         //return getCount() <= 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.377 -0400", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "7D5C6D705518BA1D8932B358471ECE12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.188 -0400", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "82366B4D9A12368AB819E20619289AE4")
     private void onNotifyDataSetChanged() {
-        IRemoteViewsFactory factory;
-        factory = mServiceConnection.getRemoteViewsFactory();
+        IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
         try 
         {
             factory.onDataSetChanged();
@@ -584,7 +545,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         } //End block
         updateTemporaryMetaData();
         mMainQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.371 -0400", hash_original_method = "599F6D416D0C87E072E14AB486244C9F", hash_generated_method = "E2BF2A1BF355FF99011493BBC7818C77")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.188 -0400", hash_original_method = "599F6D416D0C87E072E14AB486244C9F", hash_generated_method = "E2BF2A1BF355FF99011493BBC7818C77")
             @Override
             public void run() {
                 {
@@ -606,18 +567,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.380 -0400", hash_original_method = "0764FC8C95C069ED9ED094B35DCC527A", hash_generated_method = "6A9D0C452AE80B1A7D836CB396110544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.189 -0400", hash_original_method = "0764FC8C95C069ED9ED094B35DCC527A", hash_generated_method = "CA1BD223BE177B3D91E45C3A2CDA5561")
     public void notifyDataSetChanged() {
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         {
-            boolean varB639375210F642D25B10B2BDC0461609_1107865175 = (!mServiceConnection.isConnected());
+            boolean varB639375210F642D25B10B2BDC0461609_1725210458 = (!mServiceConnection.isConnected());
             {
                 mNotifyDataSetChangedAfterOnServiceConnected = true;
                 requestBindService();
             } //End block
         } //End collapsed parenthetic
         mWorkerQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.379 -0400", hash_original_method = "041C495048132FF173BFCDF38ABB5707", hash_generated_method = "A0E7FB80DBA0806D596A5B67FD46EBEA")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.189 -0400", hash_original_method = "041C495048132FF173BFCDF38ABB5707", hash_generated_method = "A0E7FB80DBA0806D596A5B67FD46EBEA")
             @Override
             public void run() {
                 onNotifyDataSetChanged();
@@ -644,7 +605,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.385 -0400", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "13135540CF0C096F7922371AE0301E89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.189 -0400", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "13135540CF0C096F7922371AE0301E89")
      void superNotifyDataSetChanged() {
         super.notifyDataSetChanged();
         // ---------- Original Method ----------
@@ -652,14 +613,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_method = "96758E0B3254F3B4A777FC060A49CC59", hash_generated_method = "2B7DFB2C561627D24C42789EADE584F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.190 -0400", hash_original_method = "96758E0B3254F3B4A777FC060A49CC59", hash_generated_method = "54E938B726DD7CCDF0D285C78F599DCE")
     @Override
     public boolean handleMessage(Message msg) {
-        boolean result;
-        result = false;
+        boolean result = false;
         //Begin case sUnbindServiceMessageType 
         {
-            boolean varAF0014E6961178BB03E6A35A2A9D4C03_1833337051 = (mServiceConnection.isConnected());
+            boolean varAF0014E6961178BB03E6A35A2A9D4C03_1606431332 = (mServiceConnection.isConnected());
             {
                 mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
             } //End block
@@ -669,8 +629,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         result = true;
         //End case sUnbindServiceMessageType 
         addTaint(msg.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1698264386 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1698264386;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588460834 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588460834;
         // ---------- Original Method ----------
         //boolean result = false;
         //switch (msg.what) {
@@ -687,7 +647,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "8943C3C3F64C9B76CBBF6A8AA4DF52C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.190 -0400", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "8943C3C3F64C9B76CBBF6A8AA4DF52C7")
     private void enqueueDeferredUnbindServiceMessage() {
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
@@ -697,18 +657,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "E7914470A82441A258517A2F5068BA41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "55AAF20908451DC9EFC518F5BA4CBC53")
     private boolean requestBindService() {
         {
-            boolean varB639375210F642D25B10B2BDC0461609_449260458 = (!mServiceConnection.isConnected());
+            boolean varB639375210F642D25B10B2BDC0461609_1166246045 = (!mServiceConnection.isConnected());
             {
                 mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
             } //End block
         } //End collapsed parenthetic
         mMainQueue.removeMessages(sUnbindServiceMessageType);
-        boolean var9194E623990DE28F1BF24202733015EB_1768605269 = (mServiceConnection.isConnected());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309853283 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309853283;
+        boolean var9194E623990DE28F1BF24202733015EB_1358609633 = (mServiceConnection.isConnected());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545734369 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545734369;
         // ---------- Original Method ----------
         //if (!mServiceConnection.isConnected()) {
             //mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
@@ -719,20 +679,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     
     private static class RemoteViewsAdapterServiceConnection extends IRemoteViewsAdapterConnection.Stub {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_field = "CC8BFB84898B22492B7F55096CBDF6CC", hash_generated_field = "76A19B81A43EEDF4AF3BF911EC3960E9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_field = "CC8BFB84898B22492B7F55096CBDF6CC", hash_generated_field = "76A19B81A43EEDF4AF3BF911EC3960E9")
 
         private boolean mIsConnected;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_field = "0B061825A2BD144F822A600E85C8460D", hash_generated_field = "71FF1B688CE6E1B60B73B36B2E842EB8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_field = "0B061825A2BD144F822A600E85C8460D", hash_generated_field = "71FF1B688CE6E1B60B73B36B2E842EB8")
 
         private boolean mIsConnecting;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "DF300972716819DE62AFA33FE9FFC280")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "DF300972716819DE62AFA33FE9FFC280")
 
         private WeakReference<RemoteViewsAdapter> mAdapter;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.386 -0400", hash_original_field = "3259B525D7D221061093A7706AFAA49A", hash_generated_field = "722330FA05DFEF3176A8163BFC4DC620")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_field = "3259B525D7D221061093A7706AFAA49A", hash_generated_field = "722330FA05DFEF3176A8163BFC4DC620")
 
         private IRemoteViewsFactory mRemoteViewsFactory;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.392 -0400", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "2CBC4DD0E19B00EEE4BD2962CC59C85E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "2CBC4DD0E19B00EEE4BD2962CC59C85E")
         public  RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
             mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
             // ---------- Original Method ----------
@@ -740,13 +700,12 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.393 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "F334115F0D1C14DB7E5FD603A5DDAF4F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.192 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "ED06284128C8B9D4F1A5EF68D72D1EC1")
         public synchronized void bind(Context context, int appWidgetId, Intent intent) {
             {
                 try 
                 {
-                    AppWidgetManager mgr;
-                    mgr = AppWidgetManager.getInstance(context);
+                    final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                     mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
                     mIsConnecting = true;
                 } //End block
@@ -774,12 +733,11 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.397 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "76930B53115F475B82D41B72B54B9C00")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.193 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "024BDD211B0A5232D1DD228542A02387")
         public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
             try 
             {
-                AppWidgetManager mgr;
-                mgr = AppWidgetManager.getInstance(context);
+                final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                 mgr.unbindRemoteViewsService(appWidgetId, intent);
                 mIsConnecting = false;
             } //End block
@@ -804,26 +762,24 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.403 -0400", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "19459648B7F0F7F4EA6B56131E9882C8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.195 -0400", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "E885EF799FA088E019A9364D38D2AFA7")
         public synchronized void onServiceConnected(IBinder service) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             mRemoteViewsFactory = IRemoteViewsFactory.Stub.asInterface(service);
-            RemoteViewsAdapter adapter;
-            adapter = mAdapter.get();
+            final RemoteViewsAdapter adapter = mAdapter.get();
             adapter.mWorkerQueue.post(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.402 -0400", hash_original_method = "C9280BFFF3D57DCE91D4B8E9AF737343", hash_generated_method = "29535065F7800B7AAA83786516B484F8")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.195 -0400", hash_original_method = "C9280BFFF3D57DCE91D4B8E9AF737343", hash_generated_method = "71BA2D209459E3252A9F9FB09B6F6D4D")
                 @Override
                 public void run() {
                     {
                         adapter.onNotifyDataSetChanged();
                     } //End block
                     {
-                        IRemoteViewsFactory factory;
-                        factory = adapter.mServiceConnection.getRemoteViewsFactory();
+                        IRemoteViewsFactory factory = adapter.mServiceConnection.getRemoteViewsFactory();
                         try 
                         {
                             {
-                                boolean varDC9A171480612B8E4508A865A137D536_2057088473 = (!factory.isCreated());
+                                boolean varDC9A171480612B8E4508A865A137D536_1154163657 = (!factory.isCreated());
                                 {
                                     factory.onDataSetChanged();
                                 } //End block
@@ -835,14 +791,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         { }
                         adapter.updateTemporaryMetaData();
                         adapter.mMainQueue.post(new Runnable() {                            
-                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.399 -0400", hash_original_method = "15183F885AD888FE838F648B256AD495", hash_generated_method = "DC687C66FDC1BCFD542253E403151160")
+                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.195 -0400", hash_original_method = "15183F885AD888FE838F648B256AD495", hash_generated_method = "6657EA8796CF096EBBE8F947920AEFED")
                             @Override
                             public void run() {
                                 {
                                     adapter.mCache.commitTemporaryMetaData();
                                 } //End block
-                                RemoteAdapterConnectionCallback callback;
-                                callback = adapter.mCallback.get();
+                                final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
                                 {
                                     callback.onRemoteAdapterConnected();
                                 } //End block
@@ -870,21 +825,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.412 -0400", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "AC920945244F62419C9355609D3AEB43")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.196 -0400", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "672783B4F65B4DBB4B67E541052A53D2")
         public synchronized void onServiceDisconnected() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             mIsConnected = false;
             mIsConnecting = false;
             mRemoteViewsFactory = null;
-            RemoteViewsAdapter adapter;
-            adapter = mAdapter.get();
+            final RemoteViewsAdapter adapter = mAdapter.get();
             adapter.mMainQueue.post(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.412 -0400", hash_original_method = "5256C3FE0B7F0EC8DBD6E0D8928BE4C4", hash_generated_method = "81A8663CC3FB114C9D301586A0FCD2BF")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.196 -0400", hash_original_method = "5256C3FE0B7F0EC8DBD6E0D8928BE4C4", hash_generated_method = "19728E087EF4B83D304FC3CC4487881E")
                 @Override
                 public void run() {
                     adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                    RemoteAdapterConnectionCallback callback;
-                    callback = adapter.mCallback.get();
+                    final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
                     {
                         callback.onRemoteAdapterDisconnected();
                     } //End block
@@ -915,21 +868,21 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.412 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "39506D2EE11CC6829CC0B264D8837B78")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "F6365C9C3E45AD8D99F0F29B817379A0")
         public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
-            IRemoteViewsFactory varB4EAC82CA7396A68D541C85D26508E83_415184390 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_415184390 = mRemoteViewsFactory;
-            varB4EAC82CA7396A68D541C85D26508E83_415184390.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_415184390;
+            IRemoteViewsFactory varB4EAC82CA7396A68D541C85D26508E83_414839946 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_414839946 = mRemoteViewsFactory;
+            varB4EAC82CA7396A68D541C85D26508E83_414839946.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_414839946;
             // ---------- Original Method ----------
             //return mRemoteViewsFactory;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.417 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "07EE2C570C3646875A6C4FFC64B8E629")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "8524648AE47BAF754E1752A4F1FCC5D2")
         public synchronized boolean isConnected() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_921295071 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_921295071;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173648096 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_173648096;
             // ---------- Original Method ----------
             //return mIsConnected;
         }
@@ -941,7 +894,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     
     private class RemoteViewsFrameLayout extends FrameLayout {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.418 -0400", hash_original_method = "15F65CD5E3BE0169B47C7BF19C42CB6A", hash_generated_method = "84BEC92F8166F0087E1C907BC13AD329")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "15F65CD5E3BE0169B47C7BF19C42CB6A", hash_generated_method = "84BEC92F8166F0087E1C907BC13AD329")
         public  RemoteViewsFrameLayout(Context context) {
             super(context);
             addTaint(context.getTaint());
@@ -949,7 +902,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.418 -0400", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "EDAD6D0AB639A9F83E8F89D9E6520131")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "EDAD6D0AB639A9F83E8F89D9E6520131")
         public void onRemoteViewsLoaded(RemoteViews view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             try 
@@ -975,11 +928,11 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     
     private class RemoteViewsFrameLayoutRefSet {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.419 -0400", hash_original_field = "49480114F1DA72B3D385F91F28CAB531", hash_generated_field = "0DDDAE295C285660CD7FE8EBB6DC5F4A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.198 -0400", hash_original_field = "49480114F1DA72B3D385F91F28CAB531", hash_generated_field = "0DDDAE295C285660CD7FE8EBB6DC5F4A")
 
         private HashMap<Integer, LinkedList<RemoteViewsFrameLayout>> mReferences;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.420 -0400", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "04F49291A2A41B3FE0D9405505C49E32")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.198 -0400", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "04F49291A2A41B3FE0D9405505C49E32")
         public  RemoteViewsFrameLayoutRefSet() {
             mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
             // ---------- Original Method ----------
@@ -987,13 +940,12 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.420 -0400", hash_original_method = "3F0456D57D98DD5B5AAA7D7D24636D4D", hash_generated_method = "9DCC5849C0835BADA25689FBD0BB5226")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.198 -0400", hash_original_method = "3F0456D57D98DD5B5AAA7D7D24636D4D", hash_generated_method = "D9B0D7D0FE7AF87D4324AD421C95D674")
         public void add(int position, RemoteViewsFrameLayout layout) {
-            Integer pos;
-            pos = position;
+            final Integer pos = position;
             LinkedList<RemoteViewsFrameLayout> refs;
             {
-                boolean var1C724F4D3C0F3C792D0F2FED4BE4566F_1330858263 = (mReferences.containsKey(pos));
+                boolean var1C724F4D3C0F3C792D0F2FED4BE4566F_1197907046 = (mReferences.containsKey(pos));
                 {
                     refs = mReferences.get(pos);
                 } //End block
@@ -1018,19 +970,17 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_method = "B75D35E25E548F04E2C73EAA0A8BAD12", hash_generated_method = "4BF1F0EB5B34C6D472D5009677B1914E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.199 -0400", hash_original_method = "B75D35E25E548F04E2C73EAA0A8BAD12", hash_generated_method = "E7F6DE72B1740ED8ADC61FCB0E33F071")
         public void notifyOnRemoteViewsLoaded(int position, RemoteViews view, int typeId) {
-            Integer pos;
-            pos = position;
+            final Integer pos = position;
             {
-                boolean var1C724F4D3C0F3C792D0F2FED4BE4566F_428615851 = (mReferences.containsKey(pos));
+                boolean var1C724F4D3C0F3C792D0F2FED4BE4566F_689308839 = (mReferences.containsKey(pos));
                 {
-                    LinkedList<RemoteViewsFrameLayout> refs;
-                    refs = mReferences.get(pos);
+                    final LinkedList<RemoteViewsFrameLayout> refs = mReferences.get(pos);
                     {
-                        Iterator<RemoteViewsFrameLayout> varF330A8C22FC56F2EBE7DC0926BA301AB_1175290537 = (refs).iterator();
-                        varF330A8C22FC56F2EBE7DC0926BA301AB_1175290537.hasNext();
-                        final RemoteViewsFrameLayout ref = varF330A8C22FC56F2EBE7DC0926BA301AB_1175290537.next();
+                        Iterator<RemoteViewsFrameLayout> varF330A8C22FC56F2EBE7DC0926BA301AB_121726308 = (refs).iterator();
+                        varF330A8C22FC56F2EBE7DC0926BA301AB_121726308.hasNext();
+                        final RemoteViewsFrameLayout ref = varF330A8C22FC56F2EBE7DC0926BA301AB_121726308.next();
                         {
                             ref.onRemoteViewsLoaded(view);
                         } //End block
@@ -1056,7 +1006,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "24EBFCA05188B87B49D1A34189D809C7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "24EBFCA05188B87B49D1A34189D809C7")
         public void clear() {
             mReferences.clear();
             // ---------- Original Method ----------
@@ -1069,29 +1019,29 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     
     private class RemoteViewsMetaData {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "B83BF7ED7F5719DA923E1BC0AC69952B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "B83BF7ED7F5719DA923E1BC0AC69952B")
 
         int count;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_field = "838BF490B590E83463A4659B060C26FC", hash_generated_field = "C1E9C1B6290BF40ADECDA7DF82FAC94D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "838BF490B590E83463A4659B060C26FC", hash_generated_field = "C1E9C1B6290BF40ADECDA7DF82FAC94D")
 
         int viewTypeCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_field = "DAF737EDDF98B803755EC84BA73A5E3F", hash_generated_field = "004C2D81765875057DD2D513A7A85CEF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "DAF737EDDF98B803755EC84BA73A5E3F", hash_generated_field = "004C2D81765875057DD2D513A7A85CEF")
 
         boolean hasStableIds;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_field = "6EDDEBA4B8B8FD0722D0BB53E14FFC0C", hash_generated_field = "9A49302F66DF2887EFAB714BA0B6B15B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "6EDDEBA4B8B8FD0722D0BB53E14FFC0C", hash_generated_field = "9A49302F66DF2887EFAB714BA0B6B15B")
 
         RemoteViews mUserLoadingView;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.440 -0400", hash_original_field = "41D6ADCC8C59297CD329E31519FD34AA", hash_generated_field = "39C526A78EF58332F9FAD2AD78897B3C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "41D6ADCC8C59297CD329E31519FD34AA", hash_generated_field = "39C526A78EF58332F9FAD2AD78897B3C")
 
         RemoteViews mFirstView;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.441 -0400", hash_original_field = "308D00B001FC55B7BD96E24977E53940", hash_generated_field = "32C08FC6170C53D3EDBAD53E03B1BB3B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "308D00B001FC55B7BD96E24977E53940", hash_generated_field = "32C08FC6170C53D3EDBAD53E03B1BB3B")
 
         int mFirstViewHeight;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.441 -0400", hash_original_field = "F7A46FD11046228C04C0DA5E8752213C", hash_generated_field = "5C6ABB7C95B7F1C3F63AD546E83D1FDF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_field = "F7A46FD11046228C04C0DA5E8752213C", hash_generated_field = "0D244E4CBA0E96257463501C2DF63318")
 
-        private HashMap<Integer, Integer> mTypeIdIndexMap = new HashMap<Integer, Integer>();
+        private final HashMap<Integer, Integer> mTypeIdIndexMap = new HashMap<Integer, Integer>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.446 -0400", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "3DCD91096CB130F5938CD8D146151676")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "3DCD91096CB130F5938CD8D146151676")
         public  RemoteViewsMetaData() {
             reset();
             // ---------- Original Method ----------
@@ -1099,7 +1049,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.446 -0400", hash_original_method = "90BA893E06B3709572F4D6BD4487FB6C", hash_generated_method = "69BA8DC418CFDBB9F18004D5C5581793")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.201 -0400", hash_original_method = "90BA893E06B3709572F4D6BD4487FB6C", hash_generated_method = "69BA8DC418CFDBB9F18004D5C5581793")
         public void set(RemoteViewsMetaData d) {
             {
                 count = d.count;
@@ -1117,7 +1067,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.447 -0400", hash_original_method = "AE7C296E4C5BBC73F59980BD54540BF2", hash_generated_method = "E27E2C57D2D5002944558FDACF04DF1D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.201 -0400", hash_original_method = "AE7C296E4C5BBC73F59980BD54540BF2", hash_generated_method = "E27E2C57D2D5002944558FDACF04DF1D")
         public void reset() {
             count = 0;
             viewTypeCount = 1;
@@ -1137,7 +1087,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.448 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "3F14235CB6E89896EEF4C4E563635AB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.202 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "3F14235CB6E89896EEF4C4E563635AB3")
         public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
             mUserLoadingView = loadingView;
             {
@@ -1153,22 +1103,21 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.448 -0400", hash_original_method = "78DD70270396881EC8B9AE912C927B26", hash_generated_method = "E2BD89E90D80F214EE4F5339B840F59E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.203 -0400", hash_original_method = "78DD70270396881EC8B9AE912C927B26", hash_generated_method = "7F6046C829938C4FAA9AD8FB1FB24D16")
         public int getMappedViewType(int typeId) {
             {
-                boolean varE72D96C2A7631C4D4068420790F0E31A_1899949676 = (mTypeIdIndexMap.containsKey(typeId));
+                boolean varE72D96C2A7631C4D4068420790F0E31A_1123059300 = (mTypeIdIndexMap.containsKey(typeId));
                 {
-                    int varDEAAB1FACE77CC174C29AD8F052D40B4_220492461 = (mTypeIdIndexMap.get(typeId));
+                    int varDEAAB1FACE77CC174C29AD8F052D40B4_721355184 = (mTypeIdIndexMap.get(typeId));
                 } //End block
                 {
-                    int incrementalTypeId;
-                    incrementalTypeId = mTypeIdIndexMap.size() + 1;
+                    int incrementalTypeId = mTypeIdIndexMap.size() + 1;
                     mTypeIdIndexMap.put(typeId, incrementalTypeId);
                 } //End block
             } //End collapsed parenthetic
             addTaint(typeId);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_432074933 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_432074933;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872956082 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872956082;
             // ---------- Original Method ----------
             //if (mTypeIdIndexMap.containsKey(typeId)) {
                 //return mTypeIdIndexMap.get(typeId);
@@ -1180,22 +1129,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.452 -0400", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "6A2EFFF8F6E40D39F5E5682AFD2A7681")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "41AD079F87EB4A8596B57F031B130137")
         private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
                 ViewGroup parent) {
-            RemoteViewsFrameLayout varB4EAC82CA7396A68D541C85D26508E83_769065610 = null; //Variable for return #1
-            Context context;
-            context = parent.getContext();
-            RemoteViewsFrameLayout layout;
-            layout = new RemoteViewsFrameLayout(context);
+            RemoteViewsFrameLayout varB4EAC82CA7396A68D541C85D26508E83_460016669 = null; //Variable for return #1
+            final Context context = parent.getContext();
+            RemoteViewsFrameLayout layout = new RemoteViewsFrameLayout(context);
             {
-                boolean customLoadingViewAvailable;
-                customLoadingViewAvailable = false;
+                boolean customLoadingViewAvailable = false;
                 {
                     try 
                     {
-                        View loadingView;
-                        loadingView = mUserLoadingView.apply(parent.getContext(), parent);
+                        View loadingView = mUserLoadingView.apply(parent.getContext(), parent);
                         loadingView.setTagInternal(com.android.internal.R.id.rowTypeId,
                                 new Integer(0));
                         layout.addView(loadingView);
@@ -1208,8 +1153,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     {
                         try 
                         {
-                            View firstView;
-                            firstView = mFirstView.apply(parent.getContext(), parent);
+                            View firstView = mFirstView.apply(parent.getContext(), parent);
                             firstView.measure(
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -1218,15 +1162,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         } //End block
                         catch (Exception e)
                         {
-                            float density;
-                            density = mContext.getResources().getDisplayMetrics().density;
+                            float density = mContext.getResources().getDisplayMetrics().density;
                             mFirstViewHeight = (int)
                                     Math.round(sDefaultLoadingViewHeight * density);
                             mFirstView = null;
                         } //End block
                     } //End block
-                    TextView loadingTextView;
-                    loadingTextView = (TextView) mLayoutInflater.inflate(
+                    TextView loadingTextView = (TextView) mLayoutInflater.inflate(
                             com.android.internal.R.layout.remote_views_adapter_default_loading_view,
                             layout, false);
                     loadingTextView.setHeight(mFirstViewHeight);
@@ -1234,12 +1176,12 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     layout.addView(loadingTextView);
                 } //End block
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_769065610 = layout;
+            varB4EAC82CA7396A68D541C85D26508E83_460016669 = layout;
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_769065610.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_769065610;
+            varB4EAC82CA7396A68D541C85D26508E83_460016669.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_460016669;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -1250,17 +1192,17 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     
     private class RemoteViewsIndexMetaData {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.458 -0400", hash_original_field = "5F694956811487225D15E973CA38FBAB", hash_generated_field = "76F76148F5071AE6285A6BC57B0ADE91")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_field = "5F694956811487225D15E973CA38FBAB", hash_generated_field = "76F76148F5071AE6285A6BC57B0ADE91")
 
         int typeId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.458 -0400", hash_original_field = "59A814AA020A1B32C4674A5887A35022", hash_generated_field = "90EEB5AA84937AD6A8CE9746B6FECA6A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_field = "59A814AA020A1B32C4674A5887A35022", hash_generated_field = "90EEB5AA84937AD6A8CE9746B6FECA6A")
 
         long itemId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.458 -0400", hash_original_field = "1F12075C4184F616A07646739C4342EE", hash_generated_field = "060C657FCDBB17A3289922E65DB8FCC4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_field = "1F12075C4184F616A07646739C4342EE", hash_generated_field = "060C657FCDBB17A3289922E65DB8FCC4")
 
         boolean isRequested;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.459 -0400", hash_original_method = "429CAA99D27E695F91D025FEB15660FB", hash_generated_method = "D6957189233B5918EAB9F8B56C533263")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_method = "429CAA99D27E695F91D025FEB15660FB", hash_generated_method = "D6957189233B5918EAB9F8B56C533263")
         public  RemoteViewsIndexMetaData(RemoteViews v, long itemId, boolean requested) {
             set(v, itemId, requested);
             addTaint(v.getTaint());
@@ -1271,7 +1213,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.459 -0400", hash_original_method = "6F36A962FFB607392BC2E34875EB4BD4", hash_generated_method = "92AC2590390DDD2F3D4F82B3C55A4B61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_method = "6F36A962FFB607392BC2E34875EB4BD4", hash_generated_method = "92AC2590390DDD2F3D4F82B3C55A4B61")
         public void set(RemoteViews v, long id, boolean requested) {
             itemId = id;
             typeId = v.getLayoutId();
@@ -1292,41 +1234,41 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     
     private class FixedSizeRemoteViewsCache {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "0FCE5B64423E6B04C33CE3468F58DA62", hash_generated_field = "C7BAEA4EAD131C24153F2BC22502F2DA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "0FCE5B64423E6B04C33CE3468F58DA62", hash_generated_field = "C7BAEA4EAD131C24153F2BC22502F2DA")
 
         private RemoteViewsMetaData mMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "35898A5A614C542A7664A6A85A2DF029", hash_generated_field = "CCFF7299FB9E7ED02A6E6C63B5236D05")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "35898A5A614C542A7664A6A85A2DF029", hash_generated_field = "CCFF7299FB9E7ED02A6E6C63B5236D05")
 
         private RemoteViewsMetaData mTemporaryMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "BBD9C074C8BFE7F5F7C066E06D309B25", hash_generated_field = "4D7BFF7687FF3AEB2660E6771DA7A41D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "BBD9C074C8BFE7F5F7C066E06D309B25", hash_generated_field = "4D7BFF7687FF3AEB2660E6771DA7A41D")
 
         private HashMap<Integer, RemoteViewsIndexMetaData> mIndexMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "E23925CEBC8CCBD3D31D40082C05C370", hash_generated_field = "622EF405E12F8FB6D80FD7F1E7909760")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "E23925CEBC8CCBD3D31D40082C05C370", hash_generated_field = "622EF405E12F8FB6D80FD7F1E7909760")
 
         private HashMap<Integer, RemoteViews> mIndexRemoteViews;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "585798A32AF4C3DD10344010FF6B9706", hash_generated_field = "534B08E02E91774394FCE7D691C682CB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "585798A32AF4C3DD10344010FF6B9706", hash_generated_field = "534B08E02E91774394FCE7D691C682CB")
 
         private HashSet<Integer> mRequestedIndices;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "461C6567414062E123C02AA45E52645E", hash_generated_field = "EDD6140FE3EFE2A884527802E7502D5E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "461C6567414062E123C02AA45E52645E", hash_generated_field = "EDD6140FE3EFE2A884527802E7502D5E")
 
         private int mLastRequestedIndex;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "E8A3A3187B0CAF3B63074C35EF6D6C3C", hash_generated_field = "7552CCBBABA4C6673CFCAA35306E60E9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "E8A3A3187B0CAF3B63074C35EF6D6C3C", hash_generated_field = "7552CCBBABA4C6673CFCAA35306E60E9")
 
         private HashSet<Integer> mLoadIndices;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "65E5D7D551CCC2236163247CBA82EA30", hash_generated_field = "AF3636EC231AD49E7BB961CA0D975BAD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "65E5D7D551CCC2236163247CBA82EA30", hash_generated_field = "AF3636EC231AD49E7BB961CA0D975BAD")
 
         private int mPreloadLowerBound;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "5918180AF4002B2A1ADC99DB1B26CFD5", hash_generated_field = "8874B6DBCCBC94897623594595F133DB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "5918180AF4002B2A1ADC99DB1B26CFD5", hash_generated_field = "8874B6DBCCBC94897623594595F133DB")
 
         private int mPreloadUpperBound;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "DA6F53F2281C91E02577C5A3C4B75B90", hash_generated_field = "07593739EA51894193F3BFC61924FDA8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "DA6F53F2281C91E02577C5A3C4B75B90", hash_generated_field = "07593739EA51894193F3BFC61924FDA8")
 
         private int mMaxCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.466 -0400", hash_original_field = "0CFFCC288FFB8495CE255EC76ADE18D2", hash_generated_field = "802409AF8ABEE98E4B589C02F0E51998")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.206 -0400", hash_original_field = "0CFFCC288FFB8495CE255EC76ADE18D2", hash_generated_field = "802409AF8ABEE98E4B589C02F0E51998")
 
         private int mMaxCountSlack;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.468 -0400", hash_original_method = "AFDF05837CF8EF03047EB57BF9703B63", hash_generated_method = "C06B39B7022755D679EF8EF25E68C287")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.207 -0400", hash_original_method = "AFDF05837CF8EF03047EB57BF9703B63", hash_generated_method = "C06B39B7022755D679EF8EF25E68C287")
         public  FixedSizeRemoteViewsCache(int maxCacheSize) {
             mMaxCount = maxCacheSize;
             mMaxCountSlack = Math.round(sMaxCountSlackPercent * (mMaxCount / 2));
@@ -1354,10 +1296,10 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.471 -0400", hash_original_method = "3B60FC97D93DDECF59F968EA9F5DCEA5", hash_generated_method = "0553357EEAE9201D980A91242C23D60A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.207 -0400", hash_original_method = "3B60FC97D93DDECF59F968EA9F5DCEA5", hash_generated_method = "89B82E8630704C855ACDA0A768201AEA")
         public void insert(int position, RemoteViews v, long itemId, boolean isRequested) {
             {
-                boolean var939008B18DF5E8077A7FBD0DE42BA383_1830398315 = (mIndexRemoteViews.size() >= mMaxCount);
+                boolean var939008B18DF5E8077A7FBD0DE42BA383_1713577327 = (mIndexRemoteViews.size() >= mMaxCount);
                 {
                     mIndexRemoteViews.remove(getFarthestPositionFrom(position));
                 } //End block
@@ -1366,16 +1308,15 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             pruneFromPosition = mLastRequestedIndex;
             pruneFromPosition = position;
             {
-                boolean varA90EF5BC5B38B66F275CC4234FBC71D6_2074751798 = (getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes);
+                boolean varA90EF5BC5B38B66F275CC4234FBC71D6_442334252 = (getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes);
                 {
                     mIndexRemoteViews.remove(getFarthestPositionFrom(pruneFromPosition));
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var72540E4749D1AF0B6940B3AE7BC6ED24_1880941931 = (mIndexMetaData.containsKey(position));
+                boolean var72540E4749D1AF0B6940B3AE7BC6ED24_1947139609 = (mIndexMetaData.containsKey(position));
                 {
-                    RemoteViewsIndexMetaData metaData;
-                    metaData = mIndexMetaData.get(position);
+                    final RemoteViewsIndexMetaData metaData = mIndexMetaData.get(position);
                     metaData.set(v, itemId, isRequested);
                 } //End block
                 {
@@ -1392,51 +1333,51 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.471 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "37065DE5CD65AB2AA6EE05A223399821")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "2EF7CEB40E137B3A7E71F4D81F140EB6")
         public RemoteViewsMetaData getMetaData() {
-            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1708849357 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1708849357 = mMetaData;
-            varB4EAC82CA7396A68D541C85D26508E83_1708849357.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1708849357;
+            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1840198774 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1840198774 = mMetaData;
+            varB4EAC82CA7396A68D541C85D26508E83_1840198774.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1840198774;
             // ---------- Original Method ----------
             //return mMetaData;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.473 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "893181D2311F264C28D5D5940400EB45")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "5EF13E1B5721F58AF2F7A5BB77CCE345")
         public RemoteViewsMetaData getTemporaryMetaData() {
-            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1990252971 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1990252971 = mTemporaryMetaData;
-            varB4EAC82CA7396A68D541C85D26508E83_1990252971.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1990252971;
+            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1593124448 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1593124448 = mTemporaryMetaData;
+            varB4EAC82CA7396A68D541C85D26508E83_1593124448.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1593124448;
             // ---------- Original Method ----------
             //return mTemporaryMetaData;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.473 -0400", hash_original_method = "2697DBEF8CDE0991B3151B5A3E03C7EB", hash_generated_method = "A6765231174BAAB928D9E0307FA4CB7B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.209 -0400", hash_original_method = "2697DBEF8CDE0991B3151B5A3E03C7EB", hash_generated_method = "697221462F1466E10CC7C076CFF64F09")
         public RemoteViews getRemoteViewsAt(int position) {
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_2002204523 = null; //Variable for return #1
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1215067461 = null; //Variable for return #2
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1302222845 = null; //Variable for return #1
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1347355368 = null; //Variable for return #2
             {
-                boolean var32A42C87332588C7B746B90566692371_98103368 = (mIndexRemoteViews.containsKey(position));
+                boolean var32A42C87332588C7B746B90566692371_1954014174 = (mIndexRemoteViews.containsKey(position));
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_2002204523 = mIndexRemoteViews.get(position);
+                    varB4EAC82CA7396A68D541C85D26508E83_1302222845 = mIndexRemoteViews.get(position);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1215067461 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1347355368 = null;
             addTaint(position);
-            RemoteViews varA7E53CE21691AB073D9660D615818899_1105726437; //Final return value
+            RemoteViews varA7E53CE21691AB073D9660D615818899_1366366182; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1105726437 = varB4EAC82CA7396A68D541C85D26508E83_2002204523;
+                    varA7E53CE21691AB073D9660D615818899_1366366182 = varB4EAC82CA7396A68D541C85D26508E83_1302222845;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1105726437 = varB4EAC82CA7396A68D541C85D26508E83_1215067461;
+                    varA7E53CE21691AB073D9660D615818899_1366366182 = varB4EAC82CA7396A68D541C85D26508E83_1347355368;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1105726437.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1105726437;
+            varA7E53CE21691AB073D9660D615818899_1366366182.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1366366182;
             // ---------- Original Method ----------
             //if (mIndexRemoteViews.containsKey(position)) {
                 //return mIndexRemoteViews.get(position);
@@ -1445,29 +1386,29 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.474 -0400", hash_original_method = "1A017214F368969D3B3DFEA7A0D6E60A", hash_generated_method = "8EACE5689E2A3439A6504B6E6BA5CCC5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.209 -0400", hash_original_method = "1A017214F368969D3B3DFEA7A0D6E60A", hash_generated_method = "C8F5C216BB298AB9D3E3B74EE6C3B9DC")
         public RemoteViewsIndexMetaData getMetaDataAt(int position) {
-            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_19561886 = null; //Variable for return #1
-            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_684429846 = null; //Variable for return #2
+            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_915668488 = null; //Variable for return #1
+            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_1211479260 = null; //Variable for return #2
             {
-                boolean var72540E4749D1AF0B6940B3AE7BC6ED24_101741472 = (mIndexMetaData.containsKey(position));
+                boolean var72540E4749D1AF0B6940B3AE7BC6ED24_804060394 = (mIndexMetaData.containsKey(position));
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_19561886 = mIndexMetaData.get(position);
+                    varB4EAC82CA7396A68D541C85D26508E83_915668488 = mIndexMetaData.get(position);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_684429846 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1211479260 = null;
             addTaint(position);
-            RemoteViewsIndexMetaData varA7E53CE21691AB073D9660D615818899_346784533; //Final return value
+            RemoteViewsIndexMetaData varA7E53CE21691AB073D9660D615818899_2026415981; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_346784533 = varB4EAC82CA7396A68D541C85D26508E83_19561886;
+                    varA7E53CE21691AB073D9660D615818899_2026415981 = varB4EAC82CA7396A68D541C85D26508E83_915668488;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_346784533 = varB4EAC82CA7396A68D541C85D26508E83_684429846;
+                    varA7E53CE21691AB073D9660D615818899_2026415981 = varB4EAC82CA7396A68D541C85D26508E83_1211479260;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_346784533.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_346784533;
+            varA7E53CE21691AB073D9660D615818899_2026415981.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_2026415981;
             // ---------- Original Method ----------
             //if (mIndexMetaData.containsKey(position)) {
                 //return mIndexMetaData.get(position);
@@ -1476,7 +1417,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.474 -0400", hash_original_method = "4EDEA047857C8C00C25F35FE7AF06430", hash_generated_method = "1D4CCC8D134AFD2F49BFF6463D69F191")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.210 -0400", hash_original_method = "4EDEA047857C8C00C25F35FE7AF06430", hash_generated_method = "1D4CCC8D134AFD2F49BFF6463D69F191")
         public void commitTemporaryMetaData() {
             {
                 {
@@ -1492,24 +1433,22 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.493 -0400", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "9B7BC3690C90A6C1F5769C0E27E05356")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.211 -0400", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "9DDC41A08E1D082C5904A330D4C4EEB5")
         private int getRemoteViewsBitmapMemoryUsage() {
-            int mem;
-            mem = 0;
+            int mem = 0;
             {
-                Iterator<Integer> varB4A935C4A5ED4E6907A65608913D6FD2_218857802 = (mIndexRemoteViews.keySet()).iterator();
-                varB4A935C4A5ED4E6907A65608913D6FD2_218857802.hasNext();
-                Integer i = varB4A935C4A5ED4E6907A65608913D6FD2_218857802.next();
+                Iterator<Integer> varB4A935C4A5ED4E6907A65608913D6FD2_1290417811 = (mIndexRemoteViews.keySet()).iterator();
+                varB4A935C4A5ED4E6907A65608913D6FD2_1290417811.hasNext();
+                Integer i = varB4A935C4A5ED4E6907A65608913D6FD2_1290417811.next();
                 {
-                    RemoteViews v;
-                    v = mIndexRemoteViews.get(i);
+                    final RemoteViews v = mIndexRemoteViews.get(i);
                     {
                         mem += v.estimateBitmapMemoryUsage();
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_815385121 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_815385121;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859109068 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859109068;
             // ---------- Original Method ----------
             //int mem = 0;
             //for (Integer i : mIndexRemoteViews.keySet()) {
@@ -1522,25 +1461,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.523 -0400", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "663BD29A4F5E4DC5A1CF223E79E97886")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.214 -0400", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "6598FEB67233EC77DBB084FA3F1888D9")
         private int getFarthestPositionFrom(int pos) {
-            int maxDist;
-            maxDist = 0;
-            int maxDistIndex;
-            maxDistIndex = -1;
-            int maxDistNonRequested;
-            maxDistNonRequested = 0;
-            int maxDistIndexNonRequested;
-            maxDistIndexNonRequested = -1;
+            int maxDist = 0;
+            int maxDistIndex = -1;
+            int maxDistNonRequested = 0;
+            int maxDistIndexNonRequested = -1;
             {
-                Iterator<Integer> var2A4FD0A1CC1361CFD41095D31F4E5EF1_1725225482 = (mIndexRemoteViews.keySet()).iterator();
-                var2A4FD0A1CC1361CFD41095D31F4E5EF1_1725225482.hasNext();
-                int i = var2A4FD0A1CC1361CFD41095D31F4E5EF1_1725225482.next();
+                int i = mIndexRemoteViews.keySet()[0];
                 {
-                    int dist;
-                    dist = Math.abs(i-pos);
+                    int dist = Math.abs(i-pos);
                     {
-                        boolean var6BEEB46AA5DD9DD36399D77D50EBA9AD_954395983 = (dist > maxDistNonRequested && !mIndexMetaData.get(i).isRequested);
+                        boolean var6BEEB46AA5DD9DD36399D77D50EBA9AD_2028190382 = (dist > maxDistNonRequested && !mIndexMetaData.get(i).isRequested);
                         {
                             maxDistIndexNonRequested = i;
                             maxDistNonRequested = dist;
@@ -1553,14 +1485,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 } //End block
             } //End collapsed parenthetic
             addTaint(pos);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257682160 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257682160;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439418407 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439418407;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.530 -0400", hash_original_method = "FD296F73133B242F283CE39F258C0B72", hash_generated_method = "154D1254A63D4FFDE2B63BDC85F11006")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.214 -0400", hash_original_method = "FD296F73133B242F283CE39F258C0B72", hash_generated_method = "154D1254A63D4FFDE2B63BDC85F11006")
         public void queueRequestedPositionToLoad(int position) {
             mLastRequestedIndex = position;
             {
@@ -1576,73 +1508,65 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.531 -0400", hash_original_method = "5E1B16EBD16301761756030AADF8738C", hash_generated_method = "C3FDCFC9497AE21DD5F9D8AF99A5C31C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.215 -0400", hash_original_method = "5E1B16EBD16301761756030AADF8738C", hash_generated_method = "6A9337ABAC4A87960A4CB14BD52C88CF")
         public boolean queuePositionsToBePreloadedFromRequestedPosition(int position) {
             {
-                int center;
-                center = (mPreloadUpperBound + mPreloadLowerBound) / 2;
+                int center = (mPreloadUpperBound + mPreloadLowerBound) / 2;
                 {
-                    boolean var0636EC1C871015A7D4DCFF8D3BC97F2F_1697908185 = (Math.abs(position - center) < mMaxCountSlack);
+                    boolean var0636EC1C871015A7D4DCFF8D3BC97F2F_2040320720 = (Math.abs(position - center) < mMaxCountSlack);
                 } //End collapsed parenthetic
             } //End block
-            int count;
-            count = 0;
+            int count = 0;
             {
                 count = mMetaData.count;
             } //End block
             {
                 mLoadIndices.clear();
                 mLoadIndices.addAll(mRequestedIndices);
-                int halfMaxCount;
-                halfMaxCount = mMaxCount / 2;
+                int halfMaxCount = mMaxCount / 2;
                 mPreloadLowerBound = position - halfMaxCount;
                 mPreloadUpperBound = position + halfMaxCount;
-                int effectiveLowerBound;
-                effectiveLowerBound = Math.max(0, mPreloadLowerBound);
-                int effectiveUpperBound;
-                effectiveUpperBound = Math.min(mPreloadUpperBound, count - 1);
+                int effectiveLowerBound = Math.max(0, mPreloadLowerBound);
+                int effectiveUpperBound = Math.min(mPreloadUpperBound, count - 1);
                 {
-                    int i;
-                    i = effectiveLowerBound;
+                    int i = effectiveLowerBound;
                     {
                         mLoadIndices.add(i);
                     } //End block
                 } //End collapsed parenthetic
                 mLoadIndices.removeAll(mIndexRemoteViews.keySet());
             } //End block
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_289855173 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_289855173;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205967480 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_205967480;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.531 -0400", hash_original_method = "06D7248AE2FAA4148F7714FEE4BB20F2", hash_generated_method = "297E06E440BDB83E8646DB0C3B9E67CE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.216 -0400", hash_original_method = "06D7248AE2FAA4148F7714FEE4BB20F2", hash_generated_method = "C98B90ECAB7BAEE5BF7A4FB9EF4648AE")
         public int[] getNextIndexToLoad() {
             {
                 {
-                    boolean varBECF22EC8775578383214E68E20C33B3_164435550 = (!mRequestedIndices.isEmpty());
+                    boolean varBECF22EC8775578383214E68E20C33B3_951584562 = (!mRequestedIndices.isEmpty());
                     {
-                        Integer i;
-                        i = mRequestedIndices.iterator().next();
+                        Integer i = mRequestedIndices.iterator().next();
                         mRequestedIndices.remove(i);
                         mLoadIndices.remove(i);
-                        int[] varC013EB5EEFD0F9EB7779B8A5F2170050_384052916 = (new int[]{i.intValue(), 1});
+                        int[] varC013EB5EEFD0F9EB7779B8A5F2170050_1539571573 = (new int[]{i.intValue(), 1});
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var7A0A9A32B15C45A9D3C895959BD665DF_1435627403 = (!mLoadIndices.isEmpty());
+                    boolean var7A0A9A32B15C45A9D3C895959BD665DF_2054676278 = (!mLoadIndices.isEmpty());
                     {
-                        Integer i;
-                        i = mLoadIndices.iterator().next();
+                        Integer i = mLoadIndices.iterator().next();
                         mLoadIndices.remove(i);
-                        int[] var714C8054CC6177CA3595BC84F9003BF3_1125668877 = (new int[]{i.intValue(), 0});
+                        int[] var714C8054CC6177CA3595BC84F9003BF3_1736001726 = (new int[]{i.intValue(), 0});
                     } //End block
                 } //End collapsed parenthetic
-                int[] varC300C018DCB4F12CE19FE658B052C1CA_95944813 = (new int[]{-1, 0});
+                int[] varC300C018DCB4F12CE19FE658B052C1CA_202728855 = (new int[]{-1, 0});
             } //End block
-            int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1202627812 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_1202627812;
+            int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1252005922 = {getTaintInt()};
+            return varB4CCCA26F9DB9189C32F33E82D425CFB_1252005922;
             // ---------- Original Method ----------
             //synchronized (mLoadIndices) {
                 //if (!mRequestedIndices.isEmpty()) {
@@ -1661,29 +1585,29 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.535 -0400", hash_original_method = "BBBDB78E47117BE8689A9C55BD30A227", hash_generated_method = "346B41B5A8EA64F050DAA065449A802F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.216 -0400", hash_original_method = "BBBDB78E47117BE8689A9C55BD30A227", hash_generated_method = "ADC1B3C2847A2D7C42BBA305CF7C9E10")
         public boolean containsRemoteViewAt(int position) {
-            boolean var2B18D7F842F074CBB8C22809C9ED8805_1758363281 = (mIndexRemoteViews.containsKey(position));
+            boolean var2B18D7F842F074CBB8C22809C9ED8805_449415280 = (mIndexRemoteViews.containsKey(position));
             addTaint(position);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1426937915 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1426937915;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128653665 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2128653665;
             // ---------- Original Method ----------
             //return mIndexRemoteViews.containsKey(position);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.535 -0400", hash_original_method = "97177722E4C5BA4D6397E6B225C059F2", hash_generated_method = "3C29799BE3F82904AD3491839BF42053")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_method = "97177722E4C5BA4D6397E6B225C059F2", hash_generated_method = "ECF9FD7ABD4ACFFA93530D3BEB0DC45C")
         public boolean containsMetaDataAt(int position) {
-            boolean var387071935791AAD5E2A4FFC958E81C03_2077140191 = (mIndexMetaData.containsKey(position));
+            boolean var387071935791AAD5E2A4FFC958E81C03_824712600 = (mIndexMetaData.containsKey(position));
             addTaint(position);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_419737344 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_419737344;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300611004 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1300611004;
             // ---------- Original Method ----------
             //return mIndexMetaData.containsKey(position);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.536 -0400", hash_original_method = "7D514E4141E3BAA67EC2DA2CF01B70A8", hash_generated_method = "8778164A936710645B2123EC88F21BC5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_method = "7D514E4141E3BAA67EC2DA2CF01B70A8", hash_generated_method = "8778164A936710645B2123EC88F21BC5")
         public void reset() {
             mPreloadLowerBound = 0;
             mPreloadUpperBound = -1;
@@ -1707,15 +1631,15 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.536 -0400", hash_original_field = "FB81249BF3052258E45C3888EBC350DA", hash_generated_field = "84E58F174A84F67D3E26311E89BC00CD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "FB81249BF3052258E45C3888EBC350DA", hash_generated_field = "E4C58D7C8C895509DA92BEC5943A1E34")
 
-        private static String TAG = "FixedSizeRemoteViewsCache";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "F9740182F353B90A4BDBE330395C68FF", hash_generated_field = "203B4998BF2CA7DA66A9FF0F726C305B")
+        private static final String TAG = "FixedSizeRemoteViewsCache";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "F9740182F353B90A4BDBE330395C68FF", hash_generated_field = "386965B336D6EC3D60AD83613B46FEC6")
 
-        private static float sMaxCountSlackPercent = 0.75f;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "FD1B2A98BB85E0640F1E9C7C18E4BBFA", hash_generated_field = "6D81911A184FF77B41FAEA23D289D93D")
+        private static final float sMaxCountSlackPercent = 0.75f;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "FD1B2A98BB85E0640F1E9C7C18E4BBFA", hash_generated_field = "FC99CB6D04167C2E00EDD95CD8617B9F")
 
-        private static int sMaxMemoryLimitInBytes = 2 * 1024 * 1024;
+        private static final int sMaxMemoryLimitInBytes = 2 * 1024 * 1024;
     }
 
 
@@ -1730,23 +1654,23 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         public void deferNotifyDataSetChanged();
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "3F15C32F22D5D28B231422C2ED8DEA65", hash_generated_field = "E1DE82EF16B4AE879137A02A2B73FF18")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "3F15C32F22D5D28B231422C2ED8DEA65", hash_generated_field = "911EBCEFE4CCEB1A8C54FB61D7AB0AD9")
 
-    private static String TAG = "RemoteViewsAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "9A2599D66205440D0C81070B0087E6C0", hash_generated_field = "9AAEA9591A504959ED76B750C880535D")
+    private static final String TAG = "RemoteViewsAdapter";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "9A2599D66205440D0C81070B0087E6C0", hash_generated_field = "7B64BF8061986040376D887000FE60FC")
 
-    private static int sDefaultCacheSize = 40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "D3029EB3FA6C6D927DC18B448E254A9B", hash_generated_field = "F4FA453F0B658C04E9EBA131BA77DE27")
+    private static final int sDefaultCacheSize = 40;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "D3029EB3FA6C6D927DC18B448E254A9B", hash_generated_field = "29B284EBC17ABF0E537021A944F5E17B")
 
-    private static int sUnbindServiceDelay = 5000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "5AE9F7C5EEA0C30BF3724A26667822E1", hash_generated_field = "A77E2E16F1F63621534A565EBF4B789F")
+    private static final int sUnbindServiceDelay = 5000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "5AE9F7C5EEA0C30BF3724A26667822E1", hash_generated_field = "CD7B880CABC800B219D85862AA4BAB3E")
 
-    private static int sDefaultLoadingViewHeight = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "ADA4A5984A61A504209F17405FAE49F5", hash_generated_field = "6BDB16449DC7B6C24FCBD53905DC1ADA")
+    private static final int sDefaultLoadingViewHeight = 50;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "ADA4A5984A61A504209F17405FAE49F5", hash_generated_field = "B4ACA6FFB73AE04B468186CDC32AA932")
 
-    private static int sDefaultMessageType = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.538 -0400", hash_original_field = "2D292FE9AC86EFA8AB6604D58311922B", hash_generated_field = "EB044DBCA3E26DF16B4BAEF887AA2844")
+    private static final int sDefaultMessageType = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.217 -0400", hash_original_field = "2D292FE9AC86EFA8AB6604D58311922B", hash_generated_field = "3A6B65139510D8443CF01354FDD1924A")
 
-    private static int sUnbindServiceMessageType = 1;
+    private static final int sUnbindServiceMessageType = 1;
 }
 

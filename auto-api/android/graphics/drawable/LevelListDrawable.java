@@ -15,24 +15,23 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class LevelListDrawable extends DrawableContainer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.713 -0400", hash_original_field = "7DADAF6BEBDBEC9679B3936BAEE50B89", hash_generated_field = "47CDAADE6F8C5ECD8D87C1E79510A706")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.326 -0400", hash_original_field = "7DADAF6BEBDBEC9679B3936BAEE50B89", hash_generated_field = "47CDAADE6F8C5ECD8D87C1E79510A706")
 
     private LevelListState mLevelListState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.713 -0400", hash_original_field = "9FB80C30383848C8D006680B5F3BDAF9", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.326 -0400", hash_original_field = "9FB80C30383848C8D006680B5F3BDAF9", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
 
     private boolean mMutated;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.728 -0400", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "8DEE93644819C11B01FE6D8DDDC1A0A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.327 -0400", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "8DEE93644819C11B01FE6D8DDDC1A0A5")
     public  LevelListDrawable() {
         this(null, null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.738 -0400", hash_original_method = "FF29C84E557E14BBFF6CC67242AEE642", hash_generated_method = "40BBFFA6560F2BF3C2DF7D823228E2EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.327 -0400", hash_original_method = "FF29C84E557E14BBFF6CC67242AEE642", hash_generated_method = "761ABE84D06409C0841478A98C1BE965")
     private  LevelListDrawable(LevelListState state, Resources res) {
-        LevelListState as;
-        as = new LevelListState(state, this, res);
+        LevelListState as = new LevelListState(state, this, res);
         mLevelListState = as;
         setConstantState(as);
         onLevelChange(getLevel());
@@ -46,7 +45,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.739 -0400", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "E8A7CEDE8DC8FCA2FB63DFBA65D0865B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.327 -0400", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "E8A7CEDE8DC8FCA2FB63DFBA65D0865B")
     public void addLevel(int low, int high, Drawable drawable) {
         {
             mLevelListState.addLevel(low, high, drawable);
@@ -63,19 +62,18 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.741 -0400", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "BC3D15CD825DFB53FBCBB6BF2792156F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.328 -0400", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "C38CD075615ACE3512A95A7222DD9C74")
     @Override
     protected boolean onLevelChange(int level) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        int idx;
-        idx = mLevelListState.indexOfLevel(level);
+        int idx = mLevelListState.indexOfLevel(level);
         {
-            boolean var3E2B49468750734D46A6120849432D6B_1275666411 = (selectDrawable(idx));
+            boolean var3E2B49468750734D46A6120849432D6B_1822525909 = (selectDrawable(idx));
         } //End collapsed parenthetic
-        boolean varDB7AD9D2975F96CFC59CFC70C6A8F8CB_368320778 = (super.onLevelChange(level));
+        boolean varDB7AD9D2975F96CFC59CFC70C6A8F8CB_599913238 = (super.onLevelChange(level));
         addTaint(level);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1131599030 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1131599030;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511815478 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_511815478;
         // ---------- Original Method ----------
         //int idx = mLevelListState.indexOfLevel(level);
         //if (selectDrawable(idx)) {
@@ -94,7 +92,7 @@ public class LevelListDrawable extends DrawableContainer {
         low = 0;
         int innerDepth;
         innerDepth = parser.getDepth() + 1;
-        int depth;
+        int depth = 0;
         {
             boolean var5C2AD857B4870B6E82338097BA87AA78_237913076 = ((type = parser.next()) != XmlPullParser.END_DOCUMENT
                 && ((depth = parser.getDepth()) >= innerDepth
@@ -147,21 +145,21 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.766 -0400", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "BF2875524DD87237D2E73F83AEE6FFA5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.329 -0400", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "2033F1FD4301620A62DA100A0F8F6AFE")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_691493030 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1063161566 = null; //Variable for return #1
         {
-            boolean varC94B19053599294E7944C8C841976773_2107126708 = (!mMutated && super.mutate() == this);
+            boolean varC94B19053599294E7944C8C841976773_15157486 = (!mMutated && super.mutate() == this);
             {
                 mLevelListState.mLows = mLevelListState.mLows.clone();
                 mLevelListState.mHighs = mLevelListState.mHighs.clone();
                 mMutated = true;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_691493030 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_691493030.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_691493030;
+        varB4EAC82CA7396A68D541C85D26508E83_1063161566 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1063161566.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1063161566;
         // ---------- Original Method ----------
         //if (!mMutated && super.mutate() == this) {
             //mLevelListState.mLows = mLevelListState.mLows.clone();
@@ -173,14 +171,14 @@ public class LevelListDrawable extends DrawableContainer {
 
     
     private final static class LevelListState extends DrawableContainerState {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.780 -0400", hash_original_field = "486E97E3A390A1CA09D64CA1515B6581", hash_generated_field = "37A326654DCDB6D550E9B55D69367F4E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.330 -0400", hash_original_field = "486E97E3A390A1CA09D64CA1515B6581", hash_generated_field = "37A326654DCDB6D550E9B55D69367F4E")
 
         private int[] mLows;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.780 -0400", hash_original_field = "3C7CECF15B500574F22FD19239AF02EE", hash_generated_field = "6415CF16E647D3E1A3CE81AF00D370F7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.330 -0400", hash_original_field = "3C7CECF15B500574F22FD19239AF02EE", hash_generated_field = "6415CF16E647D3E1A3CE81AF00D370F7")
 
         private int[] mHighs;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.781 -0400", hash_original_method = "84CE1F1576ABE6B96A405641F0E77DA7", hash_generated_method = "26E8BE38ECE84B827A3491F845491423")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.330 -0400", hash_original_method = "84CE1F1576ABE6B96A405641F0E77DA7", hash_generated_method = "26E8BE38ECE84B827A3491F845491423")
           LevelListState(LevelListState orig, LevelListDrawable owner, Resources res) {
             super(orig, owner, res);
             {
@@ -204,10 +202,9 @@ public class LevelListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.783 -0400", hash_original_method = "532A81D3626CF6C141FB2F3AF4D4A1FD", hash_generated_method = "A431CDE28C48ED6EFED89917514889B2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.331 -0400", hash_original_method = "532A81D3626CF6C141FB2F3AF4D4A1FD", hash_generated_method = "3EC3F5AB4071AA2A4AF8CAFA2BD9E98B")
         public void addLevel(int low, int high, Drawable drawable) {
-            int pos;
-            pos = addChild(drawable);
+            int pos = addChild(drawable);
             mLows[pos] = low;
             mHighs[pos] = high;
             addTaint(drawable.getTaint());
@@ -218,21 +215,17 @@ public class LevelListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.807 -0400", hash_original_method = "821B925FDD0461B6E2C8DAC2FBB67163", hash_generated_method = "D8FFD2A282CF6EADD513DAD0C23250D4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.331 -0400", hash_original_method = "821B925FDD0461B6E2C8DAC2FBB67163", hash_generated_method = "401B1CE9D9D8C0690B35F67146B4CE51")
         public int indexOfLevel(int level) {
-            int[] lows;
-            lows = mLows;
-            int[] highs;
-            highs = mHighs;
-            int N;
-            N = getChildCount();
+            final int[] lows = mLows;
+            final int[] highs = mHighs;
+            final int N = getChildCount();
             {
-                int i;
-                i = 0;
+                int i = 0;
             } //End collapsed parenthetic
             addTaint(level);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51994524 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51994524;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350840637 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350840637;
             // ---------- Original Method ----------
             //final int[] lows = mLows;
             //final int[] highs = mHighs;
@@ -246,37 +239,36 @@ public class LevelListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.808 -0400", hash_original_method = "578EA11BFBDE2C74EEB0B28EA6FDC468", hash_generated_method = "2C0C1A0EAD0C2258D81498805924F4B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.332 -0400", hash_original_method = "578EA11BFBDE2C74EEB0B28EA6FDC468", hash_generated_method = "3C91D73D7C2B810271EC13A0C745E6C8")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1091305245 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1091305245 = new LevelListDrawable(this, null);
-            varB4EAC82CA7396A68D541C85D26508E83_1091305245.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1091305245;
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_575904095 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_575904095 = new LevelListDrawable(this, null);
+            varB4EAC82CA7396A68D541C85D26508E83_575904095.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_575904095;
             // ---------- Original Method ----------
             //return new LevelListDrawable(this, null);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.809 -0400", hash_original_method = "940707433A1F7319278E4F2386D7D30E", hash_generated_method = "DC3B5341F4784172273503912704C887")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.332 -0400", hash_original_method = "940707433A1F7319278E4F2386D7D30E", hash_generated_method = "483A6499F39DD59325778D332ED177B9")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_40979088 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_40979088 = new LevelListDrawable(this, res);
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1913197365 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1913197365 = new LevelListDrawable(this, res);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_40979088.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_40979088;
+            varB4EAC82CA7396A68D541C85D26508E83_1913197365.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1913197365;
             // ---------- Original Method ----------
             //return new LevelListDrawable(this, res);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.810 -0400", hash_original_method = "38D84B8130D493E02AF62015EFA0A6E9", hash_generated_method = "504CC4B277CFEF483C942D6D5AC6A8C5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.333 -0400", hash_original_method = "38D84B8130D493E02AF62015EFA0A6E9", hash_generated_method = "085323203CB02BA7DB2C13E6C7017E06")
         @Override
         public void growArray(int oldSize, int newSize) {
             super.growArray(oldSize, newSize);
-            int[] newInts;
-            newInts = new int[newSize];
+            int[] newInts = new int[newSize];
             System.arraycopy(mLows, 0, newInts, 0, oldSize);
             mLows = newInts;
             newInts = new int[newSize];

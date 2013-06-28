@@ -11,13 +11,13 @@ import java.text.BreakIterator;
 
 public class Selection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.934 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.175 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
     private  Selection() {
         // ---------- Original Method ----------
     }
 
     
-        public static final int getSelectionStart(CharSequence text) {
+    public static final int getSelectionStart(CharSequence text) {
         if (text instanceof Spanned)
             return ((Spanned) text).getSpanStart(SELECTION_START);
         else
@@ -25,7 +25,7 @@ public class Selection {
     }
 
     
-        public static final int getSelectionEnd(CharSequence text) {
+    public static final int getSelectionEnd(CharSequence text) {
         if (text instanceof Spanned)
             return ((Spanned) text).getSpanStart(SELECTION_END);
         else
@@ -33,7 +33,7 @@ public class Selection {
     }
 
     
-        public static void setSelection(Spannable text, int start, int stop) {
+    public static void setSelection(Spannable text, int start, int stop) {
         int ostart = getSelectionStart(text);
         int oend = getSelectionEnd(text);
         if (ostart != start || oend != stop) {
@@ -45,29 +45,29 @@ public class Selection {
     }
 
     
-        public static final void setSelection(Spannable text, int index) {
+    public static final void setSelection(Spannable text, int index) {
         setSelection(text, index, index);
     }
 
     
-        public static final void selectAll(Spannable text) {
+    public static final void selectAll(Spannable text) {
         setSelection(text, 0, text.length());
     }
 
     
-        public static final void extendSelection(Spannable text, int index) {
+    public static final void extendSelection(Spannable text, int index) {
         if (text.getSpanStart(SELECTION_END) != index)
             text.setSpan(SELECTION_END, index, index, Spanned.SPAN_POINT_POINT);
     }
 
     
-        public static final void removeSelection(Spannable text) {
+    public static final void removeSelection(Spannable text) {
         text.removeSpan(SELECTION_START);
         text.removeSpan(SELECTION_END);
     }
 
     
-        public static boolean moveUp(Spannable text, Layout layout) {
+    public static boolean moveUp(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -97,7 +97,7 @@ public class Selection {
     }
 
     
-        public static boolean moveDown(Spannable text, Layout layout) {
+    public static boolean moveDown(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -127,7 +127,7 @@ public class Selection {
     }
 
     
-        public static boolean moveLeft(Spannable text, Layout layout) {
+    public static boolean moveLeft(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -144,7 +144,7 @@ public class Selection {
     }
 
     
-        public static boolean moveRight(Spannable text, Layout layout) {
+    public static boolean moveRight(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -161,7 +161,7 @@ public class Selection {
     }
 
     
-        public static boolean extendUp(Spannable text, Layout layout) {
+    public static boolean extendUp(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
         if (line > 0) {
@@ -183,7 +183,7 @@ public class Selection {
     }
 
     
-        public static boolean extendDown(Spannable text, Layout layout) {
+    public static boolean extendDown(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
         if (line < layout.getLineCount() - 1) {
@@ -205,7 +205,7 @@ public class Selection {
     }
 
     
-        public static boolean extendLeft(Spannable text, Layout layout) {
+    public static boolean extendLeft(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToLeftOf(end);
         if (to != end) {
@@ -216,7 +216,7 @@ public class Selection {
     }
 
     
-        public static boolean extendRight(Spannable text, Layout layout) {
+    public static boolean extendRight(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToRightOf(end);
         if (to != end) {
@@ -227,35 +227,35 @@ public class Selection {
     }
 
     
-        public static boolean extendToLeftEdge(Spannable text, Layout layout) {
+    public static boolean extendToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         extendSelection(text, where);
         return true;
     }
 
     
-        public static boolean extendToRightEdge(Spannable text, Layout layout) {
+    public static boolean extendToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         extendSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToLeftEdge(Spannable text, Layout layout) {
+    public static boolean moveToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         setSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToRightEdge(Spannable text, Layout layout) {
+    public static boolean moveToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         setSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToPreceding(
+    public static boolean moveToPreceding(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.preceding(getSelectionEnd(text));
         if (offset != PositionIterator.DONE) {
@@ -269,7 +269,7 @@ public class Selection {
     }
 
     
-        public static boolean moveToFollowing(
+    public static boolean moveToFollowing(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.following(getSelectionEnd(text));
         if (offset != PositionIterator.DONE) {
@@ -283,7 +283,7 @@ public class Selection {
     }
 
     
-        private static int findEdge(Spannable text, Layout layout, int dir) {
+    private static int findEdge(Spannable text, Layout layout, int dir) {
         int pt = getSelectionEnd(text);
         int line = layout.getLineForOffset(pt);
         int pdir = layout.getParagraphDirection(line);
@@ -299,7 +299,7 @@ public class Selection {
     }
 
     
-        private static int chooseHorizontal(Layout layout, int direction,
+    private static int chooseHorizontal(Layout layout, int direction,
                                         int off1, int off2) {
         int line1 = layout.getLineForOffset(off1);
         int line2 = layout.getLineForOffset(off2);
@@ -330,7 +330,7 @@ public class Selection {
     
     private static final class START implements NoCopySpan {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
             //Synthesized constructor
@@ -343,7 +343,7 @@ public class Selection {
     
     private static final class END implements NoCopySpan {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
             //Synthesized constructor
@@ -361,10 +361,10 @@ public class Selection {
         public int following(int position);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_field = "774417FE7444B450B49E50090115A9F8", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_field = "774417FE7444B450B49E50090115A9F8", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
 
     public static final Object SELECTION_START = new START();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_field = "4C94D592759CA3F5D554F033E438F59A", hash_generated_field = "158301B7D925B39059B5DF4E88882416")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_field = "4C94D592759CA3F5D554F033E438F59A", hash_generated_field = "158301B7D925B39059B5DF4E88882416")
 
     public static final Object SELECTION_END = new END();
 }

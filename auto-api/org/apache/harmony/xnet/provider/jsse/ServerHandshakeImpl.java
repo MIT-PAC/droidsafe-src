@@ -31,11 +31,11 @@ import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
 
 public class ServerHandshakeImpl extends HandshakeProtocol {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.554 -0400", hash_original_field = "4AA2361BEE79AADD8595859693612743", hash_generated_field = "F778C7A1E11234387361395B9C2BAFEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.226 -0400", hash_original_field = "4AA2361BEE79AADD8595859693612743", hash_generated_field = "F778C7A1E11234387361395B9C2BAFEF")
 
     private PrivateKey privKey;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.555 -0400", hash_original_method = "3AF97CBDFDCCD2B098621E28E1AC9FE5", hash_generated_method = "80C42ACB158F7BC847CBC44AE6D1B4A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.227 -0400", hash_original_method = "3AF97CBDFDCCD2B098621E28E1AC9FE5", hash_generated_method = "80C42ACB158F7BC847CBC44AE6D1B4A3")
     public  ServerHandshakeImpl(Object owner) {
         super(owner);
         status = NEED_UNWRAP;
@@ -45,7 +45,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.570 -0400", hash_original_method = "324CE8CF3B7F222FC5B16C98F36DFFC3", hash_generated_method = "5830822045DD7FB0B140C73F79077942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.227 -0400", hash_original_method = "324CE8CF3B7F222FC5B16C98F36DFFC3", hash_generated_method = "5830822045DD7FB0B140C73F79077942")
     @Override
     public void start() {
         {
@@ -66,12 +66,12 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.591 -0400", hash_original_method = "C84D4DEAC8EBB3DD7197C18B29E2CDCD", hash_generated_method = "2BF73E912CC66DB02B7295BEF9FFAB5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.230 -0400", hash_original_method = "C84D4DEAC8EBB3DD7197C18B29E2CDCD", hash_generated_method = "4DEAF142C2639245E58FABCEFEAB9115")
     @Override
     public void unwrap(byte[] bytes) {
         io_stream.append(bytes);
         {
-            boolean var3E10622B97BCC076CCF7AB0ED953F160_320399749 = (io_stream.available() > 0);
+            boolean var3E10622B97BCC076CCF7AB0ED953F160_716611310 = (io_stream.available() > 0);
             {
                 int handshakeType;
                 int length;
@@ -81,7 +81,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     handshakeType = io_stream.read();
                     length = io_stream.readUint24();
                     {
-                        boolean var3C679A8AB58B6F3598AA40A6769F2283_1778439302 = (io_stream.available() < length);
+                        boolean var3C679A8AB58B6F3598AA40A6769F2283_602352841 = (io_stream.available() < length);
                         {
                             io_stream.reset();
                         } //End block
@@ -100,7 +100,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     //Begin case 1 
                     {
                         delegatedTasks.add(new DelegatedTask(new Runnable() {                            
-                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.572 -0400", hash_original_method = "E7C0517DE997CD5395D0C07C8E102134", hash_generated_method = "BB36F1EA52E00860AED4267A4F6A4F59")
+                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.228 -0400", hash_original_method = "E7C0517DE997CD5395D0C07C8E102134", hash_generated_method = "BB36F1EA52E00860AED4267A4F6A4F59")
                             public void run() {
                                 processClientHello();
                                 // ---------- Original Method ----------
@@ -123,7 +123,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     //Begin case 11 
                     {
                         {
-                            boolean varC9E6F6858148ADCAF20C359360060880_1664393231 = (parameters.getNeedClientAuth());
+                            boolean varC9E6F6858148ADCAF20C359360060880_1810380267 = (parameters.getNeedClientAuth());
                             {
                                 fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                        "HANDSHAKE FAILURE: no client certificate received");
@@ -131,8 +131,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        String authType;
-                        authType = clientCert.getAuthType();
+                        String authType = clientCert.getAuthType();
                         try 
                         {
                             parameters.getTrustManager().checkClientTrusted(
@@ -148,7 +147,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     //End case 11 
                     //Begin case 15 
                     {
-                        boolean varAF8A39DE161C8E9974E0BB444210F44E_990050625 = (isResuming
+                        boolean varAF8A39DE161C8E9974E0BB444210F44E_1596681851 = (isResuming
                             || clientKeyExchange == null
                             || clientCert == null
                             || clientKeyExchange.isEmpty() 
@@ -163,33 +162,29 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     certificateVerify = new CertificateVerify(io_stream, length);
                     //End case 15 
                     //Begin case 15 
-                    String authType;
-                    authType = clientCert.getAuthType();
+                    String authType = clientCert.getAuthType();
                     //End case 15 
                     //Begin case 15 
-                    DigitalSignature ds;
-                    ds = new DigitalSignature(authType);
+                    DigitalSignature ds = new DigitalSignature(authType);
                     //End case 15 
                     //Begin case 15 
                     ds.init(clientCert.certs[0]);
                     //End case 15 
                     //Begin case 15 
-                    byte[] md5_hash;
-                    md5_hash = null;
+                    byte[] md5_hash = null;
                     //End case 15 
                     //Begin case 15 
-                    byte[] sha_hash;
-                    sha_hash = null;
+                    byte[] sha_hash = null;
                     //End case 15 
                     //Begin case 15 
                     {
-                        boolean var18EB7A6B16B91D37B5C220ED2903A1D8_764519754 = ("RSA".equals(authType));
+                        boolean var18EB7A6B16B91D37B5C220ED2903A1D8_212064487 = ("RSA".equals(authType));
                         {
                             md5_hash = io_stream.getDigestMD5withoutLast();
                             sha_hash = io_stream.getDigestSHAwithoutLast();
                         } //End block
                         {
-                            boolean varB51211E32FDC16700AE71AA3387C9B7E_699901504 = ("DSA".equals(authType));
+                            boolean varB51211E32FDC16700AE71AA3387C9B7E_2122157156 = ("DSA".equals(authType));
                             {
                                 sha_hash = io_stream.getDigestSHAwithoutLast();
                             } //End block
@@ -204,7 +199,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     //End case 15 
                     //Begin case 15 
                     {
-                        boolean varC7AD4571E6594DD19A4D11C5E6620F52_1318871115 = (!ds.verifySignature(certificateVerify.signedHash));
+                        boolean varC7AD4571E6594DD19A4D11C5E6620F52_2048875047 = (!ds.verifySignature(certificateVerify.signedHash));
                         {
                             fatalAlert(AlertProtocol.DECRYPT_ERROR,
                                    "DECRYPT ERROR: CERTIFICATE_VERIFY incorrect signature");
@@ -213,7 +208,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     //End case 15 
                     //Begin case 16 
                     {
-                        boolean var1C9CDB327E63AB6978798DE98C250E92_785596072 = (isResuming
+                        boolean var1C9CDB327E63AB6978798DE98C250E92_172164747 = (isResuming
                             || serverHelloDone == null
                             || clientKeyExchange != null
                             || (clientCert == null && parameters.getNeedClientAuth()));
@@ -227,8 +222,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                         clientKeyExchange = new ClientKeyExchange(io_stream,
                                 length, serverHello.server_version[1] == 1,
                                 true);
-                        Cipher c;
-                        c = null;
+                        Cipher c = null;
                         try 
                         {
                             c = Cipher.getInstance("RSA/ECB/PKCS1Padding");
@@ -251,19 +245,16 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                                 length, serverHello.server_version[1] == 1,
                                 false);
                         {
-                            boolean var1794A2760AB9467B1447369EA82A03F5_566814748 = (clientKeyExchange.isEmpty());
+                            boolean var1794A2760AB9467B1447369EA82A03F5_951742881 = (clientKeyExchange.isEmpty());
                             {
                                 preMasterSecret = ((DHPublicKey) clientCert.certs[0].getPublicKey()).getY().toByteArray();
                             } //End block
                             {
                                 try 
                                 {
-                                    KeyFactory kf;
-                                    kf = KeyFactory.getInstance("DH");
-                                    KeyAgreement agreement;
-                                    agreement = KeyAgreement.getInstance("DH");
-                                    PublicKey clientPublic;
-                                    clientPublic = kf.generatePublic(new DHPublicKeySpec(
+                                    KeyFactory kf = KeyFactory.getInstance("DH");
+                                    KeyAgreement agreement = KeyAgreement.getInstance("DH");
+                                    PublicKey clientPublic = kf.generatePublic(new DHPublicKeySpec(
                                                 new BigInteger(
                                                         1,
                                                         clientKeyExchange.exchange_keys),
@@ -327,7 +318,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.593 -0400", hash_original_method = "866A772D6B919D9D55F9FB0C6E40CB44", hash_generated_method = "9DF66A47A63FE029D0C34ED58152CAB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.231 -0400", hash_original_method = "866A772D6B919D9D55F9FB0C6E40CB44", hash_generated_method = "9D79EC00F59CC0589CE5795D4638E5ED")
     @Override
     public void unwrapSSLv2(byte[] bytes) {
         io_stream.append(bytes);
@@ -342,7 +333,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
         } //End block
         {
             delegatedTasks.add(new DelegatedTask(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.593 -0400", hash_original_method = "E7C0517DE997CD5395D0C07C8E102134", hash_generated_method = "BB36F1EA52E00860AED4267A4F6A4F59")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.231 -0400", hash_original_method = "E7C0517DE997CD5395D0C07C8E102134", hash_generated_method = "BB36F1EA52E00860AED4267A4F6A4F59")
                 public void run() {
                     processClientHello();
                     // ---------- Original Method ----------
@@ -373,19 +364,18 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.641 -0400", hash_original_method = "1EE7C68A79581646D3317E6FF35ECA2F", hash_generated_method = "9C5767FAD9A4AB55DE8E924E6EFCC0B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.234 -0400", hash_original_method = "1EE7C68A79581646D3317E6FF35ECA2F", hash_generated_method = "84BC8404F83039B49D027E45A7012F72")
      void processClientHello() {
         CipherSuite cipher_suite;
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
             } //End collapsed parenthetic
             fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                        "HANDSHAKE FAILURE. Incorrect client hello message");
         } //End block
         {
-            boolean varEC4BF2D3C932DCD54126C3E7DEC7E78C_1686629787 = (!ProtocolVersion.isSupported(clientHello.client_version));
+            boolean varEC4BF2D3C932DCD54126C3E7DEC7E78C_934381890 = (!ProtocolVersion.isSupported(clientHello.client_version));
             {
                 fatalAlert(AlertProtocol.PROTOCOL_VERSION,
                        "PROTOCOL VERSION. Unsupported client version "
@@ -396,14 +386,13 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
         isResuming = false;
         {
             SSLSessionImpl sessionToResume;
-            boolean reuseCurrent;
-            reuseCurrent = false;
+            boolean reuseCurrent = false;
             {
-                boolean varC3EB608F958704B01CF5FA7FBCC3C70C_1208501396 = (session != null
+                boolean varC3EB608F958704B01CF5FA7FBCC3C70C_1816642829 = (session != null
                     && Arrays.equals(session.id, clientHello.session_id));
                 {
                     {
-                        boolean var7005234DDBB3DCCE3DD5152EB36CF43C_711187993 = (session.isValid());
+                        boolean var7005234DDBB3DCCE3DD5152EB36CF43C_1641232917 = (session.isValid());
                         {
                             isResuming = true;
                         } //End block
@@ -413,10 +402,10 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             } //End collapsed parenthetic
             sessionToResume = findSessionToResume(clientHello.session_id);
             {
-                boolean var4A069E5C70DBDCFA67B5FC703A18CEA8_1152453529 = (sessionToResume == null || !sessionToResume.isValid());
+                boolean var4A069E5C70DBDCFA67B5FC703A18CEA8_1383995360 = (sessionToResume == null || !sessionToResume.isValid());
                 {
                     {
-                        boolean var72B825718E86CFDC2D1ACE8C15EF1B82_1822312897 = (!parameters.getEnableSessionCreation());
+                        boolean var72B825718E86CFDC2D1ACE8C15EF1B82_1816106279 = (!parameters.getEnableSessionCreation());
                         {
                             {
                                 sendWarningAlert(AlertProtocol.NO_RENEGOTIATION);
@@ -438,11 +427,10 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             cipher_suite = session.cipherSuite;
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         {
-                            boolean var18D4044EAC2BBBA188F56165F5E80AD5_958870433 = (cipher_suite.equals(clientHello.cipher_suites[i]));
+                            boolean var18D4044EAC2BBBA188F56165F5E80AD5_30342731 = (cipher_suite.equals(clientHello.cipher_suites[i]));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -456,7 +444,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                 fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "HANDSHAKE FAILURE. NO COMMON SUITE");
             } //End block
             {
-                boolean var1D30D9F66EF381050E56475097F3FC84_1764274545 = (!parameters.getEnableSessionCreation());
+                boolean var1D30D9F66EF381050E56475097F3FC84_1454028712 = (!parameters.getEnableSessionCreation());
                 {
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                            "SSL Session may not be created");
@@ -482,22 +470,17 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             sendChangeCipherSpec();
         } //End block
         {
-            boolean varB1B44AAE4AABDE77268F565DF69F2509_2127638322 = (!cipher_suite.isAnonymous());
+            boolean varB1B44AAE4AABDE77268F565DF69F2509_1828709864 = (!cipher_suite.isAnonymous());
             {
-                X509Certificate[] certs;
-                certs = null;
-                String certType;
-                certType = cipher_suite.getServerKeyType();
+                X509Certificate[] certs = null;
+                String certType = cipher_suite.getServerKeyType();
                 {
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "NO CERT TYPE FOR " + cipher_suite.getName());
                 } //End block
-                String alias;
-                alias = null;
-                X509KeyManager km;
-                km = parameters.getKeyManager();
+                String alias = null;
+                X509KeyManager km = parameters.getKeyManager();
                 {
-                    X509ExtendedKeyManager ekm;
-                    ekm = (X509ExtendedKeyManager)km;
+                    X509ExtendedKeyManager ekm = (X509ExtendedKeyManager)km;
                     {
                         alias = ekm.chooseServerAlias(certType, null,
                             this.socketOwner);
@@ -525,25 +508,18 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                 send(serverCert);
             } //End block
         } //End collapsed parenthetic
-        RSAPublicKey rsakey;
-        rsakey = null;
-        DHPublicKeySpec dhkeySpec;
-        dhkeySpec = null;
-        byte[] hash;
-        hash = null;
-        BigInteger p;
-        p = null;
-        BigInteger g;
-        g = null;
-        KeyPairGenerator kpg;
-        kpg = null;
+        RSAPublicKey rsakey = null;
+        DHPublicKeySpec dhkeySpec = null;
+        byte[] hash = null;
+        BigInteger p = null;
+        BigInteger g = null;
+        KeyPairGenerator kpg = null;
         try 
         {
             {
-                PublicKey pk;
-                pk = serverCert.certs[0].getPublicKey();
+                PublicKey pk = serverCert.certs[0].getPublicKey();
                 {
-                    boolean var0EBE03D98DFAA869597C67152383F614_838554402 = (getRSAKeyLength(pk) > 512);
+                    boolean var0EBE03D98DFAA869597C67152383F614_1311021941 = (getRSAKeyLength(pk) > 512);
                     {
                         kpg = KeyPairGenerator.getInstance("RSA");
                         kpg.initialize(512);
@@ -554,8 +530,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                 kpg = KeyPairGenerator.getInstance("DH");
                 p = new BigInteger(1, DHParameters.getPrime());
                 g = new BigInteger("2");
-                DHParameterSpec spec;
-                spec = new DHParameterSpec(p, g);
+                DHParameterSpec spec = new DHParameterSpec(p, g);
                 kpg.initialize(spec);
             } //End block
         } //End block
@@ -564,10 +539,8 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR", e);
         } //End block
         {
-            DigitalSignature ds;
-            ds = new DigitalSignature(cipher_suite.authType);
-            KeyPair kp;
-            kp = null;
+            DigitalSignature ds = new DigitalSignature(cipher_suite.authType);
+            KeyPair kp = null;
             try 
             {
                 kp = kpg.genKeyPair();
@@ -575,22 +548,19 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     rsakey = (RSAPublicKey) kp.getPublic();
                 } //End block
                 {
-                    DHPublicKey dhkey;
-                    dhkey = (DHPublicKey) kp.getPublic();
-                    KeyFactory kf;
-                    kf = KeyFactory.getInstance("DH");
+                    DHPublicKey dhkey = (DHPublicKey) kp.getPublic();
+                    KeyFactory kf = KeyFactory.getInstance("DH");
                     dhkeySpec = kf.getKeySpec(dhkey, DHPublicKeySpec.class);
                 } //End block
                 {
-                    boolean varEFCCB3C47B9AB7D0847DE50BC56806BC_527936025 = (!cipher_suite.isAnonymous());
+                    boolean varEFCCB3C47B9AB7D0847DE50BC56806BC_858799684 = (!cipher_suite.isAnonymous());
                     {
                         ds.init(privKey);
                         privKey = kp.getPrivate();
                         ds.update(clientHello.getRandom());
                         ds.update(serverHello.getRandom());
                         byte[] tmp;
-                        byte[] tmpLength;
-                        tmpLength = new byte[2];
+                        byte[] tmpLength = new byte[2];
                         {
                             tmp = ServerKeyExchange.toUnsignedByteArray(rsakey.getModulus());
                             tmpLength[0] = (byte) ((tmp.length & 0xFF00) >>> 8);
@@ -642,19 +612,19 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             send(serverKeyExchange);
         } //End block
         {
-            boolean var494316DEEDFDBEC0083E4AD7C074E8F6_1338264551 = (parameters.getWantClientAuth()
+            boolean var494316DEEDFDBEC0083E4AD7C074E8F6_1944520683 = (parameters.getWantClientAuth()
                 || parameters.getNeedClientAuth());
             {
                 X509Certificate[] accepted;
                 try 
                 {
-                    X509TrustManager tm;
-                    tm = parameters.getTrustManager();
+                    X509TrustManager tm = parameters.getTrustManager();
                     accepted = tm.getAcceptedIssuers();
                 } //End block
                 catch (ClassCastException e)
                 { }
-                byte[] requestedClientCertTypes;
+                byte[] requestedClientCertTypes = { CipherSuite.TLS_CT_RSA_SIGN,
+                                                CipherSuite.TLS_CT_DSS_SIGN };
                 certificateRequest = new CertificateRequest(
                     requestedClientCertTypes, accepted);
                 send(certificateRequest);
@@ -668,12 +638,11 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.644 -0400", hash_original_method = "B7CAA5254DC76CE96F66DEC8EF811F93", hash_generated_method = "DE799FB7134F2E87333CC07DE674A503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.235 -0400", hash_original_method = "B7CAA5254DC76CE96F66DEC8EF811F93", hash_generated_method = "489159C7815F24FD67F417FF024225EF")
     @Override
     protected void makeFinished() {
         byte[] verify_data;
-        boolean isTLS;
-        isTLS = (serverHello.server_version[1] == 1);
+        boolean isTLS = (serverHello.server_version[1] == 1);
         {
             verify_data = new byte[12];
             computerVerifyDataTLS("server finished", verify_data);
@@ -702,22 +671,22 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.644 -0400", hash_original_method = "1900CB4813DE311B701E9907815D7379", hash_generated_method = "4F19D8AB15E8BE145E027748342EB37A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.236 -0400", hash_original_method = "1900CB4813DE311B701E9907815D7379", hash_generated_method = "35E920564658C7040EEA906CBA1A3C26")
     private SSLSessionImpl findSessionToResume(byte[] session_id) {
-        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_561896788 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_561896788 = (SSLSessionImpl)parameters.getServerSessionContext().getSession(session_id);
+        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1914182576 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1914182576 = (SSLSessionImpl)parameters.getServerSessionContext().getSession(session_id);
         addTaint(session_id[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_561896788.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_561896788;
+        varB4EAC82CA7396A68D541C85D26508E83_1914182576.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1914182576;
         // ---------- Original Method ----------
         //return (SSLSessionImpl)parameters.getServerSessionContext().getSession(session_id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.692 -0400", hash_original_method = "CED7C9E9124D8D76ECA389CBA359AC39", hash_generated_method = "F583A04C32BFE5BCF3BA30FD42625E6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.240 -0400", hash_original_method = "CED7C9E9124D8D76ECA389CBA359AC39", hash_generated_method = "0DF80C308B2E085FA2D5A64E7DBEBE58")
     private CipherSuite selectSuite(CipherSuite[] clientSuites) {
-        CipherSuite varB4EAC82CA7396A68D541C85D26508E83_1653599630 = null; //Variable for return #1
-        CipherSuite varB4EAC82CA7396A68D541C85D26508E83_492318292 = null; //Variable for return #2
+        CipherSuite varB4EAC82CA7396A68D541C85D26508E83_1008063370 = null; //Variable for return #1
+        CipherSuite varB4EAC82CA7396A68D541C85D26508E83_1737313329 = null; //Variable for return #2
         {
             CipherSuite clientSuite = clientSuites[0];
             {
@@ -725,28 +694,28 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
                     CipherSuite enabledCipherSuite = parameters.getEnabledCipherSuitesMember()[0];
                     {
                         {
-                            boolean varE93C96DE8A6190DA385CE0A2DCDCB29A_889589502 = (clientSuite.equals(enabledCipherSuite));
+                            boolean varE93C96DE8A6190DA385CE0A2DCDCB29A_211958806 = (clientSuite.equals(enabledCipherSuite));
                             {
-                                varB4EAC82CA7396A68D541C85D26508E83_1653599630 = clientSuite;
+                                varB4EAC82CA7396A68D541C85D26508E83_1008063370 = clientSuite;
                             } //End block
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_492318292 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1737313329 = null;
         addTaint(clientSuites[0].getTaint());
-        CipherSuite varA7E53CE21691AB073D9660D615818899_1689627988; //Final return value
+        CipherSuite varA7E53CE21691AB073D9660D615818899_993563692; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1689627988 = varB4EAC82CA7396A68D541C85D26508E83_1653599630;
+                varA7E53CE21691AB073D9660D615818899_993563692 = varB4EAC82CA7396A68D541C85D26508E83_1008063370;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1689627988 = varB4EAC82CA7396A68D541C85D26508E83_492318292;
+                varA7E53CE21691AB073D9660D615818899_993563692 = varB4EAC82CA7396A68D541C85D26508E83_1737313329;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1689627988.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1689627988;
+        varA7E53CE21691AB073D9660D615818899_993563692.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_993563692;
         // ---------- Original Method ----------
         //for (CipherSuite clientSuite : clientSuites) {
             //if (!clientSuite.supported) {
@@ -762,7 +731,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.693 -0400", hash_original_method = "C3331D73871F50BD7C19021D99D59A46", hash_generated_method = "A5669C052FDFA7A60CD11C4236F5EAEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.240 -0400", hash_original_method = "C3331D73871F50BD7C19021D99D59A46", hash_generated_method = "536EB9C4D70D858CC5D3EBD1292B87E6")
     @Override
     public void receiveChangeCipherSpec() {
         {
@@ -775,7 +744,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
         } //End block
         {
             {
-                boolean varC71AB6B6C1F08637A92809E0C58EC3AD_66781979 = ((parameters.getNeedClientAuth() && clientCert == null)
+                boolean varC71AB6B6C1F08637A92809E0C58EC3AD_143657239 = ((parameters.getNeedClientAuth() && clientCert == null)
                     || clientKeyExchange == null
                     || (clientCert != null
                             && !clientKeyExchange.isEmpty()

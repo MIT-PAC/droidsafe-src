@@ -20,24 +20,23 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
 public class CompatibilityInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.618 -0400", hash_original_field = "44CEE0DD1BE1998482D8262782403C60", hash_generated_field = "B4CB39B5E76E4F134AE9FD81F38E628C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.589 -0400", hash_original_field = "44CEE0DD1BE1998482D8262782403C60", hash_generated_field = "B4CB39B5E76E4F134AE9FD81F38E628C")
 
     private int mCompatibilityFlags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.618 -0400", hash_original_field = "CCF0FB9B0F263F71EE6018A478D4C5B2", hash_generated_field = "D4940D12226C2B60194AF35187704159")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.589 -0400", hash_original_field = "CCF0FB9B0F263F71EE6018A478D4C5B2", hash_generated_field = "D4940D12226C2B60194AF35187704159")
 
     public int applicationDensity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.618 -0400", hash_original_field = "1B0B3DCFB15C2ED0E188C58DDA8DD7CD", hash_generated_field = "14E3397589B948719667F1E3AF571289")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.589 -0400", hash_original_field = "1B0B3DCFB15C2ED0E188C58DDA8DD7CD", hash_generated_field = "14E3397589B948719667F1E3AF571289")
 
     public float applicationScale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.618 -0400", hash_original_field = "0C690E3EEBE7CF4097CF724C322C61E7", hash_generated_field = "FB16C6B90478FF3C6286ADC11FCB2FCF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.589 -0400", hash_original_field = "0C690E3EEBE7CF4097CF724C322C61E7", hash_generated_field = "FB16C6B90478FF3C6286ADC11FCB2FCF")
 
     public float applicationInvertedScale;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.677 -0400", hash_original_method = "9C59C0A19ADE82EBF59B39AA82601FD9", hash_generated_method = "32A03F91A666A26CF52466651E44C36F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.591 -0400", hash_original_method = "9C59C0A19ADE82EBF59B39AA82601FD9", hash_generated_method = "BF13824D7E101F7E39774FCD7D1136DA")
     public  CompatibilityInfo(ApplicationInfo appInfo, int screenLayout, int sw,
             boolean forceCompat) {
-        int compatFlags;
-        compatFlags = 0;
+        int compatFlags = 0;
         {
             int required;
             required = appInfo.requiresSmallestWidthDp;
@@ -51,8 +50,7 @@ public class CompatibilityInfo implements Parcelable {
             {
                 compat = required;
             } //End block
-            int largest;
-            largest = appInfo.largestWidthLimitDp;
+            int largest = appInfo.largestWidthLimitDp;
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
             } //End block
@@ -70,16 +68,11 @@ public class CompatibilityInfo implements Parcelable {
             applicationInvertedScale = 1.0f;
         } //End block
         {
-            int EXPANDABLE;
-            EXPANDABLE = 2;
-            int LARGE_SCREENS;
-            LARGE_SCREENS = 8;
-            int XLARGE_SCREENS;
-            XLARGE_SCREENS = 32;
-            int sizeInfo;
-            sizeInfo = 0;
-            boolean anyResizeable;
-            anyResizeable = false;
+            final int EXPANDABLE = 2;
+            final int LARGE_SCREENS = 8;
+            final int XLARGE_SCREENS = 32;
+            int sizeInfo = 0;
+            boolean anyResizeable = false;
             {
                 sizeInfo |= LARGE_SCREENS;
                 anyResizeable = true;
@@ -156,7 +149,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.685 -0400", hash_original_method = "A82321676D9C84B0538DAFB6CC61C0CB", hash_generated_method = "D97765B16CE7043641005CA614BC91BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.591 -0400", hash_original_method = "A82321676D9C84B0538DAFB6CC61C0CB", hash_generated_method = "D97765B16CE7043641005CA614BC91BD")
     private  CompatibilityInfo(int compFlags,
             int dens, float scale, float invertedScale) {
         mCompatibilityFlags = compFlags;
@@ -171,7 +164,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.686 -0400", hash_original_method = "3DDB26515D25880873E2C6C7F1DDA6F5", hash_generated_method = "A144E464C092FC9674C214597E793D47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.592 -0400", hash_original_method = "3DDB26515D25880873E2C6C7F1DDA6F5", hash_generated_method = "A144E464C092FC9674C214597E793D47")
     private  CompatibilityInfo() {
         this(NEVER_NEEDS_COMPAT, DisplayMetrics.DENSITY_DEVICE,
                 1.0f,
@@ -180,7 +173,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.704 -0400", hash_original_method = "B251F1B77EF355BF6FA118A826DF4F4A", hash_generated_method = "48F71F1044639FA67CF1237AD6C85A09")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.593 -0400", hash_original_method = "B251F1B77EF355BF6FA118A826DF4F4A", hash_generated_method = "48F71F1044639FA67CF1237AD6C85A09")
     private  CompatibilityInfo(Parcel source) {
         mCompatibilityFlags = source.readInt();
         applicationDensity = source.readInt();
@@ -194,57 +187,57 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.705 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "EE990A11570DD9E16B96440045A6AAF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.594 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "70CA2B42EAEB8864F1C1314241E5A455")
     public boolean isScalingRequired() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_459895161 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_459895161;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845227384 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845227384;
         // ---------- Original Method ----------
         //return (mCompatibilityFlags&SCALING_REQUIRED) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.706 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "AB2B3D5EDA0C3CAEF7E70EE0075A8FF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.594 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "830DE4E793977E4F3AEC3AA1EC102F6E")
     public boolean supportsScreen() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2126186317 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2126186317;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543645364 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1543645364;
         // ---------- Original Method ----------
         //return (mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.710 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "0502636C210AD506930E0D7B898DCD35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.595 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "371B886A7A9FE2BA8BC2400A5440EED3")
     public boolean neverSupportsScreen() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1408884135 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1408884135;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869638235 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869638235;
         // ---------- Original Method ----------
         //return (mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.711 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "1B46152A6929076F6E3F89EE623FED44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.595 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "1E7B3DDC4876956D2581A5F31E9635AD")
     public boolean alwaysSupportsScreen() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225460765 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_225460765;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529164691 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1529164691;
         // ---------- Original Method ----------
         //return (mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.717 -0400", hash_original_method = "93ABC602B8C8A6238860B5CA46099876", hash_generated_method = "ADC8584396D2CE67BEE426499D6DA4FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.596 -0400", hash_original_method = "93ABC602B8C8A6238860B5CA46099876", hash_generated_method = "02A47A6060397B693AD61532D30B8BC3")
     public Translator getTranslator() {
-        Translator varB4EAC82CA7396A68D541C85D26508E83_1844786966 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1844786966 = isScalingRequired() ? new Translator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1844786966.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1844786966;
+        Translator varB4EAC82CA7396A68D541C85D26508E83_1674455502 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1674455502 = isScalingRequired() ? new Translator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1674455502.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1674455502;
         // ---------- Original Method ----------
         //return isScalingRequired() ? new Translator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.749 -0400", hash_original_method = "F5DFBBE3DCF906040672C2B4A4880712", hash_generated_method = "CC0A6F00469F35630A0351B0C39C4280")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.597 -0400", hash_original_method = "F5DFBBE3DCF906040672C2B4A4880712", hash_generated_method = "0CDB511ACD99B96C0D604C78156E3D7C")
     public void applyToDisplayMetrics(DisplayMetrics inoutDm) {
         {
-            boolean varE7167D48931C006010D8B5CB5972BC1F_207062434 = (!supportsScreen());
+            boolean varE7167D48931C006010D8B5CB5972BC1F_2035723236 = (!supportsScreen());
             {
                 CompatibilityInfo.computeCompatibleScaling(inoutDm, inoutDm);
             } //End block
@@ -254,10 +247,9 @@ public class CompatibilityInfo implements Parcelable {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var99116A7FA4A89F4892D46EF5C786E5AD_1746955230 = (isScalingRequired());
+            boolean var99116A7FA4A89F4892D46EF5C786E5AD_1499802570 = (isScalingRequired());
             {
-                float invertedRatio;
-                invertedRatio = applicationInvertedScale;
+                float invertedRatio = applicationInvertedScale;
                 inoutDm.density = inoutDm.noncompatDensity * invertedRatio;
                 inoutDm.densityDpi = (int)((inoutDm.density*DisplayMetrics.DENSITY_DEFAULT)+.5f);
                 inoutDm.scaledDensity = inoutDm.noncompatScaledDensity * invertedRatio;
@@ -273,10 +265,10 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.759 -0400", hash_original_method = "D1D0A6DB2934A6F26FB8AACA9CE38F1E", hash_generated_method = "819387518D3BBEADA631E560369ED43C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.598 -0400", hash_original_method = "D1D0A6DB2934A6F26FB8AACA9CE38F1E", hash_generated_method = "2845E939AF9A229103E7150E762DD5C7")
     public void applyToConfiguration(Configuration inoutConfig) {
         {
-            boolean varE7167D48931C006010D8B5CB5972BC1F_1536244384 = (!supportsScreen());
+            boolean varE7167D48931C006010D8B5CB5972BC1F_528298746 = (!supportsScreen());
             {
                 inoutConfig.screenLayout =
                     (inoutConfig.screenLayout&~Configuration.SCREENLAYOUT_SIZE_MASK)
@@ -299,7 +291,7 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-        public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
+    public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
         final int width = dm.noncompatWidthPixels;
         final int height = dm.noncompatHeightPixels;
         int shortSize, longSize;
@@ -338,19 +330,18 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.772 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "9519AED73856F9828DE7A3DA417655CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.599 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "47E46D7E07C29CBB7B289D49BEF0F58D")
     @Override
     public boolean equals(Object o) {
         try 
         {
-            CompatibilityInfo oc;
-            oc = (CompatibilityInfo)o;
+            CompatibilityInfo oc = (CompatibilityInfo)o;
         } //End block
         catch (ClassCastException e)
         { }
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_646136003 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_646136003;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_356751627 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_356751627;
         // ---------- Original Method ----------
         //try {
             //CompatibilityInfo oc = (CompatibilityInfo)o;
@@ -365,17 +356,16 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.775 -0400", hash_original_method = "8391774F9F4D17C2A23793FA4442739E", hash_generated_method = "A91CD63BB2DE36B018B7A341914041BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.600 -0400", hash_original_method = "8391774F9F4D17C2A23793FA4442739E", hash_generated_method = "A3554F162D8CAABD2E522FCB996C64BE")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1256856854 = null; //Variable for return #1
-        StringBuilder sb;
-        sb = new StringBuilder(128);
+        String varB4EAC82CA7396A68D541C85D26508E83_236314581 = null; //Variable for return #1
+        StringBuilder sb = new StringBuilder(128);
         sb.append("{");
         sb.append(applicationDensity);
         sb.append("dpi");
         {
-            boolean var99116A7FA4A89F4892D46EF5C786E5AD_1212199870 = (isScalingRequired());
+            boolean var99116A7FA4A89F4892D46EF5C786E5AD_1641799738 = (isScalingRequired());
             {
                 sb.append(" ");
                 sb.append(applicationScale);
@@ -383,27 +373,27 @@ public class CompatibilityInfo implements Parcelable {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varE7167D48931C006010D8B5CB5972BC1F_1179680020 = (!supportsScreen());
+            boolean varE7167D48931C006010D8B5CB5972BC1F_1311130032 = (!supportsScreen());
             {
                 sb.append(" resizing");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varCA1EFE893AA8EA68DFD50ADCAC7E67DF_793877798 = (neverSupportsScreen());
+            boolean varCA1EFE893AA8EA68DFD50ADCAC7E67DF_2142377609 = (neverSupportsScreen());
             {
                 sb.append(" never-compat");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var8FD3A043FAF334062C55758AA955AB0F_1628455193 = (alwaysSupportsScreen());
+            boolean var8FD3A043FAF334062C55758AA955AB0F_2084795143 = (alwaysSupportsScreen());
             {
                 sb.append(" always-compat");
             } //End block
         } //End collapsed parenthetic
         sb.append("}");
-        varB4EAC82CA7396A68D541C85D26508E83_1256856854 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1256856854.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1256856854;
+        varB4EAC82CA7396A68D541C85D26508E83_236314581 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_236314581.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_236314581;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder(128);
         //sb.append("{");
@@ -428,17 +418,16 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.800 -0400", hash_original_method = "8473CF5A5DF2B74B5499D26C5398575D", hash_generated_method = "3C3941077B23C4633035DFBCF568BDCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.600 -0400", hash_original_method = "8473CF5A5DF2B74B5499D26C5398575D", hash_generated_method = "A3A67A34577FD326EF7FF09C1369BD65")
     @Override
     public int hashCode() {
-        int result;
-        result = 17;
+        int result = 17;
         result = 31 * result + mCompatibilityFlags;
         result = 31 * result + applicationDensity;
         result = 31 * result + Float.floatToIntBits(applicationScale);
         result = 31 * result + Float.floatToIntBits(applicationInvertedScale);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385147519 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385147519;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782533594 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782533594;
         // ---------- Original Method ----------
         //int result = 17;
         //result = 31 * result + mCompatibilityFlags;
@@ -449,17 +438,17 @@ public class CompatibilityInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.811 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CC6A85A8A1E3CAC152ADF7830A930B96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.601 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "03CC114A182804145E898D4EAA4A1407")
     @Override
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1291978467 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1291978467;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954851725 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954851725;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.812 -0400", hash_original_method = "FEB528FDE7329032F7938F1739557EEE", hash_generated_method = "44F0311BA66B4F20FAADDBCFA4181B07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_method = "FEB528FDE7329032F7938F1739557EEE", hash_generated_method = "44F0311BA66B4F20FAADDBCFA4181B07")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mCompatibilityFlags);
@@ -477,23 +466,23 @@ public class CompatibilityInfo implements Parcelable {
 
     
     public class Translator {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.814 -0400", hash_original_field = "1B0B3DCFB15C2ED0E188C58DDA8DD7CD", hash_generated_field = "14E3397589B948719667F1E3AF571289")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_field = "1B0B3DCFB15C2ED0E188C58DDA8DD7CD", hash_generated_field = "14E3397589B948719667F1E3AF571289")
 
         public float applicationScale;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.814 -0400", hash_original_field = "0C690E3EEBE7CF4097CF724C322C61E7", hash_generated_field = "FB16C6B90478FF3C6286ADC11FCB2FCF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_field = "0C690E3EEBE7CF4097CF724C322C61E7", hash_generated_field = "FB16C6B90478FF3C6286ADC11FCB2FCF")
 
         public float applicationInvertedScale;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.814 -0400", hash_original_field = "EDE06AC5C744684AABDC17E4C58048FB", hash_generated_field = "C20DA98F4A08CF10BAA7142D933BD66B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_field = "EDE06AC5C744684AABDC17E4C58048FB", hash_generated_field = "C20DA98F4A08CF10BAA7142D933BD66B")
 
         private Rect mContentInsetsBuffer = null;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.814 -0400", hash_original_field = "BC4262CACB99DE79E24A559425160C3D", hash_generated_field = "1C9F92E30D2ADEA2CAAF0B834CACAAC8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_field = "BC4262CACB99DE79E24A559425160C3D", hash_generated_field = "1C9F92E30D2ADEA2CAAF0B834CACAAC8")
 
         private Rect mVisibleInsetsBuffer = null;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.814 -0400", hash_original_field = "5DA8752760AFEE3A011AA2DEFA9D2F09", hash_generated_field = "971A29021FD305F495522776D9E154AB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_field = "5DA8752760AFEE3A011AA2DEFA9D2F09", hash_generated_field = "971A29021FD305F495522776D9E154AB")
 
         private Region mTouchableAreaBuffer = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.816 -0400", hash_original_method = "8F3615DA11565DF9F003F5DF13D87652", hash_generated_method = "0C0DC721E724DDCFF11BBA0EA3D0F318")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.603 -0400", hash_original_method = "8F3615DA11565DF9F003F5DF13D87652", hash_generated_method = "0C0DC721E724DDCFF11BBA0EA3D0F318")
           Translator(float applicationScale, float applicationInvertedScale) {
             this.applicationScale = applicationScale;
             this.applicationInvertedScale = applicationInvertedScale;
@@ -503,7 +492,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.817 -0400", hash_original_method = "AAEFB3B2AA6A68EC0C613C02DA13C765", hash_generated_method = "B80EA47BCFE059FE1DCE31F0C84B8FFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.604 -0400", hash_original_method = "AAEFB3B2AA6A68EC0C613C02DA13C765", hash_generated_method = "B80EA47BCFE059FE1DCE31F0C84B8FFA")
           Translator() {
             this(CompatibilityInfo.this.applicationScale,
                     CompatibilityInfo.this.applicationInvertedScale);
@@ -511,7 +500,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.833 -0400", hash_original_method = "36CC389463C4EECA1FFAD848C8F58415", hash_generated_method = "6A95F75DF2FA2A3157C2E7AFCD6A3196")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.605 -0400", hash_original_method = "36CC389463C4EECA1FFAD848C8F58415", hash_generated_method = "6A95F75DF2FA2A3157C2E7AFCD6A3196")
         public void translateRectInScreenToAppWinFrame(Rect rect) {
             rect.scale(applicationInvertedScale);
             addTaint(rect.getTaint());
@@ -520,7 +509,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.834 -0400", hash_original_method = "0A49DDBACE394A9C82B87775AA7B8808", hash_generated_method = "6A7314117C8269CDEA9C55F128F0FA9A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.606 -0400", hash_original_method = "0A49DDBACE394A9C82B87775AA7B8808", hash_generated_method = "6A7314117C8269CDEA9C55F128F0FA9A")
         public void translateRegionInWindowToScreen(Region transparentRegion) {
             transparentRegion.scale(applicationScale);
             addTaint(transparentRegion.getTaint());
@@ -529,11 +518,10 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.835 -0400", hash_original_method = "F6C04E9988D3236CD1A288419E980857", hash_generated_method = "9C89197DD97C52F9ECBE4CBB9AB42D8D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.607 -0400", hash_original_method = "F6C04E9988D3236CD1A288419E980857", hash_generated_method = "3101E2ED252AFB581831A237877648E7")
         public void translateCanvas(Canvas canvas) {
             {
-                float tinyOffset;
-                tinyOffset = 2.0f / (3 * 255);
+                final float tinyOffset = 2.0f / (3 * 255);
                 canvas.translate(tinyOffset, tinyOffset);
             } //End block
             canvas.scale(applicationScale, applicationScale);
@@ -547,7 +535,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.847 -0400", hash_original_method = "4D5FCD5F9907EB8D629A45C5A11C2836", hash_generated_method = "6CC0903C2B98DAE3F8446802376C4BA3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.608 -0400", hash_original_method = "4D5FCD5F9907EB8D629A45C5A11C2836", hash_generated_method = "6CC0903C2B98DAE3F8446802376C4BA3")
         public void translateEventInScreenToAppWindow(MotionEvent event) {
             event.scale(applicationInvertedScale);
             addTaint(event.getTaint());
@@ -556,7 +544,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.848 -0400", hash_original_method = "DE018C3EFE6320C8CBFF22F7586A6AFE", hash_generated_method = "356F781F7177FCAAA0744976DB7DE008")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.608 -0400", hash_original_method = "DE018C3EFE6320C8CBFF22F7586A6AFE", hash_generated_method = "356F781F7177FCAAA0744976DB7DE008")
         public void translateWindowLayout(WindowManager.LayoutParams params) {
             params.scale(applicationScale);
             addTaint(params.getTaint());
@@ -565,7 +553,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.849 -0400", hash_original_method = "657A8C506709C2AB2507FE170E8B78C8", hash_generated_method = "36FA054FF09E8D512AD131218F319098")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.609 -0400", hash_original_method = "657A8C506709C2AB2507FE170E8B78C8", hash_generated_method = "36FA054FF09E8D512AD131218F319098")
         public void translateRectInAppWindowToScreen(Rect rect) {
             rect.scale(applicationScale);
             addTaint(rect.getTaint());
@@ -574,7 +562,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.849 -0400", hash_original_method = "5BBB001295BC7F6BF111AF6DC66C9205", hash_generated_method = "91B5CF534CFE3D622E1E0379580CB483")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.609 -0400", hash_original_method = "5BBB001295BC7F6BF111AF6DC66C9205", hash_generated_method = "91B5CF534CFE3D622E1E0379580CB483")
         public void translateRectInScreenToAppWindow(Rect rect) {
             rect.scale(applicationInvertedScale);
             addTaint(rect.getTaint());
@@ -583,10 +571,9 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.865 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "19DCED688543C8E1B7300FC3C7CB5A8B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.610 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "86A292F07A183A4B8325053620DD8134")
         public void translatePointInScreenToAppWindow(PointF point) {
-            float scale;
-            scale = applicationInvertedScale;
+            final float scale = applicationInvertedScale;
             {
                 point.x *= scale;
                 point.y *= scale;
@@ -601,7 +588,7 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.867 -0400", hash_original_method = "122ACDBA22A4D3B6B9E93FB00E1FAEC7", hash_generated_method = "D9FA42D278E92F5C1AD5CE1913C17798")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.610 -0400", hash_original_method = "122ACDBA22A4D3B6B9E93FB00E1FAEC7", hash_generated_method = "D9FA42D278E92F5C1AD5CE1913C17798")
         public void translateLayoutParamsInAppWindowToScreen(LayoutParams params) {
             params.scale(applicationScale);
             addTaint(params.getTaint());
@@ -610,16 +597,16 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.868 -0400", hash_original_method = "43D8C9F45845A6C6CC10427CCFCFAF3D", hash_generated_method = "9D87EC76F9882D05D60088A9D9ACEA3A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.611 -0400", hash_original_method = "43D8C9F45845A6C6CC10427CCFCFAF3D", hash_generated_method = "9FDD1CAEED339ACD61088CF451E4786B")
         public Rect getTranslatedContentInsets(Rect contentInsets) {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_871910378 = null; //Variable for return #1
+            Rect varB4EAC82CA7396A68D541C85D26508E83_648497983 = null; //Variable for return #1
             mContentInsetsBuffer = new Rect();
             mContentInsetsBuffer.set(contentInsets);
             translateRectInAppWindowToScreen(mContentInsetsBuffer);
-            varB4EAC82CA7396A68D541C85D26508E83_871910378 = mContentInsetsBuffer;
+            varB4EAC82CA7396A68D541C85D26508E83_648497983 = mContentInsetsBuffer;
             addTaint(contentInsets.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_871910378.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_871910378;
+            varB4EAC82CA7396A68D541C85D26508E83_648497983.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_648497983;
             // ---------- Original Method ----------
             //if (mContentInsetsBuffer == null) mContentInsetsBuffer = new Rect();
             //mContentInsetsBuffer.set(contentInsets);
@@ -628,16 +615,16 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.885 -0400", hash_original_method = "DB46A5AF3015676AE668EB7338A074FC", hash_generated_method = "F14729052C223E0E7F1CF2B78D28A3D1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.612 -0400", hash_original_method = "DB46A5AF3015676AE668EB7338A074FC", hash_generated_method = "AD6F77A606835D6469E64A3B875A562B")
         public Rect getTranslatedVisibleInsets(Rect visibleInsets) {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_2088427444 = null; //Variable for return #1
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1994812217 = null; //Variable for return #1
             mVisibleInsetsBuffer = new Rect();
             mVisibleInsetsBuffer.set(visibleInsets);
             translateRectInAppWindowToScreen(mVisibleInsetsBuffer);
-            varB4EAC82CA7396A68D541C85D26508E83_2088427444 = mVisibleInsetsBuffer;
+            varB4EAC82CA7396A68D541C85D26508E83_1994812217 = mVisibleInsetsBuffer;
             addTaint(visibleInsets.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2088427444.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2088427444;
+            varB4EAC82CA7396A68D541C85D26508E83_1994812217.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1994812217;
             // ---------- Original Method ----------
             //if (mVisibleInsetsBuffer == null) mVisibleInsetsBuffer = new Rect();
             //mVisibleInsetsBuffer.set(visibleInsets);
@@ -646,16 +633,16 @@ public class CompatibilityInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.890 -0400", hash_original_method = "25CFF327B78CA768A3AFCA299ED2CC8E", hash_generated_method = "9FE95DA20162302970334EB8D67597AC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_method = "25CFF327B78CA768A3AFCA299ED2CC8E", hash_generated_method = "EC5D2DFDF7138B2365E661DDDB4CFB85")
         public Region getTranslatedTouchableArea(Region touchableArea) {
-            Region varB4EAC82CA7396A68D541C85D26508E83_283846991 = null; //Variable for return #1
+            Region varB4EAC82CA7396A68D541C85D26508E83_1455694077 = null; //Variable for return #1
             mTouchableAreaBuffer = new Region();
             mTouchableAreaBuffer.set(touchableArea);
             mTouchableAreaBuffer.scale(applicationScale);
-            varB4EAC82CA7396A68D541C85D26508E83_283846991 = mTouchableAreaBuffer;
+            varB4EAC82CA7396A68D541C85D26508E83_1455694077 = mTouchableAreaBuffer;
             addTaint(touchableArea.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_283846991.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_283846991;
+            varB4EAC82CA7396A68D541C85D26508E83_1455694077.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1455694077;
             // ---------- Original Method ----------
             //if (mTouchableAreaBuffer == null) mTouchableAreaBuffer = new Region();
             //mTouchableAreaBuffer.set(touchableArea);
@@ -668,29 +655,29 @@ public class CompatibilityInfo implements Parcelable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.890 -0400", hash_original_field = "4D62768B5BBBA187A77A708A4E42824A", hash_generated_field = "08F5AA372944765B46BC517FBE4DAD3A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_field = "4D62768B5BBBA187A77A708A4E42824A", hash_generated_field = "08F5AA372944765B46BC517FBE4DAD3A")
 
     public static final CompatibilityInfo DEFAULT_COMPATIBILITY_INFO = new CompatibilityInfo() {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.890 -0400", hash_original_field = "451C361316AB4D2AB8C1A0D4C769C245", hash_generated_field = "55912B57605F0907923E81814B30C0CE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_field = "451C361316AB4D2AB8C1A0D4C769C245", hash_generated_field = "55912B57605F0907923E81814B30C0CE")
 
     public static final int DEFAULT_NORMAL_SHORT_DIMENSION = 320;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.890 -0400", hash_original_field = "E26C22452B88ED3FAEB17AF976663C39", hash_generated_field = "8D1764CCB355F9E44B73ECAF9C0E1A67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_field = "E26C22452B88ED3FAEB17AF976663C39", hash_generated_field = "8D1764CCB355F9E44B73ECAF9C0E1A67")
 
     public static final float MAXIMUM_ASPECT_RATIO = (854f/480f);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.890 -0400", hash_original_field = "C28A801344B818D09042B9E76A19DD97", hash_generated_field = "B09C1324679AC4320442901B091A839D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_field = "C28A801344B818D09042B9E76A19DD97", hash_generated_field = "FE8F3097DE77D4A5968EA9E99511671D")
 
-    private static int SCALING_REQUIRED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.891 -0400", hash_original_field = "E39F8903903FD6713DF47E8D72A99A0F", hash_generated_field = "25197CB34B6D91DC93A2310CB6AB64C4")
+    private static final int SCALING_REQUIRED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_field = "E39F8903903FD6713DF47E8D72A99A0F", hash_generated_field = "783C1B480AFA79751F1953AF0C3E699E")
 
-    private static int ALWAYS_NEEDS_COMPAT = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.891 -0400", hash_original_field = "A1252321239230719F04378EA51B60DD", hash_generated_field = "8A8DB12BF9B04D84EEFE98E343EAE171")
+    private static final int ALWAYS_NEEDS_COMPAT = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.615 -0400", hash_original_field = "A1252321239230719F04378EA51B60DD", hash_generated_field = "E0E953FF12F7A9AC5E30F9487F011934")
 
-    private static int NEVER_NEEDS_COMPAT = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.891 -0400", hash_original_field = "12E72E73A3200A46C182FE5A62237016", hash_generated_field = "84E6D1E1561A620FC0E2D237B7651E76")
+    private static final int NEVER_NEEDS_COMPAT = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.615 -0400", hash_original_field = "12E72E73A3200A46C182FE5A62237016", hash_generated_field = "BAA6E0AAF402CD0959A7E08540FA5CC3")
 
-    private static int NEEDS_SCREEN_COMPAT = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.891 -0400", hash_original_field = "22851AF58516589EBC6294DD83CB7F2D", hash_generated_field = "DDAA02554421F72326F350E7F40CEA00")
+    private static final int NEEDS_SCREEN_COMPAT = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.615 -0400", hash_original_field = "22851AF58516589EBC6294DD83CB7F2D", hash_generated_field = "DDAA02554421F72326F350E7F40CEA00")
 
     public static final Parcelable.Creator<CompatibilityInfo> CREATOR
             = new Parcelable.Creator<CompatibilityInfo>() {
@@ -702,5 +689,15 @@ public class CompatibilityInfo implements Parcelable {
             return new CompatibilityInfo[size];
         }
     };
+    // orphaned legacy method
+    public CompatibilityInfo createFromParcel(Parcel source) {
+            return new CompatibilityInfo(source);
+        }
+    
+    // orphaned legacy method
+    public CompatibilityInfo[] newArray(int size) {
+            return new CompatibilityInfo[size];
+        }
+    
 }
 

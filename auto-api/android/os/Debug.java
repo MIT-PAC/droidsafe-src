@@ -32,13 +32,13 @@ import dalvik.system.VMDebug;
 
 public final class Debug {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.353 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.113 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
     private  Debug() {
         // ---------- Original Method ----------
     }
 
     
-        public static void waitForDebugger() {
+    public static void waitForDebugger() {
         if (!VMDebug.isDebuggingEnabled()) {
             return;
         }
@@ -73,27 +73,27 @@ public final class Debug {
     }
 
     
-        public static boolean waitingForDebugger() {
+    public static boolean waitingForDebugger() {
         return mWaiting;
     }
 
     
-        public static boolean isDebuggerConnected() {
+    public static boolean isDebuggerConnected() {
         return VMDebug.isDebuggerConnected();
     }
 
     
-        public static String[] getVmFeatureList() {
+    public static String[] getVmFeatureList() {
         return VMDebug.getVmFeatureList();
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void changeDebugPort(int port) {
     }
 
     
-        public static void startNativeTracing() {
+    public static void startNativeTracing() {
         PrintWriter outStream = null;
         try {
             FileOutputStream fos = new FileOutputStream(SYSFS_QEMU_TRACE_STATE);
@@ -108,7 +108,7 @@ public final class Debug {
     }
 
     
-        public static void stopNativeTracing() {
+    public static void stopNativeTracing() {
         VMDebug.stopEmulatorTracing();
         PrintWriter outStream = null;
         try {
@@ -123,27 +123,27 @@ public final class Debug {
     }
 
     
-        public static void enableEmulatorTraceOutput() {
+    public static void enableEmulatorTraceOutput() {
         VMDebug.startEmulatorTracing();
     }
 
     
-        public static void startMethodTracing() {
+    public static void startMethodTracing() {
         VMDebug.startMethodTracing(DEFAULT_TRACE_FILE_PATH, 0, 0);
     }
 
     
-        public static void startMethodTracing(String traceName) {
+    public static void startMethodTracing(String traceName) {
         startMethodTracing(traceName, 0, 0);
     }
 
     
-        public static void startMethodTracing(String traceName, int bufferSize) {
+    public static void startMethodTracing(String traceName, int bufferSize) {
         startMethodTracing(traceName, bufferSize, 0);
     }
 
     
-        public static void startMethodTracing(String traceName, int bufferSize,
+    public static void startMethodTracing(String traceName, int bufferSize,
         int flags) {
         String pathName = traceName;
         if (pathName.charAt(0) != '/')
@@ -154,328 +154,328 @@ public final class Debug {
     }
 
     
-        public static void startMethodTracing(String traceName, FileDescriptor fd,
+    public static void startMethodTracing(String traceName, FileDescriptor fd,
         int bufferSize, int flags) {
         VMDebug.startMethodTracing(traceName, fd, bufferSize, flags);
     }
 
     
-        public static void startMethodTracingDdms(int bufferSize, int flags) {
+    public static void startMethodTracingDdms(int bufferSize, int flags) {
         VMDebug.startMethodTracingDdms(bufferSize, flags);
     }
 
     
-        public static boolean isMethodTracingActive() {
+    public static boolean isMethodTracingActive() {
         return VMDebug.isMethodTracingActive();
     }
 
     
-        public static void stopMethodTracing() {
+    public static void stopMethodTracing() {
         VMDebug.stopMethodTracing();
     }
 
     
-        public static long threadCpuTimeNanos() {
+    public static long threadCpuTimeNanos() {
         return VMDebug.threadCpuTimeNanos();
     }
 
     
-        public static void startAllocCounting() {
+    public static void startAllocCounting() {
         VMDebug.startAllocCounting();
     }
 
     
-        public static void stopAllocCounting() {
+    public static void stopAllocCounting() {
         VMDebug.stopAllocCounting();
     }
 
     
-        public static int getGlobalAllocCount() {
+    public static int getGlobalAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
-        public static int getGlobalAllocSize() {
+    public static int getGlobalAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
-        public static int getGlobalFreedCount() {
+    public static int getGlobalFreedCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
-        public static int getGlobalFreedSize() {
+    public static int getGlobalFreedSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
-        public static int getGlobalClassInitCount() {
+    public static int getGlobalClassInitCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
-        public static int getGlobalClassInitTime() {
+    public static int getGlobalClassInitTime() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getGlobalExternalAllocCount() {
         return 0;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getGlobalExternalAllocSize() {
         return 0;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getGlobalExternalFreedCount() {
         return 0;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getGlobalExternalFreedSize() {
         return 0;
     }
 
     
-        public static int getGlobalGcInvocationCount() {
+    public static int getGlobalGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
-        public static int getThreadAllocCount() {
+    public static int getThreadAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
-        public static int getThreadAllocSize() {
+    public static int getThreadAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getThreadExternalAllocCount() {
         return 0;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int getThreadExternalAllocSize() {
         return 0;
     }
 
     
-        public static int getThreadGcInvocationCount() {
+    public static int getThreadGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
-        public static void resetGlobalAllocCount() {
+    public static void resetGlobalAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
-        public static void resetGlobalAllocSize() {
+    public static void resetGlobalAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
-        public static void resetGlobalFreedCount() {
+    public static void resetGlobalFreedCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
-        public static void resetGlobalFreedSize() {
+    public static void resetGlobalFreedSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
-        public static void resetGlobalClassInitCount() {
+    public static void resetGlobalClassInitCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
-        public static void resetGlobalClassInitTime() {
+    public static void resetGlobalClassInitTime() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetGlobalExternalAllocCount() {
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetGlobalExternalAllocSize() {
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetGlobalExternalFreedCount() {
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetGlobalExternalFreedSize() {
     }
 
     
-        public static void resetGlobalGcInvocationCount() {
+    public static void resetGlobalGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
-        public static void resetThreadAllocCount() {
+    public static void resetThreadAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
-        public static void resetThreadAllocSize() {
+    public static void resetThreadAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetThreadExternalAllocCount() {
     }
 
     
-        @Deprecated
+    @Deprecated
     public static void resetThreadExternalAllocSize() {
     }
 
     
-        public static void resetThreadGcInvocationCount() {
+    public static void resetThreadGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
-        public static void resetAllCounts() {
+    public static void resetAllCounts() {
         VMDebug.resetAllocCount(VMDebug.KIND_ALL_COUNTS);
     }
 
     
-        public static long getNativeHeapSize() {
+    public static long getNativeHeapSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
-        public static long getNativeHeapAllocatedSize() {
+    public static long getNativeHeapAllocatedSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
-        public static long getNativeHeapFreeSize() {
+    public static long getNativeHeapFreeSize() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
-        public static void getMemoryInfo(MemoryInfo memoryInfo) {
+    public static void getMemoryInfo(MemoryInfo memoryInfo) {
     }
 
     
-        public static void getMemoryInfo(int pid, MemoryInfo memoryInfo) {
+    public static void getMemoryInfo(int pid, MemoryInfo memoryInfo) {
     }
 
     
-        public static long getPss() {
+    public static long getPss() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
-        public static long getPss(int pid) {
+    public static long getPss(int pid) {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
 
     
-        public static void printLoadedClasses(int flags) {
+    public static void printLoadedClasses(int flags) {
         VMDebug.printLoadedClasses(flags);
     }
 
     
-        public static int getLoadedClassCount() {
+    public static int getLoadedClassCount() {
         return VMDebug.getLoadedClassCount();
     }
 
     
-        public static void dumpHprofData(String fileName) throws IOException {
+    public static void dumpHprofData(String fileName) throws IOException {
         VMDebug.dumpHprofData(fileName);
     }
 
     
-        public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
+    public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
         VMDebug.dumpHprofData(fileName, fd);
     }
 
     
-        public static void dumpHprofDataDdms() {
+    public static void dumpHprofDataDdms() {
         VMDebug.dumpHprofDataDdms();
     }
 
     
-        public static void dumpNativeHeap(FileDescriptor fd) {
+    public static void dumpNativeHeap(FileDescriptor fd) {
     }
 
     
-        public static long countInstancesOfClass(Class cls) {
+    public static long countInstancesOfClass(Class cls) {
         return VMDebug.countInstancesOfClass(cls, true);
     }
 
     
-        public static int getBinderSentTransactions() {
+    public static int getBinderSentTransactions() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        public static int getBinderReceivedTransactions() {
+    public static int getBinderReceivedTransactions() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        public static final int getBinderLocalObjectCount() {
+    public static final int getBinderLocalObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        public static final int getBinderProxyObjectCount() {
+    public static final int getBinderProxyObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        public static final int getBinderDeathObjectCount() {
+    public static final int getBinderDeathObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        public static final boolean cacheRegisterMap(String classAndMethodDesc) {
+    public static final boolean cacheRegisterMap(String classAndMethodDesc) {
         return VMDebug.cacheRegisterMap(classAndMethodDesc);
     }
 
     
-        public static final void dumpReferenceTables() {
+    public static final void dumpReferenceTables() {
         VMDebug.dumpReferenceTables();
     }
 
     
-        private static boolean fieldTypeMatches(Field field, Class<?> cl) {
+    private static boolean fieldTypeMatches(Field field, Class<?> cl) {
         Class<?> fieldClass = field.getType();
         if (fieldClass == cl) {
             return true;
@@ -494,7 +494,7 @@ public final class Debug {
     }
 
     
-        private static void modifyFieldIfSet(final Field field, final TypedProperties properties,
+    private static void modifyFieldIfSet(final Field field, final TypedProperties properties,
                                          final String propertyName) {
         if (field.getType() == java.lang.String.class) {
             int stringInfo = properties.getStringInfo(propertyName);
@@ -538,12 +538,12 @@ public final class Debug {
     }
 
     
-        public static void setFieldsOn(Class<?> cl) {
+    public static void setFieldsOn(Class<?> cl) {
         setFieldsOn(cl, false);
     }
 
     
-        public static void setFieldsOn(Class<?> cl, boolean partial) {
+    public static void setFieldsOn(Class<?> cl, boolean partial) {
         if (false) {
             if (debugProperties != null) {
                 for (Field field : cl.getDeclaredFields()) {
@@ -567,7 +567,7 @@ public final class Debug {
     }
 
     
-        public static boolean dumpService(String name, FileDescriptor fd, String[] args) {
+    public static boolean dumpService(String name, FileDescriptor fd, String[] args) {
         IBinder service = ServiceManager.getService(name);
         if (service == null) {
             Log.e(TAG, "Can't find service to dump: " + name);
@@ -584,44 +584,44 @@ public final class Debug {
 
     
     public static class MemoryInfo implements Parcelable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "98F66450AF89756BF87E5534AF9C2D14", hash_generated_field = "E77238136A622AAF0ED6F3D37CC9FF1B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "98F66450AF89756BF87E5534AF9C2D14", hash_generated_field = "E77238136A622AAF0ED6F3D37CC9FF1B")
 
         public int dalvikPss;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "D117EB7A88750B2C70A349D466EDF86F", hash_generated_field = "33D4311D6A9BBFAAB58E541DF2012236")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "D117EB7A88750B2C70A349D466EDF86F", hash_generated_field = "33D4311D6A9BBFAAB58E541DF2012236")
 
         public int dalvikPrivateDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "7C822238FD7387C5F0D3D5DEB4AA81EB", hash_generated_field = "FDF5E4BB072D7AF9419CF36E0FA9A95B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "7C822238FD7387C5F0D3D5DEB4AA81EB", hash_generated_field = "FDF5E4BB072D7AF9419CF36E0FA9A95B")
 
         public int dalvikSharedDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "F8B66B2C470DA886438BC1C88E717188", hash_generated_field = "2194949D909E3886F365A0CE92ABB11F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "F8B66B2C470DA886438BC1C88E717188", hash_generated_field = "2194949D909E3886F365A0CE92ABB11F")
 
         public int nativePss;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "24B0F5F7005C3E0702B1B1A3867EB212", hash_generated_field = "4151FDAF6831E5A1C9C7BB75F9F0334B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "24B0F5F7005C3E0702B1B1A3867EB212", hash_generated_field = "4151FDAF6831E5A1C9C7BB75F9F0334B")
 
         public int nativePrivateDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "D1CB36069DE3437D33ECCFCD3F8B5158", hash_generated_field = "D69D6BF47BFFE8E073898562793D15D0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "D1CB36069DE3437D33ECCFCD3F8B5158", hash_generated_field = "D69D6BF47BFFE8E073898562793D15D0")
 
         public int nativeSharedDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "84A56FF37A661935BFA6B1178AF6D789", hash_generated_field = "42B6A257B6E0D4C33EACAEEDCBD9EE83")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.124 -0400", hash_original_field = "84A56FF37A661935BFA6B1178AF6D789", hash_generated_field = "42B6A257B6E0D4C33EACAEEDCBD9EE83")
 
         public int otherPss;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "36DDF3065ED47973B6FE3282029B788E", hash_generated_field = "1AC34AC5DA50ED2DC11E013FB382AEA4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_field = "36DDF3065ED47973B6FE3282029B788E", hash_generated_field = "1AC34AC5DA50ED2DC11E013FB382AEA4")
 
         public int otherPrivateDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "CAD58A3AC1CD7BF569CC56D2DACD1615", hash_generated_field = "C380E10B138C6974D039AFFA2B3E8984")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_field = "CAD58A3AC1CD7BF569CC56D2DACD1615", hash_generated_field = "C380E10B138C6974D039AFFA2B3E8984")
 
         public int otherSharedDirty;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.468 -0400", hash_original_field = "13BBA968AF776979CA7FF4A4111A4F4B", hash_generated_field = "A5B0CBFEF61DBB07B6E8C5D2F1ECFDA9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_field = "13BBA968AF776979CA7FF4A4111A4F4B", hash_generated_field = "A5B0CBFEF61DBB07B6E8C5D2F1ECFDA9")
 
         private int[] otherStats = new int[NUM_OTHER_STATS*3];
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.469 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         public  MemoryInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.469 -0400", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "D931D7EDEB60DF8546056BCA530CF0B7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "D931D7EDEB60DF8546056BCA530CF0B7")
         private  MemoryInfo(Parcel source) {
             readFromParcel(source);
             addTaint(source.getTaint());
@@ -630,64 +630,64 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.494 -0400", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "8DE7E9A94BAC5498FD7A85E2E67B93A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.126 -0400", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "2A9B4359E63769F5AB7C40C5BD61B797")
         public int getTotalPss() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724309370 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724309370;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973116109 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973116109;
             // ---------- Original Method ----------
             //return dalvikPss + nativePss + otherPss;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.494 -0400", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "01D354EE7F585984E0BA2A823113663C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.126 -0400", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "B116089C543746CDAD3FF2F45D0941C1")
         public int getTotalPrivateDirty() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1043270742 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1043270742;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216688076 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216688076;
             // ---------- Original Method ----------
             //return dalvikPrivateDirty + nativePrivateDirty + otherPrivateDirty;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.495 -0400", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "F81D573593F1BCF1FFD2507B31C28E2E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.127 -0400", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "06D7EA76AA488C9740D24BDF8BD949E4")
         public int getTotalSharedDirty() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575197838 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575197838;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662059289 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662059289;
             // ---------- Original Method ----------
             //return dalvikSharedDirty + nativeSharedDirty + otherSharedDirty;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.496 -0400", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "47A81B30AEB4518348074622FAA80597")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.128 -0400", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "3C0406FDFD081F72CA6ACD2CFC49935F")
         public int getOtherPss(int which) {
             addTaint(which);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771593053 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771593053;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828136260 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828136260;
             // ---------- Original Method ----------
             //return otherStats[which*3];
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.497 -0400", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "134CD7158C5E038D9B84E0D97C124F88")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.129 -0400", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "A14282199098D4FE0ACE3976DDA9AE97")
         public int getOtherPrivateDirty(int which) {
             addTaint(which);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328541569 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328541569;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005166789 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005166789;
             // ---------- Original Method ----------
             //return otherStats[which*3 + 1];
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.504 -0400", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "882B2E1148F0C253FF53725B36FECD6B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.129 -0400", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "77348A605B71BB848DF7B1D4AD95DC58")
         public int getOtherSharedDirty(int which) {
             addTaint(which);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965500867 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965500867;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497052032 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497052032;
             // ---------- Original Method ----------
             //return otherStats[which*3 + 2];
         }
 
         
-                public static String getOtherLabel(int which) {
+        public static String getOtherLabel(int which) {
             switch (which) {
                 case 0: return "Cursor";
                 case 1: return "Ashmem";
@@ -703,16 +703,16 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.525 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C28F435524A2B12606BD7E3442A12EB0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.130 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6A5D1839CC8F35D3219B61FDF83030B0")
         public int describeContents() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693266631 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693266631;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685100035 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685100035;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.529 -0400", hash_original_method = "D2FBA6C4AE93947F6ACE85B65AE77863", hash_generated_method = "58E5F4BC78D246E1A417BA89DDADE908")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.130 -0400", hash_original_method = "D2FBA6C4AE93947F6ACE85B65AE77863", hash_generated_method = "58E5F4BC78D246E1A417BA89DDADE908")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(dalvikPss);
             dest.writeInt(dalvikPrivateDirty);
@@ -740,7 +740,7 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.544 -0400", hash_original_method = "3814E1A02C58284E12D5ED0E53DE29C9", hash_generated_method = "B59CAD56B8683A7B77C9659536173B0C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.130 -0400", hash_original_method = "3814E1A02C58284E12D5ED0E53DE29C9", hash_generated_method = "B59CAD56B8683A7B77C9659536173B0C")
         public void readFromParcel(Parcel source) {
             dalvikPss = source.readInt();
             dalvikPrivateDirty = source.readInt();
@@ -766,10 +766,10 @@ public final class Debug {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.545 -0400", hash_original_field = "A7D745E9E0F1052F6E18CD9A2B2917F8", hash_generated_field = "BE882405B287754DCA85D85E2C8781E8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.131 -0400", hash_original_field = "A7D745E9E0F1052F6E18CD9A2B2917F8", hash_generated_field = "BE882405B287754DCA85D85E2C8781E8")
 
         public static final int NUM_OTHER_STATS = 9;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.545 -0400", hash_original_field = "7B937244499DDD6DE8E8DD078A54CA42", hash_generated_field = "8D5A5BE61EBADDE649E9CD81EA9451BA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.131 -0400", hash_original_field = "7B937244499DDD6DE8E8DD078A54CA42", hash_generated_field = "8D5A5BE61EBADDE649E9CD81EA9451BA")
 
         public static final Creator<MemoryInfo> CREATOR = new Creator<MemoryInfo>() {
             public MemoryInfo createFromParcel(Parcel source) {
@@ -779,16 +779,26 @@ public final class Debug {
                 return new MemoryInfo[size];
             }
         };
+        // orphaned legacy method
+        public MemoryInfo createFromParcel(Parcel source) {
+                return new MemoryInfo(source);
+            }
+        
+        // orphaned legacy method
+        public MemoryInfo[] newArray(int size) {
+                return new MemoryInfo[size];
+            }
+        
     }
 
 
     
     public static class InstructionCount {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.545 -0400", hash_original_field = "E557F1D7AD6097F5E5BDCA59960FF307", hash_generated_field = "49E4B6FD194C81A543C4A6FC8DB4D611")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.131 -0400", hash_original_field = "E557F1D7AD6097F5E5BDCA59960FF307", hash_generated_field = "49E4B6FD194C81A543C4A6FC8DB4D611")
 
         private int[] mCounts;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.547 -0400", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "5D14DE560AC6781B6BEDE1D45CC48926")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.131 -0400", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "5D14DE560AC6781B6BEDE1D45CC48926")
         public  InstructionCount() {
             mCounts = new int[NUM_INSTR];
             // ---------- Original Method ----------
@@ -796,7 +806,7 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.566 -0400", hash_original_method = "B55CA2C4A856CEE2241376D780EDBADA", hash_generated_method = "A3C7D64C86C5B6F99F7B2BA7D75CD27B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.132 -0400", hash_original_method = "B55CA2C4A856CEE2241376D780EDBADA", hash_generated_method = "C9E309CCAF7CDC760DBB056275EDCDB8")
         public boolean resetAndStart() {
             try 
             {
@@ -805,8 +815,8 @@ public final class Debug {
             } //End block
             catch (UnsupportedOperationException uoe)
             { }
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894454161 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_894454161;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528418029 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_528418029;
             // ---------- Original Method ----------
             //try {
                 //VMDebug.startInstructionCounting();
@@ -818,7 +828,7 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.574 -0400", hash_original_method = "5FCC8E6F7C9E5A23FBCB0A1615F5BC2D", hash_generated_method = "DB5805BA4DE50C0FFB087F2BAF1BF35E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.132 -0400", hash_original_method = "5FCC8E6F7C9E5A23FBCB0A1615F5BC2D", hash_generated_method = "1A6FC1E14159B5FF21BB2B812BCB5FA4")
         public boolean collect() {
             try 
             {
@@ -827,8 +837,8 @@ public final class Debug {
             } //End block
             catch (UnsupportedOperationException uoe)
             { }
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098225531 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098225531;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787934188 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_787934188;
             // ---------- Original Method ----------
             //try {
                 //VMDebug.stopInstructionCounting();
@@ -840,19 +850,17 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.575 -0400", hash_original_method = "51D086FA18F9CD076FA7BBB430E7197D", hash_generated_method = "41FEB64E66ADCF1AE0169502498B2EE3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.132 -0400", hash_original_method = "51D086FA18F9CD076FA7BBB430E7197D", hash_generated_method = "25A1A882B579067A716EF84F71EED978")
         public int globalTotal() {
-            int count;
-            count = 0;
+            int count = 0;
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     count += mCounts[i];
                 } //End block
             } //End collapsed parenthetic
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97084730 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97084730;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857030832 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857030832;
             // ---------- Original Method ----------
             //int count = 0;
             //for (int i = 0; i < NUM_INSTR; i++) {
@@ -862,24 +870,22 @@ public final class Debug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.580 -0400", hash_original_method = "6746067FD45AAE4025CD0901FF5AA3FC", hash_generated_method = "66B5F09FB9FCD1E0FEEE4AF9B0345F83")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_method = "6746067FD45AAE4025CD0901FF5AA3FC", hash_generated_method = "EEC1BD4ADD70D777EFDB223EBF13D45B")
         public int globalMethodInvocations() {
-            int count;
-            count = 0;
+            int count = 0;
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     {
-                        boolean varFAC684486A37EF13CBC51E3B4F00C0A2_2024288044 = (OpcodeInfo.isInvoke(i));
+                        boolean varFAC684486A37EF13CBC51E3B4F00C0A2_1181691854 = (OpcodeInfo.isInvoke(i));
                         {
                             count += mCounts[i];
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718514719 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718514719;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742044153 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742044153;
             // ---------- Original Method ----------
             //int count = 0;
             //for (int i = 0; i < NUM_INSTR; i++) {
@@ -891,9 +897,9 @@ public final class Debug {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "C4113EEC14DE24FCA999D07EA7F5D23D", hash_generated_field = "54D2E7D8CF4D0AFB6C4D44E4FC0DAFA1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "C4113EEC14DE24FCA999D07EA7F5D23D", hash_generated_field = "7A22C579A39E22551B4E74531C1864CF")
 
-        private static int NUM_INSTR = OpcodeInfo.MAXIMUM_PACKED_VALUE + 1;
+        private static final int NUM_INSTR = OpcodeInfo.MAXIMUM_PACKED_VALUE + 1;
     }
 
 
@@ -901,47 +907,47 @@ public final class Debug {
     @Target({ ElementType.FIELD }) @Retention(RetentionPolicy.RUNTIME) public @interface DebugProperty {
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "9E36A4C8BD9B422B45787FFC15A494EE", hash_generated_field = "B61264F741E49E296A9E7DCD957872E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "9E36A4C8BD9B422B45787FFC15A494EE", hash_generated_field = "389377F3F689781EB2D3F49236B9D2AF")
 
-    private static String TAG = "Debug";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "4340C9C9DE44B97AB33F05A304C04EFB", hash_generated_field = "10D28A5A9C48BBAA5DC8C2CB09A08B6D")
+    private static final String TAG = "Debug";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "4340C9C9DE44B97AB33F05A304C04EFB", hash_generated_field = "10D28A5A9C48BBAA5DC8C2CB09A08B6D")
 
     public static final int TRACE_COUNT_ALLOCS  = VMDebug.TRACE_COUNT_ALLOCS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "696FDC3AE925D9EB3A110EE74F35D757", hash_generated_field = "E63C1BEA9E5320C4CDD4B43587127B9C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "696FDC3AE925D9EB3A110EE74F35D757", hash_generated_field = "E63C1BEA9E5320C4CDD4B43587127B9C")
 
     public static final int SHOW_FULL_DETAIL    = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "A1362AEC18849AC49CC4247F1F4867AE", hash_generated_field = "9415B3064505E8BD5A92127E1C805476")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "A1362AEC18849AC49CC4247F1F4867AE", hash_generated_field = "9415B3064505E8BD5A92127E1C805476")
 
     public static final int SHOW_CLASSLOADER    = (1 << 1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "2F4155F1E93B23E964C53B9305CFCB1A", hash_generated_field = "E4385EA72DE6689F6653D4026B310DF2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "2F4155F1E93B23E964C53B9305CFCB1A", hash_generated_field = "E4385EA72DE6689F6653D4026B310DF2")
 
     public static final int SHOW_INITIALIZED    = (1 << 2);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "AD47794642B39ECB9B97CC950218E8E2", hash_generated_field = "64A21F9D05164630E7E61CDF96B7B8A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "AD47794642B39ECB9B97CC950218E8E2", hash_generated_field = "64A21F9D05164630E7E61CDF96B7B8A7")
 
     private static volatile boolean mWaiting = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "6C41C63888C6F8E1FF45C21735253BA8", hash_generated_field = "34FDC43D6E0F63208D978EF182C605F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "6C41C63888C6F8E1FF45C21735253BA8", hash_generated_field = "66B43CE3763349D2B54EA8982B2006D9")
 
-    private static int MIN_DEBUGGER_IDLE = 1300;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.583 -0400", hash_original_field = "8947596A92B354F905D0FD9CA0B55D90", hash_generated_field = "0B12AA7AFF1665DBD4134AFBDDDA340A")
+    private static final int MIN_DEBUGGER_IDLE = 1300;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "8947596A92B354F905D0FD9CA0B55D90", hash_generated_field = "01843DCAA5DD4EB19923FD34C60C5424")
 
-    private static int SPIN_DELAY = 200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "4E0C979BEAD545B03C9A256D740DABD5", hash_generated_field = "1B9F6F9DC0D080F278A676AEE10E2B70")
+    private static final int SPIN_DELAY = 200;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "4E0C979BEAD545B03C9A256D740DABD5", hash_generated_field = "06907C49898C9C46B0EB6E4FBDDBC5A1")
 
-    private static String DEFAULT_TRACE_PATH_PREFIX = Environment.getExternalStorageDirectory().getPath() + "/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "4F384F48D31A685D10CD9C73AA452B96", hash_generated_field = "51DFC0F7025177B79937AA2712BB7A94")
+    private static final String DEFAULT_TRACE_PATH_PREFIX = Environment.getExternalStorageDirectory().getPath() + "/";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "4F384F48D31A685D10CD9C73AA452B96", hash_generated_field = "30AB7EECF814DF81F2966E19E130C077")
 
-    private static String DEFAULT_TRACE_BODY = "dmtrace";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "71BE63DD030BB669E5CD222B2A1A338F", hash_generated_field = "FBCDF1EFDEAAF1E31A3B4EC33D7455AA")
+    private static final String DEFAULT_TRACE_BODY = "dmtrace";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "71BE63DD030BB669E5CD222B2A1A338F", hash_generated_field = "ED4CA4EE9F56B6F19C6999554694B9A9")
 
-    private static String DEFAULT_TRACE_EXTENSION = ".trace";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "ACB1E2DA49F7FC5D19642CA21798D3A7", hash_generated_field = "336B3E33BEE6A82A6188E2A6DFD5621E")
+    private static final String DEFAULT_TRACE_EXTENSION = ".trace";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "ACB1E2DA49F7FC5D19642CA21798D3A7", hash_generated_field = "AB39124180A027611E9E95F06D056ADD")
 
-    private static String DEFAULT_TRACE_FILE_PATH = DEFAULT_TRACE_PATH_PREFIX + DEFAULT_TRACE_BODY
+    private static final String DEFAULT_TRACE_FILE_PATH = DEFAULT_TRACE_PATH_PREFIX + DEFAULT_TRACE_BODY
         + DEFAULT_TRACE_EXTENSION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "BA40AC77017B679DAD47CCC41D9A135F", hash_generated_field = "F78AC6A548214765BD1C600A48D6295C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "BA40AC77017B679DAD47CCC41D9A135F", hash_generated_field = "C5F5DE18A5A9896FF8DDF8699243F549")
 
-    private static String SYSFS_QEMU_TRACE_STATE = "/sys/qemu_trace/state";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.584 -0400", hash_original_field = "B06FC31B3377E5E92FEEC081DD714041", hash_generated_field = "922B1BD051CFB951F0D00B5AB192FF0F")
+    private static final String SYSFS_QEMU_TRACE_STATE = "/sys/qemu_trace/state";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.133 -0400", hash_original_field = "B06FC31B3377E5E92FEEC081DD714041", hash_generated_field = "922B1BD051CFB951F0D00B5AB192FF0F")
 
     private static TypedProperties debugProperties;
     static {

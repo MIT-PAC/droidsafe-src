@@ -18,47 +18,47 @@ import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
 public abstract class BaseSurfaceHolder implements SurfaceHolder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "5B2965AE5247A9A1234D4FDCDF03BACD", hash_generated_field = "DAD5B9AEA76C8FEEB47BD2ED52F068FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "5B2965AE5247A9A1234D4FDCDF03BACD", hash_generated_field = "E2B111E4E2AF9D070F427E06A59175AE")
 
-    public ArrayList<SurfaceHolder.Callback> mCallbacks = new ArrayList<SurfaceHolder.Callback>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "CB3592545E4E8601CEB2C87E04ACA3C8", hash_generated_field = "767D60A6E3C8EEF6EF9A0A1954F0A20E")
+    public final ArrayList<SurfaceHolder.Callback> mCallbacks = new ArrayList<SurfaceHolder.Callback>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "CB3592545E4E8601CEB2C87E04ACA3C8", hash_generated_field = "767D60A6E3C8EEF6EF9A0A1954F0A20E")
 
     SurfaceHolder.Callback[] mGottenCallbacks;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "CE33D374F2ECCAA50E236A8A9FFC4D4A", hash_generated_field = "AF697DFEEDD2FFAC42B82ED08BC1177F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "CE33D374F2ECCAA50E236A8A9FFC4D4A", hash_generated_field = "AF697DFEEDD2FFAC42B82ED08BC1177F")
 
     boolean mHaveGottenCallbacks;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "52392AFCA83FA6F6A2B3A89B48CC1408", hash_generated_field = "593BD5F967ACB75D5BFC0F7CDB6A5A31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "52392AFCA83FA6F6A2B3A89B48CC1408", hash_generated_field = "75EFD538893F5DD13B0AD54DB0DA969B")
 
-    public ReentrantLock mSurfaceLock = new ReentrantLock();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "41551392C18EC9CD321667F2791AD52A", hash_generated_field = "1AC64A6B091D59168F964952F2A6F53B")
+    public final ReentrantLock mSurfaceLock = new ReentrantLock();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "41551392C18EC9CD321667F2791AD52A", hash_generated_field = "1AC64A6B091D59168F964952F2A6F53B")
 
     public Surface mSurface = new Surface();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "8A5806C480FF6E75927A4F1D6AFC8E5D", hash_generated_field = "F9EC238B16254BED53BCBCEFBD6EF45D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "8A5806C480FF6E75927A4F1D6AFC8E5D", hash_generated_field = "F9EC238B16254BED53BCBCEFBD6EF45D")
 
     int mRequestedWidth = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.204 -0400", hash_original_field = "62C4EF08A7A4B3F04161E6472DF8ACF1", hash_generated_field = "C329ECB2BC7D94AC739801F768FE2BE6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "62C4EF08A7A4B3F04161E6472DF8ACF1", hash_generated_field = "C329ECB2BC7D94AC739801F768FE2BE6")
 
     int mRequestedHeight = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "FC2891F47AE8C369C7217A6DCFB264B1", hash_generated_field = "BE1DBBDAE20148CACEDA6DF736D8CA2E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "FC2891F47AE8C369C7217A6DCFB264B1", hash_generated_field = "BE1DBBDAE20148CACEDA6DF736D8CA2E")
 
     protected int mRequestedFormat = PixelFormat.OPAQUE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "1A329DE391B524BAC042F5A1B7CD3367", hash_generated_field = "65788EBA442CE964EE645934A86AEABE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.114 -0400", hash_original_field = "1A329DE391B524BAC042F5A1B7CD3367", hash_generated_field = "65788EBA442CE964EE645934A86AEABE")
 
     int mRequestedType = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "D42022960F60B4E9A38A4C00D0651E27", hash_generated_field = "0FB69CE58A9B36474A3E521462C289A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.115 -0400", hash_original_field = "D42022960F60B4E9A38A4C00D0651E27", hash_generated_field = "0FB69CE58A9B36474A3E521462C289A0")
 
     long mLastLockTime = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "7EC2C3003126A3993EB506D83DE073E3", hash_generated_field = "DE07B82DC42B56613109CDBFD4F50C15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.115 -0400", hash_original_field = "7EC2C3003126A3993EB506D83DE073E3", hash_generated_field = "DE07B82DC42B56613109CDBFD4F50C15")
 
     int mType = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "430EE1EE1C2CEA5C342BF8D9010C8AB2", hash_generated_field = "F621A8E01339D28C0B8365EF1B47521B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.115 -0400", hash_original_field = "430EE1EE1C2CEA5C342BF8D9010C8AB2", hash_generated_field = "5FF70CE962F22D930D1FDE55775FEDAE")
 
-    Rect mSurfaceFrame = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_field = "EE99E1DF5AAD9573B58AE4256DDE7025", hash_generated_field = "0C3E6D0D62BE6C4E33545B05306C722E")
+    final Rect mSurfaceFrame = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.115 -0400", hash_original_field = "EE99E1DF5AAD9573B58AE4256DDE7025", hash_generated_field = "0C3E6D0D62BE6C4E33545B05306C722E")
 
     Rect mTmpDirty;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.205 -0400", hash_original_method = "65236AFB54FAB65BD2FC1C8CD2966A75", hash_generated_method = "65236AFB54FAB65BD2FC1C8CD2966A75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.115 -0400", hash_original_method = "65236AFB54FAB65BD2FC1C8CD2966A75", hash_generated_method = "65236AFB54FAB65BD2FC1C8CD2966A75")
     public BaseSurfaceHolder ()
     {
         //Synthesized constructor
@@ -74,47 +74,47 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     public abstract boolean onAllowLockCanvas();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.206 -0400", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "961EC3DC8F11762A4F7073E30EC5BA0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.116 -0400", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "90487B388ABAFC360F3BCAA7386FBA86")
     public int getRequestedWidth() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960658755 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960658755;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806339609 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806339609;
         // ---------- Original Method ----------
         //return mRequestedWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.206 -0400", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "2EE51EAD374CF43B114CE9BD0BE5CECE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.116 -0400", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "8874E2AEA35AC3D41271624763741770")
     public int getRequestedHeight() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540557893 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540557893;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1460876303 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1460876303;
         // ---------- Original Method ----------
         //return mRequestedHeight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.206 -0400", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "A35F5AE803F54E534947B13632273F11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.116 -0400", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "5D8561A54DF63CEF6125358D3C11EB4D")
     public int getRequestedFormat() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007368888 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007368888;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821517321 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821517321;
         // ---------- Original Method ----------
         //return mRequestedFormat;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.206 -0400", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "0EBE0244137EB5E4AED2AF18890C513E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.117 -0400", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "BF4ECB9FE03C9CAF14D3144E370AF34E")
     public int getRequestedType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958077427 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958077427;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1109176824 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1109176824;
         // ---------- Original Method ----------
         //return mRequestedType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.211 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "FFD6200C5ACBE670628BA9CD8F993DCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.117 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "359AF1C4B3FC1CAE0A6A54E9AB5C014D")
     public void addCallback(Callback callback) {
         {
             {
-                boolean var79298CC453B6F7A4BA249985464ED319_125785796 = (mCallbacks.contains(callback) == false);
+                boolean var79298CC453B6F7A4BA249985464ED319_757785080 = (mCallbacks.contains(callback) == false);
                 {
                     mCallbacks.add(callback);
                 } //End block
@@ -130,7 +130,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.212 -0400", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "DB035C8CD46FF3BDF3B8256D88449CEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.117 -0400", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "DB035C8CD46FF3BDF3B8256D88449CEF")
     public void removeCallback(Callback callback) {
         {
             mCallbacks.remove(callback);
@@ -143,16 +143,15 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.229 -0400", hash_original_method = "2E153784742E80414EA6460F2018158D", hash_generated_method = "366E74307375BD3462CF7FC499E794E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.118 -0400", hash_original_method = "2E153784742E80414EA6460F2018158D", hash_generated_method = "42A547F2C0619495D27B4EAF52FB44FC")
     public SurfaceHolder.Callback[] getCallbacks() {
-        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_1443990343 = null; //Variable for return #1
-        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_57889290 = null; //Variable for return #2
+        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_1018052243 = null; //Variable for return #1
+        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_661145861 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1443990343 = mGottenCallbacks;
+            varB4EAC82CA7396A68D541C85D26508E83_1018052243 = mGottenCallbacks;
         } //End block
         {
-            int N;
-            N = mCallbacks.size();
+            final int N = mCallbacks.size();
             {
                 {
                     mGottenCallbacks = new SurfaceHolder.Callback[N];
@@ -164,18 +163,18 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
             } //End block
             mHaveGottenCallbacks = true;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_57889290 = mGottenCallbacks;
-        SurfaceHolder.Callback[] varA7E53CE21691AB073D9660D615818899_1462422212; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_661145861 = mGottenCallbacks;
+        SurfaceHolder.Callback[] varA7E53CE21691AB073D9660D615818899_296078296; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1462422212 = varB4EAC82CA7396A68D541C85D26508E83_1443990343;
+                varA7E53CE21691AB073D9660D615818899_296078296 = varB4EAC82CA7396A68D541C85D26508E83_1018052243;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1462422212 = varB4EAC82CA7396A68D541C85D26508E83_57889290;
+                varA7E53CE21691AB073D9660D615818899_296078296 = varB4EAC82CA7396A68D541C85D26508E83_661145861;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1462422212.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1462422212;
+        varA7E53CE21691AB073D9660D615818899_296078296.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_296078296;
         // ---------- Original Method ----------
         //if (mHaveGottenCallbacks) {
             //return mGottenCallbacks;
@@ -196,7 +195,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.229 -0400", hash_original_method = "B038D0F820D93ACBDF8182E2BE5C1116", hash_generated_method = "B4DB9781FDECFBFCC3D06A75C53FB30C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.119 -0400", hash_original_method = "B038D0F820D93ACBDF8182E2BE5C1116", hash_generated_method = "B4DB9781FDECFBFCC3D06A75C53FB30C")
     public void ungetCallbacks() {
         mHaveGottenCallbacks = false;
         // ---------- Original Method ----------
@@ -204,7 +203,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.229 -0400", hash_original_method = "00011C38E6EC925AC8838B7EF1A5974E", hash_generated_method = "0528B810B6A42837976DB925182A1716")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.120 -0400", hash_original_method = "00011C38E6EC925AC8838B7EF1A5974E", hash_generated_method = "0528B810B6A42837976DB925182A1716")
     public void setFixedSize(int width, int height) {
         {
             mRequestedWidth = width;
@@ -220,7 +219,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.230 -0400", hash_original_method = "3FBBAABB359B15ECFE32A5B65108D82E", hash_generated_method = "D23D2D70A4076C4419E92C588649BD99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.122 -0400", hash_original_method = "3FBBAABB359B15ECFE32A5B65108D82E", hash_generated_method = "D23D2D70A4076C4419E92C588649BD99")
     public void setSizeFromLayout() {
         {
             mRequestedWidth = mRequestedHeight = -1;
@@ -234,7 +233,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.230 -0400", hash_original_method = "FD1656C90E0BF9DD59BF1C1951F6D90A", hash_generated_method = "63C253D5078CA68DA1265329990C086C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.123 -0400", hash_original_method = "FD1656C90E0BF9DD59BF1C1951F6D90A", hash_generated_method = "63C253D5078CA68DA1265329990C086C")
     public void setFormat(int format) {
         {
             mRequestedFormat = format;
@@ -248,7 +247,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.231 -0400", hash_original_method = "EAFF612A3F1F2919ED355687F3DB192A", hash_generated_method = "A0000F602262D806B6DDF7A25977B31F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.124 -0400", hash_original_method = "EAFF612A3F1F2919ED355687F3DB192A", hash_generated_method = "A0000F602262D806B6DDF7A25977B31F")
     public void setType(int type) {
         //Begin case SURFACE_TYPE_HARDWARE SURFACE_TYPE_GPU 
         type = SURFACE_TYPE_NORMAL;
@@ -278,42 +277,41 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.231 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "B3063DA918F61AC78E37ABAC353356C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.125 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "3D49F63E6AD1C2313266A4636026F177")
     public Canvas lockCanvas() {
-        Canvas varB4EAC82CA7396A68D541C85D26508E83_2100671831 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2100671831 = internalLockCanvas(null);
-        varB4EAC82CA7396A68D541C85D26508E83_2100671831.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2100671831;
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_1876537202 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1876537202 = internalLockCanvas(null);
+        varB4EAC82CA7396A68D541C85D26508E83_1876537202.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1876537202;
         // ---------- Original Method ----------
         //return internalLockCanvas(null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.238 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "9BEFB4F61E43C0EDEB5AA1B0801875B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.126 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "5B753A8E0A6D553811DF2A1B358788AE")
     public Canvas lockCanvas(Rect dirty) {
-        Canvas varB4EAC82CA7396A68D541C85D26508E83_784030763 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_784030763 = internalLockCanvas(dirty);
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_1268423512 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1268423512 = internalLockCanvas(dirty);
         addTaint(dirty.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_784030763.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_784030763;
+        varB4EAC82CA7396A68D541C85D26508E83_1268423512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1268423512;
         // ---------- Original Method ----------
         //return internalLockCanvas(dirty);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.243 -0400", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "88B6E5338F9CF1A3D6378AEE5C684453")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.127 -0400", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "D961A0ED9FED0827FEF36CBF22A85E4E")
     private final Canvas internalLockCanvas(Rect dirty) {
-        Canvas varB4EAC82CA7396A68D541C85D26508E83_818410159 = null; //Variable for return #1
-        Canvas varB4EAC82CA7396A68D541C85D26508E83_1283772545 = null; //Variable for return #2
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_14753994 = null; //Variable for return #1
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_1012586562 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new BadSurfaceTypeException(
                     "Surface type is SURFACE_TYPE_PUSH_BUFFERS");
         } //End block
         mSurfaceLock.lock();
-        Canvas c;
-        c = null;
+        Canvas c = null;
         {
-            boolean var43C0ADBD79E0A1490425EC9B0C1E3110_333053601 = (onAllowLockCanvas());
+            boolean var43C0ADBD79E0A1490425EC9B0C1E3110_320136619 = (onAllowLockCanvas());
             {
                 {
                     {
@@ -332,12 +330,10 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
         } //End collapsed parenthetic
         {
             mLastLockTime = SystemClock.uptimeMillis();
-            varB4EAC82CA7396A68D541C85D26508E83_818410159 = c;
+            varB4EAC82CA7396A68D541C85D26508E83_14753994 = c;
         } //End block
-        long now;
-        now = SystemClock.uptimeMillis();
-        long nextTime;
-        nextTime = mLastLockTime + 100;
+        long now = SystemClock.uptimeMillis();
+        long nextTime = mLastLockTime + 100;
         {
             try 
             {
@@ -349,25 +345,25 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
         } //End block
         mLastLockTime = now;
         mSurfaceLock.unlock();
-        varB4EAC82CA7396A68D541C85D26508E83_1283772545 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1012586562 = null;
         addTaint(dirty.getTaint());
-        Canvas varA7E53CE21691AB073D9660D615818899_1588742789; //Final return value
+        Canvas varA7E53CE21691AB073D9660D615818899_2064311796; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1588742789 = varB4EAC82CA7396A68D541C85D26508E83_818410159;
+                varA7E53CE21691AB073D9660D615818899_2064311796 = varB4EAC82CA7396A68D541C85D26508E83_14753994;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1588742789 = varB4EAC82CA7396A68D541C85D26508E83_1283772545;
+                varA7E53CE21691AB073D9660D615818899_2064311796 = varB4EAC82CA7396A68D541C85D26508E83_1012586562;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1588742789.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1588742789;
+        varA7E53CE21691AB073D9660D615818899_2064311796.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2064311796;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.247 -0400", hash_original_method = "94198D6DEEC3932A7E8E0C313FB26861", hash_generated_method = "DF654BF347DD18B3ED2B0613B73B292C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.127 -0400", hash_original_method = "94198D6DEEC3932A7E8E0C313FB26861", hash_generated_method = "DF654BF347DD18B3ED2B0613B73B292C")
     public void unlockCanvasAndPost(Canvas canvas) {
         mSurface.unlockCanvasAndPost(canvas);
         mSurfaceLock.unlock();
@@ -378,29 +374,29 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.251 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "485ADABFDE4B9494DF7A968476C4258A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.128 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "79D888470AA926AD86D3EC6268809772")
     public Surface getSurface() {
-        Surface varB4EAC82CA7396A68D541C85D26508E83_227209240 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_227209240 = mSurface;
-        varB4EAC82CA7396A68D541C85D26508E83_227209240.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_227209240;
+        Surface varB4EAC82CA7396A68D541C85D26508E83_1759742916 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1759742916 = mSurface;
+        varB4EAC82CA7396A68D541C85D26508E83_1759742916.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1759742916;
         // ---------- Original Method ----------
         //return mSurface;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.252 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "4D514CEED0520ED7161A4FF79EEFFE33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.129 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "D81BBC0C6573503E610A08BCEF6DCB6F")
     public Rect getSurfaceFrame() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_590761117 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_590761117 = mSurfaceFrame;
-        varB4EAC82CA7396A68D541C85D26508E83_590761117.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_590761117;
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1453863897 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1453863897 = mSurfaceFrame;
+        varB4EAC82CA7396A68D541C85D26508E83_1453863897.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1453863897;
         // ---------- Original Method ----------
         //return mSurfaceFrame;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.252 -0400", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "3C164CF7F26EF369524BF1E8345A5299")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.129 -0400", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "3C164CF7F26EF369524BF1E8345A5299")
     public void setSurfaceFrameSize(int width, int height) {
         mSurfaceFrame.top = 0;
         mSurfaceFrame.left = 0;
@@ -414,11 +410,11 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.252 -0400", hash_original_field = "07DBC32137B9D5FFE392E2171940A81D", hash_generated_field = "CF7B63DD90334249074F02CC6CCA3555")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.129 -0400", hash_original_field = "07DBC32137B9D5FFE392E2171940A81D", hash_generated_field = "25EA1DB5DFEC23EE8B60521742AF8CB0")
 
-    private static String TAG = "BaseSurfaceHolder";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.252 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "99DFF1318F5BF79C590B7B00A696225C")
+    private static final String TAG = "BaseSurfaceHolder";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.129 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
 
-    static boolean DEBUG = false;
+    static final boolean DEBUG = false;
 }
 

@@ -15,22 +15,22 @@ import java.text.ParseException;
 
 public abstract class Parser extends ParserCore implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.507 -0400", hash_original_method = "42CBDDB53A445ABDFB908116E235FAA0", hash_generated_method = "42CBDDB53A445ABDFB908116E235FAA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.337 -0400", hash_original_method = "42CBDDB53A445ABDFB908116E235FAA0", hash_generated_method = "42CBDDB53A445ABDFB908116E235FAA0")
     public Parser ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.510 -0400", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "18F27F7EED6D00C3748F118A93A03A9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.341 -0400", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "EFC59F9259051B086D47F57BFB144916")
     protected ParseException createParseException(String exceptionString) {
-        ParseException varB4EAC82CA7396A68D541C85D26508E83_2055338616 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2055338616 = new ParseException(
+        ParseException varB4EAC82CA7396A68D541C85D26508E83_623872457 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_623872457 = new ParseException(
             lexer.getBuffer() + ":" + exceptionString,
             lexer.getPtr());
         addTaint(exceptionString.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2055338616.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2055338616;
+        varB4EAC82CA7396A68D541C85D26508E83_623872457.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_623872457;
         // ---------- Original Method ----------
         //return new ParseException(
             //lexer.getBuffer() + ":" + exceptionString,
@@ -38,43 +38,42 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.510 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "CB69EB7761ACBB5A325897EA90E16C38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.342 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "1E6EFC366BFB141EAEB2D21E694DB673")
     protected Lexer getLexer() {
-        Lexer varB4EAC82CA7396A68D541C85D26508E83_1301756485 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1301756485 = (Lexer) this.lexer;
-        varB4EAC82CA7396A68D541C85D26508E83_1301756485.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1301756485;
+        Lexer varB4EAC82CA7396A68D541C85D26508E83_450833309 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_450833309 = (Lexer) this.lexer;
+        varB4EAC82CA7396A68D541C85D26508E83_450833309.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_450833309;
         // ---------- Original Method ----------
         //return (Lexer) this.lexer;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.526 -0400", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "BC30CCBBE1D56641E9D30F2DF5CC0952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.343 -0400", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "9DDBD53FEE747F57AB7AE5E60B874EBA")
     protected String sipVersion() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1328628032 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_590999542 = null; //Variable for return #1
         dbg_enter("sipVersion");
         try 
         {
-            Token tok;
-            tok = lexer.match(SIP);
+            Token tok = lexer.match(SIP);
             {
-                boolean var81E5AA51CF3EF1FB1D8623A3AE83C759_774235152 = (!tok.getTokenValue().equalsIgnoreCase("SIP"));
+                boolean var81E5AA51CF3EF1FB1D8623A3AE83C759_390454665 = (!tok.getTokenValue().equalsIgnoreCase("SIP"));
                 createParseException("Expecting SIP");
             } //End collapsed parenthetic
             lexer.match('/');
             tok = lexer.match(ID);
             {
-                boolean var1B84A423A0AD24015522BC141F627B59_810509150 = (!tok.getTokenValue().equals("2.0"));
+                boolean var1B84A423A0AD24015522BC141F627B59_2092225870 = (!tok.getTokenValue().equals("2.0"));
                 createParseException("Expecting SIP/2.0");
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1328628032 = "SIP/2.0";
+            varB4EAC82CA7396A68D541C85D26508E83_590999542 = "SIP/2.0";
         } //End block
         finally 
         {
             dbg_leave("sipVersion");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1328628032.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1328628032;
+        varB4EAC82CA7396A68D541C85D26508E83_590999542.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_590999542;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("sipVersion");
@@ -94,18 +93,16 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.537 -0400", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "9C98167941984FA0287803335D526F28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.343 -0400", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "5B3A8F8025303E2763D21E6C35AD12BF")
     protected String method() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_2058568845 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_733148960 = null; //Variable for return #1
         try 
         {
             dbg_enter("method");
-            Token[] tokens;
-            tokens = this.lexer.peekNextToken(1);
-            Token token;
-            token = (Token) tokens[0];
+            Token[] tokens = this.lexer.peekNextToken(1);
+            Token token = (Token) tokens[0];
             {
-                boolean varF3DFC17C4FCB76412ED072978359296F_971632307 = (token.getTokenType() == INVITE
+                boolean varF3DFC17C4FCB76412ED072978359296F_96748419 = (token.getTokenType() == INVITE
                 || token.getTokenType() == ACK
                 || token.getTokenType() == OPTIONS
                 || token.getTokenType() == BYE
@@ -118,7 +115,7 @@ public abstract class Parser extends ParserCore implements TokenTypes {
                 || token.getTokenType() == ID);
                 {
                     lexer.consume();
-                    varB4EAC82CA7396A68D541C85D26508E83_2058568845 = token.getTokenValue();
+                    varB4EAC82CA7396A68D541C85D26508E83_733148960 = token.getTokenValue();
                 } //End block
                 {
                     if (DroidSafeAndroidRuntime.control) throw createParseException("Invalid Method");
@@ -129,14 +126,14 @@ public abstract class Parser extends ParserCore implements TokenTypes {
         {
             dbg_leave("method");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2058568845.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2058568845;
+        varB4EAC82CA7396A68D541C85D26508E83_733148960.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_733148960;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        public static final void checkToken( String token ) throws ParseException {
+    public static final void checkToken( String token ) throws ParseException {
         if (token == null || token.length()==0 ) {
             throw new ParseException("null or empty token", -1 );
         } else {

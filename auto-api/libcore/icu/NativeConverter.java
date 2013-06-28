@@ -14,88 +14,98 @@ import java.nio.charset.CodingErrorAction;
 
 public final class NativeConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.687 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.968 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
     public NativeConverter ()
     {
         //Synthesized constructor
     }
 
 
-        public static int decode(long converterHandle, byte[] input, int inEnd,
+    public static int decode(long converterHandle, byte[] input, int inEnd,
             char[] output, int outEnd, int[] data, boolean flush) {
-        return DSUtils.UNKNOWN_INT;
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734718063 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734718063;
     }
 
     
-        public static int encode(long converterHandle, char[] input, int inEnd,
+    public static int encode(long converterHandle, char[] input, int inEnd,
             byte[] output, int outEnd, int[] data, boolean flush) {
-        return DSUtils.UNKNOWN_INT;
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482483034 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482483034;
     }
 
     
-        public static long openConverter(String encoding) {
-        return DSUtils.UNKNOWN_LONG;
+    public static long openConverter(String encoding) {
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736 = DSUtils.UNKNOWN_LONG;
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1093574736;
     }
 
     
-        public static void closeConverter(long converterHandle) {
+    public static void closeConverter(long converterHandle) {
     }
 
     
-        public static void resetByteToChar(long converterHandle) {
+    public static void resetByteToChar(long converterHandle) {
     }
 
     
-        public static void resetCharToByte(long converterHandle) {
+    public static void resetCharToByte(long converterHandle) {
     }
 
     
-        public static byte[] getSubstitutionBytes(long converterHandle) {
-        return {DSUtils.UNKNOWN_BYTE};
+    public static byte[] getSubstitutionBytes(long converterHandle) {
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128 = {DSUtils.UNKNOWN_BYTE};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_2075683128;
     }
 
     
-        public static int getMaxBytesPerChar(long converterHandle) {
-        return DSUtils.UNKNOWN_INT;
+    public static int getMaxBytesPerChar(long converterHandle) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485540835;
     }
 
     
-        public static int getMinBytesPerChar(long converterHandle) {
-        return DSUtils.UNKNOWN_INT;
+    public static int getMinBytesPerChar(long converterHandle) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295075292;
     }
 
     
-        public static float getAveBytesPerChar(long converterHandle) {
-        return DSUtils.UNKNOWN_FLOAT;
+    public static float getAveBytesPerChar(long converterHandle) {
+                float var546ADE640B6EDFBC8A086EF31347E768_65193943 = DSUtils.UNKNOWN_FLOAT;
+        return var546ADE640B6EDFBC8A086EF31347E768_65193943;
     }
 
     
-        public static float getAveCharsPerByte(long converterHandle) {
-        return DSUtils.UNKNOWN_FLOAT;
+    public static float getAveCharsPerByte(long converterHandle) {
+                float var546ADE640B6EDFBC8A086EF31347E768_293980650 = DSUtils.UNKNOWN_FLOAT;
+        return var546ADE640B6EDFBC8A086EF31347E768_293980650;
     }
 
     
-        public static boolean contains(String converterName1, String converterName2) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+    public static boolean contains(String converterName1, String converterName2) {
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740 = DSUtils.UNKNOWN_BOOLEAN;
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_181634740;
     }
 
     
-        public static boolean canEncode(long converterHandle, int codeUnit) {
-        return DSUtils.UNKNOWN_BOOLEAN;
+    public static boolean canEncode(long converterHandle, int codeUnit) {
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040 = DSUtils.UNKNOWN_BOOLEAN;
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751980040;
     }
 
     
-        public static String[] getAvailableCharsetNames() {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    public static String[] getAvailableCharsetNames() {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        public static Charset charsetForName(String charsetName) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    public static Charset charsetForName(String charsetName) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        private static int translateCodingErrorAction(CodingErrorAction action) {
+    private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
         } else if (action == CodingErrorAction.IGNORE) {
@@ -108,7 +118,7 @@ public final class NativeConverter {
     }
 
     
-        public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
+    public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
                 translateCodingErrorAction(decoder.unmappableCharacterAction()),
@@ -116,12 +126,13 @@ public final class NativeConverter {
     }
 
     
-        private static int setCallbackDecode(long converterHandle, int onMalformedInput, int onUnmappableInput, String subChars) {
-        return DSUtils.UNKNOWN_INT;
+    private static int setCallbackDecode(long converterHandle, int onMalformedInput, int onUnmappableInput, String subChars) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043;
     }
 
     
-        public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
+    public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),
                 translateCodingErrorAction(encoder.unmappableCharacterAction()),
@@ -129,8 +140,9 @@ public final class NativeConverter {
     }
 
     
-        private static int setCallbackEncode(long converterHandle, int onMalformedInput, int onUnmappableInput, byte[] subBytes) {
-        return DSUtils.UNKNOWN_INT;
+    private static int setCallbackEncode(long converterHandle, int onMalformedInput, int onUnmappableInput, byte[] subBytes) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89262015;
     }
 
     

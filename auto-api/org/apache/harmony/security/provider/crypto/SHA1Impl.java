@@ -10,14 +10,14 @@ import java.util.Iterator;
 
 public class SHA1Impl implements SHA1_Data {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.086 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.237 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
     public SHA1Impl ()
     {
         //Synthesized constructor
     }
 
 
-        static void computeHash(int[] arrW) {
+    static void computeHash(int[] arrW) {
         int  a = arrW[HASH_OFFSET   ];
         int  b = arrW[HASH_OFFSET +1];
         int  c = arrW[HASH_OFFSET +2];
@@ -71,7 +71,7 @@ public class SHA1Impl implements SHA1_Data {
     }
 
     
-        static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByte) {
+    static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByte) {
         int index = intArray[BYTES_OFFSET];
         int i = fromByte;
         int maxWord;

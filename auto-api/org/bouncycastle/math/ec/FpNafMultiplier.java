@@ -11,44 +11,37 @@ import java.math.BigInteger;
 
 class FpNafMultiplier implements ECMultiplier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.277 -0400", hash_original_method = "BABE471E2E455F4576B9B6A994FEF2CC", hash_generated_method = "BABE471E2E455F4576B9B6A994FEF2CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.649 -0400", hash_original_method = "BABE471E2E455F4576B9B6A994FEF2CC", hash_generated_method = "BABE471E2E455F4576B9B6A994FEF2CC")
     public FpNafMultiplier ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.287 -0400", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "769DFE74E79235F94703EE0EBEF1C9CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.653 -0400", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "19BC9734E24D51EA12651CD091CE7AE6")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_447094753 = null; //Variable for return #1
-        BigInteger e;
-        e = k;
-        BigInteger h;
-        h = e.multiply(BigInteger.valueOf(3));
-        ECPoint neg;
-        neg = p.negate();
-        ECPoint R;
-        R = p;
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_1572823871 = null; //Variable for return #1
+        BigInteger e = k;
+        BigInteger h = e.multiply(BigInteger.valueOf(3));
+        ECPoint neg = p.negate();
+        ECPoint R = p;
         {
-            int i;
-            i = h.bitLength() - 2;
+            int i = h.bitLength() - 2;
             {
                 R = R.twice();
-                boolean hBit;
-                hBit = h.testBit(i);
-                boolean eBit;
-                eBit = e.testBit(i);
+                boolean hBit = h.testBit(i);
+                boolean eBit = e.testBit(i);
                 {
                     R = R.add(hBit ? p : neg);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_447094753 = R;
+        varB4EAC82CA7396A68D541C85D26508E83_1572823871 = R;
         addTaint(p.getTaint());
         addTaint(k.getTaint());
         addTaint(preCompInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_447094753.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_447094753;
+        varB4EAC82CA7396A68D541C85D26508E83_1572823871.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1572823871;
         // ---------- Original Method ----------
         //BigInteger e = k;
         //BigInteger h = e.multiply(BigInteger.valueOf(3));

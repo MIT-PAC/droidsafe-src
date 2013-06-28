@@ -10,41 +10,41 @@ import java.util.Iterator;
 import com.android.internal.telephony.IccCardStatus.PinState;
 
 public class IccCardApplication {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "DAFA1D6A0E85051DEC222617BBED6E45", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "DAFA1D6A0E85051DEC222617BBED6E45", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
 
     public AppType app_type;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "35F1F75D96553093953B906A3299C59A", hash_generated_field = "D6FD5E302DD93A741A4A2C8F944FB4B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "35F1F75D96553093953B906A3299C59A", hash_generated_field = "D6FD5E302DD93A741A4A2C8F944FB4B8")
 
     public AppState app_state;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "726B1EC6734D8EB97CF6E86F6C9DD0C2", hash_generated_field = "F6947369300AACC14A8C15A941199F8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "726B1EC6734D8EB97CF6E86F6C9DD0C2", hash_generated_field = "F6947369300AACC14A8C15A941199F8B")
 
     public PersoSubState perso_substate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "B99EB09924D437DBD445A146AF8C210A", hash_generated_field = "69AACDBD897395F7281C96A5B387BF26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "B99EB09924D437DBD445A146AF8C210A", hash_generated_field = "69AACDBD897395F7281C96A5B387BF26")
 
     public String aid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "95833BB66C8FB79A2DFA3C51CB822FFA", hash_generated_field = "303AB67C284933C802A1515B0E391E83")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "95833BB66C8FB79A2DFA3C51CB822FFA", hash_generated_field = "303AB67C284933C802A1515B0E391E83")
 
     public String app_label;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "AA99B1E544B90BA3C452F9B48F9AE2C2", hash_generated_field = "59893490E117577C680150A765F6F72D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "AA99B1E544B90BA3C452F9B48F9AE2C2", hash_generated_field = "59893490E117577C680150A765F6F72D")
 
     public int pin1_replaced;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "7C1890779D5DDA9BBB157EB3AFCFDB26", hash_generated_field = "7F505812D44B04DDE37A77ABBF13CD96")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "7C1890779D5DDA9BBB157EB3AFCFDB26", hash_generated_field = "7F505812D44B04DDE37A77ABBF13CD96")
 
     public PinState pin1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_field = "1CE8F9C8C598A33E655651C0899EF7BC", hash_generated_field = "63EED535159D554E4C526C446FD3803B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_field = "1CE8F9C8C598A33E655651C0899EF7BC", hash_generated_field = "63EED535159D554E4C526C446FD3803B")
 
     public PinState pin2;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.346 -0400", hash_original_method = "988872E45A8DACD07B268FFABAB213D3", hash_generated_method = "988872E45A8DACD07B268FFABAB213D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.787 -0400", hash_original_method = "988872E45A8DACD07B268FFABAB213D3", hash_generated_method = "988872E45A8DACD07B268FFABAB213D3")
     public IccCardApplication ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.351 -0400", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "0019A2BBA4E8DFE7D75A3F88859FF4C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.789 -0400", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "4C8EBD5BE2B857B361F76F17190A89CA")
      AppType AppTypeFromRILInt(int type) {
-        AppType varB4EAC82CA7396A68D541C85D26508E83_1865875011 = null; //Variable for return #1
+        AppType varB4EAC82CA7396A68D541C85D26508E83_1307602209 = null; //Variable for return #1
         AppType newType;
         //Begin case 0 
         newType = AppType.APPTYPE_UNKNOWN;
@@ -68,10 +68,10 @@ public class IccCardApplication {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unrecognized RIL_AppType: " +type);
         //End case default 
-        varB4EAC82CA7396A68D541C85D26508E83_1865875011 = newType;
+        varB4EAC82CA7396A68D541C85D26508E83_1307602209 = newType;
         addTaint(type);
-        varB4EAC82CA7396A68D541C85D26508E83_1865875011.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1865875011;
+        varB4EAC82CA7396A68D541C85D26508E83_1307602209.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1307602209;
         // ---------- Original Method ----------
         //AppType newType;
         //switch(type) {
@@ -89,9 +89,9 @@ public class IccCardApplication {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.431 -0400", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "C25AEFA6C553647C3FD596003F0E29A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.793 -0400", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "11EFD85AF1152C32AE5651E27CEFE473")
      AppState AppStateFromRILInt(int state) {
-        AppState varB4EAC82CA7396A68D541C85D26508E83_60021373 = null; //Variable for return #1
+        AppState varB4EAC82CA7396A68D541C85D26508E83_886776595 = null; //Variable for return #1
         AppState newState;
         //Begin case 0 
         newState = AppState.APPSTATE_UNKNOWN;
@@ -115,10 +115,10 @@ public class IccCardApplication {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unrecognized RIL_AppState: " +state);
         //End case default 
-        varB4EAC82CA7396A68D541C85D26508E83_60021373 = newState;
+        varB4EAC82CA7396A68D541C85D26508E83_886776595 = newState;
         addTaint(state);
-        varB4EAC82CA7396A68D541C85D26508E83_60021373.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_60021373;
+        varB4EAC82CA7396A68D541C85D26508E83_886776595.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_886776595;
         // ---------- Original Method ----------
         //AppState newState;
         //switch(state) {
@@ -136,9 +136,9 @@ public class IccCardApplication {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.442 -0400", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "6F18CA96E3F546D9CDFA5B048996B2C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.795 -0400", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "E63429FB5632F5D59D50721AB33C853F")
      PersoSubState PersoSubstateFromRILInt(int substate) {
-        PersoSubState varB4EAC82CA7396A68D541C85D26508E83_15593448 = null; //Variable for return #1
+        PersoSubState varB4EAC82CA7396A68D541C85D26508E83_827872112 = null; //Variable for return #1
         PersoSubState newSubState;
         //Begin case 0 
         newSubState = PersoSubState.PERSOSUBSTATE_UNKNOWN;
@@ -219,18 +219,18 @@ public class IccCardApplication {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unrecognized RIL_PersoSubstate: " +substate);
         //End case default 
-        varB4EAC82CA7396A68D541C85D26508E83_15593448 = newSubState;
+        varB4EAC82CA7396A68D541C85D26508E83_827872112 = newSubState;
         addTaint(substate);
-        varB4EAC82CA7396A68D541C85D26508E83_15593448.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_15593448;
+        varB4EAC82CA7396A68D541C85D26508E83_827872112.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_827872112;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.443 -0400", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "FCAE5A33CA6F8594B7A9D775325C4933")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.797 -0400", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "8450FD8F8D87952424D89495A757EA66")
      PinState PinStateFromRILInt(int state) {
-        PinState varB4EAC82CA7396A68D541C85D26508E83_886998049 = null; //Variable for return #1
+        PinState varB4EAC82CA7396A68D541C85D26508E83_490455229 = null; //Variable for return #1
         PinState newPinState;
         //Begin case 0 
         newPinState = PinState.PINSTATE_UNKNOWN;
@@ -253,21 +253,20 @@ public class IccCardApplication {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unrecognized RIL_PinState: " + state);
         //End case default 
-        varB4EAC82CA7396A68D541C85D26508E83_886998049 = newPinState;
+        varB4EAC82CA7396A68D541C85D26508E83_490455229 = newPinState;
         addTaint(state);
-        varB4EAC82CA7396A68D541C85D26508E83_886998049.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_886998049;
+        varB4EAC82CA7396A68D541C85D26508E83_490455229.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_490455229;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.444 -0400", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "E9A43FB0CBD84451F8A10A41339CDC98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.798 -0400", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "562EACAD51BFC268DDDE79ED70219919")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1245247584 = null; //Variable for return #1
-        StringBuilder sb;
-        sb = new StringBuilder();
+        String varB4EAC82CA7396A68D541C85D26508E83_1086599293 = null; //Variable for return #1
+        StringBuilder sb = new StringBuilder();
         sb.append("{").append(app_type).append(",").append(app_state);
         {
             sb.append(",").append(perso_substate);
@@ -277,9 +276,9 @@ public class IccCardApplication {
             sb.append(",pin2=").append(pin2);
         } //End block
         sb.append("}");
-        varB4EAC82CA7396A68D541C85D26508E83_1245247584 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1245247584.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1245247584;
+        varB4EAC82CA7396A68D541C85D26508E83_1086599293 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1086599293.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1086599293;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append("{").append(app_type).append(",").append(app_state);

@@ -28,23 +28,23 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.PhoneProxy;
 
 public final class RuimRecords extends IccRecords {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.183 -0400", hash_original_field = "D57C967AFB88E398799D962D4CC36F18", hash_generated_field = "37183B293BAF9977D813A0D8B999B0F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.524 -0400", hash_original_field = "D57C967AFB88E398799D962D4CC36F18", hash_generated_field = "37183B293BAF9977D813A0D8B999B0F9")
 
     private boolean m_ota_commited = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.183 -0400", hash_original_field = "4F9847092C634F7B4329BF13174FA31C", hash_generated_field = "A49B5B8A3936B1A215B30A4E9A5841DC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.524 -0400", hash_original_field = "4F9847092C634F7B4329BF13174FA31C", hash_generated_field = "A49B5B8A3936B1A215B30A4E9A5841DC")
 
     private String mImsi;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.183 -0400", hash_original_field = "BE7323C4B428116296019E60C4CCE82C", hash_generated_field = "07024A0AF2A22C972FCABAB2E680DB0C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.524 -0400", hash_original_field = "BE7323C4B428116296019E60C4CCE82C", hash_generated_field = "07024A0AF2A22C972FCABAB2E680DB0C")
 
     private String mMyMobileNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.183 -0400", hash_original_field = "DB0B364B3D3C2A70B9F66E344B46BD4D", hash_generated_field = "30353D389E5CA4140AE5202689686C7C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.524 -0400", hash_original_field = "DB0B364B3D3C2A70B9F66E344B46BD4D", hash_generated_field = "30353D389E5CA4140AE5202689686C7C")
 
     private String mMin2Min1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.183 -0400", hash_original_field = "A827974BD61A1F359EC3DE16B0B1E1C5", hash_generated_field = "B5278138A8F074DD973D122E731F6E34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.524 -0400", hash_original_field = "A827974BD61A1F359EC3DE16B0B1E1C5", hash_generated_field = "B5278138A8F074DD973D122E731F6E34")
 
     private String mPrlVersion;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.184 -0400", hash_original_method = "44C32614C87F88FAB25838E2BB007C1E", hash_generated_method = "F11316E16F85CCE1CFED3464EB37BA7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.525 -0400", hash_original_method = "44C32614C87F88FAB25838E2BB007C1E", hash_generated_method = "F11316E16F85CCE1CFED3464EB37BA7A")
       RuimRecords(CDMAPhone p) {
         super(p);
         adnCache = new AdnRecordCache(phone);
@@ -66,7 +66,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.184 -0400", hash_original_method = "BEB073340466462D0D2D43B235458798", hash_generated_method = "2C1624B406FCF7877DD944AD9568AFA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.525 -0400", hash_original_method = "BEB073340466462D0D2D43B235458798", hash_generated_method = "2C1624B406FCF7877DD944AD9568AFA1")
     @Override
     public void dispose() {
         phone.mCM.unregisterForRUIMReady(this);
@@ -79,7 +79,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.189 -0400", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "DD9F6DBD571BB9253EF35B64F3A1C273")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.525 -0400", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "DD9F6DBD571BB9253EF35B64F3A1C273")
     @Override
     protected void finalize() {
         Log.d(LOG_TAG, "RuimRecords finalized");
@@ -88,7 +88,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.199 -0400", hash_original_method = "890888F3646E6C0F40397D6A9CAE2069", hash_generated_method = "C164568DFBFDA4D969CE0DF6F4836D64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.525 -0400", hash_original_method = "890888F3646E6C0F40397D6A9CAE2069", hash_generated_method = "C164568DFBFDA4D969CE0DF6F4836D64")
     @Override
     protected void onRadioOffOrNotAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -106,40 +106,40 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.200 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "43453E682630CC21AF2ECA54E279CAE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "7AEC383395C25CBBE167804CAA545475")
     public String getMdnNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1192572020 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1192572020 = mMyMobileNumber;
-        varB4EAC82CA7396A68D541C85D26508E83_1192572020.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1192572020;
+        String varB4EAC82CA7396A68D541C85D26508E83_748281868 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_748281868 = mMyMobileNumber;
+        varB4EAC82CA7396A68D541C85D26508E83_748281868.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_748281868;
         // ---------- Original Method ----------
         //return mMyMobileNumber;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.200 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "BF8ED60DC711F5F3852A681A6E79A62A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "981746C90956018F2B39CB6188CDCD07")
     public String getCdmaMin() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1595705038 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1595705038 = mMin2Min1;
-        varB4EAC82CA7396A68D541C85D26508E83_1595705038.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1595705038;
+        String varB4EAC82CA7396A68D541C85D26508E83_634265786 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_634265786 = mMin2Min1;
+        varB4EAC82CA7396A68D541C85D26508E83_634265786.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_634265786;
         // ---------- Original Method ----------
         //return mMin2Min1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.201 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "ACD223C171E7B5FDAE419910A54A85F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.526 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "185B24A2015126226B85C8A331F3602D")
     public String getPrlVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1409139161 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1409139161 = mPrlVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_1409139161.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1409139161;
+        String varB4EAC82CA7396A68D541C85D26508E83_300818471 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_300818471 = mPrlVersion;
+        varB4EAC82CA7396A68D541C85D26508E83_300818471.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_300818471;
         // ---------- Original Method ----------
         //return mPrlVersion;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.201 -0400", hash_original_method = "42127C0CAB9B1B50FC97B071B6934168", hash_generated_method = "F2DAB10FD5D2E56D3B223F6260497803")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.527 -0400", hash_original_method = "42127C0CAB9B1B50FC97B071B6934168", hash_generated_method = "F2DAB10FD5D2E56D3B223F6260497803")
     @Override
     public void setVoiceMailNumber(String alphaTag, String voiceNumber, Message onComplete) {
         AsyncResult.forMessage((onComplete)).exception =
@@ -156,7 +156,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.214 -0400", hash_original_method = "1D5D0C2F4FF0286B2839C7504C536EE3", hash_generated_method = "111986CE15D0A7E647C0FA2CE8052118")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.527 -0400", hash_original_method = "1D5D0C2F4FF0286B2839C7504C536EE3", hash_generated_method = "111986CE15D0A7E647C0FA2CE8052118")
     @Override
     public void onRefresh(boolean fileChanged, int[] fileList) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -172,34 +172,33 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.215 -0400", hash_original_method = "1499AC64B3568BF128EFDB3C9845AC3C", hash_generated_method = "A7C5EBA6ACA2367D0E6AE3612BD8C822")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.528 -0400", hash_original_method = "1499AC64B3568BF128EFDB3C9845AC3C", hash_generated_method = "50092F2577AB783E1374540339D2A796")
     public String getRUIMOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_486767086 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1625698182 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1687770474 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_134426073 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1171580955 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_29367963 = null; //Variable for return #3
         {
-            varB4EAC82CA7396A68D541C85D26508E83_486767086 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_134426073 = null;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1625698182 = mImsi.substring(0, 3 + mncLength);
+            varB4EAC82CA7396A68D541C85D26508E83_1171580955 = mImsi.substring(0, 3 + mncLength);
         } //End block
-        int mcc;
-        mcc = Integer.parseInt(mImsi.substring(0,3));
-        varB4EAC82CA7396A68D541C85D26508E83_1687770474 = mImsi.substring(0, 3 + MccTable.smallestDigitsMccForMnc(mcc));
-        String varA7E53CE21691AB073D9660D615818899_1343170273; //Final return value
+        int mcc = Integer.parseInt(mImsi.substring(0,3));
+        varB4EAC82CA7396A68D541C85D26508E83_29367963 = mImsi.substring(0, 3 + MccTable.smallestDigitsMccForMnc(mcc));
+        String varA7E53CE21691AB073D9660D615818899_281696730; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1343170273 = varB4EAC82CA7396A68D541C85D26508E83_486767086;
+                varA7E53CE21691AB073D9660D615818899_281696730 = varB4EAC82CA7396A68D541C85D26508E83_134426073;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1343170273 = varB4EAC82CA7396A68D541C85D26508E83_1625698182;
+                varA7E53CE21691AB073D9660D615818899_281696730 = varB4EAC82CA7396A68D541C85D26508E83_1171580955;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1343170273 = varB4EAC82CA7396A68D541C85D26508E83_1687770474;
+                varA7E53CE21691AB073D9660D615818899_281696730 = varB4EAC82CA7396A68D541C85D26508E83_29367963;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1343170273.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1343170273;
+        varA7E53CE21691AB073D9660D615818899_281696730.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_281696730;
         // ---------- Original Method ----------
         //if (mImsi == null) {
             //return null;
@@ -212,13 +211,12 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.217 -0400", hash_original_method = "584E0C361321C2DCD1B11D8CE97AF6DF", hash_generated_method = "F190745E9CEACBCC4A4E153EC098077B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.530 -0400", hash_original_method = "584E0C361321C2DCD1B11D8CE97AF6DF", hash_generated_method = "DE1571B6E8887CE7E1BBDBEF57A13F2B")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
         byte data[];
-        boolean isRecordLoadResponse;
-        isRecordLoadResponse = false;
+        boolean isRecordLoadResponse = false;
         try 
         {
             //Begin case EVENT_RUIM_READY 
@@ -241,7 +239,7 @@ public final class RuimRecords extends IccRecords {
             //End case EVENT_GET_IMSI_DONE 
             //Begin case EVENT_GET_IMSI_DONE 
             {
-                boolean varCB772677542135EE9593195A1C9BC7E6_135099672 = (mImsi != null && (mImsi.length() < 6 || mImsi.length() > 15));
+                boolean varCB772677542135EE9593195A1C9BC7E6_214974733 = (mImsi != null && (mImsi.length() < 6 || mImsi.length() > 15));
                 {
                     mImsi = null;
                 } //End block
@@ -251,13 +249,12 @@ public final class RuimRecords extends IccRecords {
             Log.d(LOG_TAG, "IMSI: " + mImsi.substring(0, 6) + "xxxxxxxxx");
             //End case EVENT_GET_IMSI_DONE 
             //Begin case EVENT_GET_IMSI_DONE 
-            String operatorNumeric;
-            operatorNumeric = getRUIMOperatorNumeric();
+            String operatorNumeric = getRUIMOperatorNumeric();
             //End case EVENT_GET_IMSI_DONE 
             //Begin case EVENT_GET_IMSI_DONE 
             {
                 {
-                    boolean var5696560DB3AD9F8402BEAA0925BDF07A_1718528790 = (operatorNumeric.length() <= 6);
+                    boolean var5696560DB3AD9F8402BEAA0925BDF07A_1438808556 = (operatorNumeric.length() <= 6);
                     {
                         MccTable.updateMccMncConfiguration(phone, operatorNumeric);
                     } //End block
@@ -268,8 +265,7 @@ public final class RuimRecords extends IccRecords {
             ar = (AsyncResult)msg.obj;
             //End case EVENT_GET_CDMA_SUBSCRIPTION_DONE 
             //Begin case EVENT_GET_CDMA_SUBSCRIPTION_DONE 
-            String localTemp[];
-            localTemp = (String[])ar.result;
+            String localTemp[] = (String[])ar.result;
             //End case EVENT_GET_CDMA_SUBSCRIPTION_DONE 
             //Begin case EVENT_GET_CDMA_SUBSCRIPTION_DONE 
             mMyMobileNumber = localTemp[0];
@@ -330,7 +326,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.218 -0400", hash_original_method = "7082FCE9B35AC4F9F043D561172547FE", hash_generated_method = "4E29EFC8D882E521A736863E3AC3EB5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.530 -0400", hash_original_method = "7082FCE9B35AC4F9F043D561172547FE", hash_generated_method = "4E29EFC8D882E521A736863E3AC3EB5F")
     @Override
     protected void onRecordLoaded() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -352,13 +348,12 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.231 -0400", hash_original_method = "E50365918A8B4813331E3A24E11292EF", hash_generated_method = "F3E92C3FC9EE532A69A45A5B7C86909A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.531 -0400", hash_original_method = "E50365918A8B4813331E3A24E11292EF", hash_generated_method = "6CFAD0B158363BF05556EF8B3989AC09")
     @Override
     protected void onAllRecordsLoaded() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         Log.d(LOG_TAG, "RuimRecords: record load complete");
-        String operator;
-        operator = getRUIMOperatorNumeric();
+        String operator = getRUIMOperatorNumeric();
         SystemProperties.set(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
         {
             SystemProperties.set(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
@@ -383,7 +378,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.232 -0400", hash_original_method = "0D138DB0BC983C7D13FA7613202FEE21", hash_generated_method = "1FF78874CA0F2DC120C3E1185A7CA429")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.531 -0400", hash_original_method = "0D138DB0BC983C7D13FA7613202FEE21", hash_generated_method = "1FF78874CA0F2DC120C3E1185A7CA429")
     private void onRuimReady() {
         phone.mIccCard.broadcastIccStateChangedIntent(
                 RuimCard.INTENT_VALUE_ICC_READY, null);
@@ -397,7 +392,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.232 -0400", hash_original_method = "618248758DCBCE1B082F10F6590C51C4", hash_generated_method = "BA8CEC0A1EB21779223B7C9E71BED7B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.531 -0400", hash_original_method = "618248758DCBCE1B082F10F6590C51C4", hash_generated_method = "BA8CEC0A1EB21779223B7C9E71BED7B6")
     private void fetchRuimRecords() {
         recordsRequested = true;
         phone.mCM.getIMSI(obtainMessage(EVENT_GET_IMSI_DONE));
@@ -414,18 +409,18 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.232 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "8732E468F273BB8140E32809409C467E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.532 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "C7D8577BF882BC30D794D248FE671DB5")
     @Override
     public int getDisplayRule(String plmn) {
         addTaint(plmn.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128692178 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128692178;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509940693 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509940693;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.233 -0400", hash_original_method = "A6740B433D4FB4F3079B795061BDE226", hash_generated_method = "2B4D284BB171EE804A370D6C46918F7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.532 -0400", hash_original_method = "A6740B433D4FB4F3079B795061BDE226", hash_generated_method = "2B4D284BB171EE804A370D6C46918F7E")
     @Override
     public void setVoiceMessageWaiting(int line, int countWaiting) {
         {
@@ -452,7 +447,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.234 -0400", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "244DB579EB291E05C69F634DCEC22D97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.532 -0400", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "244DB579EB291E05C69F634DCEC22D97")
     private void handleRuimRefresh(int[] result) {
         {
             log("handleRuimRefresh without input");
@@ -487,7 +482,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.241 -0400", hash_original_method = "15EF52C4433D17716212414EB6E50E76", hash_generated_method = "CC023C7256A7FDCE68395BBE9743FE4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_method = "15EF52C4433D17716212414EB6E50E76", hash_generated_method = "CC023C7256A7FDCE68395BBE9743FE4C")
     @Override
     protected void log(String s) {
         Log.d(LOG_TAG, "[RuimRecords] " + s);
@@ -497,7 +492,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.242 -0400", hash_original_method = "650BB8E79BCC4D913E519971F11AFA1E", hash_generated_method = "E7D94BCA5445789397AC7E67B09B77DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_method = "650BB8E79BCC4D913E519971F11AFA1E", hash_generated_method = "E7D94BCA5445789397AC7E67B09B77DB")
     @Override
     protected void loge(String s) {
         addTaint(s.getTaint());
@@ -506,50 +501,50 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.243 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3985FC5365F0E17AC0BA70F3DC93B852")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
-    static String LOG_TAG = "CDMA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.243 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "EA7FF8772A7B2A0121F9F6C2158F8474")
+    static final String LOG_TAG = "CDMA";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
 
-    private static boolean DBG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.243 -0400", hash_original_field = "1DEBF446A40353CC61F12433EDA4A667", hash_generated_field = "6915BC2C1A89D6E7A441D3DBA7D7788A")
+    private static final boolean DBG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "1DEBF446A40353CC61F12433EDA4A667", hash_generated_field = "70C0002A03DDB0315C52D7F0E8B395A2")
 
-    private static int EVENT_RUIM_READY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.243 -0400", hash_original_field = "B41D6834011DAA4DB1A6AC940ADFA38E", hash_generated_field = "7BCF1FFF9022E22F04BC0FDC1FAA6FD5")
+    private static final int EVENT_RUIM_READY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "B41D6834011DAA4DB1A6AC940ADFA38E", hash_generated_field = "C65DF4AD1462685EBC499AE583280BAA")
 
-    private static int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.244 -0400", hash_original_field = "1C7B2408ABBFF84C0AE773B343AAE081", hash_generated_field = "AE868B57B0686F8FBB77E884F3131357")
+    private static final int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "1C7B2408ABBFF84C0AE773B343AAE081", hash_generated_field = "29F539FB0647EE31D849E06DE444129C")
 
-    private static int EVENT_GET_IMSI_DONE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.244 -0400", hash_original_field = "1EDF89A33C559C7081F2F14D9D9F0BD5", hash_generated_field = "5F551C5C9A634CA5D81D164FC94CD0F7")
+    private static final int EVENT_GET_IMSI_DONE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "1EDF89A33C559C7081F2F14D9D9F0BD5", hash_generated_field = "A26946778DAA98F81D609908E4D9E727")
 
-    private static int EVENT_GET_DEVICE_IDENTITY_DONE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.244 -0400", hash_original_field = "F04ED69F1D1D36AD737B9E6BF7733C67", hash_generated_field = "4287E57BC7188F5B29EA8284D50EB309")
+    private static final int EVENT_GET_DEVICE_IDENTITY_DONE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "F04ED69F1D1D36AD737B9E6BF7733C67", hash_generated_field = "1DF607ACA15F09CB3B4DC1DFD512B2E3")
 
-    private static int EVENT_GET_ICCID_DONE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.244 -0400", hash_original_field = "3C3AA88B43A133797BBE286990868EB6", hash_generated_field = "4E33B3F55ABC3C132F844C995AE9A69D")
+    private static final int EVENT_GET_ICCID_DONE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "3C3AA88B43A133797BBE286990868EB6", hash_generated_field = "F65C212D57735E486171DDE0436EF906")
 
-    private static int EVENT_GET_CDMA_SUBSCRIPTION_DONE = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "529053860FA14F8B31FBDEC20F5F5B03", hash_generated_field = "B0B78B92D79876F59FE3B5A8E316C0E4")
+    private static final int EVENT_GET_CDMA_SUBSCRIPTION_DONE = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "529053860FA14F8B31FBDEC20F5F5B03", hash_generated_field = "7C08F6997CDB1F95B53292AC6E4DA474")
 
-    private static int EVENT_UPDATE_DONE = 14;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "1E3C0E257296800F8D76872CD2E55387", hash_generated_field = "223E83F9999315E9590F93EEDFA7D934")
+    private static final int EVENT_UPDATE_DONE = 14;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "1E3C0E257296800F8D76872CD2E55387", hash_generated_field = "94AFAFC942E8F21799585FB7E7B86992")
 
-    private static int EVENT_GET_SST_DONE = 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "3B79516072415E285E9DD48ECF8C32E3", hash_generated_field = "1E34B501E28E4512D34E6566C6DC5F9E")
+    private static final int EVENT_GET_SST_DONE = 17;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "3B79516072415E285E9DD48ECF8C32E3", hash_generated_field = "9F464D691ED618E65FF918987EFF9274")
 
-    private static int EVENT_GET_ALL_SMS_DONE = 18;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "5EB21554FBD2F493FD526FF035BA3944", hash_generated_field = "19C1026B8F804F62066BB3602553F56D")
+    private static final int EVENT_GET_ALL_SMS_DONE = 18;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "5EB21554FBD2F493FD526FF035BA3944", hash_generated_field = "961A7A4D60E11CE78834F70BC49A219A")
 
-    private static int EVENT_MARK_SMS_READ_DONE = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "752339407D2812D75F5811F2D829619F", hash_generated_field = "0C69E7653A644B9EA39B0CCD8B2B175A")
+    private static final int EVENT_MARK_SMS_READ_DONE = 19;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "752339407D2812D75F5811F2D829619F", hash_generated_field = "ED99436836464B30EF1636FCBA09D78C")
 
-    private static int EVENT_SMS_ON_RUIM = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "17E27DF4CEFFF43554FD32CB85BD7662", hash_generated_field = "2E17A31BF2AA6CC5E5F0D8A7BA22651E")
+    private static final int EVENT_SMS_ON_RUIM = 21;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "17E27DF4CEFFF43554FD32CB85BD7662", hash_generated_field = "18FB3B701347968BBB3DB68B7D9FA9E0")
 
-    private static int EVENT_GET_SMS_DONE = 22;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.250 -0400", hash_original_field = "27D03FBCCCD2C74099B3C666524D8E79", hash_generated_field = "1A10E297D3EB690CEBE0D5037F4E87A5")
+    private static final int EVENT_GET_SMS_DONE = 22;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.533 -0400", hash_original_field = "27D03FBCCCD2C74099B3C666524D8E79", hash_generated_field = "AA66F54A711788ECF4FB24747995AEB7")
 
-    private static int EVENT_RUIM_REFRESH = 31;
+    private static final int EVENT_RUIM_REFRESH = 31;
 }
 

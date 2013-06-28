@@ -18,13 +18,13 @@ import java.nio.ByteBuffer;
 
 public class DdmHandleHeap extends ChunkHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.243 -0400", hash_original_method = "236E8F4E2F7DDA83D2B39E117A0E950F", hash_generated_method = "81842FAD8AC8408A0CA4E2FFE4F623DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.956 -0400", hash_original_method = "236E8F4E2F7DDA83D2B39E117A0E950F", hash_generated_method = "81842FAD8AC8408A0CA4E2FFE4F623DF")
     private  DdmHandleHeap() {
         // ---------- Original Method ----------
     }
 
     
-        public static void register() {
+    public static void register() {
         DdmServer.registerHandler(CHUNK_HPIF, mInstance);
         DdmServer.registerHandler(CHUNK_HPSG, mInstance);
         DdmServer.registerHandler(CHUNK_HPDU, mInstance);
@@ -37,128 +37,124 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.258 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.956 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.265 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.957 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.280 -0400", hash_original_method = "645397050BFF5ABB72125064EE5637C4", hash_generated_method = "4AC1D0A5FFBBE944722421CE026B4FC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.958 -0400", hash_original_method = "645397050BFF5ABB72125064EE5637C4", hash_generated_method = "B92438C2D00D04617ED2C1F8B0A47A31")
     public Chunk handleChunk(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_375456655 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_527874492 = null; //Variable for return #2
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1445948884 = null; //Variable for return #3
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_18536765 = null; //Variable for return #4
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_436581479 = null; //Variable for return #5
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1976915670 = null; //Variable for return #6
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_166654914 = null; //Variable for return #7
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1884454541 = null; //Variable for return #8
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1128928391 = null; //Variable for return #9
-        int type;
-        type = request.type;
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1850172168 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1891873655 = null; //Variable for return #2
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_132970852 = null; //Variable for return #3
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1401231541 = null; //Variable for return #4
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_75874821 = null; //Variable for return #5
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1751559612 = null; //Variable for return #6
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_248112287 = null; //Variable for return #7
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_568378329 = null; //Variable for return #8
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1575886904 = null; //Variable for return #9
+        int type = request.type;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_375456655 = handleHPIF(request);
+            varB4EAC82CA7396A68D541C85D26508E83_1850172168 = handleHPIF(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_527874492 = handleHPSGNHSG(request, false);
+            varB4EAC82CA7396A68D541C85D26508E83_1891873655 = handleHPSGNHSG(request, false);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1445948884 = handleHPDU(request);
+            varB4EAC82CA7396A68D541C85D26508E83_132970852 = handleHPDU(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_18536765 = handleHPDS(request);
+            varB4EAC82CA7396A68D541C85D26508E83_1401231541 = handleHPDS(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_436581479 = handleHPSGNHSG(request, true);
+            varB4EAC82CA7396A68D541C85D26508E83_75874821 = handleHPSGNHSG(request, true);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1976915670 = handleHPGC(request);
+            varB4EAC82CA7396A68D541C85D26508E83_1751559612 = handleHPGC(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_166654914 = handleREAE(request);
+            varB4EAC82CA7396A68D541C85D26508E83_248112287 = handleREAE(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1884454541 = handleREAQ(request);
+            varB4EAC82CA7396A68D541C85D26508E83_568378329 = handleREAQ(request);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1128928391 = handleREAL(request);
+            varB4EAC82CA7396A68D541C85D26508E83_1575886904 = handleREAL(request);
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown packet "
                 + ChunkHandler.name(type));
         } //End block
         addTaint(request.getTaint());
-        Chunk varA7E53CE21691AB073D9660D615818899_245321249; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_1101608708; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_375456655;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_1850172168;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_527874492;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_1891873655;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_1445948884;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_132970852;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_18536765;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_1401231541;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_436581479;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_75874821;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_1976915670;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_1751559612;
                 break;
             case 7: //Assign result for return ordinal #7
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_166654914;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_248112287;
                 break;
             case 8: //Assign result for return ordinal #8
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_1884454541;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_568378329;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_245321249 = varB4EAC82CA7396A68D541C85D26508E83_1128928391;
+                varA7E53CE21691AB073D9660D615818899_1101608708 = varB4EAC82CA7396A68D541C85D26508E83_1575886904;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_245321249.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_245321249;
+        varA7E53CE21691AB073D9660D615818899_1101608708.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1101608708;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.281 -0400", hash_original_method = "0E2E7ADFAF4A415A5EE0645FFEAB4A6D", hash_generated_method = "067A6D86B4D788D0BFD0C3CD8B866F49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.959 -0400", hash_original_method = "0E2E7ADFAF4A415A5EE0645FFEAB4A6D", hash_generated_method = "3091C137A68E5995FEF7CF58EF896514")
     private Chunk handleHPIF(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1579391592 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_77587134 = null; //Variable for return #2
-        ByteBuffer in;
-        in = wrapChunk(request);
-        int when;
-        when = in.get();
-        boolean ok;
-        ok = DdmVmInternal.heapInfoNotify(when);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_703488097 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1320070180 = null; //Variable for return #2
+        ByteBuffer in = wrapChunk(request);
+        int when = in.get();
+        boolean ok = DdmVmInternal.heapInfoNotify(when);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1579391592 = createFailChunk(1, "Unsupported HPIF what");
+            varB4EAC82CA7396A68D541C85D26508E83_703488097 = createFailChunk(1, "Unsupported HPIF what");
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_77587134 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1320070180 = null;
         } //End block
         addTaint(request.getTaint());
-        Chunk varA7E53CE21691AB073D9660D615818899_575649017; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_650984042; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_575649017 = varB4EAC82CA7396A68D541C85D26508E83_1579391592;
+                varA7E53CE21691AB073D9660D615818899_650984042 = varB4EAC82CA7396A68D541C85D26508E83_703488097;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_575649017 = varB4EAC82CA7396A68D541C85D26508E83_77587134;
+                varA7E53CE21691AB073D9660D615818899_650984042 = varB4EAC82CA7396A68D541C85D26508E83_1320070180;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_575649017.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_575649017;
+        varA7E53CE21691AB073D9660D615818899_650984042.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_650984042;
         // ---------- Original Method ----------
         //ByteBuffer in = wrapChunk(request);
         //int when = in.get();
@@ -173,37 +169,33 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.292 -0400", hash_original_method = "A8B738C149F8A2DC880C585E17CFB83A", hash_generated_method = "B3C9F3B0E0B1B52174D7B9828427C512")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.960 -0400", hash_original_method = "A8B738C149F8A2DC880C585E17CFB83A", hash_generated_method = "FD8FBAD9F808ADC9125B738B60EF0AAF")
     private Chunk handleHPSGNHSG(Chunk request, boolean isNative) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_123171734 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_846382028 = null; //Variable for return #2
-        ByteBuffer in;
-        in = wrapChunk(request);
-        int when;
-        when = in.get();
-        int what;
-        what = in.get();
-        boolean ok;
-        ok = DdmVmInternal.heapSegmentNotify(when, what, isNative);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1043311967 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_488849587 = null; //Variable for return #2
+        ByteBuffer in = wrapChunk(request);
+        int when = in.get();
+        int what = in.get();
+        boolean ok = DdmVmInternal.heapSegmentNotify(when, what, isNative);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_123171734 = createFailChunk(1, "Unsupported HPSG what/when");
+            varB4EAC82CA7396A68D541C85D26508E83_1043311967 = createFailChunk(1, "Unsupported HPSG what/when");
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_846382028 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_488849587 = null;
         } //End block
         addTaint(request.getTaint());
         addTaint(isNative);
-        Chunk varA7E53CE21691AB073D9660D615818899_43432485; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_1537074960; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_43432485 = varB4EAC82CA7396A68D541C85D26508E83_123171734;
+                varA7E53CE21691AB073D9660D615818899_1537074960 = varB4EAC82CA7396A68D541C85D26508E83_1043311967;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_43432485 = varB4EAC82CA7396A68D541C85D26508E83_846382028;
+                varA7E53CE21691AB073D9660D615818899_1537074960 = varB4EAC82CA7396A68D541C85D26508E83_488849587;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_43432485.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_43432485;
+        varA7E53CE21691AB073D9660D615818899_1537074960.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1537074960;
         // ---------- Original Method ----------
         //ByteBuffer in = wrapChunk(request);
         //int when = in.get();
@@ -248,7 +240,7 @@ public class DdmHandleHeap extends ChunkHandler {
         {
             result = -1;
         } //End block
-        byte[] reply;
+        byte[] reply = {result};
         varB4EAC82CA7396A68D541C85D26508E83_136613464 = new Chunk(CHUNK_HPDU, reply, 0, reply.length);
         addTaint(request.getTaint());
         varB4EAC82CA7396A68D541C85D26508E83_136613464.addTaint(getTaint()); //Add taint from parent
@@ -276,16 +268,14 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.385 -0400", hash_original_method = "C41093B7B99D47CB32AB13B14E448339", hash_generated_method = "48B513850610E7C6D9576FC32CB16043")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.962 -0400", hash_original_method = "C41093B7B99D47CB32AB13B14E448339", hash_generated_method = "9FB3D16B1147619AB48E16B30CF2E8F3")
     private Chunk handleHPDS(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_388225265 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1335276287 = null; //Variable for return #2
-        ByteBuffer in;
-        in = wrapChunk(request);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1721913082 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_476959878 = null; //Variable for return #2
+        ByteBuffer in = wrapChunk(request);
         byte result;
         Log.d("ddm-heap", "Heap dump: [DDMS]");
-        String failMsg;
-        failMsg = null;
+        String failMsg = null;
         try 
         {
             Debug.dumpHprofDataDdms();
@@ -299,23 +289,23 @@ public class DdmHandleHeap extends ChunkHandler {
             failMsg = "Exception: " + re.getMessage();
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_388225265 = createFailChunk(1, failMsg);
+            varB4EAC82CA7396A68D541C85D26508E83_1721913082 = createFailChunk(1, failMsg);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1335276287 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_476959878 = null;
         } //End block
         addTaint(request.getTaint());
-        Chunk varA7E53CE21691AB073D9660D615818899_750712693; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_1729545577; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_750712693 = varB4EAC82CA7396A68D541C85D26508E83_388225265;
+                varA7E53CE21691AB073D9660D615818899_1729545577 = varB4EAC82CA7396A68D541C85D26508E83_1721913082;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_750712693 = varB4EAC82CA7396A68D541C85D26508E83_1335276287;
+                varA7E53CE21691AB073D9660D615818899_1729545577 = varB4EAC82CA7396A68D541C85D26508E83_476959878;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_750712693.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_750712693;
+        varA7E53CE21691AB073D9660D615818899_1729545577.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1729545577;
         // ---------- Original Method ----------
         //ByteBuffer in = wrapChunk(request);
         //byte result;
@@ -338,15 +328,15 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.386 -0400", hash_original_method = "5AC6D538920D957D7D86B15E943C316B", hash_generated_method = "51D290B113A700550C83CBB3AB4E0558")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.962 -0400", hash_original_method = "5AC6D538920D957D7D86B15E943C316B", hash_generated_method = "8914D3E0D52EACCE005B49F913D204F7")
     private Chunk handleHPGC(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1726090676 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_185742030 = null; //Variable for return #1
         Log.d("ddm-heap", "Heap GC request");
         System.gc();
-        varB4EAC82CA7396A68D541C85D26508E83_1726090676 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_185742030 = null;
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1726090676.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1726090676;
+        varB4EAC82CA7396A68D541C85D26508E83_185742030.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_185742030;
         // ---------- Original Method ----------
         //if (false)
             //Log.d("ddm-heap", "Heap GC request");
@@ -355,19 +345,18 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.388 -0400", hash_original_method = "C9F19EAFED9803F043951491F6273920", hash_generated_method = "341A18C711993105D8D0BD778CC02E83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.963 -0400", hash_original_method = "C9F19EAFED9803F043951491F6273920", hash_generated_method = "BFE1486019ADE4EF0A0F59DC730016CB")
     private Chunk handleREAE(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_783928626 = null; //Variable for return #1
-        ByteBuffer in;
-        in = wrapChunk(request);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1241908516 = null; //Variable for return #1
+        ByteBuffer in = wrapChunk(request);
         boolean enable;
         enable = (in.get() != 0);
         Log.d("ddm-heap", "Recent allocation enable request: " + enable);
         DdmVmInternal.enableRecentAllocations(enable);
-        varB4EAC82CA7396A68D541C85D26508E83_783928626 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1241908516 = null;
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_783928626.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_783928626;
+        varB4EAC82CA7396A68D541C85D26508E83_1241908516.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1241908516;
         // ---------- Original Method ----------
         //ByteBuffer in = wrapChunk(request);
         //boolean enable;
@@ -379,16 +368,15 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.403 -0400", hash_original_method = "B480B93C7FE178F2CE62D90F1F153D77", hash_generated_method = "F91C50F9C3626C2B5B30E8FC1F9BB061")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.964 -0400", hash_original_method = "B480B93C7FE178F2CE62D90F1F153D77", hash_generated_method = "B28CC02EC327BFB162188AE0462E1EF6")
     private Chunk handleREAQ(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_947533431 = null; //Variable for return #1
-        byte[] reply;
-        reply = new byte[1];
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1188863809 = null; //Variable for return #1
+        byte[] reply = new byte[1];
         reply[0] = DdmVmInternal.getRecentAllocationStatus() ? (byte)1 :(byte)0;
-        varB4EAC82CA7396A68D541C85D26508E83_947533431 = new Chunk(CHUNK_REAQ, reply, 0, reply.length);
+        varB4EAC82CA7396A68D541C85D26508E83_1188863809 = new Chunk(CHUNK_REAQ, reply, 0, reply.length);
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_947533431.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_947533431;
+        varB4EAC82CA7396A68D541C85D26508E83_1188863809.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1188863809;
         // ---------- Original Method ----------
         //byte[] reply = new byte[1];
         //reply[0] = DdmVmInternal.getRecentAllocationStatus() ? (byte)1 :(byte)0;
@@ -396,16 +384,15 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_method = "34D94CBD5BF588E49D545F9249DA1F17", hash_generated_method = "43B42981D82CCCEA983CEAD639F076E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_method = "34D94CBD5BF588E49D545F9249DA1F17", hash_generated_method = "9D8B1E427D2F4F30D75ED7503E7B8136")
     private Chunk handleREAL(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_2125486985 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_614538147 = null; //Variable for return #1
         Log.d("ddm-heap", "Recent allocations request");
-        byte[] reply;
-        reply = DdmVmInternal.getRecentAllocations();
-        varB4EAC82CA7396A68D541C85D26508E83_2125486985 = new Chunk(CHUNK_REAL, reply, 0, reply.length);
+        byte[] reply = DdmVmInternal.getRecentAllocations();
+        varB4EAC82CA7396A68D541C85D26508E83_614538147 = new Chunk(CHUNK_REAL, reply, 0, reply.length);
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2125486985.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2125486985;
+        varB4EAC82CA7396A68D541C85D26508E83_614538147.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_614538147;
         // ---------- Original Method ----------
         //if (false)
             //Log.d("ddm-heap", "Recent allocations request");
@@ -414,34 +401,34 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_field = "7A7F9CC44B7B034C878382C5602CF69F", hash_generated_field = "411BA0ACAF305CEA5DCCB4C3873C0CEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "7A7F9CC44B7B034C878382C5602CF69F", hash_generated_field = "411BA0ACAF305CEA5DCCB4C3873C0CEB")
 
     public static final int CHUNK_HPIF = type("HPIF");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_field = "8AC54C20B6BB8E26FFE45C9478DE3452", hash_generated_field = "4B945A8D18FB044547723173E8828B0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "8AC54C20B6BB8E26FFE45C9478DE3452", hash_generated_field = "4B945A8D18FB044547723173E8828B0F")
 
     public static final int CHUNK_HPSG = type("HPSG");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_field = "F0B6055080FD3881F029DFB7698693B8", hash_generated_field = "617F53DAD319B53151B4D07D25FED1CB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "F0B6055080FD3881F029DFB7698693B8", hash_generated_field = "617F53DAD319B53151B4D07D25FED1CB")
 
     public static final int CHUNK_HPDU = type("HPDU");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_field = "306AEC826A119F9C863B4C5D74E6C6C2", hash_generated_field = "AA917699D5C3FDA97B5F1F0266368E3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "306AEC826A119F9C863B4C5D74E6C6C2", hash_generated_field = "AA917699D5C3FDA97B5F1F0266368E3F")
 
     public static final int CHUNK_HPDS = type("HPDS");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.404 -0400", hash_original_field = "8C17FBC4ABADB25436144C26E90E834D", hash_generated_field = "FCD063CD9799A716CEE90882631AC5A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "8C17FBC4ABADB25436144C26E90E834D", hash_generated_field = "FCD063CD9799A716CEE90882631AC5A2")
 
     public static final int CHUNK_NHSG = type("NHSG");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.405 -0400", hash_original_field = "85B2B8394EFC2A94CECAAB0BFCA48168", hash_generated_field = "259FF01A11C4E150E83356A0864ED45F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "85B2B8394EFC2A94CECAAB0BFCA48168", hash_generated_field = "259FF01A11C4E150E83356A0864ED45F")
 
     public static final int CHUNK_HPGC = type("HPGC");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.405 -0400", hash_original_field = "EFB1E67A6EFB9AD535528C0554383AFD", hash_generated_field = "94DF4161B88336D5281295E3F052A420")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.965 -0400", hash_original_field = "EFB1E67A6EFB9AD535528C0554383AFD", hash_generated_field = "94DF4161B88336D5281295E3F052A420")
 
     public static final int CHUNK_REAE = type("REAE");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.405 -0400", hash_original_field = "B72DCD9A9E095F179367D03EDE42943D", hash_generated_field = "AC2A957E2C3565B004E9A073E50036FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.966 -0400", hash_original_field = "B72DCD9A9E095F179367D03EDE42943D", hash_generated_field = "AC2A957E2C3565B004E9A073E50036FF")
 
     public static final int CHUNK_REAQ = type("REAQ");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.405 -0400", hash_original_field = "2B6A15DF0BA29C89216213502D83DE2A", hash_generated_field = "3A20641A5356020A50C369C19549AAD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.966 -0400", hash_original_field = "2B6A15DF0BA29C89216213502D83DE2A", hash_generated_field = "3A20641A5356020A50C369C19549AAD0")
 
     public static final int CHUNK_REAL = type("REAL");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.405 -0400", hash_original_field = "FD99FB9675F3F378437B80C78914859D", hash_generated_field = "41155868F04C6605317B5CC3A6E20227")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.966 -0400", hash_original_field = "FD99FB9675F3F378437B80C78914859D", hash_generated_field = "41155868F04C6605317B5CC3A6E20227")
 
     private static DdmHandleHeap mInstance = new DdmHandleHeap();
 }

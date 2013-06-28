@@ -21,23 +21,23 @@ import java.net.URLConnection;
 import libcore.net.UriCodec;
 
 public class FileURLConnection extends URLConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.020 -0400", hash_original_field = "5B063E275D506F65EBF1B02D926F19A4", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.769 -0400", hash_original_field = "5B063E275D506F65EBF1B02D926F19A4", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
 
     String fileName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.020 -0400", hash_original_field = "A2A551A6458A8DE22446CC76D639A9E9", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.769 -0400", hash_original_field = "A2A551A6458A8DE22446CC76D639A9E9", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
 
     private InputStream is;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.020 -0400", hash_original_field = "37DD3CB77D31BF2E80399C3B748B5F16", hash_generated_field = "99508BAC072434E4BF52703BB1174C03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.769 -0400", hash_original_field = "37DD3CB77D31BF2E80399C3B748B5F16", hash_generated_field = "99508BAC072434E4BF52703BB1174C03")
 
     private int length = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.020 -0400", hash_original_field = "F0F18990052D31406E964D776FD3A36D", hash_generated_field = "3949ABAC0B1DE58EC6BD730E294BB79C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.769 -0400", hash_original_field = "F0F18990052D31406E964D776FD3A36D", hash_generated_field = "3949ABAC0B1DE58EC6BD730E294BB79C")
 
     private boolean isDir;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.020 -0400", hash_original_field = "4B65CA0F8B76E7181A12BF1FABC48532", hash_generated_field = "96BA6FFE95348C93D489804764910CBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.769 -0400", hash_original_field = "4B65CA0F8B76E7181A12BF1FABC48532", hash_generated_field = "96BA6FFE95348C93D489804764910CBE")
 
     private FilePermission permission;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.021 -0400", hash_original_method = "ECDCE15AD3E40A66FECAA373F1AD69DD", hash_generated_method = "7CCDA583CEB42F317B5916AC796DE1FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.770 -0400", hash_original_method = "ECDCE15AD3E40A66FECAA373F1AD69DD", hash_generated_method = "7CCDA583CEB42F317B5916AC796DE1FC")
     public  FileURLConnection(URL url) {
         super(url);
         fileName = url.getFile();
@@ -54,21 +54,19 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.033 -0400", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "400B67DF5CCF483085983936368FFB24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.770 -0400", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "33E037FF51E9225151900B00DA00ECEE")
     @Override
     public void connect() throws IOException {
-        File f;
-        f = new File(fileName);
+        File f = new File(fileName);
         {
-            boolean varA97259D5C3642C5738EE6A4F81981B2D_897952003 = (f.isDirectory());
+            boolean varA97259D5C3642C5738EE6A4F81981B2D_1119087268 = (f.isDirectory());
             {
                 isDir = true;
                 is = getDirectoryListing(f);
             } //End block
             {
                 is = new BufferedInputStream(new FileInputStream(f));
-                long lengthAsLong;
-                lengthAsLong = f.length();
+                long lengthAsLong = f.length();
                 length = lengthAsLong <= Integer.MAX_VALUE ? (int) lengthAsLong : Integer.MAX_VALUE;
             } //End block
         } //End collapsed parenthetic
@@ -87,7 +85,7 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.034 -0400", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "A626C5234779EB93063B340276390715")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.771 -0400", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "D79CC2478400793CB54F8B25CA41AB97")
     @Override
     public int getContentLength() {
         try 
@@ -98,8 +96,8 @@ public class FileURLConnection extends URLConnection {
         } //End block
         catch (IOException e)
         { }
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1874331411 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1874331411;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864837242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864837242;
         // ---------- Original Method ----------
         //try {
             //if (!connected) {
@@ -111,14 +109,14 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.037 -0400", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "7B0B016D8EA55239CD5A285406CCF132")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.772 -0400", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "4443B1D97B6AAB84E5BB35AFF43852DF")
     @Override
     public String getContentType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_350139979 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1373249767 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1910663802 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_2102733259 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_260096556 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1523249766 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1493968849 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_722681855 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_174325348 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1489478974 = null; //Variable for return #5
         try 
         {
             {
@@ -127,15 +125,14 @@ public class FileURLConnection extends URLConnection {
         } //End block
         catch (IOException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_350139979 = "content/unknown";
+            varB4EAC82CA7396A68D541C85D26508E83_1523249766 = "content/unknown";
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1373249767 = "text/plain";
+            varB4EAC82CA7396A68D541C85D26508E83_1493968849 = "text/plain";
         } //End block
-        String result;
-        result = guessContentTypeFromName(url.getFile());
+        String result = guessContentTypeFromName(url.getFile());
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1910663802 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_722681855 = result;
         } //End block
         try 
         {
@@ -144,29 +141,29 @@ public class FileURLConnection extends URLConnection {
         catch (IOException e)
         { }
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2102733259 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_174325348 = result;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_260096556 = "content/unknown";
-        String varA7E53CE21691AB073D9660D615818899_342274065; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1489478974 = "content/unknown";
+        String varA7E53CE21691AB073D9660D615818899_1023553544; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_342274065 = varB4EAC82CA7396A68D541C85D26508E83_350139979;
+                varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1523249766;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_342274065 = varB4EAC82CA7396A68D541C85D26508E83_1373249767;
+                varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1493968849;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_342274065 = varB4EAC82CA7396A68D541C85D26508E83_1910663802;
+                varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_722681855;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_342274065 = varB4EAC82CA7396A68D541C85D26508E83_2102733259;
+                varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_174325348;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_342274065 = varB4EAC82CA7396A68D541C85D26508E83_260096556;
+                varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1489478974;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_342274065.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_342274065;
+        varA7E53CE21691AB073D9660D615818899_1023553544.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1023553544;
         // ---------- Original Method ----------
         //try {
             //if (!connected) {
@@ -193,15 +190,12 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.053 -0400", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "C426E7B180F0EC16FFD8A54FD0A54611")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.773 -0400", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "B4DD039AF4FD1438EE7107433A595A86")
     private InputStream getDirectoryListing(File f) {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_165078881 = null; //Variable for return #1
-        String fileList[];
-        fileList = f.list();
-        ByteArrayOutputStream bytes;
-        bytes = new java.io.ByteArrayOutputStream();
-        PrintStream out;
-        out = new PrintStream(bytes);
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1272142285 = null; //Variable for return #1
+        String fileList[] = f.list();
+        ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
+        PrintStream out = new PrintStream(bytes);
         out.print("<title>Directory Listing</title>\n");
         out.print("<base href=\"file:");
         out.print(f.getPath().replace('\\', '/') + "/\"><h1>" + f.getPath()
@@ -214,10 +208,10 @@ public class FileURLConnection extends URLConnection {
             } //End block
         } //End collapsed parenthetic
         out.close();
-        varB4EAC82CA7396A68D541C85D26508E83_165078881 = new ByteArrayInputStream(bytes.toByteArray());
+        varB4EAC82CA7396A68D541C85D26508E83_1272142285 = new ByteArrayInputStream(bytes.toByteArray());
         addTaint(f.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_165078881.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_165078881;
+        varB4EAC82CA7396A68D541C85D26508E83_1272142285.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1272142285;
         // ---------- Original Method ----------
         //String fileList[] = f.list();
         //ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
@@ -235,16 +229,16 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.054 -0400", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "A8E3E9CA19961F53763AE76A4556BEDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.774 -0400", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "CC88EB2AED828A4BFFA87DE9D0DEAFB2")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_528635873 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1189180926 = null; //Variable for return #1
         {
             connect();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_528635873 = is;
-        varB4EAC82CA7396A68D541C85D26508E83_528635873.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_528635873;
+        varB4EAC82CA7396A68D541C85D26508E83_1189180926 = is;
+        varB4EAC82CA7396A68D541C85D26508E83_1189180926.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1189180926;
         // ---------- Original Method ----------
         //if (!connected) {
             //connect();
@@ -253,21 +247,20 @@ public class FileURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.066 -0400", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "1C2F009D1D377FA65B9BC759F744DCC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.775 -0400", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "28CA34768200A1F84E30954A7BCCCD78")
     @Override
     public java.security.Permission getPermission() throws IOException {
-        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_233352100 = null; //Variable for return #1
+        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_1676714503 = null; //Variable for return #1
         {
-            String path;
-            path = fileName;
+            String path = fileName;
             {
                 path = path.replace('/', File.separatorChar);
             } //End block
             permission = new FilePermission(path, "read");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_233352100 = permission;
-        varB4EAC82CA7396A68D541C85D26508E83_233352100.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_233352100;
+        varB4EAC82CA7396A68D541C85D26508E83_1676714503 = permission;
+        varB4EAC82CA7396A68D541C85D26508E83_1676714503.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1676714503;
         // ---------- Original Method ----------
         //if (permission == null) {
             //String path = fileName;

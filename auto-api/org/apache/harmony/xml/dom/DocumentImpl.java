@@ -27,35 +27,35 @@ import org.w3c.dom.Text;
 import org.w3c.dom.UserDataHandler;
 
 public final class DocumentImpl extends InnerNodeImpl implements Document {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "9A0C2D739DCDFB02BF9A89440A1742BE", hash_generated_field = "02CE798A8CB59B7226C8831D772A3C37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "9A0C2D739DCDFB02BF9A89440A1742BE", hash_generated_field = "02CE798A8CB59B7226C8831D772A3C37")
 
     private DOMImplementation domImplementation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "5C1DDF42AF97D3B8A25E52B51295CBCC", hash_generated_field = "4C2B5AB6B1E4F28DC9582765A0F90963")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "5C1DDF42AF97D3B8A25E52B51295CBCC", hash_generated_field = "4C2B5AB6B1E4F28DC9582765A0F90963")
 
     private DOMConfigurationImpl domConfiguration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "7F008BD20578B4549518F8F2105F0B56", hash_generated_field = "677F469BCAF22AAF9C9A1BCAA78B217D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "7F008BD20578B4549518F8F2105F0B56", hash_generated_field = "677F469BCAF22AAF9C9A1BCAA78B217D")
 
     private String documentUri;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "095EA6E25F03C3DC620F669B4CE91A23", hash_generated_field = "6E57DD71D7D0E77E0155AE21B6C03BD4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "095EA6E25F03C3DC620F669B4CE91A23", hash_generated_field = "6E57DD71D7D0E77E0155AE21B6C03BD4")
 
     private String inputEncoding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "CAD97869F74973B5626CFC237B513EAA", hash_generated_field = "656761370EB1B6AB6991B2A74412BA8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "CAD97869F74973B5626CFC237B513EAA", hash_generated_field = "656761370EB1B6AB6991B2A74412BA8B")
 
     private String xmlEncoding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "D937E495C2709421D5BB34439EB7E5BF", hash_generated_field = "D19F092C2B57A6CC2509D5D658E0ECE5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "D937E495C2709421D5BB34439EB7E5BF", hash_generated_field = "D19F092C2B57A6CC2509D5D658E0ECE5")
 
     private String xmlVersion = "1.0";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "D57C79C8DAC76C34330A7438298EC2AF", hash_generated_field = "ED1ABCCC72304E22012FCF1E2F4242CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "D57C79C8DAC76C34330A7438298EC2AF", hash_generated_field = "ED1ABCCC72304E22012FCF1E2F4242CD")
 
     private boolean xmlStandalone = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "A6BEA613612CBF77E8D9A1D2B43F7D75", hash_generated_field = "AEC49EFA08DDCABA663F00B7AA711A75")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "A6BEA613612CBF77E8D9A1D2B43F7D75", hash_generated_field = "AEC49EFA08DDCABA663F00B7AA711A75")
 
     private boolean strictErrorChecking = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.760 -0400", hash_original_field = "83989D7A486A577204E595124E91C3FB", hash_generated_field = "2C2B0316F02F109A0965964EB1E285F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.963 -0400", hash_original_field = "83989D7A486A577204E595124E91C3FB", hash_generated_field = "2C2B0316F02F109A0965964EB1E285F6")
 
     private WeakHashMap<NodeImpl, Map<String, UserData>> nodeToUserData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.762 -0400", hash_original_method = "163C3C7D3935E830694E09EA8384B9EA", hash_generated_method = "B5FE01C124BF0138B331C2E93AD2C0DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.964 -0400", hash_original_method = "163C3C7D3935E830694E09EA8384B9EA", hash_generated_method = "B5FE01C124BF0138B331C2E93AD2C0DC")
     public  DocumentImpl(DOMImplementationImpl impl, String namespaceURI,
             String qualifiedName, DocumentType doctype, String inputEncoding) {
         super(null);
@@ -84,17 +84,17 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-        private static boolean isXMLIdentifierStart(char c) {
+    private static boolean isXMLIdentifierStart(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c == '_');
     }
 
     
-        private static boolean isXMLIdentifierPart(char c) {
+    private static boolean isXMLIdentifierPart(char c) {
         return isXMLIdentifierStart(c) || (c >= '0' && c <= '9') || (c == '-') || (c == '.');
     }
 
     
-        static boolean isXMLIdentifier(String s) {
+    static boolean isXMLIdentifier(String s) {
         if (s.length() == 0) {
             return false;
         }
@@ -110,21 +110,20 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.773 -0400", hash_original_method = "71EB0F41099D1D8D08C83EAF224E8D36", hash_generated_method = "322C2B2A845CC9C2E417B1F3DCEB3CC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.966 -0400", hash_original_method = "71EB0F41099D1D8D08C83EAF224E8D36", hash_generated_method = "D45342567F58D74AB0E403CEE2D3F2C2")
     private NodeImpl shallowCopy(short operation, Node node) {
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1144420732 = null; //Variable for return #1
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_2084692274 = null; //Variable for return #2
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_2023392431 = null; //Variable for return #3
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1552854003 = null; //Variable for return #4
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1936387228 = null; //Variable for return #5
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_972795862 = null; //Variable for return #6
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1495150464 = null; //Variable for return #7
-        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_2089902303 = null; //Variable for return #8
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_622527559 = null; //Variable for return #1
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_419811082 = null; //Variable for return #2
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_815010354 = null; //Variable for return #3
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1812404361 = null; //Variable for return #4
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1832365069 = null; //Variable for return #5
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_38132622 = null; //Variable for return #6
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1177099101 = null; //Variable for return #7
+        NodeImpl varB4EAC82CA7396A68D541C85D26508E83_1248793957 = null; //Variable for return #8
         {
-            Object var09E3B15CD8604B5CA0883ABFA37862BC_1131081180 = (node.getNodeType());
+            Object var09E3B15CD8604B5CA0883ABFA37862BC_663079568 = (node.getNodeType());
             //Begin case Node.ATTRIBUTE_NODE 
-            AttrImpl attr;
-            attr = (AttrImpl) node;
+            AttrImpl attr = (AttrImpl) node;
             //End case Node.ATTRIBUTE_NODE 
             //Begin case Node.ATTRIBUTE_NODE 
             AttrImpl attrCopy;
@@ -142,24 +141,23 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
             attrCopy.setNodeValue(attr.getValue());
             //End case Node.ATTRIBUTE_NODE 
             //Begin case Node.ATTRIBUTE_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_1144420732 = attrCopy;
+            varB4EAC82CA7396A68D541C85D26508E83_622527559 = attrCopy;
             //End case Node.ATTRIBUTE_NODE 
             //Begin case Node.CDATA_SECTION_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_2084692274 = createCDATASection(((CharacterData) node).getData());
+            varB4EAC82CA7396A68D541C85D26508E83_419811082 = createCDATASection(((CharacterData) node).getData());
             //End case Node.CDATA_SECTION_NODE 
             //Begin case Node.COMMENT_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_2023392431 = createComment(((Comment) node).getData());
+            varB4EAC82CA7396A68D541C85D26508E83_815010354 = createComment(((Comment) node).getData());
             //End case Node.COMMENT_NODE 
             //Begin case Node.DOCUMENT_FRAGMENT_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_1552854003 = createDocumentFragment();
+            varB4EAC82CA7396A68D541C85D26508E83_1812404361 = createDocumentFragment();
             //End case Node.DOCUMENT_FRAGMENT_NODE 
             //Begin case Node.DOCUMENT_NODE Node.DOCUMENT_TYPE_NODE 
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
                     "Cannot copy node of type " + node.getNodeType());
             //End case Node.DOCUMENT_NODE Node.DOCUMENT_TYPE_NODE 
             //Begin case Node.ELEMENT_NODE 
-            ElementImpl element;
-            element = (ElementImpl) node;
+            ElementImpl element = (ElementImpl) node;
             //End case Node.ELEMENT_NODE 
             //Begin case Node.ELEMENT_NODE 
             ElementImpl elementCopy;
@@ -174,19 +172,15 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
             } //End block
             //End case Node.ELEMENT_NODE 
             //Begin case Node.ELEMENT_NODE 
-            NamedNodeMap attributes;
-            attributes = element.getAttributes();
+            NamedNodeMap attributes = element.getAttributes();
             //End case Node.ELEMENT_NODE 
             //Begin case Node.ELEMENT_NODE 
             {
-                int i;
-                i = 0;
-                boolean varB52A5F5C76706054FE03857094E040A4_85776197 = (i < attributes.getLength());
+                int i = 0;
+                boolean varB52A5F5C76706054FE03857094E040A4_289389031 = (i < attributes.getLength());
                 {
-                    AttrImpl elementAttr;
-                    elementAttr = (AttrImpl) attributes.item(i);
-                    AttrImpl elementAttrCopy;
-                    elementAttrCopy = (AttrImpl) shallowCopy(operation, elementAttr);
+                    AttrImpl elementAttr = (AttrImpl) attributes.item(i);
+                    AttrImpl elementAttrCopy = (AttrImpl) shallowCopy(operation, elementAttr);
                     notifyUserDataHandlers(operation, elementAttr, elementAttrCopy);
                     {
                         elementCopy.setAttributeNodeNS(elementAttrCopy);
@@ -198,23 +192,22 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
             } //End collapsed parenthetic
             //End case Node.ELEMENT_NODE 
             //Begin case Node.ELEMENT_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_1936387228 = elementCopy;
+            varB4EAC82CA7396A68D541C85D26508E83_1832365069 = elementCopy;
             //End case Node.ELEMENT_NODE 
             //Begin case Node.ENTITY_NODE Node.NOTATION_NODE 
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             //End case Node.ENTITY_NODE Node.NOTATION_NODE 
             //Begin case Node.ENTITY_REFERENCE_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_972795862 = createEntityReference(node.getNodeName());
+            varB4EAC82CA7396A68D541C85D26508E83_38132622 = createEntityReference(node.getNodeName());
             //End case Node.ENTITY_REFERENCE_NODE 
             //Begin case Node.PROCESSING_INSTRUCTION_NODE 
-            ProcessingInstruction pi;
-            pi = (ProcessingInstruction) node;
+            ProcessingInstruction pi = (ProcessingInstruction) node;
             //End case Node.PROCESSING_INSTRUCTION_NODE 
             //Begin case Node.PROCESSING_INSTRUCTION_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_1495150464 = createProcessingInstruction(pi.getTarget(), pi.getData());
+            varB4EAC82CA7396A68D541C85D26508E83_1177099101 = createProcessingInstruction(pi.getTarget(), pi.getData());
             //End case Node.PROCESSING_INSTRUCTION_NODE 
             //Begin case Node.TEXT_NODE 
-            varB4EAC82CA7396A68D541C85D26508E83_2089902303 = createTextNode(((Text) node).getData());
+            varB4EAC82CA7396A68D541C85D26508E83_1248793957 = createTextNode(((Text) node).getData());
             //End case Node.TEXT_NODE 
             //Begin case default 
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
@@ -223,64 +216,61 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
         } //End collapsed parenthetic
         addTaint(operation);
         addTaint(node.getTaint());
-        NodeImpl varA7E53CE21691AB073D9660D615818899_211293870; //Final return value
+        NodeImpl varA7E53CE21691AB073D9660D615818899_385081314; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_1144420732;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_622527559;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_2084692274;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_419811082;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_2023392431;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_815010354;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_1552854003;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_1812404361;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_1936387228;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_1832365069;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_972795862;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_38132622;
                 break;
             case 7: //Assign result for return ordinal #7
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_1495150464;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_1177099101;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_211293870 = varB4EAC82CA7396A68D541C85D26508E83_2089902303;
+                varA7E53CE21691AB073D9660D615818899_385081314 = varB4EAC82CA7396A68D541C85D26508E83_1248793957;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_211293870.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_211293870;
+        varA7E53CE21691AB073D9660D615818899_385081314.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_385081314;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.779 -0400", hash_original_method = "33992AC73E126DB7F05D741A2596DA1D", hash_generated_method = "EAF544BF31099B61C50B5C67F4E8651F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.967 -0400", hash_original_method = "33992AC73E126DB7F05D741A2596DA1D", hash_generated_method = "425943538F930B51E1EA6048A5B4C13D")
      Node cloneOrImportNode(short operation, Node node, boolean deep) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_878241135 = null; //Variable for return #1
-        NodeImpl copy;
-        copy = shallowCopy(operation, node);
+        Node varB4EAC82CA7396A68D541C85D26508E83_279417790 = null; //Variable for return #1
+        NodeImpl copy = shallowCopy(operation, node);
         {
-            NodeList list;
-            list = node.getChildNodes();
+            NodeList list = node.getChildNodes();
             {
-                int i;
-                i = 0;
-                boolean varD38DCC138D8AE85AC511580302329122_602295948 = (i < list.getLength());
+                int i = 0;
+                boolean varD38DCC138D8AE85AC511580302329122_1609600298 = (i < list.getLength());
                 {
                     copy.appendChild(cloneOrImportNode(operation, list.item(i), deep));
                 } //End block
             } //End collapsed parenthetic
         } //End block
         notifyUserDataHandlers(operation, node, copy);
-        varB4EAC82CA7396A68D541C85D26508E83_878241135 = copy;
+        varB4EAC82CA7396A68D541C85D26508E83_279417790 = copy;
         addTaint(operation);
         addTaint(node.getTaint());
         addTaint(deep);
-        varB4EAC82CA7396A68D541C85D26508E83_878241135.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_878241135;
+        varB4EAC82CA7396A68D541C85D26508E83_279417790.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_279417790;
         // ---------- Original Method ----------
         //NodeImpl copy = shallowCopy(operation, node);
         //if (deep) {
@@ -294,33 +284,31 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.779 -0400", hash_original_method = "B9F8F7C255F6A56C10B3E640DB2181B9", hash_generated_method = "DAE7027398BAC54BBB44D03F1667D96C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.968 -0400", hash_original_method = "B9F8F7C255F6A56C10B3E640DB2181B9", hash_generated_method = "5E48AC07996D8502B9ED5FC1C6DD5DF1")
     public Node importNode(Node importedNode, boolean deep) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_252991365 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_252991365 = cloneOrImportNode(UserDataHandler.NODE_IMPORTED, importedNode, deep);
+        Node varB4EAC82CA7396A68D541C85D26508E83_1109281202 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1109281202 = cloneOrImportNode(UserDataHandler.NODE_IMPORTED, importedNode, deep);
         addTaint(importedNode.getTaint());
         addTaint(deep);
-        varB4EAC82CA7396A68D541C85D26508E83_252991365.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_252991365;
+        varB4EAC82CA7396A68D541C85D26508E83_1109281202.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1109281202;
         // ---------- Original Method ----------
         //return cloneOrImportNode(UserDataHandler.NODE_IMPORTED, importedNode, deep);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.790 -0400", hash_original_method = "5D3B579AF503CA96D628AD6AA8EE2361", hash_generated_method = "31641C99A9BC5792E78A0F7A15AA4942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.969 -0400", hash_original_method = "5D3B579AF503CA96D628AD6AA8EE2361", hash_generated_method = "9822DB9877F04E0AADF33D3219E643D9")
     public Node adoptNode(Node node) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_722991929 = null; //Variable for return #1
-        Node varB4EAC82CA7396A68D541C85D26508E83_1656106496 = null; //Variable for return #2
+        Node varB4EAC82CA7396A68D541C85D26508E83_1673330799 = null; //Variable for return #1
+        Node varB4EAC82CA7396A68D541C85D26508E83_876669418 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_722991929 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1673330799 = null;
         } //End block
-        NodeImpl nodeImpl;
-        nodeImpl = (NodeImpl) node;
+        NodeImpl nodeImpl = (NodeImpl) node;
         {
-            Object var6BBEF303238720B74B8389D1213ECB55_434802976 = (nodeImpl.getNodeType());
+            Object var6BBEF303238720B74B8389D1213ECB55_971337156 = (nodeImpl.getNodeType());
             //Begin case Node.ATTRIBUTE_NODE 
-            AttrImpl attr;
-            attr = (AttrImpl) node;
+            AttrImpl attr = (AttrImpl) node;
             //End case Node.ATTRIBUTE_NODE 
             //Begin case Node.ATTRIBUTE_NODE 
             {
@@ -336,61 +324,55 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
                         "Unsupported node type " + node.getNodeType());
             //End case default 
         } //End collapsed parenthetic
-        Node parent;
-        parent = nodeImpl.getParentNode();
+        Node parent = nodeImpl.getParentNode();
         {
             parent.removeChild(nodeImpl);
         } //End block
         changeDocumentToThis(nodeImpl);
         notifyUserDataHandlers(UserDataHandler.NODE_ADOPTED, node, null);
-        varB4EAC82CA7396A68D541C85D26508E83_1656106496 = nodeImpl;
+        varB4EAC82CA7396A68D541C85D26508E83_876669418 = nodeImpl;
         addTaint(node.getTaint());
-        Node varA7E53CE21691AB073D9660D615818899_64411940; //Final return value
+        Node varA7E53CE21691AB073D9660D615818899_262806528; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_64411940 = varB4EAC82CA7396A68D541C85D26508E83_722991929;
+                varA7E53CE21691AB073D9660D615818899_262806528 = varB4EAC82CA7396A68D541C85D26508E83_1673330799;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_64411940 = varB4EAC82CA7396A68D541C85D26508E83_1656106496;
+                varA7E53CE21691AB073D9660D615818899_262806528 = varB4EAC82CA7396A68D541C85D26508E83_876669418;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_64411940.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_64411940;
+        varA7E53CE21691AB073D9660D615818899_262806528.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_262806528;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.815 -0400", hash_original_method = "AE2A1AE898A744D8ADE864AE8BDC4C1C", hash_generated_method = "F1F5B7F8BD1935C7BB03FA3C1F400C84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.970 -0400", hash_original_method = "AE2A1AE898A744D8ADE864AE8BDC4C1C", hash_generated_method = "3847AE075D387FD49F645AFADBC89215")
     private void changeDocumentToThis(NodeImpl node) {
-        Map<String, UserData> userData;
-        userData = node.document.getUserDataMapForRead(node);
+        Map<String, UserData> userData = node.document.getUserDataMapForRead(node);
         {
-            boolean var2BD8DBC7AC026EFBD37682A9989557BC_944281344 = (!userData.isEmpty());
+            boolean var2BD8DBC7AC026EFBD37682A9989557BC_993780835 = (!userData.isEmpty());
             {
                 getUserDataMap(node).putAll(userData);
             } //End block
         } //End collapsed parenthetic
         node.document = this;
-        NodeList list;
-        list = node.getChildNodes();
+        NodeList list = node.getChildNodes();
         {
-            int i;
-            i = 0;
-            boolean var7D5CF764E267A57EB4954ADA1415240F_96083373 = (i < list.getLength());
+            int i = 0;
+            boolean var7D5CF764E267A57EB4954ADA1415240F_1166169263 = (i < list.getLength());
             {
                 changeDocumentToThis((NodeImpl) list.item(i));
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var652FE86C56206CB08EFEE8747EA1A76A_442949786 = (node.getNodeType() == Node.ELEMENT_NODE);
+            boolean var652FE86C56206CB08EFEE8747EA1A76A_1407754524 = (node.getNodeType() == Node.ELEMENT_NODE);
             {
-                NamedNodeMap attributes;
-                attributes = node.getAttributes();
+                NamedNodeMap attributes = node.getAttributes();
                 {
-                    int i;
-                    i = 0;
-                    boolean var66E0E7022CDBCD518DFA8161D49D9AAF_730766605 = (i < attributes.getLength());
+                    int i = 0;
+                    boolean var66E0E7022CDBCD518DFA8161D49D9AAF_1348135117 = (i < attributes.getLength());
                     {
                         changeDocumentToThis((AttrImpl) attributes.item(i));
                     } //End block
@@ -417,23 +399,23 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.822 -0400", hash_original_method = "B4181EC124183B0357F0B78B4540BB52", hash_generated_method = "A8C5DDF5ED5667CF29DDF29C670C9A2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.971 -0400", hash_original_method = "B4181EC124183B0357F0B78B4540BB52", hash_generated_method = "E0EB4DC7D850B835CB0A989295585AB5")
     public Node renameNode(Node node, String namespaceURI, String qualifiedName) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_255777287 = null; //Variable for return #1
+        Node varB4EAC82CA7396A68D541C85D26508E83_1082465243 = null; //Variable for return #1
         {
-            boolean var85BF6B8FC8FE97D97DB1ED3788EB031C_1721708287 = (node.getOwnerDocument() != this);
+            boolean var85BF6B8FC8FE97D97DB1ED3788EB031C_545499200 = (node.getOwnerDocument() != this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
             } //End block
         } //End collapsed parenthetic
         setNameNS((NodeImpl) node, namespaceURI, qualifiedName);
         notifyUserDataHandlers(UserDataHandler.NODE_RENAMED, node, null);
-        varB4EAC82CA7396A68D541C85D26508E83_255777287 = node;
+        varB4EAC82CA7396A68D541C85D26508E83_1082465243 = node;
         addTaint(node.getTaint());
         addTaint(namespaceURI.getTaint());
         addTaint(qualifiedName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_255777287.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_255777287;
+        varB4EAC82CA7396A68D541C85D26508E83_1082465243.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1082465243;
         // ---------- Original Method ----------
         //if (node.getOwnerDocument() != this) {
             //throw new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
@@ -444,154 +426,154 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.822 -0400", hash_original_method = "03FB31A26F55DD46B5E0B444E3BDF78D", hash_generated_method = "C964ED8A3D328E01C87E199402A8E5D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.971 -0400", hash_original_method = "03FB31A26F55DD46B5E0B444E3BDF78D", hash_generated_method = "A72C5970D4525C4ADFCD2C9A978466CE")
     public AttrImpl createAttribute(String name) {
-        AttrImpl varB4EAC82CA7396A68D541C85D26508E83_411045741 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_411045741 = new AttrImpl(this, name);
+        AttrImpl varB4EAC82CA7396A68D541C85D26508E83_570497815 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_570497815 = new AttrImpl(this, name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_411045741.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_411045741;
+        varB4EAC82CA7396A68D541C85D26508E83_570497815.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_570497815;
         // ---------- Original Method ----------
         //return new AttrImpl(this, name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.825 -0400", hash_original_method = "7E9190A2987BE4C0864253AAA3A5BE1B", hash_generated_method = "526A496017DEB146BB579123CE8269F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.972 -0400", hash_original_method = "7E9190A2987BE4C0864253AAA3A5BE1B", hash_generated_method = "2319F3B84EAE5FB6E1008E03EE6BBF17")
     public AttrImpl createAttributeNS(String namespaceURI, String qualifiedName) {
-        AttrImpl varB4EAC82CA7396A68D541C85D26508E83_2033049451 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2033049451 = new AttrImpl(this, namespaceURI, qualifiedName);
+        AttrImpl varB4EAC82CA7396A68D541C85D26508E83_1986417313 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1986417313 = new AttrImpl(this, namespaceURI, qualifiedName);
         addTaint(namespaceURI.getTaint());
         addTaint(qualifiedName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2033049451.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2033049451;
+        varB4EAC82CA7396A68D541C85D26508E83_1986417313.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1986417313;
         // ---------- Original Method ----------
         //return new AttrImpl(this, namespaceURI, qualifiedName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.825 -0400", hash_original_method = "33E9B43072FE607E52B07810FE2FCABA", hash_generated_method = "BB968310D26CEFF423E6BC655311C538")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.972 -0400", hash_original_method = "33E9B43072FE607E52B07810FE2FCABA", hash_generated_method = "37BAE45CA7E9BB00C48B1E87EA0834D8")
     public CDATASectionImpl createCDATASection(String data) {
-        CDATASectionImpl varB4EAC82CA7396A68D541C85D26508E83_1130896336 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1130896336 = new CDATASectionImpl(this, data);
+        CDATASectionImpl varB4EAC82CA7396A68D541C85D26508E83_1792284354 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1792284354 = new CDATASectionImpl(this, data);
         addTaint(data.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1130896336.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1130896336;
+        varB4EAC82CA7396A68D541C85D26508E83_1792284354.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1792284354;
         // ---------- Original Method ----------
         //return new CDATASectionImpl(this, data);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.827 -0400", hash_original_method = "4FD6147AAF1A19FB78D88E22C913FA0B", hash_generated_method = "9E5CFC240DC662E7AA61069BC50AB061")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.973 -0400", hash_original_method = "4FD6147AAF1A19FB78D88E22C913FA0B", hash_generated_method = "995BFD7465B3AE57D140E8FA2750EFC4")
     public CommentImpl createComment(String data) {
-        CommentImpl varB4EAC82CA7396A68D541C85D26508E83_1230993415 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1230993415 = new CommentImpl(this, data);
+        CommentImpl varB4EAC82CA7396A68D541C85D26508E83_1603634601 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1603634601 = new CommentImpl(this, data);
         addTaint(data.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1230993415.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1230993415;
+        varB4EAC82CA7396A68D541C85D26508E83_1603634601.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1603634601;
         // ---------- Original Method ----------
         //return new CommentImpl(this, data);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.827 -0400", hash_original_method = "E0A12B60B45AEC987C1DC80CBB7F44C4", hash_generated_method = "79ED3A2C25A2B76ACD15A1A0A3506A7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.973 -0400", hash_original_method = "E0A12B60B45AEC987C1DC80CBB7F44C4", hash_generated_method = "A6A28D2B7AC74500CB9F5EBBCA196A78")
     public DocumentFragmentImpl createDocumentFragment() {
-        DocumentFragmentImpl varB4EAC82CA7396A68D541C85D26508E83_1663461503 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1663461503 = new DocumentFragmentImpl(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1663461503.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1663461503;
+        DocumentFragmentImpl varB4EAC82CA7396A68D541C85D26508E83_1993229058 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1993229058 = new DocumentFragmentImpl(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1993229058.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1993229058;
         // ---------- Original Method ----------
         //return new DocumentFragmentImpl(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.834 -0400", hash_original_method = "292829053BF3153AB99E6877B4023526", hash_generated_method = "AAC7396029457ECB1873D2CC1AC731A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.974 -0400", hash_original_method = "292829053BF3153AB99E6877B4023526", hash_generated_method = "B9383B7B9862198568A4B5B737BCE4E6")
     public ElementImpl createElement(String tagName) {
-        ElementImpl varB4EAC82CA7396A68D541C85D26508E83_2087033279 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2087033279 = new ElementImpl(this, tagName);
+        ElementImpl varB4EAC82CA7396A68D541C85D26508E83_299476555 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_299476555 = new ElementImpl(this, tagName);
         addTaint(tagName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2087033279.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2087033279;
+        varB4EAC82CA7396A68D541C85D26508E83_299476555.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_299476555;
         // ---------- Original Method ----------
         //return new ElementImpl(this, tagName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.834 -0400", hash_original_method = "A5861E1D8245000D4878ACAD76251828", hash_generated_method = "D3FD0B2587FC190D112E65DB316A40F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.974 -0400", hash_original_method = "A5861E1D8245000D4878ACAD76251828", hash_generated_method = "37965C248B69118DD13A2CA179A42C08")
     public ElementImpl createElementNS(String namespaceURI, String qualifiedName) {
-        ElementImpl varB4EAC82CA7396A68D541C85D26508E83_1291761548 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1291761548 = new ElementImpl(this, namespaceURI, qualifiedName);
+        ElementImpl varB4EAC82CA7396A68D541C85D26508E83_339216570 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_339216570 = new ElementImpl(this, namespaceURI, qualifiedName);
         addTaint(namespaceURI.getTaint());
         addTaint(qualifiedName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1291761548.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1291761548;
+        varB4EAC82CA7396A68D541C85D26508E83_339216570.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_339216570;
         // ---------- Original Method ----------
         //return new ElementImpl(this, namespaceURI, qualifiedName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.835 -0400", hash_original_method = "3D6CE6751E22FD6EDABA3110F50E9507", hash_generated_method = "1788EBA6A0F8114AB3D2624577110414")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.975 -0400", hash_original_method = "3D6CE6751E22FD6EDABA3110F50E9507", hash_generated_method = "9526C64FD3B8B3F23B94D008334FFBC5")
     public EntityReferenceImpl createEntityReference(String name) {
-        EntityReferenceImpl varB4EAC82CA7396A68D541C85D26508E83_1536276680 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1536276680 = new EntityReferenceImpl(this, name);
+        EntityReferenceImpl varB4EAC82CA7396A68D541C85D26508E83_840770139 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_840770139 = new EntityReferenceImpl(this, name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1536276680.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1536276680;
+        varB4EAC82CA7396A68D541C85D26508E83_840770139.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_840770139;
         // ---------- Original Method ----------
         //return new EntityReferenceImpl(this, name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.835 -0400", hash_original_method = "D7C06C722D311E922A32C921DF42A71E", hash_generated_method = "394BB866DD8EA1186938B6129B0431DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.975 -0400", hash_original_method = "D7C06C722D311E922A32C921DF42A71E", hash_generated_method = "C28AA896FC747CE52973B8D23BF5E51E")
     public ProcessingInstructionImpl createProcessingInstruction(String target, String data) {
-        ProcessingInstructionImpl varB4EAC82CA7396A68D541C85D26508E83_607855251 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_607855251 = new ProcessingInstructionImpl(this, target, data);
+        ProcessingInstructionImpl varB4EAC82CA7396A68D541C85D26508E83_1993326265 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1993326265 = new ProcessingInstructionImpl(this, target, data);
         addTaint(target.getTaint());
         addTaint(data.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_607855251.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_607855251;
+        varB4EAC82CA7396A68D541C85D26508E83_1993326265.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1993326265;
         // ---------- Original Method ----------
         //return new ProcessingInstructionImpl(this, target, data);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.836 -0400", hash_original_method = "194421EA05B5C62E27597F16A7528043", hash_generated_method = "FF36F8829152EDBAEE0F92D9304D1AE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.976 -0400", hash_original_method = "194421EA05B5C62E27597F16A7528043", hash_generated_method = "9A72E4BE54C42EAB5E85D87EBC4D72E4")
     public TextImpl createTextNode(String data) {
-        TextImpl varB4EAC82CA7396A68D541C85D26508E83_1995318592 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1995318592 = new TextImpl(this, data);
+        TextImpl varB4EAC82CA7396A68D541C85D26508E83_1455236647 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1455236647 = new TextImpl(this, data);
         addTaint(data.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1995318592.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1995318592;
+        varB4EAC82CA7396A68D541C85D26508E83_1455236647.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1455236647;
         // ---------- Original Method ----------
         //return new TextImpl(this, data);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.877 -0400", hash_original_method = "D024EAB4EE7007F22F93D8BE399D2ED2", hash_generated_method = "1E677E03BFA9E9479CF04D914CF4C736")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.981 -0400", hash_original_method = "D024EAB4EE7007F22F93D8BE399D2ED2", hash_generated_method = "84017E2A539F112F9C858D48EBC7FB8B")
     public DocumentType getDoctype() {
-        DocumentType varB4EAC82CA7396A68D541C85D26508E83_1063011676 = null; //Variable for return #1
-        DocumentType varB4EAC82CA7396A68D541C85D26508E83_1036339970 = null; //Variable for return #2
+        DocumentType varB4EAC82CA7396A68D541C85D26508E83_346855712 = null; //Variable for return #1
+        DocumentType varB4EAC82CA7396A68D541C85D26508E83_750031489 = null; //Variable for return #2
         {
-            Iterator<LeafNodeImpl> varD9F9BEAAEB1609B5416C40DE92F9DCC9_168132769 = (children).iterator();
-            varD9F9BEAAEB1609B5416C40DE92F9DCC9_168132769.hasNext();
-            LeafNodeImpl child = varD9F9BEAAEB1609B5416C40DE92F9DCC9_168132769.next();
+            Iterator<LeafNodeImpl> varD9F9BEAAEB1609B5416C40DE92F9DCC9_1063930909 = (children).iterator();
+            varD9F9BEAAEB1609B5416C40DE92F9DCC9_1063930909.hasNext();
+            LeafNodeImpl child = varD9F9BEAAEB1609B5416C40DE92F9DCC9_1063930909.next();
             {
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1063011676 = (DocumentType) child;
+                    varB4EAC82CA7396A68D541C85D26508E83_346855712 = (DocumentType) child;
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1036339970 = null;
-        DocumentType varA7E53CE21691AB073D9660D615818899_1523937689; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_750031489 = null;
+        DocumentType varA7E53CE21691AB073D9660D615818899_472499859; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1523937689 = varB4EAC82CA7396A68D541C85D26508E83_1063011676;
+                varA7E53CE21691AB073D9660D615818899_472499859 = varB4EAC82CA7396A68D541C85D26508E83_346855712;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1523937689 = varB4EAC82CA7396A68D541C85D26508E83_1036339970;
+                varA7E53CE21691AB073D9660D615818899_472499859 = varB4EAC82CA7396A68D541C85D26508E83_750031489;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1523937689.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1523937689;
+        varA7E53CE21691AB073D9660D615818899_472499859.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_472499859;
         // ---------- Original Method ----------
         //for (LeafNodeImpl child : children) {
             //if (child instanceof DocumentType) {
@@ -602,32 +584,32 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.913 -0400", hash_original_method = "59978D20A08E2A3D10080AFCDAEC6A5E", hash_generated_method = "446EF5D4FF230719FB35D0E23382EE86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.985 -0400", hash_original_method = "59978D20A08E2A3D10080AFCDAEC6A5E", hash_generated_method = "4206A0657064432403E0FEDA953BD57A")
     public Element getDocumentElement() {
-        Element varB4EAC82CA7396A68D541C85D26508E83_203561227 = null; //Variable for return #1
-        Element varB4EAC82CA7396A68D541C85D26508E83_713278115 = null; //Variable for return #2
+        Element varB4EAC82CA7396A68D541C85D26508E83_1369667577 = null; //Variable for return #1
+        Element varB4EAC82CA7396A68D541C85D26508E83_1984032709 = null; //Variable for return #2
         {
-            Iterator<LeafNodeImpl> varD9F9BEAAEB1609B5416C40DE92F9DCC9_1769807160 = (children).iterator();
-            varD9F9BEAAEB1609B5416C40DE92F9DCC9_1769807160.hasNext();
-            LeafNodeImpl child = varD9F9BEAAEB1609B5416C40DE92F9DCC9_1769807160.next();
+            Iterator<LeafNodeImpl> varD9F9BEAAEB1609B5416C40DE92F9DCC9_444227826 = (children).iterator();
+            varD9F9BEAAEB1609B5416C40DE92F9DCC9_444227826.hasNext();
+            LeafNodeImpl child = varD9F9BEAAEB1609B5416C40DE92F9DCC9_444227826.next();
             {
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_203561227 = (Element) child;
+                    varB4EAC82CA7396A68D541C85D26508E83_1369667577 = (Element) child;
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_713278115 = null;
-        Element varA7E53CE21691AB073D9660D615818899_68274646; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1984032709 = null;
+        Element varA7E53CE21691AB073D9660D615818899_1965560177; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_68274646 = varB4EAC82CA7396A68D541C85D26508E83_203561227;
+                varA7E53CE21691AB073D9660D615818899_1965560177 = varB4EAC82CA7396A68D541C85D26508E83_1369667577;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_68274646 = varB4EAC82CA7396A68D541C85D26508E83_713278115;
+                varA7E53CE21691AB073D9660D615818899_1965560177 = varB4EAC82CA7396A68D541C85D26508E83_1984032709;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_68274646.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_68274646;
+        varA7E53CE21691AB073D9660D615818899_1965560177.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1965560177;
         // ---------- Original Method ----------
         //for (LeafNodeImpl child : children) {
             //if (child instanceof Element) {
@@ -638,31 +620,29 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.914 -0400", hash_original_method = "F4A17E55F2C93FA371B29DDF570BB5F6", hash_generated_method = "042D7AE18E1559766C0FC49017EF6173")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.985 -0400", hash_original_method = "F4A17E55F2C93FA371B29DDF570BB5F6", hash_generated_method = "709756A1E77A8E90E28B74EB75C82093")
     public Element getElementById(String elementId) {
-        Element varB4EAC82CA7396A68D541C85D26508E83_790604944 = null; //Variable for return #1
-        ElementImpl root;
-        root = (ElementImpl) getDocumentElement();
-        varB4EAC82CA7396A68D541C85D26508E83_790604944 = (root == null ? null : root.getElementById(elementId));
+        Element varB4EAC82CA7396A68D541C85D26508E83_436869129 = null; //Variable for return #1
+        ElementImpl root = (ElementImpl) getDocumentElement();
+        varB4EAC82CA7396A68D541C85D26508E83_436869129 = (root == null ? null : root.getElementById(elementId));
         addTaint(elementId.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_790604944.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_790604944;
+        varB4EAC82CA7396A68D541C85D26508E83_436869129.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_436869129;
         // ---------- Original Method ----------
         //ElementImpl root = (ElementImpl) getDocumentElement();
         //return (root == null ? null : root.getElementById(elementId));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.915 -0400", hash_original_method = "6E8835CC5AA6D9440E7C33D346671E0B", hash_generated_method = "ED1CB260A7DAF4C982E483C0D182EF2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.986 -0400", hash_original_method = "6E8835CC5AA6D9440E7C33D346671E0B", hash_generated_method = "C3A98F0BFA50891BECE896BE14FA5F1C")
     public NodeList getElementsByTagName(String name) {
-        NodeList varB4EAC82CA7396A68D541C85D26508E83_297909465 = null; //Variable for return #1
-        NodeListImpl result;
-        result = new NodeListImpl();
+        NodeList varB4EAC82CA7396A68D541C85D26508E83_909238634 = null; //Variable for return #1
+        NodeListImpl result = new NodeListImpl();
         getElementsByTagName(result, name);
-        varB4EAC82CA7396A68D541C85D26508E83_297909465 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_909238634 = result;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_297909465.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_297909465;
+        varB4EAC82CA7396A68D541C85D26508E83_909238634.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_909238634;
         // ---------- Original Method ----------
         //NodeListImpl result = new NodeListImpl();
         //getElementsByTagName(result, name);
@@ -670,17 +650,16 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.932 -0400", hash_original_method = "A5BCB04504E6AD1A3895B6FBC1B390B7", hash_generated_method = "562505886EA83DB1D995DAD452E87E69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.987 -0400", hash_original_method = "A5BCB04504E6AD1A3895B6FBC1B390B7", hash_generated_method = "7D37CF19A95004B5EF7555FE2104B071")
     public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
-        NodeList varB4EAC82CA7396A68D541C85D26508E83_1073475685 = null; //Variable for return #1
-        NodeListImpl result;
-        result = new NodeListImpl();
+        NodeList varB4EAC82CA7396A68D541C85D26508E83_1258998233 = null; //Variable for return #1
+        NodeListImpl result = new NodeListImpl();
         getElementsByTagNameNS(result, namespaceURI, localName);
-        varB4EAC82CA7396A68D541C85D26508E83_1073475685 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1258998233 = result;
         addTaint(namespaceURI.getTaint());
         addTaint(localName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1073475685.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1073475685;
+        varB4EAC82CA7396A68D541C85D26508E83_1258998233.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1258998233;
         // ---------- Original Method ----------
         //NodeListImpl result = new NodeListImpl();
         //getElementsByTagNameNS(result, namespaceURI, localName);
@@ -688,62 +667,62 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.933 -0400", hash_original_method = "871220F29645F989F5FF83627B59D2B9", hash_generated_method = "A27CD92650DBDAF2A1DBE29B985F0E9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.988 -0400", hash_original_method = "871220F29645F989F5FF83627B59D2B9", hash_generated_method = "EAAAAF1FB641A83308A6C16A64A1E3DA")
     public DOMImplementation getImplementation() {
-        DOMImplementation varB4EAC82CA7396A68D541C85D26508E83_309080727 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_309080727 = domImplementation;
-        varB4EAC82CA7396A68D541C85D26508E83_309080727.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_309080727;
+        DOMImplementation varB4EAC82CA7396A68D541C85D26508E83_560051331 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_560051331 = domImplementation;
+        varB4EAC82CA7396A68D541C85D26508E83_560051331.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_560051331;
         // ---------- Original Method ----------
         //return domImplementation;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.933 -0400", hash_original_method = "3823D9F624F2EC5FAA072B7BE8806F96", hash_generated_method = "55A890F0783D6C02EE077F27973B16B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.988 -0400", hash_original_method = "3823D9F624F2EC5FAA072B7BE8806F96", hash_generated_method = "C63464EA2FC4955A9EA2364467949DAD")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1136756528 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1136756528 = "#document";
-        varB4EAC82CA7396A68D541C85D26508E83_1136756528.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1136756528;
+        String varB4EAC82CA7396A68D541C85D26508E83_541840641 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_541840641 = "#document";
+        varB4EAC82CA7396A68D541C85D26508E83_541840641.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_541840641;
         // ---------- Original Method ----------
         //return "#document";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.934 -0400", hash_original_method = "043CCE8DE1A8362BF53702E45F3637E9", hash_generated_method = "9B9B198AE7CD69B7249402BCA55E476A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.989 -0400", hash_original_method = "043CCE8DE1A8362BF53702E45F3637E9", hash_generated_method = "3F022F9B36FC363604695629A2CBFA56")
     @Override
     public short getNodeType() {
-        short var4F09DAA9D95BCB166A302407A0E0BABE_1429156031 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_1429156031;
+        short var4F09DAA9D95BCB166A302407A0E0BABE_537151179 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_537151179;
         // ---------- Original Method ----------
         //return Node.DOCUMENT_NODE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.934 -0400", hash_original_method = "C51ADCEBFAB6A11E8C0AA42A3197A4ED", hash_generated_method = "32CE1D2809692D552B5D41E47FAC0029")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.990 -0400", hash_original_method = "C51ADCEBFAB6A11E8C0AA42A3197A4ED", hash_generated_method = "49AF779B9B03DB76408088111C7CCC17")
     @Override
     public Node insertChildAt(Node toInsert, int index) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_700754720 = null; //Variable for return #1
+        Node varB4EAC82CA7396A68D541C85D26508E83_1684272268 = null; //Variable for return #1
         {
-            boolean var04BB177618B02F1518CBEFA9FED48CA0_1479632906 = (toInsert instanceof Element && getDocumentElement() != null);
+            boolean var04BB177618B02F1518CBEFA9FED48CA0_282101904 = (toInsert instanceof Element && getDocumentElement() != null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR,
                     "Only one root element allowed");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD2DDB695B9F05EE403A0265E37F38EFF_379008131 = (toInsert instanceof DocumentType && getDoctype() != null);
+            boolean varD2DDB695B9F05EE403A0265E37F38EFF_439928021 = (toInsert instanceof DocumentType && getDoctype() != null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR,
                     "Only one DOCTYPE element allowed");
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_700754720 = super.insertChildAt(toInsert, index);
+        varB4EAC82CA7396A68D541C85D26508E83_1684272268 = super.insertChildAt(toInsert, index);
         addTaint(toInsert.getTaint());
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_700754720.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_700754720;
+        varB4EAC82CA7396A68D541C85D26508E83_1684272268.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1684272268;
         // ---------- Original Method ----------
         //if (toInsert instanceof Element && getDocumentElement() != null) {
             //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR,
@@ -757,50 +736,50 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.935 -0400", hash_original_method = "523640531DE4ABEBCC885A0C8EFFAA8E", hash_generated_method = "176C7DC0622871811BAB13DEC045DEB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.991 -0400", hash_original_method = "523640531DE4ABEBCC885A0C8EFFAA8E", hash_generated_method = "3B912C2B9892FA16B606A7239A1A0310")
     @Override
     public String getTextContent() {
-        String varB4EAC82CA7396A68D541C85D26508E83_658708032 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_658708032 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_658708032.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_658708032;
+        String varB4EAC82CA7396A68D541C85D26508E83_1575827385 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1575827385 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1575827385.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1575827385;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.935 -0400", hash_original_method = "94C9917BD9FB417B21D37D438D58D41C", hash_generated_method = "F24083BB3FFF8186BA632FD567A2B8FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.991 -0400", hash_original_method = "94C9917BD9FB417B21D37D438D58D41C", hash_generated_method = "E9FFE4657CAB12B0725BD210869C877F")
     public String getInputEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_696279126 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_696279126 = inputEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_696279126.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_696279126;
+        String varB4EAC82CA7396A68D541C85D26508E83_1747317049 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1747317049 = inputEncoding;
+        varB4EAC82CA7396A68D541C85D26508E83_1747317049.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1747317049;
         // ---------- Original Method ----------
         //return inputEncoding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.936 -0400", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "6876CDBD4B14056FA9793218901D8D7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.992 -0400", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "E01C0555B9E002A8AF65149A4BB67B25")
     public String getXmlEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_394906710 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_394906710 = xmlEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_394906710.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_394906710;
+        String varB4EAC82CA7396A68D541C85D26508E83_1238373996 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1238373996 = xmlEncoding;
+        varB4EAC82CA7396A68D541C85D26508E83_1238373996.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1238373996;
         // ---------- Original Method ----------
         //return xmlEncoding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.937 -0400", hash_original_method = "A9BBCA9526831CCA3B1BE6D8EEF33ABE", hash_generated_method = "6F2F9218062D13CA2FE80DD68D63DFDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.993 -0400", hash_original_method = "A9BBCA9526831CCA3B1BE6D8EEF33ABE", hash_generated_method = "E546989B70CA9A58AB9017F9B9306488")
     public boolean getXmlStandalone() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73615902 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_73615902;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1219670322 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1219670322;
         // ---------- Original Method ----------
         //return xmlStandalone;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.937 -0400", hash_original_method = "9E601CBC8BB08C0D3B66A0213931419B", hash_generated_method = "9E81AB93ADB44B2013F3533C3DA5BE8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.993 -0400", hash_original_method = "9E601CBC8BB08C0D3B66A0213931419B", hash_generated_method = "9E81AB93ADB44B2013F3533C3DA5BE8E")
     public void setXmlStandalone(boolean xmlStandalone) {
         this.xmlStandalone = xmlStandalone;
         // ---------- Original Method ----------
@@ -808,18 +787,18 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.944 -0400", hash_original_method = "BC354AC833FDCF3905B7FEDC7BFD541D", hash_generated_method = "DE075A05579570B60E834AC413BC470B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "BC354AC833FDCF3905B7FEDC7BFD541D", hash_generated_method = "D1B5E2A21761D22F13285DE90080484F")
     public String getXmlVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_153538790 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_153538790 = xmlVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_153538790.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_153538790;
+        String varB4EAC82CA7396A68D541C85D26508E83_391548280 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_391548280 = xmlVersion;
+        varB4EAC82CA7396A68D541C85D26508E83_391548280.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_391548280;
         // ---------- Original Method ----------
         //return xmlVersion;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.961 -0400", hash_original_method = "C0A21B3EE9603BF0EAE2488DE43FD78E", hash_generated_method = "1D025D03CF816AA6E6E7E13C188987CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "C0A21B3EE9603BF0EAE2488DE43FD78E", hash_generated_method = "1D025D03CF816AA6E6E7E13C188987CA")
     public void setXmlVersion(String xmlVersion) {
         this.xmlVersion = xmlVersion;
         // ---------- Original Method ----------
@@ -827,16 +806,16 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.962 -0400", hash_original_method = "338EEC38209BE0DB329E33E9EDD7ED88", hash_generated_method = "D7F779B177362869F32BB72BA07F53D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.994 -0400", hash_original_method = "338EEC38209BE0DB329E33E9EDD7ED88", hash_generated_method = "D91C8F10F239263591A51904E592E5ED")
     public boolean getStrictErrorChecking() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711240394 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711240394;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460295096 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1460295096;
         // ---------- Original Method ----------
         //return strictErrorChecking;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.962 -0400", hash_original_method = "55375073A29EAEC23495FBD30A28EDB3", hash_generated_method = "B5D30D71D7A11256EBFA7BCECCF3D144")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.995 -0400", hash_original_method = "55375073A29EAEC23495FBD30A28EDB3", hash_generated_method = "B5D30D71D7A11256EBFA7BCECCF3D144")
     public void setStrictErrorChecking(boolean strictErrorChecking) {
         this.strictErrorChecking = strictErrorChecking;
         // ---------- Original Method ----------
@@ -844,18 +823,18 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.962 -0400", hash_original_method = "2433E48CE07A4EB6DFAAA40EF72A0853", hash_generated_method = "A134DA569DF882A95AD2AB8D98C96F41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.996 -0400", hash_original_method = "2433E48CE07A4EB6DFAAA40EF72A0853", hash_generated_method = "B82097050DBD3D59564067E207205FA7")
     public String getDocumentURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_668044005 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_668044005 = documentUri;
-        varB4EAC82CA7396A68D541C85D26508E83_668044005.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_668044005;
+        String varB4EAC82CA7396A68D541C85D26508E83_1698116428 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1698116428 = documentUri;
+        varB4EAC82CA7396A68D541C85D26508E83_1698116428.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1698116428;
         // ---------- Original Method ----------
         //return documentUri;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.963 -0400", hash_original_method = "2ABB3572AC2E2195C4BFB544AFA05B7C", hash_generated_method = "88DFDC039A98BD865B0FDF5C62AD2EAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.997 -0400", hash_original_method = "2ABB3572AC2E2195C4BFB544AFA05B7C", hash_generated_method = "88DFDC039A98BD865B0FDF5C62AD2EAE")
     public void setDocumentURI(String documentUri) {
         this.documentUri = documentUri;
         // ---------- Original Method ----------
@@ -863,15 +842,15 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.963 -0400", hash_original_method = "9C5D9FE4294F6D7509E6E0C2DA50CF2D", hash_generated_method = "094251DBCAE55743E43447908B53424D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.999 -0400", hash_original_method = "9C5D9FE4294F6D7509E6E0C2DA50CF2D", hash_generated_method = "42CBA32FF79D14DB08FFD675C0910DCB")
     public DOMConfiguration getDomConfig() {
-        DOMConfiguration varB4EAC82CA7396A68D541C85D26508E83_1514365614 = null; //Variable for return #1
+        DOMConfiguration varB4EAC82CA7396A68D541C85D26508E83_1849910742 = null; //Variable for return #1
         {
             domConfiguration = new DOMConfigurationImpl();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1514365614 = domConfiguration;
-        varB4EAC82CA7396A68D541C85D26508E83_1514365614.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1514365614;
+        varB4EAC82CA7396A68D541C85D26508E83_1849910742 = domConfiguration;
+        varB4EAC82CA7396A68D541C85D26508E83_1849910742.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1849910742;
         // ---------- Original Method ----------
         //if (domConfiguration == null) {
             //domConfiguration = new DOMConfigurationImpl();
@@ -880,10 +859,9 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.963 -0400", hash_original_method = "89D7CC816429D9C559DCCAF8A85B9CA9", hash_generated_method = "57A4AFF372611908EDFB9510C8ACFAC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.000 -0400", hash_original_method = "89D7CC816429D9C559DCCAF8A85B9CA9", hash_generated_method = "2A263F9916A358FC93ECD804CC950359")
     public void normalizeDocument() {
-        Element root;
-        root = getDocumentElement();
+        Element root = getDocumentElement();
         ((DOMConfigurationImpl) getDomConfig()).normalize(root);
         // ---------- Original Method ----------
         //Element root = getDocumentElement();
@@ -894,22 +872,21 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.967 -0400", hash_original_method = "83962F2DF698AAA6D760C50C082C5A3C", hash_generated_method = "47DB646542AF0285EEE7766F1FD1ACFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.004 -0400", hash_original_method = "83962F2DF698AAA6D760C50C082C5A3C", hash_generated_method = "984E30F44B97C64503F740A3FA33CAFF")
      Map<String, UserData> getUserDataMap(NodeImpl node) {
-        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_2058410773 = null; //Variable for return #1
+        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_1906694607 = null; //Variable for return #1
         {
             nodeToUserData = new WeakHashMap<NodeImpl, Map<String, UserData>>();
         } //End block
-        Map<String, UserData> userDataMap;
-        userDataMap = nodeToUserData.get(node);
+        Map<String, UserData> userDataMap = nodeToUserData.get(node);
         {
             userDataMap = new HashMap<String, UserData>();
             nodeToUserData.put(node, userDataMap);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2058410773 = userDataMap;
+        varB4EAC82CA7396A68D541C85D26508E83_1906694607 = userDataMap;
         addTaint(node.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2058410773.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2058410773;
+        varB4EAC82CA7396A68D541C85D26508E83_1906694607.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1906694607;
         // ---------- Original Method ----------
         //if (nodeToUserData == null) {
             //nodeToUserData = new WeakHashMap<NodeImpl, Map<String, UserData>>();
@@ -923,30 +900,29 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.968 -0400", hash_original_method = "8B5F30F59CCBC9322DB0F048DEF01A52", hash_generated_method = "2576FAEC7DF25927D54C2C2D8F841A30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.005 -0400", hash_original_method = "8B5F30F59CCBC9322DB0F048DEF01A52", hash_generated_method = "D1930783A384FC6A9D90865CB9008D1E")
      Map<String, UserData> getUserDataMapForRead(NodeImpl node) {
-        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_2019135077 = null; //Variable for return #1
-        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_37334855 = null; //Variable for return #2
+        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_1402615827 = null; //Variable for return #1
+        Map<String, UserData> varB4EAC82CA7396A68D541C85D26508E83_1586639408 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2019135077 = Collections.emptyMap();
+            varB4EAC82CA7396A68D541C85D26508E83_1402615827 = Collections.emptyMap();
         } //End block
-        Map<String, UserData> userDataMap;
-        userDataMap = nodeToUserData.get(node);
-        varB4EAC82CA7396A68D541C85D26508E83_37334855 = userDataMap == null
+        Map<String, UserData> userDataMap = nodeToUserData.get(node);
+        varB4EAC82CA7396A68D541C85D26508E83_1586639408 = userDataMap == null
                 ? Collections.<String, UserData>emptyMap()
                 : userDataMap;
         addTaint(node.getTaint());
-        Map<String, UserData> varA7E53CE21691AB073D9660D615818899_403207530; //Final return value
+        Map<String, UserData> varA7E53CE21691AB073D9660D615818899_2010544052; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_403207530 = varB4EAC82CA7396A68D541C85D26508E83_2019135077;
+                varA7E53CE21691AB073D9660D615818899_2010544052 = varB4EAC82CA7396A68D541C85D26508E83_1402615827;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_403207530 = varB4EAC82CA7396A68D541C85D26508E83_37334855;
+                varA7E53CE21691AB073D9660D615818899_2010544052 = varB4EAC82CA7396A68D541C85D26508E83_1586639408;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_403207530.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_403207530;
+        varA7E53CE21691AB073D9660D615818899_2010544052.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2010544052;
         // ---------- Original Method ----------
         //if (nodeToUserData == null) {
             //return Collections.emptyMap();
@@ -958,7 +934,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-        private static void notifyUserDataHandlers(
+    private static void notifyUserDataHandlers(
             short operation, Node source, NodeImpl destination) {
         if (!(source instanceof NodeImpl)) {
             return;

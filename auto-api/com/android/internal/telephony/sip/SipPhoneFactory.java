@@ -15,14 +15,14 @@ import java.text.ParseException;
 
 public class SipPhoneFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.864 -0400", hash_original_method = "15E2472645F6BD56CA55CE00B2D7EBA0", hash_generated_method = "15E2472645F6BD56CA55CE00B2D7EBA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.411 -0400", hash_original_method = "15E2472645F6BD56CA55CE00B2D7EBA0", hash_generated_method = "15E2472645F6BD56CA55CE00B2D7EBA0")
     public SipPhoneFactory ()
     {
         //Synthesized constructor
     }
 
 
-        public static SipPhone makePhone(String sipUri, Context context,
+    public static SipPhone makePhone(String sipUri, Context context,
             PhoneNotifier phoneNotifier) {
         try {
             SipProfile profile = new SipProfile.Builder(sipUri).build();

@@ -9,18 +9,18 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class StringPool {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.765 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "9E238A2B2FB43A4C99839A417CC4C2E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.775 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "2E2D169FE900F8A4284E9ADB2D6BFB44")
 
-    private String[] pool = new String[512];
+    private final String[] pool = new String[512];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.765 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.775 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
     public StringPool ()
     {
         //Synthesized constructor
     }
 
 
-        private static boolean contentEquals(String s, char[] chars, int start, int length) {
+    private static boolean contentEquals(String s, char[] chars, int start, int length) {
         if (s.length() != length) {
             return false;
         }
@@ -33,49 +33,44 @@ public final class StringPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.767 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "2A232C25C079C515BED12CD5475214CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.776 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "153F3CB8787B89374850AE43672DA7FB")
     public String get(char[] array, int start, int length) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1971452479 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1420014474 = null; //Variable for return #2
-        int hashCode;
-        hashCode = 0;
+        String varB4EAC82CA7396A68D541C85D26508E83_1902705075 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1972401788 = null; //Variable for return #2
+        int hashCode = 0;
         {
-            int i;
-            i = start;
+            int i = start;
             {
                 hashCode = (hashCode * 31) + array[i];
             } //End block
         } //End collapsed parenthetic
         hashCode ^= (hashCode >>> 20) ^ (hashCode >>> 12);
         hashCode ^= (hashCode >>> 7) ^ (hashCode >>> 4);
-        int index;
-        index = hashCode & (pool.length - 1);
-        String pooled;
-        pooled = pool[index];
+        int index = hashCode & (pool.length - 1);
+        String pooled = pool[index];
         {
-            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_2008685405 = (pooled != null && contentEquals(pooled, array, start, length));
+            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_1173411143 = (pooled != null && contentEquals(pooled, array, start, length));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1971452479 = pooled;
+                varB4EAC82CA7396A68D541C85D26508E83_1902705075 = pooled;
             } //End block
         } //End collapsed parenthetic
-        String result;
-        result = new String(array, start, length);
+        String result = new String(array, start, length);
         pool[index] = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1420014474 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1972401788 = result;
         addTaint(array[0]);
         addTaint(start);
         addTaint(length);
-        String varA7E53CE21691AB073D9660D615818899_392523942; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1045840687; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_392523942 = varB4EAC82CA7396A68D541C85D26508E83_1971452479;
+                varA7E53CE21691AB073D9660D615818899_1045840687 = varB4EAC82CA7396A68D541C85D26508E83_1902705075;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_392523942 = varB4EAC82CA7396A68D541C85D26508E83_1420014474;
+                varA7E53CE21691AB073D9660D615818899_1045840687 = varB4EAC82CA7396A68D541C85D26508E83_1972401788;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_392523942.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_392523942;
+        varA7E53CE21691AB073D9660D615818899_1045840687.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1045840687;
         // ---------- Original Method ----------
         //int hashCode = 0;
         //for (int i = start; i < start + length; i++) {

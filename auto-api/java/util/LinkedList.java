@@ -14,14 +14,14 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Queue<E>, Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.058 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "073488151E86FC108C1C096E75333D8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.072 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "073488151E86FC108C1C096E75333D8B")
 
     transient int size = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.059 -0400", hash_original_field = "6C73C6B87FF2058988CE8C8EDB3429F0", hash_generated_field = "42E74DE51E61A92C4317D76844761684")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.072 -0400", hash_original_field = "6C73C6B87FF2058988CE8C8EDB3429F0", hash_generated_field = "42E74DE51E61A92C4317D76844761684")
 
     transient Link<E> voidLink;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.060 -0400", hash_original_method = "4832DB7F32D79BC3832C9989ACB7B916", hash_generated_method = "8DFD03108CDD2A33CB7D765F5A450A4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.073 -0400", hash_original_method = "4832DB7F32D79BC3832C9989ACB7B916", hash_generated_method = "8DFD03108CDD2A33CB7D765F5A450A4F")
     public  LinkedList() {
         voidLink = new Link<E>(null, null, null);
         voidLink.previous = voidLink;
@@ -33,7 +33,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.060 -0400", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "AC19F03332B19D11288983929D1CF7F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.073 -0400", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "AC19F03332B19D11288983929D1CF7F0")
     public  LinkedList(Collection<? extends E> collection) {
         this();
         addAll(collection);
@@ -43,16 +43,14 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.060 -0400", hash_original_method = "9920EB632989F8B562686C0A781A0AB0", hash_generated_method = "18AC506C7F34C738C668E0E3A6D201EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.073 -0400", hash_original_method = "9920EB632989F8B562686C0A781A0AB0", hash_generated_method = "452B289A224249407553E0A2F0EEA2B0")
     @Override
     public void add(int location, E object) {
         {
-            Link<E> link;
-            link = voidLink;
+            Link<E> link = voidLink;
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         link = link.next;
                     } //End block
@@ -60,17 +58,14 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
             {
                 {
-                    int i;
-                    i = size;
+                    int i = size;
                     {
                         link = link.previous;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            Link<E> previous;
-            previous = link.previous;
-            Link<E> newLink;
-            newLink = new Link<E>(object, previous, link);
+            Link<E> previous = link.previous;
+            Link<E> newLink = new Link<E>(object, previous, link);
             previous.next = newLink;
             link.previous = newLink;
         } //End block
@@ -103,29 +98,27 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.068 -0400", hash_original_method = "2BE8A2B5B965FC484F0C7216D8E6E369", hash_generated_method = "6EDFC62EB2539B850E8D325C01EA589B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.073 -0400", hash_original_method = "2BE8A2B5B965FC484F0C7216D8E6E369", hash_generated_method = "F0195224716DD4CC97923F6E68BE2EDF")
     @Override
     public boolean add(E object) {
-        boolean var471407E29FACACFF33C18CE3EA47D39B_194740080 = (addLastImpl(object));
+        boolean var471407E29FACACFF33C18CE3EA47D39B_533490824 = (addLastImpl(object));
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_452150204 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_452150204;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1737857855 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1737857855;
         // ---------- Original Method ----------
         //return addLastImpl(object);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.069 -0400", hash_original_method = "0CAFD9F2E83DD82BF6364CDBDC4D7D1A", hash_generated_method = "CEBABAE304215C7AE9DD5BA8046591CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.074 -0400", hash_original_method = "0CAFD9F2E83DD82BF6364CDBDC4D7D1A", hash_generated_method = "183B4A3BAE0141996C06BCEF07EC239F")
     private boolean addLastImpl(E object) {
-        Link<E> oldLast;
-        oldLast = voidLink.previous;
-        Link<E> newLink;
-        newLink = new Link<E>(object, oldLast, voidLink);
+        Link<E> oldLast = voidLink.previous;
+        Link<E> newLink = new Link<E>(object, oldLast, voidLink);
         voidLink.previous = newLink;
         oldLast.next = newLink;
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1969307860 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1969307860;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648859301 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648859301;
         // ---------- Original Method ----------
         //Link<E> oldLast = voidLink.previous;
         //Link<E> newLink = new Link<E>(object, oldLast, voidLink);
@@ -137,24 +130,21 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.216 -0400", hash_original_method = "EA599DD8388630A135A57F30093AE237", hash_generated_method = "4E79DA2110F5937F2BAC8EA2D72384B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.088 -0400", hash_original_method = "EA599DD8388630A135A57F30093AE237", hash_generated_method = "CC6D0375A2910AB20106F5FC67463586")
     @Override
     public boolean addAll(int location, Collection<? extends E> collection) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
-        int adding;
-        adding = collection.size();
+        int adding = collection.size();
         Collection<? extends E> elements;
-        boolean var92E505E88442E11C36215AFDE9C5C198_127754617 = ((collection == this));
+        boolean var92E505E88442E11C36215AFDE9C5C198_136502666 = ((collection == this));
         elements = new ArrayList<E>(collection);
         elements = collection;
-        Link<E> previous;
-        previous = voidLink;
+        Link<E> previous = voidLink;
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     previous = previous.next;
                 } //End block
@@ -162,22 +152,19 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         } //End block
         {
             {
-                int i;
-                i = size;
+                int i = size;
                 {
                     previous = previous.previous;
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        Link<E> next;
-        next = previous.next;
+        Link<E> next = previous.next;
         {
-            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_1222117740 = (elements).iterator();
-            var561DB81069E26BF25CD542D342D4C6DE_1222117740.hasNext();
-            E e = var561DB81069E26BF25CD542D342D4C6DE_1222117740.next();
+            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_885552474 = (elements).iterator();
+            var561DB81069E26BF25CD542D342D4C6DE_885552474.hasNext();
+            E e = var561DB81069E26BF25CD542D342D4C6DE_885552474.next();
             {
-                Link<E> newLink;
-                newLink = new Link<E>(e, previous, null);
+                Link<E> newLink = new Link<E>(e, previous, null);
                 previous.next = newLink;
                 previous = newLink;
             } //End block
@@ -187,31 +174,28 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         size += adding;
         addTaint(location);
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1665373395 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1665373395;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109221873 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_109221873;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.342 -0400", hash_original_method = "B5A413C7ECEF6975CDBDA09F397FBA87", hash_generated_method = "51F67B14A448DB4D38CBB5EC5961007D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.098 -0400", hash_original_method = "B5A413C7ECEF6975CDBDA09F397FBA87", hash_generated_method = "E0EEA5527BAEBB44326EFB8DC225BD09")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
-        int adding;
-        adding = collection.size();
+        int adding = collection.size();
         Collection<? extends E> elements;
-        boolean var92E505E88442E11C36215AFDE9C5C198_1987762815 = ((collection == this));
+        boolean var92E505E88442E11C36215AFDE9C5C198_2144287128 = ((collection == this));
         elements = new ArrayList<E>(collection);
         elements = collection;
-        Link<E> previous;
-        previous = voidLink.previous;
+        Link<E> previous = voidLink.previous;
         {
-            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_563767833 = (elements).iterator();
-            var561DB81069E26BF25CD542D342D4C6DE_563767833.hasNext();
-            E e = var561DB81069E26BF25CD542D342D4C6DE_563767833.next();
+            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_18717397 = (elements).iterator();
+            var561DB81069E26BF25CD542D342D4C6DE_18717397.hasNext();
+            E e = var561DB81069E26BF25CD542D342D4C6DE_18717397.next();
             {
-                Link<E> newLink;
-                newLink = new Link<E>(e, previous, null);
+                Link<E> newLink = new Link<E>(e, previous, null);
                 previous.next = newLink;
                 previous = newLink;
             } //End block
@@ -220,8 +204,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         voidLink.previous = previous;
         size += adding;
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394209863 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394209863;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_556861028 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_556861028;
         // ---------- Original Method ----------
         //int adding = collection.size();
         //if (adding == 0) {
@@ -243,7 +227,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.342 -0400", hash_original_method = "CA8A1B06476946B0324CCA25F612E720", hash_generated_method = "9DCD568A7260257AF3A07EEE903FBDCB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.102 -0400", hash_original_method = "CA8A1B06476946B0324CCA25F612E720", hash_generated_method = "9DCD568A7260257AF3A07EEE903FBDCB")
     public void addFirst(E object) {
         addFirstImpl(object);
         addTaint(object.getTaint());
@@ -252,17 +236,15 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.347 -0400", hash_original_method = "954FD4442748B652A7955CF114F2239E", hash_generated_method = "B4D24B3D2ABE73E2EA637B86945716BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.102 -0400", hash_original_method = "954FD4442748B652A7955CF114F2239E", hash_generated_method = "5D251F532F38FCE1785EF76C35FF1186")
     private boolean addFirstImpl(E object) {
-        Link<E> oldFirst;
-        oldFirst = voidLink.next;
-        Link<E> newLink;
-        newLink = new Link<E>(object, voidLink, oldFirst);
+        Link<E> oldFirst = voidLink.next;
+        Link<E> newLink = new Link<E>(object, voidLink, oldFirst);
         voidLink.next = newLink;
         oldFirst.previous = newLink;
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180100796 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1180100796;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_325322935 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_325322935;
         // ---------- Original Method ----------
         //Link<E> oldFirst = voidLink.next;
         //Link<E> newLink = new Link<E>(object, voidLink, oldFirst);
@@ -274,7 +256,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.347 -0400", hash_original_method = "13A36680ECD01352EC1F894705FA522D", hash_generated_method = "AC09CC797ECC1C6010850BBCF757682C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.102 -0400", hash_original_method = "13A36680ECD01352EC1F894705FA522D", hash_generated_method = "AC09CC797ECC1C6010850BBCF757682C")
     public void addLast(E object) {
         addLastImpl(object);
         addTaint(object.getTaint());
@@ -283,7 +265,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.348 -0400", hash_original_method = "F4AB109BD4924C3D8662019AA7349AF5", hash_generated_method = "D053313FADC6AFD02128C0FBBDD81B2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.102 -0400", hash_original_method = "F4AB109BD4924C3D8662019AA7349AF5", hash_generated_method = "D053313FADC6AFD02128C0FBBDD81B2D")
     @Override
     public void clear() {
         {
@@ -301,28 +283,27 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.360 -0400", hash_original_method = "1B9E5D872B5FE69DD2C5F33B9044F30B", hash_generated_method = "48DDF761C85681F4B23DD77CA433C453")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.103 -0400", hash_original_method = "1B9E5D872B5FE69DD2C5F33B9044F30B", hash_generated_method = "6370F5093083393C11F5C22D26D4E642")
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1200717379 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_376865452 = null; //Variable for return #1
         try 
         {
-            LinkedList<E> l;
-            l = (LinkedList<E>) super.clone();
+            LinkedList<E> l = (LinkedList<E>) super.clone();
             l.size = 0;
             l.voidLink = new Link<E>(null, null, null);
             l.voidLink.previous = l.voidLink;
             l.voidLink.next = l.voidLink;
             l.addAll(this);
-            varB4EAC82CA7396A68D541C85D26508E83_1200717379 = l;
+            varB4EAC82CA7396A68D541C85D26508E83_376865452 = l;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1200717379.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1200717379;
+        varB4EAC82CA7396A68D541C85D26508E83_376865452.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_376865452;
         // ---------- Original Method ----------
         //try {
             //LinkedList<E> l = (LinkedList<E>) super.clone();
@@ -338,15 +319,14 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.361 -0400", hash_original_method = "56D0217BC0A5D945F9BCFA2A5AF2C1AD", hash_generated_method = "551A6BE3C5DA353E5564B20822934ADC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.103 -0400", hash_original_method = "56D0217BC0A5D945F9BCFA2A5AF2C1AD", hash_generated_method = "8BF755B4CAA36E8A93E0DA6B93A404A5")
     @Override
     public boolean contains(Object object) {
-        Link<E> link;
-        link = voidLink.next;
+        Link<E> link = voidLink.next;
         {
             {
                 {
-                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1148599933 = (object.equals(link.data));
+                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1901779140 = (object.equals(link.data));
                 } //End collapsed parenthetic
                 link = link.next;
             } //End block
@@ -357,8 +337,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
         } //End block
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308382053 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308382053;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134723854 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_134723854;
         // ---------- Original Method ----------
         //Link<E> link = voidLink.next;
         //if (object != null) {
@@ -380,17 +360,15 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.362 -0400", hash_original_method = "699CDCD94CA0F8A673D2432C1A4A1CA6", hash_generated_method = "04834FF99FAEA2E29CD7F2C46997A0AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.104 -0400", hash_original_method = "699CDCD94CA0F8A673D2432C1A4A1CA6", hash_generated_method = "85C0DE65BF75533C2B51E807EBF0CFD9")
     @Override
     public E get(int location) {
-        E varB4EAC82CA7396A68D541C85D26508E83_468804647 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1328305870 = null; //Variable for return #1
         {
-            Link<E> link;
-            link = voidLink;
+            Link<E> link = voidLink;
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         link = link.next;
                     } //End block
@@ -398,19 +376,18 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
             {
                 {
-                    int i;
-                    i = size;
+                    int i = size;
                     {
                         link = link.previous;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_468804647 = link.data;
+            varB4EAC82CA7396A68D541C85D26508E83_1328305870 = link.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         addTaint(location);
-        varB4EAC82CA7396A68D541C85D26508E83_468804647.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_468804647;
+        varB4EAC82CA7396A68D541C85D26508E83_1328305870.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1328305870;
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
             //Link<E> link = voidLink;
@@ -429,28 +406,27 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.374 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "44A9893B08C191CF13856BFC9CDE07ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.105 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "C23318BABC25A00C5A9CF51D3F601E9E")
     public E getFirst() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1071722126 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1071722126 = getFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1071722126.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1071722126;
+        E varB4EAC82CA7396A68D541C85D26508E83_555527628 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_555527628 = getFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_555527628.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_555527628;
         // ---------- Original Method ----------
         //return getFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.376 -0400", hash_original_method = "F326A7609FEC22B872586B521BF21968", hash_generated_method = "91DADA3E8B4D8105F06EB89B05929F4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.106 -0400", hash_original_method = "F326A7609FEC22B872586B521BF21968", hash_generated_method = "CBBE97B63E111DF387D21CB42DC855D7")
     private E getFirstImpl() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1252548394 = null; //Variable for return #1
-        Link<E> first;
-        first = voidLink.next;
+        E varB4EAC82CA7396A68D541C85D26508E83_878634086 = null; //Variable for return #1
+        Link<E> first = voidLink.next;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1252548394 = first.data;
+            varB4EAC82CA7396A68D541C85D26508E83_878634086 = first.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        varB4EAC82CA7396A68D541C85D26508E83_1252548394.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1252548394;
+        varB4EAC82CA7396A68D541C85D26508E83_878634086.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_878634086;
         // ---------- Original Method ----------
         //Link<E> first = voidLink.next;
         //if (first != voidLink) {
@@ -460,17 +436,16 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.376 -0400", hash_original_method = "D36A1824B4AA11A93F9167DC96C3E776", hash_generated_method = "534E77A71917BD9062F1E780057954D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.109 -0400", hash_original_method = "D36A1824B4AA11A93F9167DC96C3E776", hash_generated_method = "A9D311F5EAC003298399009FE0C34504")
     public E getLast() {
-        E varB4EAC82CA7396A68D541C85D26508E83_472926355 = null; //Variable for return #1
-        Link<E> last;
-        last = voidLink.previous;
+        E varB4EAC82CA7396A68D541C85D26508E83_1100601374 = null; //Variable for return #1
+        Link<E> last = voidLink.previous;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_472926355 = last.data;
+            varB4EAC82CA7396A68D541C85D26508E83_1100601374 = last.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        varB4EAC82CA7396A68D541C85D26508E83_472926355.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_472926355;
+        varB4EAC82CA7396A68D541C85D26508E83_1100601374.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1100601374;
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
         //if (last != voidLink) {
@@ -480,17 +455,15 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.377 -0400", hash_original_method = "223AFBB612F259C1ECF52502B2C38D06", hash_generated_method = "7A0D8A7064DE6C5B01A9192872490A6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.109 -0400", hash_original_method = "223AFBB612F259C1ECF52502B2C38D06", hash_generated_method = "6AED28F6F438507A40589488894BC7D3")
     @Override
     public int indexOf(Object object) {
-        int pos;
-        pos = 0;
-        Link<E> link;
-        link = voidLink.next;
+        int pos = 0;
+        Link<E> link = voidLink.next;
         {
             {
                 {
-                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1619413347 = (object.equals(link.data));
+                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1643661590 = (object.equals(link.data));
                 } //End collapsed parenthetic
                 link = link.next;
             } //End block
@@ -501,8 +474,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
         } //End block
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670931057 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670931057;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153166566 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153166566;
         // ---------- Original Method ----------
         //int pos = 0;
         //Link<E> link = voidLink.next;
@@ -527,17 +500,15 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.378 -0400", hash_original_method = "C5BD92F697D9C0CCDCACCA1E644478EA", hash_generated_method = "52269D875769E978839795210821DD16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.110 -0400", hash_original_method = "C5BD92F697D9C0CCDCACCA1E644478EA", hash_generated_method = "82DEB90210536614A5032B451490ED10")
     @Override
     public int lastIndexOf(Object object) {
-        int pos;
-        pos = size;
-        Link<E> link;
-        link = voidLink.previous;
+        int pos = size;
+        Link<E> link = voidLink.previous;
         {
             {
                 {
-                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1991150545 = (object.equals(link.data));
+                    boolean var68AE80027D20B2F4904BFC3ADBBA50B7_1676677141 = (object.equals(link.data));
                 } //End collapsed parenthetic
                 link = link.previous;
             } //End block
@@ -548,8 +519,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
         } //End block
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835939251 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835939251;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302206633 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302206633;
         // ---------- Original Method ----------
         //int pos = size;
         //Link<E> link = voidLink.previous;
@@ -574,30 +545,28 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.389 -0400", hash_original_method = "3507AEFB380BBD7C7A81BC76F9B74E53", hash_generated_method = "AF013DC077D814AB2FBF082D6ED8B197")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.110 -0400", hash_original_method = "3507AEFB380BBD7C7A81BC76F9B74E53", hash_generated_method = "627D597BAE5B205C6F505AF2A15FD842")
     @Override
     public ListIterator<E> listIterator(int location) {
-        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1790822866 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1790822866 = new LinkIterator<E>(this, location);
+        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1050603255 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1050603255 = new LinkIterator<E>(this, location);
         addTaint(location);
-        varB4EAC82CA7396A68D541C85D26508E83_1790822866.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1790822866;
+        varB4EAC82CA7396A68D541C85D26508E83_1050603255.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1050603255;
         // ---------- Original Method ----------
         //return new LinkIterator<E>(this, location);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.390 -0400", hash_original_method = "9DEB2DAC83546A51EF3DAC82C2B24429", hash_generated_method = "EFE4B6D51ECD1B8C9672A4ECFDB68B00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.111 -0400", hash_original_method = "9DEB2DAC83546A51EF3DAC82C2B24429", hash_generated_method = "005C1A15822B004E63679BAFD67A18FA")
     @Override
     public E remove(int location) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1086311127 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_294975301 = null; //Variable for return #1
         {
-            Link<E> link;
-            link = voidLink;
+            Link<E> link = voidLink;
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         link = link.next;
                     } //End block
@@ -605,25 +574,22 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
             {
                 {
-                    int i;
-                    i = size;
+                    int i = size;
                     {
                         link = link.previous;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            Link<E> previous;
-            previous = link.previous;
-            Link<E> next;
-            next = link.next;
+            Link<E> previous = link.previous;
+            Link<E> next = link.next;
             previous.next = next;
             next.previous = previous;
-            varB4EAC82CA7396A68D541C85D26508E83_1086311127 = link.data;
+            varB4EAC82CA7396A68D541C85D26508E83_294975301 = link.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         addTaint(location);
-        varB4EAC82CA7396A68D541C85D26508E83_1086311127.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1086311127;
+        varB4EAC82CA7396A68D541C85D26508E83_294975301.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_294975301;
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
             //Link<E> link = voidLink;
@@ -648,44 +614,42 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.397 -0400", hash_original_method = "E895D44AE5728A8CB5D4093F924DE858", hash_generated_method = "9D660AF9DD05B0E39680A886ADB942FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.111 -0400", hash_original_method = "E895D44AE5728A8CB5D4093F924DE858", hash_generated_method = "67EDAF51AF93E8D2B1B11B56EA654FE4")
     @Override
     public boolean remove(Object object) {
-        boolean varD9AA6A5988D1CD4CF0EC501538EC1CB9_614855411 = (removeFirstOccurrenceImpl(object));
+        boolean varD9AA6A5988D1CD4CF0EC501538EC1CB9_342561452 = (removeFirstOccurrenceImpl(object));
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_857956740 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_857956740;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031267314 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031267314;
         // ---------- Original Method ----------
         //return removeFirstOccurrenceImpl(object);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.398 -0400", hash_original_method = "DEF022B3B9EBAD20A11E8D94E53A2C41", hash_generated_method = "D0FB1733E28EB71ADDFF727669D95881")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.112 -0400", hash_original_method = "DEF022B3B9EBAD20A11E8D94E53A2C41", hash_generated_method = "504437D80D29C248A71723743F66325D")
     public E removeFirst() {
-        E varB4EAC82CA7396A68D541C85D26508E83_789368667 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_789368667 = removeFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_789368667.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_789368667;
+        E varB4EAC82CA7396A68D541C85D26508E83_2073362887 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2073362887 = removeFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_2073362887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2073362887;
         // ---------- Original Method ----------
         //return removeFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.398 -0400", hash_original_method = "427E50F3C77738614041495F63E4380E", hash_generated_method = "1D6099952542F80EBB88A30A8A53CB98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.112 -0400", hash_original_method = "427E50F3C77738614041495F63E4380E", hash_generated_method = "CA1059CE7AD1304C4C58C79CC70036E4")
     private E removeFirstImpl() {
-        E varB4EAC82CA7396A68D541C85D26508E83_289969700 = null; //Variable for return #1
-        Link<E> first;
-        first = voidLink.next;
+        E varB4EAC82CA7396A68D541C85D26508E83_1786495759 = null; //Variable for return #1
+        Link<E> first = voidLink.next;
         {
-            Link<E> next;
-            next = first.next;
+            Link<E> next = first.next;
             voidLink.next = next;
             next.previous = voidLink;
-            varB4EAC82CA7396A68D541C85D26508E83_289969700 = first.data;
+            varB4EAC82CA7396A68D541C85D26508E83_1786495759 = first.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        varB4EAC82CA7396A68D541C85D26508E83_289969700.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_289969700;
+        varB4EAC82CA7396A68D541C85D26508E83_1786495759.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1786495759;
         // ---------- Original Method ----------
         //Link<E> first = voidLink.next;
         //if (first != voidLink) {
@@ -700,32 +664,30 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.399 -0400", hash_original_method = "78A299256A25A92F54699488F92E9106", hash_generated_method = "F69708F60544AAD4A75F90FAAF9A9C67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.113 -0400", hash_original_method = "78A299256A25A92F54699488F92E9106", hash_generated_method = "0E4F16EFCB973A383C84CD52DD8A76F1")
     public E removeLast() {
-        E varB4EAC82CA7396A68D541C85D26508E83_2014200088 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2014200088 = removeLastImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_2014200088.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2014200088;
+        E varB4EAC82CA7396A68D541C85D26508E83_1332353547 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1332353547 = removeLastImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1332353547.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1332353547;
         // ---------- Original Method ----------
         //return removeLastImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.399 -0400", hash_original_method = "4FEFCE90045B22FA30A5F2F8A3DA8ABA", hash_generated_method = "BF14E2A21A6B43FBA73A59CF8BE1E8E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.113 -0400", hash_original_method = "4FEFCE90045B22FA30A5F2F8A3DA8ABA", hash_generated_method = "FA7D3FA08019071732FA31BF6FCBEA8B")
     private E removeLastImpl() {
-        E varB4EAC82CA7396A68D541C85D26508E83_107166272 = null; //Variable for return #1
-        Link<E> last;
-        last = voidLink.previous;
+        E varB4EAC82CA7396A68D541C85D26508E83_159374636 = null; //Variable for return #1
+        Link<E> last = voidLink.previous;
         {
-            Link<E> previous;
-            previous = last.previous;
+            Link<E> previous = last.previous;
             voidLink.previous = previous;
             previous.next = voidLink;
-            varB4EAC82CA7396A68D541C85D26508E83_107166272 = last.data;
+            varB4EAC82CA7396A68D541C85D26508E83_159374636 = last.data;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        varB4EAC82CA7396A68D541C85D26508E83_107166272.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_107166272;
+        varB4EAC82CA7396A68D541C85D26508E83_159374636.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_159374636;
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
         //if (last != voidLink) {
@@ -740,98 +702,97 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.418 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "F805663A19413253F159AB3D8FF19376")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.114 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "8E64DE383D6562C690014A63E2CAB3C1")
     public Iterator<E> descendingIterator() {
-        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1110029050 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1110029050 = new ReverseLinkIterator<E>(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1110029050.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1110029050;
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1824327325 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1824327325 = new ReverseLinkIterator<E>(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1824327325.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1824327325;
         // ---------- Original Method ----------
         //return new ReverseLinkIterator<E>(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.418 -0400", hash_original_method = "EDFB7FC0634DB7C00BD3AB035EBD094A", hash_generated_method = "378EB10A077D29E04D65AEBA54670E25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.114 -0400", hash_original_method = "EDFB7FC0634DB7C00BD3AB035EBD094A", hash_generated_method = "1D999907E80B97B83F058543191AEC88")
     public boolean offerFirst(E e) {
-        boolean var76B72DE79F3E513315008517C001461F_2047415441 = (addFirstImpl(e));
+        boolean var76B72DE79F3E513315008517C001461F_1780762759 = (addFirstImpl(e));
         addTaint(e.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1379227892 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1379227892;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1583870968 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1583870968;
         // ---------- Original Method ----------
         //return addFirstImpl(e);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.418 -0400", hash_original_method = "89DCF7809C68E43568923DE3D2E1D02D", hash_generated_method = "4B5ACCE213EE39E5E600333F336D9CBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.114 -0400", hash_original_method = "89DCF7809C68E43568923DE3D2E1D02D", hash_generated_method = "BA71A2877740C1040348ECCE453896D5")
     public boolean offerLast(E e) {
-        boolean var5D8D8C0594128842346FC018CF7B2C46_981662058 = (addLastImpl(e));
+        boolean var5D8D8C0594128842346FC018CF7B2C46_1157907933 = (addLastImpl(e));
         addTaint(e.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555963669 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_555963669;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344651447 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_344651447;
         // ---------- Original Method ----------
         //return addLastImpl(e);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.419 -0400", hash_original_method = "969AA46310549C7B2FEE1AAA28767998", hash_generated_method = "877E53D21B78A9C4ADC4CE982349775A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.115 -0400", hash_original_method = "969AA46310549C7B2FEE1AAA28767998", hash_generated_method = "21A1AE31637CBBB7BBD6C03B8DE9AFBC")
     public E peekFirst() {
-        E varB4EAC82CA7396A68D541C85D26508E83_992484084 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_992484084 = peekFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_992484084.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_992484084;
+        E varB4EAC82CA7396A68D541C85D26508E83_690657513 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_690657513 = peekFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_690657513.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_690657513;
         // ---------- Original Method ----------
         //return peekFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.419 -0400", hash_original_method = "E1ADBCAD0BAE3B6D44E0B3EBBD31EB6D", hash_generated_method = "492885CADE2B9CED8C44806D88445595")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.115 -0400", hash_original_method = "E1ADBCAD0BAE3B6D44E0B3EBBD31EB6D", hash_generated_method = "8E705C08A876A94E97976E701AED0796")
     public E peekLast() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1850184760 = null; //Variable for return #1
-        Link<E> last;
-        last = voidLink.previous;
-        varB4EAC82CA7396A68D541C85D26508E83_1850184760 = (last == voidLink) ? null : last.data;
-        varB4EAC82CA7396A68D541C85D26508E83_1850184760.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1850184760;
+        E varB4EAC82CA7396A68D541C85D26508E83_993376163 = null; //Variable for return #1
+        Link<E> last = voidLink.previous;
+        varB4EAC82CA7396A68D541C85D26508E83_993376163 = (last == voidLink) ? null : last.data;
+        varB4EAC82CA7396A68D541C85D26508E83_993376163.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_993376163;
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
         //return (last == voidLink) ? null : last.data;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.420 -0400", hash_original_method = "E15F23512F244F97C3914B4E0B9502A4", hash_generated_method = "6E008F1250CD6E60038DB917384E2771")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.116 -0400", hash_original_method = "E15F23512F244F97C3914B4E0B9502A4", hash_generated_method = "1A8E4A28FECF8BFEC14DA4CF8E5E7630")
     public E pollFirst() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1550123670 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1550123670 = (size == 0) ? null : removeFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1550123670.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1550123670;
+        E varB4EAC82CA7396A68D541C85D26508E83_39995238 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_39995238 = (size == 0) ? null : removeFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_39995238.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_39995238;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.421 -0400", hash_original_method = "70D8873C9DDF66392CA17B903A435D10", hash_generated_method = "CDAF0643B68AFF8E9ED68BF964115637")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.116 -0400", hash_original_method = "70D8873C9DDF66392CA17B903A435D10", hash_generated_method = "7554B2F08C19F77967A572958027C438")
     public E pollLast() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1387063197 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1387063197 = (size == 0) ? null : removeLastImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1387063197.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1387063197;
+        E varB4EAC82CA7396A68D541C85D26508E83_1944154562 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1944154562 = (size == 0) ? null : removeLastImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1944154562.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1944154562;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeLastImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.431 -0400", hash_original_method = "A1E9A1EB062A81F6CBAFDDDD06F9F273", hash_generated_method = "A9B89186312AD34E1E1762C36DB134C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.116 -0400", hash_original_method = "A1E9A1EB062A81F6CBAFDDDD06F9F273", hash_generated_method = "44142594C1B53D8A15EC583B45055DB8")
     public E pop() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1119668873 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1119668873 = removeFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1119668873.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1119668873;
+        E varB4EAC82CA7396A68D541C85D26508E83_647775973 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_647775973 = removeFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_647775973.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_647775973;
         // ---------- Original Method ----------
         //return removeFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.431 -0400", hash_original_method = "9D0F4BD741629A4E20781C5DA21CB652", hash_generated_method = "85C4F27701BBA7205966B41B91B341D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.117 -0400", hash_original_method = "9D0F4BD741629A4E20781C5DA21CB652", hash_generated_method = "85C4F27701BBA7205966B41B91B341D2")
     public void push(E e) {
         addFirstImpl(e);
         addTaint(e.getTaint());
@@ -840,55 +801,52 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.431 -0400", hash_original_method = "87160631C9EB1EFA1DB767740655C072", hash_generated_method = "F9524BCDC610754F462D921A679730B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.117 -0400", hash_original_method = "87160631C9EB1EFA1DB767740655C072", hash_generated_method = "F2A6FADCF26D728089AFCACFE420E302")
     public boolean removeFirstOccurrence(Object o) {
-        boolean var3B40CEECB1B8A1766358BB718B996E93_41825437 = (removeFirstOccurrenceImpl(o));
+        boolean var3B40CEECB1B8A1766358BB718B996E93_420048630 = (removeFirstOccurrenceImpl(o));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1878825933 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1878825933;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_289093025 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_289093025;
         // ---------- Original Method ----------
         //return removeFirstOccurrenceImpl(o);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.432 -0400", hash_original_method = "1733EDDF12DE29E16D5005CF30B5972D", hash_generated_method = "42275BC8666066532AAAC404BF687232")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.117 -0400", hash_original_method = "1733EDDF12DE29E16D5005CF30B5972D", hash_generated_method = "C9FF2A102F3B963EB546A900C9CCAAF4")
     public boolean removeLastOccurrence(Object o) {
-        Iterator<E> iter;
-        iter = new ReverseLinkIterator<E>(this);
-        boolean var818715EE81985F60936C283DBC275E04_1792123171 = (removeOneOccurrence(o, iter));
+        Iterator<E> iter = new ReverseLinkIterator<E>(this);
+        boolean var818715EE81985F60936C283DBC275E04_756633688 = (removeOneOccurrence(o, iter));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043077313 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043077313;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927984148 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1927984148;
         // ---------- Original Method ----------
         //Iterator<E> iter = new ReverseLinkIterator<E>(this);
         //return removeOneOccurrence(o, iter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.432 -0400", hash_original_method = "BE1ED77C9E5B42F2AAE1F87EC7415C20", hash_generated_method = "92C05CE6D66E525192DA966D8378C8A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.118 -0400", hash_original_method = "BE1ED77C9E5B42F2AAE1F87EC7415C20", hash_generated_method = "E37FCE044D67455E546C1223F520D9F7")
     private boolean removeFirstOccurrenceImpl(Object o) {
-        Iterator<E> iter;
-        iter = new LinkIterator<E>(this, 0);
-        boolean var818715EE81985F60936C283DBC275E04_825985176 = (removeOneOccurrence(o, iter));
+        Iterator<E> iter = new LinkIterator<E>(this, 0);
+        boolean var818715EE81985F60936C283DBC275E04_420136718 = (removeOneOccurrence(o, iter));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2039158963 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2039158963;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_60837495 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_60837495;
         // ---------- Original Method ----------
         //Iterator<E> iter = new LinkIterator<E>(this, 0);
         //return removeOneOccurrence(o, iter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.432 -0400", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "CFC6BAA4CC6DCFB43B8220701145C383")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.118 -0400", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "5542BC735B94F3D7177F65817712226F")
     private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         {
-            boolean varADABAFEBBAB7E585DD903333BD7F20A8_1634512248 = (iter.hasNext());
+            boolean varADABAFEBBAB7E585DD903333BD7F20A8_1315874103 = (iter.hasNext());
             {
-                E element;
-                element = iter.next();
+                E element = iter.next();
                 {
                     {
-                        boolean varF1A27543F856253D406E948E1C7D5139_587045638 = (o.equals(element));
+                        boolean varF1A27543F856253D406E948E1C7D5139_1527969130 = (o.equals(element));
                     } //End flattened ternary
                     {
                         iter.remove();
@@ -898,8 +856,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         } //End collapsed parenthetic
         addTaint(o.getTaint());
         addTaint(iter.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_907435414 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_907435414;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405942156 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1405942156;
         // ---------- Original Method ----------
         //while (iter.hasNext()) {
             //E element = iter.next();
@@ -912,17 +870,15 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.433 -0400", hash_original_method = "B473D145452E376F792E71796F81B4CE", hash_generated_method = "B1D582F76A59C26B37A43BB83D79209F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.119 -0400", hash_original_method = "B473D145452E376F792E71796F81B4CE", hash_generated_method = "8DD290042CD7EAD9555FD8B919D2D591")
     @Override
     public E set(int location, E object) {
-        E varB4EAC82CA7396A68D541C85D26508E83_745566746 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_207789910 = null; //Variable for return #1
         {
-            Link<E> link;
-            link = voidLink;
+            Link<E> link = voidLink;
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         link = link.next;
                     } //End block
@@ -930,23 +886,21 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             } //End block
             {
                 {
-                    int i;
-                    i = size;
+                    int i = size;
                     {
                         link = link.previous;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            E result;
-            result = link.data;
+            E result = link.data;
             link.data = object;
-            varB4EAC82CA7396A68D541C85D26508E83_745566746 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_207789910 = result;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         addTaint(location);
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_745566746.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_745566746;
+        varB4EAC82CA7396A68D541C85D26508E83_207789910.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_207789910;
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
             //Link<E> link = voidLink;
@@ -967,102 +921,98 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.434 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "A2335A722A8BAB4FC02F5865D32909F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.119 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "E9DE897986DCCF275D53DE878DF317DC")
     @Override
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155785834 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155785834;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582756381 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582756381;
         // ---------- Original Method ----------
         //return size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.434 -0400", hash_original_method = "E7666F96333DE978F541663657705932", hash_generated_method = "FAE7FCCCFB2E8DFEBF1824A322A1711A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.120 -0400", hash_original_method = "E7666F96333DE978F541663657705932", hash_generated_method = "CF7B61DA55E072991A64B7120609188B")
     public boolean offer(E o) {
-        boolean var0DC980F474C0D58B2EC0CD83E9314E01_463218030 = (addLastImpl(o));
+        boolean var0DC980F474C0D58B2EC0CD83E9314E01_1212946536 = (addLastImpl(o));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264012781 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_264012781;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778550272 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_778550272;
         // ---------- Original Method ----------
         //return addLastImpl(o);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.445 -0400", hash_original_method = "55052725C8F8219BC4435ABBF88EDF4F", hash_generated_method = "3A491D37575EE444358077BAD8B9D7D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.120 -0400", hash_original_method = "55052725C8F8219BC4435ABBF88EDF4F", hash_generated_method = "12E6660DF7D6DCEAA207BE66242F57C0")
     public E poll() {
-        E varB4EAC82CA7396A68D541C85D26508E83_619086301 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_619086301 = size == 0 ? null : removeFirst();
-        varB4EAC82CA7396A68D541C85D26508E83_619086301.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_619086301;
+        E varB4EAC82CA7396A68D541C85D26508E83_1678323527 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1678323527 = size == 0 ? null : removeFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_1678323527.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1678323527;
         // ---------- Original Method ----------
         //return size == 0 ? null : removeFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.446 -0400", hash_original_method = "E6C80B22C4B6B543BB93E41D88CAD5EF", hash_generated_method = "21DA00E5E7F11E171FF203026436497F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.121 -0400", hash_original_method = "E6C80B22C4B6B543BB93E41D88CAD5EF", hash_generated_method = "95ADEC1438F178A44E5D474A5B6A2C9F")
     public E remove() {
-        E varB4EAC82CA7396A68D541C85D26508E83_2047178410 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2047178410 = removeFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_2047178410.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2047178410;
+        E varB4EAC82CA7396A68D541C85D26508E83_1702991527 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1702991527 = removeFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1702991527.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1702991527;
         // ---------- Original Method ----------
         //return removeFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.446 -0400", hash_original_method = "4AAADA00C0F9172450031345A8B9DEF3", hash_generated_method = "9309394CC9B11674FF214599FA104A55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.122 -0400", hash_original_method = "4AAADA00C0F9172450031345A8B9DEF3", hash_generated_method = "869644025218E961FE5184666263C7C5")
     public E peek() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1389787820 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1389787820 = peekFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1389787820.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1389787820;
+        E varB4EAC82CA7396A68D541C85D26508E83_1464338014 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1464338014 = peekFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1464338014.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1464338014;
         // ---------- Original Method ----------
         //return peekFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.447 -0400", hash_original_method = "C3985024BAE3B14A3C96F9F04D080FD8", hash_generated_method = "4695D1771F31386879E306E0441FD096")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.123 -0400", hash_original_method = "C3985024BAE3B14A3C96F9F04D080FD8", hash_generated_method = "C8AA39220DA5FED1257BD103A05EA2FF")
     private E peekFirstImpl() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1804780970 = null; //Variable for return #1
-        Link<E> first;
-        first = voidLink.next;
-        varB4EAC82CA7396A68D541C85D26508E83_1804780970 = first == voidLink ? null : first.data;
-        varB4EAC82CA7396A68D541C85D26508E83_1804780970.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1804780970;
+        E varB4EAC82CA7396A68D541C85D26508E83_592208128 = null; //Variable for return #1
+        Link<E> first = voidLink.next;
+        varB4EAC82CA7396A68D541C85D26508E83_592208128 = first == voidLink ? null : first.data;
+        varB4EAC82CA7396A68D541C85D26508E83_592208128.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_592208128;
         // ---------- Original Method ----------
         //Link<E> first = voidLink.next;
         //return first == voidLink ? null : first.data;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.447 -0400", hash_original_method = "AFC93F64F463BC2AB0989756248E17C1", hash_generated_method = "62DFE2C39AC88CB51E8CD405945748B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.124 -0400", hash_original_method = "AFC93F64F463BC2AB0989756248E17C1", hash_generated_method = "0066E6E9E36C2E99D2B47ED15785EEDB")
     public E element() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1253752650 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1253752650 = getFirstImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1253752650.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1253752650;
+        E varB4EAC82CA7396A68D541C85D26508E83_1997277516 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1997277516 = getFirstImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1997277516.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1997277516;
         // ---------- Original Method ----------
         //return getFirstImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.448 -0400", hash_original_method = "4C8EA5672445A0C074E2691E7533B645", hash_generated_method = "7176E172661A8F0D1BF65B21455DA81B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.124 -0400", hash_original_method = "4C8EA5672445A0C074E2691E7533B645", hash_generated_method = "D990628BB000ECA78536DB7223A735D6")
     @Override
     public Object[] toArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1492949936 = null; //Variable for return #1
-        int index;
-        index = 0;
-        Object[] contents;
-        contents = new Object[size];
-        Link<E> link;
-        link = voidLink.next;
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_2096093951 = null; //Variable for return #1
+        int index = 0;
+        Object[] contents = new Object[size];
+        Link<E> link = voidLink.next;
         {
             contents[index++] = link.data;
             link = link.next;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1492949936 = contents;
-        varB4EAC82CA7396A68D541C85D26508E83_1492949936.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1492949936;
+        varB4EAC82CA7396A68D541C85D26508E83_2096093951 = contents;
+        varB4EAC82CA7396A68D541C85D26508E83_2096093951.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2096093951;
         // ---------- Original Method ----------
         //int index = 0;
         //Object[] contents = new Object[size];
@@ -1075,20 +1025,17 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.457 -0400", hash_original_method = "C06C36ADE827F4BEDBCDBBA1F17737D9", hash_generated_method = "859DDB21887D0304B37AD501F06228C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.126 -0400", hash_original_method = "C06C36ADE827F4BEDBCDBBA1F17737D9", hash_generated_method = "7F54B811F63AE255061974C8FA006857")
     @Override
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_2068425557 = null; //Variable for return #1
-        int index;
-        index = 0;
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1244059328 = null; //Variable for return #1
+        int index = 0;
         {
-            Class<?> ct;
-            ct = contents.getClass().getComponentType();
+            Class<?> ct = contents.getClass().getComponentType();
             contents = (T[]) Array.newInstance(ct, size);
         } //End block
-        Link<E> link;
-        link = voidLink.next;
+        Link<E> link = voidLink.next;
         {
             contents[index++] = (T) link.data;
             link = link.next;
@@ -1096,10 +1043,10 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         {
             contents[index] = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2068425557 = contents;
+        varB4EAC82CA7396A68D541C85D26508E83_1244059328 = contents;
         addTaint(contents[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2068425557.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2068425557;
+        varB4EAC82CA7396A68D541C85D26508E83_1244059328.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1244059328;
         // ---------- Original Method ----------
         //int index = 0;
         //if (size > contents.length) {
@@ -1118,14 +1065,13 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.457 -0400", hash_original_method = "6BB9A441F12D3E8CACB448F2BFF70164", hash_generated_method = "83C695C5E9785E6C1B8F75BF8EA2770F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.127 -0400", hash_original_method = "6BB9A441F12D3E8CACB448F2BFF70164", hash_generated_method = "1C7C9F0630E5C7F974251AC5866BE238")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
         stream.writeInt(size);
-        Iterator<E> it;
-        it = iterator();
+        Iterator<E> it = iterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_431132211 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1764488972 = (it.hasNext());
             {
                 stream.writeObject(it.next());
             } //End block
@@ -1141,21 +1087,18 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.473 -0400", hash_original_method = "7A7BB5A4D858D82384B74EA358B45BD7", hash_generated_method = "5D3278A4EBC7BB6C72F7A7D2B83506BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.127 -0400", hash_original_method = "7A7BB5A4D858D82384B74EA358B45BD7", hash_generated_method = "05B3F965D44011586C64C0CDA8F668F5")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
         stream.defaultReadObject();
         size = stream.readInt();
         voidLink = new Link<E>(null, null, null);
-        Link<E> link;
-        link = voidLink;
+        Link<E> link = voidLink;
         {
-            int i;
-            i = size;
+            int i = size;
             {
-                Link<E> nextLink;
-                nextLink = new Link<E>((E) stream.readObject(), link, null);
+                Link<E> nextLink = new Link<E>((E) stream.readObject(), link, null);
                 link.next = nextLink;
                 link = nextLink;
             } //End block
@@ -1178,17 +1121,17 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     
     private static final class Link<ET> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.473 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "B3480F581DDA17D478907EC9EE768C50")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.128 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "B3480F581DDA17D478907EC9EE768C50")
 
         ET data;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.473 -0400", hash_original_field = "2327346E833EFCD6B2E7B3F0A4DF8EBB", hash_generated_field = "45A046E5D1D7F8BD1511ED0837170D9B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.128 -0400", hash_original_field = "2327346E833EFCD6B2E7B3F0A4DF8EBB", hash_generated_field = "45A046E5D1D7F8BD1511ED0837170D9B")
 
         Link<ET> previous;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.473 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "99500FE4EDB0AA48BDE52F63DB34B10F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.128 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "99500FE4EDB0AA48BDE52F63DB34B10F")
 
         Link<ET> next;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_method = "92868F30800B380F1BA136D9DCEB0C81", hash_generated_method = "FF7F178B4230792375EA8BB041BC2BA6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.129 -0400", hash_original_method = "92868F30800B380F1BA136D9DCEB0C81", hash_generated_method = "FF7F178B4230792375EA8BB041BC2BA6")
           Link(ET o, Link<ET> p, Link<ET> n) {
             data = o;
             previous = p;
@@ -1205,23 +1148,23 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     
     private static final class LinkIterator<ET> implements ListIterator<ET> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.130 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
 
         int pos;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_field = "295CC8887E8B8B43596FF881B307867C", hash_generated_field = "92DA548A98D3BA977C330B914F0C29E7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.130 -0400", hash_original_field = "295CC8887E8B8B43596FF881B307867C", hash_generated_field = "92DA548A98D3BA977C330B914F0C29E7")
 
         int expectedModCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_field = "10AE9FC7D453B0DD525D0EDF2EDE7961", hash_generated_field = "52794B45189EFF95B13E35D799B9BD43")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.130 -0400", hash_original_field = "10AE9FC7D453B0DD525D0EDF2EDE7961", hash_generated_field = "52794B45189EFF95B13E35D799B9BD43")
 
         LinkedList<ET> list;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_field = "2A304A1348456CCD2234CD71A81BD338", hash_generated_field = "F851AA6845CD2B23EE54FB486DA1D214")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.130 -0400", hash_original_field = "2A304A1348456CCD2234CD71A81BD338", hash_generated_field = "F851AA6845CD2B23EE54FB486DA1D214")
 
         Link<ET> link;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_field = "1A533DA437F86DDD82B433DEC7C72599", hash_generated_field = "ACB4020CEB7749245E32063C8F282FD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.130 -0400", hash_original_field = "1A533DA437F86DDD82B433DEC7C72599", hash_generated_field = "ACB4020CEB7749245E32063C8F282FD3")
 
         Link<ET> lastLink;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.474 -0400", hash_original_method = "53053DBD9EBACCD4110D93002A695266", hash_generated_method = "C41DC6DC40DF0B75D11AFBC0C90814C7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.132 -0400", hash_original_method = "53053DBD9EBACCD4110D93002A695266", hash_generated_method = "C41DC6DC40DF0B75D11AFBC0C90814C7")
           LinkIterator(LinkedList<ET> object, int location) {
             list = object;
             expectedModCount = list.modCount;
@@ -1268,13 +1211,11 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.475 -0400", hash_original_method = "A220301E4EE3196C2657CD6F6C345E76", hash_generated_method = "9105E8C414BE39A96D3737E7C51B61A5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.134 -0400", hash_original_method = "A220301E4EE3196C2657CD6F6C345E76", hash_generated_method = "DDA6262BB4DE942BD5F35DF8C4AB59E9")
         public void add(ET object) {
             {
-                Link<ET> next;
-                next = link.next;
-                Link<ET> newLink;
-                newLink = new Link<ET>(object, link, next);
+                Link<ET> next = link.next;
+                Link<ET> newLink = new Link<ET>(object, link, next);
                 link.next = newLink;
                 next.previous = newLink;
                 link = newLink;
@@ -1302,39 +1243,38 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.475 -0400", hash_original_method = "D12271F7604D5FEC65FB34942C4AE52F", hash_generated_method = "813D591E9F3FDCDB0E9CB7B810A15BD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.135 -0400", hash_original_method = "D12271F7604D5FEC65FB34942C4AE52F", hash_generated_method = "B740970C4C0CF822E0D0CFD9249DAAAD")
         public boolean hasNext() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_470106851 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_470106851;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217743366 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1217743366;
             // ---------- Original Method ----------
             //return link.next != list.voidLink;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.483 -0400", hash_original_method = "D62F69678251E4F27FB63666837CF4D1", hash_generated_method = "2242563AA33922C33A2F917E022A4A24")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.135 -0400", hash_original_method = "D62F69678251E4F27FB63666837CF4D1", hash_generated_method = "6FB0273C741EAD3889C16584AF9C1E57")
         public boolean hasPrevious() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555595341 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_555595341;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732794658 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732794658;
             // ---------- Original Method ----------
             //return link != list.voidLink;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.484 -0400", hash_original_method = "DAF205186410308F2C7B687C3EB1A5B6", hash_generated_method = "42C3860B656B7EC067F9457DCCD76041")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.136 -0400", hash_original_method = "DAF205186410308F2C7B687C3EB1A5B6", hash_generated_method = "DB055D5D952B059436250593C6907056")
         public ET next() {
-            ET varB4EAC82CA7396A68D541C85D26508E83_446669314 = null; //Variable for return #1
+            ET varB4EAC82CA7396A68D541C85D26508E83_1386107566 = null; //Variable for return #1
             {
-                LinkedList.Link<ET> next;
-                next = link.next;
+                LinkedList.Link<ET> next = link.next;
                 {
                     lastLink = link = next;
-                    varB4EAC82CA7396A68D541C85D26508E83_446669314 = link.data;
+                    varB4EAC82CA7396A68D541C85D26508E83_1386107566 = link.data;
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            varB4EAC82CA7396A68D541C85D26508E83_446669314.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_446669314;
+            varB4EAC82CA7396A68D541C85D26508E83_1386107566.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1386107566;
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
                 //LinkedList.Link<ET> next = link.next;
@@ -1349,29 +1289,29 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.484 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "78C59BD638DEF4CB58BF0476A55F45D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.137 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "E307D3796B7AA665C796F1F567758A5F")
         public int nextIndex() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895526260 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895526260;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772971743 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772971743;
             // ---------- Original Method ----------
             //return pos + 1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.484 -0400", hash_original_method = "C56DBD8071305313D7DDB1E67B6D94B0", hash_generated_method = "A67AB27DD63896F546A2DD4D41E57D1E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.139 -0400", hash_original_method = "C56DBD8071305313D7DDB1E67B6D94B0", hash_generated_method = "53BE18A4BC8148FCC891BCA8DA14A124")
         public ET previous() {
-            ET varB4EAC82CA7396A68D541C85D26508E83_616513415 = null; //Variable for return #1
+            ET varB4EAC82CA7396A68D541C85D26508E83_1495252404 = null; //Variable for return #1
             {
                 {
                     lastLink = link;
                     link = link.previous;
-                    varB4EAC82CA7396A68D541C85D26508E83_616513415 = lastLink.data;
+                    varB4EAC82CA7396A68D541C85D26508E83_1495252404 = lastLink.data;
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            varB4EAC82CA7396A68D541C85D26508E83_616513415.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_616513415;
+            varB4EAC82CA7396A68D541C85D26508E83_1495252404.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1495252404;
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
                 //if (link != list.voidLink) {
@@ -1386,23 +1326,21 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.485 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "43C0F9BF8F075B17A0BA45890ABCBE86")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.139 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "1973128A90D151FB0CE59A7C6918396D")
         public int previousIndex() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691495784 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691495784;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210243071 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210243071;
             // ---------- Original Method ----------
             //return pos;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.485 -0400", hash_original_method = "454EC742FAC97A85450236EC802A7816", hash_generated_method = "D825FA27847C1F4F9C771E090D94074F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.140 -0400", hash_original_method = "454EC742FAC97A85450236EC802A7816", hash_generated_method = "E2B7E79A0EC65DA4C8102E80559AAB43")
         public void remove() {
             {
                 {
-                    Link<ET> next;
-                    next = lastLink.next;
-                    Link<ET> previous;
-                    previous = lastLink.previous;
+                    Link<ET> next = lastLink.next;
+                    Link<ET> previous = lastLink.previous;
                     next.previous = previous;
                     previous.next = next;
                     link = previous;
@@ -1439,7 +1377,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.486 -0400", hash_original_method = "8A5D5DD2AB039971BB00FDD7ADDD55B1", hash_generated_method = "B9649A1C9A6D6D4E3E8E9153286971D0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.142 -0400", hash_original_method = "8A5D5DD2AB039971BB00FDD7ADDD55B1", hash_generated_method = "B9649A1C9A6D6D4E3E8E9153286971D0")
         public void set(ET object) {
             {
                 {
@@ -1470,20 +1408,20 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     
     private class ReverseLinkIterator<ET> implements Iterator<ET> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_field = "295CC8887E8B8B43596FF881B307867C", hash_generated_field = "9C353E755EC3A4E9B0CFE1EA9EEC47A8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.142 -0400", hash_original_field = "295CC8887E8B8B43596FF881B307867C", hash_generated_field = "9C353E755EC3A4E9B0CFE1EA9EEC47A8")
 
         private int expectedModCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_field = "10AE9FC7D453B0DD525D0EDF2EDE7961", hash_generated_field = "D1EC04877DB93B65C0C16B144052AC71")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.142 -0400", hash_original_field = "10AE9FC7D453B0DD525D0EDF2EDE7961", hash_generated_field = "D1EC04877DB93B65C0C16B144052AC71")
 
         private LinkedList<ET> list;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_field = "2A304A1348456CCD2234CD71A81BD338", hash_generated_field = "C029ECB4203CCD8751E5C756F40C32AD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.142 -0400", hash_original_field = "2A304A1348456CCD2234CD71A81BD338", hash_generated_field = "C029ECB4203CCD8751E5C756F40C32AD")
 
         private Link<ET> link;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_field = "7385E778E1358730CFB4F236AF9FF24A", hash_generated_field = "C01834E3EF87C859E7B00C0837E2E4D3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.142 -0400", hash_original_field = "7385E778E1358730CFB4F236AF9FF24A", hash_generated_field = "C01834E3EF87C859E7B00C0837E2E4D3")
 
         private boolean canRemove;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_method = "2C54C06EA8F2B61501161B2BC13D7FF2", hash_generated_method = "98C036A6F3260A1B3893C647A1DF0F6C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.143 -0400", hash_original_method = "2C54C06EA8F2B61501161B2BC13D7FF2", hash_generated_method = "98C036A6F3260A1B3893C647A1DF0F6C")
           ReverseLinkIterator(LinkedList<ET> linkedList) {
             list = linkedList;
             expectedModCount = list.modCount;
@@ -1497,32 +1435,32 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.487 -0400", hash_original_method = "683C5349A490B93F6F23CFDE8DA49A7E", hash_generated_method = "4F98C8CA9BEB8D901DCED6935B23A585")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.144 -0400", hash_original_method = "683C5349A490B93F6F23CFDE8DA49A7E", hash_generated_method = "437BA48BE100A169BF1E4213E8764544")
         public boolean hasNext() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654199131 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_654199131;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1841680363 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1841680363;
             // ---------- Original Method ----------
             //return link.previous != list.voidLink;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.488 -0400", hash_original_method = "B57C4B4DEBE6A9EB91858512EE525B72", hash_generated_method = "E2B454627B301DCEFB100CF2D6007704")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.145 -0400", hash_original_method = "B57C4B4DEBE6A9EB91858512EE525B72", hash_generated_method = "31255D506EAE45F7B19E13CB7F37D6E5")
         public ET next() {
-            ET varB4EAC82CA7396A68D541C85D26508E83_1333447351 = null; //Variable for return #1
+            ET varB4EAC82CA7396A68D541C85D26508E83_1419031839 = null; //Variable for return #1
             {
                 {
-                    boolean var384B0C75E2EB52B4939B27A6F15C2DC1_1479617604 = (hasNext());
+                    boolean var384B0C75E2EB52B4939B27A6F15C2DC1_2037196332 = (hasNext());
                     {
                         link = link.previous;
                         canRemove = true;
-                        varB4EAC82CA7396A68D541C85D26508E83_1333447351 = link.data;
+                        varB4EAC82CA7396A68D541C85D26508E83_1419031839 = link.data;
                     } //End block
                 } //End collapsed parenthetic
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            varB4EAC82CA7396A68D541C85D26508E83_1333447351.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1333447351;
+            varB4EAC82CA7396A68D541C85D26508E83_1419031839.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1419031839;
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
                 //if (hasNext()) {
@@ -1536,14 +1474,12 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.513 -0400", hash_original_method = "07412F520F702F11B7EB1920D3A5A17D", hash_generated_method = "0418FFF55C95EB8133C6225BC4641971")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.146 -0400", hash_original_method = "07412F520F702F11B7EB1920D3A5A17D", hash_generated_method = "90DE0F14DCB4C90DCDD3ED6A7028394A")
         public void remove() {
             {
                 {
-                    Link<ET> next;
-                    next = link.previous;
-                    Link<ET> previous;
-                    previous = link.next;
+                    Link<ET> next = link.previous;
+                    Link<ET> previous = link.next;
                     next.next = previous;
                     previous.previous = next;
                     link = previous;
@@ -1576,8 +1512,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.514 -0400", hash_original_field = "A91BB42ABDC7657C70EC735A482E86B5", hash_generated_field = "0429AD1C5E84D950842944B527B7B29E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.146 -0400", hash_original_field = "A91BB42ABDC7657C70EC735A482E86B5", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
 
-    private static long serialVersionUID = 876323262645176354L;
+    private static final long serialVersionUID = 876323262645176354L;
 }
 

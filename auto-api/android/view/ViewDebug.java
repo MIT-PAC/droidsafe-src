@@ -54,24 +54,24 @@ import java.util.concurrent.TimeUnit;
 
 public class ViewDebug {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.607 -0400", hash_original_method = "F785FDC015B150C7B28C32B4894B3E15", hash_generated_method = "F785FDC015B150C7B28C32B4894B3E15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.570 -0400", hash_original_method = "F785FDC015B150C7B28C32B4894B3E15", hash_generated_method = "F785FDC015B150C7B28C32B4894B3E15")
     public ViewDebug ()
     {
         //Synthesized constructor
     }
 
 
-        public static long getViewInstanceCount() {
+    public static long getViewInstanceCount() {
         return Debug.countInstancesOfClass(View.class);
     }
 
     
-        public static long getViewRootImplCount() {
+    public static long getViewRootImplCount() {
         return Debug.countInstancesOfClass(ViewRootImpl.class);
     }
 
     
-        public static void startLooperProfiling(String path, FileDescriptor fileDescriptor) {
+    public static void startLooperProfiling(String path, FileDescriptor fileDescriptor) {
         if (sLooperProfilerStorage.get() == null) {
             LooperProfiler profiler = new LooperProfiler(path, fileDescriptor);
             sLooperProfilerStorage.set(profiler);
@@ -80,7 +80,7 @@ public class ViewDebug {
     }
 
     
-        public static void stopLooperProfiling() {
+    public static void stopLooperProfiling() {
         LooperProfiler profiler = sLooperProfilerStorage.get();
         if (profiler != null) {
             sLooperProfilerStorage.remove();
@@ -90,7 +90,7 @@ public class ViewDebug {
     }
 
     
-        public static void trace(View view, RecyclerTraceType type, int... parameters) {
+    public static void trace(View view, RecyclerTraceType type, int... parameters) {
         if (sRecyclerOwnerView == null || sRecyclerViews == null) {
             return;
         }
@@ -107,7 +107,7 @@ public class ViewDebug {
     }
 
     
-        public static void startRecyclerTracing(String prefix, View view) {
+    public static void startRecyclerTracing(String prefix, View view) {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -122,7 +122,7 @@ public class ViewDebug {
     }
 
     
-        public static void stopRecyclerTracing() {
+    public static void stopRecyclerTracing() {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -173,7 +173,7 @@ public class ViewDebug {
     }
 
     
-        public static void trace(View view, HierarchyTraceType type) {
+    public static void trace(View view, HierarchyTraceType type) {
         if (sHierarchyTraces == null) {
             return;
         }
@@ -190,7 +190,7 @@ public class ViewDebug {
     }
 
     
-        public static void startHierarchyTracing(String prefix, View view) {
+    public static void startHierarchyTracing(String prefix, View view) {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -212,7 +212,7 @@ public class ViewDebug {
     }
 
     
-        public static void stopHierarchyTracing() {
+    public static void stopHierarchyTracing() {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -250,7 +250,7 @@ public class ViewDebug {
     }
 
     
-        static void dispatchCommand(View view, String command, String parameters,
+    static void dispatchCommand(View view, String command, String parameters,
             OutputStream clientStream) throws IOException {
         view = view.getRootView();
         if (REMOTE_COMMAND_DUMP.equalsIgnoreCase(command)) {
@@ -274,7 +274,7 @@ public class ViewDebug {
     }
 
     
-        private static View findView(View root, String parameter) {
+    private static View findView(View root, String parameter) {
         if (parameter.indexOf('@') != -1) {
             final String[] ids = parameter.split("@");
             final String className = ids[0];
@@ -291,7 +291,7 @@ public class ViewDebug {
     }
 
     
-        private static void invalidate(View root, String parameter) {
+    private static void invalidate(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
             view.postInvalidate();
@@ -299,7 +299,7 @@ public class ViewDebug {
     }
 
     
-        private static void requestLayout(View root, String parameter) {
+    private static void requestLayout(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
             root.post(new Runnable() {
@@ -311,7 +311,7 @@ public class ViewDebug {
     }
 
     
-        private static void profile(View root, OutputStream clientStream, String parameter) throws IOException {
+    private static void profile(View root, OutputStream clientStream, String parameter) throws IOException {
         final View view = findView(root, parameter);
         BufferedWriter out = null;
         try {
@@ -334,12 +334,12 @@ public class ViewDebug {
     }
 
     
-        private static void profileViewAndChildren(final View view, BufferedWriter out) throws IOException {
+    private static void profileViewAndChildren(final View view, BufferedWriter out) throws IOException {
         profileViewAndChildren(view, out, true);
     }
 
     
-        private static void profileViewAndChildren(final View view, BufferedWriter out, boolean root) throws IOException {
+    private static void profileViewAndChildren(final View view, BufferedWriter out, boolean root) throws IOException {
         long durationMeasure =
                 (root || (view.mPrivateFlags & View.MEASURED_DIMENSION_SET) != 0) ? profileViewOperation(
                         view, new ViewOperation<Void>() {
@@ -422,7 +422,7 @@ public class ViewDebug {
     }
 
     
-        private static <T> long profileViewOperation(View view, final ViewOperation<T> operation) {
+    private static <T> long profileViewOperation(View view, final ViewOperation<T> operation) {
         final CountDownLatch latch = new CountDownLatch(1);
         final long[] duration = new long[1];
         view.post(new Runnable() {
@@ -452,7 +452,7 @@ public class ViewDebug {
     }
 
     
-        private static void captureLayers(View root, final DataOutputStream clientStream) throws IOException {
+    private static void captureLayers(View root, final DataOutputStream clientStream) throws IOException {
         try {
             Rect outRect = new Rect();
             try {
@@ -469,7 +469,7 @@ public class ViewDebug {
     }
 
     
-        private static void captureViewLayer(View view, DataOutputStream clientStream, boolean visible) throws IOException {
+    private static void captureViewLayer(View view, DataOutputStream clientStream, boolean visible) throws IOException {
         final boolean localVisible = view.getVisibility() == View.VISIBLE && visible;
         if ((view.mPrivateFlags & View.SKIP_DRAW) != View.SKIP_DRAW) {
             final int id = view.getId();
@@ -505,13 +505,13 @@ public class ViewDebug {
     }
 
     
-        private static void outputDisplayList(View root, String parameter) throws IOException {
+    private static void outputDisplayList(View root, String parameter) throws IOException {
         final View view = findView(root, parameter);
         view.getViewRootImpl().outputDisplayList(view);
     }
 
     
-        private static void capture(View root, final OutputStream clientStream, String parameter) throws IOException {
+    private static void capture(View root, final OutputStream clientStream, String parameter) throws IOException {
         final View captureView = findView(root, parameter);
         Bitmap b = performViewCapture(captureView, false);
         if (b == null) {
@@ -532,7 +532,7 @@ public class ViewDebug {
     }
 
     
-        private static Bitmap performViewCapture(final View captureView, final boolean skpiChildren) {
+    private static Bitmap performViewCapture(final View captureView, final boolean skpiChildren) {
         if (captureView != null) {
             final CountDownLatch latch = new CountDownLatch(1);
             final Bitmap[] cache = new Bitmap[1];
@@ -560,7 +560,7 @@ public class ViewDebug {
     }
 
     
-        private static void dump(View root, OutputStream clientStream) throws IOException {
+    private static void dump(View root, OutputStream clientStream) throws IOException {
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new OutputStreamWriter(clientStream, "utf-8"), 32 * 1024);
@@ -581,7 +581,7 @@ public class ViewDebug {
     }
 
     
-        private static View findView(ViewGroup group, String className, int hashCode) {
+    private static View findView(ViewGroup group, String className, int hashCode) {
         if (isRequestedView(group, className, hashCode)) {
             return group;
         }
@@ -601,12 +601,12 @@ public class ViewDebug {
     }
 
     
-        private static boolean isRequestedView(View view, String className, int hashCode) {
+    private static boolean isRequestedView(View view, String className, int hashCode) {
         return view.getClass().getName().equals(className) && view.hashCode() == hashCode;
     }
 
     
-        private static void dumpViewHierarchyWithProperties(Context context, ViewGroup group,
+    private static void dumpViewHierarchyWithProperties(Context context, ViewGroup group,
             BufferedWriter out, int level) {
         if (!dumpViewWithProperties(context, group, out, level)) {
             return;
@@ -623,7 +623,7 @@ public class ViewDebug {
     }
 
     
-        private static boolean dumpViewWithProperties(Context context, View view,
+    private static boolean dumpViewWithProperties(Context context, View view,
             BufferedWriter out, int level) {
         try {
             for (int i = 0; i < level; i++) {
@@ -643,7 +643,7 @@ public class ViewDebug {
     }
 
     
-        private static Field[] getExportedPropertyFields(Class<?> klass) {
+    private static Field[] getExportedPropertyFields(Class<?> klass) {
         if (sFieldsForClasses == null) {
             sFieldsForClasses = new HashMap<Class<?>, Field[]>();
         }
@@ -672,7 +672,7 @@ public class ViewDebug {
     }
 
     
-        private static Method[] getExportedPropertyMethods(Class<?> klass) {
+    private static Method[] getExportedPropertyMethods(Class<?> klass) {
         if (sMethodsForClasses == null) {
             sMethodsForClasses = new HashMap<Class<?>, Method[]>(100);
         }
@@ -703,13 +703,13 @@ public class ViewDebug {
     }
 
     
-        private static void dumpViewProperties(Context context, Object view,
+    private static void dumpViewProperties(Context context, Object view,
             BufferedWriter out) throws IOException {
         dumpViewProperties(context, view, out, "");
     }
 
     
-        private static void dumpViewProperties(Context context, Object view,
+    private static void dumpViewProperties(Context context, Object view,
             BufferedWriter out, String prefix) throws IOException {
         Class<?> klass = view.getClass();
         do {
@@ -720,7 +720,7 @@ public class ViewDebug {
     }
 
     
-        private static void exportMethods(Context context, Object view, BufferedWriter out,
+    private static void exportMethods(Context context, Object view, BufferedWriter out,
             Class<?> klass, String prefix) throws IOException {
         final Method[] methods = getExportedPropertyMethods(klass);
         int count = methods.length;
@@ -782,7 +782,7 @@ public class ViewDebug {
     }
 
     
-        private static void exportFields(Context context, Object view, BufferedWriter out,
+    private static void exportFields(Context context, Object view, BufferedWriter out,
             Class<?> klass, String prefix) throws IOException {
         final Field[] fields = getExportedPropertyFields(klass);
         int count = fields.length;
@@ -845,7 +845,7 @@ public class ViewDebug {
     }
 
     
-        private static void writeEntry(BufferedWriter out, String prefix, String name,
+    private static void writeEntry(BufferedWriter out, String prefix, String name,
             String suffix, Object value) throws IOException {
         out.write(prefix);
         out.write(name);
@@ -856,7 +856,7 @@ public class ViewDebug {
     }
 
     
-        private static void exportUnrolledFlags(BufferedWriter out, FlagToString[] mapping,
+    private static void exportUnrolledFlags(BufferedWriter out, FlagToString[] mapping,
             int intValue, String prefix) throws IOException {
         final int count = mapping.length;
         for (int j = 0; j < count; j++) {
@@ -873,7 +873,7 @@ public class ViewDebug {
     }
 
     
-        private static void exportUnrolledArray(Context context, BufferedWriter out,
+    private static void exportUnrolledArray(Context context, BufferedWriter out,
             ExportedProperty property, int[] array, String prefix, String suffix) throws IOException {
         final IntToString[] indexMapping = property.indexMapping();
         final boolean hasIndexMapping = indexMapping.length > 0;
@@ -916,7 +916,7 @@ public class ViewDebug {
     }
 
     
-        static Object resolveId(Context context, int id) {
+    static Object resolveId(Context context, int id) {
         Object fieldValue;
         final Resources resources = context.getResources();
         if (id >= 0) {
@@ -933,7 +933,7 @@ public class ViewDebug {
     }
 
     
-        private static void writeValue(BufferedWriter out, Object value) throws IOException {
+    private static void writeValue(BufferedWriter out, Object value) throws IOException {
         if (value != null) {
             String output = value.toString().replace("\n", "\\n");
             out.write(String.valueOf(output.length()));
@@ -945,7 +945,7 @@ public class ViewDebug {
     }
 
     
-        private static void dumpViewHierarchy(ViewGroup group, BufferedWriter out, int level) {
+    private static void dumpViewHierarchy(ViewGroup group, BufferedWriter out, int level) {
         if (!dumpView(group, out, level)) {
             return;
         }
@@ -961,7 +961,7 @@ public class ViewDebug {
     }
 
     
-        private static boolean dumpView(Object view, BufferedWriter out, int level) {
+    private static boolean dumpView(Object view, BufferedWriter out, int level) {
         try {
             for (int i = 0; i < level; i++) {
                 out.write(' ');
@@ -978,7 +978,7 @@ public class ViewDebug {
     }
 
     
-        private static Field[] capturedViewGetPropertyFields(Class<?> klass) {
+    private static Field[] capturedViewGetPropertyFields(Class<?> klass) {
         if (mCapturedViewFieldsForClasses == null) {
             mCapturedViewFieldsForClasses = new HashMap<Class<?>, Field[]>();
         }
@@ -1003,7 +1003,7 @@ public class ViewDebug {
     }
 
     
-        private static Method[] capturedViewGetPropertyMethods(Class<?> klass) {
+    private static Method[] capturedViewGetPropertyMethods(Class<?> klass) {
         if (mCapturedViewMethodsForClasses == null) {
             mCapturedViewMethodsForClasses = new HashMap<Class<?>, Method[]>();
         }
@@ -1030,7 +1030,7 @@ public class ViewDebug {
     }
 
     
-        private static String capturedViewExportMethods(Object obj, Class<?> klass,
+    private static String capturedViewExportMethods(Object obj, Class<?> klass,
             String prefix) {
         if (obj == null) {
             return "null";
@@ -1066,7 +1066,7 @@ public class ViewDebug {
     }
 
     
-        private static String capturedViewExportFields(Object obj, Class<?> klass, String prefix) {
+    private static String capturedViewExportFields(Object obj, Class<?> klass, String prefix) {
         if (obj == null) {
             return "null";
         }
@@ -1094,7 +1094,7 @@ public class ViewDebug {
     }
 
     
-        public static void dumpCapturedView(String tag, Object view) {
+    public static void dumpCapturedView(String tag, Object view) {
         Class<?> klass = view.getClass();
         StringBuilder sb = new StringBuilder(klass.getName() + ": ");
         sb.append(capturedViewExportFields(view, klass, ""));
@@ -1126,20 +1126,20 @@ public class ViewDebug {
 
     
     private static class RecyclerTrace {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.698 -0400", hash_original_field = "1BDA80F2BE4D3658E0BAA43FBE7AE8C1", hash_generated_field = "ED83C2F54CE383C7D62E29BD1035B9D3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "1BDA80F2BE4D3658E0BAA43FBE7AE8C1", hash_generated_field = "ED83C2F54CE383C7D62E29BD1035B9D3")
 
         public int view;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.698 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "7C6E79B6BBCCD9A22B2D56B1BBC23A93")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "7C6E79B6BBCCD9A22B2D56B1BBC23A93")
 
         public RecyclerTraceType type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.698 -0400", hash_original_field = "4757FE07FD492A8BE0EA6A760D683D6E", hash_generated_field = "B2F6CC92E86B46C8537E13B7CC7F6689")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "4757FE07FD492A8BE0EA6A760D683D6E", hash_generated_field = "B2F6CC92E86B46C8537E13B7CC7F6689")
 
         public int position;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.698 -0400", hash_original_field = "48D3D19B6EB907692106FE647059B2C8", hash_generated_field = "ADBFEEFE9BCE8AF6F80B6F5B9949565A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "48D3D19B6EB907692106FE647059B2C8", hash_generated_field = "ADBFEEFE9BCE8AF6F80B6F5B9949565A")
 
         public int indexOnScreen;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.699 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
         public RecyclerTrace ()
         {
             //Synthesized constructor
@@ -1151,29 +1151,29 @@ public class ViewDebug {
 
     
     private static class LooperProfiler implements Looper.Profiler, Printer {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.706 -0400", hash_original_field = "9584F08F04BD0B7FDDBE5FE88E83C904", hash_generated_field = "907124E57E6B072BDF3C9759E9F1A9DD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "9584F08F04BD0B7FDDBE5FE88E83C904", hash_generated_field = "907124E57E6B072BDF3C9759E9F1A9DD")
 
         private long mTraceWallStart;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.706 -0400", hash_original_field = "A0523C3AC43A60919026BF0393A6B274", hash_generated_field = "9A8A7790571BC817117ED4A4028799A7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.580 -0400", hash_original_field = "A0523C3AC43A60919026BF0393A6B274", hash_generated_field = "9A8A7790571BC817117ED4A4028799A7")
 
         private long mTraceThreadStart;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.707 -0400", hash_original_field = "14AB8DA4BE0770D41461EB4B463A17FE", hash_generated_field = "1D2222E4CB34E55F20BAE64C0AFE4C42")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_field = "14AB8DA4BE0770D41461EB4B463A17FE", hash_generated_field = "D18A086A815A6770FBDC3F49B10DB707")
 
-        private ArrayList<Entry> mTraces = new ArrayList<Entry>(512);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.707 -0400", hash_original_field = "C354240C287CBF6C82D87E9C7D5D6743", hash_generated_field = "7F7F1587244EB2C19EA2D08778466A84")
+        private final ArrayList<Entry> mTraces = new ArrayList<Entry>(512);
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_field = "C354240C287CBF6C82D87E9C7D5D6743", hash_generated_field = "DE94B5ABFDFE10D1547A66120C45E13B")
 
-        private HashMap<String, Integer> mTraceNames = new HashMap<String, Integer>(32);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.707 -0400", hash_original_field = "E14516108C1209C4094B9898C04AFD64", hash_generated_field = "DA1910C6BCE975350BE95871C9917550")
+        private final HashMap<String, Integer> mTraceNames = new HashMap<String, Integer>(32);
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_field = "E14516108C1209C4094B9898C04AFD64", hash_generated_field = "DA1910C6BCE975350BE95871C9917550")
 
         private int mTraceId = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.707 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
 
         private String mPath;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.707 -0400", hash_original_field = "D118306A98C1E7C12AA828417A60A6F6", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_field = "D118306A98C1E7C12AA828417A60A6F6", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
 
         private ParcelFileDescriptor mFileDescriptor;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.708 -0400", hash_original_method = "837FBF9717038E47AC8A60A9DD4D19D4", hash_generated_method = "8CD51BAAC62AC585C31769B564D51237")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.581 -0400", hash_original_method = "837FBF9717038E47AC8A60A9DD4D19D4", hash_generated_method = "8CD51BAAC62AC585C31769B564D51237")
           LooperProfiler(String path, FileDescriptor fileDescriptor) {
             mPath = path;
             try 
@@ -1199,7 +1199,7 @@ public class ViewDebug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.708 -0400", hash_original_method = "154FC169BABA0D9841DA90FB18C972FB", hash_generated_method = "4D5EEED3A4E0DDBF058576EAC9A4A5DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.582 -0400", hash_original_method = "154FC169BABA0D9841DA90FB18C972FB", hash_generated_method = "4D5EEED3A4E0DDBF058576EAC9A4A5DC")
         @Override
         public void println(String x) {
             addTaint(x.getTaint());
@@ -1207,12 +1207,11 @@ public class ViewDebug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.708 -0400", hash_original_method = "CBC3F19E284786CED14CDBC43ACD7A30", hash_generated_method = "81092E430C9A3BAC8190FDD3875D2662")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.582 -0400", hash_original_method = "CBC3F19E284786CED14CDBC43ACD7A30", hash_generated_method = "A44C4689F1DD091D85250690BBA53023")
         @Override
         public void profile(Message message, long wallStart, long wallTime,
                 long threadStart, long threadTime) {
-            Entry entry;
-            entry = new Entry();
+            Entry entry = new Entry();
             entry.traceId = getTraceId(message);
             entry.wallStart = wallStart;
             entry.wallTime = wallTime;
@@ -1235,19 +1234,17 @@ public class ViewDebug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.725 -0400", hash_original_method = "A4E97683E16A36EF6068E097213C1038", hash_generated_method = "E2F7C4B0B56908E2D3F8AF40528D8600")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.582 -0400", hash_original_method = "A4E97683E16A36EF6068E097213C1038", hash_generated_method = "2F1932BF1C8725E68D8EE96378DCF33F")
         private int getTraceId(Message message) {
-            String name;
-            name = message.getTarget().getMessageName(message);
-            Integer traceId;
-            traceId = mTraceNames.get(name);
+            String name = message.getTarget().getMessageName(message);
+            Integer traceId = mTraceNames.get(name);
             {
                 traceId = mTraceId++ << 4;
                 mTraceNames.put(name, traceId);
             } //End block
             addTaint(message.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855546594 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855546594;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853162010 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853162010;
             // ---------- Original Method ----------
             //String name = message.getTarget().getMessageName(message);
             //Integer traceId = mTraceNames.get(name);
@@ -1259,10 +1256,10 @@ public class ViewDebug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.726 -0400", hash_original_method = "BBA2F80D690B10E11CCE7370554710C3", hash_generated_method = "FE2C500CE86588431B368AF163AB7819")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.583 -0400", hash_original_method = "BBA2F80D690B10E11CCE7370554710C3", hash_generated_method = "B6DBEE4B81C567C21AB1DC59467D39DC")
          void save() {
             new Thread(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.726 -0400", hash_original_method = "B6996361E66890DF09673E772DD6D111", hash_generated_method = "73567CBE8B59CB7E5176BEBD26716111")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.583 -0400", hash_original_method = "B6996361E66890DF09673E772DD6D111", hash_generated_method = "73567CBE8B59CB7E5176BEBD26716111")
                 @Override
                 public void run() {
                     saveTraces();
@@ -1280,12 +1277,10 @@ public class ViewDebug {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.741 -0400", hash_original_method = "B1053AAB109E078FB60D54B6D9E37ED4", hash_generated_method = "A6E3F88329B55BEBC14B5AF40E5FF56F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.584 -0400", hash_original_method = "B1053AAB109E078FB60D54B6D9E37ED4", hash_generated_method = "990EEE78C24616A416CDAE209320F3C1")
         private void saveTraces() {
-            FileOutputStream fos;
-            fos = new FileOutputStream(mFileDescriptor.getFileDescriptor());
-            DataOutputStream out;
-            out = new DataOutputStream(new BufferedOutputStream(fos));
+            FileOutputStream fos = new FileOutputStream(mFileDescriptor.getFileDescriptor());
+            DataOutputStream out = new DataOutputStream(new BufferedOutputStream(fos));
             try 
             {
                 writeHeader(out, mTraceWallStart, mTraceNames, mTraces);
@@ -1398,23 +1393,23 @@ public class ViewDebug {
 
         
         static class Entry {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "9449EF8F36BCEDA75FD8F2DB4F9EA5AE", hash_generated_field = "C68363F70ADCAFF99F59BB383A8DC09F")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "9449EF8F36BCEDA75FD8F2DB4F9EA5AE", hash_generated_field = "C68363F70ADCAFF99F59BB383A8DC09F")
 
             int traceId;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "02C085F0775A123109B34038B5F79660", hash_generated_field = "CD3765D68DA5A5B9F5CE82D9DB609164")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "02C085F0775A123109B34038B5F79660", hash_generated_field = "CD3765D68DA5A5B9F5CE82D9DB609164")
 
             long wallStart;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "A603E9EBDEBBC18D769F2D40E18BC583", hash_generated_field = "4AF1E1CB2BFA789E16B71B0DCB178EDB")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "A603E9EBDEBBC18D769F2D40E18BC583", hash_generated_field = "4AF1E1CB2BFA789E16B71B0DCB178EDB")
 
             long wallTime;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "E2AB3E7A67A38EA52D7730D4C5E82961", hash_generated_field = "2BBAC33AD2B483C35BB689E384478A82")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "E2AB3E7A67A38EA52D7730D4C5E82961", hash_generated_field = "2BBAC33AD2B483C35BB689E384478A82")
 
             long threadStart;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "3806B13B072A3E20680C9E05627C478D", hash_generated_field = "C322CE8D67E78FB4B046F4C7179E5580")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "3806B13B072A3E20680C9E05627C478D", hash_generated_field = "C322CE8D67E78FB4B046F4C7179E5580")
 
             long threadTime;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
             public Entry ()
             {
                 //Synthesized constructor
@@ -1425,24 +1420,24 @@ public class ViewDebug {
 
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "7A8A4336A2EB31EC0AB448A49277068D", hash_generated_field = "04B60B9CC125E1FDB98B377F5F585E96")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "7A8A4336A2EB31EC0AB448A49277068D", hash_generated_field = "C69277D3A6C0A47CB55912A466260D08")
 
-        private static String LOG_TAG = "LooperProfiler";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "B93352BD87EF694320F1F97ACB153AA8", hash_generated_field = "5530F5DE97F8D4588E86A9A322779641")
+        private static final String LOG_TAG = "LooperProfiler";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "B93352BD87EF694320F1F97ACB153AA8", hash_generated_field = "871E2F94CCC725B7827319EDDC137722")
 
-        private static int TRACE_VERSION_NUMBER = 3;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "ABA39137EEBCB8F7C4E4238783223BD7", hash_generated_field = "34E8864C4C7DDDF8BB03AB426F5E7E29")
+        private static final int TRACE_VERSION_NUMBER = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "ABA39137EEBCB8F7C4E4238783223BD7", hash_generated_field = "A1F6BAEF2E989EE3FA0925E45A3CFD13")
 
-        private static int ACTION_EXIT_METHOD = 0x1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "C00ECD23482E61D6E931FA0A554BF854", hash_generated_field = "7B86C13653BE21E63A6E83D23BE6E974")
+        private static final int ACTION_EXIT_METHOD = 0x1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "C00ECD23482E61D6E931FA0A554BF854", hash_generated_field = "76F366AD6EB46B3BF9F1D9821E0B8FE5")
 
-        private static int HEADER_SIZE = 32;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "AC40C4946DD906E11AA78AF61DF2F2BC", hash_generated_field = "8FE257D40AD4A809F8F158A136A93485")
+        private static final int HEADER_SIZE = 32;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "AC40C4946DD906E11AA78AF61DF2F2BC", hash_generated_field = "4E0FAF61A961141628DFC7DB4534A7E1")
 
-        private static String HEADER_MAGIC = "SLOW";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "1932EAA090FF4E3F6F2A42822883CCBF", hash_generated_field = "355C3D072BB353995A82381383DFB31B")
+        private static final String HEADER_MAGIC = "SLOW";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.587 -0400", hash_original_field = "1932EAA090FF4E3F6F2A42822883CCBF", hash_generated_field = "0B85C641B9DE54964CCC1A129A9C40F1")
 
-        private static short HEADER_RECORD_SIZE = (short) 14;
+        private static final short HEADER_RECORD_SIZE = (short) 14;
     }
 
 
@@ -1503,98 +1498,98 @@ public class ViewDebug {
         void post(T... data);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "8B694EA1DFEF8F9AE09AB98065ACF53B", hash_generated_field = "86781DCF86035685DDB38D2649CD3D04")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "8B694EA1DFEF8F9AE09AB98065ACF53B", hash_generated_field = "86781DCF86035685DDB38D2649CD3D04")
 
     public static final String CONSISTENCY_LOG_TAG = "ViewConsistency";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "0AF1698FAA240F40B50FDCB2B1D69E1F", hash_generated_field = "D9BFBAE0C25DC40F4D9BB455F91F6D0A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "0AF1698FAA240F40B50FDCB2B1D69E1F", hash_generated_field = "D9BFBAE0C25DC40F4D9BB455F91F6D0A")
 
     public static final int CONSISTENCY_LAYOUT = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "206B93F91EE2058C3C672E94360CB41A", hash_generated_field = "8E3E44DD5019328562D473EF23ABD41A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "206B93F91EE2058C3C672E94360CB41A", hash_generated_field = "8E3E44DD5019328562D473EF23ABD41A")
 
     public static final int CONSISTENCY_DRAWING = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "D112E71B5A4737699336FFD4D9DD5256", hash_generated_field = "C045360CEDFF189A88AFA4EE8D202DDE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "D112E71B5A4737699336FFD4D9DD5256", hash_generated_field = "C045360CEDFF189A88AFA4EE8D202DDE")
 
     public static final boolean TRACE_HIERARCHY = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "3620C6B5C36E6E1066FDF69020CF048E", hash_generated_field = "1A5D3591701CB592F2723D2D1DA3E49E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "3620C6B5C36E6E1066FDF69020CF048E", hash_generated_field = "1A5D3591701CB592F2723D2D1DA3E49E")
 
     public static final boolean TRACE_RECYCLER = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "7D9BCE93F35A75892D4F937B886FC1AF", hash_generated_field = "1DC50F8D4E55F1408444042AE0225479")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "7D9BCE93F35A75892D4F937B886FC1AF", hash_generated_field = "1DC50F8D4E55F1408444042AE0225479")
 
     public static final boolean DEBUG_PROFILE_DRAWING = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.744 -0400", hash_original_field = "986A7B4D169F683CAFFBB0468536DF3F", hash_generated_field = "7BA93C1DFD06077908429783FE30421E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "986A7B4D169F683CAFFBB0468536DF3F", hash_generated_field = "7BA93C1DFD06077908429783FE30421E")
 
     public static final boolean DEBUG_PROFILE_LAYOUT = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "680A82722F0F53177D986F69EF7A432F", hash_generated_field = "7E6AC0E1C78577CC135F12F385D191DC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "680A82722F0F53177D986F69EF7A432F", hash_generated_field = "7E6AC0E1C78577CC135F12F385D191DC")
 
     public static final boolean DEBUG_DRAG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "892D87C038C6719A1264C54FD4317EAD", hash_generated_field = "C436896058FD7FAB45FF8504727A307B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "892D87C038C6719A1264C54FD4317EAD", hash_generated_field = "C436896058FD7FAB45FF8504727A307B")
 
     public static final boolean DEBUG_LATENCY = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "B4EB00A1CB911AC92B1D51E97A1E8BDA", hash_generated_field = "7D1DFC7A96C3DC5260465A4E2AFF73BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "B4EB00A1CB911AC92B1D51E97A1E8BDA", hash_generated_field = "7D1DFC7A96C3DC5260465A4E2AFF73BC")
 
     @Debug.DebugProperty public static boolean consistencyCheckEnabled = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "1C8F54987D51836102345215B58DE4A6", hash_generated_field = "FCDC3479819F1A0FA21DD7CF7F282FA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "1C8F54987D51836102345215B58DE4A6", hash_generated_field = "FCDC3479819F1A0FA21DD7CF7F282FA5")
 
     private static HashMap<Class<?>, Method[]> mCapturedViewMethodsForClasses = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "5B7529840E7CDAA825FC589B976FA3BB", hash_generated_field = "38EEBA983D87300AC01AE0B6BEB32865")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "5B7529840E7CDAA825FC589B976FA3BB", hash_generated_field = "38EEBA983D87300AC01AE0B6BEB32865")
 
     private static HashMap<Class<?>, Field[]> mCapturedViewFieldsForClasses = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "70D9B00930840BCD256493DC17B30EF6", hash_generated_field = "34DB1E24AAC93D902BB044BA2A610CDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "70D9B00930840BCD256493DC17B30EF6", hash_generated_field = "EEBCE2DFBBA5939704DCB7EA7757895B")
 
-    private static int CAPTURE_TIMEOUT = 4000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "594E1923BA4DC64C0B824E13186C3F7B", hash_generated_field = "B4ACB43EE2A184F64A299F9BF387B349")
+    private static final int CAPTURE_TIMEOUT = 4000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "594E1923BA4DC64C0B824E13186C3F7B", hash_generated_field = "657ACDB64251CC9C5F5560318566FA83")
 
-    private static String REMOTE_COMMAND_CAPTURE = "CAPTURE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "E9340F35404ACA6B314CD3DFCB310739", hash_generated_field = "1186DB5BAAC1E4B2F8445DA0AEA489B2")
+    private static final String REMOTE_COMMAND_CAPTURE = "CAPTURE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "E9340F35404ACA6B314CD3DFCB310739", hash_generated_field = "E4ABFC964C0C91DA46FEC266E2489143")
 
-    private static String REMOTE_COMMAND_DUMP = "DUMP";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "3141C2F1A9B03B6DCC61252966AB03E0", hash_generated_field = "C402525A8465D16F1909DE02CCCFFF0F")
+    private static final String REMOTE_COMMAND_DUMP = "DUMP";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "3141C2F1A9B03B6DCC61252966AB03E0", hash_generated_field = "1603E1D088235440D677B101140595D0")
 
-    private static String REMOTE_COMMAND_INVALIDATE = "INVALIDATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "98866F71C65697987B4179D55ACB9B92", hash_generated_field = "57BD17EF1399E3B770C16BA23174FCC5")
+    private static final String REMOTE_COMMAND_INVALIDATE = "INVALIDATE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "98866F71C65697987B4179D55ACB9B92", hash_generated_field = "3AF7FAF90036557B0EC21263F7AECC7C")
 
-    private static String REMOTE_COMMAND_REQUEST_LAYOUT = "REQUEST_LAYOUT";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "BD789BEE4310EE52BB08A84791C38ACC", hash_generated_field = "4A35EA9E38DACA292FD857E4F9E52EB4")
+    private static final String REMOTE_COMMAND_REQUEST_LAYOUT = "REQUEST_LAYOUT";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "BD789BEE4310EE52BB08A84791C38ACC", hash_generated_field = "980F6A2777237FD1E1F767C07D103822")
 
-    private static String REMOTE_PROFILE = "PROFILE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "BA9C26E05574F2CDAC709108EA444991", hash_generated_field = "CEEBBC2D6471321D6DB5A5385EF41F47")
+    private static final String REMOTE_PROFILE = "PROFILE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "BA9C26E05574F2CDAC709108EA444991", hash_generated_field = "825BF5137B87DFA820A18794D927B6C9")
 
-    private static String REMOTE_COMMAND_CAPTURE_LAYERS = "CAPTURE_LAYERS";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "30CCFC3C812F581912247D2AD06E5074", hash_generated_field = "B9A86E228D34B2182FB39720B9F61A88")
+    private static final String REMOTE_COMMAND_CAPTURE_LAYERS = "CAPTURE_LAYERS";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "30CCFC3C812F581912247D2AD06E5074", hash_generated_field = "29D5BE016108CD614B95A1F8D2CA4B48")
 
-    private static String REMOTE_COMMAND_OUTPUT_DISPLAYLIST = "OUTPUT_DISPLAYLIST";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "D62794B01A5588A7806C01134BEAFA10", hash_generated_field = "381B34CC38C521D55D8B29707BF77CF1")
+    private static final String REMOTE_COMMAND_OUTPUT_DISPLAYLIST = "OUTPUT_DISPLAYLIST";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "D62794B01A5588A7806C01134BEAFA10", hash_generated_field = "381B34CC38C521D55D8B29707BF77CF1")
 
     private static HashMap<Class<?>, Field[]> sFieldsForClasses;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "8CDF00353521E7ED13E25CC37E0D805A", hash_generated_field = "FDF3063B8421F5EF4C9F31EF9C7D1386")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "8CDF00353521E7ED13E25CC37E0D805A", hash_generated_field = "FDF3063B8421F5EF4C9F31EF9C7D1386")
 
     private static HashMap<Class<?>, Method[]> sMethodsForClasses;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "86119F0E4C1DE65D6D79E95EE6B245BF", hash_generated_field = "12967F08A6F1E730898691D5C3FCAE06")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "86119F0E4C1DE65D6D79E95EE6B245BF", hash_generated_field = "12967F08A6F1E730898691D5C3FCAE06")
 
     private static HashMap<AccessibleObject, ExportedProperty> sAnnotations;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "4645D26D77D4AC3340E319449BAD30BC", hash_generated_field = "3DAFD8507B12D2E4DBAAF387421DFD6D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "4645D26D77D4AC3340E319449BAD30BC", hash_generated_field = "3DAFD8507B12D2E4DBAAF387421DFD6D")
 
     private static BufferedWriter sHierarchyTraces;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "3714B6CCACC5C2DBC5E15D40B46B52AA", hash_generated_field = "0947A593046A3A68DF32E94CC1CCF03B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "3714B6CCACC5C2DBC5E15D40B46B52AA", hash_generated_field = "0947A593046A3A68DF32E94CC1CCF03B")
 
     private static ViewRootImpl sHierarhcyRoot;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "9D2B46244FB651FE447E2031C4011725", hash_generated_field = "B8C9F8C71D79A1296B9FDBA6098214E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "9D2B46244FB651FE447E2031C4011725", hash_generated_field = "B8C9F8C71D79A1296B9FDBA6098214E8")
 
     private static String sHierarchyTracePrefix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "F57D840C8E6BE283C9D2C27DB8620394", hash_generated_field = "87511F78472767C36F509F6D81A67344")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "F57D840C8E6BE283C9D2C27DB8620394", hash_generated_field = "87511F78472767C36F509F6D81A67344")
 
     private static View sRecyclerOwnerView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "4DB6421E32DB68A85B93EB783825A224", hash_generated_field = "C046D203CE4AB5C299FBF2864E9A2CB9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "4DB6421E32DB68A85B93EB783825A224", hash_generated_field = "C046D203CE4AB5C299FBF2864E9A2CB9")
 
     private static List<View> sRecyclerViews;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "B4A0C2D10E5796730BEF6F6E4E6B99ED", hash_generated_field = "D119B20D320A23766CBB36F6AAD8A64B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "B4A0C2D10E5796730BEF6F6E4E6B99ED", hash_generated_field = "D119B20D320A23766CBB36F6AAD8A64B")
 
     private static List<RecyclerTrace> sRecyclerTraces;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "470A867388BE541952A533239E9DD8E4", hash_generated_field = "2512B7C223A4418693E10B26A4513416")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "470A867388BE541952A533239E9DD8E4", hash_generated_field = "2512B7C223A4418693E10B26A4513416")
 
     private static String sRecyclerTracePrefix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:53.745 -0400", hash_original_field = "5C415BA1C9C54FCFB06F0C82AF14BC3A", hash_generated_field = "3A23CBEE8E54A1E39D79C907B721C3AD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.588 -0400", hash_original_field = "5C415BA1C9C54FCFB06F0C82AF14BC3A", hash_generated_field = "92F7912ACE2DEBF639BEDECEBAF815D3")
 
-    private static ThreadLocal<LooperProfiler> sLooperProfilerStorage = new ThreadLocal<LooperProfiler>();
+    private static final ThreadLocal<LooperProfiler> sLooperProfilerStorage = new ThreadLocal<LooperProfiler>();
 }
 

@@ -10,19 +10,18 @@ import java.util.Iterator;
 
 public class DataSetObservable extends Observable<DataSetObserver> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.883 -0400", hash_original_method = "272BBF2661CCEF03EAE77BBF3297984E", hash_generated_method = "272BBF2661CCEF03EAE77BBF3297984E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.850 -0400", hash_original_method = "272BBF2661CCEF03EAE77BBF3297984E", hash_generated_method = "272BBF2661CCEF03EAE77BBF3297984E")
     public DataSetObservable ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.884 -0400", hash_original_method = "FCDAC37DCBE00C8E72E2289D698E0B3F", hash_generated_method = "0217B011F40F38CA505DA094AAE2177D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.850 -0400", hash_original_method = "FCDAC37DCBE00C8E72E2289D698E0B3F", hash_generated_method = "3CD7F17758E5012408A37C66B9A6D21D")
     public void notifyChanged() {
         {
             {
-                int i;
-                i = mObservers.size() - 1;
+                int i = mObservers.size() - 1;
                 {
                     mObservers.get(i).onChanged();
                 } //End block
@@ -37,12 +36,11 @@ public class DataSetObservable extends Observable<DataSetObserver> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.885 -0400", hash_original_method = "C67632C7194D1964FA22740DFB1AA62E", hash_generated_method = "4CCDD96EF40CAB6A7D4812942EF81748")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.851 -0400", hash_original_method = "C67632C7194D1964FA22740DFB1AA62E", hash_generated_method = "D1016DC697E5E2CC7E7852848A6F4421")
     public void notifyInvalidated() {
         {
             {
-                int i;
-                i = mObservers.size() - 1;
+                int i = mObservers.size() - 1;
                 {
                     mObservers.get(i).onInvalidated();
                 } //End block

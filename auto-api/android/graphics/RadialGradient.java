@@ -11,6 +11,7 @@ import java.util.Iterator;
 public class RadialGradient extends Shader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.042 -0400", hash_original_method = "AAECBEFB54B4ACCFD5CA83A095E16729", hash_generated_method = "570885902269523E6310927567EFBB94")
+    @DSOverride
     public  RadialGradient(float x, float y, float radius,
                           int colors[], float positions[], TileMode tile) {
         {
@@ -28,8 +29,8 @@ public class RadialGradient extends Shader {
         addTaint(x);
         addTaint(y);
         addTaint(radius);
-        addTaint(colors);
-        addTaint(positions);
+        addTaint(colors[0]);
+        addTaint(positions[0]);
         addTaint(tile.getTaint());
         // ---------- Original Method ----------
         //if (radius <= 0) {
@@ -47,7 +48,7 @@ public class RadialGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.059 -0400", hash_original_method = "967A1FFF1D78A377DCB1552FAD26240E", hash_generated_method = "7A9B9E9D28EDF43AD76F32AEB5767CDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.114 -0400", hash_original_method = "967A1FFF1D78A377DCB1552FAD26240E", hash_generated_method = "7A9B9E9D28EDF43AD76F32AEB5767CDA")
     public  RadialGradient(float x, float y, float radius,
                           int color0, int color1, TileMode tile) {
         {
@@ -72,25 +73,25 @@ public class RadialGradient extends Shader {
     }
 
     
-        private static int nativeCreate1(float x, float y, float radius,
+    private static int nativeCreate1(float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativeCreate2(float x, float y, float radius,
+    private static int nativeCreate2(float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativePostCreate1(int native_shader, float x, float y, float radius,
+    private static int nativePostCreate1(int native_shader, float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativePostCreate2(int native_shader, float x, float y, float radius,
+    private static int nativePostCreate2(int native_shader, float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }

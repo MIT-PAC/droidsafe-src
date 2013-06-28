@@ -11,7 +11,7 @@ import com.android.internal.telephony.IccServiceTable;
 
 public final class UsimServiceTable extends IccServiceTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.444 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "6D7E057B1FC8F501ED71E554CCC54EE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.950 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "6D7E057B1FC8F501ED71E554CCC54EE8")
     public  UsimServiceTable(byte[] table) {
         super(table);
         addTaint(table[0]);
@@ -19,36 +19,36 @@ public final class UsimServiceTable extends IccServiceTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.444 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "41393FEE816C8441D99E9E484E4AD4A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.951 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "6D3B8E29B8323D78159E01095B2FABC4")
     public boolean isAvailable(UsimService service) {
-        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_618694674 = (super.isAvailable(service.ordinal()));
+        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_1759258717 = (super.isAvailable(service.ordinal()));
         addTaint(service.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073241689 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073241689;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470655428 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470655428;
         // ---------- Original Method ----------
         //return super.isAvailable(service.ordinal());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.453 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "E4A59D86E58F7140AAF88355F86B044A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.951 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "915CC679B601D62E9CEFF14E8A2B3C10")
     @Override
     protected String getTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1611992783 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1611992783 = "UsimServiceTable";
-        varB4EAC82CA7396A68D541C85D26508E83_1611992783.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1611992783;
+        String varB4EAC82CA7396A68D541C85D26508E83_1844665787 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1844665787 = "UsimServiceTable";
+        varB4EAC82CA7396A68D541C85D26508E83_1844665787.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1844665787;
         // ---------- Original Method ----------
         //return "UsimServiceTable";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.454 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "6F829D6FF800367768E59F077F859177")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.952 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "2FAF5D5F5118C691CECD9CCE0B34C6B9")
     @Override
     protected Object[] getValues() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1156924423 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1156924423 = UsimService.values();
-        varB4EAC82CA7396A68D541C85D26508E83_1156924423.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1156924423;
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1004108015 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1004108015 = UsimService.values();
+        varB4EAC82CA7396A68D541C85D26508E83_1004108015.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1004108015;
         // ---------- Original Method ----------
         //return UsimService.values();
     }

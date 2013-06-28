@@ -12,11 +12,11 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class OvershootInterpolator implements Interpolator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.640 -0400", hash_original_field = "BACCDDE44E4D1D72971417472395EF45", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.705 -0400", hash_original_field = "BACCDDE44E4D1D72971417472395EF45", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
 
     private float mTension;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.640 -0400", hash_original_method = "3B6B46657965F6A20EBA4BBC6ADB2DCC", hash_generated_method = "A80BEDF24C62F5BB949AF4EB0447BF7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.705 -0400", hash_original_method = "3B6B46657965F6A20EBA4BBC6ADB2DCC", hash_generated_method = "A80BEDF24C62F5BB949AF4EB0447BF7C")
     public  OvershootInterpolator() {
         mTension = 2.0f;
         // ---------- Original Method ----------
@@ -24,7 +24,7 @@ public class OvershootInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.641 -0400", hash_original_method = "AC62500F6876F098739AD852AB3DA2C8", hash_generated_method = "3342901F331D73E8DB6BB4CD2D2DD8A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.705 -0400", hash_original_method = "AC62500F6876F098739AD852AB3DA2C8", hash_generated_method = "3342901F331D73E8DB6BB4CD2D2DD8A1")
     public  OvershootInterpolator(float tension) {
         mTension = tension;
         // ---------- Original Method ----------
@@ -32,10 +32,9 @@ public class OvershootInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.642 -0400", hash_original_method = "26239DC2C12BB0FDD838BBF27F5324A3", hash_generated_method = "0B8834CD3CD3163286A9347BD0412454")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.706 -0400", hash_original_method = "26239DC2C12BB0FDD838BBF27F5324A3", hash_generated_method = "DDE1446848FE9BB4299CF78AFDB8CBD6")
     public  OvershootInterpolator(Context context, AttributeSet attrs) {
-        TypedArray a;
-        a = context.obtainStyledAttributes(attrs,
+        TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.OvershootInterpolator);
         mTension =
                 a.getFloat(com.android.internal.R.styleable.OvershootInterpolator_tension, 2.0f);
@@ -51,12 +50,12 @@ public class OvershootInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.642 -0400", hash_original_method = "F21DD3F51BCD131DFD1A0AC343B5C733", hash_generated_method = "33D284B75E908F7D99EF951B321EC5EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.706 -0400", hash_original_method = "F21DD3F51BCD131DFD1A0AC343B5C733", hash_generated_method = "758C516160CB847B7ACA79EF0B918D3E")
     public float getInterpolation(float t) {
         t -= 1.0f;
         addTaint(t);
-        float var546ADE640B6EDFBC8A086EF31347E768_1678972717 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1678972717;
+        float var546ADE640B6EDFBC8A086EF31347E768_882164432 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_882164432;
         // ---------- Original Method ----------
         //t -= 1.0f;
         //return t * t * ((mTension + 1) * t + mTension) + 1.0f;

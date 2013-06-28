@@ -13,7 +13,7 @@ import org.apache.http.params.HttpParams;
 
 public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.038 -0400", hash_original_method = "1DA9FA2C2AD0E745701D10A4EA37C418", hash_generated_method = "E092FBE55E76DDEDFBA5487FA81CE750")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.867 -0400", hash_original_method = "1DA9FA2C2AD0E745701D10A4EA37C418", hash_generated_method = "E092FBE55E76DDEDFBA5487FA81CE750")
     public  SocketOutputBuffer(
             final Socket socket,
             int buffersize,

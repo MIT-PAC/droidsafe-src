@@ -14,11 +14,11 @@ import javax.sip.header.Parameters;
 import gov.nist.javax.sip.address.*;
 
 public abstract class AddressParametersHeader extends ParametersHeader implements Parameters {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.209 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "50232C7D5628BA6D2DA2D4A79905A12A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.857 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "50232C7D5628BA6D2DA2D4A79905A12A")
 
     protected AddressImpl address;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.210 -0400", hash_original_method = "86C06714D64ED7D78AC32A4EA648ACC6", hash_generated_method = "F54EE8FA70CA0B8B70E354AD7FA7161D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.857 -0400", hash_original_method = "86C06714D64ED7D78AC32A4EA648ACC6", hash_generated_method = "F54EE8FA70CA0B8B70E354AD7FA7161D")
     protected  AddressParametersHeader(String name) {
         super(name);
         addTaint(name.getTaint());
@@ -26,7 +26,7 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.210 -0400", hash_original_method = "18F0A32F1016A1077EE2441198C172CD", hash_generated_method = "77CAEA2097C61BEA8E51E761DAAD5783")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.858 -0400", hash_original_method = "18F0A32F1016A1077EE2441198C172CD", hash_generated_method = "77CAEA2097C61BEA8E51E761DAAD5783")
     protected  AddressParametersHeader(String name, boolean sync) {
         super(name,sync);
         addTaint(name.getTaint());
@@ -35,18 +35,18 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.211 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "26C45672B2A0CBD4C0883992CAF604AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.858 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "15F8FC3170395C816112F32B4DAD34C8")
     public Address getAddress() {
-        Address varB4EAC82CA7396A68D541C85D26508E83_754233001 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_754233001 = address;
-        varB4EAC82CA7396A68D541C85D26508E83_754233001.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_754233001;
+        Address varB4EAC82CA7396A68D541C85D26508E83_1148285677 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1148285677 = address;
+        varB4EAC82CA7396A68D541C85D26508E83_1148285677.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1148285677;
         // ---------- Original Method ----------
         //return address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.211 -0400", hash_original_method = "AAE5DCDD86A2817DB3BE7BA0761992E2", hash_generated_method = "114975CEFB9215316F16FA0E0D004896")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.858 -0400", hash_original_method = "AAE5DCDD86A2817DB3BE7BA0761992E2", hash_generated_method = "114975CEFB9215316F16FA0E0D004896")
     public void setAddress(Address address) {
         this.address = (AddressImpl) address;
         // ---------- Original Method ----------
@@ -54,15 +54,14 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.212 -0400", hash_original_method = "0CBC2CD54CDD43105BA83DF4459B73A7", hash_generated_method = "1ADE497BE5D0D26F94285ED0F44D0501")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.859 -0400", hash_original_method = "0CBC2CD54CDD43105BA83DF4459B73A7", hash_generated_method = "8D296A1EC1CED06587EA86EA50E5FA1D")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1897663274 = null; //Variable for return #1
-        AddressParametersHeader retval;
-        retval = (AddressParametersHeader) super.clone();
+        Object varB4EAC82CA7396A68D541C85D26508E83_803576361 = null; //Variable for return #1
+        AddressParametersHeader retval = (AddressParametersHeader) super.clone();
         retval.address = (AddressImpl) this.address.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1897663274 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1897663274.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1897663274;
+        varB4EAC82CA7396A68D541C85D26508E83_803576361 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_803576361.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_803576361;
         // ---------- Original Method ----------
         //AddressParametersHeader retval = (AddressParametersHeader) super.clone();
         //if (this.address != null)
@@ -71,16 +70,15 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.212 -0400", hash_original_method = "432CD1C0278E1FF82C91D27AB1E82A92", hash_generated_method = "7D13E568614BB21C33E93CC1039C4DEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.859 -0400", hash_original_method = "432CD1C0278E1FF82C91D27AB1E82A92", hash_generated_method = "088873247A5576B8B9298D5BD966FEF2")
     public boolean equals(Object other) {
         {
-            HeaderAddress o;
-            o = (HeaderAddress) other;
-            boolean var7668DC229A5E6050701A9527291D931A_1217467771 = (this.getAddress().equals( o.getAddress() ) && this.equalParameters( (Parameters) o ));
+            final HeaderAddress o = (HeaderAddress) other;
+            boolean var7668DC229A5E6050701A9527291D931A_1915486402 = (this.getAddress().equals( o.getAddress() ) && this.equalParameters( (Parameters) o ));
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_885013007 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_885013007;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1447694389 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1447694389;
         // ---------- Original Method ----------
         //if (this==other) return true;
         //if (other instanceof HeaderAddress && other instanceof Parameters) {

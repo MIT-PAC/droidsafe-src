@@ -9,23 +9,23 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class AlertProtocol {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.239 -0400", hash_original_field = "1F9BEE7140A219A96C922C99EEDE7B34", hash_generated_field = "492A949E326EEC664C5F22B4FFC3E8B1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.625 -0400", hash_original_field = "1F9BEE7140A219A96C922C99EEDE7B34", hash_generated_field = "123A71D4C41C48510467491232841B9E")
 
-    private byte[] alert = new byte[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.239 -0400", hash_original_field = "398E3ACF063793A09BD262C5C522B1DE", hash_generated_field = "C5076A69D1F8496ADA0329E39C7F9A64")
+    private final byte[] alert = new byte[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.625 -0400", hash_original_field = "398E3ACF063793A09BD262C5C522B1DE", hash_generated_field = "C5076A69D1F8496ADA0329E39C7F9A64")
 
     private SSLRecordProtocol recordProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.239 -0400", hash_original_field = "9CC3434A2AF2B484DEC21C96204A5F7F", hash_generated_field = "586593FC273B16FB55D0AB5F86D137A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.625 -0400", hash_original_field = "9CC3434A2AF2B484DEC21C96204A5F7F", hash_generated_field = "586593FC273B16FB55D0AB5F86D137A2")
 
     private Logger.Stream logger = Logger.getStream("alert");
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.245 -0400", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "89DDAFEDBDC6600ADF822412966FC90D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.626 -0400", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "89DDAFEDBDC6600ADF822412966FC90D")
     protected  AlertProtocol() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.251 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "A9742893573022675C3B4131750B59FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.627 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "A9742893573022675C3B4131750B59FD")
     protected void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
         // ---------- Original Method ----------
@@ -33,7 +33,7 @@ public class AlertProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.251 -0400", hash_original_method = "F413EBA539C7D7D57656EE1032BAAF7C", hash_generated_method = "AF86BF82B04F9EBA5ABF1162BBD1304F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.628 -0400", hash_original_method = "F413EBA539C7D7D57656EE1032BAAF7C", hash_generated_method = "AF86BF82B04F9EBA5ABF1162BBD1304F")
     protected void alert(byte level, byte description) {
         {
             logger.println("Alert.alert: "+level+" "+description);
@@ -49,16 +49,16 @@ public class AlertProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.252 -0400", hash_original_method = "5D3BF0EC0666EBF860C9DC61576F480B", hash_generated_method = "FBEB026676C22CE3A4B8314C16E37B6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.628 -0400", hash_original_method = "5D3BF0EC0666EBF860C9DC61576F480B", hash_generated_method = "E829819F802C7B8617C2ADCD8E752CBE")
     protected byte getDescriptionCode() {
-        byte var40EA57D3EE3C07BF1C102B466E1C3091_975624375 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_975624375;
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_1022690214 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_1022690214;
         // ---------- Original Method ----------
         //return (alert[0] != 0) ? alert[1] : -100;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.252 -0400", hash_original_method = "87AB9C19E1A7EED4E3BFCF946809E0DA", hash_generated_method = "A0DF94AF8223CEFC3C62A1275D1D3B6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.629 -0400", hash_original_method = "87AB9C19E1A7EED4E3BFCF946809E0DA", hash_generated_method = "A0DF94AF8223CEFC3C62A1275D1D3B6C")
     protected void setProcessed() {
         {
             logger.println("Alert.setProcessed");
@@ -72,215 +72,214 @@ public class AlertProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.252 -0400", hash_original_method = "45A2D96003EBC85CF21133EEF592859F", hash_generated_method = "69E5081DAC8F9092738A4D55F494385A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.629 -0400", hash_original_method = "45A2D96003EBC85CF21133EEF592859F", hash_generated_method = "63015832395A39DFF7E1E79947DB0488")
     protected boolean hasAlert() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_216053750 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_216053750;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089065041 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2089065041;
         // ---------- Original Method ----------
         //return (alert[0] != 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.252 -0400", hash_original_method = "7F9DD2505076B3CAC6687DC8D86BE7DC", hash_generated_method = "F8853E4CD6897FAC122DBB869B4C4A2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.630 -0400", hash_original_method = "7F9DD2505076B3CAC6687DC8D86BE7DC", hash_generated_method = "875C64833AD1DED646F8B2A188C52997")
     protected boolean isFatalAlert() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1434633646 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1434633646;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816096502 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816096502;
         // ---------- Original Method ----------
         //return (alert[0] == 2);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.258 -0400", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "0781991B78F10B0C012FA411DFF55183")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.632 -0400", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "EC54FD78E82494EB794701B3DA7F554D")
     protected String getAlertDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_778832962 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_262004884 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_48833981 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_672498296 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1354021423 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_574402645 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_562121293 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_593154806 = null; //Variable for return #8
-        String varB4EAC82CA7396A68D541C85D26508E83_246241172 = null; //Variable for return #9
-        String varB4EAC82CA7396A68D541C85D26508E83_2017152810 = null; //Variable for return #10
-        String varB4EAC82CA7396A68D541C85D26508E83_1700917250 = null; //Variable for return #11
-        String varB4EAC82CA7396A68D541C85D26508E83_1483639534 = null; //Variable for return #12
-        String varB4EAC82CA7396A68D541C85D26508E83_758787558 = null; //Variable for return #13
-        String varB4EAC82CA7396A68D541C85D26508E83_1505847022 = null; //Variable for return #14
-        String varB4EAC82CA7396A68D541C85D26508E83_77597508 = null; //Variable for return #15
-        String varB4EAC82CA7396A68D541C85D26508E83_1815068427 = null; //Variable for return #16
-        String varB4EAC82CA7396A68D541C85D26508E83_492980483 = null; //Variable for return #17
-        String varB4EAC82CA7396A68D541C85D26508E83_1089192587 = null; //Variable for return #18
-        String varB4EAC82CA7396A68D541C85D26508E83_410104895 = null; //Variable for return #19
-        String varB4EAC82CA7396A68D541C85D26508E83_2069746513 = null; //Variable for return #20
-        String varB4EAC82CA7396A68D541C85D26508E83_972934657 = null; //Variable for return #21
-        String varB4EAC82CA7396A68D541C85D26508E83_1751486681 = null; //Variable for return #22
-        String varB4EAC82CA7396A68D541C85D26508E83_153262694 = null; //Variable for return #23
-        String varB4EAC82CA7396A68D541C85D26508E83_1026618435 = null; //Variable for return #24
+        String varB4EAC82CA7396A68D541C85D26508E83_1372583317 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1836148855 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1409167189 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_2136720334 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1090216305 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1313320746 = null; //Variable for return #6
+        String varB4EAC82CA7396A68D541C85D26508E83_785631557 = null; //Variable for return #7
+        String varB4EAC82CA7396A68D541C85D26508E83_93684257 = null; //Variable for return #8
+        String varB4EAC82CA7396A68D541C85D26508E83_70688518 = null; //Variable for return #9
+        String varB4EAC82CA7396A68D541C85D26508E83_536984244 = null; //Variable for return #10
+        String varB4EAC82CA7396A68D541C85D26508E83_928650816 = null; //Variable for return #11
+        String varB4EAC82CA7396A68D541C85D26508E83_1798799991 = null; //Variable for return #12
+        String varB4EAC82CA7396A68D541C85D26508E83_1076326734 = null; //Variable for return #13
+        String varB4EAC82CA7396A68D541C85D26508E83_2135163238 = null; //Variable for return #14
+        String varB4EAC82CA7396A68D541C85D26508E83_90693329 = null; //Variable for return #15
+        String varB4EAC82CA7396A68D541C85D26508E83_8834226 = null; //Variable for return #16
+        String varB4EAC82CA7396A68D541C85D26508E83_599925693 = null; //Variable for return #17
+        String varB4EAC82CA7396A68D541C85D26508E83_1074463955 = null; //Variable for return #18
+        String varB4EAC82CA7396A68D541C85D26508E83_1690547571 = null; //Variable for return #19
+        String varB4EAC82CA7396A68D541C85D26508E83_151821064 = null; //Variable for return #20
+        String varB4EAC82CA7396A68D541C85D26508E83_1750467704 = null; //Variable for return #21
+        String varB4EAC82CA7396A68D541C85D26508E83_1450960508 = null; //Variable for return #22
+        String varB4EAC82CA7396A68D541C85D26508E83_848539561 = null; //Variable for return #23
+        String varB4EAC82CA7396A68D541C85D26508E83_634452103 = null; //Variable for return #24
         //Begin case CLOSE_NOTIFY 
-        varB4EAC82CA7396A68D541C85D26508E83_778832962 = "close_notify";
+        varB4EAC82CA7396A68D541C85D26508E83_1372583317 = "close_notify";
         //End case CLOSE_NOTIFY 
         //Begin case UNEXPECTED_MESSAGE 
-        varB4EAC82CA7396A68D541C85D26508E83_262004884 = "unexpected_message";
+        varB4EAC82CA7396A68D541C85D26508E83_1836148855 = "unexpected_message";
         //End case UNEXPECTED_MESSAGE 
         //Begin case BAD_RECORD_MAC 
-        varB4EAC82CA7396A68D541C85D26508E83_48833981 = "bad_record_mac";
+        varB4EAC82CA7396A68D541C85D26508E83_1409167189 = "bad_record_mac";
         //End case BAD_RECORD_MAC 
         //Begin case DECRYPTION_FAILED 
-        varB4EAC82CA7396A68D541C85D26508E83_672498296 = "decryption_failed";
+        varB4EAC82CA7396A68D541C85D26508E83_2136720334 = "decryption_failed";
         //End case DECRYPTION_FAILED 
         //Begin case RECORD_OVERFLOW 
-        varB4EAC82CA7396A68D541C85D26508E83_1354021423 = "record_overflow";
+        varB4EAC82CA7396A68D541C85D26508E83_1090216305 = "record_overflow";
         //End case RECORD_OVERFLOW 
         //Begin case DECOMPRESSION_FAILURE 
-        varB4EAC82CA7396A68D541C85D26508E83_574402645 = "decompression_failure";
+        varB4EAC82CA7396A68D541C85D26508E83_1313320746 = "decompression_failure";
         //End case DECOMPRESSION_FAILURE 
         //Begin case HANDSHAKE_FAILURE 
-        varB4EAC82CA7396A68D541C85D26508E83_562121293 = "handshake_failure";
+        varB4EAC82CA7396A68D541C85D26508E83_785631557 = "handshake_failure";
         //End case HANDSHAKE_FAILURE 
         //Begin case BAD_CERTIFICATE 
-        varB4EAC82CA7396A68D541C85D26508E83_593154806 = "bad_certificate";
+        varB4EAC82CA7396A68D541C85D26508E83_93684257 = "bad_certificate";
         //End case BAD_CERTIFICATE 
         //Begin case UNSUPPORTED_CERTIFICATE 
-        varB4EAC82CA7396A68D541C85D26508E83_246241172 = "unsupported_certificate";
+        varB4EAC82CA7396A68D541C85D26508E83_70688518 = "unsupported_certificate";
         //End case UNSUPPORTED_CERTIFICATE 
         //Begin case CERTIFICATE_REVOKED 
-        varB4EAC82CA7396A68D541C85D26508E83_2017152810 = "certificate_revoked";
+        varB4EAC82CA7396A68D541C85D26508E83_536984244 = "certificate_revoked";
         //End case CERTIFICATE_REVOKED 
         //Begin case CERTIFICATE_EXPIRED 
-        varB4EAC82CA7396A68D541C85D26508E83_1700917250 = "certificate_expired";
+        varB4EAC82CA7396A68D541C85D26508E83_928650816 = "certificate_expired";
         //End case CERTIFICATE_EXPIRED 
         //Begin case CERTIFICATE_UNKNOWN 
-        varB4EAC82CA7396A68D541C85D26508E83_1483639534 = "certificate_unknown";
+        varB4EAC82CA7396A68D541C85D26508E83_1798799991 = "certificate_unknown";
         //End case CERTIFICATE_UNKNOWN 
         //Begin case ILLEGAL_PARAMETER 
-        varB4EAC82CA7396A68D541C85D26508E83_758787558 = "illegal_parameter";
+        varB4EAC82CA7396A68D541C85D26508E83_1076326734 = "illegal_parameter";
         //End case ILLEGAL_PARAMETER 
         //Begin case UNKNOWN_CA 
-        varB4EAC82CA7396A68D541C85D26508E83_1505847022 = "unknown_ca";
+        varB4EAC82CA7396A68D541C85D26508E83_2135163238 = "unknown_ca";
         //End case UNKNOWN_CA 
         //Begin case ACCESS_DENIED 
-        varB4EAC82CA7396A68D541C85D26508E83_77597508 = "access_denied";
+        varB4EAC82CA7396A68D541C85D26508E83_90693329 = "access_denied";
         //End case ACCESS_DENIED 
         //Begin case DECODE_ERROR 
-        varB4EAC82CA7396A68D541C85D26508E83_1815068427 = "decode_error";
+        varB4EAC82CA7396A68D541C85D26508E83_8834226 = "decode_error";
         //End case DECODE_ERROR 
         //Begin case DECRYPT_ERROR 
-        varB4EAC82CA7396A68D541C85D26508E83_492980483 = "decrypt_error";
+        varB4EAC82CA7396A68D541C85D26508E83_599925693 = "decrypt_error";
         //End case DECRYPT_ERROR 
         //Begin case EXPORT_RESTRICTION 
-        varB4EAC82CA7396A68D541C85D26508E83_1089192587 = "export_restriction";
+        varB4EAC82CA7396A68D541C85D26508E83_1074463955 = "export_restriction";
         //End case EXPORT_RESTRICTION 
         //Begin case PROTOCOL_VERSION 
-        varB4EAC82CA7396A68D541C85D26508E83_410104895 = "protocol_version";
+        varB4EAC82CA7396A68D541C85D26508E83_1690547571 = "protocol_version";
         //End case PROTOCOL_VERSION 
         //Begin case INSUFFICIENT_SECURITY 
-        varB4EAC82CA7396A68D541C85D26508E83_2069746513 = "insufficient_security";
+        varB4EAC82CA7396A68D541C85D26508E83_151821064 = "insufficient_security";
         //End case INSUFFICIENT_SECURITY 
         //Begin case INTERNAL_ERROR 
-        varB4EAC82CA7396A68D541C85D26508E83_972934657 = "internal_error";
+        varB4EAC82CA7396A68D541C85D26508E83_1750467704 = "internal_error";
         //End case INTERNAL_ERROR 
         //Begin case USER_CANCELED 
-        varB4EAC82CA7396A68D541C85D26508E83_1751486681 = "user_canceled";
+        varB4EAC82CA7396A68D541C85D26508E83_1450960508 = "user_canceled";
         //End case USER_CANCELED 
         //Begin case NO_RENEGOTIATION 
-        varB4EAC82CA7396A68D541C85D26508E83_153262694 = "no_renegotiation";
+        varB4EAC82CA7396A68D541C85D26508E83_848539561 = "no_renegotiation";
         //End case NO_RENEGOTIATION 
-        varB4EAC82CA7396A68D541C85D26508E83_1026618435 = null;
-        String varA7E53CE21691AB073D9660D615818899_1882459040; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_634452103 = null;
+        String varA7E53CE21691AB073D9660D615818899_1099401379; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_778832962;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1372583317;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_262004884;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1836148855;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_48833981;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1409167189;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_672498296;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_2136720334;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1354021423;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1090216305;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_574402645;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1313320746;
                 break;
             case 7: //Assign result for return ordinal #7
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_562121293;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_785631557;
                 break;
             case 8: //Assign result for return ordinal #8
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_593154806;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_93684257;
                 break;
             case 9: //Assign result for return ordinal #9
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_246241172;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_70688518;
                 break;
             case 10: //Assign result for return ordinal #10
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_2017152810;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_536984244;
                 break;
             case 11: //Assign result for return ordinal #11
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1700917250;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_928650816;
                 break;
             case 12: //Assign result for return ordinal #12
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1483639534;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1798799991;
                 break;
             case 13: //Assign result for return ordinal #13
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_758787558;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1076326734;
                 break;
             case 14: //Assign result for return ordinal #14
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1505847022;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_2135163238;
                 break;
             case 15: //Assign result for return ordinal #15
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_77597508;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_90693329;
                 break;
             case 16: //Assign result for return ordinal #16
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1815068427;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_8834226;
                 break;
             case 17: //Assign result for return ordinal #17
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_492980483;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_599925693;
                 break;
             case 18: //Assign result for return ordinal #18
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1089192587;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1074463955;
                 break;
             case 19: //Assign result for return ordinal #19
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_410104895;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1690547571;
                 break;
             case 20: //Assign result for return ordinal #20
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_2069746513;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_151821064;
                 break;
             case 21: //Assign result for return ordinal #21
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_972934657;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1750467704;
                 break;
             case 22: //Assign result for return ordinal #22
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1751486681;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1450960508;
                 break;
             case 23: //Assign result for return ordinal #23
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_153262694;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_848539561;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1882459040 = varB4EAC82CA7396A68D541C85D26508E83_1026618435;
+                varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_634452103;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1882459040.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1882459040;
+        varA7E53CE21691AB073D9660D615818899_1099401379.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1099401379;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_method = "124BFC00035B67AF657D6336BEA07CC5", hash_generated_method = "690DC5944AC32DE84BFFA49B736CFD36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.633 -0400", hash_original_method = "124BFC00035B67AF657D6336BEA07CC5", hash_generated_method = "D104026F02BFEEF761B165A910654EBD")
     protected byte[] wrap() {
-        byte[] res;
-        res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1060618543 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1060618543;
+        byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1284234434 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1284234434;
         // ---------- Original Method ----------
         //byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
         //return res;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_method = "18F927F44CECC98A241CC5D3FE86DBCB", hash_generated_method = "F942F8E12961415D1B4D2C24C8077619")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.633 -0400", hash_original_method = "18F927F44CECC98A241CC5D3FE86DBCB", hash_generated_method = "F942F8E12961415D1B4D2C24C8077619")
     protected void shutdown() {
         alert[0] = 0;
         alert[1] = 0;
@@ -292,80 +291,80 @@ public class AlertProtocol {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "3513D4E03C6A6F365A95813C38512575", hash_generated_field = "81C119BF503575725BEAFF30CA309C76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "3513D4E03C6A6F365A95813C38512575", hash_generated_field = "88CC5DEC91CF996FED438742736B69BB")
 
-    protected static byte WARNING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "AE5BDCB53B973F7868EFB1227008496F", hash_generated_field = "BD0C7C9E79E19E1116408629A8F55AD6")
+    protected static final byte WARNING = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "AE5BDCB53B973F7868EFB1227008496F", hash_generated_field = "CCEA5AC62091E6116B18F3EA59AE853E")
 
-    protected static byte FATAL = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "842E1F845AC8E74DAB46BB3CC1A06700", hash_generated_field = "88A76D30E1B41BED25C0C679E685B628")
+    protected static final byte FATAL = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "842E1F845AC8E74DAB46BB3CC1A06700", hash_generated_field = "4D382A79825E0CDC4E96B65BE265EA10")
 
-    protected static byte CLOSE_NOTIFY = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "C8BE4822B3B64A38716A576C9BB18C84", hash_generated_field = "B31E22C11DC5723FC4D447DA6D9708AA")
+    protected static final byte CLOSE_NOTIFY = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "C8BE4822B3B64A38716A576C9BB18C84", hash_generated_field = "92373E3FE4B88ED6789D47F654449FC3")
 
-    protected static byte UNEXPECTED_MESSAGE = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "C03DF1D9203DAFD45E1A456A31F90FC1", hash_generated_field = "070F4B11C6C27428F67770D213677CED")
+    protected static final byte UNEXPECTED_MESSAGE = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "C03DF1D9203DAFD45E1A456A31F90FC1", hash_generated_field = "8702A0A5CEAE06C380E312A5C79C01C4")
 
-    protected static byte BAD_RECORD_MAC = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "4A878C88A96F8A14283B7DA15EE79AD0", hash_generated_field = "1AB06FF7861E10F53E3FC7D639D6A030")
+    protected static final byte BAD_RECORD_MAC = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "4A878C88A96F8A14283B7DA15EE79AD0", hash_generated_field = "65B9EDB1AF576FF07570398647CD2A9E")
 
-    protected static byte DECRYPTION_FAILED = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.262 -0400", hash_original_field = "EDDADF43F571DA3B6EB3CCD21A6FDA72", hash_generated_field = "CA1B9A575DC6D29B1CAA1D76FC08944D")
+    protected static final byte DECRYPTION_FAILED = 21;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "EDDADF43F571DA3B6EB3CCD21A6FDA72", hash_generated_field = "9A7641B58F745E8923D0B4233FA92AF1")
 
-    protected static byte RECORD_OVERFLOW = 22;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.263 -0400", hash_original_field = "71DD7CDDEDACC6AFC45E7F9A8F66C500", hash_generated_field = "55FFD80F25E589CD6393BA35369E2078")
+    protected static final byte RECORD_OVERFLOW = 22;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "71DD7CDDEDACC6AFC45E7F9A8F66C500", hash_generated_field = "092EE3D7EA73AEC1B4700C761C4B0353")
 
-    protected static byte DECOMPRESSION_FAILURE = 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.263 -0400", hash_original_field = "C369F4950AFB49F5D697D4B9B30DB4BF", hash_generated_field = "E86E6B0C53D6571FDE74033BAACA7418")
+    protected static final byte DECOMPRESSION_FAILURE = 30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "C369F4950AFB49F5D697D4B9B30DB4BF", hash_generated_field = "2C628E03556DD2F5D16D91506A726D0C")
 
-    protected static byte HANDSHAKE_FAILURE = 40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.263 -0400", hash_original_field = "F0D5BB76DF2546D0FC8401135827AE83", hash_generated_field = "4E324B5CE4E384B31C5FE153E6AF104D")
+    protected static final byte HANDSHAKE_FAILURE = 40;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "F0D5BB76DF2546D0FC8401135827AE83", hash_generated_field = "36BCBDFC2068CF580E2412D611602F1F")
 
-    protected static byte BAD_CERTIFICATE = 42;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.266 -0400", hash_original_field = "A45D663CB4A37AF64E4E7344D7B593CE", hash_generated_field = "00EED8E1F1627ACBD685B561459073AE")
+    protected static final byte BAD_CERTIFICATE = 42;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "A45D663CB4A37AF64E4E7344D7B593CE", hash_generated_field = "09700AE0664736B5D2BABFEBAC521A94")
 
-    protected static byte UNSUPPORTED_CERTIFICATE = 43;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.266 -0400", hash_original_field = "A6DE4504FE04D2D4B10425BB654E98BB", hash_generated_field = "936D3532ACB9A2134380B3E37EB3AA85")
+    protected static final byte UNSUPPORTED_CERTIFICATE = 43;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "A6DE4504FE04D2D4B10425BB654E98BB", hash_generated_field = "E19C5A51459B9774D9F51AF8C4E04E36")
 
-    protected static byte CERTIFICATE_REVOKED = 44;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.266 -0400", hash_original_field = "6C3751D47901C042D75920A6E6D33648", hash_generated_field = "B375ABA7BF82D6CBB651176A94D9E151")
+    protected static final byte CERTIFICATE_REVOKED = 44;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "6C3751D47901C042D75920A6E6D33648", hash_generated_field = "704126822B1D40C68AB7E26FF4EAEE14")
 
-    protected static byte CERTIFICATE_EXPIRED = 45;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.266 -0400", hash_original_field = "9F9E7F60BC332BC7BCF2102283694342", hash_generated_field = "7C77718D0ADDC7FAA1C8950F297A81B0")
+    protected static final byte CERTIFICATE_EXPIRED = 45;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "9F9E7F60BC332BC7BCF2102283694342", hash_generated_field = "0A65A1AA69D5EA0CAC2714E644700970")
 
-    protected static byte CERTIFICATE_UNKNOWN = 46;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.266 -0400", hash_original_field = "D060CE9D95FB78025FBE155180F8B9CC", hash_generated_field = "06E3CFFE22FCAA96122144AA21CC7AF6")
+    protected static final byte CERTIFICATE_UNKNOWN = 46;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "D060CE9D95FB78025FBE155180F8B9CC", hash_generated_field = "0D9DAAE25899244AE24E2FDBC5F46F99")
 
-    protected static byte ILLEGAL_PARAMETER = 47;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "6D49E6D0D9B0D3D2214C20979AB10CD4", hash_generated_field = "9C47E6D3FD204471EAEE83FF565FA119")
+    protected static final byte ILLEGAL_PARAMETER = 47;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "6D49E6D0D9B0D3D2214C20979AB10CD4", hash_generated_field = "5AE84A65E5F8B680690791B6AB551A34")
 
-    protected static byte UNKNOWN_CA = 48;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "E8D88590B36299F3A6DFB4FDE14E43A1", hash_generated_field = "1F14A4E8882E0D1265400101A895F272")
+    protected static final byte UNKNOWN_CA = 48;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "E8D88590B36299F3A6DFB4FDE14E43A1", hash_generated_field = "2C64F9F1B77B75D7B601E263C9080DD1")
 
-    protected static byte ACCESS_DENIED = 49;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "633C2E932DF6700FEA1B153435B62BA8", hash_generated_field = "E0C4D79529A235A300C5EAA26A31C021")
+    protected static final byte ACCESS_DENIED = 49;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "633C2E932DF6700FEA1B153435B62BA8", hash_generated_field = "DA4B5892D3EB01FD2F89AEF938A8B5F2")
 
-    protected static byte DECODE_ERROR = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "128B693522050E91C2CA489B42460A58", hash_generated_field = "23D2CA2F2F6FA60FEFFC2E17587BD8D1")
+    protected static final byte DECODE_ERROR = 50;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "128B693522050E91C2CA489B42460A58", hash_generated_field = "80900BCF720CCA813B84F65D17BD2FD0")
 
-    protected static byte DECRYPT_ERROR = 51;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "379C6B4C22105EC24C8A196F9C488992", hash_generated_field = "DB0568AFE6047D95698A8310137FB3A9")
+    protected static final byte DECRYPT_ERROR = 51;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "379C6B4C22105EC24C8A196F9C488992", hash_generated_field = "B38F8CCDFDE852E963780190F8B1E1C5")
 
-    protected static byte EXPORT_RESTRICTION = 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "DB968936BE38DF25CF9AC8C73BDBF8F5", hash_generated_field = "B1C989B62C697D5F42625D3FF0CF4402")
+    protected static final byte EXPORT_RESTRICTION = 60;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "DB968936BE38DF25CF9AC8C73BDBF8F5", hash_generated_field = "7E09044202CF3235342DA0C5C259D835")
 
-    protected static byte PROTOCOL_VERSION = 70;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "80CD4E13741FEC2B7A934B53BF94F22A", hash_generated_field = "C1F2FD7E1B38A34AA5669BB5F9D633DD")
+    protected static final byte PROTOCOL_VERSION = 70;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "80CD4E13741FEC2B7A934B53BF94F22A", hash_generated_field = "78A173AAC24D902C801E280C9759592F")
 
-    protected static byte INSUFFICIENT_SECURITY = 71;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "03A579B0E2A074D2788EC8FCECF07118", hash_generated_field = "EC6689EE2B186ABB6BD4A94FD165E54A")
+    protected static final byte INSUFFICIENT_SECURITY = 71;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "03A579B0E2A074D2788EC8FCECF07118", hash_generated_field = "3F17FA7CA8CD6D0E5BBB1A6F4C9DAAA9")
 
-    protected static byte INTERNAL_ERROR = 80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "063CA0661A811C3AA3D44F933F61AECF", hash_generated_field = "B0DAE2A034F794A6C044820FC4B272B8")
+    protected static final byte INTERNAL_ERROR = 80;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "063CA0661A811C3AA3D44F933F61AECF", hash_generated_field = "7C1FC5845E884F2715B0A31C8DFF4F31")
 
-    protected static byte USER_CANCELED = 90;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.270 -0400", hash_original_field = "5171F71CDB8FA8976AE743E8FC88C78C", hash_generated_field = "81DAE8B324A7C621F6C48EEB559D41C9")
+    protected static final byte USER_CANCELED = 90;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.634 -0400", hash_original_field = "5171F71CDB8FA8976AE743E8FC88C78C", hash_generated_field = "47D9DE2507A92C29BDE55BF608AC91F8")
 
-    protected static byte NO_RENEGOTIATION = 100;
+    protected static final byte NO_RENEGOTIATION = 100;
 }
 

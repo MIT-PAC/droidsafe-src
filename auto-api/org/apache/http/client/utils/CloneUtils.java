@@ -12,13 +12,13 @@ import java.lang.reflect.Method;
 
 public class CloneUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.049 -0400", hash_original_method = "1F76692A2F48F09687AD7B289259D6AA", hash_generated_method = "52ECA5301B917B4222381801D4F13452")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.970 -0400", hash_original_method = "1F76692A2F48F09687AD7B289259D6AA", hash_generated_method = "52ECA5301B917B4222381801D4F13452")
     private  CloneUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static Object clone(final Object obj) throws CloneNotSupportedException {
+    public static Object clone(final Object obj) throws CloneNotSupportedException {
         if (obj == null) {
             return null;
         }

@@ -16,7 +16,7 @@ public class DashPathEffect extends PathEffect {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
         } //End block
         native_instance = nativeCreate(intervals, phase);
-        addTaint(intervals);
+        addTaint(intervals[0]);
         addTaint(phase);
         // ---------- Original Method ----------
         //if (intervals.length < 2) {
@@ -26,7 +26,7 @@ public class DashPathEffect extends PathEffect {
     }
 
     
-        private static int nativeCreate(float intervals[], float phase) {
+    private static int nativeCreate(float intervals[], float phase) {
         return DSUtils.UNKNOWN_INT;
     }
 

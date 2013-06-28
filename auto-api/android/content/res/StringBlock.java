@@ -17,26 +17,26 @@ import android.graphics.Typeface;
 import com.android.internal.util.XmlUtils;
 
 final class StringBlock {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.722 -0400", hash_original_field = "8AF77D45DED615EEBE14D961B1D7F7CE", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "8AF77D45DED615EEBE14D961B1D7F7CE", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
 
     private int mNative;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.722 -0400", hash_original_field = "2A38A4CCD243A9CE690C2513B39533CA", hash_generated_field = "038BAFF209AC24C690C68705B5282717")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "2A38A4CCD243A9CE690C2513B39533CA", hash_generated_field = "038BAFF209AC24C690C68705B5282717")
 
     private boolean mUseSparse;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.722 -0400", hash_original_field = "F802401598A8908D003E80718CBFDDBE", hash_generated_field = "6595126F0D7DB182D889144E969DE4FE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "F802401598A8908D003E80718CBFDDBE", hash_generated_field = "6595126F0D7DB182D889144E969DE4FE")
 
     private boolean mOwnsNative;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.722 -0400", hash_original_field = "DCFA8FC1CFB8B5A5290D25EC1EA3C56B", hash_generated_field = "F69AC8135E9EA2A3E547A8754C61F3E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "DCFA8FC1CFB8B5A5290D25EC1EA3C56B", hash_generated_field = "F69AC8135E9EA2A3E547A8754C61F3E8")
 
     private CharSequence[] mStrings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.723 -0400", hash_original_field = "64C4D68429588D5D67FADE5F8FD3E8A3", hash_generated_field = "FDA16845E27F0B9F87DA93CF41FC8E3B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "64C4D68429588D5D67FADE5F8FD3E8A3", hash_generated_field = "FDA16845E27F0B9F87DA93CF41FC8E3B")
 
     private SparseArray<CharSequence> mSparseStrings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.723 -0400", hash_original_field = "B5123735AFFF78DF8F617C925BF7C0C0", hash_generated_field = "C5DFF8B48B5B047DBBB9D4B2E886F5DF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.242 -0400", hash_original_field = "B5123735AFFF78DF8F617C925BF7C0C0", hash_generated_field = "C5DFF8B48B5B047DBBB9D4B2E886F5DF")
 
     StyleIDs mStyleIDs = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.725 -0400", hash_original_method = "C056884F6217F27ACF2C69899BB237D2", hash_generated_method = "17AEF75A57D96F90032FD5E77DD3B316")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.243 -0400", hash_original_method = "C056884F6217F27ACF2C69899BB237D2", hash_generated_method = "17AEF75A57D96F90032FD5E77DD3B316")
     public  StringBlock(byte[] data, boolean useSparse) {
         mNative = nativeCreate(data, 0, data.length);
         mUseSparse = useSparse;
@@ -50,7 +50,7 @@ final class StringBlock {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.744 -0400", hash_original_method = "325B6049E710893083487955374CD75A", hash_generated_method = "0A6B9CBC97E599CD3D9F2FBEB9EC2E61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.243 -0400", hash_original_method = "325B6049E710893083487955374CD75A", hash_generated_method = "0A6B9CBC97E599CD3D9F2FBEB9EC2E61")
     public  StringBlock(byte[] data, int offset, int size, boolean useSparse) {
         mNative = nativeCreate(data, offset, size);
         mUseSparse = useSparse;
@@ -64,7 +64,7 @@ final class StringBlock {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.748 -0400", hash_original_method = "451F884D80CF979FA811D85381B93BA8", hash_generated_method = "BF2A607DC96A8F0B3394B862C35E61B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.244 -0400", hash_original_method = "451F884D80CF979FA811D85381B93BA8", hash_generated_method = "BF2A607DC96A8F0B3394B862C35E61B6")
       StringBlock(int obj, boolean useSparse) {
         mNative = obj;
         mUseSparse = useSparse;
@@ -78,29 +78,26 @@ final class StringBlock {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.811 -0400", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "864F42D8D6578D413B34D649FFA3B785")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.247 -0400", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "0E222C11ABCB4E8BB8D2F5BD60A0D881")
     public CharSequence get(int idx) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2037803939 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_558843601 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1620987604 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_131917601 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1343160944 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_550830151 = null; //Variable for return #3
         {
             {
-                CharSequence res;
-                res = mStrings[idx];
+                CharSequence res = mStrings[idx];
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_2037803939 = res;
+                    varB4EAC82CA7396A68D541C85D26508E83_131917601 = res;
                 } //End block
             } //End block
             {
-                CharSequence res;
-                res = mSparseStrings.get(idx);
+                CharSequence res = mSparseStrings.get(idx);
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_558843601 = res;
+                    varB4EAC82CA7396A68D541C85D26508E83_1343160944 = res;
                 } //End block
             } //End block
             {
-                int num;
-                num = nativeGetSize(mNative);
+                final int num = nativeGetSize(mNative);
                 {
                     mSparseStrings = new SparseArray<CharSequence>();
                 } //End block
@@ -108,77 +105,71 @@ final class StringBlock {
                     mStrings = new CharSequence[num];
                 } //End block
             } //End block
-            String str;
-            str = nativeGetString(mNative, idx);
-            CharSequence res;
-            res = str;
-            int[] style;
-            style = nativeGetStyle(mNative, idx);
+            String str = nativeGetString(mNative, idx);
+            CharSequence res = str;
+            int[] style = nativeGetStyle(mNative, idx);
             {
                 {
                     mStyleIDs = new StyleIDs();
                 } //End block
                 {
-                    int styleIndex;
-                    styleIndex = 0;
+                    int styleIndex = 0;
                     styleIndex += 3;
                     {
-                        int styleId;
-                        styleId = style[styleIndex];
-                        String styleTag;
-                        styleTag = nativeGetString(mNative, styleId);
+                        int styleId = style[styleIndex];
+                        String styleTag = nativeGetString(mNative, styleId);
                         {
-                            boolean varC887F6D4B30EC541E65DBFBDBCDD62AA_1695830111 = (styleTag.equals("b"));
+                            boolean varC887F6D4B30EC541E65DBFBDBCDD62AA_478382820 = (styleTag.equals("b"));
                             {
                                 mStyleIDs.boldId = styleId;
                             } //End block
                             {
-                                boolean varAAA8D27A262C4AA33AA77708C8723E3C_465599134 = (styleTag.equals("i"));
+                                boolean varAAA8D27A262C4AA33AA77708C8723E3C_144656937 = (styleTag.equals("i"));
                                 {
                                     mStyleIDs.italicId = styleId;
                                 } //End block
                                 {
-                                    boolean var0F276DEC02D5224F8D1A94CEA8B56222_1718788271 = (styleTag.equals("u"));
+                                    boolean var0F276DEC02D5224F8D1A94CEA8B56222_1615678314 = (styleTag.equals("u"));
                                     {
                                         mStyleIDs.underlineId = styleId;
                                     } //End block
                                     {
-                                        boolean var65A7CE7F99CEFD7C5E702A02D7375627_2013078721 = (styleTag.equals("tt"));
+                                        boolean var65A7CE7F99CEFD7C5E702A02D7375627_160888998 = (styleTag.equals("tt"));
                                         {
                                             mStyleIDs.ttId = styleId;
                                         } //End block
                                         {
-                                            boolean var8E9D24A56B951FD8B4556AC9687B862D_514748707 = (styleTag.equals("big"));
+                                            boolean var8E9D24A56B951FD8B4556AC9687B862D_326497607 = (styleTag.equals("big"));
                                             {
                                                 mStyleIDs.bigId = styleId;
                                             } //End block
                                             {
-                                                boolean var50968B7296438CFFE7941F4277358F12_995276619 = (styleTag.equals("small"));
+                                                boolean var50968B7296438CFFE7941F4277358F12_895988699 = (styleTag.equals("small"));
                                                 {
                                                     mStyleIDs.smallId = styleId;
                                                 } //End block
                                                 {
-                                                    boolean var12A2A849B5F8D70ACBACAC923F8AFE6E_282309508 = (styleTag.equals("sup"));
+                                                    boolean var12A2A849B5F8D70ACBACAC923F8AFE6E_410791596 = (styleTag.equals("sup"));
                                                     {
                                                         mStyleIDs.supId = styleId;
                                                     } //End block
                                                     {
-                                                        boolean var3F8A168B86441E49333296C71DC57C4E_2054081990 = (styleTag.equals("sub"));
+                                                        boolean var3F8A168B86441E49333296C71DC57C4E_967802340 = (styleTag.equals("sub"));
                                                         {
                                                             mStyleIDs.subId = styleId;
                                                         } //End block
                                                         {
-                                                            boolean var18AE5CBDC95E4D4C7134523455ADC26F_1416806676 = (styleTag.equals("strike"));
+                                                            boolean var18AE5CBDC95E4D4C7134523455ADC26F_1181283849 = (styleTag.equals("strike"));
                                                             {
                                                                 mStyleIDs.strikeId = styleId;
                                                             } //End block
                                                             {
-                                                                boolean var7EBEE9E50CFF4D1C5480F34A4BF58B42_1323991286 = (styleTag.equals("li"));
+                                                                boolean var7EBEE9E50CFF4D1C5480F34A4BF58B42_1535532486 = (styleTag.equals("li"));
                                                                 {
                                                                     mStyleIDs.listItemId = styleId;
                                                                 } //End block
                                                                 {
-                                                                    boolean var46A9EEE2572CA803DC0C183361FDF85A_898210952 = (styleTag.equals("marquee"));
+                                                                    boolean var46A9EEE2572CA803DC0C183361FDF85A_1901445616 = (styleTag.equals("marquee"));
                                                                     {
                                                                         mStyleIDs.marqueeId = styleId;
                                                                     } //End block
@@ -199,28 +190,28 @@ final class StringBlock {
             } //End block
             mStrings[idx] = res;
             mSparseStrings.put(idx, res);
-            varB4EAC82CA7396A68D541C85D26508E83_1620987604 = res;
+            varB4EAC82CA7396A68D541C85D26508E83_550830151 = res;
         } //End block
-        CharSequence varA7E53CE21691AB073D9660D615818899_925090898; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_2039351503; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_925090898 = varB4EAC82CA7396A68D541C85D26508E83_2037803939;
+                varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_131917601;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_925090898 = varB4EAC82CA7396A68D541C85D26508E83_558843601;
+                varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_1343160944;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_925090898 = varB4EAC82CA7396A68D541C85D26508E83_1620987604;
+                varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_550830151;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_925090898.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_925090898;
+        varA7E53CE21691AB073D9660D615818899_2039351503.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2039351503;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.817 -0400", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "065278051329C532BB29C2C6B986F5B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.247 -0400", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "065278051329C532BB29C2C6B986F5B5")
     protected void finalize() throws Throwable {
         {
             nativeDestroy(mNative);
@@ -353,7 +344,7 @@ final class StringBlock {
                             {
                                 int len;
                                 len = tag.length();
-                                int next;
+                                int next = 0;
                                 {
                                     int t;
                                     t = tag.indexOf(';');
@@ -401,7 +392,7 @@ final class StringBlock {
     }
 
     
-        private static void addParagraphSpan(Spannable buffer, Object what,
+    private static void addParagraphSpan(Spannable buffer, Object what,
                                          int start, int end) {
         int len = buffer.length();
         if (start != 0 && start != len && buffer.charAt(start - 1) != '\n') {
@@ -422,7 +413,7 @@ final class StringBlock {
     }
 
     
-        private static String subtag(String full, String attribute) {
+    private static String subtag(String full, String attribute) {
         int start = full.indexOf(attribute);
         if (start < 0) {
             return null;
@@ -437,68 +428,72 @@ final class StringBlock {
     }
 
     
-        private static final int nativeCreate(byte[] data,
+    private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static final int nativeGetSize(int obj) {
+    private static final int nativeGetSize(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static final String nativeGetString(int obj, int idx) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static final String nativeGetString(int obj, int idx) {
+        	String ret = new String();
+        	ret.addTaint(obj);
+        	ret.addTaint(idx);
+        	return ret;
     }
 
     
-        private static final int[] nativeGetStyle(int obj, int idx) {
-        return {DSUtils.UNKNOWN_INT};
+    private static final int[] nativeGetStyle(int obj, int idx) {
+        int[] ret = {DSUtils.UNKNOWN_INT};
+        return ret;
     }
 
     
-        private static final void nativeDestroy(int obj) {
+    private static final void nativeDestroy(int obj) {
     }
 
     
     static final class StyleIDs {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.042 -0400", hash_original_field = "8929F60960F20370C15483AF224B1EAF", hash_generated_field = "8BDB7171C09EC9A28241743847C2F13E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "8929F60960F20370C15483AF224B1EAF", hash_generated_field = "8BDB7171C09EC9A28241743847C2F13E")
 
         private int boldId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "FABD409DACB3A477CA91454B83ABCA28", hash_generated_field = "74A882A455EB3847986DA18889B12ABD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "FABD409DACB3A477CA91454B83ABCA28", hash_generated_field = "74A882A455EB3847986DA18889B12ABD")
 
         private int italicId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "191B082733B8400625829E1BF82A5984", hash_generated_field = "4B178C0E94E6CB7A9EABABF4E226C358")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "191B082733B8400625829E1BF82A5984", hash_generated_field = "4B178C0E94E6CB7A9EABABF4E226C358")
 
         private int underlineId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "9D75F65BAA96E3876CED4CA073865EAD", hash_generated_field = "3B876BCFB315722E8FE854115777283C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "9D75F65BAA96E3876CED4CA073865EAD", hash_generated_field = "3B876BCFB315722E8FE854115777283C")
 
         private int ttId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "52691BA3827A29F3E79DFB9FE11DB6E7", hash_generated_field = "1662651FF3F5BF94937725EEC1E5E163")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "52691BA3827A29F3E79DFB9FE11DB6E7", hash_generated_field = "1662651FF3F5BF94937725EEC1E5E163")
 
         private int bigId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "3AD8F230B4D50E3AFD2E9CDF97A81BED", hash_generated_field = "395D60D5C1FC7586ACC1582BFFB1D8F4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "3AD8F230B4D50E3AFD2E9CDF97A81BED", hash_generated_field = "395D60D5C1FC7586ACC1582BFFB1D8F4")
 
         private int smallId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "A38D530972AA77B1D220067D84FC13DE", hash_generated_field = "65712315E81AEF1AEECA880461A13F95")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "A38D530972AA77B1D220067D84FC13DE", hash_generated_field = "65712315E81AEF1AEECA880461A13F95")
 
         private int subId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "2890514472C2EC26FDC158F357C9094D", hash_generated_field = "A4D55EF615A83829CB76931E64607871")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "2890514472C2EC26FDC158F357C9094D", hash_generated_field = "A4D55EF615A83829CB76931E64607871")
 
         private int supId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "2277E9A3494373D144CB63240D1A671A", hash_generated_field = "0A84E3D5C0D13817A9952A0E4C94005A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "2277E9A3494373D144CB63240D1A671A", hash_generated_field = "0A84E3D5C0D13817A9952A0E4C94005A")
 
         private int strikeId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.043 -0400", hash_original_field = "0EA1254D6779D964DDFE2F1CF27671AA", hash_generated_field = "C2D326660DCA6976087926F02A618B65")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "0EA1254D6779D964DDFE2F1CF27671AA", hash_generated_field = "C2D326660DCA6976087926F02A618B65")
 
         private int listItemId = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.044 -0400", hash_original_field = "5777998D282E2540236C985B4E76024F", hash_generated_field = "D299C9BAD3B93162970105F1DB7DE1FA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_field = "5777998D282E2540236C985B4E76024F", hash_generated_field = "D299C9BAD3B93162970105F1DB7DE1FA")
 
         private int marqueeId = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.044 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
         public StyleIDs ()
         {
             //Synthesized constructor
@@ -510,11 +505,11 @@ final class StringBlock {
 
     
     private static class Height implements LineHeightSpan.WithDensity {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.044 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.251 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
 
         private int mSize;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.045 -0400", hash_original_method = "822F731BB1BA127213FF49F8E178606F", hash_generated_method = "8B0CB46E6A2F126B20C4298DCDA8FF8F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.251 -0400", hash_original_method = "822F731BB1BA127213FF49F8E178606F", hash_generated_method = "8B0CB46E6A2F126B20C4298DCDA8FF8F")
         public  Height(int size) {
             mSize = size;
             // ---------- Original Method ----------
@@ -522,7 +517,7 @@ final class StringBlock {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.054 -0400", hash_original_method = "26F622CE8D56F6DE86DA56D7C47E1EF9", hash_generated_method = "6C615B21937CFAB84E1684D2841C1567")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.251 -0400", hash_original_method = "26F622CE8D56F6DE86DA56D7C47E1EF9", hash_generated_method = "6C615B21937CFAB84E1684D2841C1567")
         public void chooseHeight(CharSequence text, int start, int end,
                                  int spanstartv, int v,
                                  Paint.FontMetricsInt fm) {
@@ -538,12 +533,11 @@ final class StringBlock {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.082 -0400", hash_original_method = "8C5957365F8EC7EB873EDA19F7109033", hash_generated_method = "DFAC410D624C7B1F368ABEDFD68DC763")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.252 -0400", hash_original_method = "8C5957365F8EC7EB873EDA19F7109033", hash_generated_method = "DA5181A6083EA1B07EEE3EF9870B3042")
         public void chooseHeight(CharSequence text, int start, int end,
                                  int spanstartv, int v,
                                  Paint.FontMetricsInt fm, TextPaint paint) {
-            int size;
-            size = mSize;
+            int size = mSize;
             {
                 size *= paint.density;
             } //End block
@@ -553,16 +547,13 @@ final class StringBlock {
             } //End block
             {
                 {
-                    Paint p;
-                    p = new Paint();
+                    Paint p = new Paint();
                     p.setTextSize(100);
-                    Rect r;
-                    r = new Rect();
+                    Rect r = new Rect();
                     p.getTextBounds("ABCDEFG", 0, 7, r);
                     sProportion = (r.top) / p.ascent();
                 } //End block
-                int need;
-                need = (int) Math.ceil(-fm.top * sProportion);
+                int need = (int) Math.ceil(-fm.top * sProportion);
                 {
                     fm.top = fm.bottom - size;
                     fm.ascent = fm.descent - size;
@@ -588,18 +579,18 @@ final class StringBlock {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.082 -0400", hash_original_field = "D3D4C463ED759C9C5346737D3B29514A", hash_generated_field = "2D094D2B577DA7C03844DB00B123469C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.252 -0400", hash_original_field = "D3D4C463ED759C9C5346737D3B29514A", hash_generated_field = "2D094D2B577DA7C03844DB00B123469C")
 
         private static float sProportion = 0;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.082 -0400", hash_original_field = "D32CE489FB85E2EA1BB422AEDC40B577", hash_generated_field = "6D48B534225102BC2DE76BE9815C0974")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.252 -0400", hash_original_field = "D32CE489FB85E2EA1BB422AEDC40B577", hash_generated_field = "FDC75AE01ED37E059BA4F54E9509C8D2")
 
-    private static String TAG = "AssetManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.083 -0400", hash_original_field = "81A92DF01F23C5A9AD1A3D7A55CE01D7", hash_generated_field = "8245CE740538380E2F10E4DC75D66BA1")
+    private static final String TAG = "AssetManager";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.252 -0400", hash_original_field = "81A92DF01F23C5A9AD1A3D7A55CE01D7", hash_generated_field = "776D75E65C0F716B6889BA4A8C683647")
 
-    private static boolean localLOGV = false || false;
+    private static final boolean localLOGV = false || false;
 }
 

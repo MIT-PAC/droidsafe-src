@@ -13,20 +13,20 @@ import java.io.OutputStream;
 
 public class Hex {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.854 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.302 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {
         //Synthesized constructor
     }
 
 
-        public static byte[] encode(
+    public static byte[] encode(
         byte[]    data) {
         return encode(data, 0, data.length);
     }
 
     
-        public static byte[] encode(
+    public static byte[] encode(
         byte[]    data,
         int       off,
         int       length) {
@@ -43,14 +43,14 @@ public class Hex {
     }
 
     
-        public static int encode(
+    public static int encode(
         byte[]         data,
         OutputStream   out) throws IOException {
         return encoder.encode(data, 0, data.length, out);
     }
 
     
-        public static int encode(
+    public static int encode(
         byte[]         data,
         int            off,
         int            length,
@@ -59,7 +59,7 @@ public class Hex {
     }
 
     
-        public static byte[] decode(
+    public static byte[] decode(
         byte[]    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try
@@ -74,7 +74,7 @@ public class Hex {
     }
 
     
-        public static byte[] decode(
+    public static byte[] decode(
         String    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try
@@ -89,15 +89,15 @@ public class Hex {
     }
 
     
-        public static int decode(
+    public static int decode(
         String          data,
         OutputStream    out) throws IOException {
         return encoder.decode(data, out);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.857 -0400", hash_original_field = "47B1E2CC247F9E9D15422E2198CF336B", hash_generated_field = "CD06561BBE541F9661BD17B2BEF707A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.307 -0400", hash_original_field = "47B1E2CC247F9E9D15422E2198CF336B", hash_generated_field = "AD615070C424731857294F4AC6DCDB3B")
 
-    private static Encoder encoder = new HexEncoder();
+    private static final Encoder encoder = new HexEncoder();
 }
 

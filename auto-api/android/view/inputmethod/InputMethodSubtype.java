@@ -21,35 +21,35 @@ import java.util.List;
 import java.util.Locale;
 
 public final class InputMethodSubtype implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "6B887E31A4611BC8CDB502D82236E7C6", hash_generated_field = "F8E8FA3061A103026C8298FB0F2648C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "6B887E31A4611BC8CDB502D82236E7C6", hash_generated_field = "F8E8FA3061A103026C8298FB0F2648C7")
 
     private boolean mIsAuxiliary;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "7F4C5EF5B1AF9A5A5C64C38289E3E3D3", hash_generated_field = "DF7B3D7F7849CD65A841EA756702E121")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "7F4C5EF5B1AF9A5A5C64C38289E3E3D3", hash_generated_field = "DF7B3D7F7849CD65A841EA756702E121")
 
     private boolean mOverridesImplicitlyEnabledSubtype;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "DB752714D7C5597F6D4538948E3D4382", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "DB752714D7C5597F6D4538948E3D4382", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
 
     private int mSubtypeHashCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "E9CD3C1A08E60FD7C92E17FBDC1E9760", hash_generated_field = "C71D1FA43E13CD3282734DF2FF4408D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "E9CD3C1A08E60FD7C92E17FBDC1E9760", hash_generated_field = "C71D1FA43E13CD3282734DF2FF4408D8")
 
     private int mSubtypeIconResId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "AE10E74C5B8FF193877E0EC967173BB0", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "AE10E74C5B8FF193877E0EC967173BB0", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
 
     private int mSubtypeNameResId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "62668E4A833F1CB4D52D80EE2676B489", hash_generated_field = "09B229A20252A09636BE45D10E545437")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "62668E4A833F1CB4D52D80EE2676B489", hash_generated_field = "09B229A20252A09636BE45D10E545437")
 
     private String mSubtypeLocale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "33DCA0E766F52A803A4F474963A0D82D", hash_generated_field = "7ABE6DC269EBBCEC11D7611039EEBED9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "33DCA0E766F52A803A4F474963A0D82D", hash_generated_field = "7ABE6DC269EBBCEC11D7611039EEBED9")
 
     private String mSubtypeMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "925770EC9378B8FB525692C9358CB66A", hash_generated_field = "8C6B632ACA59D6C798D88A0425FBB914")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "925770EC9378B8FB525692C9358CB66A", hash_generated_field = "8C6B632ACA59D6C798D88A0425FBB914")
 
     private String mSubtypeExtraValue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.425 -0400", hash_original_field = "3A7DFD37BBDDEB49979A0E51410BD10A", hash_generated_field = "ACB3C4EDF6306DA058D6D16426E9E9E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.307 -0400", hash_original_field = "3A7DFD37BBDDEB49979A0E51410BD10A", hash_generated_field = "ACB3C4EDF6306DA058D6D16426E9E9E7")
 
     private HashMap<String, String> mExtraValueHashMapCache;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.431 -0400", hash_original_method = "934D77263F2647B2A011D3A69C057C66", hash_generated_method = "A1C313608E5C8C95CC2FC190A61A2D0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.308 -0400", hash_original_method = "934D77263F2647B2A011D3A69C057C66", hash_generated_method = "A1C313608E5C8C95CC2FC190A61A2D0C")
     public  InputMethodSubtype(int nameId, int iconId, String locale, String mode, String extraValue,
             boolean isAuxiliary) {
         this(nameId, iconId, locale, mode, extraValue, isAuxiliary, false);
@@ -63,7 +63,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.431 -0400", hash_original_method = "26B76F41AAAA7EE2514381E3013D5A81", hash_generated_method = "E31B6D25CAAA843FDBFE6094AACFCEC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.308 -0400", hash_original_method = "26B76F41AAAA7EE2514381E3013D5A81", hash_generated_method = "E31B6D25CAAA843FDBFE6094AACFCEC0")
     public  InputMethodSubtype(int nameId, int iconId, String locale, String mode, String extraValue,
             boolean isAuxiliary, boolean overridesImplicitlyEnabledSubtype) {
         mSubtypeNameResId = nameId;
@@ -88,7 +88,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.440 -0400", hash_original_method = "D71F12C4764A764AF688AE6184DB2ED2", hash_generated_method = "ACF11529AB7DB787C152AB2F8CF531D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.309 -0400", hash_original_method = "D71F12C4764A764AF688AE6184DB2ED2", hash_generated_method = "ACF11529AB7DB787C152AB2F8CF531D9")
       InputMethodSubtype(Parcel source) {
         String s;
         mSubtypeNameResId = source.readInt();
@@ -120,118 +120,116 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.441 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "C49C7C0C296A801DCEB3B3AC5C52604D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.309 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "CCAD0FE8730DB214C5EBB9D487F4DE81")
     public int getNameResId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1495295043 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1495295043;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118858909 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118858909;
         // ---------- Original Method ----------
         //return mSubtypeNameResId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.441 -0400", hash_original_method = "6A7C5EEB38C0091C7A516BA3C0FACD8B", hash_generated_method = "8A3CC6043FF953BE818604E9CD134FA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.309 -0400", hash_original_method = "6A7C5EEB38C0091C7A516BA3C0FACD8B", hash_generated_method = "26D66CADB610F19BC5477320DE843B90")
     public int getIconResId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_883913393 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_883913393;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177979212 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177979212;
         // ---------- Original Method ----------
         //return mSubtypeIconResId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.441 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "CB2BBA7CA922FB64E3E636C59CD7F4FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.310 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "2E2C73DBC5965751BCCCF754CE33A943")
     public String getLocale() {
-        String varB4EAC82CA7396A68D541C85D26508E83_680470435 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_680470435 = mSubtypeLocale;
-        varB4EAC82CA7396A68D541C85D26508E83_680470435.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_680470435;
+        String varB4EAC82CA7396A68D541C85D26508E83_151532589 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_151532589 = mSubtypeLocale;
+        varB4EAC82CA7396A68D541C85D26508E83_151532589.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_151532589;
         // ---------- Original Method ----------
         //return mSubtypeLocale;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.442 -0400", hash_original_method = "960AAB243B4CAAAE714C0B1CB581C452", hash_generated_method = "5F5C67745CC3571871446F2727DEF8FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.311 -0400", hash_original_method = "960AAB243B4CAAAE714C0B1CB581C452", hash_generated_method = "7660170892ED5C4A6722893C11297E81")
     public String getMode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2024918254 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2024918254 = mSubtypeMode;
-        varB4EAC82CA7396A68D541C85D26508E83_2024918254.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2024918254;
+        String varB4EAC82CA7396A68D541C85D26508E83_781565961 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_781565961 = mSubtypeMode;
+        varB4EAC82CA7396A68D541C85D26508E83_781565961.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_781565961;
         // ---------- Original Method ----------
         //return mSubtypeMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.442 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "863DF2B38A319A3E0CBFF3E0907D313E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.311 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "0753F999D02A38C55D19F259ED27FF7A")
     public String getExtraValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_347908995 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_347908995 = mSubtypeExtraValue;
-        varB4EAC82CA7396A68D541C85D26508E83_347908995.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_347908995;
+        String varB4EAC82CA7396A68D541C85D26508E83_610797158 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_610797158 = mSubtypeExtraValue;
+        varB4EAC82CA7396A68D541C85D26508E83_610797158.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_610797158;
         // ---------- Original Method ----------
         //return mSubtypeExtraValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.445 -0400", hash_original_method = "5D42329342BA940BF0C680758D792174", hash_generated_method = "9966E9C56986430C07D49F730DDC8D1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.312 -0400", hash_original_method = "5D42329342BA940BF0C680758D792174", hash_generated_method = "252A70E067EBEE55A57B0A65DCDC9077")
     public boolean isAuxiliary() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1585329704 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1585329704;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988612886 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_988612886;
         // ---------- Original Method ----------
         //return mIsAuxiliary;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.446 -0400", hash_original_method = "77DDEB2A23977DBB23EB90699D4CDB8E", hash_generated_method = "7C3E0C8D4E5989872E5963E621FBF500")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.312 -0400", hash_original_method = "77DDEB2A23977DBB23EB90699D4CDB8E", hash_generated_method = "C0FABFBDA891B3AC52C76F90829A3F1E")
     public boolean overridesImplicitlyEnabledSubtype() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500464859 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500464859;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313823225 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313823225;
         // ---------- Original Method ----------
         //return mOverridesImplicitlyEnabledSubtype;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.459 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "7018D352CBC78C886808687EC4CA3FD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.313 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "98DA32BA374CCA3A567364163AC6C17A")
     public CharSequence getDisplayName(
             Context context, String packageName, ApplicationInfo appInfo) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1826812075 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1465406308 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1857341850 = null; //Variable for return #3
-        Locale locale;
-        locale = constructLocaleFromString(mSubtypeLocale);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1465500568 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_396399442 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_856985359 = null; //Variable for return #3
+        final Locale locale = constructLocaleFromString(mSubtypeLocale);
         String localeStr;
         localeStr = locale.getDisplayName();
         localeStr = mSubtypeLocale;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1826812075 = localeStr;
+            varB4EAC82CA7396A68D541C85D26508E83_1465500568 = localeStr;
         } //End block
-        CharSequence subtypeName;
-        subtypeName = context.getPackageManager().getText(
+        final CharSequence subtypeName = context.getPackageManager().getText(
                 packageName, mSubtypeNameResId, appInfo);
         {
-            boolean var8CAF5C55CF3F150CA75A24E410BC500C_985736632 = (!TextUtils.isEmpty(subtypeName));
+            boolean var8CAF5C55CF3F150CA75A24E410BC500C_1889135455 = (!TextUtils.isEmpty(subtypeName));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1465406308 = String.format(subtypeName.toString(), localeStr);
+                varB4EAC82CA7396A68D541C85D26508E83_396399442 = String.format(subtypeName.toString(), localeStr);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1857341850 = localeStr;
+                varB4EAC82CA7396A68D541C85D26508E83_856985359 = localeStr;
             } //End block
         } //End collapsed parenthetic
         addTaint(context.getTaint());
         addTaint(packageName.getTaint());
         addTaint(appInfo.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1440133035; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1910771352; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1440133035 = varB4EAC82CA7396A68D541C85D26508E83_1826812075;
+                varA7E53CE21691AB073D9660D615818899_1910771352 = varB4EAC82CA7396A68D541C85D26508E83_1465500568;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1440133035 = varB4EAC82CA7396A68D541C85D26508E83_1465406308;
+                varA7E53CE21691AB073D9660D615818899_1910771352 = varB4EAC82CA7396A68D541C85D26508E83_396399442;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1440133035 = varB4EAC82CA7396A68D541C85D26508E83_1857341850;
+                varA7E53CE21691AB073D9660D615818899_1910771352 = varB4EAC82CA7396A68D541C85D26508E83_856985359;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1440133035.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1440133035;
+        varA7E53CE21691AB073D9660D615818899_1910771352.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1910771352;
         // ---------- Original Method ----------
         //final Locale locale = constructLocaleFromString(mSubtypeLocale);
         //final String localeStr = locale != null ? locale.getDisplayName() : mSubtypeLocale;
@@ -248,21 +246,17 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.461 -0400", hash_original_method = "2837AE7076837B91930C208632EE903B", hash_generated_method = "D99F0AD6200A53EE82B1B64D2CE385A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.313 -0400", hash_original_method = "2837AE7076837B91930C208632EE903B", hash_generated_method = "F364AB6D14FD1C7DE325F55EF6C2DCF3")
     private HashMap<String, String> getExtraValueHashMap() {
-        HashMap<String, String> varB4EAC82CA7396A68D541C85D26508E83_558245375 = null; //Variable for return #1
+        HashMap<String, String> varB4EAC82CA7396A68D541C85D26508E83_1277042932 = null; //Variable for return #1
         {
             mExtraValueHashMapCache = new HashMap<String, String>();
-            String[] pairs;
-            pairs = mSubtypeExtraValue.split(EXTRA_VALUE_PAIR_SEPARATOR);
-            int N;
-            N = pairs.length;
+            final String[] pairs = mSubtypeExtraValue.split(EXTRA_VALUE_PAIR_SEPARATOR);
+            final int N = pairs.length;
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
-                    String[] pair;
-                    pair = pairs[i].split(EXTRA_VALUE_KEY_VALUE_SEPARATOR);
+                    final String[] pair = pairs[i].split(EXTRA_VALUE_KEY_VALUE_SEPARATOR);
                     {
                         mExtraValueHashMapCache.put(pair[0], null);
                     } //End block
@@ -272,9 +266,9 @@ public final class InputMethodSubtype implements Parcelable {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_558245375 = mExtraValueHashMapCache;
-        varB4EAC82CA7396A68D541C85D26508E83_558245375.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_558245375;
+        varB4EAC82CA7396A68D541C85D26508E83_1277042932 = mExtraValueHashMapCache;
+        varB4EAC82CA7396A68D541C85D26508E83_1277042932.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1277042932;
         // ---------- Original Method ----------
         //if (mExtraValueHashMapCache == null) {
             //mExtraValueHashMapCache = new HashMap<String, String>();
@@ -296,46 +290,45 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.461 -0400", hash_original_method = "92E492941FA288BA531CB37717D8F415", hash_generated_method = "EDA0FEAD2732EF2B04C2AA2B21C95027")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.314 -0400", hash_original_method = "92E492941FA288BA531CB37717D8F415", hash_generated_method = "1A813D36BA4DB8C5FF9C04D49EF9F091")
     public boolean containsExtraValueKey(String key) {
-        boolean var879F87ED6CB8D534D2470D87EF542CAF_11562158 = (getExtraValueHashMap().containsKey(key));
+        boolean var879F87ED6CB8D534D2470D87EF542CAF_1705557598 = (getExtraValueHashMap().containsKey(key));
         addTaint(key.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895111474 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_895111474;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1734723496 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1734723496;
         // ---------- Original Method ----------
         //return getExtraValueHashMap().containsKey(key);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.462 -0400", hash_original_method = "E26D6519ACBB2E66A4CA57F07B1B4B16", hash_generated_method = "EE828C0C725B38E1194E7F61DE75DDD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.314 -0400", hash_original_method = "E26D6519ACBB2E66A4CA57F07B1B4B16", hash_generated_method = "3A3A0475DA7CDCF68D263FDEC3BFA227")
     public String getExtraValueOf(String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1474920255 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1474920255 = getExtraValueHashMap().get(key);
+        String varB4EAC82CA7396A68D541C85D26508E83_1214442623 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1214442623 = getExtraValueHashMap().get(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1474920255.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1474920255;
+        varB4EAC82CA7396A68D541C85D26508E83_1214442623.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1214442623;
         // ---------- Original Method ----------
         //return getExtraValueHashMap().get(key);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.462 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "773D5F227A1995F2A95A8004AFBA50D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.314 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "484F41F9F9247A691725B55034CA1957")
     @Override
     public int hashCode() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375048001 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375048001;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783004940 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783004940;
         // ---------- Original Method ----------
         //return mSubtypeHashCode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.464 -0400", hash_original_method = "0FAD58BA0D22A8990D6C7F18B4CA40E4", hash_generated_method = "17D5740855143997B0949E32ED052753")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.315 -0400", hash_original_method = "0FAD58BA0D22A8990D6C7F18B4CA40E4", hash_generated_method = "3B156862B24AA120761C81162DE045F7")
     @Override
     public boolean equals(Object o) {
         {
-            InputMethodSubtype subtype;
-            subtype = (InputMethodSubtype) o;
-            boolean varEEE5801028341F2EB0F803658C2232D1_1874209434 = ((subtype.hashCode() == hashCode())
+            InputMethodSubtype subtype = (InputMethodSubtype) o;
+            boolean varEEE5801028341F2EB0F803658C2232D1_528729713 = ((subtype.hashCode() == hashCode())
                 && (subtype.getNameResId() == getNameResId())
                 && (subtype.getMode().equals(getMode()))
                 && (subtype.getIconResId() == getIconResId())
@@ -344,8 +337,8 @@ public final class InputMethodSubtype implements Parcelable {
                 && (subtype.isAuxiliary() == isAuxiliary()));
         } //End block
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1179425158 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1179425158;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693319410 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_693319410;
         // ---------- Original Method ----------
         //if (o instanceof InputMethodSubtype) {
             //InputMethodSubtype subtype = (InputMethodSubtype) o;
@@ -361,17 +354,17 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.476 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ECF9B5A7F93CF2EFC04A2DC6F7A8C577")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.315 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "74859040AA224BC3A928144E94A3E15B")
     @Override
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499411717 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499411717;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_604522775 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_604522775;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.477 -0400", hash_original_method = "C419DC818714EC441C397D1AF0BAA00C", hash_generated_method = "4DF859947683BD28549093E3BA115743")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.316 -0400", hash_original_method = "C419DC818714EC441C397D1AF0BAA00C", hash_generated_method = "4DF859947683BD28549093E3BA115743")
     @Override
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeInt(mSubtypeNameResId);
@@ -394,7 +387,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-        private static Locale constructLocaleFromString(String localeStr) {
+    private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
         String[] localeParams = localeStr.split("_", 3);
@@ -409,14 +402,14 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-        private static int hashCodeInternal(String locale, String mode, String extraValue,
+    private static int hashCodeInternal(String locale, String mode, String extraValue,
             boolean isAuxiliary, boolean overridesImplicitlyEnabledSubtype) {
         return Arrays.hashCode(new Object[] {locale, mode, extraValue, isAuxiliary,
                 overridesImplicitlyEnabledSubtype});
     }
 
     
-        public static List<InputMethodSubtype> sort(Context context, int flags, InputMethodInfo imi,
+    public static List<InputMethodSubtype> sort(Context context, int flags, InputMethodInfo imi,
             List<InputMethodSubtype> subtypeList) {
         if (imi == null) return subtypeList;
         final HashSet<InputMethodSubtype> inputSubtypesSet = new HashSet<InputMethodSubtype>(
@@ -437,16 +430,16 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.489 -0400", hash_original_field = "FD70D5B6597BA4E41960E8E543899F2B", hash_generated_field = "46E5A51A75D7FC110C25F64595568BC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.316 -0400", hash_original_field = "FD70D5B6597BA4E41960E8E543899F2B", hash_generated_field = "0AA99DCA2CD79A11571781F4310E259D")
 
-    private static String TAG = InputMethodSubtype.class.getSimpleName();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.489 -0400", hash_original_field = "DE020776BE334FC0AE5FDE74CF87BE11", hash_generated_field = "34238EAB4D36315585ED09B527DCA605")
+    private static final String TAG = InputMethodSubtype.class.getSimpleName();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.316 -0400", hash_original_field = "DE020776BE334FC0AE5FDE74CF87BE11", hash_generated_field = "13FC4081C4F1C82C9C901E7C8DAAE61D")
 
-    private static String EXTRA_VALUE_PAIR_SEPARATOR = ",";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.489 -0400", hash_original_field = "633819F0CE2FE910B1C0DC1AB3415993", hash_generated_field = "4B59D81114A3CEEA7C6FDE144A27F326")
+    private static final String EXTRA_VALUE_PAIR_SEPARATOR = ",";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.316 -0400", hash_original_field = "633819F0CE2FE910B1C0DC1AB3415993", hash_generated_field = "288DE97156AEA20FA476F272E7A6DA36")
 
-    private static String EXTRA_VALUE_KEY_VALUE_SEPARATOR = "=";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:58.489 -0400", hash_original_field = "87C3F14D000790670A5C8909273086FE", hash_generated_field = "F6FA24A5E0DEFDBE30BDE6B1502A4BF4")
+    private static final String EXTRA_VALUE_KEY_VALUE_SEPARATOR = "=";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.316 -0400", hash_original_field = "87C3F14D000790670A5C8909273086FE", hash_generated_field = "F6FA24A5E0DEFDBE30BDE6B1502A4BF4")
 
     public static final Parcelable.Creator<InputMethodSubtype> CREATOR
             = new Parcelable.Creator<InputMethodSubtype>() {
@@ -460,5 +453,17 @@ public final class InputMethodSubtype implements Parcelable {
             return new InputMethodSubtype[size];
         }
     };
+    // orphaned legacy method
+    @Override
+        public InputMethodSubtype createFromParcel(Parcel source) {
+            return new InputMethodSubtype(source);
+        }
+    
+    // orphaned legacy method
+    @Override
+        public InputMethodSubtype[] newArray(int size) {
+            return new InputMethodSubtype[size];
+        }
+    
 }
 

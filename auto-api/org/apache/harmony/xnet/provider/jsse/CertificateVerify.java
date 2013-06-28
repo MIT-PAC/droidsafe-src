@@ -10,11 +10,11 @@ import java.util.Iterator;
 import java.io.IOException;
 
 public class CertificateVerify extends Message {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.447 -0400", hash_original_field = "85F856059502E932D8205DEEF6195328", hash_generated_field = "01A16F1FF859CB019178D18F23D7E606")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.695 -0400", hash_original_field = "85F856059502E932D8205DEEF6195328", hash_generated_field = "01A16F1FF859CB019178D18F23D7E606")
 
     byte[] signedHash;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.448 -0400", hash_original_method = "F3A93A83C93F754D4846FCC8297217FD", hash_generated_method = "F255FE883E27342B88010D13EC49A529")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.695 -0400", hash_original_method = "F3A93A83C93F754D4846FCC8297217FD", hash_generated_method = "F255FE883E27342B88010D13EC49A529")
     public  CertificateVerify(byte[] hash) {
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
@@ -32,7 +32,7 @@ public class CertificateVerify extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.453 -0400", hash_original_method = "C08A411708B1C45834DF498B4B831402", hash_generated_method = "310F4CA007F1F39502B2893DFB87525F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.695 -0400", hash_original_method = "C08A411708B1C45834DF498B4B831402", hash_generated_method = "5F1B02D0F4842152CB7D9377028A190B")
     public  CertificateVerify(HandshakeIODataStream in, int length) throws IOException {
         {
             fatalAlert(AlertProtocol.DECODE_ERROR,
@@ -40,7 +40,7 @@ public class CertificateVerify extends Message {
         } //End block
         {
             {
-                boolean varE515780712A2A8C4B350FB23E27F935E_1609707187 = (in.readUint16() != length - 2);
+                boolean varE515780712A2A8C4B350FB23E27F935E_1826976075 = (in.readUint16() != length - 2);
                 {
                     fatalAlert(AlertProtocol.DECODE_ERROR,
                         "DECODE ERROR: incorrect CertificateVerify");
@@ -64,7 +64,7 @@ public class CertificateVerify extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.457 -0400", hash_original_method = "8645B529D351D3837595463E8D8CA061", hash_generated_method = "F70AA12CE7564D027A14B98C1CEF61DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.696 -0400", hash_original_method = "8645B529D351D3837595463E8D8CA061", hash_generated_method = "F70AA12CE7564D027A14B98C1CEF61DA")
     @Override
     public void send(HandshakeIODataStream out) {
         {
@@ -80,11 +80,11 @@ public class CertificateVerify extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.465 -0400", hash_original_method = "78FC60AEF6831C8195D1932C8B8AE728", hash_generated_method = "C1CD82A31D43F5F9198EFEDD2D311531")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.696 -0400", hash_original_method = "78FC60AEF6831C8195D1932C8B8AE728", hash_generated_method = "FD0663B4D7B558BCEEA4EC82F246A4B2")
     @Override
     public int getType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1058727534 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1058727534;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462321142 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462321142;
         // ---------- Original Method ----------
         //return Handshake.CERTIFICATE_VERIFY;
     }

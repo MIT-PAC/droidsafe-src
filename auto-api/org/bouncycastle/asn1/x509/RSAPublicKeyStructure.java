@@ -18,14 +18,14 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 
 public class RSAPublicKeyStructure extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.046 -0400", hash_original_field = "06EFBA23B1F3A9B846A25C6B49F30348", hash_generated_field = "3E4E39310D57F50C3E323DC3AEC4D41E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.906 -0400", hash_original_field = "06EFBA23B1F3A9B846A25C6B49F30348", hash_generated_field = "3E4E39310D57F50C3E323DC3AEC4D41E")
 
     private BigInteger modulus;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.046 -0400", hash_original_field = "81999BDC63C67199D52FF9A6FC17D274", hash_generated_field = "79B82A8776BB04757B8A80F0464419F4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.906 -0400", hash_original_field = "81999BDC63C67199D52FF9A6FC17D274", hash_generated_field = "79B82A8776BB04757B8A80F0464419F4")
 
     private BigInteger publicExponent;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.054 -0400", hash_original_method = "48EB528539A20A4AFED405FA2E9D9E5C", hash_generated_method = "4144DD2AAFD9958A803584B776141B25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.907 -0400", hash_original_method = "48EB528539A20A4AFED405FA2E9D9E5C", hash_generated_method = "4144DD2AAFD9958A803584B776141B25")
     public  RSAPublicKeyStructure(
         BigInteger  modulus,
         BigInteger  publicExponent) {
@@ -37,18 +37,17 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.099 -0400", hash_original_method = "E4CEBF5DEC44F0033674466A43F99CB9", hash_generated_method = "3253C5BD276083CEDC8D1EEEC6C7B7DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.907 -0400", hash_original_method = "E4CEBF5DEC44F0033674466A43F99CB9", hash_generated_method = "E4404400A833413C63071F00E99729DF")
     public  RSAPublicKeyStructure(
         ASN1Sequence  seq) {
         {
-            boolean var97DBDEEC2A320E15512526B0CE06A30A_1694759866 = (seq.size() != 2);
+            boolean var97DBDEEC2A320E15512526B0CE06A30A_1366032161 = (seq.size() != 2);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: "
                     + seq.size());
             } //End block
         } //End collapsed parenthetic
-        Enumeration e;
-        e = seq.getObjects();
+        Enumeration e = seq.getObjects();
         modulus = DERInteger.getInstance(e.nextElement()).getPositiveValue();
         publicExponent = DERInteger.getInstance(e.nextElement()).getPositiveValue();
         addTaint(seq.getTaint());
@@ -64,14 +63,14 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
-        public static RSAPublicKeyStructure getInstance(
+    public static RSAPublicKeyStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        public static RSAPublicKeyStructure getInstance(
+    public static RSAPublicKeyStructure getInstance(
         Object obj) {
         if(obj == null || obj instanceof RSAPublicKeyStructure) 
         {
@@ -85,38 +84,37 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.106 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "E83B8AA80F7E3BE7FFE694C3A5ABDAD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.908 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "06C3893EF04AE3DE03E6E8FE9AE09A81")
     public BigInteger getModulus() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2147160695 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2147160695 = modulus;
-        varB4EAC82CA7396A68D541C85D26508E83_2147160695.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2147160695;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1809157895 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1809157895 = modulus;
+        varB4EAC82CA7396A68D541C85D26508E83_1809157895.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1809157895;
         // ---------- Original Method ----------
         //return modulus;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.106 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "7DB1D518DBC58711F79D71407FCEC79E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.908 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "30031021DB04701003B7322F7D129B15")
     public BigInteger getPublicExponent() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_926135086 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_926135086 = publicExponent;
-        varB4EAC82CA7396A68D541C85D26508E83_926135086.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_926135086;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1365342794 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1365342794 = publicExponent;
+        varB4EAC82CA7396A68D541C85D26508E83_1365342794.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1365342794;
         // ---------- Original Method ----------
         //return publicExponent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.107 -0400", hash_original_method = "2A6A9DB413CE77685147AC30675BFEF2", hash_generated_method = "7F11D0B5BD196D14D92AE55D0337FBE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.909 -0400", hash_original_method = "2A6A9DB413CE77685147AC30675BFEF2", hash_generated_method = "0B0502DEAF28C4EDC935AE7D42D6BE63")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1449690232 = null; //Variable for return #1
-        ASN1EncodableVector v;
-        v = new ASN1EncodableVector();
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_334502959 = null; //Variable for return #1
+        ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(getModulus()));
         v.add(new DERInteger(getPublicExponent()));
-        varB4EAC82CA7396A68D541C85D26508E83_1449690232 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1449690232.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1449690232;
+        varB4EAC82CA7396A68D541C85D26508E83_334502959 = new DERSequence(v);
+        varB4EAC82CA7396A68D541C85D26508E83_334502959.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_334502959;
         // ---------- Original Method ----------
         //ASN1EncodableVector  v = new ASN1EncodableVector();
         //v.add(new DERInteger(getModulus()));

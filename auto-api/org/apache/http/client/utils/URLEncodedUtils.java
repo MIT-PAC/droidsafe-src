@@ -25,14 +25,14 @@ import org.apache.http.util.EntityUtils;
 
 public class URLEncodedUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.094 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.999 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
     public URLEncodedUtils ()
     {
         //Synthesized constructor
     }
 
 
-        public static List <NameValuePair> parse(final URI uri, final String encoding) {
+    public static List <NameValuePair> parse(final URI uri, final String encoding) {
         List <NameValuePair> result = Collections.emptyList();
         final String query = uri.getRawQuery();
         if (query != null && query.length() > 0) {
@@ -43,7 +43,7 @@ public class URLEncodedUtils {
     }
 
     
-        public static List <NameValuePair> parse(
+    public static List <NameValuePair> parse(
             final HttpEntity entity) throws IOException {
         List <NameValuePair> result = Collections.emptyList();
         if (isEncoded(entity)) {
@@ -59,13 +59,13 @@ public class URLEncodedUtils {
     }
 
     
-        public static boolean isEncoded(final HttpEntity entity) {
+    public static boolean isEncoded(final HttpEntity entity) {
         final Header contentType = entity.getContentType();
         return (contentType != null && contentType.getValue().equalsIgnoreCase(CONTENT_TYPE));
     }
 
     
-        public static void parse(
+    public static void parse(
             final List <NameValuePair> parameters, 
             final Scanner scanner, 
             final String encoding) {
@@ -83,7 +83,7 @@ public class URLEncodedUtils {
     }
 
     
-        public static String format(
+    public static String format(
             final List <? extends NameValuePair> parameters, 
             final String encoding) {
         final StringBuilder result = new StringBuilder();
@@ -101,7 +101,7 @@ public class URLEncodedUtils {
     }
 
     
-        private static String decode(final String content, final String encoding) {
+    private static String decode(final String content, final String encoding) {
         try {
             return URLDecoder.decode(content, 
                     encoding != null ? encoding : HTTP.DEFAULT_CONTENT_CHARSET);
@@ -111,7 +111,7 @@ public class URLEncodedUtils {
     }
 
     
-        private static String encode(final String content, final String encoding) {
+    private static String encode(final String content, final String encoding) {
         try {
             return URLEncoder.encode(content, 
                     encoding != null ? encoding : HTTP.DEFAULT_CONTENT_CHARSET);
@@ -121,14 +121,14 @@ public class URLEncodedUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "E5475157C74498E74A568469421CA731", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.000 -0400", hash_original_field = "E5475157C74498E74A568469421CA731", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
 
     public static final String CONTENT_TYPE = "application/x-www-form-urlencoded";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "F835064E8AD0EB0A2D73B235E96ADEAA", hash_generated_field = "3DD3590CE7A2AA7D6399B8BDE25A3AF9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.000 -0400", hash_original_field = "F835064E8AD0EB0A2D73B235E96ADEAA", hash_generated_field = "EADEDF186CBE5B5EA18ADAA5F38884BA")
 
-    private static String PARAMETER_SEPARATOR = "&";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "536C8846926768148DFB5EDE60D2D360", hash_generated_field = "F9CE5D83C4FD4DE7687D1A6031184B60")
+    private static final String PARAMETER_SEPARATOR = "&";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.000 -0400", hash_original_field = "536C8846926768148DFB5EDE60D2D360", hash_generated_field = "14E97C4E5722F77DC637C17244547DAD")
 
-    private static String NAME_VALUE_SEPARATOR = "=";
+    private static final String NAME_VALUE_SEPARATOR = "=";
 }
 

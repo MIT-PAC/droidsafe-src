@@ -9,36 +9,33 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class ComparableTimSort {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "57C26AE792187D8B778587C6F2CC693D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "57C26AE792187D8B778587C6F2CC693D")
 
     private Object[] a;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
 
     private int minGallop = MIN_GALLOP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "F29293D0549CBA3455BA89626253287F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "F29293D0549CBA3455BA89626253287F")
 
     private Object[] tmp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
 
     private int stackSize = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
 
     private int[] runBase;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.488 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.572 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
 
     private int[] runLen;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.502 -0400", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "5BBD9FCBC32870AC846AB34589A15C8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.573 -0400", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "FA47A88A7A53FEA2C539D1DBB037633B")
     private  ComparableTimSort(Object[] a) {
         this.a = a;
-        int len;
-        len = a.length;
-        @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) Object[] newArray;
-        newArray = new Object[len < 2 * INITIAL_TMP_STORAGE_LENGTH ?
+        int len = a.length;
+        @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) Object[] newArray = new Object[len < 2 * INITIAL_TMP_STORAGE_LENGTH ?
                                        len >>> 1 : INITIAL_TMP_STORAGE_LENGTH];//DSFIXME:  CODE0008: Nested ternary operator in expression
         tmp = newArray;
-        int stackLen;
-        stackLen = (len <    120  ?  5 :
+        int stackLen = (len <    120  ?  5 :
                         len <   1542  ? 10 :
                         len < 119151  ? 19 : 40);//DSFIXME:  CODE0008: Nested ternary operator in expression
         runBase = new int[stackLen];
@@ -58,12 +55,12 @@ class ComparableTimSort {
     }
 
     
-        static void sort(Object[] a) {
+    static void sort(Object[] a) {
         sort(a, 0, a.length);
     }
 
     
-        static void sort(Object[] a, int lo, int hi) {
+    static void sort(Object[] a, int lo, int hi) {
         Arrays.checkStartAndEnd(a.length, lo, hi);
         int nRemaining  = hi - lo;
         if (nRemaining < 2)
@@ -93,7 +90,7 @@ class ComparableTimSort {
     }
 
     
-        @SuppressWarnings("fallthrough")
+    @SuppressWarnings("fallthrough")
     private static void binarySort(Object[] a, int lo, int hi, int start) {
         if (DEBUG) assert lo <= start && start <= hi;
         if (start == lo)
@@ -124,7 +121,7 @@ class ComparableTimSort {
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
         if (DEBUG) assert lo < hi;
         int runHi = lo + 1;
@@ -142,7 +139,7 @@ class ComparableTimSort {
     }
 
     
-        private static void reverseRange(Object[] a, int lo, int hi) {
+    private static void reverseRange(Object[] a, int lo, int hi) {
         hi--;
         while (lo < hi) {
             Object t = a[lo];
@@ -152,7 +149,7 @@ class ComparableTimSort {
     }
 
     
-        private static int minRunLength(int n) {
+    private static int minRunLength(int n) {
         if (DEBUG) assert n >= 0;
         int r = 0;
         while (n >= MIN_MERGE) {
@@ -163,7 +160,7 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.510 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.575 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
@@ -174,11 +171,10 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.514 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "FF5A728369FAAAA218A73E83F69512EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.575 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "803A16916F825CB37B1279AACA9FF1AA")
     private void mergeCollapse() {
         {
-            int n;
-            n = stackSize - 2;
+            int n = stackSize - 2;
             {
                 mergeAt(n);
             } //End block
@@ -202,11 +198,10 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.515 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "BD499F03B86E4CD678033407C5F9DBAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.576 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "93554060FE337192E37822454879853E")
     private void mergeForceCollapse() {
         {
-            int n;
-            n = stackSize - 2;
+            int n = stackSize - 2;
             mergeAt(n);
         } //End block
         // ---------- Original Method ----------
@@ -219,24 +214,19 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.522 -0400", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "7D8E63EB69F38C592B37812C98E8336C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.577 -0400", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "4930BED95E5ED4925E28629BCFE48EE5")
     @SuppressWarnings("unchecked")
     private void mergeAt(int i) {
-        int base1;
-        base1 = runBase[i];
-        int len1;
-        len1 = runLen[i];
-        int base2;
-        base2 = runBase[i + 1];
-        int len2;
-        len2 = runLen[i + 1];
+        int base1 = runBase[i];
+        int len1 = runLen[i];
+        int base2 = runBase[i + 1];
+        int len2 = runLen[i + 1];
         runLen[i] = len1 + len2;
         {
             runBase[i + 1] = runBase[i + 2];
             runLen[i + 1] = runLen[i + 2];
         } //End block
-        int k;
-        k = gallopRight((Comparable<Object>) a[base2], a, base1, len1, 0);
+        int k = gallopRight((Comparable<Object>) a[base2], a, base1, len1, 0);
         base1 += k;
         len1 -= k;
         len2 = gallopLeft((Comparable<Object>) a[base1 + len1 - 1], a,
@@ -248,7 +238,7 @@ class ComparableTimSort {
     }
 
     
-        private static int gallopLeft(Comparable<Object> key, Object[] a,
+    private static int gallopLeft(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
         int lastOfs = 0;
@@ -293,7 +283,7 @@ class ComparableTimSort {
     }
 
     
-        private static int gallopRight(Comparable<Object> key, Object[] a,
+    private static int gallopRight(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
         int ofs = 1;
@@ -338,20 +328,15 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.534 -0400", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "F9C7E506478F2EF3FD54B4B34C132B91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.579 -0400", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "42316C10F74500C9D75B1656E1C20CFD")
     @SuppressWarnings("unchecked")
     private void mergeLo(int base1, int len1, int base2, int len2) {
-        Object[] a;
-        a = this.a;
-        Object[] tmp;
-        tmp = ensureCapacity(len1);
+        Object[] a = this.a;
+        Object[] tmp = ensureCapacity(len1);
         System.arraycopy(a, base1, tmp, 0, len1);
-        int cursor1;
-        cursor1 = 0;
-        int cursor2;
-        cursor2 = base2;
-        int dest;
-        dest = base1;
+        int cursor1 = 0;
+        int cursor2 = base2;
+        int dest = base1;
         a[dest++] = a[cursor2++];
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
@@ -360,16 +345,13 @@ class ComparableTimSort {
             System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
         } //End block
-        int minGallop;
-        minGallop = this.minGallop;
+        int minGallop = this.minGallop;
         {
-            int count1;
-            count1 = 0;
-            int count2;
-            count2 = 0;
+            int count1 = 0;
+            int count2 = 0;
             {
                 {
-                    boolean var5CF5BA598A18E1F3EB7F396B833F6C31_272184860 = (((Comparable) a[cursor2]).compareTo(tmp[cursor1]) < 0);
+                    boolean var5CF5BA598A18E1F3EB7F396B833F6C31_961120721 = (((Comparable) a[cursor2]).compareTo(tmp[cursor1]) < 0);
                     {
                         a[dest++] = a[cursor2++];
                         count1 = 0;
@@ -421,20 +403,15 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.549 -0400", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "DE7C1CA05FAA71CD59C649A6C0EE0CD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.581 -0400", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "4113FBCC8A5259637D0D0602F0E25E3F")
     @SuppressWarnings("unchecked")
     private void mergeHi(int base1, int len1, int base2, int len2) {
-        Object[] a;
-        a = this.a;
-        Object[] tmp;
-        tmp = ensureCapacity(len2);
+        Object[] a = this.a;
+        Object[] tmp = ensureCapacity(len2);
         System.arraycopy(a, base2, tmp, 0, len2);
-        int cursor1;
-        cursor1 = base1 + len1 - 1;
-        int cursor2;
-        cursor2 = len2 - 1;
-        int dest;
-        dest = base2 + len2 - 1;
+        int cursor1 = base1 + len1 - 1;
+        int cursor2 = len2 - 1;
+        int dest = base2 + len2 - 1;
         a[dest--] = a[cursor1--];
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
@@ -445,16 +422,13 @@ class ComparableTimSort {
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
         } //End block
-        int minGallop;
-        minGallop = this.minGallop;
+        int minGallop = this.minGallop;
         {
-            int count1;
-            count1 = 0;
-            int count2;
-            count2 = 0;
+            int count1 = 0;
+            int count2 = 0;
             {
                 {
-                    boolean var046B503408434B65FA127E27B1D3015A_642582333 = (((Comparable) tmp[cursor2]).compareTo(a[cursor1]) < 0);
+                    boolean var046B503408434B65FA127E27B1D3015A_977632859 = (((Comparable) tmp[cursor2]).compareTo(a[cursor1]) < 0);
                     {
                         a[dest--] = a[cursor1--];
                         count2 = 0;
@@ -509,12 +483,11 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.556 -0400", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "F570D21B425BAB3000CF4D91B81062C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.582 -0400", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "043B1AFE9268C621D1A2B41E1B9BEDC5")
     private Object[] ensureCapacity(int minCapacity) {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_103852209 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_555907341 = null; //Variable for return #1
         {
-            int newSize;
-            newSize = minCapacity;
+            int newSize = minCapacity;
             newSize |= newSize >> 1;
             newSize |= newSize >> 2;
             newSize |= newSize >> 4;
@@ -522,14 +495,13 @@ class ComparableTimSort {
             newSize |= newSize >> 16;
             newSize = minCapacity;
             newSize = Math.min(newSize, a.length >>> 1);
-            @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) Object[] newArray;
-            newArray = new Object[newSize];
+            @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) Object[] newArray = new Object[newSize];
             tmp = newArray;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_103852209 = tmp;
+        varB4EAC82CA7396A68D541C85D26508E83_555907341 = tmp;
         addTaint(minCapacity);
-        varB4EAC82CA7396A68D541C85D26508E83_103852209.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_103852209;
+        varB4EAC82CA7396A68D541C85D26508E83_555907341.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_555907341;
         // ---------- Original Method ----------
         //if (tmp.length < minCapacity) {
             //int newSize = minCapacity;
@@ -551,17 +523,17 @@ class ComparableTimSort {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.556 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "3931B083EBCAB8BFF212B05D7382794B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.582 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "1A1060B28D1C27E15E432236A4693699")
 
-    private static int MIN_MERGE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.557 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "4A5421B440C2BA29D0228B2FD860C79B")
+    private static final int MIN_MERGE = 32;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.582 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "0A02EC7FDA0A1C3141333E8D07B6EF69")
 
-    private static int MIN_GALLOP = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.557 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "7A5CF663CEF691DAACC94837A499F835")
+    private static final int MIN_GALLOP = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.582 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "9DD7294B2FF4DA861EF4EC84065C8162")
 
-    private static int INITIAL_TMP_STORAGE_LENGTH = 256;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.557 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.582 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-    private static boolean DEBUG = false;
+    private static final boolean DEBUG = false;
 }
 

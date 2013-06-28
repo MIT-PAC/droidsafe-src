@@ -13,7 +13,7 @@ import java.io.Writer;
 
 public class ProxyWriter extends FilterWriter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.627 -0400", hash_original_method = "033B4CFD391086531B126612D5903ED1", hash_generated_method = "D79CCC2D9701130EB837876E07EFC628")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.759 -0400", hash_original_method = "033B4CFD391086531B126612D5903ED1", hash_generated_method = "D79CCC2D9701130EB837876E07EFC628")
     public  ProxyWriter(Writer proxy) {
         super(proxy);
         addTaint(proxy.getTaint());
@@ -21,10 +21,10 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.628 -0400", hash_original_method = "94E64203D23ECC11F0966710C23548F3", hash_generated_method = "C78DE2C4310E487A99E4CE30AB965EEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.762 -0400", hash_original_method = "94E64203D23ECC11F0966710C23548F3", hash_generated_method = "0ABBA075995969B3B91768424CBB42F9")
     @Override
     public Writer append(char c) throws IOException {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_1287432508 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_1232138091 = null; //Variable for return #1
         try 
         {
             beforeWrite(1);
@@ -35,10 +35,10 @@ public class ProxyWriter extends FilterWriter {
         {
             handleIOException(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1287432508 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1232138091 = this;
         addTaint(c);
-        varB4EAC82CA7396A68D541C85D26508E83_1287432508.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1287432508;
+        varB4EAC82CA7396A68D541C85D26508E83_1232138091.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1232138091;
         // ---------- Original Method ----------
         //try {
             //beforeWrite(1);
@@ -51,10 +51,10 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.629 -0400", hash_original_method = "391E9756F83F23FF347EF2129E3A0E99", hash_generated_method = "DA73A0401ADDE9A04D93D012BA4D333D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.765 -0400", hash_original_method = "391E9756F83F23FF347EF2129E3A0E99", hash_generated_method = "31D988F1AE5D8BD3C89C2B2F98494EB4")
     @Override
     public Writer append(CharSequence csq, int start, int end) throws IOException {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_1337187516 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_676904183 = null; //Variable for return #1
         try 
         {
             beforeWrite(end - start);
@@ -65,12 +65,12 @@ public class ProxyWriter extends FilterWriter {
         {
             handleIOException(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1337187516 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_676904183 = this;
         addTaint(csq.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1337187516.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1337187516;
+        varB4EAC82CA7396A68D541C85D26508E83_676904183.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_676904183;
         // ---------- Original Method ----------
         //try {
             //beforeWrite(end - start);
@@ -83,14 +83,13 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.633 -0400", hash_original_method = "AF511130F35AA3E3B287C842560F9DCE", hash_generated_method = "BEBF8AD6C2CB135149377952EDBB3EEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.766 -0400", hash_original_method = "AF511130F35AA3E3B287C842560F9DCE", hash_generated_method = "C1EB371BAF3EC889474A5948AE9A2E30")
     @Override
     public Writer append(CharSequence csq) throws IOException {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_645911877 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_1922535932 = null; //Variable for return #1
         try 
         {
-            int len;
-            len = 0;
+            int len = 0;
             {
                 len = csq.length();
             } //End block
@@ -102,10 +101,10 @@ public class ProxyWriter extends FilterWriter {
         {
             handleIOException(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_645911877 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1922535932 = this;
         addTaint(csq.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_645911877.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_645911877;
+        varB4EAC82CA7396A68D541C85D26508E83_1922535932.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1922535932;
         // ---------- Original Method ----------
         //try {
             //int len = 0;
@@ -122,7 +121,7 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.656 -0400", hash_original_method = "C10E35B15C5C34D2F11AD8F56A8AFBE7", hash_generated_method = "1EB9322108467DA4C5247F7E457F7B02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.767 -0400", hash_original_method = "C10E35B15C5C34D2F11AD8F56A8AFBE7", hash_generated_method = "1EB9322108467DA4C5247F7E457F7B02")
     @Override
     public void write(int idx) throws IOException {
         try 
@@ -147,13 +146,12 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.656 -0400", hash_original_method = "579B5F1267C3E5A23AE0501F4C0FD567", hash_generated_method = "5202EA8B0380C002D6BE26D1FABA6965")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.767 -0400", hash_original_method = "579B5F1267C3E5A23AE0501F4C0FD567", hash_generated_method = "F5DAFFDAC205B0F2FDFF9D8B1AAAA39F")
     @Override
     public void write(char[] chr) throws IOException {
         try 
         {
-            int len;
-            len = 0;
+            int len = 0;
             {
                 len = chr.length;
             } //End block
@@ -181,7 +179,7 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.657 -0400", hash_original_method = "4BD1C735F7EB97F1200118825DBDCCC5", hash_generated_method = "BDD9621D828C3C2E87093A69A4AFBFEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.768 -0400", hash_original_method = "4BD1C735F7EB97F1200118825DBDCCC5", hash_generated_method = "BDD9621D828C3C2E87093A69A4AFBFEE")
     @Override
     public void write(char[] chr, int st, int len) throws IOException {
         try 
@@ -208,13 +206,12 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.657 -0400", hash_original_method = "6B60D7F6AE629840306B83B2B10FEDBF", hash_generated_method = "8102FC18925A0D5F4A9B5EFF45AAF654")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.768 -0400", hash_original_method = "6B60D7F6AE629840306B83B2B10FEDBF", hash_generated_method = "DE06630D9DD69B1AFCE7882C6D223AFD")
     @Override
     public void write(String str) throws IOException {
         try 
         {
-            int len;
-            len = 0;
+            int len = 0;
             {
                 len = str.length();
             } //End block
@@ -242,7 +239,7 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.659 -0400", hash_original_method = "E5A50F6C55F59DD4142D90322431FA35", hash_generated_method = "D7C81C5C2B0EF2B381B61B35680E64DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.769 -0400", hash_original_method = "E5A50F6C55F59DD4142D90322431FA35", hash_generated_method = "D7C81C5C2B0EF2B381B61B35680E64DF")
     @Override
     public void write(String str, int st, int len) throws IOException {
         try 
@@ -269,7 +266,7 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.659 -0400", hash_original_method = "EEECDB779BCD3F1C16C4BB7414585E36", hash_generated_method = "F4E2890B99E6EE56D25924404E914D4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.769 -0400", hash_original_method = "EEECDB779BCD3F1C16C4BB7414585E36", hash_generated_method = "F4E2890B99E6EE56D25924404E914D4A")
     @Override
     public void flush() throws IOException {
         try 
@@ -289,7 +286,7 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.660 -0400", hash_original_method = "EA1F98341C1FEBB76DE541E0DAA4DDD0", hash_generated_method = "4AEAE5624C359BC6B9AE60F5188C3A93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.769 -0400", hash_original_method = "EA1F98341C1FEBB76DE541E0DAA4DDD0", hash_generated_method = "4AEAE5624C359BC6B9AE60F5188C3A93")
     @Override
     public void close() throws IOException {
         try 
@@ -309,21 +306,21 @@ public class ProxyWriter extends FilterWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.660 -0400", hash_original_method = "961C14EE073174624B2AA02C565F3907", hash_generated_method = "2210B044857E5790E2031B7C253A923D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.770 -0400", hash_original_method = "961C14EE073174624B2AA02C565F3907", hash_generated_method = "2210B044857E5790E2031B7C253A923D")
     protected void beforeWrite(int n) throws IOException {
         addTaint(n);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.660 -0400", hash_original_method = "634EDAC0BBD2C7E1FA3D5BDE9765B3F8", hash_generated_method = "9127223EA27B492B068981CDBB807693")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.770 -0400", hash_original_method = "634EDAC0BBD2C7E1FA3D5BDE9765B3F8", hash_generated_method = "9127223EA27B492B068981CDBB807693")
     protected void afterWrite(int n) throws IOException {
         addTaint(n);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.661 -0400", hash_original_method = "A242DFA5F52516C95D0F167B92B745B6", hash_generated_method = "1782E1D1CE0D623FCB8AA6CF8B177B94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.770 -0400", hash_original_method = "A242DFA5F52516C95D0F167B92B745B6", hash_generated_method = "1782E1D1CE0D623FCB8AA6CF8B177B94")
     protected void handleIOException(IOException e) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw e;
         addTaint(e.getTaint());

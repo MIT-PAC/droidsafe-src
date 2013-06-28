@@ -30,20 +30,20 @@ import libcore.util.MutableLong;
 import static libcore.io.OsConstants.*;
 
 final class FileChannelImpl extends FileChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.600 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.268 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
 
     private Object stream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.600 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.268 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
     private FileDescriptor fd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.600 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.268 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
 
     private int mode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.600 -0400", hash_original_field = "6534500F3CBE19A8D61109391469B658", hash_generated_field = "C638AA4272113BB7504205818C055229")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.268 -0400", hash_original_field = "6534500F3CBE19A8D61109391469B658", hash_generated_field = "41CABECFE29C1BC14C56B2F0C987CEF1")
 
-    private SortedSet<FileLock> locks = new TreeSet<FileLock>(LOCK_COMPARATOR);
+    private final SortedSet<FileLock> locks = new TreeSet<FileLock>(LOCK_COMPARATOR);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.600 -0400", hash_original_method = "2735A1029D285B5D3DE10DB0E230E666", hash_generated_method = "F6F44BF98254D27848329B7C58999156")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.268 -0400", hash_original_method = "2735A1029D285B5D3DE10DB0E230E666", hash_generated_method = "F6F44BF98254D27848329B7C58999156")
     public  FileChannelImpl(Object stream, FileDescriptor fd, int mode) {
         this.fd = fd;
         this.stream = stream;
@@ -55,10 +55,10 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.610 -0400", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "8020C7A66E8A98784EFCB78527E67AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.269 -0400", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "B2B0F3650E338E383628A2DFAD2B5BAA")
     private void checkOpen() throws ClosedChannelException {
         {
-            boolean var3A7D61B68AE823F6A30349D498C59A5C_1057124461 = (!isOpen());
+            boolean var3A7D61B68AE823F6A30349D498C59A5C_2089883908 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
@@ -70,7 +70,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.617 -0400", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "9FD441856307A26D07CEC64A4C68174B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.269 -0400", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "9FD441856307A26D07CEC64A4C68174B")
     private void checkReadable() {
         {
             if (DroidSafeAndroidRuntime.control) throw new NonReadableChannelException();
@@ -82,7 +82,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.618 -0400", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "23A7CC7E90B45014537B712989CB83D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.269 -0400", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "23A7CC7E90B45014537B712989CB83D0")
     private void checkWritable() {
         {
             if (DroidSafeAndroidRuntime.control) throw new NonWritableChannelException();
@@ -94,7 +94,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.618 -0400", hash_original_method = "906DDDB64CDCD744F2CC12CE5FEEB0F8", hash_generated_method = "44E5E9D76C63AC678003B5513904037A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.269 -0400", hash_original_method = "906DDDB64CDCD744F2CC12CE5FEEB0F8", hash_generated_method = "44E5E9D76C63AC678003B5513904037A")
     protected void implCloseChannel() throws IOException {
         {
             ((Closeable) stream).close();
@@ -106,11 +106,10 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.619 -0400", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "3259442676B2414990800CDA2CA820F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.270 -0400", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "A34C0B27B0BF1A41D820A8C63BEB64CE")
     private FileLock basicLock(long position, long size, boolean shared, boolean wait) throws IOException {
-        FileLock varB4EAC82CA7396A68D541C85D26508E83_969982429 = null; //Variable for return #1
-        int accessMode;
-        accessMode = (mode & O_ACCMODE);
+        FileLock varB4EAC82CA7396A68D541C85D26508E83_557984100 = null; //Variable for return #1
+        int accessMode = (mode & O_ACCMODE);
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NonWritableChannelException();
@@ -124,17 +123,14 @@ final class FileChannelImpl extends FileChannel {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position=" + position + " size=" + size);
         } //End block
-        FileLock pendingLock;
-        pendingLock = new FileLockImpl(this, position, size, shared);
+        FileLock pendingLock = new FileLockImpl(this, position, size, shared);
         addLock(pendingLock);
-        StructFlock flock;
-        flock = new StructFlock();
+        StructFlock flock = new StructFlock();
         flock.l_type = (short) (shared ? F_RDLCK : F_WRLCK);
         flock.l_whence = (short) SEEK_SET;
         flock.l_start = position;
         flock.l_len = translateLockLength(size);
-        boolean success;
-        success = false;
+        boolean success = false;
         try 
         {
             success = (Libcore.os.fcntlFlock(fd, wait ? F_SETLKW64 : F_SETLK64, flock) != -1);
@@ -149,32 +145,30 @@ final class FileChannelImpl extends FileChannel {
                 removeLock(pendingLock);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_969982429 = success ? pendingLock : null;
+        varB4EAC82CA7396A68D541C85D26508E83_557984100 = success ? pendingLock : null;
         addTaint(position);
         addTaint(size);
         addTaint(shared);
         addTaint(wait);
-        varB4EAC82CA7396A68D541C85D26508E83_969982429.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_969982429;
+        varB4EAC82CA7396A68D541C85D26508E83_557984100.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_557984100;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        private static long translateLockLength(long byteCount) {
+    private static long translateLockLength(long byteCount) {
         return (byteCount == Long.MAX_VALUE) ? 0 : byteCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.634 -0400", hash_original_method = "2D9781ECA7693E91068070ABFFE1E1EC", hash_generated_method = "0BE2343CA59BE59BD95E77CE46CAE312")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.271 -0400", hash_original_method = "2D9781ECA7693E91068070ABFFE1E1EC", hash_generated_method = "3351D62246A803AF3CC68FB8C58878E5")
     public final FileLock lock(long position, long size, boolean shared) throws IOException {
-        FileLock varB4EAC82CA7396A68D541C85D26508E83_873059040 = null; //Variable for return #1
+        FileLock varB4EAC82CA7396A68D541C85D26508E83_631525924 = null; //Variable for return #1
         checkOpen();
-        FileLock resultLock;
-        resultLock = null;
+        FileLock resultLock = null;
         {
-            boolean completed;
-            completed = false;
+            boolean completed = false;
             try 
             {
                 begin();
@@ -186,12 +180,12 @@ final class FileChannelImpl extends FileChannel {
                 end(completed);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_873059040 = resultLock;
+        varB4EAC82CA7396A68D541C85D26508E83_631525924 = resultLock;
         addTaint(position);
         addTaint(size);
         addTaint(shared);
-        varB4EAC82CA7396A68D541C85D26508E83_873059040.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_873059040;
+        varB4EAC82CA7396A68D541C85D26508E83_631525924.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_631525924;
         // ---------- Original Method ----------
         //checkOpen();
         //FileLock resultLock = null;
@@ -209,27 +203,26 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.635 -0400", hash_original_method = "EEB7B11B25906F0628185BB3DA938264", hash_generated_method = "4B7CF3499BA5C0021A4FCCE73F7BAB6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.272 -0400", hash_original_method = "EEB7B11B25906F0628185BB3DA938264", hash_generated_method = "7508EF05D9A9A30C0D0A1A75223CFFEE")
     public final FileLock tryLock(long position, long size, boolean shared) throws IOException {
-        FileLock varB4EAC82CA7396A68D541C85D26508E83_151095029 = null; //Variable for return #1
+        FileLock varB4EAC82CA7396A68D541C85D26508E83_188824987 = null; //Variable for return #1
         checkOpen();
-        varB4EAC82CA7396A68D541C85D26508E83_151095029 = basicLock(position, size, shared, false);
+        varB4EAC82CA7396A68D541C85D26508E83_188824987 = basicLock(position, size, shared, false);
         addTaint(position);
         addTaint(size);
         addTaint(shared);
-        varB4EAC82CA7396A68D541C85D26508E83_151095029.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_151095029;
+        varB4EAC82CA7396A68D541C85D26508E83_188824987.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_188824987;
         // ---------- Original Method ----------
         //checkOpen();
         //return basicLock(position, size, shared, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.639 -0400", hash_original_method = "62214805062DB6ECE1A1C9B69D272F36", hash_generated_method = "279E799C31F9ADD1EB15F728F0533924")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.272 -0400", hash_original_method = "62214805062DB6ECE1A1C9B69D272F36", hash_generated_method = "74A493043DCF5E21C2462874E9D3617A")
     public void release(FileLock lock) throws IOException {
         checkOpen();
-        StructFlock flock;
-        flock = new StructFlock();
+        StructFlock flock = new StructFlock();
         flock.l_type = (short) F_UNLCK;
         flock.l_whence = (short) SEEK_SET;
         flock.l_start = lock.position();
@@ -260,7 +253,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.640 -0400", hash_original_method = "66F727B932913E59560F8F92301E4A0B", hash_generated_method = "0B5BE715AC9EE99FD6C1A7CAAC89BB55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.273 -0400", hash_original_method = "66F727B932913E59560F8F92301E4A0B", hash_generated_method = "0B5BE715AC9EE99FD6C1A7CAAC89BB55")
     public void force(boolean metadata) throws IOException {
         checkOpen();
         {
@@ -295,9 +288,9 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.650 -0400", hash_original_method = "5452C18A8AEE816635F14172EC065A87", hash_generated_method = "345808BA901311FF566642D1C9C73878")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.274 -0400", hash_original_method = "5452C18A8AEE816635F14172EC065A87", hash_generated_method = "E7277E2A3757367795C398081C66B504")
     public final MappedByteBuffer map(MapMode mapMode, long position, long size) throws IOException {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1283454461 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1288004032 = null; //Variable for return #1
         checkOpen();
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("mapMode == null");
@@ -305,8 +298,7 @@ final class FileChannelImpl extends FileChannel {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position=" + position + " size=" + size);
         } //End block
-        int accessMode;
-        accessMode = (mode & O_ACCMODE);
+        int accessMode = (mode & O_ACCMODE);
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NonWritableChannelException();
@@ -316,7 +308,7 @@ final class FileChannelImpl extends FileChannel {
             if (DroidSafeAndroidRuntime.control) throw new NonReadableChannelException();
         } //End block
         {
-            boolean var88B0C7780075C53660F1421ECF91608E_778896746 = (position + size > size());
+            boolean var88B0C7780075C53660F1421ECF91608E_1878507120 = (position + size > size());
             {
                 try 
                 {
@@ -328,36 +320,33 @@ final class FileChannelImpl extends FileChannel {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        long alignment;
-        alignment = position - position % Libcore.os.sysconf(_SC_PAGE_SIZE);
-        int offset;
-        offset = (int) (position - alignment);
-        MemoryBlock block;
-        block = MemoryBlock.mmap(fd, alignment, size + offset, mapMode);
-        varB4EAC82CA7396A68D541C85D26508E83_1283454461 = new MappedByteBufferAdapter(block, (int) size, offset, mapMode);
+        long alignment = position - position % Libcore.os.sysconf(_SC_PAGE_SIZE);
+        int offset = (int) (position - alignment);
+        MemoryBlock block = MemoryBlock.mmap(fd, alignment, size + offset, mapMode);
+        varB4EAC82CA7396A68D541C85D26508E83_1288004032 = new MappedByteBufferAdapter(block, (int) size, offset, mapMode);
         addTaint(mapMode.getTaint());
         addTaint(position);
         addTaint(size);
-        varB4EAC82CA7396A68D541C85D26508E83_1283454461.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1283454461;
+        varB4EAC82CA7396A68D541C85D26508E83_1288004032.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1288004032;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.654 -0400", hash_original_method = "2294C6BEF1501D1EBDDF8CC0BA1CBE45", hash_generated_method = "BD4E69765F6FC0185D5CDB1017ACF591")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.274 -0400", hash_original_method = "2294C6BEF1501D1EBDDF8CC0BA1CBE45", hash_generated_method = "476AEDCF6EF646BE76A1336973BF434F")
     public long position() throws IOException {
         checkOpen();
         try 
         {
-            long varF0C05ECAF241A024A616B548A1469DB9_2067456703 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
+            long varF0C05ECAF241A024A616B548A1469DB9_410381436 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
         } //End block
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
         } //End block
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1596111199 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1596111199;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1247526973 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1247526973;
         // ---------- Original Method ----------
         //checkOpen();
         //try {
@@ -368,9 +357,9 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.660 -0400", hash_original_method = "38E87DF17F47600879F85DE74B488325", hash_generated_method = "925A69306B3ABD9441ED644E8F69E8F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.275 -0400", hash_original_method = "38E87DF17F47600879F85DE74B488325", hash_generated_method = "7357D183AD79AA50ED4DB4444CA573AC")
     public FileChannel position(long newPosition) throws IOException {
-        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1141363351 = null; //Variable for return #1
+        FileChannel varB4EAC82CA7396A68D541C85D26508E83_875860083 = null; //Variable for return #1
         checkOpen();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position: " + newPosition);
@@ -383,10 +372,10 @@ final class FileChannelImpl extends FileChannel {
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1141363351 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_875860083 = this;
         addTaint(newPosition);
-        varB4EAC82CA7396A68D541C85D26508E83_1141363351.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1141363351;
+        varB4EAC82CA7396A68D541C85D26508E83_875860083.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_875860083;
         // ---------- Original Method ----------
         //checkOpen();
         //if (newPosition < 0) {
@@ -401,16 +390,16 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.660 -0400", hash_original_method = "CBC403D41CEC137F7E33592DD6647C43", hash_generated_method = "8115C2C8BEE40E04B0367DA93806EE76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.276 -0400", hash_original_method = "CBC403D41CEC137F7E33592DD6647C43", hash_generated_method = "28C102B5EB6145CDCEC426AF06692496")
     public int read(ByteBuffer buffer, long position) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position: " + position);
         } //End block
-        int varC8FBA86077E74EB96A8306D213234DFF_728150244 = (readImpl(buffer, position));
+        int varC8FBA86077E74EB96A8306D213234DFF_278923901 = (readImpl(buffer, position));
         addTaint(buffer.getTaint());
         addTaint(position);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625826558 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625826558;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762449710 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762449710;
         // ---------- Original Method ----------
         //if (position < 0) {
             //throw new IllegalArgumentException("position: " + position);
@@ -419,29 +408,27 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.666 -0400", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "F0ED51B8116A4D67195D56F89E9C7C28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.278 -0400", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "A32D1EFB221C0FA3C91C65BD31F51E3E")
     public int read(ByteBuffer buffer) throws IOException {
-        int var50E5072F55F0FD552B497AE53AA217B8_1199918606 = (readImpl(buffer, -1));
+        int var50E5072F55F0FD552B497AE53AA217B8_1497848087 = (readImpl(buffer, -1));
         addTaint(buffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972651999 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972651999;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260731067 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260731067;
         // ---------- Original Method ----------
         //return readImpl(buffer, -1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.679 -0400", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "854B25952C77C7D0BCECA3C54E12896D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.280 -0400", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "F25F0FFBDE4090FB62B028C38F1F699C")
     private int readImpl(ByteBuffer buffer, long position) throws IOException {
         buffer.checkWritable();
         checkOpen();
         checkReadable();
         {
-            boolean var0E78D70DC6563093DEFA99F93708571E_1084809824 = (!buffer.hasRemaining());
+            boolean var0E78D70DC6563093DEFA99F93708571E_645380804 = (!buffer.hasRemaining());
         } //End collapsed parenthetic
-        int bytesRead;
-        bytesRead = 0;
-        boolean completed;
-        completed = false;
+        int bytesRead = 0;
+        boolean completed = false;
         try 
         {
             begin();
@@ -477,22 +464,20 @@ final class FileChannelImpl extends FileChannel {
         } //End block
         addTaint(buffer.getTaint());
         addTaint(position);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579841517 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579841517;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_854814684 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_854814684;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.680 -0400", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "190A08F4B8797922ED1721C8163C1729")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.282 -0400", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "38F2F1623BC6AF0FB4489B2D22D371A8")
     private int transferIoVec(IoVec ioVec) throws IOException {
         {
-            boolean var5FBA10013EC452D05E58830F20688B44_1356758353 = (ioVec.init() == 0);
+            boolean var5FBA10013EC452D05E58830F20688B44_288603871 = (ioVec.init() == 0);
         } //End collapsed parenthetic
-        int bytesTransferred;
-        bytesTransferred = 0;
-        boolean completed;
-        completed = false;
+        int bytesTransferred = 0;
+        boolean completed = false;
         try 
         {
             begin();
@@ -505,8 +490,8 @@ final class FileChannelImpl extends FileChannel {
         } //End block
         ioVec.didTransfer(bytesTransferred);
         addTaint(ioVec.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1162409762 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1162409762;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572606184 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572606184;
         // ---------- Original Method ----------
         //if (ioVec.init() == 0) {
             //return 0;
@@ -525,17 +510,17 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.680 -0400", hash_original_method = "C19453CFF2AA37841406A95ED2CF0809", hash_generated_method = "7A4A21368ACAE3BBF5D46DB15BAFBDA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.283 -0400", hash_original_method = "C19453CFF2AA37841406A95ED2CF0809", hash_generated_method = "92C724F356CBDD38360629D440EB260A")
     public long read(ByteBuffer[] buffers, int offset, int length) throws IOException {
         Arrays.checkOffsetAndCount(buffers.length, offset, length);
         checkOpen();
         checkReadable();
-        long var61DFF2F81C7264FB8A559E2B07968B87_2014754135 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.READV)));
+        long var61DFF2F81C7264FB8A559E2B07968B87_1833123406 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.READV)));
         addTaint(buffers[0].getTaint());
         addTaint(offset);
         addTaint(length);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1751998630 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1751998630;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_2145654599 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_2145654599;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffers.length, offset, length);
         //checkOpen();
@@ -544,19 +529,19 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.681 -0400", hash_original_method = "BF0F3D7AEFAA2AFACA7A21CBB184DE89", hash_generated_method = "0BCA674A4DF8B0FFBB365FE73489831C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.283 -0400", hash_original_method = "BF0F3D7AEFAA2AFACA7A21CBB184DE89", hash_generated_method = "97179C675A2122FA47C7FD6AB0CC5F89")
     public long size() throws IOException {
         checkOpen();
         try 
         {
-            long var2D9D0231F90D97A868E782013621466D_603995255 = (Libcore.os.fstat(fd).st_size);
+            long var2D9D0231F90D97A868E782013621466D_872265768 = (Libcore.os.fstat(fd).st_size);
         } //End block
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
         } //End block
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_910173757 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_910173757;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_871048657 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_871048657;
         // ---------- Original Method ----------
         //checkOpen();
         //try {
@@ -567,11 +552,11 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.684 -0400", hash_original_method = "80C3AD203B1B9D1C1064C9E60FE9152A", hash_generated_method = "729DFE8F867EC1A9726CBF482CB5E480")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.285 -0400", hash_original_method = "80C3AD203B1B9D1C1064C9E60FE9152A", hash_generated_method = "80050DB98B1323DF63DC7B47B27A0890")
     public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException {
         checkOpen();
         {
-            boolean varF23B30E846ED685E8A7E6FEA343CC099_704793232 = (!src.isOpen());
+            boolean varF23B30E846ED685E8A7E6FEA343CC099_1164194370 = (!src.isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
@@ -581,48 +566,43 @@ final class FileChannelImpl extends FileChannel {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position=" + position + " count=" + count);
         } //End block
         {
-            boolean var2CD6C7979F5AB659D2F593D023E7DA49_1669114100 = (position > size());
+            boolean var2CD6C7979F5AB659D2F593D023E7DA49_1244231625 = (position > size());
         } //End collapsed parenthetic
         {
-            FileChannel fileSrc;
-            fileSrc = (FileChannel) src;
-            long size;
-            size = fileSrc.size();
-            long filePosition;
-            filePosition = fileSrc.position();
+            FileChannel fileSrc = (FileChannel) src;
+            long size = fileSrc.size();
+            long filePosition = fileSrc.position();
             count = Math.min(count, size - filePosition);
-            ByteBuffer buffer;
-            buffer = fileSrc.map(MapMode.READ_ONLY, filePosition, count);
+            ByteBuffer buffer = fileSrc.map(MapMode.READ_ONLY, filePosition, count);
             try 
             {
                 fileSrc.position(filePosition + count);
-                long var6A4AAB19F104CB854DDCC8B03A438627_1479968330 = (write(buffer, position));
+                long var6A4AAB19F104CB854DDCC8B03A438627_1472564181 = (write(buffer, position));
             } //End block
             finally 
             {
                 NioUtils.freeDirectBuffer(buffer);
             } //End block
         } //End block
-        ByteBuffer buffer;
-        buffer = ByteBuffer.allocate((int) count);
+        ByteBuffer buffer = ByteBuffer.allocate((int) count);
         src.read(buffer);
         buffer.flip();
-        long var96E69A084CA658E2471F1D799328A275_990161720 = (write(buffer, position));
+        long var96E69A084CA658E2471F1D799328A275_2131180953 = (write(buffer, position));
         addTaint(src.getTaint());
         addTaint(position);
         addTaint(count);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1200451092 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1200451092;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1402008224 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1402008224;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.687 -0400", hash_original_method = "66697B5A4B32B4AD2132D8B7D53DF0CD", hash_generated_method = "DB9103D0D4241369BD00E49BF2A176C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.287 -0400", hash_original_method = "66697B5A4B32B4AD2132D8B7D53DF0CD", hash_generated_method = "C64D927B2F703A633F61159DAD0971F0")
     public long transferTo(long position, long count, WritableByteChannel target) throws IOException {
         checkOpen();
         {
-            boolean var950F8A95B861E9638CA19C9DE447BAD5_1511360857 = (!target.isOpen());
+            boolean var950F8A95B861E9638CA19C9DE447BAD5_236875797 = (!target.isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
@@ -635,23 +615,19 @@ final class FileChannelImpl extends FileChannel {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position=" + position + " count=" + count);
         } //End block
         {
-            boolean var50ED1CD0B79B3926EEAFAADB94127E2A_886762319 = (count == 0 || position >= size());
+            boolean var50ED1CD0B79B3926EEAFAADB94127E2A_1391886761 = (count == 0 || position >= size());
         } //End collapsed parenthetic
         count = Math.min(count, size() - position);
-        boolean completed;
-        completed = false;
+        boolean completed = false;
         {
-            FileDescriptor outFd;
-            outFd = ((SocketChannelImpl) target).getFD();
+            FileDescriptor outFd = ((SocketChannelImpl) target).getFD();
             try 
             {
                 begin();
                 try 
                 {
-                    MutableLong offset;
-                    offset = new MutableLong(position);
-                    long rc;
-                    rc = Libcore.os.sendfile(outFd, fd, offset, count);
+                    MutableLong offset = new MutableLong(position);
+                    long rc = Libcore.os.sendfile(outFd, fd, offset, count);
                     completed = true;
                 } //End block
                 catch (ErrnoException errnoException)
@@ -666,12 +642,11 @@ final class FileChannelImpl extends FileChannel {
                 end(completed);
             } //End block
         } //End block
-        ByteBuffer buffer;
-        buffer = null;
+        ByteBuffer buffer = null;
         try 
         {
             buffer = map(MapMode.READ_ONLY, position, count);
-            long var95400C0A68C0E584C17EE42C83DC2755_456654526 = (target.write(buffer));
+            long var95400C0A68C0E584C17EE42C83DC2755_307766995 = (target.write(buffer));
         } //End block
         finally 
         {
@@ -680,23 +655,23 @@ final class FileChannelImpl extends FileChannel {
         addTaint(position);
         addTaint(count);
         addTaint(target.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_118165519 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_118165519;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_773610344 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_773610344;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.688 -0400", hash_original_method = "062BFFD7E484D8312E945E8E43437F48", hash_generated_method = "5ACB60E46151E8AB7610AEDB52D9D27D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.288 -0400", hash_original_method = "062BFFD7E484D8312E945E8E43437F48", hash_generated_method = "0FC621CF03F383ABF1B98333A6881B0C")
     public FileChannel truncate(long size) throws IOException {
-        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1432666791 = null; //Variable for return #1
+        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1419144770 = null; //Variable for return #1
         checkOpen();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size: " + size);
         } //End block
         checkWritable();
         {
-            boolean var4D7F81A5607B883D07B09D0F1D9F39DE_1103488143 = (size < size());
+            boolean var4D7F81A5607B883D07B09D0F1D9F39DE_506062009 = (size < size());
             {
                 try 
                 {
@@ -708,10 +683,10 @@ final class FileChannelImpl extends FileChannel {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1432666791 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1419144770 = this;
         addTaint(size);
-        varB4EAC82CA7396A68D541C85D26508E83_1432666791.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1432666791;
+        varB4EAC82CA7396A68D541C85D26508E83_1419144770.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1419144770;
         // ---------- Original Method ----------
         //checkOpen();
         //if (size < 0) {
@@ -729,16 +704,16 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.707 -0400", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "886C255D1485A1C11136C8EC7A149F7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.289 -0400", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "98F619A0E41CCD91B6DBCC8170364764")
     public int write(ByteBuffer buffer, long position) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("position: " + position);
         } //End block
-        int varBE3582525B9D79C935C27EAFAB1594AA_1850102098 = (writeImpl(buffer, position));
+        int varBE3582525B9D79C935C27EAFAB1594AA_354987297 = (writeImpl(buffer, position));
         addTaint(buffer.getTaint());
         addTaint(position);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315684697 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315684697;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97437901 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97437901;
         // ---------- Original Method ----------
         //if (position < 0) {
             //throw new IllegalArgumentException("position: " + position);
@@ -747,18 +722,18 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.708 -0400", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "D01CC53B787731B13AB6107DC60E26D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.289 -0400", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "732F4D979CBE728862FCA3022CC33120")
     public int write(ByteBuffer buffer) throws IOException {
-        int var6F7B4F4AB0EC6E9CBB45E23292A8E94C_182219851 = (writeImpl(buffer, -1));
+        int var6F7B4F4AB0EC6E9CBB45E23292A8E94C_1908498535 = (writeImpl(buffer, -1));
         addTaint(buffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555215175 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555215175;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029616426 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029616426;
         // ---------- Original Method ----------
         //return writeImpl(buffer, -1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.708 -0400", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "9638666D5824B06CCBD528A14B9DFD56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.290 -0400", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "0C5F051E30C54837647A5270F909997D")
     private int writeImpl(ByteBuffer buffer, long position) throws IOException {
         checkOpen();
         checkWritable();
@@ -766,12 +741,10 @@ final class FileChannelImpl extends FileChannel {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("buffer == null");
         } //End block
         {
-            boolean var0E78D70DC6563093DEFA99F93708571E_403217342 = (!buffer.hasRemaining());
+            boolean var0E78D70DC6563093DEFA99F93708571E_496532590 = (!buffer.hasRemaining());
         } //End collapsed parenthetic
-        int bytesWritten;
-        bytesWritten = 0;
-        boolean completed;
-        completed = false;
+        int bytesWritten = 0;
+        boolean completed = false;
         try 
         {
             begin();
@@ -799,24 +772,24 @@ final class FileChannelImpl extends FileChannel {
         } //End block
         addTaint(buffer.getTaint());
         addTaint(position);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600045162 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600045162;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626355056 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626355056;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.709 -0400", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "D58B5FBDD3BEE319491DD75040B3CAE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.290 -0400", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "1A4D284C313BD562F4899CDC47E44134")
     public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {
         Arrays.checkOffsetAndCount(buffers.length, offset, length);
         checkOpen();
         checkWritable();
-        long var9B6E3BBDE0B52650514B28B2E2435980_1395929485 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.WRITEV)));
+        long var9B6E3BBDE0B52650514B28B2E2435980_1413012757 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.WRITEV)));
         addTaint(buffers[0].getTaint());
         addTaint(offset);
         addTaint(length);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1770494051 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1770494051;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1933793428 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1933793428;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffers.length, offset, length);
         //checkOpen();
@@ -825,7 +798,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-        static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length, boolean copyingIn) {
+    static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length, boolean copyingIn) {
         int count = 0;
         for (int i = offset; i < offset + length; ++i) {
             count += buffers[i].remaining();
@@ -837,31 +810,30 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.709 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "38D953AFD3B99B7619EA1054C4C6C3D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.291 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "4A8F7204D34A1935309932D385ADBB14")
     public FileDescriptor getFD() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_914093501 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_914093501 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_914093501.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_914093501;
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1406524811 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1406524811 = fd;
+        varB4EAC82CA7396A68D541C85D26508E83_1406524811.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1406524811;
         // ---------- Original Method ----------
         //return fd;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.785 -0400", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "3DE3B0209C5E1F901DC01946B56F4492")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.296 -0400", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "649BC42855048CDD68E2BCC060DE18FE")
     private synchronized void addLock(FileLock lock) throws OverlappingFileLockException {
-        long lockEnd;
-        lockEnd = lock.position() + lock.size();
+        long lockEnd = lock.position() + lock.size();
         {
-            Iterator<FileLock> var1B4F03C46BF7C2A350988A93F8A6C177_703459641 = (locks).iterator();
-            var1B4F03C46BF7C2A350988A93F8A6C177_703459641.hasNext();
-            FileLock existingLock = var1B4F03C46BF7C2A350988A93F8A6C177_703459641.next();
+            Iterator<FileLock> var1B4F03C46BF7C2A350988A93F8A6C177_1251110879 = (locks).iterator();
+            var1B4F03C46BF7C2A350988A93F8A6C177_1251110879.hasNext();
+            FileLock existingLock = var1B4F03C46BF7C2A350988A93F8A6C177_1251110879.next();
             {
                 {
-                    boolean var6C88C86743E4FCDC495F2959E8364F37_403682590 = (existingLock.position() > lockEnd);
+                    boolean var6C88C86743E4FCDC495F2959E8364F37_746587241 = (existingLock.position() > lockEnd);
                 } //End collapsed parenthetic
                 {
-                    boolean var84A341423D5A52E93BB79252C5A60BE1_1070005983 = (existingLock.overlaps(lock.position(), lock.size()));
+                    boolean var84A341423D5A52E93BB79252C5A60BE1_1270539978 = (existingLock.overlaps(lock.position(), lock.size()));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new OverlappingFileLockException();
                     } //End block
@@ -884,7 +856,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.785 -0400", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "45A60E7E58A4F09BCC8FAF756A093153")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.296 -0400", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "45A60E7E58A4F09BCC8FAF756A093153")
     private synchronized void removeLock(FileLock lock) {
         locks.remove(lock);
         addTaint(lock.getTaint());
@@ -894,11 +866,11 @@ final class FileChannelImpl extends FileChannel {
 
     
     private static final class FileLockImpl extends FileLock {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.785 -0400", hash_original_field = "54A67E24EC9ED4A409BC3E533D36FB19", hash_generated_field = "4E02554B0BEBB8127D76AE5D5E6B5FAD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.296 -0400", hash_original_field = "54A67E24EC9ED4A409BC3E533D36FB19", hash_generated_field = "4E02554B0BEBB8127D76AE5D5E6B5FAD")
 
         private boolean isReleased = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.786 -0400", hash_original_method = "DBB23F8476AE80F00EB4C7CF229EA4B9", hash_generated_method = "9ACAC724FFC3D3DF8DD4061D85A04AD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.297 -0400", hash_original_method = "DBB23F8476AE80F00EB4C7CF229EA4B9", hash_generated_method = "9ACAC724FFC3D3DF8DD4061D85A04AD6")
         public  FileLockImpl(FileChannel channel, long position, long size, boolean shared) {
             super(channel, position, size, shared);
             addTaint(channel.getTaint());
@@ -909,20 +881,20 @@ final class FileChannelImpl extends FileChannel {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.786 -0400", hash_original_method = "AAE954E5885EFA2B8D6D7679145B1DEF", hash_generated_method = "61EA8F8C27B9051E2BCBC5AC7F9FF657")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.297 -0400", hash_original_method = "AAE954E5885EFA2B8D6D7679145B1DEF", hash_generated_method = "3016F9A2CB63BAE584E425CD9AE55133")
         public boolean isValid() {
-            boolean varAFEB083609C9546DA785CB8359B712FC_960425040 = (!isReleased && channel().isOpen());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_737256764 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_737256764;
+            boolean varAFEB083609C9546DA785CB8359B712FC_1592431627 = (!isReleased && channel().isOpen());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260269201 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1260269201;
             // ---------- Original Method ----------
             //return !isReleased && channel().isOpen();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.789 -0400", hash_original_method = "7DF971FEA31B34CE257DD1638735950E", hash_generated_method = "191476B419BB219B6FA88A30E28F78EF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.297 -0400", hash_original_method = "7DF971FEA31B34CE257DD1638735950E", hash_generated_method = "E2184DCE262C109E6317680DCC936556")
         public void release() throws IOException {
             {
-                boolean var557F822D36CAEDF3BF03949648F26F96_1853924879 = (!channel().isOpen());
+                boolean var557F822D36CAEDF3BF03949648F26F96_1578207758 = (!channel().isOpen());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
                 } //End block
@@ -946,19 +918,17 @@ final class FileChannelImpl extends FileChannel {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.790 -0400", hash_original_field = "214EF2C30F414C8FDB98024F4777CF3E", hash_generated_field = "250E927A0CFF5283EEBB835A6537D476")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.298 -0400", hash_original_field = "214EF2C30F414C8FDB98024F4777CF3E", hash_generated_field = "B942C76CBADD07E46C36C598F3CE8A93")
 
-    private static Comparator<FileLock> LOCK_COMPARATOR = new Comparator<FileLock>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.790 -0400", hash_original_method = "BAD31C1963B2F965BA94839291F4C17C", hash_generated_method = "E61563FDDBB2FDBA83587486F5B925B2")
+    private static final Comparator<FileLock> LOCK_COMPARATOR = new Comparator<FileLock>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.298 -0400", hash_original_method = "BAD31C1963B2F965BA94839291F4C17C", hash_generated_method = "09544778190497FCE22242F527472A85")
         public int compare(FileLock lock1, FileLock lock2) {
-            long position1;
-            position1 = lock1.position();
-            long position2;
-            position2 = lock2.position();
+            long position1 = lock1.position();
+            long position2 = lock2.position();
             addTaint(lock1.getTaint());
             addTaint(lock2.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656197984 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656197984;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230991941 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230991941;
             // ---------- Original Method ----------
             //long position1 = lock1.position();
             //long position2 = lock2.position();

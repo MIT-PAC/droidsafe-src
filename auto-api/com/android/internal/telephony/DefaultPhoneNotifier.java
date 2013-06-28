@@ -18,11 +18,11 @@ import android.util.Log;
 import com.android.internal.telephony.ITelephonyRegistry;
 
 public class DefaultPhoneNotifier implements PhoneNotifier {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.351 -0400", hash_original_field = "DD0FB23439ECB9C0C2624C354888EAF5", hash_generated_field = "4C8DBF7E7839184D9CCCD54726CB48C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.061 -0400", hash_original_field = "DD0FB23439ECB9C0C2624C354888EAF5", hash_generated_field = "4C8DBF7E7839184D9CCCD54726CB48C0")
 
     private ITelephonyRegistry mRegistry;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.352 -0400", hash_original_method = "0D80097176ECBA025B5ECF690723E738", hash_generated_method = "48C13188610C75D77DD7EDC9D4536829")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.062 -0400", hash_original_method = "0D80097176ECBA025B5ECF690723E738", hash_generated_method = "48C13188610C75D77DD7EDC9D4536829")
       DefaultPhoneNotifier() {
         mRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
                     "telephony.registry"));
@@ -32,14 +32,12 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.356 -0400", hash_original_method = "B1B04D5C561E6616E6BB5E666E01B9EA", hash_generated_method = "D09037592A2CA84A2182BFDD641709BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.063 -0400", hash_original_method = "B1B04D5C561E6616E6BB5E666E01B9EA", hash_generated_method = "D4E8847C887AB70E0087EC79781F4E09")
     public void notifyPhoneState(Phone sender) {
-        Call ringingCall;
-        ringingCall = sender.getRingingCall();
-        String incomingNumber;
-        incomingNumber = "";
+        Call ringingCall = sender.getRingingCall();
+        String incomingNumber = "";
         {
-            boolean varB2F9A460C50567A982B58D3FB96A1538_183049645 = (ringingCall != null && ringingCall.getEarliestConnection() != null);
+            boolean varB2F9A460C50567A982B58D3FB96A1538_458144459 = (ringingCall != null && ringingCall.getEarliestConnection() != null);
             {
                 incomingNumber = ringingCall.getEarliestConnection().getAddress();
             } //End block
@@ -64,10 +62,9 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.356 -0400", hash_original_method = "8120B7915F3C7B653A108168FE940FC9", hash_generated_method = "FA4940AE922F38C1FE43C9FBEE6E8AC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.064 -0400", hash_original_method = "8120B7915F3C7B653A108168FE940FC9", hash_generated_method = "E6688BDAFED716A21D713C6643EB77AB")
     public void notifyServiceState(Phone sender) {
-        ServiceState ss;
-        ss = sender.getServiceState();
+        ServiceState ss = sender.getServiceState();
         {
             ss = new ServiceState();
             ss.setStateOutOfService();
@@ -92,7 +89,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.357 -0400", hash_original_method = "51C3EBD9D5F86649F01134EE2C844096", hash_generated_method = "5EAC87B18CC4F279FD8999C7C7149B06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.064 -0400", hash_original_method = "51C3EBD9D5F86649F01134EE2C844096", hash_generated_method = "5EAC87B18CC4F279FD8999C7C7149B06")
     public void notifySignalStrength(Phone sender) {
         try 
         {
@@ -109,7 +106,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.357 -0400", hash_original_method = "EEA6E3D036FE30A21A0E7B01738A2091", hash_generated_method = "6CBFD25648C8FF77BE6DCD7F8710C9BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.065 -0400", hash_original_method = "EEA6E3D036FE30A21A0E7B01738A2091", hash_generated_method = "6CBFD25648C8FF77BE6DCD7F8710C9BB")
     public void notifyMessageWaitingChanged(Phone sender) {
         try 
         {
@@ -126,7 +123,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.358 -0400", hash_original_method = "61F204C17435F73A0638C1B2194C11D4", hash_generated_method = "349712B2920A4FEA7C33E1DD6933682A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.066 -0400", hash_original_method = "61F204C17435F73A0638C1B2194C11D4", hash_generated_method = "349712B2920A4FEA7C33E1DD6933682A")
     public void notifyCallForwardingChanged(Phone sender) {
         try 
         {
@@ -143,7 +140,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.358 -0400", hash_original_method = "6186BE83E934F018920409C47A141A66", hash_generated_method = "0C4FD0525427BDC6CD03B9D20D4B640B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.066 -0400", hash_original_method = "6186BE83E934F018920409C47A141A66", hash_generated_method = "0C4FD0525427BDC6CD03B9D20D4B640B")
     public void notifyDataActivity(Phone sender) {
         try 
         {
@@ -160,7 +157,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.359 -0400", hash_original_method = "C38F00340F2CC27E90424052E94F9D23", hash_generated_method = "B852C3F95009F5AED8BEAD1A8332CC54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.067 -0400", hash_original_method = "C38F00340F2CC27E90424052E94F9D23", hash_generated_method = "B852C3F95009F5AED8BEAD1A8332CC54")
     public void notifyDataConnection(Phone sender, String reason, String apnType,
             Phone.DataState state) {
         doNotifyDataConnection(sender, reason, apnType, state);
@@ -173,23 +170,18 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.366 -0400", hash_original_method = "45F138472694590FF541E86BA364ACA8", hash_generated_method = "EE7FEB527664C8CA894B75A0E6538D75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.068 -0400", hash_original_method = "45F138472694590FF541E86BA364ACA8", hash_generated_method = "78F08B5643B546A7DF0815A915E2536D")
     private void doNotifyDataConnection(Phone sender, String reason, String apnType,
             Phone.DataState state) {
-        TelephonyManager telephony;
-        telephony = TelephonyManager.getDefault();
-        LinkProperties linkProperties;
-        linkProperties = null;
-        LinkCapabilities linkCapabilities;
-        linkCapabilities = null;
-        boolean roaming;
-        roaming = false;
+        TelephonyManager telephony = TelephonyManager.getDefault();
+        LinkProperties linkProperties = null;
+        LinkCapabilities linkCapabilities = null;
+        boolean roaming = false;
         {
             linkProperties = sender.getLinkProperties(apnType);
             linkCapabilities = sender.getLinkCapabilities(apnType);
         } //End block
-        ServiceState ss;
-        ss = sender.getServiceState();
+        ServiceState ss = sender.getServiceState();
         roaming = ss.getRoaming();
         try 
         {
@@ -215,7 +207,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.367 -0400", hash_original_method = "67482F4F9D9E6F44C4639F27C32CCD68", hash_generated_method = "E97A741C6B570CE3A8934B1D4214F16B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.068 -0400", hash_original_method = "67482F4F9D9E6F44C4639F27C32CCD68", hash_generated_method = "E97A741C6B570CE3A8934B1D4214F16B")
     public void notifyDataConnectionFailed(Phone sender, String reason, String apnType) {
         try 
         {
@@ -234,10 +226,9 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.367 -0400", hash_original_method = "200E0849AE67515A7A87FAAD1F0CCF5A", hash_generated_method = "05537DBAA3F465655338683E870BD3F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.068 -0400", hash_original_method = "200E0849AE67515A7A87FAAD1F0CCF5A", hash_generated_method = "8D7210620E03AE298ABC431DABFFC375")
     public void notifyCellLocation(Phone sender) {
-        Bundle data;
-        data = new Bundle();
+        Bundle data = new Bundle();
         sender.getCellLocation().fillInNotifierBundle(data);
         try 
         {
@@ -256,7 +247,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.380 -0400", hash_original_method = "E58B6ECC0D24F432EA477897C3B146BA", hash_generated_method = "332D44B9638D2AFF2029BF7B0A47D264")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.069 -0400", hash_original_method = "E58B6ECC0D24F432EA477897C3B146BA", hash_generated_method = "332D44B9638D2AFF2029BF7B0A47D264")
     public void notifyOtaspChanged(Phone sender, int otaspMode) {
         try 
         {
@@ -274,7 +265,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.380 -0400", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "C7D03FB155FFDF71D6836A4B5D6F6366")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.069 -0400", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "C7D03FB155FFDF71D6836A4B5D6F6366")
     private void log(String s) {
         Log.d(LOG_TAG, "[PhoneNotifier] " + s);
         addTaint(s.getTaint());
@@ -283,7 +274,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static int convertCallState(Phone.State state) {
+    public static int convertCallState(Phone.State state) {
         switch (state) {
             case RINGING:
                 return TelephonyManager.CALL_STATE_RINGING;
@@ -295,7 +286,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static Phone.State convertCallState(int state) {
+    public static Phone.State convertCallState(int state) {
         switch (state) {
             case TelephonyManager.CALL_STATE_RINGING:
                 return Phone.State.RINGING;
@@ -307,7 +298,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static int convertDataState(Phone.DataState state) {
+    public static int convertDataState(Phone.DataState state) {
         switch (state) {
             case CONNECTING:
                 return TelephonyManager.DATA_CONNECTING;
@@ -321,7 +312,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static Phone.DataState convertDataState(int state) {
+    public static Phone.DataState convertDataState(int state) {
         switch (state) {
             case TelephonyManager.DATA_CONNECTING:
                 return Phone.DataState.CONNECTING;
@@ -335,7 +326,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static int convertDataActivityState(Phone.DataActivityState state) {
+    public static int convertDataActivityState(Phone.DataActivityState state) {
         switch (state) {
             case DATAIN:
                 return TelephonyManager.DATA_ACTIVITY_IN;
@@ -351,7 +342,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        public static Phone.DataActivityState convertDataActivityState(int state) {
+    public static Phone.DataActivityState convertDataActivityState(int state) {
         switch (state) {
             case TelephonyManager.DATA_ACTIVITY_IN:
                 return Phone.DataActivityState.DATAIN;
@@ -367,11 +358,11 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.381 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "D3C0B237A982707BF0906F1B27E7321D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.070 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
-    static String LOG_TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.382 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "EA7FF8772A7B2A0121F9F6C2158F8474")
+    static final String LOG_TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.070 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
 
-    private static boolean DBG = true;
+    private static final boolean DBG = true;
 }
 

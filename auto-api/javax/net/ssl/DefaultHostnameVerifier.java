@@ -20,14 +20,14 @@ import java.util.Locale;
 
 class DefaultHostnameVerifier implements HostnameVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.240 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.479 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
     public DefaultHostnameVerifier ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.263 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "C6C4DD38AFBCCEE7A8962B3802DF9BED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.483 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "F0C7B4E51638CA6F146E06A88F2FBD1D")
     public final boolean verify(String host, SSLSession session) {
         Certificate[] certs;
         try 
@@ -36,29 +36,26 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         } //End block
         catch (SSLException e)
         { }
-        X509Certificate x509;
-        x509 = (X509Certificate) certs[0];
-        String hostName;
-        hostName = host.trim().toLowerCase(Locale.ENGLISH);
-        String firstCn;
-        firstCn = getFirstCn(x509);
+        X509Certificate x509 = (X509Certificate) certs[0];
+        String hostName = host.trim().toLowerCase(Locale.ENGLISH);
+        String firstCn = getFirstCn(x509);
         {
-            boolean var29EDEFEF2843435DB2D9ED7F0A830B4A_497723714 = (matches(hostName, firstCn));
+            boolean var29EDEFEF2843435DB2D9ED7F0A830B4A_1334625990 = (matches(hostName, firstCn));
         } //End collapsed parenthetic
         {
-            Iterator<String> var85D067CFAE92C30817A3CFD58AF3EDFF_603876483 = (getDNSSubjectAlts(x509)).iterator();
-            var85D067CFAE92C30817A3CFD58AF3EDFF_603876483.hasNext();
-            String cn = var85D067CFAE92C30817A3CFD58AF3EDFF_603876483.next();
+            Iterator<String> var85D067CFAE92C30817A3CFD58AF3EDFF_64029468 = (getDNSSubjectAlts(x509)).iterator();
+            var85D067CFAE92C30817A3CFD58AF3EDFF_64029468.hasNext();
+            String cn = var85D067CFAE92C30817A3CFD58AF3EDFF_64029468.next();
             {
                 {
-                    boolean varAA8A1F5E9B1AFEFBACB19B19015D2736_1935042711 = (matches(hostName, cn));
+                    boolean varAA8A1F5E9B1AFEFBACB19B19015D2736_1448601743 = (matches(hostName, cn));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(host.getTaint());
         addTaint(session.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1491949200 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1491949200;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1287568625 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1287568625;
         // ---------- Original Method ----------
         //Certificate[] certs;
         //try {
@@ -81,27 +78,26 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.284 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "41C59E585D5D53BF19E3F632756A9C2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.483 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "26160A260D68C1BDD15C2256B9B844D3")
     private boolean matches(String hostName, String cn) {
         cn = cn.toLowerCase(Locale.ENGLISH);
         {
-            boolean varF7D3801EBF5FB948A1E85640EC3BD086_1208657602 = (cn.startsWith("*."));
+            boolean varF7D3801EBF5FB948A1E85640EC3BD086_2267397 = (cn.startsWith("*."));
             {
-                int matchLength;
-                matchLength = cn.length() - 1;
-                boolean var42068F7156658AC8E7BBA3792503CC9B_326173364 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
+                int matchLength = cn.length() - 1;
+                boolean var42068F7156658AC8E7BBA3792503CC9B_960443268 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
                     && cn.indexOf('.', 2) != -1
                     && acceptableCountryWildcard(cn)
                     && !InetAddress.isNumeric(hostName));
             } //End block
             {
-                boolean varBED26020AD4B547D64FB1356A9AD9C82_2113399473 = (hostName.equals(cn));
+                boolean varBED26020AD4B547D64FB1356A9AD9C82_1080043119 = (hostName.equals(cn));
             } //End block
         } //End collapsed parenthetic
         addTaint(hostName.getTaint());
         addTaint(cn.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833113772 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_833113772;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206716828 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206716828;
         // ---------- Original Method ----------
         //if (cn == null) {
             //return false;
@@ -119,24 +115,21 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.284 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "011E05D65F6DA2C5C326A6BCA097518A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.484 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "8C641BC5D7F4F26923A23137C6B93EC3")
     private boolean acceptableCountryWildcard(String cn) {
-        int cnLen;
-        cnLen = cn.length();
+        int cnLen = cn.length();
         {
             {
-                boolean var864F55A9DD3A6ABB8C8A48AFBD8437A1_1167753938 = (cn.charAt(cnLen - 3) == '.');
+                boolean var864F55A9DD3A6ABB8C8A48AFBD8437A1_905333492 = (cn.charAt(cnLen - 3) == '.');
                 {
-                    String s;
-                    s = cn.substring(2, cnLen - 3);
-                    int x;
-                    x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
+                    String s = cn.substring(2, cnLen - 3);
+                    int x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(cn.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1272746024 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1272746024;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_338843303 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_338843303;
         // ---------- Original Method ----------
         //int cnLen = cn.length();
         //if (cnLen >= 7 && cnLen <= 9) {
@@ -150,35 +143,33 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.302 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "65FE973FE79E8910425454AEBA41E9BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.487 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "0B5D004061F229283D13CA214340A569")
     private String getFirstCn(X509Certificate cert) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1584792525 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1871985936 = null; //Variable for return #2
-        String subjectPrincipal;
-        subjectPrincipal = cert.getSubjectX500Principal().toString();
+        String varB4EAC82CA7396A68D541C85D26508E83_365857526 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1885090681 = null; //Variable for return #2
+        String subjectPrincipal = cert.getSubjectX500Principal().toString();
         {
             String token = subjectPrincipal.split(",")[0];
             {
-                int x;
-                x = token.indexOf("CN=");
+                int x = token.indexOf("CN=");
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1584792525 = token.substring(x + 3);
+                    varB4EAC82CA7396A68D541C85D26508E83_365857526 = token.substring(x + 3);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1871985936 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1885090681 = null;
         addTaint(cert.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1917793545; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1552725425; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1917793545 = varB4EAC82CA7396A68D541C85D26508E83_1584792525;
+                varA7E53CE21691AB073D9660D615818899_1552725425 = varB4EAC82CA7396A68D541C85D26508E83_365857526;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1917793545 = varB4EAC82CA7396A68D541C85D26508E83_1871985936;
+                varA7E53CE21691AB073D9660D615818899_1552725425 = varB4EAC82CA7396A68D541C85D26508E83_1885090681;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1917793545.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1917793545;
+        varA7E53CE21691AB073D9660D615818899_1552725425.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1552725425;
         // ---------- Original Method ----------
         //String subjectPrincipal = cert.getSubjectX500Principal().toString();
         //for (String token : subjectPrincipal.split(",")) {
@@ -191,11 +182,11 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.320 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "E7229D1082E83BB8596BA3166A199C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.489 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "46CB8E6E4845C58401462B8DB8DB7622")
     private List<String> getDNSSubjectAlts(X509Certificate cert) {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_976496567 = null; //Variable for return #1
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1576293944 = null; //Variable for return #2
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_331320849 = null; //Variable for return #3
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_950623639 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_365650371 = null; //Variable for return #2
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1862439589 = null; //Variable for return #3
         Collection<List<?>> subjectAlternativeNames;
         try 
         {
@@ -204,40 +195,38 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         catch (CertificateParsingException cpe)
         {
             System.logI("Error parsing certificate", cpe);
-            varB4EAC82CA7396A68D541C85D26508E83_976496567 = Collections.emptyList();
+            varB4EAC82CA7396A68D541C85D26508E83_950623639 = Collections.emptyList();
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1576293944 = Collections.emptyList();
+            varB4EAC82CA7396A68D541C85D26508E83_365650371 = Collections.emptyList();
         } //End block
-        List<String> subjectAltList;
-        subjectAltList = new ArrayList<String>();
+        List<String> subjectAltList = new ArrayList<String>();
         {
             subjectAlternativeNames.iterator().hasNext();
             List<?> pair = subjectAlternativeNames.iterator().next();
             {
-                int type;
-                type = (Integer) pair.get(0);
+                int type = (Integer) pair.get(0);
                 {
                     subjectAltList.add((String) pair.get(1));
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_331320849 = subjectAltList;
+        varB4EAC82CA7396A68D541C85D26508E83_1862439589 = subjectAltList;
         addTaint(cert.getTaint());
-        List<String> varA7E53CE21691AB073D9660D615818899_1618444788; //Final return value
+        List<String> varA7E53CE21691AB073D9660D615818899_128098990; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1618444788 = varB4EAC82CA7396A68D541C85D26508E83_976496567;
+                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_950623639;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1618444788 = varB4EAC82CA7396A68D541C85D26508E83_1576293944;
+                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_365650371;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1618444788 = varB4EAC82CA7396A68D541C85D26508E83_331320849;
+                varA7E53CE21691AB073D9660D615818899_128098990 = varB4EAC82CA7396A68D541C85D26508E83_1862439589;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1618444788.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1618444788;
+        varA7E53CE21691AB073D9660D615818899_128098990.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_128098990;
         // ---------- Original Method ----------
         //Collection<List<?>> subjectAlternativeNames;
         //try {
@@ -260,9 +249,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.321 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "28A8061CDF15FD396E8AFC89C5D72DEE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.489 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
 
-    private static String[] BAD_COUNTRY_2LDS = { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
+    private static final String[] BAD_COUNTRY_2LDS = { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
     static {
         Arrays.sort(BAD_COUNTRY_2LDS);

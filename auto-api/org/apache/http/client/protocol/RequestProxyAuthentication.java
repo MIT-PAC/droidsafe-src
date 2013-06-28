@@ -21,18 +21,18 @@ import org.apache.http.auth.Credentials;
 import org.apache.http.protocol.HttpContext;
 
 public class RequestProxyAuthentication implements HttpRequestInterceptor {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.999 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "4E4E630304492253CB8147CAE1C7D2A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.870 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-    private Log log = LogFactory.getLog(getClass());
+    private final Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.999 -0400", hash_original_method = "A74AF022CE8AD2F75949F498B58D4DA7", hash_generated_method = "019FDF755D508F75C35A23CC550E2502")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.870 -0400", hash_original_method = "A74AF022CE8AD2F75949F498B58D4DA7", hash_generated_method = "019FDF755D508F75C35A23CC550E2502")
     public  RequestProxyAuthentication() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.000 -0400", hash_original_method = "1DDB9F7549C36B7BB96A2BD680DEEE30", hash_generated_method = "6F5C038458782805852824FA0544869E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.871 -0400", hash_original_method = "1DDB9F7549C36B7BB96A2BD680DEEE30", hash_generated_method = "82832A4C33E6911302411B8CDB44062B")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
@@ -41,20 +41,17 @@ public class RequestProxyAuthentication implements HttpRequestInterceptor {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
         } //End block
         {
-            boolean var80F589E703289AABB6C0DCAA767E1B05_174613457 = (request.containsHeader(AUTH.PROXY_AUTH_RESP));
+            boolean var80F589E703289AABB6C0DCAA767E1B05_1646217785 = (request.containsHeader(AUTH.PROXY_AUTH_RESP));
         } //End collapsed parenthetic
-        AuthState authState;
-        authState = (AuthState) context.getAttribute(
+        AuthState authState = (AuthState) context.getAttribute(
                 ClientContext.PROXY_AUTH_STATE);
-        AuthScheme authScheme;
-        authScheme = authState.getAuthScheme();
-        Credentials creds;
-        creds = authState.getCredentials();
+        AuthScheme authScheme = authState.getAuthScheme();
+        Credentials creds = authState.getCredentials();
         {
             this.log.debug("User credentials not available");
         } //End block
         {
-            boolean var73CC55FE287FD82949D5517028158444_1743019940 = (authState.getAuthScope() != null || !authScheme.isConnectionBased());
+            boolean var73CC55FE287FD82949D5517028158444_1618355521 = (authState.getAuthScope() != null || !authScheme.isConnectionBased());
             {
                 try 
                 {
@@ -63,7 +60,7 @@ public class RequestProxyAuthentication implements HttpRequestInterceptor {
                 catch (AuthenticationException ex)
                 {
                     {
-                        boolean varCC1F3FA71CB16F8E717B30D522A0DAFD_1374178868 = (this.log.isErrorEnabled());
+                        boolean varCC1F3FA71CB16F8E717B30D522A0DAFD_1821822983 = (this.log.isErrorEnabled());
                         {
                             this.log.error("Proxy authentication error: " + ex.getMessage());
                         } //End block

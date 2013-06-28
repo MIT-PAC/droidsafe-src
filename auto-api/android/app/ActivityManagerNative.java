@@ -37,7 +37,7 @@ import java.util.List;
 
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.167 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "FF0B4D083A157B879D7CD5A2215454A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.691 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "FF0B4D083A157B879D7CD5A2215454A9")
     public  ActivityManagerNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -45,7 +45,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        static public IActivityManager asInterface(IBinder obj) {
+    static public IActivityManager asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -58,12 +58,12 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        static public IActivityManager getDefault() {
+    static public IActivityManager getDefault() {
         return gDefault.get();
     }
 
     
-        static public boolean isSystemReady() {
+    static public boolean isSystemReady() {
         if (!sSystemReady) {
             sSystemReady = getDefault().testIsSystemReady();
         }
@@ -71,7 +71,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        static public void broadcastStickyIntent(Intent intent, String permission) {
+    static public void broadcastStickyIntent(Intent intent, String permission) {
         try {
             getDefault().broadcastIntent(
                 null, intent, null, null, Activity.RESULT_OK, null, null,
@@ -81,7 +81,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        static public void noteWakeupAlarm(PendingIntent ps) {
+    static public void noteWakeupAlarm(PendingIntent ps) {
         try {
             getDefault().noteWakeupAlarm(ps.getTarget());
         } catch (RemoteException ex) {
@@ -89,44 +89,30 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.583 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "1C10ED52583A3C9AE8A9920B717577C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.710 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "6992CE4234D71120297219DB3E5835ED")
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
         //Begin case START_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            Uri[] grantedUriPermissions;
-            grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
-            int grantedMode;
-            grantedMode = data.readInt();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
-            boolean onlyIfNeeded;
-            onlyIfNeeded = data.readInt() != 0;
-            boolean debug;
-            debug = data.readInt() != 0;
-            String profileFile;
-            profileFile = data.readString();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            Uri[] grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
+            int grantedMode = data.readInt();
+            IBinder resultTo = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
+            boolean onlyIfNeeded = data.readInt() != 0;
+            boolean debug = data.readInt() != 0;
+            String profileFile = data.readString();
             ParcelFileDescriptor profileFd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1754814245 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1000724586 = (data.readInt() != 0);
             profileFd = data.readFileDescriptor();
             profileFd = null;
-            boolean autoStopProfiler;
-            autoStopProfiler = data.readInt() != 0;
-            int result;
-            result = startActivity(app, intent, resolvedType,
+            boolean autoStopProfiler = data.readInt() != 0;
+            int result = startActivity(app, intent, resolvedType,
                     grantedUriPermissions, grantedMode, resultTo, resultWho,
                     requestCode, onlyIfNeeded, debug, profileFile, profileFd, autoStopProfiler);
             reply.writeNoException();
@@ -136,38 +122,24 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITY_AND_WAIT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            Uri[] grantedUriPermissions;
-            grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
-            int grantedMode;
-            grantedMode = data.readInt();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
-            boolean onlyIfNeeded;
-            onlyIfNeeded = data.readInt() != 0;
-            boolean debug;
-            debug = data.readInt() != 0;
-            String profileFile;
-            profileFile = data.readString();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            Uri[] grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
+            int grantedMode = data.readInt();
+            IBinder resultTo = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
+            boolean onlyIfNeeded = data.readInt() != 0;
+            boolean debug = data.readInt() != 0;
+            String profileFile = data.readString();
             ParcelFileDescriptor profileFd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_290943100 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_603438727 = (data.readInt() != 0);
             profileFd = data.readFileDescriptor();
             profileFd = null;
-            boolean autoStopProfiler;
-            autoStopProfiler = data.readInt() != 0;
-            WaitResult result;
-            result = startActivityAndWait(app, intent, resolvedType,
+            boolean autoStopProfiler = data.readInt() != 0;
+            WaitResult result = startActivityAndWait(app, intent, resolvedType,
                     grantedUriPermissions, grantedMode, resultTo, resultWho,
                     requestCode, onlyIfNeeded, debug, profileFile, profileFd, autoStopProfiler);
             reply.writeNoException();
@@ -177,32 +149,19 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITY_WITH_CONFIG_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            Uri[] grantedUriPermissions;
-            grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
-            int grantedMode;
-            grantedMode = data.readInt();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
-            boolean onlyIfNeeded;
-            onlyIfNeeded = data.readInt() != 0;
-            boolean debug;
-            debug = data.readInt() != 0;
-            Configuration config;
-            config = Configuration.CREATOR.createFromParcel(data);
-            int result;
-            result = startActivityWithConfig(app, intent, resolvedType,
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            Uri[] grantedUriPermissions = data.createTypedArray(Uri.CREATOR);
+            int grantedMode = data.readInt();
+            IBinder resultTo = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
+            boolean onlyIfNeeded = data.readInt() != 0;
+            boolean debug = data.readInt() != 0;
+            Configuration config = Configuration.CREATOR.createFromParcel(data);
+            int result = startActivityWithConfig(app, intent, resolvedType,
                     grantedUriPermissions, grantedMode, resultTo, resultWho,
                     requestCode, onlyIfNeeded, debug, config);
             reply.writeNoException();
@@ -212,34 +171,23 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITY_INTENT_SENDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            IntentSender intent;
-            intent = IntentSender.CREATOR.createFromParcel(data);
-            Intent fillInIntent;
-            fillInIntent = null;
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            IntentSender intent = IntentSender.CREATOR.createFromParcel(data);
+            Intent fillInIntent = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1045811046 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_616919107 = (data.readInt() != 0);
                 {
                     fillInIntent = Intent.CREATOR.createFromParcel(data);
                 } //End block
             } //End collapsed parenthetic
-            String resolvedType;
-            resolvedType = data.readString();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
-            int flagsMask;
-            flagsMask = data.readInt();
-            int flagsValues;
-            flagsValues = data.readInt();
-            int result;
-            result = startActivityIntentSender(app, intent,
+            String resolvedType = data.readString();
+            IBinder resultTo = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
+            int flagsMask = data.readInt();
+            int flagsValues = data.readInt();
+            int result = startActivityIntentSender(app, intent,
                     fillInIntent, resolvedType, resultTo, resultWho,
                     requestCode, flagsMask, flagsValues);
             reply.writeNoException();
@@ -249,12 +197,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_NEXT_MATCHING_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder callingActivity;
-            callingActivity = data.readStrongBinder();
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            boolean result;
-            result = startNextMatchingActivity(callingActivity, intent);
+            IBinder callingActivity = data.readStrongBinder();
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            boolean result = startNextMatchingActivity(callingActivity, intent);
             reply.writeNoException();
             reply.writeInt(result ? 1 : 0);
         } //End block
@@ -262,20 +207,16 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FINISH_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            Intent resultData;
-            resultData = null;
-            int resultCode;
-            resultCode = data.readInt();
+            IBinder token = data.readStrongBinder();
+            Intent resultData = null;
+            int resultCode = data.readInt();
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1170707746 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_179623920 = (data.readInt() != 0);
                 {
                     resultData = Intent.CREATOR.createFromParcel(data);
                 } //End block
             } //End collapsed parenthetic
-            boolean res;
-            res = finishActivity(token, resultCode, resultData);
+            boolean res = finishActivity(token, resultCode, resultData);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -283,12 +224,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FINISH_SUB_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
+            IBinder token = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
             finishSubActivity(token, resultWho, requestCode);
             reply.writeNoException();
         } //End block
@@ -296,10 +234,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case WILL_ACTIVITY_BE_VISIBLE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            boolean res;
-            res = willActivityBeVisible(token);
+            IBinder token = data.readStrongBinder();
+            boolean res = willActivityBeVisible(token);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -307,23 +243,18 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REGISTER_RECEIVER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
+            IBinder b = data.readStrongBinder();
             IApplicationThread app;
             app = ApplicationThreadNative.asInterface(b);
             app = null;
-            String packageName;
-            packageName = data.readString();
+            String packageName = data.readString();
             b = data.readStrongBinder();
             IIntentReceiver rec;
             rec = IIntentReceiver.Stub.asInterface(b);
             rec = null;
-            IntentFilter filter;
-            filter = IntentFilter.CREATOR.createFromParcel(data);
-            String perm;
-            perm = data.readString();
-            Intent intent;
-            intent = registerReceiver(app, packageName, rec, filter, perm);
+            IntentFilter filter = IntentFilter.CREATOR.createFromParcel(data);
+            String perm = data.readString();
+            Intent intent = registerReceiver(app, packageName, rec, filter, perm);
             reply.writeNoException();
             {
                 reply.writeInt(1);
@@ -337,10 +268,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNREGISTER_RECEIVER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IIntentReceiver rec;
-            rec = IIntentReceiver.Stub.asInterface(b);
+            IBinder b = data.readStrongBinder();
+            IIntentReceiver rec = IIntentReceiver.Stub.asInterface(b);
             unregisterReceiver(rec);
             reply.writeNoException();
         } //End block
@@ -348,33 +277,23 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case BROADCAST_INTENT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
+            IBinder b = data.readStrongBinder();
             IApplicationThread app;
             app = ApplicationThreadNative.asInterface(b);
             app = null;
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
             b = data.readStrongBinder();
             IIntentReceiver resultTo;
             resultTo = IIntentReceiver.Stub.asInterface(b);
             resultTo = null;
-            int resultCode;
-            resultCode = data.readInt();
-            String resultData;
-            resultData = data.readString();
-            Bundle resultExtras;
-            resultExtras = data.readBundle();
-            String perm;
-            perm = data.readString();
-            boolean serialized;
-            serialized = data.readInt() != 0;
-            boolean sticky;
-            sticky = data.readInt() != 0;
-            int res;
-            res = broadcastIntent(app, intent, resolvedType, resultTo,
+            int resultCode = data.readInt();
+            String resultData = data.readString();
+            Bundle resultExtras = data.readBundle();
+            String perm = data.readString();
+            boolean serialized = data.readInt() != 0;
+            boolean sticky = data.readInt() != 0;
+            int res = broadcastIntent(app, intent, resolvedType, resultTo,
                     resultCode, resultData, resultExtras, perm,
                     serialized, sticky);
             reply.writeNoException();
@@ -384,13 +303,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNBROADCAST_INTENT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
+            IBinder b = data.readStrongBinder();
             IApplicationThread app;
             app = ApplicationThreadNative.asInterface(b);
             app = null;
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
+            Intent intent = Intent.CREATOR.createFromParcel(data);
             unbroadcastIntent(app, intent);
             reply.writeNoException();
         } //End block
@@ -398,16 +315,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FINISH_RECEIVER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder who;
-            who = data.readStrongBinder();
-            int resultCode;
-            resultCode = data.readInt();
-            String resultData;
-            resultData = data.readString();
-            Bundle resultExtras;
-            resultExtras = data.readBundle();
-            boolean resultAbort;
-            resultAbort = data.readInt() != 0;
+            IBinder who = data.readStrongBinder();
+            int resultCode = data.readInt();
+            String resultData = data.readString();
+            Bundle resultExtras = data.readBundle();
+            boolean resultAbort = data.readInt() != 0;
             {
                 finishReceiver(who, resultCode, resultData, resultExtras, resultAbort);
             } //End block
@@ -417,8 +329,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ATTACH_APPLICATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(
+            IApplicationThread app = ApplicationThreadNative.asInterface(
                     data.readStrongBinder());
             {
                 attachApplication(app);
@@ -429,18 +340,15 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ACTIVITY_IDLE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            Configuration config;
-            config = null;
+            IBinder token = data.readStrongBinder();
+            Configuration config = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1382906677 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1994728249 = (data.readInt() != 0);
                 {
                     config = Configuration.CREATOR.createFromParcel(data);
                 } //End block
             } //End collapsed parenthetic
-            boolean stopProfiling;
-            stopProfiling = data.readInt() != 0;
+            boolean stopProfiling = data.readInt() != 0;
             {
                 activityIdle(token, config, stopProfiling);
             } //End block
@@ -450,8 +358,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ACTIVITY_PAUSED_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             activityPaused(token);
             reply.writeNoException();
         } //End block
@@ -459,16 +366,13 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ACTIVITY_STOPPED_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            Bundle map;
-            map = data.readBundle();
+            IBinder token = data.readStrongBinder();
+            Bundle map = data.readBundle();
             Bitmap thumbnail;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1833506822 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_459041360 = (data.readInt() != 0);
             thumbnail = Bitmap.CREATOR.createFromParcel(data);
             thumbnail = null;
-            CharSequence description;
-            description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
+            CharSequence description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
             activityStopped(token, map, thumbnail, description);
             reply.writeNoException();
         } //End block
@@ -476,8 +380,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ACTIVITY_SLEPT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             activitySlept(token);
             reply.writeNoException();
         } //End block
@@ -485,8 +388,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case ACTIVITY_DESTROYED_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             activityDestroyed(token);
             reply.writeNoException();
         } //End block
@@ -494,8 +396,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_CALLING_PACKAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             String res;
             res = getCallingPackage(token);
             res = null;
@@ -506,10 +407,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_CALLING_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            ComponentName cn;
-            cn = getCallingActivity(token);
+            IBinder token = data.readStrongBinder();
+            ComponentName cn = getCallingActivity(token);
             reply.writeNoException();
             ComponentName.writeToParcel(cn, reply);
         } //End block
@@ -517,17 +416,13 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_TASKS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int maxNum;
-            maxNum = data.readInt();
-            int fl;
-            fl = data.readInt();
-            IBinder receiverBinder;
-            receiverBinder = data.readStrongBinder();
+            int maxNum = data.readInt();
+            int fl = data.readInt();
+            IBinder receiverBinder = data.readStrongBinder();
             IThumbnailReceiver receiver;
             receiver = IThumbnailReceiver.Stub.asInterface(receiverBinder);
             receiver = null;
-            List list;
-            list = getTasks(maxNum, fl, receiver);
+            List list = getTasks(maxNum, fl, receiver);
             reply.writeNoException();
             int N;
             N = list.size();
@@ -537,8 +432,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             {
                 i=0;
                 {
-                    ActivityManager.RunningTaskInfo info;
-                    info = (ActivityManager.RunningTaskInfo)list.get(i);
+                    ActivityManager.RunningTaskInfo info = (ActivityManager.RunningTaskInfo)list.get(i);
                     info.writeToParcel(reply, 0);
                 } //End block
             } //End collapsed parenthetic
@@ -547,12 +441,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_RECENT_TASKS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int maxNum;
-            maxNum = data.readInt();
-            int fl;
-            fl = data.readInt();
-            List<ActivityManager.RecentTaskInfo> list;
-            list = getRecentTasks(maxNum,
+            int maxNum = data.readInt();
+            int fl = data.readInt();
+            List<ActivityManager.RecentTaskInfo> list = getRecentTasks(maxNum,
                     fl);
             reply.writeNoException();
             reply.writeTypedList(list);
@@ -561,10 +452,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_TASK_THUMBNAILS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int id;
-            id = data.readInt();
-            ActivityManager.TaskThumbnails bm;
-            bm = getTaskThumbnails(id);
+            int id = data.readInt();
+            ActivityManager.TaskThumbnails bm = getTaskThumbnails(id);
             reply.writeNoException();
             {
                 reply.writeInt(1);
@@ -578,12 +467,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_SERVICES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int maxNum;
-            maxNum = data.readInt();
-            int fl;
-            fl = data.readInt();
-            List list;
-            list = getServices(maxNum, fl);
+            int maxNum = data.readInt();
+            int fl = data.readInt();
+            List list = getServices(maxNum, fl);
             reply.writeNoException();
             int N;
             N = list.size();
@@ -593,8 +479,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             {
                 i=0;
                 {
-                    ActivityManager.RunningServiceInfo info;
-                    info = (ActivityManager.RunningServiceInfo)list.get(i);
+                    ActivityManager.RunningServiceInfo info = (ActivityManager.RunningServiceInfo)list.get(i);
                     info.writeToParcel(reply, 0);
                 } //End block
             } //End collapsed parenthetic
@@ -603,8 +488,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PROCESSES_IN_ERROR_STATE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            List<ActivityManager.ProcessErrorStateInfo> list;
-            list = getProcessesInErrorState();
+            List<ActivityManager.ProcessErrorStateInfo> list = getProcessesInErrorState();
             reply.writeNoException();
             reply.writeTypedList(list);
         } //End block
@@ -612,8 +496,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_RUNNING_APP_PROCESSES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            List<ActivityManager.RunningAppProcessInfo> list;
-            list = getRunningAppProcesses();
+            List<ActivityManager.RunningAppProcessInfo> list = getRunningAppProcesses();
             reply.writeNoException();
             reply.writeTypedList(list);
         } //End block
@@ -621,8 +504,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_RUNNING_EXTERNAL_APPLICATIONS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            List<ApplicationInfo> list;
-            list = getRunningExternalApplications();
+            List<ApplicationInfo> list = getRunningExternalApplications();
             reply.writeNoException();
             reply.writeTypedList(list);
         } //End block
@@ -630,10 +512,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case MOVE_TASK_TO_FRONT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int task;
-            task = data.readInt();
-            int fl;
-            fl = data.readInt();
+            int task = data.readInt();
+            int fl = data.readInt();
             moveTaskToFront(task, fl);
             reply.writeNoException();
         } //End block
@@ -641,8 +521,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case MOVE_TASK_TO_BACK_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int task;
-            task = data.readInt();
+            int task = data.readInt();
             moveTaskToBack(task);
             reply.writeNoException();
         } //End block
@@ -650,12 +529,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case MOVE_ACTIVITY_TASK_TO_BACK_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            boolean nonRoot;
-            nonRoot = data.readInt() != 0;
-            boolean res;
-            res = moveActivityTaskToBack(token, nonRoot);
+            IBinder token = data.readStrongBinder();
+            boolean nonRoot = data.readInt() != 0;
+            boolean res = moveActivityTaskToBack(token, nonRoot);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -663,8 +539,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case MOVE_TASK_BACKWARDS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int task;
-            task = data.readInt();
+            int task = data.readInt();
             moveTaskBackwards(task);
             reply.writeNoException();
         } //End block
@@ -672,10 +547,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_TASK_FOR_ACTIVITY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            boolean onlyRoot;
-            onlyRoot = data.readInt() != 0;
+            IBinder token = data.readStrongBinder();
+            boolean onlyRoot = data.readInt() != 0;
             int res;
             res = getTaskForActivity(token, onlyRoot);
             res = -1;
@@ -686,10 +559,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FINISH_OTHER_INSTANCES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            ComponentName className;
-            className = ComponentName.readFromParcel(data);
+            IBinder token = data.readStrongBinder();
+            ComponentName className = ComponentName.readFromParcel(data);
             finishOtherInstances(token, className);
             reply.writeNoException();
         } //End block
@@ -697,14 +568,12 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REPORT_THUMBNAIL_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             Bitmap thumbnail;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_957216042 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1950364876 = (data.readInt() != 0);
             thumbnail = Bitmap.CREATOR.createFromParcel(data);
             thumbnail = null;
-            CharSequence description;
-            description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
+            CharSequence description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
             reportThumbnail(token, thumbnail, description);
             reply.writeNoException();
         } //End block
@@ -712,14 +581,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_CONTENT_PROVIDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            String name;
-            name = data.readString();
-            ContentProviderHolder cph;
-            cph = getContentProvider(app, name);
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            String name = data.readString();
+            ContentProviderHolder cph = getContentProvider(app, name);
             reply.writeNoException();
             {
                 reply.writeInt(1);
@@ -733,12 +598,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case PUBLISH_CONTENT_PROVIDERS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            ArrayList<ContentProviderHolder> providers;
-            providers = data.createTypedArrayList(ContentProviderHolder.CREATOR);
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            ArrayList<ContentProviderHolder> providers = data.createTypedArrayList(ContentProviderHolder.CREATOR);
             publishContentProviders(app, providers);
             reply.writeNoException();
         } //End block
@@ -746,12 +608,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REMOVE_CONTENT_PROVIDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            String name;
-            name = data.readString();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            String name = data.readString();
             removeContentProvider(app, name);
             reply.writeNoException();
         } //End block
@@ -759,10 +618,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_RUNNING_SERVICE_CONTROL_PANEL_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ComponentName comp;
-            comp = ComponentName.CREATOR.createFromParcel(data);
-            PendingIntent pi;
-            pi = getRunningServiceControlPanel(comp);
+            ComponentName comp = ComponentName.CREATOR.createFromParcel(data);
+            PendingIntent pi = getRunningServiceControlPanel(comp);
             reply.writeNoException();
             PendingIntent.writePendingIntentOrNullToParcel(pi, reply);
         } //End block
@@ -770,16 +627,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent service;
-            service = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            ComponentName cn;
-            cn = startService(app, service, resolvedType);
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent service = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            ComponentName cn = startService(app, service, resolvedType);
             reply.writeNoException();
             ComponentName.writeToParcel(cn, reply);
         } //End block
@@ -787,16 +639,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case STOP_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent service;
-            service = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            int res;
-            res = stopService(app, service, resolvedType);
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent service = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            int res = stopService(app, service, resolvedType);
             reply.writeNoException();
             reply.writeInt(res);
         } //End block
@@ -804,14 +651,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case STOP_SERVICE_TOKEN_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ComponentName className;
-            className = ComponentName.readFromParcel(data);
-            IBinder token;
-            token = data.readStrongBinder();
-            int startId;
-            startId = data.readInt();
-            boolean res;
-            res = stopServiceToken(className, token, startId);
+            ComponentName className = ComponentName.readFromParcel(data);
+            IBinder token = data.readStrongBinder();
+            int startId = data.readInt();
+            boolean res = stopServiceToken(className, token, startId);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -819,22 +662,17 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_SERVICE_FOREGROUND_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ComponentName className;
-            className = ComponentName.readFromParcel(data);
-            IBinder token;
-            token = data.readStrongBinder();
-            int id;
-            id = data.readInt();
-            Notification notification;
-            notification = null;
+            ComponentName className = ComponentName.readFromParcel(data);
+            IBinder token = data.readStrongBinder();
+            int id = data.readInt();
+            Notification notification = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_2125395557 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1378532934 = (data.readInt() != 0);
                 {
                     notification = Notification.CREATOR.createFromParcel(data);
                 } //End block
             } //End collapsed parenthetic
-            boolean removeNotification;
-            removeNotification = data.readInt() != 0;
+            boolean removeNotification = data.readInt() != 0;
             setServiceForeground(className, token, id, notification, removeNotification);
             reply.writeNoException();
         } //End block
@@ -842,23 +680,15 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case BIND_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            IBinder token = data.readStrongBinder();
+            Intent service = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
             b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            IBinder token;
-            token = data.readStrongBinder();
-            Intent service;
-            service = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            b = data.readStrongBinder();
-            int fl;
-            fl = data.readInt();
-            IServiceConnection conn;
-            conn = IServiceConnection.Stub.asInterface(b);
-            int res;
-            res = bindService(app, token, service, resolvedType, conn, fl);
+            int fl = data.readInt();
+            IServiceConnection conn = IServiceConnection.Stub.asInterface(b);
+            int res = bindService(app, token, service, resolvedType, conn, fl);
             reply.writeNoException();
             reply.writeInt(res);
         } //End block
@@ -866,12 +696,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNBIND_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IServiceConnection conn;
-            conn = IServiceConnection.Stub.asInterface(b);
-            boolean res;
-            res = unbindService(conn);
+            IBinder b = data.readStrongBinder();
+            IServiceConnection conn = IServiceConnection.Stub.asInterface(b);
+            boolean res = unbindService(conn);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -879,12 +706,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case PUBLISH_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            IBinder service;
-            service = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            IBinder service = data.readStrongBinder();
             publishService(token, intent, service);
             reply.writeNoException();
         } //End block
@@ -892,12 +716,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNBIND_FINISHED_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            boolean doRebind;
-            doRebind = data.readInt() != 0;
+            IBinder token = data.readStrongBinder();
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            boolean doRebind = data.readInt() != 0;
             unbindFinished(token, intent, doRebind);
             reply.writeNoException();
         } //End block
@@ -905,14 +726,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SERVICE_DONE_EXECUTING_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            int type;
-            type = data.readInt();
-            int startId;
-            startId = data.readInt();
-            int res;
-            res = data.readInt();
+            IBinder token = data.readStrongBinder();
+            int type = data.readInt();
+            int startId = data.readInt();
+            int res = data.readInt();
             serviceDoneExecuting(token, type, startId, res);
             reply.writeNoException();
         } //End block
@@ -920,20 +737,13 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_INSTRUMENTATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ComponentName className;
-            className = ComponentName.readFromParcel(data);
-            String profileFile;
-            profileFile = data.readString();
-            int fl;
-            fl = data.readInt();
-            Bundle arguments;
-            arguments = data.readBundle();
-            IBinder b;
-            b = data.readStrongBinder();
-            IInstrumentationWatcher w;
-            w = IInstrumentationWatcher.Stub.asInterface(b);
-            boolean res;
-            res = startInstrumentation(className, profileFile, fl, arguments, w);
+            ComponentName className = ComponentName.readFromParcel(data);
+            String profileFile = data.readString();
+            int fl = data.readInt();
+            Bundle arguments = data.readBundle();
+            IBinder b = data.readStrongBinder();
+            IInstrumentationWatcher w = IInstrumentationWatcher.Stub.asInterface(b);
+            boolean res = startInstrumentation(className, profileFile, fl, arguments, w);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -941,14 +751,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FINISH_INSTRUMENTATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            int resultCode;
-            resultCode = data.readInt();
-            Bundle results;
-            results = data.readBundle();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            int resultCode = data.readInt();
+            Bundle results = data.readBundle();
             finishInstrumentation(app, resultCode, results);
             reply.writeNoException();
         } //End block
@@ -956,8 +762,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_CONFIGURATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Configuration config;
-            config = getConfiguration();
+            Configuration config = getConfiguration();
             reply.writeNoException();
             config.writeToParcel(reply, 0);
         } //End block
@@ -965,8 +770,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UPDATE_CONFIGURATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Configuration config;
-            config = Configuration.CREATOR.createFromParcel(data);
+            Configuration config = Configuration.CREATOR.createFromParcel(data);
             updateConfiguration(config);
             reply.writeNoException();
         } //End block
@@ -974,10 +778,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_REQUESTED_ORIENTATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            int requestedOrientation;
-            requestedOrientation = data.readInt();
+            IBinder token = data.readStrongBinder();
+            int requestedOrientation = data.readInt();
             setRequestedOrientation(token, requestedOrientation);
             reply.writeNoException();
         } //End block
@@ -985,10 +787,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_REQUESTED_ORIENTATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            int req;
-            req = getRequestedOrientation(token);
+            IBinder token = data.readStrongBinder();
+            int req = getRequestedOrientation(token);
             reply.writeNoException();
             reply.writeInt(req);
         } //End block
@@ -996,10 +796,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            ComponentName cn;
-            cn = getActivityClassForToken(token);
+            IBinder token = data.readStrongBinder();
+            ComponentName cn = getActivityClassForToken(token);
             reply.writeNoException();
             ComponentName.writeToParcel(cn, reply);
         } //End block
@@ -1007,8 +805,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PACKAGE_FOR_TOKEN_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
+            IBinder token = data.readStrongBinder();
             reply.writeNoException();
             reply.writeString(getPackageForToken(token));
         } //End block
@@ -1016,20 +813,15 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_INTENT_SENDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int type;
-            type = data.readInt();
-            String packageName;
-            packageName = data.readString();
-            IBinder token;
-            token = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
+            int type = data.readInt();
+            String packageName = data.readString();
+            IBinder token = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
             Intent[] requestIntents;
             String[] requestResolvedTypes;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1500689413 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1659243633 = (data.readInt() != 0);
                 {
                     requestIntents = data.createTypedArray(Intent.CREATOR);
                     requestResolvedTypes = data.createStringArray();
@@ -1039,10 +831,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
                     requestResolvedTypes = null;
                 } //End block
             } //End collapsed parenthetic
-            int fl;
-            fl = data.readInt();
-            IIntentSender res;
-            res = getIntentSender(type, packageName, token,
+            int fl = data.readInt();
+            IIntentSender res = getIntentSender(type, packageName, token,
                     resultWho, requestCode, requestIntents,
                     requestResolvedTypes, fl);
             reply.writeNoException();
@@ -1052,8 +842,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CANCEL_INTENT_SENDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IIntentSender r;
-            r = IIntentSender.Stub.asInterface(
+            IIntentSender r = IIntentSender.Stub.asInterface(
                 data.readStrongBinder());
             cancelIntentSender(r);
             reply.writeNoException();
@@ -1062,11 +851,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PACKAGE_FOR_INTENT_SENDER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IIntentSender r;
-            r = IIntentSender.Stub.asInterface(
+            IIntentSender r = IIntentSender.Stub.asInterface(
                 data.readStrongBinder());
-            String res;
-            res = getPackageForIntentSender(r);
+            String res = getPackageForIntentSender(r);
             reply.writeNoException();
             reply.writeString(res);
         } //End block
@@ -1074,8 +861,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_PROCESS_LIMIT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int max;
-            max = data.readInt();
+            int max = data.readInt();
             setProcessLimit(max);
             reply.writeNoException();
         } //End block
@@ -1083,8 +869,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PROCESS_LIMIT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int limit;
-            limit = getProcessLimit();
+            int limit = getProcessLimit();
             reply.writeNoException();
             reply.writeInt(limit);
         } //End block
@@ -1092,12 +877,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_PROCESS_FOREGROUND_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            int pid;
-            pid = data.readInt();
-            boolean isForeground;
-            isForeground = data.readInt() != 0;
+            IBinder token = data.readStrongBinder();
+            int pid = data.readInt();
+            boolean isForeground = data.readInt() != 0;
             setProcessForeground(token, pid, isForeground);
             reply.writeNoException();
         } //End block
@@ -1105,14 +887,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CHECK_PERMISSION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String perm;
-            perm = data.readString();
-            int pid;
-            pid = data.readInt();
-            int uid;
-            uid = data.readInt();
-            int res;
-            res = checkPermission(perm, pid, uid);
+            String perm = data.readString();
+            int pid = data.readInt();
+            int uid = data.readInt();
+            int res = checkPermission(perm, pid, uid);
             reply.writeNoException();
             reply.writeInt(res);
         } //End block
@@ -1120,16 +898,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CHECK_URI_PERMISSION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            int pid;
-            pid = data.readInt();
-            int uid;
-            uid = data.readInt();
-            int mode;
-            mode = data.readInt();
-            int res;
-            res = checkUriPermission(uri, pid, uid, mode);
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            int pid = data.readInt();
+            int uid = data.readInt();
+            int mode = data.readInt();
+            int res = checkUriPermission(uri, pid, uid, mode);
             reply.writeNoException();
             reply.writeInt(res);
         } //End block
@@ -1137,13 +910,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CLEAR_APP_DATA_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String packageName;
-            packageName = data.readString();
-            IPackageDataObserver observer;
-            observer = IPackageDataObserver.Stub.asInterface(
+            String packageName = data.readString();
+            IPackageDataObserver observer = IPackageDataObserver.Stub.asInterface(
                     data.readStrongBinder());
-            boolean res;
-            res = clearApplicationUserData(packageName, observer);
+            boolean res = clearApplicationUserData(packageName, observer);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1151,16 +921,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GRANT_URI_PERMISSION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            String targetPkg;
-            targetPkg = data.readString();
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            int mode;
-            mode = data.readInt();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            String targetPkg = data.readString();
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            int mode = data.readInt();
             grantUriPermission(app, targetPkg, uri, mode);
             reply.writeNoException();
         } //End block
@@ -1168,14 +933,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REVOKE_URI_PERMISSION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            int mode;
-            mode = data.readInt();
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            int mode = data.readInt();
             revokeUriPermission(app, uri, mode);
             reply.writeNoException();
         } //End block
@@ -1183,12 +944,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SHOW_WAITING_FOR_DEBUGGER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            boolean waiting;
-            waiting = data.readInt() != 0;
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            boolean waiting = data.readInt() != 0;
             showWaitingForDebugger(app, waiting);
             reply.writeNoException();
         } //End block
@@ -1196,8 +954,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_MEMORY_INFO_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ActivityManager.MemoryInfo mi;
-            mi = new ActivityManager.MemoryInfo();
+            ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
             getMemoryInfo(mi);
             reply.writeNoException();
             mi.writeToParcel(reply, 0);
@@ -1213,10 +970,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case OPEN_CONTENT_URI_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Uri uri;
-            uri = Uri.parse(data.readString());
-            ParcelFileDescriptor pfd;
-            pfd = openContentUri(uri);
+            Uri uri = Uri.parse(data.readString());
+            ParcelFileDescriptor pfd = openContentUri(uri);
             reply.writeNoException();
             {
                 reply.writeInt(1);
@@ -1244,12 +999,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_DEBUG_APP_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pn;
-            pn = data.readString();
-            boolean wfd;
-            wfd = data.readInt() != 0;
-            boolean per;
-            per = data.readInt() != 0;
+            String pn = data.readString();
+            boolean wfd = data.readInt() != 0;
+            boolean per = data.readInt() != 0;
             setDebugApp(pn, wfd, per);
             reply.writeNoException();
         } //End block
@@ -1257,8 +1009,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_ALWAYS_FINISH_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            boolean enabled;
-            enabled = data.readInt() != 0;
+            boolean enabled = data.readInt() != 0;
             setAlwaysFinish(enabled);
             reply.writeNoException();
         } //End block
@@ -1266,8 +1017,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_ACTIVITY_CONTROLLER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IActivityController watcher;
-            watcher = IActivityController.Stub.asInterface(
+            IActivityController watcher = IActivityController.Stub.asInterface(
                     data.readStrongBinder());
             setActivityController(watcher);
         } //End block
@@ -1282,8 +1032,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case NOTE_WAKEUP_ALARM_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IIntentSender is;
-            is = IIntentSender.Stub.asInterface(
+            IIntentSender is = IIntentSender.Stub.asInterface(
                     data.readStrongBinder());
             noteWakeupAlarm(is);
             reply.writeNoException();
@@ -1292,14 +1041,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case KILL_PIDS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int[] pids;
-            pids = data.createIntArray();
-            String reason;
-            reason = data.readString();
-            boolean secure;
-            secure = data.readInt() != 0;
-            boolean res;
-            res = killPids(pids, reason, secure);
+            int[] pids = data.createIntArray();
+            String reason = data.readString();
+            boolean secure = data.readInt() != 0;
+            boolean res = killPids(pids, reason, secure);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1307,14 +1052,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_RUNNING_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            String cls;
-            cls = data.readString();
-            String action;
-            action = data.readString();
-            String indata;
-            indata = data.readString();
+            String pkg = data.readString();
+            String cls = data.readString();
+            String action = data.readString();
+            String indata = data.readString();
             startRunning(pkg, cls, action, indata);
             reply.writeNoException();
         } //End block
@@ -1322,10 +1063,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case HANDLE_APPLICATION_CRASH_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder app;
-            app = data.readStrongBinder();
-            ApplicationErrorReport.CrashInfo ci;
-            ci = new ApplicationErrorReport.CrashInfo(data);
+            IBinder app = data.readStrongBinder();
+            ApplicationErrorReport.CrashInfo ci = new ApplicationErrorReport.CrashInfo(data);
             handleApplicationCrash(app, ci);
             reply.writeNoException();
         } //End block
@@ -1333,14 +1072,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case HANDLE_APPLICATION_WTF_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder app;
-            app = data.readStrongBinder();
-            String tag;
-            tag = data.readString();
-            ApplicationErrorReport.CrashInfo ci;
-            ci = new ApplicationErrorReport.CrashInfo(data);
-            boolean res;
-            res = handleApplicationWtf(app, tag, ci);
+            IBinder app = data.readStrongBinder();
+            String tag = data.readString();
+            ApplicationErrorReport.CrashInfo ci = new ApplicationErrorReport.CrashInfo(data);
+            boolean res = handleApplicationWtf(app, tag, ci);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1348,12 +1083,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case HANDLE_APPLICATION_STRICT_MODE_VIOLATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder app;
-            app = data.readStrongBinder();
-            int violationMask;
-            violationMask = data.readInt();
-            StrictMode.ViolationInfo info;
-            info = new StrictMode.ViolationInfo(data);
+            IBinder app = data.readStrongBinder();
+            int violationMask = data.readInt();
+            StrictMode.ViolationInfo info = new StrictMode.ViolationInfo(data);
             handleApplicationStrictModeViolation(app, violationMask, info);
             reply.writeNoException();
         } //End block
@@ -1361,8 +1093,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SIGNAL_PERSISTENT_PROCESSES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int sig;
-            sig = data.readInt();
+            int sig = data.readInt();
             signalPersistentProcesses(sig);
             reply.writeNoException();
         } //End block
@@ -1370,8 +1101,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case KILL_BACKGROUND_PROCESSES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String packageName;
-            packageName = data.readString();
+            String packageName = data.readString();
             killBackgroundProcesses(packageName);
             reply.writeNoException();
         } //End block
@@ -1386,8 +1116,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case FORCE_STOP_PACKAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String packageName;
-            packageName = data.readString();
+            String packageName = data.readString();
             forceStopPackage(packageName);
             reply.writeNoException();
         } //End block
@@ -1395,8 +1124,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_DEVICE_CONFIGURATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ConfigurationInfo config;
-            config = getDeviceConfigurationInfo();
+            ConfigurationInfo config = getDeviceConfigurationInfo();
             reply.writeNoException();
             config.writeToParcel(reply, 0);
         } //End block
@@ -1404,20 +1132,15 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case PROFILE_CONTROL_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String process;
-            process = data.readString();
-            boolean start;
-            start = data.readInt() != 0;
-            int profileType;
-            profileType = data.readInt();
-            String path;
-            path = data.readString();
+            String process = data.readString();
+            boolean start = data.readInt() != 0;
+            int profileType = data.readInt();
+            String path = data.readString();
             ParcelFileDescriptor fd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1590232798 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1818103882 = (data.readInt() != 0);
             fd = data.readFileDescriptor();
             fd = null;
-            boolean res;
-            res = profileControl(process, start, path, fd, profileType);
+            boolean res = profileControl(process, start, path, fd, profileType);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1425,8 +1148,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SHUTDOWN_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            boolean res;
-            res = shutdown(data.readInt());
+            boolean res = shutdown(data.readInt());
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1448,12 +1170,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case PEEK_SERVICE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Intent service;
-            service = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            IBinder binder;
-            binder = peekService(service, resolvedType);
+            Intent service = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            IBinder binder = peekService(service, resolvedType);
             reply.writeNoException();
             reply.writeStrongBinder(binder);
         } //End block
@@ -1461,12 +1180,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_BACKUP_AGENT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ApplicationInfo info;
-            info = ApplicationInfo.CREATOR.createFromParcel(data);
-            int backupRestoreMode;
-            backupRestoreMode = data.readInt();
-            boolean success;
-            success = bindBackupAgent(info, backupRestoreMode);
+            ApplicationInfo info = ApplicationInfo.CREATOR.createFromParcel(data);
+            int backupRestoreMode = data.readInt();
+            boolean success = bindBackupAgent(info, backupRestoreMode);
             reply.writeNoException();
             reply.writeInt(success ? 1 : 0);
         } //End block
@@ -1474,10 +1190,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case BACKUP_AGENT_CREATED_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String packageName;
-            packageName = data.readString();
-            IBinder agent;
-            agent = data.readStrongBinder();
+            String packageName = data.readString();
+            IBinder agent = data.readStrongBinder();
             backupAgentCreated(packageName, agent);
             reply.writeNoException();
         } //End block
@@ -1485,8 +1199,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNBIND_BACKUP_AGENT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            ApplicationInfo info;
-            info = ApplicationInfo.CREATOR.createFromParcel(data);
+            ApplicationInfo info = ApplicationInfo.CREATOR.createFromParcel(data);
             unbindBackupAgent(info);
             reply.writeNoException();
         } //End block
@@ -1494,8 +1207,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REGISTER_ACTIVITY_WATCHER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IActivityWatcher watcher;
-            watcher = IActivityWatcher.Stub.asInterface(
+            IActivityWatcher watcher = IActivityWatcher.Stub.asInterface(
                     data.readStrongBinder());
             registerActivityWatcher(watcher);
         } //End block
@@ -1503,8 +1215,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNREGISTER_ACTIVITY_WATCHER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IActivityWatcher watcher;
-            watcher = IActivityWatcher.Stub.asInterface(
+            IActivityWatcher watcher = IActivityWatcher.Stub.asInterface(
                     data.readStrongBinder());
             unregisterActivityWatcher(watcher);
         } //End block
@@ -1512,22 +1223,14 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITY_IN_PACKAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int uid;
-            uid = data.readInt();
-            Intent intent;
-            intent = Intent.CREATOR.createFromParcel(data);
-            String resolvedType;
-            resolvedType = data.readString();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            String resultWho;
-            resultWho = data.readString();
-            int requestCode;
-            requestCode = data.readInt();
-            boolean onlyIfNeeded;
-            onlyIfNeeded = data.readInt() != 0;
-            int result;
-            result = startActivityInPackage(uid, intent, resolvedType,
+            int uid = data.readInt();
+            Intent intent = Intent.CREATOR.createFromParcel(data);
+            String resolvedType = data.readString();
+            IBinder resultTo = data.readStrongBinder();
+            String resultWho = data.readString();
+            int requestCode = data.readInt();
+            boolean onlyIfNeeded = data.readInt() != 0;
+            int result = startActivityInPackage(uid, intent, resolvedType,
                     resultTo, resultWho, requestCode, onlyIfNeeded);
             reply.writeNoException();
             reply.writeInt(result);
@@ -1536,10 +1239,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case KILL_APPLICATION_WITH_UID_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            int uid;
-            uid = data.readInt();
+            String pkg = data.readString();
+            int uid = data.readInt();
             killApplicationWithUid(pkg, uid);
             reply.writeNoException();
         } //End block
@@ -1547,8 +1248,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CLOSE_SYSTEM_DIALOGS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String reason;
-            reason = data.readString();
+            String reason = data.readString();
             closeSystemDialogs(reason);
             reply.writeNoException();
         } //End block
@@ -1556,10 +1256,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PROCESS_MEMORY_INFO_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int[] pids;
-            pids = data.createIntArray();
-            Debug.MemoryInfo[] res;
-            res = getProcessMemoryInfo(pids);
+            int[] pids = data.createIntArray();
+            Debug.MemoryInfo[] res = getProcessMemoryInfo(pids);
             reply.writeNoException();
             reply.writeTypedArray(res, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
         } //End block
@@ -1567,10 +1265,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case KILL_APPLICATION_PROCESS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String processName;
-            processName = data.readString();
-            int uid;
-            uid = data.readInt();
+            String processName = data.readString();
+            int uid = data.readInt();
             killApplicationProcess(processName, uid);
             reply.writeNoException();
         } //End block
@@ -1578,14 +1274,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case OVERRIDE_PENDING_TRANSITION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            String packageName;
-            packageName = data.readString();
-            int enterAnim;
-            enterAnim = data.readInt();
-            int exitAnim;
-            exitAnim = data.readInt();
+            IBinder token = data.readStrongBinder();
+            String packageName = data.readString();
+            int enterAnim = data.readInt();
+            int exitAnim = data.readInt();
             overridePendingTransition(token, packageName, enterAnim, exitAnim);
             reply.writeNoException();
         } //End block
@@ -1593,8 +1285,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case IS_USER_A_MONKEY_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            boolean areThey;
-            areThey = isUserAMonkey();
+            boolean areThey = isUserAMonkey();
             reply.writeNoException();
             reply.writeInt(areThey ? 1 : 0);
         } //End block
@@ -1609,10 +1300,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case IS_IMMERSIVE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            boolean isit;
-            isit = isImmersive(token);
+            IBinder token = data.readStrongBinder();
+            boolean isit = isImmersive(token);
             reply.writeNoException();
             reply.writeInt(isit ? 1 : 0);
         } //End block
@@ -1620,10 +1309,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_IMMERSIVE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder token;
-            token = data.readStrongBinder();
-            boolean imm;
-            imm = data.readInt() == 1;
+            IBinder token = data.readStrongBinder();
+            boolean imm = data.readInt() == 1;
             setImmersive(token, imm);
             reply.writeNoException();
         } //End block
@@ -1631,8 +1318,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case IS_TOP_ACTIVITY_IMMERSIVE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            boolean isit;
-            isit = isTopActivityImmersive();
+            boolean isit = isTopActivityImmersive();
             reply.writeNoException();
             reply.writeInt(isit ? 1 : 0);
         } //End block
@@ -1640,14 +1326,10 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CRASH_APPLICATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int uid;
-            uid = data.readInt();
-            int initialPid;
-            initialPid = data.readInt();
-            String packageName;
-            packageName = data.readString();
-            String message;
-            message = data.readString();
+            int uid = data.readInt();
+            int initialPid = data.readInt();
+            String packageName = data.readString();
+            String message = data.readString();
             crashApplication(uid, initialPid, packageName, message);
             reply.writeNoException();
         } //End block
@@ -1655,10 +1337,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PROVIDER_MIME_TYPE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            String type;
-            type = getProviderMimeType(uri);
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            String type = getProviderMimeType(uri);
             reply.writeNoException();
             reply.writeString(type);
         } //End block
@@ -1666,10 +1346,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case NEW_URI_PERMISSION_OWNER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String name;
-            name = data.readString();
-            IBinder perm;
-            perm = newUriPermissionOwner(name);
+            String name = data.readString();
+            IBinder perm = newUriPermissionOwner(name);
             reply.writeNoException();
             reply.writeStrongBinder(perm);
         } //End block
@@ -1677,16 +1355,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GRANT_URI_PERMISSION_FROM_OWNER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder owner;
-            owner = data.readStrongBinder();
-            int fromUid;
-            fromUid = data.readInt();
-            String targetPkg;
-            targetPkg = data.readString();
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            int mode;
-            mode = data.readInt();
+            IBinder owner = data.readStrongBinder();
+            int fromUid = data.readInt();
+            String targetPkg = data.readString();
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            int mode = data.readInt();
             grantUriPermissionFromOwner(owner, fromUid, targetPkg, uri, mode);
             reply.writeNoException();
         } //End block
@@ -1694,18 +1367,15 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REVOKE_URI_PERMISSION_FROM_OWNER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder owner;
-            owner = data.readStrongBinder();
-            Uri uri;
-            uri = null;
+            IBinder owner = data.readStrongBinder();
+            Uri uri = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_434964308 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1422718106 = (data.readInt() != 0);
                 {
                     Uri.CREATOR.createFromParcel(data);
                 } //End block
             } //End collapsed parenthetic
-            int mode;
-            mode = data.readInt();
+            int mode = data.readInt();
             revokeUriPermissionFromOwner(owner, uri, mode);
             reply.writeNoException();
         } //End block
@@ -1713,16 +1383,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case CHECK_GRANT_URI_PERMISSION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int callingUid;
-            callingUid = data.readInt();
-            String targetPkg;
-            targetPkg = data.readString();
-            Uri uri;
-            uri = Uri.CREATOR.createFromParcel(data);
-            int modeFlags;
-            modeFlags = data.readInt();
-            int res;
-            res = checkGrantUriPermission(callingUid, targetPkg, uri, modeFlags);
+            int callingUid = data.readInt();
+            String targetPkg = data.readString();
+            Uri uri = Uri.CREATOR.createFromParcel(data);
+            int modeFlags = data.readInt();
+            int res = checkGrantUriPermission(callingUid, targetPkg, uri, modeFlags);
             reply.writeNoException();
             reply.writeInt(res);
         } //End block
@@ -1730,18 +1395,14 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case DUMP_HEAP_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String process;
-            process = data.readString();
-            boolean managed;
-            managed = data.readInt() != 0;
-            String path;
-            path = data.readString();
+            String process = data.readString();
+            boolean managed = data.readInt() != 0;
+            String path = data.readString();
             ParcelFileDescriptor fd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_4258857 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1041437092 = (data.readInt() != 0);
             fd = data.readFileDescriptor();
             fd = null;
-            boolean res;
-            res = dumpHeap(process, managed, path, fd);
+            boolean res = dumpHeap(process, managed, path, fd);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1749,16 +1410,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITIES_IN_PACKAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int uid;
-            uid = data.readInt();
-            Intent[] intents;
-            intents = data.createTypedArray(Intent.CREATOR);
-            String[] resolvedTypes;
-            resolvedTypes = data.createStringArray();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            int result;
-            result = startActivitiesInPackage(uid, intents, resolvedTypes, resultTo);
+            int uid = data.readInt();
+            Intent[] intents = data.createTypedArray(Intent.CREATOR);
+            String[] resolvedTypes = data.createStringArray();
+            IBinder resultTo = data.readStrongBinder();
+            int result = startActivitiesInPackage(uid, intents, resolvedTypes, resultTo);
             reply.writeNoException();
             reply.writeInt(result);
         } //End block
@@ -1766,18 +1422,12 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case START_ACTIVITIES_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IBinder b;
-            b = data.readStrongBinder();
-            IApplicationThread app;
-            app = ApplicationThreadNative.asInterface(b);
-            Intent[] intents;
-            intents = data.createTypedArray(Intent.CREATOR);
-            String[] resolvedTypes;
-            resolvedTypes = data.createStringArray();
-            IBinder resultTo;
-            resultTo = data.readStrongBinder();
-            int result;
-            result = startActivities(app, intents, resolvedTypes, resultTo);
+            IBinder b = data.readStrongBinder();
+            IApplicationThread app = ApplicationThreadNative.asInterface(b);
+            Intent[] intents = data.createTypedArray(Intent.CREATOR);
+            String[] resolvedTypes = data.createStringArray();
+            IBinder resultTo = data.readStrongBinder();
+            int result = startActivities(app, intents, resolvedTypes, resultTo);
             reply.writeNoException();
             reply.writeInt(result);
         } //End block
@@ -1785,8 +1435,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int mode;
-            mode = getFrontActivityScreenCompatMode();
+            int mode = getFrontActivityScreenCompatMode();
             reply.writeNoException();
             reply.writeInt(mode);
         } //End block
@@ -1794,8 +1443,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int mode;
-            mode = data.readInt();
+            int mode = data.readInt();
             setFrontActivityScreenCompatMode(mode);
             reply.writeNoException();
             reply.writeInt(mode);
@@ -1804,10 +1452,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            int mode;
-            mode = getPackageScreenCompatMode(pkg);
+            String pkg = data.readString();
+            int mode = getPackageScreenCompatMode(pkg);
             reply.writeNoException();
             reply.writeInt(mode);
         } //End block
@@ -1815,10 +1461,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            int mode;
-            mode = data.readInt();
+            String pkg = data.readString();
+            int mode = data.readInt();
             setPackageScreenCompatMode(pkg, mode);
             reply.writeNoException();
         } //End block
@@ -1826,10 +1470,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SWITCH_USER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int userid;
-            userid = data.readInt();
-            boolean result;
-            result = switchUser(userid);
+            int userid = data.readInt();
+            boolean result = switchUser(userid);
             reply.writeNoException();
             reply.writeInt(result ? 1 : 0);
         } //End block
@@ -1837,12 +1479,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REMOVE_SUB_TASK_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int taskId;
-            taskId = data.readInt();
-            int subTaskIndex;
-            subTaskIndex = data.readInt();
-            boolean result;
-            result = removeSubTask(taskId, subTaskIndex);
+            int taskId = data.readInt();
+            int subTaskIndex = data.readInt();
+            boolean result = removeSubTask(taskId, subTaskIndex);
             reply.writeNoException();
             reply.writeInt(result ? 1 : 0);
         } //End block
@@ -1850,12 +1489,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REMOVE_TASK_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int taskId;
-            taskId = data.readInt();
-            int fl;
-            fl = data.readInt();
-            boolean result;
-            result = removeTask(taskId, fl);
+            int taskId = data.readInt();
+            int fl = data.readInt();
+            boolean result = removeTask(taskId, fl);
             reply.writeNoException();
             reply.writeInt(result ? 1 : 0);
         } //End block
@@ -1863,8 +1499,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case REGISTER_PROCESS_OBSERVER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IProcessObserver observer;
-            observer = IProcessObserver.Stub.asInterface(
+            IProcessObserver observer = IProcessObserver.Stub.asInterface(
                     data.readStrongBinder());
             registerProcessObserver(observer);
         } //End block
@@ -1872,8 +1507,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UNREGISTER_PROCESS_OBSERVER_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IProcessObserver observer;
-            observer = IProcessObserver.Stub.asInterface(
+            IProcessObserver observer = IProcessObserver.Stub.asInterface(
                     data.readStrongBinder());
             unregisterProcessObserver(observer);
         } //End block
@@ -1881,10 +1515,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            boolean ask;
-            ask = getPackageAskScreenCompat(pkg);
+            String pkg = data.readString();
+            boolean ask = getPackageAskScreenCompat(pkg);
             reply.writeNoException();
             reply.writeInt(ask ? 1 : 0);
         } //End block
@@ -1892,10 +1524,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            String pkg;
-            pkg = data.readString();
-            boolean ask;
-            ask = data.readInt() != 0;
+            String pkg = data.readString();
+            boolean ask = data.readInt() != 0;
             setPackageAskScreenCompat(pkg, ask);
             reply.writeNoException();
         } //End block
@@ -1903,11 +1533,9 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case IS_INTENT_SENDER_TARGETED_TO_PACKAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            IIntentSender r;
-            r = IIntentSender.Stub.asInterface(
+            IIntentSender r = IIntentSender.Stub.asInterface(
                 data.readStrongBinder());
-            boolean res;
-            res = isIntentSenderTargetedToPackage(r);
+            boolean res = isIntentSenderTargetedToPackage(r);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
         } //End block
@@ -1915,8 +1543,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case UPDATE_PERSISTENT_CONFIGURATION_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            Configuration config;
-            config = Configuration.CREATOR.createFromParcel(data);
+            Configuration config = Configuration.CREATOR.createFromParcel(data);
             updatePersistentConfiguration(config);
             reply.writeNoException();
         } //End block
@@ -1924,10 +1551,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case GET_PROCESS_PSS_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            int[] pids;
-            pids = data.createIntArray();
-            long[] pss;
-            pss = getProcessPss(pids);
+            int[] pids = data.createIntArray();
+            long[] pss = getProcessPss(pids);
             reply.writeNoException();
             reply.writeLongArray(pss);
         } //End block
@@ -1935,10 +1560,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
         //Begin case SHOW_BOOT_MESSAGE_TRANSACTION 
         {
             data.enforceInterface(IActivityManager.descriptor);
-            CharSequence msg;
-            msg = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
-            boolean always;
-            always = data.readInt() != 0;
+            CharSequence msg = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(data);
+            boolean always = data.readInt() != 0;
             showBootMessage(msg, always);
             reply.writeNoException();
         } //End block
@@ -1950,45 +1573,43 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             reply.writeNoException();
         } //End block
         //End case DISMISS_KEYGUARD_ON_NEXT_ACTIVITY_TRANSACTION 
-        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_2025633160 = (super.onTransact(code, data, reply, flags));
+        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_120907868 = (super.onTransact(code, data, reply, flags));
         addTaint(code);
         addTaint(data.getTaint());
         addTaint(reply.getTaint());
         addTaint(flags);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1917300651 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1917300651;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606991720 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606991720;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.940 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5B867CB23983737092014B99E779DCAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.713 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "E0D2808812E9BCDEA036007062F416F1")
     public IBinder asBinder() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_746554755 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_746554755 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_746554755.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_746554755;
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1452716243 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1452716243 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1452716243.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1452716243;
         // ---------- Original Method ----------
         //return this;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.941 -0400", hash_original_field = "7E28963ADB1F0EB3A0EF33BADF10C8B6", hash_generated_field = "94B5404A722EA8FD9D4D6FFD2B91074A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.713 -0400", hash_original_field = "7E28963ADB1F0EB3A0EF33BADF10C8B6", hash_generated_field = "94B5404A722EA8FD9D4D6FFD2B91074A")
 
     static boolean sSystemReady = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.959 -0400", hash_original_field = "1DDB5338697F4F4D1F4EBEBCBCA04F09", hash_generated_field = "131889516443BE5AE8785F97AB362FF6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_field = "1DDB5338697F4F4D1F4EBEBCBCA04F09", hash_generated_field = "C4820EDCAE5178FFFBC23811D56B7F74")
 
-    private static Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.952 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "B1898B20AF38F846A877017D09A57539")
+    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "C2B8BA082758343987D3AD39EBC6D0DC")
         protected IActivityManager create() {
-            IActivityManager varB4EAC82CA7396A68D541C85D26508E83_1396974930 = null; //Variable for return #1
-            IBinder b;
-            b = ServiceManager.getService("activity");
-            IActivityManager am;
-            am = asInterface(b);
-            varB4EAC82CA7396A68D541C85D26508E83_1396974930 = am;
-            varB4EAC82CA7396A68D541C85D26508E83_1396974930.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1396974930;
+            IActivityManager varB4EAC82CA7396A68D541C85D26508E83_1441821956 = null; //Variable for return #1
+            IBinder b = ServiceManager.getService("activity");
+            IActivityManager am = asInterface(b);
+            varB4EAC82CA7396A68D541C85D26508E83_1441821956 = am;
+            varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1441821956;
             // ---------- Original Method ----------
             //IBinder b = ServiceManager.getService("activity");
             //if (false) {
@@ -2006,11 +1627,11 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
 }
 
 class ActivityManagerProxy implements IActivityManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.970 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.716 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
     private IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.972 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "45B8F41C62FE771FA42BECD8E8563D23")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.717 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "45B8F41C62FE771FA42BECD8E8563D23")
     public  ActivityManagerProxy(IBinder remote) {
         mRemote = remote;
         // ---------- Original Method ----------
@@ -2018,28 +1639,26 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:42.983 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "3F1E80B1FCFB6BDB977B770156D4F21D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.718 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "131DB90B148ED0416D3B26B2D72204FA")
     public IBinder asBinder() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1849896043 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1849896043 = mRemote;
-        varB4EAC82CA7396A68D541C85D26508E83_1849896043.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1849896043;
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_26581125 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_26581125 = mRemote;
+        varB4EAC82CA7396A68D541C85D26508E83_26581125.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_26581125;
         // ---------- Original Method ----------
         //return mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.005 -0400", hash_original_method = "ECBE4259B26F016D18C1CACD48E02238", hash_generated_method = "D92809053D92A6FE4B159AB95D782F67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.719 -0400", hash_original_method = "ECBE4259B26F016D18C1CACD48E02238", hash_generated_method = "541451587BB409B47BAC287560662465")
     public int startActivity(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
             IBinder resultTo, String resultWho,
             int requestCode, boolean onlyIfNeeded,
             boolean debug, String profileFile, ParcelFileDescriptor profileFd,
             boolean autoStopProfiler) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2062,8 +1681,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(autoStopProfiler ? 1 : 0);
         mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
@@ -2079,25 +1697,23 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(profileFile.getTaint());
         addTaint(profileFd.getTaint());
         addTaint(autoStopProfiler);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087929053 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087929053;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838263420 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838263420;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.028 -0400", hash_original_method = "BF42E410BABF1DD283EC1102C9637003", hash_generated_method = "C346697C3412D9955DFD9B2043A6AE74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.721 -0400", hash_original_method = "BF42E410BABF1DD283EC1102C9637003", hash_generated_method = "2E9FD1D56F2109DC0C936576769DBF7E")
     public WaitResult startActivityAndWait(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
             IBinder resultTo, String resultWho,
             int requestCode, boolean onlyIfNeeded,
             boolean debug, String profileFile, ParcelFileDescriptor profileFd,
             boolean autoStopProfiler) throws RemoteException {
-        WaitResult varB4EAC82CA7396A68D541C85D26508E83_827214993 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        WaitResult varB4EAC82CA7396A68D541C85D26508E83_2065317512 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2120,11 +1736,10 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(autoStopProfiler ? 1 : 0);
         mRemote.transact(START_ACTIVITY_AND_WAIT_TRANSACTION, data, reply, 0);
         reply.readException();
-        WaitResult result;
-        result = WaitResult.CREATOR.createFromParcel(reply);
+        WaitResult result = WaitResult.CREATOR.createFromParcel(reply);
         reply.recycle();
         data.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_827214993 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_2065317512 = result;
         addTaint(caller.getTaint());
         addTaint(intent.getTaint());
         addTaint(resolvedType.getTaint());
@@ -2138,23 +1753,21 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(profileFile.getTaint());
         addTaint(profileFd.getTaint());
         addTaint(autoStopProfiler);
-        varB4EAC82CA7396A68D541C85D26508E83_827214993.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_827214993;
+        varB4EAC82CA7396A68D541C85D26508E83_2065317512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2065317512;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.035 -0400", hash_original_method = "47F7B475943E725D61EF4FCECF2C263D", hash_generated_method = "350E6F58E21A38E091292EED6225C8FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.723 -0400", hash_original_method = "47F7B475943E725D61EF4FCECF2C263D", hash_generated_method = "860365563A57A9A717E7AEC35F2CA285")
     public int startActivityWithConfig(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
             IBinder resultTo, String resultWho,
             int requestCode, boolean onlyIfNeeded,
             boolean debug, Configuration config) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2169,8 +1782,7 @@ class ActivityManagerProxy implements IActivityManager {
         config.writeToParcel(data, 0);
         mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
@@ -2184,8 +1796,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(onlyIfNeeded);
         addTaint(debug);
         addTaint(config.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269409961 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269409961;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40903423 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40903423;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2210,15 +1822,13 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.054 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "59CEA9BB68D98BD089D00848E33DD2C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.725 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "892043C62F99A56DE1CA2F8913A3E285")
     public int startActivityIntentSender(IApplicationThread caller,
             IntentSender intent, Intent fillInIntent, String resolvedType,
             IBinder resultTo, String resultWho, int requestCode,
             int flagsMask, int flagsValues) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2237,8 +1847,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(flagsValues);
         mRemote.transact(START_ACTIVITY_INTENT_SENDER_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
@@ -2250,33 +1859,30 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(requestCode);
         addTaint(flagsMask);
         addTaint(flagsValues);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911007017 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911007017;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666531587 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666531587;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.075 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "A9117B7257EC69A8912B1A74BA169194")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.727 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "E7D0C5B873D5927DBB0446F66AF418AB")
     public boolean startNextMatchingActivity(IBinder callingActivity,
             Intent intent) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(callingActivity);
         intent.writeToParcel(data, 0);
         mRemote.transact(START_NEXT_MATCHING_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(callingActivity.getTaint());
         addTaint(intent.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653048230 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_653048230;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1282382524 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1282382524;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2292,12 +1898,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.088 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "45539714A5BFDC3AD14955F26733C95F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.728 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "3E0DD3A3F6DAC5EB50953AF264E7260B")
     public boolean finishActivity(IBinder token, int resultCode, Intent resultData) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(resultCode);
@@ -2310,15 +1914,14 @@ class ActivityManagerProxy implements IActivityManager {
         } //End block
         mRemote.transact(FINISH_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
         addTaint(resultCode);
         addTaint(resultData.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701163642 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701163642;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639452978 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_639452978;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2340,12 +1943,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.105 -0400", hash_original_method = "352728C633440E8BBFDE1A24B12C26C6", hash_generated_method = "DC186F718591A27CF77DA477048F86FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.728 -0400", hash_original_method = "352728C633440E8BBFDE1A24B12C26C6", hash_generated_method = "26755995D5642DAAEBF9B2D49328DB57")
     public void finishSubActivity(IBinder token, String resultWho, int requestCode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeString(resultWho);
@@ -2371,23 +1972,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.121 -0400", hash_original_method = "03769BB85CE515FA0FB5B3DCD0709D8A", hash_generated_method = "059A66730836C002CF84785774F45235")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.729 -0400", hash_original_method = "03769BB85CE515FA0FB5B3DCD0709D8A", hash_generated_method = "B2E4B13B1005B9BE42CFA0C2BB7C5E27")
     public boolean willActivityBeVisible(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(WILL_ACTIVITY_BE_VISIBLE_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1330240854 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1330240854;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1994084082 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1994084082;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2402,16 +2000,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.135 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "A1556B8BAC3D474F37C63744BF23C610")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.731 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "CFC9E057595F36DE3F559E1E58F40EAC")
     public Intent registerReceiver(IApplicationThread caller, String packageName,
             IIntentReceiver receiver,
             IntentFilter filter, String perm) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        Intent varB4EAC82CA7396A68D541C85D26508E83_2005259078 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Intent varB4EAC82CA7396A68D541C85D26508E83_1493710577 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeString(packageName);
@@ -2420,23 +2016,21 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeString(perm);
         mRemote.transact(REGISTER_RECEIVER_TRANSACTION, data, reply, 0);
         reply.readException();
-        Intent intent;
-        intent = null;
-        int haveIntent;
-        haveIntent = reply.readInt();
+        Intent intent = null;
+        int haveIntent = reply.readInt();
         {
             intent = Intent.CREATOR.createFromParcel(reply);
         } //End block
         reply.recycle();
         data.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_2005259078 = intent;
+        varB4EAC82CA7396A68D541C85D26508E83_1493710577 = intent;
         addTaint(caller.getTaint());
         addTaint(packageName.getTaint());
         addTaint(receiver.getTaint());
         addTaint(filter.getTaint());
         addTaint(perm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2005259078.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2005259078;
+        varB4EAC82CA7396A68D541C85D26508E83_1493710577.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1493710577;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2459,12 +2053,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.138 -0400", hash_original_method = "CF62E9563222E9365AE1815E546E05AA", hash_generated_method = "E98E195683A35A2770F891718106A316")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.732 -0400", hash_original_method = "CF62E9563222E9365AE1815E546E05AA", hash_generated_method = "431656D6875F25D79F7B6B62A13F282D")
     public void unregisterReceiver(IIntentReceiver receiver) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(receiver.asBinder());
         mRemote.transact(UNREGISTER_RECEIVER_TRANSACTION, data, reply, 0);
@@ -2484,16 +2076,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.155 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "4AB4E7F7AF684D0721DEC48412AD6B19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.733 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "A7544DD71064409CAC2F5F828086DA82")
     public int broadcastIntent(IApplicationThread caller,
             Intent intent, String resolvedType,  IIntentReceiver resultTo,
             int resultCode, String resultData, Bundle map,
             String requiredPermission, boolean serialized,
             boolean sticky) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2507,8 +2097,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(sticky ? 1 : 0);
         mRemote.transact(BROADCAST_INTENT_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
@@ -2521,8 +2110,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(requiredPermission.getTaint());
         addTaint(serialized);
         addTaint(sticky);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856219619 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856219619;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948310597 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948310597;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2546,12 +2135,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.171 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "B89A1F05E2C96085AEFBAC63E7BB8CF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.734 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "C97679BE9143C8BC694A6F655043BCC4")
     public void unbroadcastIntent(IApplicationThread caller, Intent intent) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         intent.writeToParcel(data, 0);
@@ -2574,12 +2161,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.192 -0400", hash_original_method = "8BFF18A0F9A8EDDD76A319C280B21CDC", hash_generated_method = "AE98E87FAB593A72813EE352D2156665")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.736 -0400", hash_original_method = "8BFF18A0F9A8EDDD76A319C280B21CDC", hash_generated_method = "B9218B72010DE15D526B3D9CAC041EC1")
     public void finishReceiver(IBinder who, int resultCode, String resultData, Bundle map, boolean abortBroadcast) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(who);
         data.writeInt(resultCode);
@@ -2611,12 +2196,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.194 -0400", hash_original_method = "1E67E239E5F2A2540F1E032AB272605E", hash_generated_method = "A29CAA94EF8064DA8BDAD6656C5B78A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.737 -0400", hash_original_method = "1E67E239E5F2A2540F1E032AB272605E", hash_generated_method = "2B107D558A31234A522545FFC88DEC14")
     public void attachApplication(IApplicationThread app) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(app.asBinder());
         mRemote.transact(ATTACH_APPLICATION_TRANSACTION, data, reply, 0);
@@ -2636,12 +2219,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.203 -0400", hash_original_method = "BC9E49082B5DC06C707641FC7F3E31F5", hash_generated_method = "36CBC767D27F71910C56C4A4F7A15C17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.738 -0400", hash_original_method = "BC9E49082B5DC06C707641FC7F3E31F5", hash_generated_method = "9044A7C07BC84C7A9C30F8F8FACC13D9")
     public void activityIdle(IBinder token, Configuration config, boolean stopProfiling) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         {
@@ -2678,12 +2259,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.222 -0400", hash_original_method = "4914FFC78B966DEBED0BDBFF9D70FB17", hash_generated_method = "26D4F3F62C20925DCE06F707B1843529")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.739 -0400", hash_original_method = "4914FFC78B966DEBED0BDBFF9D70FB17", hash_generated_method = "403EDF12F50C1C78A594466FAFE00193")
     public void activityPaused(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(ACTIVITY_PAUSED_TRANSACTION, data, reply, 0);
@@ -2703,13 +2282,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.235 -0400", hash_original_method = "F5DE3AC45B6CCF74477AF45EB0878099", hash_generated_method = "9A38013C22A33FEC657F60E46A302686")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.740 -0400", hash_original_method = "F5DE3AC45B6CCF74477AF45EB0878099", hash_generated_method = "076942F287B777AD68F8FAA3E0EE8AFB")
     public void activityStopped(IBinder token, Bundle state,
             Bitmap thumbnail, CharSequence description) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeBundle(state);
@@ -2749,12 +2326,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.249 -0400", hash_original_method = "CA8224B1DA5730B462FB3F604509C1DB", hash_generated_method = "6B84B89B02604FFF439C18CAC15E5C63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.741 -0400", hash_original_method = "CA8224B1DA5730B462FB3F604509C1DB", hash_generated_method = "9A0DBFBC21EAEAD1072408B3C9A2B40C")
     public void activitySlept(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(ACTIVITY_SLEPT_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
@@ -2774,12 +2349,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.269 -0400", hash_original_method = "9A100D49A0D535BB686DAA00CAC541FF", hash_generated_method = "D6150C2D6E218DCAF9DAC4EA052D142F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.742 -0400", hash_original_method = "9A100D49A0D535BB686DAA00CAC541FF", hash_generated_method = "84EFC1D50016BF5FC27B3BE76A469E60")
     public void activityDestroyed(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(ACTIVITY_DESTROYED_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
@@ -2799,25 +2372,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.282 -0400", hash_original_method = "7637EF2082F6942F953796EFCEAA3730", hash_generated_method = "EFB00D1E060B27817A9529BB79E58D21")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.743 -0400", hash_original_method = "7637EF2082F6942F953796EFCEAA3730", hash_generated_method = "5F90804AD13F343E685350D51C508776")
     public String getCallingPackage(IBinder token) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1619165721 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        String varB4EAC82CA7396A68D541C85D26508E83_451072992 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(GET_CALLING_PACKAGE_TRANSACTION, data, reply, 0);
         reply.readException();
-        String res;
-        res = reply.readString();
+        String res = reply.readString();
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1619165721 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_451072992 = res;
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1619165721.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1619165721;
+        varB4EAC82CA7396A68D541C85D26508E83_451072992.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_451072992;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2832,25 +2402,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.300 -0400", hash_original_method = "0E9D91A20FCD3BCFB3517DB475147FAB", hash_generated_method = "25C2AE98D778A437E913AD4BDE05B3B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.745 -0400", hash_original_method = "0E9D91A20FCD3BCFB3517DB475147FAB", hash_generated_method = "0E73AFA60D83B2088470B04FBCEBAB3B")
     public ComponentName getCallingActivity(IBinder token) throws RemoteException {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1781001351 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1009300427 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(GET_CALLING_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        ComponentName res;
-        res = ComponentName.readFromParcel(reply);
+        ComponentName res = ComponentName.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1781001351 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1009300427 = res;
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1781001351.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1781001351;
+        varB4EAC82CA7396A68D541C85D26508E83_1009300427.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1009300427;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2865,68 +2432,60 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.317 -0400", hash_original_method = "FAA1C4AE039868246AED533CDCA15CD7", hash_generated_method = "D5D6EE2FA6AAC23B15DF3B14C3626709")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.748 -0400", hash_original_method = "FAA1C4AE039868246AED533CDCA15CD7", hash_generated_method = "74D12A5995295BF6FCC25EF8B6A6F607")
     public List getTasks(int maxNum, int flags,
             IThumbnailReceiver receiver) throws RemoteException {
-        List varB4EAC82CA7396A68D541C85D26508E83_597085553 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List varB4EAC82CA7396A68D541C85D26508E83_659949972 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(maxNum);
         data.writeInt(flags);
         data.writeStrongBinder(receiver != null ? receiver.asBinder() : null);
         mRemote.transact(GET_TASKS_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList list;
-        list = null;
-        int N;
-        N = reply.readInt();
+        ArrayList list = null;
+        int N = reply.readInt();
         {
             list = new ArrayList();
             {
-                ActivityManager.RunningTaskInfo info;
-                info = ActivityManager.RunningTaskInfo.CREATOR
+                ActivityManager.RunningTaskInfo info = ActivityManager.RunningTaskInfo.CREATOR
                         .createFromParcel(reply);
                 list.add(info);
             } //End block
         } //End block
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_597085553 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_659949972 = list;
         addTaint(maxNum);
         addTaint(flags);
         addTaint(receiver.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_597085553.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_597085553;
+        varB4EAC82CA7396A68D541C85D26508E83_659949972.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_659949972;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.338 -0400", hash_original_method = "9D3E8FF17F102376D7C7BE9D34CE4F93", hash_generated_method = "E1B7AF7F966CA00FAA08BC50FFBB4AC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.750 -0400", hash_original_method = "9D3E8FF17F102376D7C7BE9D34CE4F93", hash_generated_method = "FF19DAE6F375953D206B53D06354FD04")
     public List<ActivityManager.RecentTaskInfo> getRecentTasks(int maxNum,
             int flags) throws RemoteException {
-        List<ActivityManager.RecentTaskInfo> varB4EAC82CA7396A68D541C85D26508E83_1682553508 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List<ActivityManager.RecentTaskInfo> varB4EAC82CA7396A68D541C85D26508E83_287318358 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(maxNum);
         data.writeInt(flags);
         mRemote.transact(GET_RECENT_TASKS_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList<ActivityManager.RecentTaskInfo> list;
-        list = reply.createTypedArrayList(ActivityManager.RecentTaskInfo.CREATOR);
+        ArrayList<ActivityManager.RecentTaskInfo> list = reply.createTypedArrayList(ActivityManager.RecentTaskInfo.CREATOR);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1682553508 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_287318358 = list;
         addTaint(maxNum);
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1682553508.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1682553508;
+        varB4EAC82CA7396A68D541C85D26508E83_287318358.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_287318358;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2943,31 +2502,28 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.590 -0400", hash_original_method = "10D095A12B52FE928E4AEC7C3F42A832", hash_generated_method = "EB76E3C537FDF884A85944D672EB7A6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.752 -0400", hash_original_method = "10D095A12B52FE928E4AEC7C3F42A832", hash_generated_method = "2A5EC76EB314F02EE0CB98D28828B441")
     public ActivityManager.TaskThumbnails getTaskThumbnails(int id) throws RemoteException {
-        ActivityManager.TaskThumbnails varB4EAC82CA7396A68D541C85D26508E83_114537309 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ActivityManager.TaskThumbnails varB4EAC82CA7396A68D541C85D26508E83_297028150 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(id);
         mRemote.transact(GET_TASK_THUMBNAILS_TRANSACTION, data, reply, 0);
         reply.readException();
-        ActivityManager.TaskThumbnails bm;
-        bm = null;
+        ActivityManager.TaskThumbnails bm = null;
         {
-            boolean varB04A284F06B56929F38634A7F4C6A0D7_661553620 = (reply.readInt() != 0);
+            boolean varB04A284F06B56929F38634A7F4C6A0D7_1989094099 = (reply.readInt() != 0);
             {
                 bm = ActivityManager.TaskThumbnails.CREATOR.createFromParcel(reply);
             } //End block
         } //End collapsed parenthetic
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_114537309 = bm;
+        varB4EAC82CA7396A68D541C85D26508E83_297028150 = bm;
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_114537309.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_114537309;
+        varB4EAC82CA7396A68D541C85D26508E83_297028150.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_297028150;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -2985,38 +2541,33 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.594 -0400", hash_original_method = "7671DD1471581027B2C414BE0E3CE4A6", hash_generated_method = "90FE6F2664C02AA974BAB29F026E7E80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.753 -0400", hash_original_method = "7671DD1471581027B2C414BE0E3CE4A6", hash_generated_method = "CC6C9390DC5F061B69265D9AA00637D2")
     public List getServices(int maxNum, int flags) throws RemoteException {
-        List varB4EAC82CA7396A68D541C85D26508E83_1933651348 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List varB4EAC82CA7396A68D541C85D26508E83_1687984597 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(maxNum);
         data.writeInt(flags);
         mRemote.transact(GET_SERVICES_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList list;
-        list = null;
-        int N;
-        N = reply.readInt();
+        ArrayList list = null;
+        int N = reply.readInt();
         {
             list = new ArrayList();
             {
-                ActivityManager.RunningServiceInfo info;
-                info = ActivityManager.RunningServiceInfo.CREATOR
+                ActivityManager.RunningServiceInfo info = ActivityManager.RunningServiceInfo.CREATOR
                         .createFromParcel(reply);
                 list.add(info);
             } //End block
         } //End block
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1933651348 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_1687984597 = list;
         addTaint(maxNum);
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1933651348.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1933651348;
+        varB4EAC82CA7396A68D541C85D26508E83_1687984597.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1687984597;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3043,23 +2594,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.616 -0400", hash_original_method = "2AE453A6460D5AF368C9AC4C4862314B", hash_generated_method = "6D11B84014DB44EEE3ABED412C3AC133")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.755 -0400", hash_original_method = "2AE453A6460D5AF368C9AC4C4862314B", hash_generated_method = "DEA064E0471E20763C6374562F35DF8F")
     public List<ActivityManager.ProcessErrorStateInfo> getProcessesInErrorState() throws RemoteException {
-        List<ActivityManager.ProcessErrorStateInfo> varB4EAC82CA7396A68D541C85D26508E83_1975275395 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List<ActivityManager.ProcessErrorStateInfo> varB4EAC82CA7396A68D541C85D26508E83_1863689852 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_PROCESSES_IN_ERROR_STATE_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList<ActivityManager.ProcessErrorStateInfo> list;
-        list = reply.createTypedArrayList(ActivityManager.ProcessErrorStateInfo.CREATOR);
+        ArrayList<ActivityManager.ProcessErrorStateInfo> list = reply.createTypedArrayList(ActivityManager.ProcessErrorStateInfo.CREATOR);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1975275395 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_1975275395.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1975275395;
+        varB4EAC82CA7396A68D541C85D26508E83_1863689852 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_1863689852.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1863689852;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3074,23 +2622,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.622 -0400", hash_original_method = "8E45CD57BE18A4B76C3A3E0DA22BC8B7", hash_generated_method = "F2FBE73DB9F55A46116E26B7FCB2DFD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.758 -0400", hash_original_method = "8E45CD57BE18A4B76C3A3E0DA22BC8B7", hash_generated_method = "1C32A18A1AA8E4A816FB10FD575BED8C")
     public List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses() throws RemoteException {
-        List<ActivityManager.RunningAppProcessInfo> varB4EAC82CA7396A68D541C85D26508E83_1766764983 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List<ActivityManager.RunningAppProcessInfo> varB4EAC82CA7396A68D541C85D26508E83_728844872 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_RUNNING_APP_PROCESSES_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList<ActivityManager.RunningAppProcessInfo> list;
-        list = reply.createTypedArrayList(ActivityManager.RunningAppProcessInfo.CREATOR);
+        ArrayList<ActivityManager.RunningAppProcessInfo> list = reply.createTypedArrayList(ActivityManager.RunningAppProcessInfo.CREATOR);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1766764983 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_1766764983.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1766764983;
+        varB4EAC82CA7396A68D541C85D26508E83_728844872 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_728844872.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_728844872;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3105,23 +2650,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.646 -0400", hash_original_method = "2FAC851B003A84469F94E88A81DA29C3", hash_generated_method = "DE275730FD8250CD1C0C537765F846F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.760 -0400", hash_original_method = "2FAC851B003A84469F94E88A81DA29C3", hash_generated_method = "E9A7FE0A26E22CD31EF00F65ABBE6FE3")
     public List<ApplicationInfo> getRunningExternalApplications() throws RemoteException {
-        List<ApplicationInfo> varB4EAC82CA7396A68D541C85D26508E83_400254469 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        List<ApplicationInfo> varB4EAC82CA7396A68D541C85D26508E83_1714574234 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_RUNNING_EXTERNAL_APPLICATIONS_TRANSACTION, data, reply, 0);
         reply.readException();
-        ArrayList<ApplicationInfo> list;
-        list = reply.createTypedArrayList(ApplicationInfo.CREATOR);
+        ArrayList<ApplicationInfo> list = reply.createTypedArrayList(ApplicationInfo.CREATOR);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_400254469 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_400254469.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_400254469;
+        varB4EAC82CA7396A68D541C85D26508E83_1714574234 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_1714574234.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1714574234;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3136,12 +2678,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.664 -0400", hash_original_method = "DABF13B8F45F6A065880490CD0DBD1A0", hash_generated_method = "1308F25D2EC1E1029F73A95A69F3EF0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.761 -0400", hash_original_method = "DABF13B8F45F6A065880490CD0DBD1A0", hash_generated_method = "9344B34F8FA29BC1D8FCBECB5854FEF2")
     public void moveTaskToFront(int task, int flags) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(task);
         data.writeInt(flags);
@@ -3164,12 +2704,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.666 -0400", hash_original_method = "7FFB6E49EA553237E0A3F53A2CDFD87F", hash_generated_method = "690206BAD2C5DB13B975AC8F68880244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.762 -0400", hash_original_method = "7FFB6E49EA553237E0A3F53A2CDFD87F", hash_generated_method = "AA642DA2ACB279D0F48A18A24514ABC1")
     public void moveTaskToBack(int task) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(task);
         mRemote.transact(MOVE_TASK_TO_BACK_TRANSACTION, data, reply, 0);
@@ -3189,25 +2727,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.690 -0400", hash_original_method = "7F4F39C4D7AB58BCB5DB152705A9F80A", hash_generated_method = "514DA3986DE735CBAE7BE6CB80ECBBB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.762 -0400", hash_original_method = "7F4F39C4D7AB58BCB5DB152705A9F80A", hash_generated_method = "F6B75A94FE6D00160FE6D49F081C8F46")
     public boolean moveActivityTaskToBack(IBinder token, boolean nonRoot) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(nonRoot ? 1 : 0);
         mRemote.transact(MOVE_ACTIVITY_TASK_TO_BACK_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
         addTaint(nonRoot);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_424020346 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_424020346;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_652829748 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_652829748;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3223,12 +2758,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.712 -0400", hash_original_method = "48BD6DC2300FE39DD3A4B34C3DD91993", hash_generated_method = "62E8CAD6942321207F0D032894737215")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.763 -0400", hash_original_method = "48BD6DC2300FE39DD3A4B34C3DD91993", hash_generated_method = "7A5DF0CA5E3A65BCF4CE681D4776C101")
     public void moveTaskBackwards(int task) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(task);
         mRemote.transact(MOVE_TASK_BACKWARDS_TRANSACTION, data, reply, 0);
@@ -3248,25 +2781,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.732 -0400", hash_original_method = "3FABC29A3C68690EBF6B4F44EE4A5D23", hash_generated_method = "341E9D8C58D21350EA6C371C53C1228F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.764 -0400", hash_original_method = "3FABC29A3C68690EBF6B4F44EE4A5D23", hash_generated_method = "F8E6C6F6E884F4D7C238CDC0B163FB6D")
     public int getTaskForActivity(IBinder token, boolean onlyRoot) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(onlyRoot ? 1 : 0);
         mRemote.transact(GET_TASK_FOR_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
         addTaint(onlyRoot);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008119097 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008119097;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966583667 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966583667;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3282,12 +2812,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.740 -0400", hash_original_method = "AF696C3AA9BD79AC1F2D6780E820F3FA", hash_generated_method = "69BBEF6C785F31F0779854A2C19CDB8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.765 -0400", hash_original_method = "AF696C3AA9BD79AC1F2D6780E820F3FA", hash_generated_method = "D22A661DBE977F5C7E29448EBC97EB6F")
     public void finishOtherInstances(IBinder token, ComponentName className) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         ComponentName.writeToParcel(className, data);
@@ -3310,13 +2838,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.753 -0400", hash_original_method = "4B3E31ABB8C007E1B3828F729DFD9393", hash_generated_method = "91291A78C733BA9F5D9320F1EB1BFD81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.766 -0400", hash_original_method = "4B3E31ABB8C007E1B3828F729DFD9393", hash_generated_method = "FBEF55531A7E85697237AD4A58936BF8")
     public void reportThumbnail(IBinder token,
                                 Bitmap thumbnail, CharSequence description) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         {
@@ -3353,33 +2879,29 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.770 -0400", hash_original_method = "EC6CF87E25124312A62325C5F062E996", hash_generated_method = "FD6F9DA082E0329C74F0A4186B742EA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.768 -0400", hash_original_method = "EC6CF87E25124312A62325C5F062E996", hash_generated_method = "E43332DA14128337B26CF183B6CCBAD9")
     public ContentProviderHolder getContentProvider(IApplicationThread caller,
                                                     String name) throws RemoteException {
-        ContentProviderHolder varB4EAC82CA7396A68D541C85D26508E83_969357449 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ContentProviderHolder varB4EAC82CA7396A68D541C85D26508E83_1467686584 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeString(name);
         mRemote.transact(GET_CONTENT_PROVIDER_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
-        ContentProviderHolder cph;
-        cph = null;
+        int res = reply.readInt();
+        ContentProviderHolder cph = null;
         {
             cph = ContentProviderHolder.CREATOR.createFromParcel(reply);
         } //End block
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_969357449 = cph;
+        varB4EAC82CA7396A68D541C85D26508E83_1467686584 = cph;
         addTaint(caller.getTaint());
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_969357449.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_969357449;
+        varB4EAC82CA7396A68D541C85D26508E83_1467686584.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1467686584;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3399,13 +2921,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.788 -0400", hash_original_method = "9C5D73DEFA4B6B21F8A4E01DC5E46521", hash_generated_method = "DCCE44D9AD901F32E1112C227A1F2648")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.769 -0400", hash_original_method = "9C5D73DEFA4B6B21F8A4E01DC5E46521", hash_generated_method = "A43383A3871D0AAA4C56EAC7B1814266")
     public void publishContentProviders(IApplicationThread caller,
                                         List<ContentProviderHolder> providers) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeTypedList(providers);
@@ -3428,13 +2948,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.807 -0400", hash_original_method = "6E983079D2A10BB8E3DF4E66B032EE6D", hash_generated_method = "35E8832CBE918D9E7E6B0449FE061B05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.770 -0400", hash_original_method = "6E983079D2A10BB8E3DF4E66B032EE6D", hash_generated_method = "6D17459DCA9D8504413A2330F9FBE399")
     public void removeContentProvider(IApplicationThread caller,
             String name) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeString(name);
@@ -3457,25 +2975,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.820 -0400", hash_original_method = "E5355EA6A0F8270964E816C69524096C", hash_generated_method = "79E76420C10ADAA8BD656F577A67472A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.772 -0400", hash_original_method = "E5355EA6A0F8270964E816C69524096C", hash_generated_method = "1BA7DADDEB0C48F963C8B112A972C677")
     public PendingIntent getRunningServiceControlPanel(ComponentName service) throws RemoteException {
-        PendingIntent varB4EAC82CA7396A68D541C85D26508E83_1486340326 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        PendingIntent varB4EAC82CA7396A68D541C85D26508E83_1638122282 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         service.writeToParcel(data, 0);
         mRemote.transact(GET_RUNNING_SERVICE_CONTROL_PANEL_TRANSACTION, data, reply, 0);
         reply.readException();
-        PendingIntent res;
-        res = PendingIntent.readPendingIntentOrNullFromParcel(reply);
+        PendingIntent res = PendingIntent.readPendingIntentOrNullFromParcel(reply);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1486340326 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1638122282 = res;
         addTaint(service.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1486340326.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1486340326;
+        varB4EAC82CA7396A68D541C85D26508E83_1638122282.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1638122282;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3490,30 +3005,27 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.841 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "8731D6FDD18AA25FD56B03BDDF884746")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.773 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "ABF70C2CFEB58B0F967832EE82F5B2B1")
     public ComponentName startService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_537652790 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_892126586 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         service.writeToParcel(data, 0);
         data.writeString(resolvedType);
         mRemote.transact(START_SERVICE_TRANSACTION, data, reply, 0);
         reply.readException();
-        ComponentName res;
-        res = ComponentName.readFromParcel(reply);
+        ComponentName res = ComponentName.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_537652790 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_892126586 = res;
         addTaint(caller.getTaint());
         addTaint(service.getTaint());
         addTaint(resolvedType.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_537652790.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_537652790;
+        varB4EAC82CA7396A68D541C85D26508E83_892126586.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_892126586;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3530,28 +3042,25 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.862 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "FF774218B0F8FF7F119276DE3B82A760")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.774 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "6945C90B60A09442A712A97A9D4016DF")
     public int stopService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         service.writeToParcel(data, 0);
         data.writeString(resolvedType);
         mRemote.transact(STOP_SERVICE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
         addTaint(service.getTaint());
         addTaint(resolvedType.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430298724 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430298724;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427928658 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427928658;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3568,28 +3077,25 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.874 -0400", hash_original_method = "DB1BCCF2CB5E2532E24072B1F607F963", hash_generated_method = "1E6E7148E44A6F206E4C7C58ED380AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.775 -0400", hash_original_method = "DB1BCCF2CB5E2532E24072B1F607F963", hash_generated_method = "B47A26DC0A372D8C04FB19A007FACA38")
     public boolean stopServiceToken(ComponentName className, IBinder token,
             int startId) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         ComponentName.writeToParcel(className, data);
         data.writeStrongBinder(token);
         data.writeInt(startId);
         mRemote.transact(STOP_SERVICE_TOKEN_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(className.getTaint());
         addTaint(token.getTaint());
         addTaint(startId);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1681949244 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1681949244;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1936393453 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1936393453;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3606,13 +3112,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.893 -0400", hash_original_method = "9DE0D26C134349F3DA011E11517F3FF5", hash_generated_method = "98B52F4F622888376A78AB9FF18FAC2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.776 -0400", hash_original_method = "9DE0D26C134349F3DA011E11517F3FF5", hash_generated_method = "9046E6FC7E09AD809DCD44EDDF896E1F")
     public void setServiceForeground(ComponentName className, IBinder token,
             int id, Notification notification, boolean removeNotification) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         ComponentName.writeToParcel(className, data);
         data.writeStrongBinder(token);
@@ -3655,14 +3159,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.908 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "08C60CD6CFA04AFD1E1D19948E64BB0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.778 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "44483827CE605D905485BDA7B5ADADDB")
     public int bindService(IApplicationThread caller, IBinder token,
             Intent service, String resolvedType, IServiceConnection connection,
             int flags) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeStrongBinder(token);
@@ -3672,8 +3174,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(flags);
         mRemote.transact(BIND_SERVICE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(caller.getTaint());
@@ -3682,8 +3183,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(resolvedType.getTaint());
         addTaint(connection.getTaint());
         addTaint(flags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463879968 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463879968;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187649660 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187649660;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3703,23 +3204,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.924 -0400", hash_original_method = "E0BD37EB96539E724DE863D335954DC9", hash_generated_method = "174E4E6DE16FD4FF324A6A044156DFDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.779 -0400", hash_original_method = "E0BD37EB96539E724DE863D335954DC9", hash_generated_method = "390976D168AE605F4886D841470865C1")
     public boolean unbindService(IServiceConnection connection) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(connection.asBinder());
         mRemote.transact(UNBIND_SERVICE_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(connection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1778602420 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1778602420;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127088330 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127088330;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3734,13 +3232,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.946 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "3936150EE4A7A38A2F119D7AC5140F6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.780 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "30AF06877D6BC7326710CBA6D98DC13A")
     public void publishService(IBinder token,
             Intent intent, IBinder service) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         intent.writeToParcel(data, 0);
@@ -3766,12 +3262,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.961 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "4B6AF98EC654ECDE92C9EF335E201535")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.781 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "AC3214644F45436391463545376ECCAE")
     public void unbindFinished(IBinder token, Intent intent, boolean doRebind) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         intent.writeToParcel(data, 0);
@@ -3797,13 +3291,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.972 -0400", hash_original_method = "1CB80C62A00C622E35F1B57A132292E9", hash_generated_method = "F66EE5470C2C28C913C96D5F9977AD5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.782 -0400", hash_original_method = "1CB80C62A00C622E35F1B57A132292E9", hash_generated_method = "23ABECF0D91102C6FDE5AC07476B62EF")
     public void serviceDoneExecuting(IBinder token, int type, int startId,
             int res) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(type);
@@ -3832,27 +3324,24 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.991 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "8B449EE3BB5E98FE04AEF7BBF82D2A12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.783 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "B40A5E7DAAA7F2FD7A4C334D8E367510")
     public IBinder peekService(Intent service, String resolvedType) throws RemoteException {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_656521825 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1839642893 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         service.writeToParcel(data, 0);
         data.writeString(resolvedType);
         mRemote.transact(PEEK_SERVICE_TRANSACTION, data, reply, 0);
         reply.readException();
-        IBinder binder;
-        binder = reply.readStrongBinder();
+        IBinder binder = reply.readStrongBinder();
         reply.recycle();
         data.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_656521825 = binder;
+        varB4EAC82CA7396A68D541C85D26508E83_1839642893 = binder;
         addTaint(service.getTaint());
         addTaint(resolvedType.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_656521825.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_656521825;
+        varB4EAC82CA7396A68D541C85D26508E83_1839642893.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1839642893;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3868,25 +3357,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:43.994 -0400", hash_original_method = "7AACC08C389BEE0061373162626F356D", hash_generated_method = "F1D5D4FEDEE5260D782C698FB6A8D19B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.784 -0400", hash_original_method = "7AACC08C389BEE0061373162626F356D", hash_generated_method = "311EEF787C669E3C26273F820F621BFE")
     public boolean bindBackupAgent(ApplicationInfo app, int backupRestoreMode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         app.writeToParcel(data, 0);
         data.writeInt(backupRestoreMode);
         mRemote.transact(START_BACKUP_AGENT_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean success;
-        success = reply.readInt() != 0;
+        boolean success = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(app.getTaint());
         addTaint(backupRestoreMode);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997805192 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997805192;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345437227 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_345437227;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3902,12 +3388,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:44.016 -0400", hash_original_method = "ADE4561AB0FC3828104C329F05A9B88C", hash_generated_method = "FA2848705191825AE13EE5BD0B8D2FE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.784 -0400", hash_original_method = "ADE4561AB0FC3828104C329F05A9B88C", hash_generated_method = "A6369D22143145B4CCF1517365493351")
     public void backupAgentCreated(String packageName, IBinder agent) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         data.writeStrongBinder(agent);
@@ -3928,12 +3412,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:44.018 -0400", hash_original_method = "80BB0DB939AA2A14DC79CE879293739F", hash_generated_method = "709BBA6DB738230C144424C42B6B3FED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.785 -0400", hash_original_method = "80BB0DB939AA2A14DC79CE879293739F", hash_generated_method = "092661CB35A283FA6F73AFFA33A39EBB")
     public void unbindBackupAgent(ApplicationInfo app) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         app.writeToParcel(data, 0);
         mRemote.transact(UNBIND_BACKUP_AGENT_TRANSACTION, data, reply, 0);
@@ -3953,13 +3435,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:44.034 -0400", hash_original_method = "7977DF3866173BBD9227641CB70C5B9A", hash_generated_method = "0984B71038F5057B59BB83F25EC51D25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.786 -0400", hash_original_method = "7977DF3866173BBD9227641CB70C5B9A", hash_generated_method = "CE5D8E73903F922C4AF81F53BB816623")
     public boolean startInstrumentation(ComponentName className, String profileFile,
             int flags, Bundle arguments, IInstrumentationWatcher watcher) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         ComponentName.writeToParcel(className, data);
         data.writeString(profileFile);
@@ -3968,8 +3448,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
         mRemote.transact(START_INSTRUMENTATION_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(className.getTaint());
@@ -3977,8 +3456,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(flags);
         addTaint(arguments.getTaint());
         addTaint(watcher.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837308951 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837308951;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_717251629 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_717251629;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -3997,13 +3476,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.539 -0400", hash_original_method = "D76B5F1B397FC7028B59F12CA3604783", hash_generated_method = "986B562748300B55D057F8EE880E8F20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.788 -0400", hash_original_method = "D76B5F1B397FC7028B59F12CA3604783", hash_generated_method = "20FDA8D052D609029D4EA4BEDE2CA28C")
     public void finishInstrumentation(IApplicationThread target,
             int resultCode, Bundle results) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(target != null ? target.asBinder() : null);
         data.writeInt(resultCode);
@@ -4029,23 +3506,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.547 -0400", hash_original_method = "E824FA9DB2D76671E24682EC782F4756", hash_generated_method = "07C46432EA65F4DE41BE548B16AC8996")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.789 -0400", hash_original_method = "E824FA9DB2D76671E24682EC782F4756", hash_generated_method = "6B06EDB01D84B125CEEFE0C01863C1D3")
     public Configuration getConfiguration() throws RemoteException {
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_214426060 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_1210563334 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_CONFIGURATION_TRANSACTION, data, reply, 0);
         reply.readException();
-        Configuration res;
-        res = Configuration.CREATOR.createFromParcel(reply);
+        Configuration res = Configuration.CREATOR.createFromParcel(reply);
         reply.recycle();
         data.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_214426060 = res;
-        varB4EAC82CA7396A68D541C85D26508E83_214426060.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_214426060;
+        varB4EAC82CA7396A68D541C85D26508E83_1210563334 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1210563334.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1210563334;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4059,12 +3533,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.594 -0400", hash_original_method = "76911A2717FEEEC7D6B4E93DC7F2427C", hash_generated_method = "99357AABD4C70E4E206484A40B6C6E2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.790 -0400", hash_original_method = "76911A2717FEEEC7D6B4E93DC7F2427C", hash_generated_method = "C340780315CEC13D8335D7FFDF5EFDB8")
     public void updateConfiguration(Configuration values) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         values.writeToParcel(data, 0);
         mRemote.transact(UPDATE_CONFIGURATION_TRANSACTION, data, reply, 0);
@@ -4084,12 +3556,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.604 -0400", hash_original_method = "65FC5D17EF9FF3BF1BFFDA9CCA9A4BE1", hash_generated_method = "2793F3B1D44F43DD0DD8C5C3F4E955B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.791 -0400", hash_original_method = "65FC5D17EF9FF3BF1BFFDA9CCA9A4BE1", hash_generated_method = "46FBA6E52BE66E6786F117EB2F68DD21")
     public void setRequestedOrientation(IBinder token, int requestedOrientation) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(requestedOrientation);
@@ -4112,23 +3582,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.611 -0400", hash_original_method = "505D3FD7966F547E2BAA16E1C1C5F05B", hash_generated_method = "DBEAB42A436E70F7BE69952F05ABED13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.792 -0400", hash_original_method = "505D3FD7966F547E2BAA16E1C1C5F05B", hash_generated_method = "749D283742F087C97A0FC186C43B3A88")
     public int getRequestedOrientation(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(GET_REQUESTED_ORIENTATION_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_31371850 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_31371850;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570024670 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570024670;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4143,25 +3610,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.629 -0400", hash_original_method = "BCB55F79D75B3B83E49A75043EE249A9", hash_generated_method = "BDB88610E2A3697E6E76164ED0976E7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.793 -0400", hash_original_method = "BCB55F79D75B3B83E49A75043EE249A9", hash_generated_method = "C7B2620A9396003402CA0FA41306C4CB")
     public ComponentName getActivityClassForToken(IBinder token) throws RemoteException {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_283915466 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_329468260 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION, data, reply, 0);
         reply.readException();
-        ComponentName res;
-        res = ComponentName.readFromParcel(reply);
+        ComponentName res = ComponentName.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_283915466 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_329468260 = res;
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_283915466.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_283915466;
+        varB4EAC82CA7396A68D541C85D26508E83_329468260.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_329468260;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4176,25 +3640,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.637 -0400", hash_original_method = "9BAE752D062408101ED2F689CF20DDD1", hash_generated_method = "989ECC34CA0ABA3EBBB48485EEBDD865")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.794 -0400", hash_original_method = "9BAE752D062408101ED2F689CF20DDD1", hash_generated_method = "6CB507AD794427A80DEAE4FA4C55EA36")
     public String getPackageForToken(IBinder token) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1070886001 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        String varB4EAC82CA7396A68D541C85D26508E83_1847056241 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(GET_PACKAGE_FOR_TOKEN_TRANSACTION, data, reply, 0);
         reply.readException();
-        String res;
-        res = reply.readString();
+        String res = reply.readString();
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1070886001 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1847056241 = res;
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1070886001.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1070886001;
+        varB4EAC82CA7396A68D541C85D26508E83_1847056241.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1847056241;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4209,15 +3670,13 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.657 -0400", hash_original_method = "AE56AE3D6914251F9FFFA7E33C698EB6", hash_generated_method = "507DE431ABC6A21D8867FCF66B0EDABC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.796 -0400", hash_original_method = "AE56AE3D6914251F9FFFA7E33C698EB6", hash_generated_method = "6A16F488097E7F0DF6AF7C9407700EE6")
     public IIntentSender getIntentSender(int type,
             String packageName, IBinder token, String resultWho,
             int requestCode, Intent[] intents, String[] resolvedTypes, int flags) throws RemoteException {
-        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_2138055794 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_1757152878 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(type);
         data.writeString(packageName);
@@ -4235,12 +3694,11 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(flags);
         mRemote.transact(GET_INTENT_SENDER_TRANSACTION, data, reply, 0);
         reply.readException();
-        IIntentSender res;
-        res = IIntentSender.Stub.asInterface(
+        IIntentSender res = IIntentSender.Stub.asInterface(
             reply.readStrongBinder());
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_2138055794 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1757152878 = res;
         addTaint(type);
         addTaint(packageName.getTaint());
         addTaint(token.getTaint());
@@ -4249,8 +3707,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(intents[0].getTaint());
         addTaint(resolvedTypes[0].getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_2138055794.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2138055794;
+        varB4EAC82CA7396A68D541C85D26508E83_1757152878.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1757152878;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4278,12 +3736,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.664 -0400", hash_original_method = "D459AA1ADAE84FC2B7BB3BA73C047FDB", hash_generated_method = "E9E33F8D9ECC6CBBC7BE852B2F3FD742")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.797 -0400", hash_original_method = "D459AA1ADAE84FC2B7BB3BA73C047FDB", hash_generated_method = "90E2C3EEE6DBD415E194FCB2CF5646C8")
     public void cancelIntentSender(IIntentSender sender) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(sender.asBinder());
         mRemote.transact(CANCEL_INTENT_SENDER_TRANSACTION, data, reply, 0);
@@ -4303,25 +3759,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.677 -0400", hash_original_method = "1993496C4F183452017D412A9B9C5C29", hash_generated_method = "32F453FF873C992262FDC2991B4AF43E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.799 -0400", hash_original_method = "1993496C4F183452017D412A9B9C5C29", hash_generated_method = "FFEBB6E50586B14DF6006105348234AB")
     public String getPackageForIntentSender(IIntentSender sender) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_231286085 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        String varB4EAC82CA7396A68D541C85D26508E83_1973306119 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(sender.asBinder());
         mRemote.transact(GET_PACKAGE_FOR_INTENT_SENDER_TRANSACTION, data, reply, 0);
         reply.readException();
-        String res;
-        res = reply.readString();
+        String res = reply.readString();
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_231286085 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1973306119 = res;
         addTaint(sender.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_231286085.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_231286085;
+        varB4EAC82CA7396A68D541C85D26508E83_1973306119.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1973306119;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4336,12 +3789,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.686 -0400", hash_original_method = "92B622DC0CB7ED23BB116E8953A0A90A", hash_generated_method = "865D4C2AF3764B5797D07610237969C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.800 -0400", hash_original_method = "92B622DC0CB7ED23BB116E8953A0A90A", hash_generated_method = "7FCCC0FAFBBE7B8EE66A1F1D53597BD6")
     public void setProcessLimit(int max) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(max);
         mRemote.transact(SET_PROCESS_LIMIT_TRANSACTION, data, reply, 0);
@@ -4361,21 +3812,18 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.698 -0400", hash_original_method = "4FA932EFF1C9BAC6AA973FE979D6B75F", hash_generated_method = "C317D02511E5CC2749C309966C86ADF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.801 -0400", hash_original_method = "4FA932EFF1C9BAC6AA973FE979D6B75F", hash_generated_method = "FD3009BD626C5AACE60E5C8A9D781234")
     public int getProcessLimit() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_PROCESS_LIMIT_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240295010 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240295010;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231022030 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231022030;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4389,13 +3837,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.706 -0400", hash_original_method = "16F5E36D0F576E8CD2EC3F6B33B5169D", hash_generated_method = "AF506ACBCF45B123483DA50C4843A0EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.802 -0400", hash_original_method = "16F5E36D0F576E8CD2EC3F6B33B5169D", hash_generated_method = "7B5F2C59EFE617DB6CC3E8AAEAC16AAA")
     public void setProcessForeground(IBinder token, int pid,
             boolean isForeground) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(pid);
@@ -4421,27 +3867,24 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.717 -0400", hash_original_method = "A50C503DC3495EB643680A38372DD1F5", hash_generated_method = "7E3531589DB7615AF7844711BEEB7A25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.805 -0400", hash_original_method = "A50C503DC3495EB643680A38372DD1F5", hash_generated_method = "24969CC51082E73FFA458D9A47A755D6")
     public int checkPermission(String permission, int pid, int uid) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(permission);
         data.writeInt(pid);
         data.writeInt(uid);
         mRemote.transact(CHECK_PERMISSION_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(permission.getTaint());
         addTaint(pid);
         addTaint(uid);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381880030 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381880030;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216994233 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216994233;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4458,26 +3901,23 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.729 -0400", hash_original_method = "BE5C38AE92A5EE5CE45944FF93295090", hash_generated_method = "E176902FFA64BEE0647B839AA5BBE48B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.806 -0400", hash_original_method = "BE5C38AE92A5EE5CE45944FF93295090", hash_generated_method = "52205335183B3E4CE5114E3470D8C51C")
     public boolean clearApplicationUserData(final String packageName,
             final IPackageDataObserver observer) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         data.writeStrongBinder(observer.asBinder());
         mRemote.transact(CLEAR_APP_DATA_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125733164 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_125733164;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_398115023 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_398115023;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4493,12 +3933,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.752 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "B2326B5BA07A45DC104B3E139B4BD991")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.807 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "0CFCD7C644D52C867ECCDFB5D57E7F3D")
     public int checkUriPermission(Uri uri, int pid, int uid, int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         uri.writeToParcel(data, 0);
         data.writeInt(pid);
@@ -4506,16 +3944,15 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(mode);
         mRemote.transact(CHECK_URI_PERMISSION_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(uri.getTaint());
         addTaint(pid);
         addTaint(uid);
         addTaint(mode);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344259704 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344259704;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1751948049 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1751948049;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4533,13 +3970,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.770 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "4B1737E14A45B8AC55330D1A6CDD9727")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.808 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "E0B0443AF34F8976F423832A18B17035")
     public void grantUriPermission(IApplicationThread caller, String targetPkg,
             Uri uri, int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller.asBinder());
         data.writeString(targetPkg);
@@ -4568,13 +4003,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.781 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "1854FBCDC1D4D7E2E26FA873062F30DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.809 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "DCF3C8CC898EAF268FB92CEBF2A31A9A")
     public void revokeUriPermission(IApplicationThread caller, Uri uri,
             int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller.asBinder());
         uri.writeToParcel(data, 0);
@@ -4600,12 +4033,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.783 -0400", hash_original_method = "7FC96553233904C2463E3D793E528211", hash_generated_method = "908E6D663AF0402C0BD81A08809A43B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.810 -0400", hash_original_method = "7FC96553233904C2463E3D793E528211", hash_generated_method = "4BCBC65B410CCE9BBF3ED00B28C6D8AC")
     public void showWaitingForDebugger(IApplicationThread who, boolean waiting) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(who.asBinder());
         data.writeInt(waiting ? 1 : 0);
@@ -4628,12 +4059,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.792 -0400", hash_original_method = "40DDB58D1BE7B54E85772ACF1AA60D8F", hash_generated_method = "5F8B3E01427FB7E436ABA4E18D0A778F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.811 -0400", hash_original_method = "40DDB58D1BE7B54E85772ACF1AA60D8F", hash_generated_method = "1397C27E60940F652F98D8B963AF60A6")
     public void getMemoryInfo(ActivityManager.MemoryInfo outInfo) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_MEMORY_INFO_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -4653,12 +4082,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.803 -0400", hash_original_method = "805F881D84830966D1AD0B083D69DA9A", hash_generated_method = "42784F3026C0A0D25A2A024B2E27B1F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.812 -0400", hash_original_method = "805F881D84830966D1AD0B083D69DA9A", hash_generated_method = "35908FEA5D27261ECFCDD707C4543E2A")
     public void unhandledBack() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(UNHANDLED_BACK_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -4675,30 +4102,27 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.826 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "D761388CCE4C05D78430566AEDA00F85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.816 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "0A29B8CF5AC4171D2B21A011F520A106")
     public ParcelFileDescriptor openContentUri(Uri uri) throws RemoteException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1960325376 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_947562326 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(OPEN_CONTENT_URI_TRANSACTION, data, reply, 0);
         reply.readException();
-        ParcelFileDescriptor pfd;
-        pfd = null;
+        ParcelFileDescriptor pfd = null;
         {
-            boolean varB04A284F06B56929F38634A7F4C6A0D7_1402532303 = (reply.readInt() != 0);
+            boolean varB04A284F06B56929F38634A7F4C6A0D7_1526761710 = (reply.readInt() != 0);
             {
                 pfd = ParcelFileDescriptor.CREATOR.createFromParcel(reply);
             } //End block
         } //End collapsed parenthetic
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1960325376 = pfd;
+        varB4EAC82CA7396A68D541C85D26508E83_947562326 = pfd;
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1960325376.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1960325376;
+        varB4EAC82CA7396A68D541C85D26508E83_947562326.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_947562326;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4715,12 +4139,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.828 -0400", hash_original_method = "E3BC510BF36E68FD23494212AB6E7B33", hash_generated_method = "FFBC3DEB08C7FC6E579AF592A878016E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.817 -0400", hash_original_method = "E3BC510BF36E68FD23494212AB6E7B33", hash_generated_method = "6FA7FC22CC4827A9155BA6D48B3496C5")
     public void goingToSleep() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GOING_TO_SLEEP_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -4737,12 +4159,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.830 -0400", hash_original_method = "CAFF51A84FC631E180A23D0F5290B43F", hash_generated_method = "BE931B7C3EDD7251D16E613C4E055624")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.818 -0400", hash_original_method = "CAFF51A84FC631E180A23D0F5290B43F", hash_generated_method = "DC06BAFA4F4E0DC663C4ACFECCEA0503")
     public void wakingUp() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(WAKING_UP_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -4759,13 +4179,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.895 -0400", hash_original_method = "482C4468B37AD6CEF12EA376A273F16E", hash_generated_method = "C0BBA73E0D4BC960DDD7A61D76C878F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.819 -0400", hash_original_method = "482C4468B37AD6CEF12EA376A273F16E", hash_generated_method = "E851EFCD85ABE4AA2D3EE141CCB323B0")
     public void setDebugApp(
         String packageName, boolean waitForDebugger, boolean persistent) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         data.writeInt(waitForDebugger ? 1 : 0);
@@ -4791,12 +4209,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.902 -0400", hash_original_method = "DE27B8A416D8E1FF87F079AFA1567A6E", hash_generated_method = "73A26E2D14467452EDA2896A6135F410")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.820 -0400", hash_original_method = "DE27B8A416D8E1FF87F079AFA1567A6E", hash_generated_method = "2471FCF0359E57DD146204FA1DB6D3A8")
     public void setAlwaysFinish(boolean enabled) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(enabled ? 1 : 0);
         mRemote.transact(SET_ALWAYS_FINISH_TRANSACTION, data, reply, 0);
@@ -4816,12 +4232,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.921 -0400", hash_original_method = "D7DBDAD7386DC1F45D7A9AB12513A49B", hash_generated_method = "324E2A5F86DE0E4E0298F8308BF30FCF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.821 -0400", hash_original_method = "D7DBDAD7386DC1F45D7A9AB12513A49B", hash_generated_method = "4267CFA26C799F9BB7A9DC28B3E29C91")
     public void setActivityController(IActivityController watcher) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
         mRemote.transact(SET_ACTIVITY_CONTROLLER_TRANSACTION, data, reply, 0);
@@ -4841,10 +4255,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.923 -0400", hash_original_method = "FF7EEF7728CACAD7286D113A3CF07513", hash_generated_method = "8BE9FBF4A7C7869BD53D6F6EF7FEFE7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.822 -0400", hash_original_method = "FF7EEF7728CACAD7286D113A3CF07513", hash_generated_method = "989FB5B63F9FFE72C2D1A765411C7755")
     public void enterSafeMode() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
+        Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(ENTER_SAFE_MODE_TRANSACTION, data, null, 0);
         data.recycle();
@@ -4856,10 +4269,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.942 -0400", hash_original_method = "72F87C80970F6885E4DCD6DA1B2F19E8", hash_generated_method = "BA4E0026FC6E5035A8132BA614803548")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.824 -0400", hash_original_method = "72F87C80970F6885E4DCD6DA1B2F19E8", hash_generated_method = "485D199E022242CB4F9031772D4F82D5")
     public void noteWakeupAlarm(IIntentSender sender) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
+        Parcel data = Parcel.obtain();
         data.writeStrongBinder(sender.asBinder());
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(NOTE_WAKEUP_ALARM_TRANSACTION, data, null, 0);
@@ -4874,26 +4286,23 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.962 -0400", hash_original_method = "DB2721BD1E4C8F1064AA0461CF2A490B", hash_generated_method = "65B389E08303AB85E0EEAF5DB71C6655")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.827 -0400", hash_original_method = "DB2721BD1E4C8F1064AA0461CF2A490B", hash_generated_method = "096BE61F101926AC3F4BB2F499E72CF5")
     public boolean killPids(int[] pids, String reason, boolean secure) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeIntArray(pids);
         data.writeString(reason);
         data.writeInt(secure ? 1 : 0);
         mRemote.transact(KILL_PIDS_TRANSACTION, data, reply, 0);
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(pids[0]);
         addTaint(reason.getTaint());
         addTaint(secure);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_356031954 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_356031954;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497903731 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_497903731;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -4909,13 +4318,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.977 -0400", hash_original_method = "9964526F9DDC53538E50ED934A9D4009", hash_generated_method = "A179E825BAFF00AE23F48AFC8F2CB048")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.828 -0400", hash_original_method = "9964526F9DDC53538E50ED934A9D4009", hash_generated_method = "333EB8177F2D30F84AD8A0DCA54185F6")
     public void startRunning(String pkg, String cls, String action,
             String indata) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(pkg);
         data.writeString(cls);
@@ -4944,22 +4351,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:46.983 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "34EBBEE29C258A9FC57CFDC576C53EE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.829 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "A333E7F4DF1D67C523E65A1CFB8010EA")
     public boolean testIsSystemReady() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764565903 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764565903;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180145843 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1180145843;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.001 -0400", hash_original_method = "523AF9597115E332AF2A1F534C49483C", hash_generated_method = "03E39016F4AF7EA4EC110C5FB9C70EEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.830 -0400", hash_original_method = "523AF9597115E332AF2A1F534C49483C", hash_generated_method = "109DDD27C74923BEC97E04B0C9ACD9FD")
     public void handleApplicationCrash(IBinder app,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(app);
         crashInfo.writeToParcel(data, 0);
@@ -4982,28 +4387,25 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.015 -0400", hash_original_method = "84EFC78EC4B379D270C222A7BC31C5F7", hash_generated_method = "0A6085E735661D38C174AC96D262948B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.831 -0400", hash_original_method = "84EFC78EC4B379D270C222A7BC31C5F7", hash_generated_method = "BC23DC35313BD65BDCE4BC4D5BBD5F87")
     public boolean handleApplicationWtf(IBinder app, String tag,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(app);
         data.writeString(tag);
         crashInfo.writeToParcel(data, 0);
         mRemote.transact(HANDLE_APPLICATION_WTF_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(app.getTaint());
         addTaint(tag.getTaint());
         addTaint(crashInfo.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2091500664 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2091500664;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_463188951 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_463188951;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5020,14 +4422,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.037 -0400", hash_original_method = "7AC27E481709B1F0B25AE2BA23B3BECF", hash_generated_method = "9434924E5877F309CEFD9C0917429026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.832 -0400", hash_original_method = "7AC27E481709B1F0B25AE2BA23B3BECF", hash_generated_method = "16577D5DFF7A4F3F1CCB108933EA773B")
     public void handleApplicationStrictModeViolation(IBinder app,
             int violationMask,
             StrictMode.ViolationInfo info) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(app);
         data.writeInt(violationMask);
@@ -5053,12 +4453,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.056 -0400", hash_original_method = "22BD8EFAE7A36DA76D8B0F7F297E970D", hash_generated_method = "EE4986E3D039729E27F951E745884BBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.834 -0400", hash_original_method = "22BD8EFAE7A36DA76D8B0F7F297E970D", hash_generated_method = "B5EDB738452DB3CB819B5276620EBE8C")
     public void signalPersistentProcesses(int sig) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(sig);
         mRemote.transact(SIGNAL_PERSISTENT_PROCESSES_TRANSACTION, data, reply, 0);
@@ -5078,12 +4476,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.058 -0400", hash_original_method = "3D80332C8A0FCAFBCE220FADA30302CB", hash_generated_method = "E8AA13A81F7A721BD0E6610F5EA8768C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.836 -0400", hash_original_method = "3D80332C8A0FCAFBCE220FADA30302CB", hash_generated_method = "38F0DE759324100AC0383DD9D6A2B37B")
     public void killBackgroundProcesses(String packageName) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         mRemote.transact(KILL_BACKGROUND_PROCESSES_TRANSACTION, data, reply, 0);
@@ -5103,12 +4499,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.060 -0400", hash_original_method = "C7F5D3EA775AD04DD438191F0B4D22C4", hash_generated_method = "FD2D18652BBA0B48AEE79B10FADB04B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.838 -0400", hash_original_method = "C7F5D3EA775AD04DD438191F0B4D22C4", hash_generated_method = "3A4D09A3259986E047E1536B505B4986")
     public void killAllBackgroundProcesses() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(KILL_ALL_BACKGROUND_PROCESSES_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -5125,12 +4519,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.086 -0400", hash_original_method = "CB4D9E734B2DC6A00C763BA9D15D84CC", hash_generated_method = "5A0972D8545C59E170208753632E0035")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.839 -0400", hash_original_method = "CB4D9E734B2DC6A00C763BA9D15D84CC", hash_generated_method = "A0DA92A7B9A52A5DD954BED570991E1E")
     public void forceStopPackage(String packageName) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         mRemote.transact(FORCE_STOP_PACKAGE_TRANSACTION, data, reply, 0);
@@ -5150,23 +4542,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.109 -0400", hash_original_method = "9F4AADDAC8F1648FD8C80C6B88BBF25F", hash_generated_method = "ECF89FB566B24CC5627A0E9D59AC8A0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.840 -0400", hash_original_method = "9F4AADDAC8F1648FD8C80C6B88BBF25F", hash_generated_method = "B4838BB2CC3E8A3AB96752E00C556C2F")
     public ConfigurationInfo getDeviceConfigurationInfo() throws RemoteException {
-        ConfigurationInfo varB4EAC82CA7396A68D541C85D26508E83_1419162331 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        ConfigurationInfo varB4EAC82CA7396A68D541C85D26508E83_362239849 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_DEVICE_CONFIGURATION_TRANSACTION, data, reply, 0);
         reply.readException();
-        ConfigurationInfo res;
-        res = ConfigurationInfo.CREATOR.createFromParcel(reply);
+        ConfigurationInfo res = ConfigurationInfo.CREATOR.createFromParcel(reply);
         reply.recycle();
         data.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1419162331 = res;
-        varB4EAC82CA7396A68D541C85D26508E83_1419162331.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1419162331;
+        varB4EAC82CA7396A68D541C85D26508E83_362239849 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_362239849.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_362239849;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5180,13 +4569,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.127 -0400", hash_original_method = "10D7A082C97EAFB331405B7841F1651D", hash_generated_method = "01D2C914BAD1D4E01CEA3E150A1796A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.842 -0400", hash_original_method = "10D7A082C97EAFB331405B7841F1651D", hash_generated_method = "F58C7CEB5D16D8EB42D90FF7594D76AE")
     public boolean profileControl(String process, boolean start,
             String path, ParcelFileDescriptor fd, int profileType) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(process);
         data.writeInt(start ? 1 : 0);
@@ -5201,8 +4588,7 @@ class ActivityManagerProxy implements IActivityManager {
         } //End block
         mRemote.transact(PROFILE_CONTROL_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(process.getTaint());
@@ -5210,8 +4596,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(path.getTaint());
         addTaint(fd.getTaint());
         addTaint(profileType);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1699711082 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1699711082;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1486710867 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1486710867;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5235,23 +4621,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.139 -0400", hash_original_method = "52F9DB0BA2A0AB8C52093D208807035C", hash_generated_method = "B5C5F5724F49C8F09D3BB353F4B6262E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.844 -0400", hash_original_method = "52F9DB0BA2A0AB8C52093D208807035C", hash_generated_method = "E7E1E0F573A04B6DFB1C9A06BF2B54DE")
     public boolean shutdown(int timeout) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(timeout);
         mRemote.transact(SHUTDOWN_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(timeout);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474030331 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474030331;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868099562 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868099562;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5266,12 +4649,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.161 -0400", hash_original_method = "BE7DD92CBAD030A60DB7090E3408574C", hash_generated_method = "6EFAFF2991D8E27886C5EB3C2C0F7776")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.847 -0400", hash_original_method = "BE7DD92CBAD030A60DB7090E3408574C", hash_generated_method = "13EA54D36EF6A74A6B8F116EB09B864A")
     public void stopAppSwitches() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(STOP_APP_SWITCHES_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -5288,12 +4669,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.174 -0400", hash_original_method = "0EC9793095E20007EC76AB5DDDE4E54A", hash_generated_method = "4D88D03CA17C616451D2F78971E5DDDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.848 -0400", hash_original_method = "0EC9793095E20007EC76AB5DDDE4E54A", hash_generated_method = "6608F43B59121217A1614CC63240E42A")
     public void resumeAppSwitches() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(RESUME_APP_SWITCHES_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -5310,13 +4689,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.185 -0400", hash_original_method = "7B78E2FEC61CC471A8E07C6C34C74BD6", hash_generated_method = "69165E19D84013C1FB3D2B1DBF34B0E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.849 -0400", hash_original_method = "7B78E2FEC61CC471A8E07C6C34C74BD6", hash_generated_method = "BCBC58F9201C592A064ABBB1FF514113")
     public void registerActivityWatcher(IActivityWatcher watcher) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
         mRemote.transact(REGISTER_ACTIVITY_WATCHER_TRANSACTION, data, reply, 0);
@@ -5336,12 +4713,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.199 -0400", hash_original_method = "8E5D6F085FE02A1442C5A617ADA012EC", hash_generated_method = "6CDED59E27F9E0F9E6BDBDAFC83D57D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.850 -0400", hash_original_method = "8E5D6F085FE02A1442C5A617ADA012EC", hash_generated_method = "AECBCBF9FEE4EC32AD3BEF890C046BCC")
     public void unregisterActivityWatcher(IActivityWatcher watcher) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
         mRemote.transact(UNREGISTER_ACTIVITY_WATCHER_TRANSACTION, data, reply, 0);
@@ -5361,14 +4736,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.216 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "8A8CC1AC68C631794198C43244D71B1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.852 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "A5FA4DEF60F70306B165438398E98B81")
     public int startActivityInPackage(int uid,
             Intent intent, String resolvedType, IBinder resultTo,
             String resultWho, int requestCode, boolean onlyIfNeeded) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(uid);
         intent.writeToParcel(data, 0);
@@ -5379,8 +4752,7 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(onlyIfNeeded ? 1 : 0);
         mRemote.transact(START_ACTIVITY_IN_PACKAGE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(uid);
@@ -5390,8 +4762,8 @@ class ActivityManagerProxy implements IActivityManager {
         addTaint(resultWho.getTaint());
         addTaint(requestCode);
         addTaint(onlyIfNeeded);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345552514 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345552514;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83106242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83106242;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5412,12 +4784,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.241 -0400", hash_original_method = "9BA7CBE5CC5118373D7AAA1497A47635", hash_generated_method = "3A1D8153CAB5C44FDCF377448C0005BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.853 -0400", hash_original_method = "9BA7CBE5CC5118373D7AAA1497A47635", hash_generated_method = "7C11AA980CF7C24DC1287E7513CDCD88")
     public void killApplicationWithUid(String pkg, int uid) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(pkg);
         data.writeInt(uid);
@@ -5440,12 +4810,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.306 -0400", hash_original_method = "2A680A4513BB1B95074F3F876F148BA8", hash_generated_method = "8C207F3BA8E791B3D6EC8389C97D6C24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.855 -0400", hash_original_method = "2A680A4513BB1B95074F3F876F148BA8", hash_generated_method = "E94C8E88BF06EB94A16275D7C62E200D")
     public void closeSystemDialogs(String reason) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(reason);
         mRemote.transact(CLOSE_SYSTEM_DIALOGS_TRANSACTION, data, reply, 0);
@@ -5465,25 +4833,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.326 -0400", hash_original_method = "BD88F62F5112FCE1DE930509EBB83FD2", hash_generated_method = "6FC734701E37C9D44D64BC494D1A1ED4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.858 -0400", hash_original_method = "BD88F62F5112FCE1DE930509EBB83FD2", hash_generated_method = "CB4707414AAC148E6FB7716F923013B3")
     public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids) throws RemoteException {
-        Debug.MemoryInfo[] varB4EAC82CA7396A68D541C85D26508E83_2097649401 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Debug.MemoryInfo[] varB4EAC82CA7396A68D541C85D26508E83_141311141 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeIntArray(pids);
         mRemote.transact(GET_PROCESS_MEMORY_INFO_TRANSACTION, data, reply, 0);
         reply.readException();
-        Debug.MemoryInfo[] res;
-        res = reply.createTypedArray(Debug.MemoryInfo.CREATOR);
+        Debug.MemoryInfo[] res = reply.createTypedArray(Debug.MemoryInfo.CREATOR);
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_2097649401 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_141311141 = res;
         addTaint(pids[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_2097649401.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2097649401;
+        varB4EAC82CA7396A68D541C85D26508E83_141311141.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_141311141;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5498,12 +4863,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.357 -0400", hash_original_method = "0F16B6E02208618C1D3EE91B8DD80482", hash_generated_method = "D33844A934DA57FB5B9683596CD3654C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.859 -0400", hash_original_method = "0F16B6E02208618C1D3EE91B8DD80482", hash_generated_method = "18CDF1ACB60C1761E18FE1755B023B55")
     public void killApplicationProcess(String processName, int uid) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(processName);
         data.writeInt(uid);
@@ -5526,13 +4889,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.361 -0400", hash_original_method = "00D6B54E331AC7AA3DC1F40B928FA3FD", hash_generated_method = "BCA04B8E2D888C7BD84D5D63A5CEE9AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.860 -0400", hash_original_method = "00D6B54E331AC7AA3DC1F40B928FA3FD", hash_generated_method = "6E936C407F22230263CABF02DBE12CB6")
     public void overridePendingTransition(IBinder token, String packageName,
             int enterAnim, int exitAnim) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeString(packageName);
@@ -5561,21 +4922,18 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.391 -0400", hash_original_method = "0F906B538EF84DE09E15BAB8CDAE69C4", hash_generated_method = "2AFB1323186303BBA988671E9E001339")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.862 -0400", hash_original_method = "0F906B538EF84DE09E15BAB8CDAE69C4", hash_generated_method = "0F05E87EC18A0B4A20B1D89507E2C251")
     public boolean isUserAMonkey() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(IS_USER_A_MONKEY_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_100344073 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_100344073;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1364354311 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1364354311;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5589,12 +4947,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.411 -0400", hash_original_method = "CE9EE2ABB9C16E19ED0FB5ECED80A2D8", hash_generated_method = "CFAA5D9A843B28C86BB6ABBF49358560")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.863 -0400", hash_original_method = "CE9EE2ABB9C16E19ED0FB5ECED80A2D8", hash_generated_method = "EB822339041D216CF933014C954FB685")
     public void finishHeavyWeightApp() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(FINISH_HEAVY_WEIGHT_APP_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -5611,12 +4967,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.413 -0400", hash_original_method = "468B67BFEE008B6CDEC37F42802988FA", hash_generated_method = "E98619D40D2D499F666511A719DF629B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.866 -0400", hash_original_method = "468B67BFEE008B6CDEC37F42802988FA", hash_generated_method = "2BFA424FBD14EF8D802E97586D641253")
     public void setImmersive(IBinder token, boolean immersive) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         data.writeInt(immersive ? 1 : 0);
@@ -5639,23 +4993,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.448 -0400", hash_original_method = "12E814937BEB239BDABA8A5EE4F6D00D", hash_generated_method = "BFA6001E9C135ECD0A0F8CFC4E16C8AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.868 -0400", hash_original_method = "12E814937BEB239BDABA8A5EE4F6D00D", hash_generated_method = "3D8A6AC1585C7E39857068F3D37BEFE2")
     public boolean isImmersive(IBinder token) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(token);
         mRemote.transact(IS_IMMERSIVE_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() == 1;
+        boolean res = reply.readInt() == 1;
         data.recycle();
         reply.recycle();
         addTaint(token.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568977219 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568977219;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887731918 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1887731918;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5670,21 +5021,18 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.450 -0400", hash_original_method = "0342E1772D9E2D527D167E41870AA176", hash_generated_method = "3E4E2C3B7A6155F66717D9E8852D8641")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.869 -0400", hash_original_method = "0342E1772D9E2D527D167E41870AA176", hash_generated_method = "C35805DD5555D270C6565142D6608367")
     public boolean isTopActivityImmersive() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(IS_TOP_ACTIVITY_IMMERSIVE_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() == 1;
+        boolean res = reply.readInt() == 1;
         data.recycle();
         reply.recycle();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826149962 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_826149962;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_106280610 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_106280610;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5698,13 +5046,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.485 -0400", hash_original_method = "574D561A4B99545A454A313F9DD764D8", hash_generated_method = "1A18134CF85C44FF5E75CE5C2A337E58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.870 -0400", hash_original_method = "574D561A4B99545A454A313F9DD764D8", hash_generated_method = "CCFC2939A31CD0D4F154161977D18122")
     public void crashApplication(int uid, int initialPid, String packageName,
             String message) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(uid);
         data.writeInt(initialPid);
@@ -5733,25 +5079,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.517 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "3E518C7C5AD4E3253B73774BA87AED4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.872 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "DC6DD31D9DD6938C340473AD242AABDB")
     public String getProviderMimeType(Uri uri) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1302463559 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        String varB4EAC82CA7396A68D541C85D26508E83_1057168529 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         uri.writeToParcel(data, 0);
         mRemote.transact(GET_PROVIDER_MIME_TYPE_TRANSACTION, data, reply, 0);
         reply.readException();
-        String res;
-        res = reply.readString();
+        String res = reply.readString();
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_1302463559 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1057168529 = res;
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1302463559.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1302463559;
+        varB4EAC82CA7396A68D541C85D26508E83_1057168529.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1057168529;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5766,25 +5109,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.539 -0400", hash_original_method = "A975CD5E1392FBC42C40F56501282DDB", hash_generated_method = "0A75E7AAF8628928708E70E663FB41C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.876 -0400", hash_original_method = "A975CD5E1392FBC42C40F56501282DDB", hash_generated_method = "559B88921C7F414267ADA83D5EEA3385")
     public IBinder newUriPermissionOwner(String name) throws RemoteException {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_505684766 = null; //Variable for return #1
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1226297715 = null; //Variable for return #1
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(name);
         mRemote.transact(NEW_URI_PERMISSION_OWNER_TRANSACTION, data, reply, 0);
         reply.readException();
-        IBinder res;
-        res = reply.readStrongBinder();
+        IBinder res = reply.readStrongBinder();
         data.recycle();
         reply.recycle();
-        varB4EAC82CA7396A68D541C85D26508E83_505684766 = res;
+        varB4EAC82CA7396A68D541C85D26508E83_1226297715 = res;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_505684766.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_505684766;
+        varB4EAC82CA7396A68D541C85D26508E83_1226297715.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1226297715;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5799,13 +5139,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.574 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "1388088E948CC1715CC2C230F63ABE85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.879 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "01A79DC53A326F359C3BB92C5DF194B4")
     public void grantUriPermissionFromOwner(IBinder owner, int fromUid, String targetPkg,
             Uri uri, int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(owner);
         data.writeInt(fromUid);
@@ -5837,13 +5175,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.610 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "D1ED27413F9B2595180EA3EF5EFDF614")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.881 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "04C4B416116EA48200E0ACDDC6113B19")
     public void revokeUriPermissionFromOwner(IBinder owner, Uri uri,
             int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(owner);
         {
@@ -5880,13 +5216,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.632 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "778E5058F6468F1132FBAB754327AF3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.882 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "9C62F6C894FC8ECECDE4D0C7A2D1C6BC")
     public int checkGrantUriPermission(int callingUid, String targetPkg,
             Uri uri, int modeFlags) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(callingUid);
         data.writeString(targetPkg);
@@ -5894,16 +5228,15 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeInt(modeFlags);
         mRemote.transact(CHECK_GRANT_URI_PERMISSION_TRANSACTION, data, reply, 0);
         reply.readException();
-        int res;
-        res = reply.readInt();
+        int res = reply.readInt();
         data.recycle();
         reply.recycle();
         addTaint(callingUid);
         addTaint(targetPkg.getTaint());
         addTaint(uri.getTaint());
         addTaint(modeFlags);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597348028 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597348028;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757493265 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757493265;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5921,13 +5254,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.669 -0400", hash_original_method = "2510375C73B367DE6AAF634BB948BB50", hash_generated_method = "6AC654E074D6249DFDBE2699E20E2904")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.884 -0400", hash_original_method = "2510375C73B367DE6AAF634BB948BB50", hash_generated_method = "25BC35D7615655CAA5017CC6586783A3")
     public boolean dumpHeap(String process, boolean managed,
             String path, ParcelFileDescriptor fd) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(process);
         data.writeInt(managed ? 1 : 0);
@@ -5941,16 +5272,15 @@ class ActivityManagerProxy implements IActivityManager {
         } //End block
         mRemote.transact(DUMP_HEAP_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(process.getTaint());
         addTaint(managed);
         addTaint(path.getTaint());
         addTaint(fd.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676009824 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_676009824;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_293317698 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_293317698;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -5973,13 +5303,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.692 -0400", hash_original_method = "D5FED7EEA920B3F53E1885BDA832FF44", hash_generated_method = "119A3E3CB8AD2607F63C9E36778AFC6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.887 -0400", hash_original_method = "D5FED7EEA920B3F53E1885BDA832FF44", hash_generated_method = "8E1736ABE4D172DCA03818EF6C97D6D1")
     public int startActivities(IApplicationThread caller,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(caller != null ? caller.asBinder() : null);
         data.writeTypedArray(intents, 0);
@@ -5987,16 +5315,15 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeStrongBinder(resultTo);
         mRemote.transact(START_ACTIVITIES_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(caller.getTaint());
         addTaint(intents[0].getTaint());
         addTaint(resolvedTypes[0].getTaint());
         addTaint(resultTo.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251651163 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251651163;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692189803 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692189803;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6014,13 +5341,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.711 -0400", hash_original_method = "7A44848B4F4A570D7B280FD97AA3F11F", hash_generated_method = "40E7ACF3DBD7095100922ACDC7833387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.889 -0400", hash_original_method = "7A44848B4F4A570D7B280FD97AA3F11F", hash_generated_method = "D5B9590D2D93D69DEF9D5421DAFC4C67")
     public int startActivitiesInPackage(int uid,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(uid);
         data.writeTypedArray(intents, 0);
@@ -6028,16 +5353,15 @@ class ActivityManagerProxy implements IActivityManager {
         data.writeStrongBinder(resultTo);
         mRemote.transact(START_ACTIVITIES_IN_PACKAGE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int result;
-        result = reply.readInt();
+        int result = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(uid);
         addTaint(intents[0].getTaint());
         addTaint(resolvedTypes[0].getTaint());
         addTaint(resultTo.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548614591 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548614591;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393761712 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393761712;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6055,21 +5379,18 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.732 -0400", hash_original_method = "11A1C93F201BB77459CE48D94392036A", hash_generated_method = "8B5F9B5E7B0D35868A7C7733FFDCD745")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.890 -0400", hash_original_method = "11A1C93F201BB77459CE48D94392036A", hash_generated_method = "1949A878F1F95D0750A289EC0CF8195F")
     public int getFrontActivityScreenCompatMode() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(GET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int mode;
-        mode = reply.readInt();
+        int mode = reply.readInt();
         reply.recycle();
         data.recycle();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862852427 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862852427;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057729383 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057729383;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6083,12 +5404,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.742 -0400", hash_original_method = "984BA2CED473A0F45E8080D25CCDF41F", hash_generated_method = "0D1A4C0DB03F76602FCE70AFDE8CC9FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.891 -0400", hash_original_method = "984BA2CED473A0F45E8080D25CCDF41F", hash_generated_method = "E8000A6DA77849FA0D512F80B943CA5B")
     public void setFrontActivityScreenCompatMode(int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(mode);
         mRemote.transact(SET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
@@ -6108,23 +5427,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.770 -0400", hash_original_method = "AFAFCB6FF2EC7CDD310E0CDC4C512BE7", hash_generated_method = "812A0B4F0A8C807E0F8D0B3BE231C88D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.892 -0400", hash_original_method = "AFAFCB6FF2EC7CDD310E0CDC4C512BE7", hash_generated_method = "6D447C4347293F8DAC47E55DF301BA0B")
     public int getPackageScreenCompatMode(String packageName) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         mRemote.transact(GET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
         reply.readException();
-        int mode;
-        mode = reply.readInt();
+        int mode = reply.readInt();
         reply.recycle();
         data.recycle();
         addTaint(packageName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561303215 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561303215;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_380367338 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_380367338;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6139,12 +5455,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.785 -0400", hash_original_method = "5B0C9EEE90D8463E1DCC15B68E3829E8", hash_generated_method = "7E5BF32B9870AD6493F1C7DBF0EEBC57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.893 -0400", hash_original_method = "5B0C9EEE90D8463E1DCC15B68E3829E8", hash_generated_method = "A77EB2EE3FD670B05FEAFE0EA99CD382")
     public void setPackageScreenCompatMode(String packageName, int mode) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         data.writeInt(mode);
@@ -6167,23 +5481,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.807 -0400", hash_original_method = "7AFCEC9BC7A2DAB54F3EFFA101044309", hash_generated_method = "1524428E969A440CB89DD709AE3ED346")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.894 -0400", hash_original_method = "7AFCEC9BC7A2DAB54F3EFFA101044309", hash_generated_method = "9384C64DA5767B1072F7EE981CBA7BD6")
     public boolean getPackageAskScreenCompat(String packageName) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         mRemote.transact(GET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean ask;
-        ask = reply.readInt() != 0;
+        boolean ask = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(packageName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110190574 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110190574;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_937519829 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_937519829;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6198,12 +5509,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.809 -0400", hash_original_method = "8C9BAA94A3976358AA466F180A11AE45", hash_generated_method = "B3FD549D09048C0ED3F3FA9AE3C4A2ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.895 -0400", hash_original_method = "8C9BAA94A3976358AA466F180A11AE45", hash_generated_method = "06401D9A49EA4B7699291F34750A1B87")
     public void setPackageAskScreenCompat(String packageName, boolean ask) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeString(packageName);
         data.writeInt(ask ? 1 : 0);
@@ -6226,23 +5535,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.845 -0400", hash_original_method = "0A8E6FD2F20689E2107BCC0911A72467", hash_generated_method = "4EACBF2923001066BE2AFA51E83121E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.897 -0400", hash_original_method = "0A8E6FD2F20689E2107BCC0911A72467", hash_generated_method = "E8C42F3678A95FA3F3995DB5F9A5E9A7")
     public boolean switchUser(int userid) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(userid);
         mRemote.transact(SWITCH_USER_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean result;
-        result = reply.readInt() != 0;
+        boolean result = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(userid);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1688351373 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1688351373;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971167746 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_971167746;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6257,25 +5563,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.847 -0400", hash_original_method = "4161F4F4B6F51E7616ED3E0F5DA99E10", hash_generated_method = "2419614C91942EF92DF40FBF9C60B2EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.898 -0400", hash_original_method = "4161F4F4B6F51E7616ED3E0F5DA99E10", hash_generated_method = "A1F5E90B7E82AE19B0DC79932CF125CB")
     public boolean removeSubTask(int taskId, int subTaskIndex) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(taskId);
         data.writeInt(subTaskIndex);
         mRemote.transact(REMOVE_SUB_TASK_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean result;
-        result = reply.readInt() != 0;
+        boolean result = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(taskId);
         addTaint(subTaskIndex);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973490514 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1973490514;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1610458618 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1610458618;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6291,25 +5594,22 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.886 -0400", hash_original_method = "D75556E86E98C9E69E5D8B6835FF1B1D", hash_generated_method = "E0B367CBE4FCC87F4B947DC48AA46A3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.899 -0400", hash_original_method = "D75556E86E98C9E69E5D8B6835FF1B1D", hash_generated_method = "B3C0E7A96FEB66996454CE966CB24A57")
     public boolean removeTask(int taskId, int flags) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeInt(taskId);
         data.writeInt(flags);
         mRemote.transact(REMOVE_TASK_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean result;
-        result = reply.readInt() != 0;
+        boolean result = reply.readInt() != 0;
         reply.recycle();
         data.recycle();
         addTaint(taskId);
         addTaint(flags);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1291873195 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1291873195;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1838465563 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1838465563;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6325,13 +5625,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.904 -0400", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "7CAFB41C167A663BC09772F5F8A693D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.900 -0400", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "07C57DB345F12C504D19DAB7B4BC6BF3")
     public void registerProcessObserver(IProcessObserver observer) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(observer != null ? observer.asBinder() : null);
         mRemote.transact(REGISTER_PROCESS_OBSERVER_TRANSACTION, data, reply, 0);
@@ -6351,12 +5649,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.905 -0400", hash_original_method = "6FB2BE2D02A98F343D51290C94466533", hash_generated_method = "A716EA3DB382139F818CB7FDE9D2EE47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.901 -0400", hash_original_method = "6FB2BE2D02A98F343D51290C94466533", hash_generated_method = "EF29804F3A434EBFF02D527C33CBA9F5")
     public void unregisterProcessObserver(IProcessObserver observer) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(observer != null ? observer.asBinder() : null);
         mRemote.transact(UNREGISTER_PROCESS_OBSERVER_TRANSACTION, data, reply, 0);
@@ -6376,23 +5672,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.932 -0400", hash_original_method = "A45994938B7DA24AED12FFC5B3B3DD69", hash_generated_method = "514388358DCA3320930D33B0C95AF26F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.901 -0400", hash_original_method = "A45994938B7DA24AED12FFC5B3B3DD69", hash_generated_method = "EBD78A1873265EB53386660CABE70C33")
     public boolean isIntentSenderTargetedToPackage(IIntentSender sender) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeStrongBinder(sender.asBinder());
         mRemote.transact(IS_INTENT_SENDER_TARGETED_TO_PACKAGE_TRANSACTION, data, reply, 0);
         reply.readException();
-        boolean res;
-        res = reply.readInt() != 0;
+        boolean res = reply.readInt() != 0;
         data.recycle();
         reply.recycle();
         addTaint(sender.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1720775803 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1720775803;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_688509292 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_688509292;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6407,12 +5700,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.953 -0400", hash_original_method = "ACD180EA48DE1CCAABBA4B90AA3470B8", hash_generated_method = "F604E4E05496423E4C3F7DA89AA74652")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.902 -0400", hash_original_method = "ACD180EA48DE1CCAABBA4B90AA3470B8", hash_generated_method = "9DC22E7BE51F590AA81A9BAFD9D21AFB")
     public void updatePersistentConfiguration(Configuration values) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         values.writeToParcel(data, 0);
         mRemote.transact(UPDATE_PERSISTENT_CONFIGURATION_TRANSACTION, data, reply, 0);
@@ -6432,23 +5723,20 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.970 -0400", hash_original_method = "0E9D1ED4F0E7DC85612AA1E9A3EC65BE", hash_generated_method = "57C12EE434AE5F3B62C31687392BFE6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.903 -0400", hash_original_method = "0E9D1ED4F0E7DC85612AA1E9A3EC65BE", hash_generated_method = "DA393496F7314F0074FE5CC1633308F4")
     public long[] getProcessPss(int[] pids) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         data.writeIntArray(pids);
         mRemote.transact(GET_PROCESS_PSS_TRANSACTION, data, reply, 0);
         reply.readException();
-        long[] res;
-        res = reply.createLongArray();
+        long[] res = reply.createLongArray();
         data.recycle();
         reply.recycle();
         addTaint(pids[0]);
-        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1038109318 = {getTaintLong()};
-        return var3908C7C3AF5171CEE1F112DAE77A5C4D_1038109318;
+        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1170016484 = {getTaintLong()};
+        return var3908C7C3AF5171CEE1F112DAE77A5C4D_1170016484;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -6463,12 +5751,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:47.972 -0400", hash_original_method = "F6DDBF719DC0D2BCB3D721A826004A98", hash_generated_method = "91975FC0B59055012679ED744E22031A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.904 -0400", hash_original_method = "F6DDBF719DC0D2BCB3D721A826004A98", hash_generated_method = "ECC62DD7569D2F7F2E669A701F7FB535")
     public void showBootMessage(CharSequence msg, boolean always) throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         TextUtils.writeToParcel(msg, data, 0);
         data.writeInt(always ? 1 : 0);
@@ -6491,12 +5777,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:48.001 -0400", hash_original_method = "C6C48FDB33104FCE337F1D8C3A233E89", hash_generated_method = "8A31AF607B349BB8BE78B082564FEFB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.906 -0400", hash_original_method = "C6C48FDB33104FCE337F1D8C3A233E89", hash_generated_method = "8F5505827E88689D1F08B162EE225802")
     public void dismissKeyguardOnNextActivity() throws RemoteException {
-        Parcel data;
-        data = Parcel.obtain();
-        Parcel reply;
-        reply = Parcel.obtain();
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(DISMISS_KEYGUARD_ON_NEXT_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();

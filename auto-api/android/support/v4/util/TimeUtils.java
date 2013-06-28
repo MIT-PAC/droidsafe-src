@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class TimeUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.261 -0400", hash_original_method = "6BC0B1A4515F305A86E1A30B3A6583CB", hash_generated_method = "6BC0B1A4515F305A86E1A30B3A6583CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.507 -0400", hash_original_method = "6BC0B1A4515F305A86E1A30B3A6583CB", hash_generated_method = "6BC0B1A4515F305A86E1A30B3A6583CB")
     public TimeUtils ()
     {
         //Synthesized constructor
@@ -150,22 +150,22 @@ public class TimeUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.282 -0400", hash_original_field = "4BD1A217FD230CDD43CFFB71E099EC84", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "4BD1A217FD230CDD43CFFB71E099EC84", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
 
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.282 -0400", hash_original_field = "6DF9C5AB42E1E0E9960BE792F6F8A042", hash_generated_field = "B32F666D938963A8D0033F91A5AE5820")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "6DF9C5AB42E1E0E9960BE792F6F8A042", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
 
-    private static int SECONDS_PER_MINUTE = 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.282 -0400", hash_original_field = "684A237ED847F645256FBA1485351335", hash_generated_field = "78DE6264490F29264236286F62C4579E")
+    private static final int SECONDS_PER_MINUTE = 60;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "684A237ED847F645256FBA1485351335", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
 
-    private static int SECONDS_PER_HOUR = 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.285 -0400", hash_original_field = "85D87D41138F9BD13B31F986F32BFCBF", hash_generated_field = "6DBA2C37A9820D8E61A5F2E4AAC47B9A")
+    private static final int SECONDS_PER_HOUR = 60 * 60;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "85D87D41138F9BD13B31F986F32BFCBF", hash_generated_field = "9A0BD6EC4A8335B331F784B15445E7E6")
 
-    private static int SECONDS_PER_DAY = 24 * 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.285 -0400", hash_original_field = "C2324637B57092049D7068095D7E9185", hash_generated_field = "D8303335A4B99C991AA83659C9BFC374")
+    private static final int SECONDS_PER_DAY = 24 * 60 * 60;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "C2324637B57092049D7068095D7E9185", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
 
-    private static Object sFormatSync = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.285 -0400", hash_original_field = "7F8EE94BEA697832BE6AFEC9AD753453", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
+    private static final Object sFormatSync = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.513 -0400", hash_original_field = "7F8EE94BEA697832BE6AFEC9AD753453", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
 
     private static char[] sFormatStr = new char[HUNDRED_DAY_FIELD_LEN+5];
 }

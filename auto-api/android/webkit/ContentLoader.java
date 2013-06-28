@@ -12,18 +12,17 @@ import android.net.http.Headers;
 import android.net.Uri;
 
 class ContentLoader extends StreamLoader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.919 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.156 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
 
     private String mUrl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.919 -0400", hash_original_field = "24B8797543549EFE4715ED8CFEFE95BC", hash_generated_field = "1F620CC4F21CDF80833E6AB697F4F4F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.156 -0400", hash_original_field = "24B8797543549EFE4715ED8CFEFE95BC", hash_generated_field = "1F620CC4F21CDF80833E6AB697F4F4F7")
 
     private String mContentType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.920 -0400", hash_original_method = "F3A29FB813CE2FB46A21E47C37FE57A3", hash_generated_method = "DD3A4797EAB622981FCE936659CA1275")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.156 -0400", hash_original_method = "F3A29FB813CE2FB46A21E47C37FE57A3", hash_generated_method = "A73660614356C696083C8417D58BD29A")
       ContentLoader(String rawUrl, LoadListener loadListener) {
         super(loadListener);
-        int mimeIndex;
-        mimeIndex = rawUrl.lastIndexOf('?');
+        int mimeIndex = rawUrl.lastIndexOf('?');
         {
             mUrl = rawUrl.substring(0, mimeIndex);
             mContentType = rawUrl.substring(mimeIndex + 1);
@@ -43,21 +42,19 @@ class ContentLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.920 -0400", hash_original_method = "3AAB3C35B7568FF6188E6678FD0DC16D", hash_generated_method = "1BC49861208681A743AD2056CA7B6AA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.157 -0400", hash_original_method = "3AAB3C35B7568FF6188E6678FD0DC16D", hash_generated_method = "CCF53FD2E6514D45D97AFD28EA9E38E5")
     private String errString(Exception ex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_265408609 = null; //Variable for return #1
-        String exMessage;
-        exMessage = ex.getMessage();
-        String errString;
-        errString = mContext.getString(
+        String varB4EAC82CA7396A68D541C85D26508E83_1532215145 = null; //Variable for return #1
+        String exMessage = ex.getMessage();
+        String errString = mContext.getString(
                 com.android.internal.R.string.httpErrorFileNotFound);
         {
             errString += " " + exMessage;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_265408609 = errString;
+        varB4EAC82CA7396A68D541C85D26508E83_1532215145 = errString;
         addTaint(ex.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_265408609.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_265408609;
+        varB4EAC82CA7396A68D541C85D26508E83_1532215145.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1532215145;
         // ---------- Original Method ----------
         //String exMessage = ex.getMessage();
         //String errString = mContext.getString(
@@ -69,11 +66,10 @@ class ContentLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.921 -0400", hash_original_method = "F4E0066B6783A6A372AAD1A4891DEB15", hash_generated_method = "419A856C6D0E5C7DD3BEFA2CE5271104")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.158 -0400", hash_original_method = "F4E0066B6783A6A372AAD1A4891DEB15", hash_generated_method = "056FB992B575CE92C7954963D72E59DD")
     @Override
     protected boolean setupStreamAndSendStatus() {
-        Uri uri;
-        uri = Uri.parse(mUrl);
+        Uri uri = Uri.parse(mUrl);
         {
             mLoadListener.error(
                     EventHandler.FILE_NOT_FOUND_ERROR,
@@ -94,14 +90,14 @@ class ContentLoader extends StreamLoader {
         {
             mLoadListener.error(EventHandler.FILE_ERROR, errString(ex));
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1905352247 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1905352247;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1466534015 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1466534015;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:59.921 -0400", hash_original_method = "2D22B97545C25E7E6811FFA13F6C8031", hash_generated_method = "243475B0997091CBFEB654AA492D6984")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.158 -0400", hash_original_method = "2D22B97545C25E7E6811FFA13F6C8031", hash_generated_method = "243475B0997091CBFEB654AA492D6984")
     @Override
     protected void buildHeaders(Headers headers) {
         {

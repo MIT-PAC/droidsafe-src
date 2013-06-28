@@ -10,17 +10,17 @@ import java.util.Iterator;
 import libcore.util.Objects;
 
 public final class DerOutputStream extends BerOutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.663 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.875 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
 
     private int index;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.663 -0400", hash_original_field = "45A90C37895E078835D56B8AFDCF2071", hash_generated_field = "C52414F914D6B3900289CC94A17C97EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.875 -0400", hash_original_field = "45A90C37895E078835D56B8AFDCF2071", hash_generated_field = "C52414F914D6B3900289CC94A17C97EF")
 
     private int[][] len = new int[initSize][];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.663 -0400", hash_original_field = "C41911D1B8E9B3900AF8C1C42380D96C", hash_generated_field = "E2D5A50DFB56B71137A29AB502098A94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.875 -0400", hash_original_field = "C41911D1B8E9B3900AF8C1C42380D96C", hash_generated_field = "E2D5A50DFB56B71137A29AB502098A94")
 
     private Object[][] val = new Object[initSize][];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.670 -0400", hash_original_method = "C2B2568E8FC3DE05B0E3A6791919A3B3", hash_generated_method = "E91B4BFCEE602CDF16A29176E748A164")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.875 -0400", hash_original_method = "C2B2568E8FC3DE05B0E3A6791919A3B3", hash_generated_method = "E91B4BFCEE602CDF16A29176E748A164")
     public  DerOutputStream(ASN1Type asn1, Object object) {
         content = object;
         index = -1;
@@ -40,11 +40,10 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.670 -0400", hash_original_method = "D1F3147530CD958A60FC9468EBA6E51B", hash_generated_method = "FFDEAEA5C84B80FBB53D10C2C2C3DBED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.876 -0400", hash_original_method = "D1F3147530CD958A60FC9468EBA6E51B", hash_generated_method = "4332F5E6F383DE3E0CFF3C8B576C9769")
     @Override
     public void encodeChoice(ASN1Choice choice) {
-        ASN1Type type;
-        type = (ASN1Type) val[index][0];
+        ASN1Type type = (ASN1Type) val[index][0];
         content = val[index][1];
         type.encodeASN(this);
         addTaint(choice.getTaint());
@@ -56,7 +55,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.671 -0400", hash_original_method = "659D44CC0DC855D6C68F3262E359E7DB", hash_generated_method = "7D23805463CEEF4D9C2B50A59D507B52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.876 -0400", hash_original_method = "659D44CC0DC855D6C68F3262E359E7DB", hash_generated_method = "7D23805463CEEF4D9C2B50A59D507B52")
     @Override
     public void encodeExplicit(ASN1Explicit explicit) {
         content = val[index][0];
@@ -71,18 +70,14 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.671 -0400", hash_original_method = "DFC8E4A859D25CD29437C3A3C9B5952F", hash_generated_method = "01AEEB3A6E1E17929911111A47E18BBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.877 -0400", hash_original_method = "DFC8E4A859D25CD29437C3A3C9B5952F", hash_generated_method = "BE44F2CDEC195A2839F5A8CC11B166DA")
     @Override
     public void encodeSequence(ASN1Sequence sequence) {
-        ASN1Type[] type;
-        type = sequence.type;
-        Object[] values;
-        values = val[index];
-        int[] compLens;
-        compLens = len[index];
+        ASN1Type[] type = sequence.type;
+        Object[] values = val[index];
+        int[] compLens = len[index];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 content = values[i];
                 length = compLens[i];
@@ -106,7 +101,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.671 -0400", hash_original_method = "BF7126E0FE9EAA56B88F61BC0650EC8C", hash_generated_method = "5826C7F2CCD0254F55B74A84A80DE538")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.877 -0400", hash_original_method = "BF7126E0FE9EAA56B88F61BC0650EC8C", hash_generated_method = "5826C7F2CCD0254F55B74A84A80DE538")
     @Override
     public void encodeSequenceOf(ASN1SequenceOf sequenceOf) {
         encodeValueCollection(sequenceOf);
@@ -116,7 +111,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.672 -0400", hash_original_method = "71BF5F5BDE90DADFEA034715FD60B59D", hash_generated_method = "CF6827D29AC566791559AC6AE47155C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.878 -0400", hash_original_method = "71BF5F5BDE90DADFEA034715FD60B59D", hash_generated_method = "CF6827D29AC566791559AC6AE47155C5")
     @Override
     public void encodeSetOf(ASN1SetOf setOf) {
         encodeValueCollection(setOf);
@@ -126,15 +121,12 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.672 -0400", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "EBB8CE3E7A666BD52515BD48D668044B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.878 -0400", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "F1D037BB5907A3E797F84C2EED54A0C8")
     private void encodeValueCollection(ASN1ValueCollection collection) {
-        Object[] values;
-        values = val[index];
-        int[] compLens;
-        compLens = len[index];
+        Object[] values = val[index];
+        int[] compLens = len[index];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 content = values[i];
                 length = compLens[i];
@@ -154,15 +146,13 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.685 -0400", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "339EA72E158E22B3166D6DE95D628983")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.879 -0400", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "C9C34D76960A40BC2069CEA614CAB7FD")
     private void push(int[] lengths, Object[] values) {
         {
-            int[][] newLen;
-            newLen = new int[val.length * 2][];
+            int[][] newLen = new int[val.length * 2][];
             System.arraycopy(len, 0, newLen, 0, val.length);
             len = newLen;
-            Object[][] newVal;
-            newVal = new Object[val.length * 2][];
+            Object[][] newVal = new Object[val.length * 2][];
             System.arraycopy(val, 0, newVal, 0, val.length);
             val = newVal;
         } //End block
@@ -183,14 +173,12 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.693 -0400", hash_original_method = "5A7B1508F1787808F49F0B5550C8CD51", hash_generated_method = "D5ECFB01B28055E5028FA0F99C1522BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.880 -0400", hash_original_method = "5A7B1508F1787808F49F0B5550C8CD51", hash_generated_method = "DE95F9EF11DCEB6C32E5870602A14A73")
     @Override
     public void getChoiceLength(ASN1Choice choice) {
-        int i;
-        i = choice.getIndex(content);
+        int i = choice.getIndex(content);
         content = choice.getObjectToEncode(content);
-        Object[] values;
-        values = new Object[] { choice.type[i], content };
+        Object[] values = new Object[] { choice.type[i], content };
         push(null, values);
         choice.type[i].setEncodingContent(this);
         values[1] = content;
@@ -205,13 +193,11 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.693 -0400", hash_original_method = "3844D47826105180913F54E31B3EFD0D", hash_generated_method = "FAFDF26E3A5B8692C091DB05781F27F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.880 -0400", hash_original_method = "3844D47826105180913F54E31B3EFD0D", hash_generated_method = "A90EB8CEB44AFE5F4550262FFFE26066")
     @Override
     public void getExplicitLength(ASN1Explicit explicit) {
-        Object[] values;
-        values = new Object[1];
-        int[] compLens;
-        compLens = new int[1];
+        Object[] values = new Object[1];
+        int[] compLens = new int[1];
         values[0] = content;
         push(compLens, values);
         explicit.type.setEncodingContent(this);
@@ -231,22 +217,17 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.694 -0400", hash_original_method = "987D6B9FDB5F0819C8D50266B95DAA65", hash_generated_method = "DFA5E01F8E46C56868EE44FB387D087C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.881 -0400", hash_original_method = "987D6B9FDB5F0819C8D50266B95DAA65", hash_generated_method = "D52C5836DAFEA11BF997A4A7DEFC96F7")
     @Override
     public void getSequenceLength(ASN1Sequence sequence) {
-        ASN1Type[] type;
-        type = sequence.type;
-        Object[] values;
-        values = new Object[type.length];
-        int[] compLens;
-        compLens = new int[type.length];
+        ASN1Type[] type = sequence.type;
+        Object[] values = new Object[type.length];
+        int[] compLens = new int[type.length];
         sequence.getValues(content, values);
         push(compLens, values);
-        int seqLen;
-        seqLen = 0;
+        int seqLen = 0;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 {
                     {
@@ -254,7 +235,7 @@ public final class DerOutputStream extends BerOutputStream {
                     } //End block
                 } //End block
                 {
-                    boolean var6B38A6F8D3CEEABFA627682F66C06685_770073886 = (Objects.equal(sequence.DEFAULT[i], values[i]));
+                    boolean var6B38A6F8D3CEEABFA627682F66C06685_1093640918 = (Objects.equal(sequence.DEFAULT[i], values[i]));
                     {
                         values[i] = null;
                     } //End block
@@ -273,7 +254,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.694 -0400", hash_original_method = "61F1CA8B8AAFA23BA003E1AA8F8AE7F2", hash_generated_method = "2E65A6D87E4E46D541B1DB9139AC431C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.881 -0400", hash_original_method = "61F1CA8B8AAFA23BA003E1AA8F8AE7F2", hash_generated_method = "2E65A6D87E4E46D541B1DB9139AC431C")
     @Override
     public void getSequenceOfLength(ASN1SequenceOf sequence) {
         getValueOfLength(sequence);
@@ -283,7 +264,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.701 -0400", hash_original_method = "59131DE1B6C7BF8D5BB2AE6524AB4AAF", hash_generated_method = "51513E2E37FF01580F6C6DD9A7CC8D30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.882 -0400", hash_original_method = "59131DE1B6C7BF8D5BB2AE6524AB4AAF", hash_generated_method = "51513E2E37FF01580F6C6DD9A7CC8D30")
     @Override
     public void getSetOfLength(ASN1SetOf setOf) {
         getValueOfLength(setOf);
@@ -293,20 +274,15 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.703 -0400", hash_original_method = "437F3D994C4DC9FE69A29C0E967F3DCB", hash_generated_method = "03D3C20633E9704E48BB488CE1FE2591")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.882 -0400", hash_original_method = "437F3D994C4DC9FE69A29C0E967F3DCB", hash_generated_method = "40476A50AC5B1DC7A3C5B78A7D1B6BED")
     private void getValueOfLength(ASN1ValueCollection collection) {
-        Object[] cv;
-        cv = collection.getValues(content).toArray();
-        Object[] values;
-        values = new Object[cv.length];
-        int[] compLens;
-        compLens = new int[values.length];
+        Object[] cv = collection.getValues(content).toArray();
+        Object[] values = new Object[cv.length];
+        int[] compLens = new int[values.length];
         push(compLens, values);
-        int seqLen;
-        seqLen = 0;
+        int seqLen = 0;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 content = cv[i];
                 collection.type.setEncodingContent(this);
@@ -334,8 +310,8 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.703 -0400", hash_original_field = "4CC15007CF874E708F8CE8EBA49B547E", hash_generated_field = "D64FEB770F92E98F6D044CE3CAFE19CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.882 -0400", hash_original_field = "4CC15007CF874E708F8CE8EBA49B547E", hash_generated_field = "3574CD64DD2D9905361B05608C299821")
 
-    private static int initSize = 32;
+    private static final int initSize = 32;
 }
 

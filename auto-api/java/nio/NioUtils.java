@@ -12,18 +12,18 @@ import java.nio.channels.FileChannel;
 
 public final class NioUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.840 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.827 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
     private  NioUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static int getDirectBufferAddress(Buffer buffer) {
+    public static int getDirectBufferAddress(Buffer buffer) {
         return buffer.effectiveDirectAddress;
     }
 
     
-        public static void freeDirectBuffer(ByteBuffer buffer) {
+    public static void freeDirectBuffer(ByteBuffer buffer) {
         if (buffer == null) {
             return;
         }
@@ -37,22 +37,22 @@ public final class NioUtils {
     }
 
     
-        public static FileDescriptor getFD(FileChannel fc) {
+    public static FileDescriptor getFD(FileChannel fc) {
         return ((FileChannelImpl) fc).getFD();
     }
 
     
-        public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
+    public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
         return new FileChannelImpl(stream, fd, mode);
     }
 
     
-        public static byte[] unsafeArray(ByteBuffer b) {
+    public static byte[] unsafeArray(ByteBuffer b) {
         return ((HeapByteBuffer) b).backingArray;
     }
 
     
-        public static int unsafeArrayOffset(ByteBuffer b) {
+    public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }
 

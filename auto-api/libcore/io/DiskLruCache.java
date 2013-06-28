@@ -36,57 +36,57 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public final class DiskLruCache implements Closeable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.287 -0400", hash_original_field = "5F8F22B8CDBAEEE8CF857673A9B6BA20", hash_generated_field = "8B0860249151DE823C54467CC9BADB3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.967 -0400", hash_original_field = "5F8F22B8CDBAEEE8CF857673A9B6BA20", hash_generated_field = "8B0860249151DE823C54467CC9BADB3F")
 
     private File directory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.287 -0400", hash_original_field = "3C3C73781D3DE0858A20A84F8FE7A498", hash_generated_field = "C3DAA1E42AD1B9E8800013507C6A05F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.967 -0400", hash_original_field = "3C3C73781D3DE0858A20A84F8FE7A498", hash_generated_field = "C3DAA1E42AD1B9E8800013507C6A05F9")
 
     private File journalFile;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.287 -0400", hash_original_field = "BBEFE2C36653C86E334A0DB0A7D1D2DE", hash_generated_field = "E459709269D427C9CB1CBD686B5A13E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.967 -0400", hash_original_field = "BBEFE2C36653C86E334A0DB0A7D1D2DE", hash_generated_field = "E459709269D427C9CB1CBD686B5A13E5")
 
     private File journalFileTmp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "B64C136408BBB80DFA6717A62D239726", hash_generated_field = "DEE2522BB7DF04F0B0954F3014F259F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.967 -0400", hash_original_field = "B64C136408BBB80DFA6717A62D239726", hash_generated_field = "DEE2522BB7DF04F0B0954F3014F259F5")
 
     private int appVersion;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "B78E1120B12ABD7215D67324FE9476FF", hash_generated_field = "736713EBDB43EC0678FF4084C276D4A3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.967 -0400", hash_original_field = "B78E1120B12ABD7215D67324FE9476FF", hash_generated_field = "736713EBDB43EC0678FF4084C276D4A3")
 
     private long maxSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "A30C57CC28770178EAB167BF0B932032", hash_generated_field = "37330B5F0FE12E195B061FFDF29F478E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "A30C57CC28770178EAB167BF0B932032", hash_generated_field = "37330B5F0FE12E195B061FFDF29F478E")
 
     private int valueCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "93F7705D696C1DC0669B611BBCDF6959")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "93F7705D696C1DC0669B611BBCDF6959")
 
     private long size = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "9CB65621E620C7F32CB54AA3C3BED0D0", hash_generated_field = "6BA9D6A677DAD8E6F256134E2B68A280")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "9CB65621E620C7F32CB54AA3C3BED0D0", hash_generated_field = "6BA9D6A677DAD8E6F256134E2B68A280")
 
     private Writer journalWriter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "FBBC54FAC485F995EAA3AEC039F91CB6", hash_generated_field = "D7C31A3E475E9BC38B6E0D538E339E92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "FBBC54FAC485F995EAA3AEC039F91CB6", hash_generated_field = "D4AEF12769A5EC9F5F72F388FEBC72A2")
 
-    private LinkedHashMap<String, Entry> lruEntries = new LinkedHashMap<String, Entry>(0, 0.75f, true);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "ACF4170A74586A81D52591B8F18C89F4", hash_generated_field = "6E19F0863A5F1F61C505FBB71E78DAA1")
+    private final LinkedHashMap<String, Entry> lruEntries = new LinkedHashMap<String, Entry>(0, 0.75f, true);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "ACF4170A74586A81D52591B8F18C89F4", hash_generated_field = "6E19F0863A5F1F61C505FBB71E78DAA1")
 
     private int redundantOpCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.288 -0400", hash_original_field = "7893561B06784847101FF1A4FE94844D", hash_generated_field = "DCB6514DF5952028B45A832A87F6BC54")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.968 -0400", hash_original_field = "7893561B06784847101FF1A4FE94844D", hash_generated_field = "D542EB48AB8E08A6131DD420815BF0BD")
 
-    private ExecutorService executorService = new ThreadPoolExecutor(0, 1,
+    private final ExecutorService executorService = new ThreadPoolExecutor(0, 1,
             60L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.293 -0400", hash_original_field = "0AB759F1EA2680D4F36A63BC7BD4683F", hash_generated_field = "3E5B0481E06622267785DFB3571F17F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_field = "0AB759F1EA2680D4F36A63BC7BD4683F", hash_generated_field = "02934D3CC46F9AC5549E543E7FEE2593")
 
-    private Callable<Void> cleanupCallable = new Callable<Void>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.293 -0400", hash_original_method = "60CB515F13FCF39FB25B426074E3001D", hash_generated_method = "2F534C69BDBDD34730D9A3100F36C5A2")
+    private final Callable<Void> cleanupCallable = new Callable<Void>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_method = "60CB515F13FCF39FB25B426074E3001D", hash_generated_method = "657EDDA2627FCB4772B1A28CA5D1F2C0")
         @Override
         public Void call() throws Exception {
-            Void varB4EAC82CA7396A68D541C85D26508E83_145025309 = null; //Variable for return #1
-            Void varB4EAC82CA7396A68D541C85D26508E83_1061984257 = null; //Variable for return #2
+            Void varB4EAC82CA7396A68D541C85D26508E83_908756601 = null; //Variable for return #1
+            Void varB4EAC82CA7396A68D541C85D26508E83_1282687766 = null; //Variable for return #2
             {
-                Object varD933D409C8362D8AB4EAAFB238C186FA_1787012373 = (DiskLruCache.this);
+                Object varD933D409C8362D8AB4EAAFB238C186FA_2025849265 = (DiskLruCache.this);
                 {
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_145025309 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_908756601 = null;
                     } //End block
                     trimToSize();
                     {
-                        boolean varAE772B6A2261513DC630DDE920DDFCB8_1047357081 = (journalRebuildRequired());
+                        boolean varAE772B6A2261513DC630DDE920DDFCB8_1747341119 = (journalRebuildRequired());
                         {
                             rebuildJournal();
                             redundantOpCount = 0;
@@ -94,18 +94,18 @@ public final class DiskLruCache implements Closeable {
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1061984257 = null;
-            Void varA7E53CE21691AB073D9660D615818899_2049980587; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_1282687766 = null;
+            Void varA7E53CE21691AB073D9660D615818899_309578625; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_2049980587 = varB4EAC82CA7396A68D541C85D26508E83_145025309;
+                    varA7E53CE21691AB073D9660D615818899_309578625 = varB4EAC82CA7396A68D541C85D26508E83_908756601;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_2049980587 = varB4EAC82CA7396A68D541C85D26508E83_1061984257;
+                    varA7E53CE21691AB073D9660D615818899_309578625 = varB4EAC82CA7396A68D541C85D26508E83_1282687766;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2049980587.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_2049980587;
+            varA7E53CE21691AB073D9660D615818899_309578625.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_309578625;
             // ---------- Original Method ----------
             //synchronized (DiskLruCache.this) {
                 //if (journalWriter == null) {
@@ -123,7 +123,7 @@ public final class DiskLruCache implements Closeable {
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.294 -0400", hash_original_method = "F7C5B739E468E97586605C521F3C2B42", hash_generated_method = "72D38F4B2DCD8001D35CBA47221BB3AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_method = "F7C5B739E468E97586605C521F3C2B42", hash_generated_method = "72D38F4B2DCD8001D35CBA47221BB3AF")
     private  DiskLruCache(File directory, int appVersion, int valueCount, long maxSize) {
         this.directory = directory;
         this.appVersion = appVersion;
@@ -168,24 +168,18 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.295 -0400", hash_original_method = "D80881F7E6F2A63F9AF02A98171F075C", hash_generated_method = "274991D9A7606C8D6EF3CFB88433B6FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.970 -0400", hash_original_method = "D80881F7E6F2A63F9AF02A98171F075C", hash_generated_method = "716309904C20418F213E58B35131B072")
     private void readJournal() throws IOException {
-        InputStream in;
-        in = new BufferedInputStream(new FileInputStream(journalFile));
+        InputStream in = new BufferedInputStream(new FileInputStream(journalFile));
         try 
         {
-            String magic;
-            magic = Streams.readAsciiLine(in);
-            String version;
-            version = Streams.readAsciiLine(in);
-            String appVersionString;
-            appVersionString = Streams.readAsciiLine(in);
-            String valueCountString;
-            valueCountString = Streams.readAsciiLine(in);
-            String blank;
-            blank = Streams.readAsciiLine(in);
+            String magic = Streams.readAsciiLine(in);
+            String version = Streams.readAsciiLine(in);
+            String appVersionString = Streams.readAsciiLine(in);
+            String valueCountString = Streams.readAsciiLine(in);
+            String blank = Streams.readAsciiLine(in);
             {
-                boolean var3B415B63A46B05254C7463316DBFFFC4_620250473 = (!MAGIC.equals(magic)
+                boolean var3B415B63A46B05254C7463316DBFFFC4_1462502954 = (!MAGIC.equals(magic)
                     || !VERSION_1.equals(version)
                     || !Integer.toString(appVersion).equals(appVersionString)
                     || !Integer.toString(valueCount).equals(valueCountString)
@@ -213,41 +207,38 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.297 -0400", hash_original_method = "B93033832384BE0A8F735535A303EB51", hash_generated_method = "2EFC5148EA5B24762B9D3AD9BE4F7E7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.971 -0400", hash_original_method = "B93033832384BE0A8F735535A303EB51", hash_generated_method = "6DB1A8AED675AD5F31B28ABAD8F865B6")
     private void readJournalLine(String line) throws IOException {
-        String[] parts;
-        parts = line.split(" ");
+        String[] parts = line.split(" ");
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + line);
         } //End block
-        String key;
-        key = parts[1];
+        String key = parts[1];
         {
-            boolean varAEADAED980A3E2CE65A0FB2D397AC4EF_107114794 = (parts[0].equals(REMOVE) && parts.length == 2);
+            boolean varAEADAED980A3E2CE65A0FB2D397AC4EF_1686760113 = (parts[0].equals(REMOVE) && parts.length == 2);
             {
                 lruEntries.remove(key);
             } //End block
         } //End collapsed parenthetic
-        Entry entry;
-        entry = lruEntries.get(key);
+        Entry entry = lruEntries.get(key);
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
         } //End block
         {
-            boolean var98DA74BB3A0D1D55A0A2F6F4FB097B6E_1604149982 = (parts[0].equals(CLEAN) && parts.length == 2 + valueCount);
+            boolean var98DA74BB3A0D1D55A0A2F6F4FB097B6E_497444052 = (parts[0].equals(CLEAN) && parts.length == 2 + valueCount);
             {
                 entry.readable = true;
                 entry.currentEditor = null;
                 entry.setLengths(Arrays.copyOfRange(parts, 2, parts.length));
             } //End block
             {
-                boolean var1A74343163BF8B3C2F48DFA8E158DAA9_1268926028 = (parts[0].equals(DIRTY) && parts.length == 2);
+                boolean var1A74343163BF8B3C2F48DFA8E158DAA9_1537950080 = (parts[0].equals(DIRTY) && parts.length == 2);
                 {
                     entry.currentEditor = new Editor(entry);
                 } //End block
                 {
-                    boolean var1B34DE325BCE96DBE7D78DC7688F24C9_873118667 = (parts[0].equals(READ) && parts.length == 2);
+                    boolean var1B34DE325BCE96DBE7D78DC7688F24C9_1811012793 = (parts[0].equals(READ) && parts.length == 2);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + line);
                     } //End block
@@ -260,20 +251,17 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.326 -0400", hash_original_method = "BF29FD79336E7D0F2752A5C16F704FCA", hash_generated_method = "2BECE7B46F79575743750B532484AB0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.972 -0400", hash_original_method = "BF29FD79336E7D0F2752A5C16F704FCA", hash_generated_method = "24B640361FFBB23EA04097BB59B679CC")
     private void processJournal() throws IOException {
         deleteIfExists(journalFileTmp);
         {
-            Iterator<Entry> i;
-            i = lruEntries.values().iterator();
-            boolean var1611849CD1EE22EA22E4E7E3327E2E35_430957997 = (i.hasNext());
+            Iterator<Entry> i = lruEntries.values().iterator();
+            boolean var1611849CD1EE22EA22E4E7E3327E2E35_49652207 = (i.hasNext());
             {
-                Entry entry;
-                entry = i.next();
+                Entry entry = i.next();
                 {
                     {
-                        int t;
-                        t = 0;
+                        int t = 0;
                         {
                             size += entry.lengths[t];
                         } //End block
@@ -282,8 +270,7 @@ public final class DiskLruCache implements Closeable {
                 {
                     entry.currentEditor = null;
                     {
-                        int t;
-                        t = 0;
+                        int t = 0;
                         {
                             deleteIfExists(entry.getCleanFile(t));
                             deleteIfExists(entry.getDirtyFile(t));
@@ -313,13 +300,12 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.363 -0400", hash_original_method = "CAFF8A7D35D4FC2C6D20C8D2E31B18B9", hash_generated_method = "248D2806F13CAC79C5D7FB79FF0B352F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.978 -0400", hash_original_method = "CAFF8A7D35D4FC2C6D20C8D2E31B18B9", hash_generated_method = "FCF7068065FB23B199D32864A5514808")
     private synchronized void rebuildJournal() throws IOException {
         {
             journalWriter.close();
         } //End block
-        Writer writer;
-        writer = new BufferedWriter(new FileWriter(journalFileTmp));
+        Writer writer = new BufferedWriter(new FileWriter(journalFileTmp));
         writer.write(MAGIC);
         writer.write("\n");
         writer.write(VERSION_1);
@@ -330,9 +316,9 @@ public final class DiskLruCache implements Closeable {
         writer.write("\n");
         writer.write("\n");
         {
-            Iterator<Entry> var3FF52ED4E313724F3C65EC6A81752D91_1768964309 = (lruEntries.values()).iterator();
-            var3FF52ED4E313724F3C65EC6A81752D91_1768964309.hasNext();
-            Entry entry = var3FF52ED4E313724F3C65EC6A81752D91_1768964309.next();
+            Iterator<Entry> var3FF52ED4E313724F3C65EC6A81752D91_598448891 = (lruEntries.values()).iterator();
+            var3FF52ED4E313724F3C65EC6A81752D91_598448891.hasNext();
+            Entry entry = var3FF52ED4E313724F3C65EC6A81752D91_598448891.next();
             {
                 {
                     writer.write(DIRTY + ' ' + entry.key + '\n');
@@ -361,29 +347,26 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.371 -0400", hash_original_method = "8CCA333E37F6F5C0426A3FC5CE5D4B2E", hash_generated_method = "8B05D80130278847F6FC74339220E05B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.979 -0400", hash_original_method = "8CCA333E37F6F5C0426A3FC5CE5D4B2E", hash_generated_method = "E4F802011C5B118F213ECAE4A1F8E572")
     public synchronized Snapshot get(String key) throws IOException {
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_689139081 = null; //Variable for return #1
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1408632249 = null; //Variable for return #2
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_862340921 = null; //Variable for return #3
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1087912525 = null; //Variable for return #4
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1542281905 = null; //Variable for return #1
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1899025608 = null; //Variable for return #2
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1784822624 = null; //Variable for return #3
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1607100392 = null; //Variable for return #4
         checkNotClosed();
         validateKey(key);
-        Entry entry;
-        entry = lruEntries.get(key);
+        Entry entry = lruEntries.get(key);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_689139081 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1542281905 = null;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1408632249 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1899025608 = null;
         } //End block
-        InputStream[] ins;
-        ins = new InputStream[valueCount];
+        InputStream[] ins = new InputStream[valueCount];
         try 
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     ins[i] = new FileInputStream(entry.getCleanFile(i));
                 } //End block
@@ -391,34 +374,34 @@ public final class DiskLruCache implements Closeable {
         } //End block
         catch (FileNotFoundException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_862340921 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1784822624 = null;
         } //End block
         journalWriter.append(READ + ' ' + key + '\n');
         {
-            boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_826788979 = (journalRebuildRequired());
+            boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_204035347 = (journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1087912525 = new Snapshot(ins);
+        varB4EAC82CA7396A68D541C85D26508E83_1607100392 = new Snapshot(ins);
         addTaint(key.getTaint());
-        Snapshot varA7E53CE21691AB073D9660D615818899_753657269; //Final return value
+        Snapshot varA7E53CE21691AB073D9660D615818899_2135112251; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_753657269 = varB4EAC82CA7396A68D541C85D26508E83_689139081;
+                varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1542281905;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_753657269 = varB4EAC82CA7396A68D541C85D26508E83_1408632249;
+                varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1899025608;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_753657269 = varB4EAC82CA7396A68D541C85D26508E83_862340921;
+                varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1784822624;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_753657269 = varB4EAC82CA7396A68D541C85D26508E83_1087912525;
+                varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1607100392;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_753657269.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_753657269;
+        varA7E53CE21691AB073D9660D615818899_2135112251.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2135112251;
         // ---------- Original Method ----------
         //checkNotClosed();
         //validateKey(key);
@@ -446,39 +429,37 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.380 -0400", hash_original_method = "1C8B92160DB309C26801458073B88259", hash_generated_method = "CC577BE8EBB482AE2FC7B3EBE8A6E64A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.980 -0400", hash_original_method = "1C8B92160DB309C26801458073B88259", hash_generated_method = "94AA21B99E6D69B025B858037BEF0290")
     public synchronized Editor edit(String key) throws IOException {
-        Editor varB4EAC82CA7396A68D541C85D26508E83_546740684 = null; //Variable for return #1
-        Editor varB4EAC82CA7396A68D541C85D26508E83_1643712721 = null; //Variable for return #2
+        Editor varB4EAC82CA7396A68D541C85D26508E83_1832644645 = null; //Variable for return #1
+        Editor varB4EAC82CA7396A68D541C85D26508E83_500077972 = null; //Variable for return #2
         checkNotClosed();
         validateKey(key);
-        Entry entry;
-        entry = lruEntries.get(key);
+        Entry entry = lruEntries.get(key);
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_546740684 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1832644645 = null;
         } //End block
-        Editor editor;
-        editor = new Editor(entry);
+        Editor editor = new Editor(entry);
         entry.currentEditor = editor;
         journalWriter.write(DIRTY + ' ' + key + '\n');
         journalWriter.flush();
-        varB4EAC82CA7396A68D541C85D26508E83_1643712721 = editor;
+        varB4EAC82CA7396A68D541C85D26508E83_500077972 = editor;
         addTaint(key.getTaint());
-        Editor varA7E53CE21691AB073D9660D615818899_1671010781; //Final return value
+        Editor varA7E53CE21691AB073D9660D615818899_533561562; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1671010781 = varB4EAC82CA7396A68D541C85D26508E83_546740684;
+                varA7E53CE21691AB073D9660D615818899_533561562 = varB4EAC82CA7396A68D541C85D26508E83_1832644645;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1671010781 = varB4EAC82CA7396A68D541C85D26508E83_1643712721;
+                varA7E53CE21691AB073D9660D615818899_533561562 = varB4EAC82CA7396A68D541C85D26508E83_500077972;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1671010781.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1671010781;
+        varA7E53CE21691AB073D9660D615818899_533561562.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_533561562;
         // ---------- Original Method ----------
         //checkNotClosed();
         //validateKey(key);
@@ -497,49 +478,47 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.381 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "FFD54170AB256BAF5E8B5C66F04B3FEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "C746A836EDEB50EA8B204649418BED6F")
     public File getDirectory() {
-        File varB4EAC82CA7396A68D541C85D26508E83_1362921907 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1362921907 = directory;
-        varB4EAC82CA7396A68D541C85D26508E83_1362921907.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1362921907;
+        File varB4EAC82CA7396A68D541C85D26508E83_1786673281 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1786673281 = directory;
+        varB4EAC82CA7396A68D541C85D26508E83_1786673281.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1786673281;
         // ---------- Original Method ----------
         //return directory;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.381 -0400", hash_original_method = "4A03A0F188DC0124026C9315925210D3", hash_generated_method = "E134896F0825D1E3B1217458B9850E61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "4A03A0F188DC0124026C9315925210D3", hash_generated_method = "EC4B8DA7249674B272A06C1803CF7E80")
     public long maxSize() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_693541412 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_693541412;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1680974984 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1680974984;
         // ---------- Original Method ----------
         //return maxSize;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.382 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "07D056E0866E252F677321787F97E641")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "5B7973FE2D28A79131E5A1778E5157AE")
     public synchronized long size() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_394722637 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_394722637;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_48763410 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_48763410;
         // ---------- Original Method ----------
         //return size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.383 -0400", hash_original_method = "E3B5F5B6DB82C9D68E2AD58524FD46D2", hash_generated_method = "FB7FF5FBFE8102951685C6AB237839A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.982 -0400", hash_original_method = "E3B5F5B6DB82C9D68E2AD58524FD46D2", hash_generated_method = "4C9BD1C4FD25263CAEB860AED9C11695")
     private synchronized void completeEdit(Editor editor, boolean success) throws IOException {
-        Entry entry;
-        entry = editor.entry;
+        Entry entry = editor.entry;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     {
-                        boolean varFFE5A3C862451CA99201ACFA8DB76116_1595852337 = (!entry.getDirtyFile(i).exists());
+                        boolean varFFE5A3C862451CA99201ACFA8DB76116_1670332836 = (!entry.getDirtyFile(i).exists());
                         {
                             editor.abort();
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("edit didn't create file " + i);
@@ -549,22 +528,17 @@ public final class DiskLruCache implements Closeable {
             } //End collapsed parenthetic
         } //End block
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                File dirty;
-                dirty = entry.getDirtyFile(i);
+                File dirty = entry.getDirtyFile(i);
                 {
                     {
-                        boolean var6FE72A42168775380AEE51AF827532B3_1953901464 = (dirty.exists());
+                        boolean var6FE72A42168775380AEE51AF827532B3_415935253 = (dirty.exists());
                         {
-                            File clean;
-                            clean = entry.getCleanFile(i);
+                            File clean = entry.getCleanFile(i);
                             dirty.renameTo(clean);
-                            long oldLength;
-                            oldLength = entry.lengths[i];
-                            long newLength;
-                            newLength = clean.length();
+                            long oldLength = entry.lengths[i];
+                            long newLength = clean.length();
                             entry.lengths[i] = newLength;
                             size = size - oldLength + newLength;
                         } //End block
@@ -585,7 +559,7 @@ public final class DiskLruCache implements Closeable {
             journalWriter.write(REMOVE + ' ' + entry.key + '\n');
         } //End block
         {
-            boolean var776EDFAB12D0A0A4A863963ED3C1C602_1225367871 = (size > maxSize || journalRebuildRequired());
+            boolean var776EDFAB12D0A0A4A863963ED3C1C602_1372921571 = (size > maxSize || journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
             } //End block
@@ -597,14 +571,13 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.387 -0400", hash_original_method = "BD0CD0940E277CB89BD11D972CAF1EC0", hash_generated_method = "5B80E5895ADCAA083E4740883CDD0A67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.983 -0400", hash_original_method = "BD0CD0940E277CB89BD11D972CAF1EC0", hash_generated_method = "A464779CFE102AA6E61AE8C8DA7E4622")
     private boolean journalRebuildRequired() {
-        int REDUNDANT_OP_COMPACT_THRESHOLD;
-        REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
-        boolean varA8B170D68A257FCB088E560C51B41F6B_781091036 = (redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
+        final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
+        boolean varA8B170D68A257FCB088E560C51B41F6B_800945562 = (redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
                 && redundantOpCount >= lruEntries.size());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822379792 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822379792;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1351248065 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1351248065;
         // ---------- Original Method ----------
         //final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
         //return redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
@@ -612,20 +585,17 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.396 -0400", hash_original_method = "EADC8C19CC119124A893E81F5BBBE260", hash_generated_method = "4CFC6A1FB547CF7AE49C4221FF395E3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.985 -0400", hash_original_method = "EADC8C19CC119124A893E81F5BBBE260", hash_generated_method = "C6C8B8E4680D80560EBD406A83AD8DE6")
     public synchronized boolean remove(String key) throws IOException {
         checkNotClosed();
         validateKey(key);
-        Entry entry;
-        entry = lruEntries.get(key);
+        Entry entry = lruEntries.get(key);
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                File file;
-                file = entry.getCleanFile(i);
+                File file = entry.getCleanFile(i);
                 {
-                    boolean var662432ADDD39E82511D634813D6392A6_1017670672 = (!file.delete());
+                    boolean var662432ADDD39E82511D634813D6392A6_31304521 = (!file.delete());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("failed to delete " + file);
                     } //End block
@@ -637,14 +607,14 @@ public final class DiskLruCache implements Closeable {
         journalWriter.append(REMOVE + ' ' + key + '\n');
         lruEntries.remove(key);
         {
-            boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_1299985219 = (journalRebuildRequired());
+            boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_1663365809 = (journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
             } //End block
         } //End collapsed parenthetic
         addTaint(key.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1137530158 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1137530158;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493550984 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_493550984;
         // ---------- Original Method ----------
         //checkNotClosed();
         //validateKey(key);
@@ -670,16 +640,16 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.409 -0400", hash_original_method = "DD17EBB3E7F8098B41E8CF3D3DB045E0", hash_generated_method = "37E0EA841829882B18DC81BE28785D2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.986 -0400", hash_original_method = "DD17EBB3E7F8098B41E8CF3D3DB045E0", hash_generated_method = "8FF21DC45ECC4839B2AE697B49D7889C")
     public boolean isClosed() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1615864346 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1615864346;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316621409 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316621409;
         // ---------- Original Method ----------
         //return journalWriter == null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.409 -0400", hash_original_method = "8ED19EB33A6AB2822DDF1831EB4A2E5C", hash_generated_method = "563F58E3136896F1891C3E5166D27E9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.987 -0400", hash_original_method = "8ED19EB33A6AB2822DDF1831EB4A2E5C", hash_generated_method = "563F58E3136896F1891C3E5166D27E9A")
     private void checkNotClosed() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("cache is closed");
@@ -691,7 +661,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.409 -0400", hash_original_method = "329F096E2383A78FF3370B422D55028D", hash_generated_method = "365B35FA4F8864C12CD2EC6688A56CBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.987 -0400", hash_original_method = "329F096E2383A78FF3370B422D55028D", hash_generated_method = "365B35FA4F8864C12CD2EC6688A56CBE")
     public synchronized void flush() throws IOException {
         checkNotClosed();
         trimToSize();
@@ -703,12 +673,12 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.426 -0400", hash_original_method = "99CE1AB60FDF93828647C541E1949F71", hash_generated_method = "561F73E66318236AF12D88701DA189B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.994 -0400", hash_original_method = "99CE1AB60FDF93828647C541E1949F71", hash_generated_method = "7BE527FDA4B839A7ABCDF9ABFFB25AEF")
     public synchronized void close() throws IOException {
         {
-            Iterator<Entry> varA079903352D454BE94CBDC004A76A873_2104620614 = (new ArrayList<Entry>(lruEntries.values())).iterator();
-            varA079903352D454BE94CBDC004A76A873_2104620614.hasNext();
-            Entry entry = varA079903352D454BE94CBDC004A76A873_2104620614.next();
+            Iterator<Entry> varA079903352D454BE94CBDC004A76A873_1279085761 = (new ArrayList<Entry>(lruEntries.values())).iterator();
+            varA079903352D454BE94CBDC004A76A873_1279085761.hasNext();
+            Entry entry = varA079903352D454BE94CBDC004A76A873_1279085761.next();
             {
                 {
                     entry.currentEditor.abort();
@@ -733,11 +703,10 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.426 -0400", hash_original_method = "52FB98FFFDCED62623018A96063CC5F4", hash_generated_method = "EFE2DBF6BEF52CA87CD9CFD0A6216A15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.994 -0400", hash_original_method = "52FB98FFFDCED62623018A96063CC5F4", hash_generated_method = "56A9888541E62A6F53EADFDC157B470F")
     private void trimToSize() throws IOException {
         {
-            Map.Entry<String, Entry> toEvict;
-            toEvict = lruEntries.eldest();
+            Map.Entry<String, Entry> toEvict = lruEntries.eldest();
             remove(toEvict.getKey());
         } //End block
         // ---------- Original Method ----------
@@ -748,7 +717,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.426 -0400", hash_original_method = "E0DF0E5E95BB69DC7E72889656D60AB7", hash_generated_method = "40601D48395A0FDE4DC088AFE1B7872C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.995 -0400", hash_original_method = "E0DF0E5E95BB69DC7E72889656D60AB7", hash_generated_method = "40601D48395A0FDE4DC088AFE1B7872C")
     public void delete() throws IOException {
         close();
         IoUtils.deleteContents(directory);
@@ -758,10 +727,10 @@ public final class DiskLruCache implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.427 -0400", hash_original_method = "A6AB05B3A3783BAC84CED8DCEEB398D1", hash_generated_method = "252584279F23BC4833C348343A28195C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.995 -0400", hash_original_method = "A6AB05B3A3783BAC84CED8DCEEB398D1", hash_generated_method = "8F430ECFABD203F3067335388636C6B3")
     private void validateKey(String key) {
         {
-            boolean var8C530715B845FC3D79AD68AB30B9FD1A_1761947675 = (key.contains(" ") || key.contains("\n") || key.contains("\r"));
+            boolean var8C530715B845FC3D79AD68AB30B9FD1A_1572595113 = (key.contains(" ") || key.contains("\n") || key.contains("\r"));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "keys must not contain spaces or newlines: \"" + key + "\"");
@@ -782,11 +751,11 @@ public final class DiskLruCache implements Closeable {
 
     
     public static final class Snapshot implements Closeable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.427 -0400", hash_original_field = "CDF1E220D89C2DCD2E000C3D105BF93E", hash_generated_field = "464EF7B473F9CC85C5904899BBCD6B8E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.995 -0400", hash_original_field = "CDF1E220D89C2DCD2E000C3D105BF93E", hash_generated_field = "464EF7B473F9CC85C5904899BBCD6B8E")
 
         private InputStream[] ins;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.427 -0400", hash_original_method = "4874F99779A0A237419F7A04515D002C", hash_generated_method = "6FEE8A1DE88E19521460185A59EEAE25")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.996 -0400", hash_original_method = "4874F99779A0A237419F7A04515D002C", hash_generated_method = "6FEE8A1DE88E19521460185A59EEAE25")
         private  Snapshot(InputStream[] ins) {
             this.ins = ins;
             // ---------- Original Method ----------
@@ -794,35 +763,37 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.428 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "F3413F7C8D0B27D3D0C482A84FAC27F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.997 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "D0CD27AEAB006C8CAFFE8DF88D956C6C")
         public InputStream getInputStream(int index) {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1315349011 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1315349011 = ins[index];
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_39208850 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_39208850 = ins[index];
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1315349011.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1315349011;
+            varB4EAC82CA7396A68D541C85D26508E83_39208850.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_39208850;
             // ---------- Original Method ----------
             //return ins[index];
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.433 -0400", hash_original_method = "CEACA6862DFE49E3BCD1DEF39CCE35B7", hash_generated_method = "93B3DC780C787766A4CA08C8AA997EA7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.997 -0400", hash_original_method = "CEACA6862DFE49E3BCD1DEF39CCE35B7", hash_generated_method = "AAA395A56355113524B934ACEB7EBB0B")
         public String getString(int index) throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_239321143 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_239321143 = inputStreamToString(getInputStream(index));
+            String varB4EAC82CA7396A68D541C85D26508E83_335806471 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_335806471 = inputStreamToString(getInputStream(index));
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_239321143.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_239321143;
+            varB4EAC82CA7396A68D541C85D26508E83_335806471.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_335806471;
             // ---------- Original Method ----------
             //return inputStreamToString(getInputStream(index));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.445 -0400", hash_original_method = "ECD6C2B86E4C6B719F1F8B8AE3B1A8FC", hash_generated_method = "A779C24A2F020752D5F61844458A21BB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.999 -0400", hash_original_method = "ECD6C2B86E4C6B719F1F8B8AE3B1A8FC", hash_generated_method = "C91429C439AEEC0914768F877120DF3F")
         @Override
         public void close() {
             {
-                InputStream in = ins[0];
+                Iterator<InputStream> var395649F0A5A2CED044849C6D2E7C0EE8_1528156953 = (ins).iterator();
+                var395649F0A5A2CED044849C6D2E7C0EE8_1528156953.hasNext();
+                InputStream in = var395649F0A5A2CED044849C6D2E7C0EE8_1528156953.next();
                 {
                     IoUtils.closeQuietly(in);
                 } //End block
@@ -839,14 +810,14 @@ public final class DiskLruCache implements Closeable {
 
     
     public final class Editor {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.446 -0400", hash_original_field = "1043BFC77FEBE75FAFEC0C4309FACCF1", hash_generated_field = "70C4CB2BDA836A091A18885840DD6AFF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.999 -0400", hash_original_field = "1043BFC77FEBE75FAFEC0C4309FACCF1", hash_generated_field = "70C4CB2BDA836A091A18885840DD6AFF")
 
         private Entry entry;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.451 -0400", hash_original_field = "9308EF711245F4213A779903B194F396", hash_generated_field = "801DA5B7CFF4CA64DD2686B1718833F3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.999 -0400", hash_original_field = "9308EF711245F4213A779903B194F396", hash_generated_field = "801DA5B7CFF4CA64DD2686B1718833F3")
 
         private boolean hasErrors;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.453 -0400", hash_original_method = "DB0A9ACC8813DA2FB44F6FFEC09E8772", hash_generated_method = "9D5F2E1BFEBBC34BED7AEE5B243CB69C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.000 -0400", hash_original_method = "DB0A9ACC8813DA2FB44F6FFEC09E8772", hash_generated_method = "9D5F2E1BFEBBC34BED7AEE5B243CB69C")
         private  Editor(Entry entry) {
             this.entry = entry;
             // ---------- Original Method ----------
@@ -854,37 +825,37 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.453 -0400", hash_original_method = "E20ADC2C4905CE726058A12470A98795", hash_generated_method = "6EA1F31C1D6AA684992E640166BFF398")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.001 -0400", hash_original_method = "E20ADC2C4905CE726058A12470A98795", hash_generated_method = "4EF7EF6EC63FD7C9634E16D305734DF9")
         public InputStream newInputStream(int index) throws IOException {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1277105293 = null; //Variable for return #1
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1766883755 = null; //Variable for return #2
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_1443277585 = null; //Variable for return #1
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_1242536438 = null; //Variable for return #2
             {
-                Object varD933D409C8362D8AB4EAAFB238C186FA_1059113 = (DiskLruCache.this);
+                Object varD933D409C8362D8AB4EAAFB238C186FA_1515158380 = (DiskLruCache.this);
                 {
                     {
-                        boolean var573C982FD8CE38C80E849A01EADDA5C3_2116264927 = (entry.currentEditor != this);
+                        boolean var573C982FD8CE38C80E849A01EADDA5C3_404551086 = (entry.currentEditor != this);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1277105293 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_1443277585 = null;
                     } //End block
-                    varB4EAC82CA7396A68D541C85D26508E83_1766883755 = new FileInputStream(entry.getCleanFile(index));
+                    varB4EAC82CA7396A68D541C85D26508E83_1242536438 = new FileInputStream(entry.getCleanFile(index));
                 } //End block
             } //End collapsed parenthetic
             addTaint(index);
-            InputStream varA7E53CE21691AB073D9660D615818899_503308425; //Final return value
+            InputStream varA7E53CE21691AB073D9660D615818899_677277829; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_503308425 = varB4EAC82CA7396A68D541C85D26508E83_1277105293;
+                    varA7E53CE21691AB073D9660D615818899_677277829 = varB4EAC82CA7396A68D541C85D26508E83_1443277585;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_503308425 = varB4EAC82CA7396A68D541C85D26508E83_1766883755;
+                    varA7E53CE21691AB073D9660D615818899_677277829 = varB4EAC82CA7396A68D541C85D26508E83_1242536438;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_503308425.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_503308425;
+            varA7E53CE21691AB073D9660D615818899_677277829.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_677277829;
             // ---------- Original Method ----------
             //synchronized (DiskLruCache.this) {
                 //if (entry.currentEditor != this) {
@@ -898,39 +869,38 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.455 -0400", hash_original_method = "84B73985D87B7C97991726C0644B80BD", hash_generated_method = "D3435F4CE7FB3BFEE09736AD9081ABF5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.002 -0400", hash_original_method = "84B73985D87B7C97991726C0644B80BD", hash_generated_method = "615F1536DDCCC9ED59276DDD1D8BBBB9")
         public String getString(int index) throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_2020664252 = null; //Variable for return #1
-            InputStream in;
-            in = newInputStream(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2020664252 = in != null ? inputStreamToString(in) : null;
+            String varB4EAC82CA7396A68D541C85D26508E83_1923658831 = null; //Variable for return #1
+            InputStream in = newInputStream(index);
+            varB4EAC82CA7396A68D541C85D26508E83_1923658831 = in != null ? inputStreamToString(in) : null;
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2020664252.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2020664252;
+            varB4EAC82CA7396A68D541C85D26508E83_1923658831.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1923658831;
             // ---------- Original Method ----------
             //InputStream in = newInputStream(index);
             //return in != null ? inputStreamToString(in) : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.455 -0400", hash_original_method = "F4B649129433C613B63F53B88A8B2BF4", hash_generated_method = "D642D8EF142EA953C5D2927B0F0FB821")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.003 -0400", hash_original_method = "F4B649129433C613B63F53B88A8B2BF4", hash_generated_method = "933C0141C63F9DF544BD8DDE35445539")
         public OutputStream newOutputStream(int index) throws IOException {
-            OutputStream varB4EAC82CA7396A68D541C85D26508E83_2080400907 = null; //Variable for return #1
+            OutputStream varB4EAC82CA7396A68D541C85D26508E83_787789898 = null; //Variable for return #1
             {
-                Object varD933D409C8362D8AB4EAAFB238C186FA_118053254 = (DiskLruCache.this);
+                Object varD933D409C8362D8AB4EAAFB238C186FA_2003913935 = (DiskLruCache.this);
                 {
                     {
-                        boolean var573C982FD8CE38C80E849A01EADDA5C3_884723508 = (entry.currentEditor != this);
+                        boolean var573C982FD8CE38C80E849A01EADDA5C3_110122017 = (entry.currentEditor != this);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
                         } //End block
                     } //End collapsed parenthetic
-                    varB4EAC82CA7396A68D541C85D26508E83_2080400907 = new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
+                    varB4EAC82CA7396A68D541C85D26508E83_787789898 = new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
                 } //End block
             } //End collapsed parenthetic
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2080400907.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2080400907;
+            varB4EAC82CA7396A68D541C85D26508E83_787789898.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_787789898;
             // ---------- Original Method ----------
             //synchronized (DiskLruCache.this) {
                 //if (entry.currentEditor != this) {
@@ -941,10 +911,9 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.457 -0400", hash_original_method = "988F125F60B3C088ADDC82562F362884", hash_generated_method = "D4E8A212F410B6CAE6B3C60DDCE0BC9F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.003 -0400", hash_original_method = "988F125F60B3C088ADDC82562F362884", hash_generated_method = "24AECEBE0C4CC2BF3E6225D06739D04F")
         public void set(int index, String value) throws IOException {
-            Writer writer;
-            writer = null;
+            Writer writer = null;
             try 
             {
                 writer = new OutputStreamWriter(newOutputStream(index), Charsets.UTF_8);
@@ -967,7 +936,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.457 -0400", hash_original_method = "14AFCFFFD18B711043FB34122FCD5951", hash_generated_method = "9EED671ED7A999D502C1B859DCAC2D08")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.004 -0400", hash_original_method = "14AFCFFFD18B711043FB34122FCD5951", hash_generated_method = "9EED671ED7A999D502C1B859DCAC2D08")
         public void commit() throws IOException {
             {
                 completeEdit(this, false);
@@ -986,7 +955,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.457 -0400", hash_original_method = "805CDF65FA82242C2D4B7EB4CBDDF0ED", hash_generated_method = "18E9660C4426C8AA96D2D812955FA89C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.004 -0400", hash_original_method = "805CDF65FA82242C2D4B7EB4CBDDF0ED", hash_generated_method = "18E9660C4426C8AA96D2D812955FA89C")
         public void abort() throws IOException {
             completeEdit(this, false);
             // ---------- Original Method ----------
@@ -996,7 +965,7 @@ public final class DiskLruCache implements Closeable {
         
         private class FaultHidingOutputStream extends FilterOutputStream {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.463 -0400", hash_original_method = "C9ADDA2E4F72C2E9295822BCBAC6927F", hash_generated_method = "F98AAD1DAF9C62BF5BF1780FA95F6862")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.005 -0400", hash_original_method = "C9ADDA2E4F72C2E9295822BCBAC6927F", hash_generated_method = "F98AAD1DAF9C62BF5BF1780FA95F6862")
             private  FaultHidingOutputStream(OutputStream out) {
                 super(out);
                 addTaint(out.getTaint());
@@ -1004,7 +973,7 @@ public final class DiskLruCache implements Closeable {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.463 -0400", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "E6417635BE2B5EFEB4355F91D7AAE6D0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.005 -0400", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "E6417635BE2B5EFEB4355F91D7AAE6D0")
             @Override
             public void write(int oneByte) {
                 try 
@@ -1025,7 +994,7 @@ public final class DiskLruCache implements Closeable {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.463 -0400", hash_original_method = "192A1A5EAAE398CB5AAE810F931045A8", hash_generated_method = "EC6CD5E768BDBC7F8E25C9FCF8999B57")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.006 -0400", hash_original_method = "192A1A5EAAE398CB5AAE810F931045A8", hash_generated_method = "EC6CD5E768BDBC7F8E25C9FCF8999B57")
             @Override
             public void write(byte[] buffer, int offset, int length) {
                 try 
@@ -1048,7 +1017,7 @@ public final class DiskLruCache implements Closeable {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.465 -0400", hash_original_method = "F955A307858660E97C305258EF6CF319", hash_generated_method = "F2133F1077411290DFB38A2C3168295F")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.007 -0400", hash_original_method = "F955A307858660E97C305258EF6CF319", hash_generated_method = "F2133F1077411290DFB38A2C3168295F")
             @Override
             public void close() {
                 try 
@@ -1068,7 +1037,7 @@ public final class DiskLruCache implements Closeable {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.465 -0400", hash_original_method = "A7144C313F2BBCA14DD174D533CF0C30", hash_generated_method = "23B6E4BC95BEBC7C193269573D6E6B52")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.007 -0400", hash_original_method = "A7144C313F2BBCA14DD174D533CF0C30", hash_generated_method = "23B6E4BC95BEBC7C193269573D6E6B52")
             @Override
             public void flush() {
                 try 
@@ -1097,20 +1066,20 @@ public final class DiskLruCache implements Closeable {
 
     
     private final class Entry {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.465 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "2E3018221E30480EB0F957E72002C7D8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.008 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "2E3018221E30480EB0F957E72002C7D8")
 
         private String key;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.471 -0400", hash_original_field = "1E3F5C7322090A6DD464EC8E7BF19C04", hash_generated_field = "47E38F001ED3E4E2BB8D4D488C8C03FF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.008 -0400", hash_original_field = "1E3F5C7322090A6DD464EC8E7BF19C04", hash_generated_field = "47E38F001ED3E4E2BB8D4D488C8C03FF")
 
         private long[] lengths;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.471 -0400", hash_original_field = "500F1C435067A26384C6B38F464DA461", hash_generated_field = "1948B1A97D5C03C3163AE2F5DE57C5D5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.008 -0400", hash_original_field = "500F1C435067A26384C6B38F464DA461", hash_generated_field = "1948B1A97D5C03C3163AE2F5DE57C5D5")
 
         private boolean readable;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.471 -0400", hash_original_field = "98A0346B30924377CBA028D7A3002904", hash_generated_field = "42500C0BD0D534C6B3B5904249FFA61F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.008 -0400", hash_original_field = "98A0346B30924377CBA028D7A3002904", hash_generated_field = "42500C0BD0D534C6B3B5904249FFA61F")
 
         private Editor currentEditor;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.472 -0400", hash_original_method = "A48AD7F9473C4832EA43939DE55B0830", hash_generated_method = "05E015F56AEE62FCB3C094123AFDB03C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.008 -0400", hash_original_method = "A48AD7F9473C4832EA43939DE55B0830", hash_generated_method = "05E015F56AEE62FCB3C094123AFDB03C")
         private  Entry(String key) {
             this.key = key;
             this.lengths = new long[valueCount];
@@ -1120,20 +1089,19 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.491 -0400", hash_original_method = "5393AA568299AD2184B5004B9545BCCA", hash_generated_method = "522FC35785519DFA0AC92021BFDE3BD8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.014 -0400", hash_original_method = "5393AA568299AD2184B5004B9545BCCA", hash_generated_method = "2C106F860D1DA54837178FB3CDE55D44")
         public String getLengths() throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_1110637477 = null; //Variable for return #1
-            StringBuilder result;
-            result = new StringBuilder();
+            String varB4EAC82CA7396A68D541C85D26508E83_1875756394 = null; //Variable for return #1
+            StringBuilder result = new StringBuilder();
             {
                 long size = lengths[0];
                 {
                     result.append(' ').append(size);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1110637477 = result.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1110637477.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1110637477;
+            varB4EAC82CA7396A68D541C85D26508E83_1875756394 = result.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_1875756394.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1875756394;
             // ---------- Original Method ----------
             //StringBuilder result = new StringBuilder();
             //for (long size : lengths) {
@@ -1143,7 +1111,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.491 -0400", hash_original_method = "38ABC3E1459516CB332E39C8B303294B", hash_generated_method = "6874D7C9D3D80C202DCC303244363E56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.015 -0400", hash_original_method = "38ABC3E1459516CB332E39C8B303294B", hash_generated_method = "EF3AD5A5929D11F76067CACEBF7B647E")
         private void setLengths(String[] strings) throws IOException {
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidLengths(strings);
@@ -1151,8 +1119,7 @@ public final class DiskLruCache implements Closeable {
             try 
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         lengths[i] = Long.parseLong(strings[i]);
                     } //End block
@@ -1176,7 +1143,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.493 -0400", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "D6244078B0DF0446716611B264ECFCE5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.017 -0400", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "D6244078B0DF0446716611B264ECFCE5")
         private IOException invalidLengths(String[] strings) throws IOException {
             if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + Arrays.toString(strings));
             addTaint(strings[0].getTaint());
@@ -1185,25 +1152,25 @@ public final class DiskLruCache implements Closeable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.493 -0400", hash_original_method = "C9A2E947DD05DC3D51A797932ED86E55", hash_generated_method = "24C9508BB0AC2A46FACE989CD524B6C1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.018 -0400", hash_original_method = "C9A2E947DD05DC3D51A797932ED86E55", hash_generated_method = "2AC9E43CB25E464DFEC2EFE58E0C48FB")
         public File getCleanFile(int i) {
-            File varB4EAC82CA7396A68D541C85D26508E83_811816742 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_811816742 = new File(directory, key + "." + i);
+            File varB4EAC82CA7396A68D541C85D26508E83_1177683028 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1177683028 = new File(directory, key + "." + i);
             addTaint(i);
-            varB4EAC82CA7396A68D541C85D26508E83_811816742.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_811816742;
+            varB4EAC82CA7396A68D541C85D26508E83_1177683028.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1177683028;
             // ---------- Original Method ----------
             //return new File(directory, key + "." + i);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_method = "7E5BF4AC0CC24327CE09DE834205313B", hash_generated_method = "1E74A78C90870A0B9DFCDE895572342B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_method = "7E5BF4AC0CC24327CE09DE834205313B", hash_generated_method = "4CF6A1464E95DB71AADA82E42F265679")
         public File getDirtyFile(int i) {
-            File varB4EAC82CA7396A68D541C85D26508E83_651848007 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_651848007 = new File(directory, key + "." + i + ".tmp");
+            File varB4EAC82CA7396A68D541C85D26508E83_894510302 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_894510302 = new File(directory, key + "." + i + ".tmp");
             addTaint(i);
-            varB4EAC82CA7396A68D541C85D26508E83_651848007.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_651848007;
+            varB4EAC82CA7396A68D541C85D26508E83_894510302.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_894510302;
             // ---------- Original Method ----------
             //return new File(directory, key + "." + i + ".tmp");
         }
@@ -1213,29 +1180,29 @@ public final class DiskLruCache implements Closeable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "146ED4CC80494753D64EC5514BA90594", hash_generated_field = "7C1D26C84C6738F50BF26000CA0572F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "146ED4CC80494753D64EC5514BA90594", hash_generated_field = "4A1FFB11CFC6DEB101BE09CC3B4A0541")
 
-    static String JOURNAL_FILE = "journal";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "C27E2248B4DB333CA96F806C864197D7", hash_generated_field = "B0CFDDCA93CFC23D22A9E4C1D40ED512")
+    static final String JOURNAL_FILE = "journal";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "C27E2248B4DB333CA96F806C864197D7", hash_generated_field = "034EDD0C46E4A8371CCBF6D7FC648A4E")
 
-    static String JOURNAL_FILE_TMP = "journal.tmp";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "DCC6B9D3CD10ED22CE2DA8E60C5BBFAD", hash_generated_field = "A0284F6144F3152A83BCD565E6E2458E")
+    static final String JOURNAL_FILE_TMP = "journal.tmp";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "DCC6B9D3CD10ED22CE2DA8E60C5BBFAD", hash_generated_field = "7D7E4E3F80D7739D5851F7B7CC9C9753")
 
-    static String MAGIC = "libcore.io.DiskLruCache";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "9124F0C1C3587C09E0039D7D03AD14E2", hash_generated_field = "13C799B5E4058755F059530C80D9F85E")
+    static final String MAGIC = "libcore.io.DiskLruCache";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "9124F0C1C3587C09E0039D7D03AD14E2", hash_generated_field = "E6DA46912A3A699E1E1BB91060E2E20A")
 
-    static String VERSION_1 = "1";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "3B53DD8A00AAB81F06315EA2FA729D53", hash_generated_field = "2744E43C7AB14167DB082F99D4EDB232")
+    static final String VERSION_1 = "1";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "3B53DD8A00AAB81F06315EA2FA729D53", hash_generated_field = "399C7FB289276D622822E90E2F5602EA")
 
-    private static String CLEAN = "CLEAN";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "0C80AB04C9B771FF3F039B09E1467C17", hash_generated_field = "11EAB93E7397D1D504EDF8D6C17D6D9E")
+    private static final String CLEAN = "CLEAN";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "0C80AB04C9B771FF3F039B09E1467C17", hash_generated_field = "C6523E18AE66B1D3E17A856E3BCCD799")
 
-    private static String DIRTY = "DIRTY";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "AAB7977E77FA1610AC8C247D28DD545D", hash_generated_field = "1C446FD8353E744DFFCDDF7ACF64D0E1")
+    private static final String DIRTY = "DIRTY";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "AAB7977E77FA1610AC8C247D28DD545D", hash_generated_field = "E0988763D8BB4983637AED5C39DA025C")
 
-    private static String REMOVE = "REMOVE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.495 -0400", hash_original_field = "01B61ABD16813F4E0DA1FA6793E11958", hash_generated_field = "638A8383F04AB848F2943D1E221012FE")
+    private static final String REMOVE = "REMOVE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_field = "01B61ABD16813F4E0DA1FA6793E11958", hash_generated_field = "EDF0809706A7034445A48D4182705933")
 
-    private static String READ = "READ";
+    private static final String READ = "READ";
 }
 

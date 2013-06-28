@@ -26,39 +26,38 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public abstract class DialogPreference extends Preference implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, PreferenceManager.OnActivityDestroyListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "AB0228EB14569C0671EE8B2756FB9139", hash_generated_field = "42060B98383429459FECD4D4CDE8C54F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "AB0228EB14569C0671EE8B2756FB9139", hash_generated_field = "42060B98383429459FECD4D4CDE8C54F")
 
     private AlertDialog.Builder mBuilder;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "AE0104648D77F28C33385D983BBEB3DF", hash_generated_field = "97697297384E83403579647D80580C36")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "AE0104648D77F28C33385D983BBEB3DF", hash_generated_field = "97697297384E83403579647D80580C36")
 
     private CharSequence mDialogTitle;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "4B1F495919E1D6621D275B43F70523A2", hash_generated_field = "613703FDAE1B8EC965EFFFE3F7B81D89")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "4B1F495919E1D6621D275B43F70523A2", hash_generated_field = "613703FDAE1B8EC965EFFFE3F7B81D89")
 
     private CharSequence mDialogMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "4E29CD354FF06BFB72BE15B427345580", hash_generated_field = "62F8B6A1225692AA3122E336B4C39371")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "4E29CD354FF06BFB72BE15B427345580", hash_generated_field = "62F8B6A1225692AA3122E336B4C39371")
 
     private Drawable mDialogIcon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "EF6BA7E2934EE938E1075151D930563A", hash_generated_field = "562EA9B33498318D41CCFBFB106A7B3C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "EF6BA7E2934EE938E1075151D930563A", hash_generated_field = "562EA9B33498318D41CCFBFB106A7B3C")
 
     private CharSequence mPositiveButtonText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.375 -0400", hash_original_field = "480C6129BEBC705E36C19ADB4B0F8B3C", hash_generated_field = "4083143E7FFA77B3CD0812A1312A7A80")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "480C6129BEBC705E36C19ADB4B0F8B3C", hash_generated_field = "4083143E7FFA77B3CD0812A1312A7A80")
 
     private CharSequence mNegativeButtonText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.388 -0400", hash_original_field = "E217A30C43701DC625E41DA6F34EE4A0", hash_generated_field = "02541F76C3D2FBBAD006513FC4EED963")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "E217A30C43701DC625E41DA6F34EE4A0", hash_generated_field = "02541F76C3D2FBBAD006513FC4EED963")
 
     private int mDialogLayoutResId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.389 -0400", hash_original_field = "58806F2D99FD4DF33CF42E0C232738D7", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "58806F2D99FD4DF33CF42E0C232738D7", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
 
     private Dialog mDialog;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.389 -0400", hash_original_field = "6FE1386999760D87DB136D994EB480E5", hash_generated_field = "A305715F0BC591A0A9137CCA600B2C10")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.776 -0400", hash_original_field = "6FE1386999760D87DB136D994EB480E5", hash_generated_field = "A305715F0BC591A0A9137CCA600B2C10")
 
     private int mWhichButtonClicked;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.390 -0400", hash_original_method = "0DCDE098692C34941ED8905F239ED21D", hash_generated_method = "6909D6A52E7B2351B554264530F2B680")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.777 -0400", hash_original_method = "0DCDE098692C34941ED8905F239ED21D", hash_generated_method = "7F1E9C9ADF4B0C4ACD01B67500CA0E7E")
     public  DialogPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        TypedArray a;
-        a = context.obtainStyledAttributes(attrs,
+        TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.DialogPreference, defStyle, 0);
         mDialogTitle = a.getString(com.android.internal.R.styleable.DialogPreference_dialogTitle);
         {
@@ -79,7 +78,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.390 -0400", hash_original_method = "60E52A3616503A9CD82A6F28FDC1EC0D", hash_generated_method = "1963798F12E782A0A0505F5BEEC9C4A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.777 -0400", hash_original_method = "60E52A3616503A9CD82A6F28FDC1EC0D", hash_generated_method = "1963798F12E782A0A0505F5BEEC9C4A7")
     public  DialogPreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.dialogPreferenceStyle);
         addTaint(context.getTaint());
@@ -88,7 +87,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.391 -0400", hash_original_method = "6BB18A84F76469D7C771F36F9E0BA9AF", hash_generated_method = "B45A5D7A1E3BCA4FD85953AD13DAF36B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.778 -0400", hash_original_method = "6BB18A84F76469D7C771F36F9E0BA9AF", hash_generated_method = "B45A5D7A1E3BCA4FD85953AD13DAF36B")
     public void setDialogTitle(CharSequence dialogTitle) {
         mDialogTitle = dialogTitle;
         // ---------- Original Method ----------
@@ -96,7 +95,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.391 -0400", hash_original_method = "8574D5B6827EC6804865DBFE054A884D", hash_generated_method = "1B092C76E8B13740E2EDC530BD936D72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.778 -0400", hash_original_method = "8574D5B6827EC6804865DBFE054A884D", hash_generated_method = "1B092C76E8B13740E2EDC530BD936D72")
     public void setDialogTitle(int dialogTitleResId) {
         setDialogTitle(getContext().getString(dialogTitleResId));
         addTaint(dialogTitleResId);
@@ -105,18 +104,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.408 -0400", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "DF49A492664B901904B2CDEC277A9FE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.779 -0400", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "7AA7993C77A81B3DDFD47C560C2F151E")
     public CharSequence getDialogTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1610320581 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1610320581 = mDialogTitle;
-        varB4EAC82CA7396A68D541C85D26508E83_1610320581.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1610320581;
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1021678320 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1021678320 = mDialogTitle;
+        varB4EAC82CA7396A68D541C85D26508E83_1021678320.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1021678320;
         // ---------- Original Method ----------
         //return mDialogTitle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.409 -0400", hash_original_method = "C3473A1ED58058061356CFFBC848D9C9", hash_generated_method = "41887350F118ACBC0863E2AD4EC64C3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.780 -0400", hash_original_method = "C3473A1ED58058061356CFFBC848D9C9", hash_generated_method = "41887350F118ACBC0863E2AD4EC64C3B")
     public void setDialogMessage(CharSequence dialogMessage) {
         mDialogMessage = dialogMessage;
         // ---------- Original Method ----------
@@ -124,7 +123,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.410 -0400", hash_original_method = "15D4845E464A684E3158A3E73E2FE949", hash_generated_method = "53656562B8B8706448C0A547B4AD91A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.780 -0400", hash_original_method = "15D4845E464A684E3158A3E73E2FE949", hash_generated_method = "53656562B8B8706448C0A547B4AD91A9")
     public void setDialogMessage(int dialogMessageResId) {
         setDialogMessage(getContext().getString(dialogMessageResId));
         addTaint(dialogMessageResId);
@@ -133,18 +132,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.425 -0400", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "D3B742B8F98768523BBB3474B5C43C08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.781 -0400", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "93FDC31353500AFCB0E0BD0756BF5D58")
     public CharSequence getDialogMessage() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1885517790 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1885517790 = mDialogMessage;
-        varB4EAC82CA7396A68D541C85D26508E83_1885517790.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1885517790;
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_411669991 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_411669991 = mDialogMessage;
+        varB4EAC82CA7396A68D541C85D26508E83_411669991.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_411669991;
         // ---------- Original Method ----------
         //return mDialogMessage;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.426 -0400", hash_original_method = "B73A337DDB013C24C0D62280ED30F9C6", hash_generated_method = "94B3A71D2448291EB1B536AD4A297F55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.781 -0400", hash_original_method = "B73A337DDB013C24C0D62280ED30F9C6", hash_generated_method = "94B3A71D2448291EB1B536AD4A297F55")
     public void setDialogIcon(Drawable dialogIcon) {
         mDialogIcon = dialogIcon;
         // ---------- Original Method ----------
@@ -152,7 +151,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.427 -0400", hash_original_method = "224A37AA492D9AAF37391FD4564E4780", hash_generated_method = "1F53ABCC2160D94BA60BF25B6B4C958F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.781 -0400", hash_original_method = "224A37AA492D9AAF37391FD4564E4780", hash_generated_method = "1F53ABCC2160D94BA60BF25B6B4C958F")
     public void setDialogIcon(int dialogIconRes) {
         mDialogIcon = getContext().getResources().getDrawable(dialogIconRes);
         // ---------- Original Method ----------
@@ -160,18 +159,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.441 -0400", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "70A25DD73706115CF11066A82C3D9525")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.782 -0400", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "6FB46E8567B337FD45FB9B260A0DDC14")
     public Drawable getDialogIcon() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_4557886 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_4557886 = mDialogIcon;
-        varB4EAC82CA7396A68D541C85D26508E83_4557886.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_4557886;
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_830025985 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_830025985 = mDialogIcon;
+        varB4EAC82CA7396A68D541C85D26508E83_830025985.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_830025985;
         // ---------- Original Method ----------
         //return mDialogIcon;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.441 -0400", hash_original_method = "6BE23B5D358DB766161BE60C1550EF9B", hash_generated_method = "15FCDB24219E94DB21B0A8028B4E9D51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.782 -0400", hash_original_method = "6BE23B5D358DB766161BE60C1550EF9B", hash_generated_method = "15FCDB24219E94DB21B0A8028B4E9D51")
     public void setPositiveButtonText(CharSequence positiveButtonText) {
         mPositiveButtonText = positiveButtonText;
         // ---------- Original Method ----------
@@ -179,7 +178,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.442 -0400", hash_original_method = "B063A8AED375BD92CBE4E8D46785B0F8", hash_generated_method = "05A59BF24CA9B7568ED65B76744251E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.783 -0400", hash_original_method = "B063A8AED375BD92CBE4E8D46785B0F8", hash_generated_method = "05A59BF24CA9B7568ED65B76744251E4")
     public void setPositiveButtonText(int positiveButtonTextResId) {
         setPositiveButtonText(getContext().getString(positiveButtonTextResId));
         addTaint(positiveButtonTextResId);
@@ -188,18 +187,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.443 -0400", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "2317E26827032CEE51D91E7E9D70FF33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.783 -0400", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "F99163BEFD5A8F9B91D0079C0C7E819A")
     public CharSequence getPositiveButtonText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_541645978 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_541645978 = mPositiveButtonText;
-        varB4EAC82CA7396A68D541C85D26508E83_541645978.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_541645978;
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1181964201 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1181964201 = mPositiveButtonText;
+        varB4EAC82CA7396A68D541C85D26508E83_1181964201.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1181964201;
         // ---------- Original Method ----------
         //return mPositiveButtonText;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.443 -0400", hash_original_method = "4C31EAF97C896EDBAD876498CF3B2FF0", hash_generated_method = "3FA9845BDDD93E5FC8996CE304918DDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.783 -0400", hash_original_method = "4C31EAF97C896EDBAD876498CF3B2FF0", hash_generated_method = "3FA9845BDDD93E5FC8996CE304918DDD")
     public void setNegativeButtonText(CharSequence negativeButtonText) {
         mNegativeButtonText = negativeButtonText;
         // ---------- Original Method ----------
@@ -207,7 +206,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.456 -0400", hash_original_method = "16BFB517EAB7183180ECF26DADA01F37", hash_generated_method = "604AD2A423F3B93C7F5B15D9E9C49861")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.784 -0400", hash_original_method = "16BFB517EAB7183180ECF26DADA01F37", hash_generated_method = "604AD2A423F3B93C7F5B15D9E9C49861")
     public void setNegativeButtonText(int negativeButtonTextResId) {
         setNegativeButtonText(getContext().getString(negativeButtonTextResId));
         addTaint(negativeButtonTextResId);
@@ -216,18 +215,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.456 -0400", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "CAB01F55AE99CF0896A789CCCAC6D4D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.784 -0400", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "A78A54A552CC44F0BF0C583BA00F7315")
     public CharSequence getNegativeButtonText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_439770399 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_439770399 = mNegativeButtonText;
-        varB4EAC82CA7396A68D541C85D26508E83_439770399.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_439770399;
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1001104361 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1001104361 = mNegativeButtonText;
+        varB4EAC82CA7396A68D541C85D26508E83_1001104361.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1001104361;
         // ---------- Original Method ----------
         //return mNegativeButtonText;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.457 -0400", hash_original_method = "6047D08B9E02F6650B39EE0CB2356C47", hash_generated_method = "8C3214F68C80F820797B01AD29A03A7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "6047D08B9E02F6650B39EE0CB2356C47", hash_generated_method = "8C3214F68C80F820797B01AD29A03A7C")
     public void setDialogLayoutResource(int dialogLayoutResId) {
         mDialogLayoutResId = dialogLayoutResId;
         // ---------- Original Method ----------
@@ -235,16 +234,16 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.457 -0400", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "20BC1D9523A9518A48BBA1213C60C4A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "F2F2FF105B8731599F8F712E9B01B25E")
     public int getDialogLayoutResource() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1834883220 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1834883220;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689513878 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689513878;
         // ---------- Original Method ----------
         //return mDialogLayoutResId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.458 -0400", hash_original_method = "9A579D55B073C910524B0A138ED58992", hash_generated_method = "3FE15FCBE90C74B4FDE26391C79AD091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "9A579D55B073C910524B0A138ED58992", hash_generated_method = "3FE15FCBE90C74B4FDE26391C79AD091")
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(builder.getTaint());
@@ -252,7 +251,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.458 -0400", hash_original_method = "D63055C4B5449F36C1385D3F75BC6CB0", hash_generated_method = "C75941BEB55E860D99AA4A9B7CDBF789")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.785 -0400", hash_original_method = "D63055C4B5449F36C1385D3F75BC6CB0", hash_generated_method = "C75941BEB55E860D99AA4A9B7CDBF789")
     @Override
     protected void onClick() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -262,18 +261,16 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.461 -0400", hash_original_method = "F05F4238EDB347ACAD0B24F734C6EC9A", hash_generated_method = "EAE270E583D75BA56BEE17FDD4D7E672")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.786 -0400", hash_original_method = "F05F4238EDB347ACAD0B24F734C6EC9A", hash_generated_method = "37F68DBD3B8C7C88DC62F23F8ADBE5A3")
     protected void showDialog(Bundle state) {
-        Context context;
-        context = getContext();
+        Context context = getContext();
         mWhichButtonClicked = DialogInterface.BUTTON_NEGATIVE;
         mBuilder = new AlertDialog.Builder(context)
             .setTitle(mDialogTitle)
             .setIcon(mDialogIcon)
             .setPositiveButton(mPositiveButtonText, this)
             .setNegativeButton(mNegativeButtonText, this);
-        View contentView;
-        contentView = onCreateDialogView();
+        View contentView = onCreateDialogView();
         {
             onBindDialogView(contentView);
             mBuilder.setView(contentView);
@@ -283,13 +280,12 @@ public abstract class DialogPreference extends Preference implements DialogInter
         } //End block
         onPrepareDialogBuilder(mBuilder);
         getPreferenceManager().registerOnActivityDestroyListener(this);
-        Dialog dialog;
-        dialog = mDialog = mBuilder.create();
+        final Dialog dialog = mDialog = mBuilder.create();
         {
             dialog.onRestoreInstanceState(state);
         } //End block
         {
-            boolean var80CAD4A61AC1D3C5BA1CD7F74E3BD7D0_60315442 = (needInputMethod());
+            boolean var80CAD4A61AC1D3C5BA1CD7F74E3BD7D0_916337834 = (needInputMethod());
             {
                 requestInputMethod(dialog);
             } //End block
@@ -302,19 +298,18 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.462 -0400", hash_original_method = "E61813EC392C6A7361FD971C8A66C42E", hash_generated_method = "F5C9644CE88877F55778B21AAADA281B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.786 -0400", hash_original_method = "E61813EC392C6A7361FD971C8A66C42E", hash_generated_method = "7DF1F824B9B3CFFBC531DFFF547BB767")
     protected boolean needInputMethod() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63359069 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_63359069;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125553877 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_125553877;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.462 -0400", hash_original_method = "3B69F31C6833A6156BA93E6BE7789317", hash_generated_method = "A3FD66C194492D111B77AF84A8F6DC6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.787 -0400", hash_original_method = "3B69F31C6833A6156BA93E6BE7789317", hash_generated_method = "8E0612D4923C0CB29E3A31C50B3A8FC1")
     private void requestInputMethod(Dialog dialog) {
-        Window window;
-        window = dialog.getWindow();
+        Window window = dialog.getWindow();
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         addTaint(dialog.getTaint());
         // ---------- Original Method ----------
@@ -323,28 +318,27 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.463 -0400", hash_original_method = "30915DC6B0C7508CE694D92B8515D200", hash_generated_method = "F4F04C31BDBB7027D7AFAB8F12A60455")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.787 -0400", hash_original_method = "30915DC6B0C7508CE694D92B8515D200", hash_generated_method = "89F2E170FA3C0EE5BED4E4F62F3F9741")
     protected View onCreateDialogView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_1525669762 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1266438623 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_198564984 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_153168340 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1525669762 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_198564984 = null;
         } //End block
-        LayoutInflater inflater;
-        inflater = LayoutInflater.from(mBuilder.getContext());
-        varB4EAC82CA7396A68D541C85D26508E83_1266438623 = inflater.inflate(mDialogLayoutResId, null);
-        View varA7E53CE21691AB073D9660D615818899_466425861; //Final return value
+        LayoutInflater inflater = LayoutInflater.from(mBuilder.getContext());
+        varB4EAC82CA7396A68D541C85D26508E83_153168340 = inflater.inflate(mDialogLayoutResId, null);
+        View varA7E53CE21691AB073D9660D615818899_455506576; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_466425861 = varB4EAC82CA7396A68D541C85D26508E83_1525669762;
+                varA7E53CE21691AB073D9660D615818899_455506576 = varB4EAC82CA7396A68D541C85D26508E83_198564984;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_466425861 = varB4EAC82CA7396A68D541C85D26508E83_1266438623;
+                varA7E53CE21691AB073D9660D615818899_455506576 = varB4EAC82CA7396A68D541C85D26508E83_153168340;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_466425861.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_466425861;
+        varA7E53CE21691AB073D9660D615818899_455506576.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_455506576;
         // ---------- Original Method ----------
         //if (mDialogLayoutResId == 0) {
             //return null;
@@ -354,18 +348,15 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.488 -0400", hash_original_method = "5B74FDBCA1C0676CAF2A41085AFE51F9", hash_generated_method = "35AA4075ABCFECDBAB8CAF3481CFFA38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.788 -0400", hash_original_method = "5B74FDBCA1C0676CAF2A41085AFE51F9", hash_generated_method = "08294273B59F8E5723B7B1A8317A2BF4")
     protected void onBindDialogView(View view) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View dialogMessageView;
-        dialogMessageView = view.findViewById(com.android.internal.R.id.message);
+        View dialogMessageView = view.findViewById(com.android.internal.R.id.message);
         {
-            CharSequence message;
-            message = getDialogMessage();
-            int newVisibility;
-            newVisibility = View.GONE;
+            final CharSequence message = getDialogMessage();
+            int newVisibility = View.GONE;
             {
-                boolean var358940EC1666A9802A3FB0CBD1923483_1168124105 = (!TextUtils.isEmpty(message));
+                boolean var358940EC1666A9802A3FB0CBD1923483_1291130546 = (!TextUtils.isEmpty(message));
                 {
                     {
                         ((TextView) dialogMessageView).setText(message);
@@ -374,7 +365,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varA3947E274D511054F4D862B152D1B5BE_243230080 = (dialogMessageView.getVisibility() != newVisibility);
+                boolean varA3947E274D511054F4D862B152D1B5BE_1532893398 = (dialogMessageView.getVisibility() != newVisibility);
                 {
                     dialogMessageView.setVisibility(newVisibility);
                 } //End block
@@ -399,7 +390,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.488 -0400", hash_original_method = "C7A96C6C4A9A6F7800567BF8395F95D4", hash_generated_method = "97AEC77CFC989B38A65EAAB93DA39550")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.789 -0400", hash_original_method = "C7A96C6C4A9A6F7800567BF8395F95D4", hash_generated_method = "97AEC77CFC989B38A65EAAB93DA39550")
     public void onClick(DialogInterface dialog, int which) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mWhichButtonClicked = which;
@@ -409,7 +400,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.489 -0400", hash_original_method = "4F73C1927BDEFF08475C0DA03B2F2CFE", hash_generated_method = "C0F50E80D9B705F3B489D62FFF988C18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.789 -0400", hash_original_method = "4F73C1927BDEFF08475C0DA03B2F2CFE", hash_generated_method = "C0F50E80D9B705F3B489D62FFF988C18")
     public void onDismiss(DialogInterface dialog) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         getPreferenceManager().unregisterOnActivityDestroyListener(this);
@@ -423,7 +414,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.489 -0400", hash_original_method = "C2C4DECBB4816C085EA1FCA9996FF5B6", hash_generated_method = "F839090159E8D268DD09FFE754CE51F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.790 -0400", hash_original_method = "C2C4DECBB4816C085EA1FCA9996FF5B6", hash_generated_method = "F839090159E8D268DD09FFE754CE51F0")
     protected void onDialogClosed(boolean positiveResult) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(positiveResult);
@@ -431,22 +422,22 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.490 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "F7F0356FC70560018822033030E8927C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.791 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "D4DFCE7551CD4D58AB597D5210E6E626")
     public Dialog getDialog() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_260810016 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_260810016 = mDialog;
-        varB4EAC82CA7396A68D541C85D26508E83_260810016.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_260810016;
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_1438374305 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1438374305 = mDialog;
+        varB4EAC82CA7396A68D541C85D26508E83_1438374305.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1438374305;
         // ---------- Original Method ----------
         //return mDialog;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.490 -0400", hash_original_method = "FC837FC4F2E0A243643D6D2D742CA26C", hash_generated_method = "82A4B6D5165DCF37366BD1BBBA7249E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.792 -0400", hash_original_method = "FC837FC4F2E0A243643D6D2D742CA26C", hash_generated_method = "7250C6486A70CCDE26EDDB4DA04089D4")
     public void onActivityDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varF5698A1109E3A400AEBA99FA3B5D019E_971966029 = (mDialog == null || !mDialog.isShowing());
+            boolean varF5698A1109E3A400AEBA99FA3B5D019E_116415313 = (mDialog == null || !mDialog.isShowing());
         } //End collapsed parenthetic
         mDialog.dismiss();
         // ---------- Original Method ----------
@@ -457,36 +448,34 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.508 -0400", hash_original_method = "690D860013A43623DC1BE14E616673FB", hash_generated_method = "F4793E6312D85EF557A4C66AEF7CF35C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.793 -0400", hash_original_method = "690D860013A43623DC1BE14E616673FB", hash_generated_method = "7BC83ACC6820EA76780810497AD4B245")
     @Override
     protected Parcelable onSaveInstanceState() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_740917198 = null; //Variable for return #1
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1457169317 = null; //Variable for return #2
-        Parcelable superState;
-        superState = super.onSaveInstanceState();
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1783391274 = null; //Variable for return #1
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_588413730 = null; //Variable for return #2
+        final Parcelable superState = super.onSaveInstanceState();
         {
-            boolean varF5698A1109E3A400AEBA99FA3B5D019E_955986889 = (mDialog == null || !mDialog.isShowing());
+            boolean varF5698A1109E3A400AEBA99FA3B5D019E_1305120983 = (mDialog == null || !mDialog.isShowing());
             {
-                varB4EAC82CA7396A68D541C85D26508E83_740917198 = superState;
+                varB4EAC82CA7396A68D541C85D26508E83_1783391274 = superState;
             } //End block
         } //End collapsed parenthetic
-        SavedState myState;
-        myState = new SavedState(superState);
+        final SavedState myState = new SavedState(superState);
         myState.isDialogShowing = true;
         myState.dialogBundle = mDialog.onSaveInstanceState();
-        varB4EAC82CA7396A68D541C85D26508E83_1457169317 = myState;
-        Parcelable varA7E53CE21691AB073D9660D615818899_1493146351; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_588413730 = myState;
+        Parcelable varA7E53CE21691AB073D9660D615818899_1896754613; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1493146351 = varB4EAC82CA7396A68D541C85D26508E83_740917198;
+                varA7E53CE21691AB073D9660D615818899_1896754613 = varB4EAC82CA7396A68D541C85D26508E83_1783391274;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1493146351 = varB4EAC82CA7396A68D541C85D26508E83_1457169317;
+                varA7E53CE21691AB073D9660D615818899_1896754613 = varB4EAC82CA7396A68D541C85D26508E83_588413730;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1493146351.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1493146351;
+        varA7E53CE21691AB073D9660D615818899_1896754613.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1896754613;
         // ---------- Original Method ----------
         //final Parcelable superState = super.onSaveInstanceState();
         //if (mDialog == null || !mDialog.isShowing()) {
@@ -499,18 +488,17 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.508 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "153516CD2289F0F47C572B51AA264B7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.793 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "63D849619B108878F2DABAF775E62205")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var9146082C23BCEB2285F1054C3B9F84EE_1012398274 = (state == null || !state.getClass().equals(SavedState.class));
+            boolean var9146082C23BCEB2285F1054C3B9F84EE_887219111 = (state == null || !state.getClass().equals(SavedState.class));
             {
                 super.onRestoreInstanceState(state);
             } //End block
         } //End collapsed parenthetic
-        SavedState myState;
-        myState = (SavedState) state;
+        SavedState myState = (SavedState) state;
         super.onRestoreInstanceState(myState.getSuperState());
         {
             showDialog(myState.dialogBundle);
@@ -530,14 +518,14 @@ public abstract class DialogPreference extends Preference implements DialogInter
 
     
     private static class SavedState extends BaseSavedState {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.509 -0400", hash_original_field = "C75608B67599FA6C902BFE4C625014D1", hash_generated_field = "C67FBD06D119E38CE3CCD57D66AB1C18")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.793 -0400", hash_original_field = "C75608B67599FA6C902BFE4C625014D1", hash_generated_field = "C67FBD06D119E38CE3CCD57D66AB1C18")
 
         boolean isDialogShowing;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.509 -0400", hash_original_field = "3E858F45950CD4CFB6443ACE660B1208", hash_generated_field = "7FEB9968C654EBDB6E3D8BB294FB242A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.793 -0400", hash_original_field = "3E858F45950CD4CFB6443ACE660B1208", hash_generated_field = "7FEB9968C654EBDB6E3D8BB294FB242A")
 
         Bundle dialogBundle;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.509 -0400", hash_original_method = "EF20CF8D7035837CBAB7B591A73E7119", hash_generated_method = "235A6412ECD5B38AB4470FD695A9633B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.794 -0400", hash_original_method = "EF20CF8D7035837CBAB7B591A73E7119", hash_generated_method = "235A6412ECD5B38AB4470FD695A9633B")
         public  SavedState(Parcel source) {
             super(source);
             isDialogShowing = source.readInt() == 1;
@@ -548,7 +536,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.509 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.794 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
         public  SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
@@ -556,7 +544,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.510 -0400", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "CDA661218377A8A5886E4CAE8BCD484D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.795 -0400", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "CDA661218377A8A5886E4CAE8BCD484D")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
             super.writeToParcel(dest, flags);
@@ -571,7 +559,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:29.510 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.795 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
@@ -583,6 +571,16 @@ public abstract class DialogPreference extends Preference implements DialogInter
                 return new SavedState[size];
             }
         };
+        // orphaned legacy method
+        public SavedState createFromParcel(Parcel in) {
+                return new SavedState(in);
+            }
+        
+        // orphaned legacy method
+        public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        
     }
 
 

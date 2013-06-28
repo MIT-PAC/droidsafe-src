@@ -15,33 +15,33 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXNotRecognizedException;
 
 public class SAXParserFactoryImpl extends SAXParserFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.088 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
 
     private Map<String, Boolean> features = new HashMap<String, Boolean>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.088 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
     public SAXParserFactoryImpl ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.100 -0400", hash_original_method = "7A2715D86ACB75E2F46F70864B886736", hash_generated_method = "2832DDBB7AB7D52CDBA1B225C2E50290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.518 -0400", hash_original_method = "7A2715D86ACB75E2F46F70864B886736", hash_generated_method = "9B9BE6FC29DEBE3475765F30228C9330")
     @Override
     public boolean getFeature(String name) throws SAXNotRecognizedException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean var0DD90ED7C4F94A2541AADCD92B315247_269516716 = (!name.startsWith("http://xml.org/sax/features/"));
+            boolean var0DD90ED7C4F94A2541AADCD92B315247_711339234 = (!name.startsWith("http://xml.org/sax/features/"));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
             } //End block
         } //End collapsed parenthetic
-        boolean varD7EF5C05A876DA5F362CC7F45E3B2539_1650380455 = (Boolean.TRUE.equals(features.get(name)));
+        boolean varD7EF5C05A876DA5F362CC7F45E3B2539_2075957124 = (Boolean.TRUE.equals(features.get(name)));
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_250504226 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_250504226;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413733489 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_413733489;
         // ---------- Original Method ----------
         //if (name == null) {
             //throw new NullPointerException();
@@ -53,19 +53,19 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.100 -0400", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "382FABA21D5076FB6973AFE7D06B75A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.519 -0400", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "F1F5C512E8A86CC5D75B789293B2F7A0")
     @Override
     public boolean isNamespaceAware() {
         try 
         {
-            boolean var25A733CB16E2C08AEAA35CEBC6C1F171_687822499 = (getFeature(NAMESPACES));
+            boolean var25A733CB16E2C08AEAA35CEBC6C1F171_1758953239 = (getFeature(NAMESPACES));
         } //End block
         catch (SAXNotRecognizedException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1812621300 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1812621300;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325108417 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325108417;
         // ---------- Original Method ----------
         //try {
             //return getFeature(NAMESPACES);
@@ -75,19 +75,19 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.101 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "547A5BD4738FDD8499A109540D8AA1FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.519 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "25991BA47CC9086D3871E6812E0986E3")
     @Override
     public boolean isValidating() {
         try 
         {
-            boolean var546AC4507E23F527F77ACB41D0E0B2EA_168662346 = (getFeature(VALIDATION));
+            boolean var546AC4507E23F527F77ACB41D0E0B2EA_936457081 = (getFeature(VALIDATION));
         } //End block
         catch (SAXNotRecognizedException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_186112992 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_186112992;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380844276 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_380844276;
         // ---------- Original Method ----------
         //try {
             //return getFeature(VALIDATION);
@@ -97,12 +97,12 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.102 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "637D57835773796CD0C39425F3017012")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.520 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "096AD64FD61498C47B1B814D5DE4CAE2")
     @Override
     public SAXParser newSAXParser() throws ParserConfigurationException {
-        SAXParser varB4EAC82CA7396A68D541C85D26508E83_825245139 = null; //Variable for return #1
+        SAXParser varB4EAC82CA7396A68D541C85D26508E83_1575585519 = null; //Variable for return #1
         {
-            boolean var4E297FF2ACA5FE750738C034402DA121_726152498 = (isValidating());
+            boolean var4E297FF2ACA5FE750738C034402DA121_895895140 = (isValidating());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(
                     "No validating SAXParser implementation available");
@@ -110,14 +110,14 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         } //End collapsed parenthetic
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_825245139 = new SAXParserImpl(features);
+            varB4EAC82CA7396A68D541C85D26508E83_1575585519 = new SAXParserImpl(features);
         } //End block
         catch (Exception ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(ex.toString());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_825245139.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_825245139;
+        varB4EAC82CA7396A68D541C85D26508E83_1575585519.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1575585519;
         // ---------- Original Method ----------
         //if (isValidating()) {
             //throw new ParserConfigurationException(
@@ -131,14 +131,14 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.102 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "CB1145A870323F5ECB79220DEBE74883")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.521 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "BEA66B658F68CA7E5C79829916DB81FB")
     @Override
     public void setFeature(String name, boolean value) throws SAXNotRecognizedException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean var0DD90ED7C4F94A2541AADCD92B315247_1632563281 = (!name.startsWith("http://xml.org/sax/features/"));
+            boolean var0DD90ED7C4F94A2541AADCD92B315247_1968561225 = (!name.startsWith("http://xml.org/sax/features/"));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
             } //End block
@@ -166,7 +166,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.111 -0400", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "933E0F2800F06846B852563B7B015D0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.521 -0400", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "933E0F2800F06846B852563B7B015D0E")
     @Override
     public void setNamespaceAware(boolean value) {
         try 
@@ -187,7 +187,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.112 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "564D70865B9E88C5AB718774D3F0F001")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "564D70865B9E88C5AB718774D3F0F001")
     @Override
     public void setValidating(boolean value) {
         try 
@@ -208,11 +208,11 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.112 -0400", hash_original_field = "57DAABD72ED77A96967246F7788B1447", hash_generated_field = "BCE4439DC294C3DB7FEC2C74272B80EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_field = "57DAABD72ED77A96967246F7788B1447", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
 
-    private static String NAMESPACES = "http://xml.org/sax/features/namespaces";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.112 -0400", hash_original_field = "1A6983F26F9A43F675933304E11A084C", hash_generated_field = "5EA15C53594AC6CC1F8287E14EB07B9A")
+    private static final String NAMESPACES = "http://xml.org/sax/features/namespaces";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.522 -0400", hash_original_field = "1A6983F26F9A43F675933304E11A084C", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
 
-    private static String VALIDATION = "http://xml.org/sax/features/validation";
+    private static final String VALIDATION = "http://xml.org/sax/features/validation";
 }
 

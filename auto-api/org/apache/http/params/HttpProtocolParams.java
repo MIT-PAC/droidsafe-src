@@ -13,14 +13,14 @@ import org.apache.http.protocol.HTTP;
 
 public final class HttpProtocolParams implements CoreProtocolPNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.412 -0400", hash_original_method = "97EF9A6B4AA92C207CBAC39297404AF3", hash_generated_method = "53C81835998E739AEDA911E2BEA74CAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.474 -0400", hash_original_method = "97EF9A6B4AA92C207CBAC39297404AF3", hash_generated_method = "53C81835998E739AEDA911E2BEA74CAD")
     private  HttpProtocolParams() {
         super();
         // ---------- Original Method ----------
     }
 
     
-        public static String getHttpElementCharset(final HttpParams params) {
+    public static String getHttpElementCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -33,7 +33,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static void setHttpElementCharset(final HttpParams params, final String charset) {
+    public static void setHttpElementCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -41,7 +41,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static String getContentCharset(final HttpParams params) {
+    public static String getContentCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -54,7 +54,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static void setContentCharset(final HttpParams params, final String charset) {
+    public static void setContentCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -62,7 +62,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static ProtocolVersion getVersion(final HttpParams params) {
+    public static ProtocolVersion getVersion(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -75,7 +75,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static void setVersion(final HttpParams params, final ProtocolVersion version) {
+    public static void setVersion(final HttpParams params, final ProtocolVersion version) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -83,7 +83,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static String getUserAgent(final HttpParams params) {
+    public static String getUserAgent(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -91,7 +91,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static void setUserAgent(final HttpParams params, final String useragent) {
+    public static void setUserAgent(final HttpParams params, final String useragent) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -99,7 +99,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static boolean useExpectContinue(final HttpParams params) {
+    public static boolean useExpectContinue(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -108,7 +108,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
-        public static void setUseExpectContinue(final HttpParams params, boolean b) {
+    public static void setUseExpectContinue(final HttpParams params, boolean b) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }

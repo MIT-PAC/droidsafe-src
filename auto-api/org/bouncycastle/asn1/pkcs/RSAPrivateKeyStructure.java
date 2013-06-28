@@ -18,38 +18,38 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 
 public class RSAPrivateKeyStructure extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.686 -0400", hash_original_field = "2AF72F100C356273D46284F6FD1DFC08", hash_generated_field = "605FE2D9A0C9E94D1E2D3DAEDB658980")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.156 -0400", hash_original_field = "2AF72F100C356273D46284F6FD1DFC08", hash_generated_field = "605FE2D9A0C9E94D1E2D3DAEDB658980")
 
     private int version;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.686 -0400", hash_original_field = "06EFBA23B1F3A9B846A25C6B49F30348", hash_generated_field = "3E4E39310D57F50C3E323DC3AEC4D41E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.156 -0400", hash_original_field = "06EFBA23B1F3A9B846A25C6B49F30348", hash_generated_field = "3E4E39310D57F50C3E323DC3AEC4D41E")
 
     private BigInteger modulus;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.686 -0400", hash_original_field = "81999BDC63C67199D52FF9A6FC17D274", hash_generated_field = "79B82A8776BB04757B8A80F0464419F4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "81999BDC63C67199D52FF9A6FC17D274", hash_generated_field = "79B82A8776BB04757B8A80F0464419F4")
 
     private BigInteger publicExponent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.686 -0400", hash_original_field = "956D8366F7FF863766B65FA6712484C9", hash_generated_field = "C40656991088519C04EB55EF0874A837")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "956D8366F7FF863766B65FA6712484C9", hash_generated_field = "C40656991088519C04EB55EF0874A837")
 
     private BigInteger privateExponent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.686 -0400", hash_original_field = "20BFD8B959FA5A8CFD340683DC2A9BA7", hash_generated_field = "5183F0D78D6F219DDA80B278EEDFCB67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "20BFD8B959FA5A8CFD340683DC2A9BA7", hash_generated_field = "5183F0D78D6F219DDA80B278EEDFCB67")
 
     private BigInteger prime1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.687 -0400", hash_original_field = "E2BFEA63AF9DE42C6E4FEFEBDF117F61", hash_generated_field = "F3BA5CAC09D7909BBB93DF7AF3E7C65D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "E2BFEA63AF9DE42C6E4FEFEBDF117F61", hash_generated_field = "F3BA5CAC09D7909BBB93DF7AF3E7C65D")
 
     private BigInteger prime2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.687 -0400", hash_original_field = "C810A5215079E8395136DF0E061D700B", hash_generated_field = "377CF518661599B835EE4672F2F31B96")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "C810A5215079E8395136DF0E061D700B", hash_generated_field = "377CF518661599B835EE4672F2F31B96")
 
     private BigInteger exponent1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.687 -0400", hash_original_field = "9F3DEA20A14E9679832D37964B2D6191", hash_generated_field = "92E33EC2A21F45DD4C21202D0E40383E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "9F3DEA20A14E9679832D37964B2D6191", hash_generated_field = "92E33EC2A21F45DD4C21202D0E40383E")
 
     private BigInteger exponent2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.687 -0400", hash_original_field = "16DEBEF90A0394D9B14C30C4281BCE0D", hash_generated_field = "0572EDC7719F4FB5A9D30181C4C0D24C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "16DEBEF90A0394D9B14C30C4281BCE0D", hash_generated_field = "0572EDC7719F4FB5A9D30181C4C0D24C")
 
     private BigInteger coefficient;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.687 -0400", hash_original_field = "17CAC7C39D167EF2C058C29BFB1C320A", hash_generated_field = "3ACC149C44ABAAABE0A228F468255A55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_field = "17CAC7C39D167EF2C058C29BFB1C320A", hash_generated_field = "3ACC149C44ABAAABE0A228F468255A55")
 
     private ASN1Sequence otherPrimeInfos = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.688 -0400", hash_original_method = "CBF376BA3B510254060235C0D7FBAB4E", hash_generated_method = "31188D1BC3205E4C4EF73CDBDCAB4094")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.157 -0400", hash_original_method = "CBF376BA3B510254060235C0D7FBAB4E", hash_generated_method = "31188D1BC3205E4C4EF73CDBDCAB4094")
     public  RSAPrivateKeyStructure(
         BigInteger  modulus,
         BigInteger  publicExponent,
@@ -81,15 +81,13 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.696 -0400", hash_original_method = "7CCE248335D08B10FB2A36728BE792D2", hash_generated_method = "1C726680E28FAA9AEA6BD64A9BBC6CE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.158 -0400", hash_original_method = "7CCE248335D08B10FB2A36728BE792D2", hash_generated_method = "6FE05B8EC0461BED7AD64F9254D5C433")
     public  RSAPrivateKeyStructure(
         ASN1Sequence  seq) {
-        Enumeration e;
-        e = seq.getObjects();
-        BigInteger v;
-        v = ((DERInteger)e.nextElement()).getValue();
+        Enumeration e = seq.getObjects();
+        BigInteger v = ((DERInteger)e.nextElement()).getValue();
         {
-            boolean var28AD555B30D1C8862ECBC1BC18572CF6_1892115149 = (v.intValue() != 0 && v.intValue() != 1);
+            boolean var28AD555B30D1C8862ECBC1BC18572CF6_1753571351 = (v.intValue() != 0 && v.intValue() != 1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("wrong version for RSA private key");
             } //End block
@@ -104,7 +102,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
         exponent2 = ((DERInteger)e.nextElement()).getValue();
         coefficient = ((DERInteger)e.nextElement()).getValue();
         {
-            boolean var3EB0A96682EDBE15308427BAC1EC4A4E_2125890947 = (e.hasMoreElements());
+            boolean var3EB0A96682EDBE15308427BAC1EC4A4E_288293550 = (e.hasMoreElements());
             {
                 otherPrimeInfos = (ASN1Sequence)e.nextElement();
             } //End block
@@ -115,14 +113,14 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
-        public static RSAPrivateKeyStructure getInstance(
+    public static RSAPrivateKeyStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        public static RSAPrivateKeyStructure getInstance(
+    public static RSAPrivateKeyStructure getInstance(
         Object  obj) {
         if (obj instanceof RSAPrivateKeyStructure)
         {
@@ -136,108 +134,107 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.702 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "887A6A17BF0B36099245D8986AC0D449")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.159 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "B1A1D5B307F9E77A2676048AB44B0564")
     public int getVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_95587938 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_95587938;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597208601 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1597208601;
         // ---------- Original Method ----------
         //return version;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.702 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "8BCCDE41439BB01F2CD0CDB3D46E3B44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.160 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "E218E23BBE9D85748D3C8B5441847A62")
     public BigInteger getModulus() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_226020443 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_226020443 = modulus;
-        varB4EAC82CA7396A68D541C85D26508E83_226020443.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_226020443;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2011229861 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2011229861 = modulus;
+        varB4EAC82CA7396A68D541C85D26508E83_2011229861.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2011229861;
         // ---------- Original Method ----------
         //return modulus;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.703 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "7F5C92DED4459E66E9F543D726B228FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.160 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "84E49836FC44D1852E2D5C85DC4DD6FC")
     public BigInteger getPublicExponent() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1180830388 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1180830388 = publicExponent;
-        varB4EAC82CA7396A68D541C85D26508E83_1180830388.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1180830388;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1882857103 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1882857103 = publicExponent;
+        varB4EAC82CA7396A68D541C85D26508E83_1882857103.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1882857103;
         // ---------- Original Method ----------
         //return publicExponent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.717 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "BCC4A10BDA3D6B9DB2277F73C90DF08C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.161 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "76ED3608B6C2327DE4790784852EF52C")
     public BigInteger getPrivateExponent() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_579489892 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_579489892 = privateExponent;
-        varB4EAC82CA7396A68D541C85D26508E83_579489892.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_579489892;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1588607241 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1588607241 = privateExponent;
+        varB4EAC82CA7396A68D541C85D26508E83_1588607241.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1588607241;
         // ---------- Original Method ----------
         //return privateExponent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.718 -0400", hash_original_method = "B99C0F53E18C4C91C319BE2CCC968C4F", hash_generated_method = "F237B817211FBEC5B595BF5010ADBA19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.161 -0400", hash_original_method = "B99C0F53E18C4C91C319BE2CCC968C4F", hash_generated_method = "94EA9E3A3B2A289AEEF0C87CAFF88D79")
     public BigInteger getPrime1() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1362265444 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1362265444 = prime1;
-        varB4EAC82CA7396A68D541C85D26508E83_1362265444.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1362265444;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1388837721 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1388837721 = prime1;
+        varB4EAC82CA7396A68D541C85D26508E83_1388837721.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1388837721;
         // ---------- Original Method ----------
         //return prime1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.718 -0400", hash_original_method = "B93FCB0A892E4015213AB5057F688210", hash_generated_method = "81EAC7C3C24EB966543D38E7E33CE515")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.164 -0400", hash_original_method = "B93FCB0A892E4015213AB5057F688210", hash_generated_method = "B5D6C7D8AE5CF77346C5F907737B5256")
     public BigInteger getPrime2() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_641002882 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_641002882 = prime2;
-        varB4EAC82CA7396A68D541C85D26508E83_641002882.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_641002882;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1153508755 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1153508755 = prime2;
+        varB4EAC82CA7396A68D541C85D26508E83_1153508755.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1153508755;
         // ---------- Original Method ----------
         //return prime2;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.719 -0400", hash_original_method = "762AADF12D80291EC0F289058DBDBCEC", hash_generated_method = "1892DEB55FFB0892F777C7DF03A3C18C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.166 -0400", hash_original_method = "762AADF12D80291EC0F289058DBDBCEC", hash_generated_method = "A942F8005D0238166258F7FDA38B0B8D")
     public BigInteger getExponent1() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2132039296 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2132039296 = exponent1;
-        varB4EAC82CA7396A68D541C85D26508E83_2132039296.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2132039296;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_861557864 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_861557864 = exponent1;
+        varB4EAC82CA7396A68D541C85D26508E83_861557864.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_861557864;
         // ---------- Original Method ----------
         //return exponent1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.719 -0400", hash_original_method = "DDCFEFECC032A2CEE6C8950AE5D7E294", hash_generated_method = "F9538AAE32F96EA32962203B32C1A72B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.166 -0400", hash_original_method = "DDCFEFECC032A2CEE6C8950AE5D7E294", hash_generated_method = "7C6DD7CC441A1784182C4D7CDE3F5829")
     public BigInteger getExponent2() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_290892364 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_290892364 = exponent2;
-        varB4EAC82CA7396A68D541C85D26508E83_290892364.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_290892364;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_296801675 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_296801675 = exponent2;
+        varB4EAC82CA7396A68D541C85D26508E83_296801675.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_296801675;
         // ---------- Original Method ----------
         //return exponent2;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.720 -0400", hash_original_method = "C7CB66A1169BB550EC38CAFFC80D3C48", hash_generated_method = "6A9CE863681B4282ACEF06D8D310F453")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.167 -0400", hash_original_method = "C7CB66A1169BB550EC38CAFFC80D3C48", hash_generated_method = "B682C64DF7780E63E8A5E563281BE417")
     public BigInteger getCoefficient() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_874303238 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_874303238 = coefficient;
-        varB4EAC82CA7396A68D541C85D26508E83_874303238.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_874303238;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2052716460 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2052716460 = coefficient;
+        varB4EAC82CA7396A68D541C85D26508E83_2052716460.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2052716460;
         // ---------- Original Method ----------
         //return coefficient;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.724 -0400", hash_original_method = "B4123323DA5D54F0794A6EC8CDF9F726", hash_generated_method = "8B8AFDD59A6DA975DC9E7CE766EF9FFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.167 -0400", hash_original_method = "B4123323DA5D54F0794A6EC8CDF9F726", hash_generated_method = "68E0951E93FBCE5D0237BD416DFF1F60")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2052772767 = null; //Variable for return #1
-        ASN1EncodableVector v;
-        v = new ASN1EncodableVector();
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_66638541 = null; //Variable for return #1
+        ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(version));
         v.add(new DERInteger(getModulus()));
         v.add(new DERInteger(getPublicExponent()));
@@ -250,9 +247,9 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
         {
             v.add(otherPrimeInfos);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2052772767 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_2052772767.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2052772767;
+        varB4EAC82CA7396A68D541C85D26508E83_66638541 = new DERSequence(v);
+        varB4EAC82CA7396A68D541C85D26508E83_66638541.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_66638541;
         // ---------- Original Method ----------
         //ASN1EncodableVector  v = new ASN1EncodableVector();
         //v.add(new DERInteger(version));

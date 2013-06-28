@@ -25,18 +25,18 @@ import org.apache.http.cookie.SM;
 import org.apache.http.protocol.HttpContext;
 
 public class ResponseProcessCookies implements HttpResponseInterceptor {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.176 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "4E4E630304492253CB8147CAE1C7D2A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.949 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-    private Log log = LogFactory.getLog(getClass());
+    private final Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.177 -0400", hash_original_method = "4D600FAEAE45D81498CB22DB2E88FC55", hash_generated_method = "24DEF7D8C332AA18A2A34FD1AC38543A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.950 -0400", hash_original_method = "4D600FAEAE45D81498CB22DB2E88FC55", hash_generated_method = "24DEF7D8C332AA18A2A34FD1AC38543A")
     public  ResponseProcessCookies() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.190 -0400", hash_original_method = "DEAF5EA61A5D1778D6CCA56F636FFAFD", hash_generated_method = "7F432A70F728094CE21CEB1E9F1C1F6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.950 -0400", hash_original_method = "DEAF5EA61A5D1778D6CCA56F636FFAFD", hash_generated_method = "D02F6F82AC73128B4F09454D6B63CC3D")
     public void process(final HttpResponse response, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
@@ -44,29 +44,25 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
         } //End block
-        CookieStore cookieStore;
-        cookieStore = (CookieStore) context.getAttribute(
+        CookieStore cookieStore = (CookieStore) context.getAttribute(
                 ClientContext.COOKIE_STORE);
         {
             this.log.info("Cookie store not available in HTTP context");
         } //End block
-        CookieSpec cookieSpec;
-        cookieSpec = (CookieSpec) context.getAttribute(
+        CookieSpec cookieSpec = (CookieSpec) context.getAttribute(
                 ClientContext.COOKIE_SPEC);
         {
             this.log.info("CookieSpec not available in HTTP context");
         } //End block
-        CookieOrigin cookieOrigin;
-        cookieOrigin = (CookieOrigin) context.getAttribute(
+        CookieOrigin cookieOrigin = (CookieOrigin) context.getAttribute(
                 ClientContext.COOKIE_ORIGIN);
         {
             this.log.info("CookieOrigin not available in HTTP context");
         } //End block
-        HeaderIterator it;
-        it = response.headerIterator(SM.SET_COOKIE);
+        HeaderIterator it = response.headerIterator(SM.SET_COOKIE);
         processCookies(it, cookieSpec, cookieOrigin, cookieStore);
         {
-            boolean var2A413FC23D37E9130A24B941ADD873A1_1811971912 = (cookieSpec.getVersion() > 0);
+            boolean var2A413FC23D37E9130A24B941ADD873A1_1607137463 = (cookieSpec.getVersion() > 0);
             {
                 it = response.headerIterator(SM.SET_COOKIE2);
                 processCookies(it, cookieSpec, cookieOrigin, cookieStore);
@@ -79,32 +75,30 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.307 -0400", hash_original_method = "91DFC6E3C42B7F0C9ED2CF0B4905D6AD", hash_generated_method = "719B2CA7C87DA078B96C739CB761DF08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.960 -0400", hash_original_method = "91DFC6E3C42B7F0C9ED2CF0B4905D6AD", hash_generated_method = "E12FD2FDA318A34A2761138B404E87E1")
     private void processCookies(
             final HeaderIterator iterator, 
             final CookieSpec cookieSpec,
             final CookieOrigin cookieOrigin,
             final CookieStore cookieStore) {
         {
-            boolean var15F7FE2AD7E10C613CA4B915023EF041_1170204975 = (iterator.hasNext());
+            boolean var15F7FE2AD7E10C613CA4B915023EF041_1129713640 = (iterator.hasNext());
             {
-                Header header;
-                header = iterator.nextHeader();
+                Header header = iterator.nextHeader();
                 try 
                 {
-                    List<Cookie> cookies;
-                    cookies = cookieSpec.parse(header, cookieOrigin);
+                    List<Cookie> cookies = cookieSpec.parse(header, cookieOrigin);
                     {
-                        Iterator<Cookie> var122FD713E52C825D20E0B3FA83D127D8_380472690 = (cookies).iterator();
-                        var122FD713E52C825D20E0B3FA83D127D8_380472690.hasNext();
-                        Cookie cookie = var122FD713E52C825D20E0B3FA83D127D8_380472690.next();
+                        Iterator<Cookie> var122FD713E52C825D20E0B3FA83D127D8_989703613 = (cookies).iterator();
+                        var122FD713E52C825D20E0B3FA83D127D8_989703613.hasNext();
+                        Cookie cookie = var122FD713E52C825D20E0B3FA83D127D8_989703613.next();
                         {
                             try 
                             {
                                 cookieSpec.validate(cookie, cookieOrigin);
                                 cookieStore.addCookie(cookie);
                                 {
-                                    boolean var3DF9FAF67937974C7A395023CF7157D0_1259018021 = (this.log.isDebugEnabled());
+                                    boolean var3DF9FAF67937974C7A395023CF7157D0_1251309860 = (this.log.isDebugEnabled());
                                     {
                                         this.log.debug("Cookie accepted: \""
                                     + cookieToString(cookie) + "\". ");
@@ -114,7 +108,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                             catch (MalformedCookieException ex)
                             {
                                 {
-                                    boolean var98AE6279036784B25F38A97DC5F00031_1634692648 = (this.log.isWarnEnabled());
+                                    boolean var98AE6279036784B25F38A97DC5F00031_2113360529 = (this.log.isWarnEnabled());
                                     {
                                         this.log.warn("Cookie rejected: \""
                                     + cookieToString(cookie) + "\". " + ex.getMessage());
@@ -127,7 +121,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                 catch (MalformedCookieException ex)
                 {
                     {
-                        boolean varD29FD34C323BA0A83865093467758E81_1083168480 = (this.log.isWarnEnabled());
+                        boolean varD29FD34C323BA0A83865093467758E81_853545640 = (this.log.isWarnEnabled());
                         {
                             this.log.warn("Invalid cookie header: \""
                             + header + "\". " + ex.getMessage());
@@ -145,10 +139,10 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.324 -0400", hash_original_method = "7F26B81C9250A7120577E4D4C011F353", hash_generated_method = "F782641D7AA1F1AAD266B9A156DDFCED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.961 -0400", hash_original_method = "7F26B81C9250A7120577E4D4C011F353", hash_generated_method = "8C3FB63A0C9317BC76307D342E454818")
     private String cookieToString(Cookie cookie) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1401539323 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1401539323 = cookie.getClass().getSimpleName()
+        String varB4EAC82CA7396A68D541C85D26508E83_568111336 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_568111336 = cookie.getClass().getSimpleName()
                 + "[version=" + cookie.getVersion()
                 + ",name=" + cookie.getName()
                 + ",domain=" + cookie.getDomain()
@@ -156,8 +150,8 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                 + ",expiry=" + cookie.getExpiryDate()
                 + "]";
         addTaint(cookie.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1401539323.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1401539323;
+        varB4EAC82CA7396A68D541C85D26508E83_568111336.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_568111336;
         // ---------- Original Method ----------
         //return cookie.getClass().getSimpleName()
                 //+ "[version=" + cookie.getVersion()

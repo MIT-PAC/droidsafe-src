@@ -12,7 +12,7 @@ import java.text.ParseException;
 
 public class StatusLineParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.178 -0400", hash_original_method = "F0811D6B30C3A9A6294707377FD9E5BC", hash_generated_method = "E81027EBAD77A0EFFD036F8BCDAF3406")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.564 -0400", hash_original_method = "F0811D6B30C3A9A6294707377FD9E5BC", hash_generated_method = "E81027EBAD77A0EFFD036F8BCDAF3406")
     public  StatusLineParser(String statusLine) {
         this.lexer = new Lexer("status_lineLexer", statusLine);
         addTaint(statusLine.getTaint());
@@ -21,7 +21,7 @@ public class StatusLineParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.193 -0400", hash_original_method = "D89BEA50DEDE4DC8C4AB185A28D8567A", hash_generated_method = "7EB1C2D2951F1D19C1A7C1534C61F6E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.564 -0400", hash_original_method = "D89BEA50DEDE4DC8C4AB185A28D8567A", hash_generated_method = "7EB1C2D2951F1D19C1A7C1534C61F6E3")
     public  StatusLineParser(Lexer lexer) {
         this.lexer = lexer;
         this.lexer.selectLexer("status_lineLexer");
@@ -32,15 +32,13 @@ public class StatusLineParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.194 -0400", hash_original_method = "9D10732B3C09BAF61A909B669781A09D", hash_generated_method = "95F9B66B16C473086037F998F7C024EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.564 -0400", hash_original_method = "9D10732B3C09BAF61A909B669781A09D", hash_generated_method = "444357997BDCBFB7C062601E873D45C0")
     protected int statusCode() throws ParseException {
-        String scode;
-        scode = this.lexer.number();
+        String scode = this.lexer.number();
         dbg_enter("statusCode");
         try 
         {
-            int retval;
-            retval = Integer.parseInt(scode);
+            int retval = Integer.parseInt(scode);
         } //End block
         catch (NumberFormatException ex)
         {
@@ -52,8 +50,8 @@ public class StatusLineParser extends Parser {
         {
             dbg_leave("statusCode");
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10971872 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10971872;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100636970 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100636970;
         // ---------- Original Method ----------
         //String scode = this.lexer.number();
         //if (debug)
@@ -72,45 +70,41 @@ public class StatusLineParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.195 -0400", hash_original_method = "11C2A678ADE57722743D10D0059D6373", hash_generated_method = "FCC28BDCA1A8F2EB863BC7C0FF99335E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.565 -0400", hash_original_method = "11C2A678ADE57722743D10D0059D6373", hash_generated_method = "838AD8759C2C838AACCB72C05BA4C7D1")
     protected String reasonPhrase() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1137303564 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1137303564 = this.lexer.getRest().trim();
-        varB4EAC82CA7396A68D541C85D26508E83_1137303564.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1137303564;
+        String varB4EAC82CA7396A68D541C85D26508E83_1559481039 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1559481039 = this.lexer.getRest().trim();
+        varB4EAC82CA7396A68D541C85D26508E83_1559481039.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1559481039;
         // ---------- Original Method ----------
         //return this.lexer.getRest().trim();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.196 -0400", hash_original_method = "FDCF7CDA1662776BB5DD6F85C9EEC616", hash_generated_method = "39AB346F6822B26E520FA0106081D5C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.565 -0400", hash_original_method = "FDCF7CDA1662776BB5DD6F85C9EEC616", hash_generated_method = "5A90C2F3B02C92B1357FDF70FD0B4068")
     public StatusLine parse() throws ParseException {
-        StatusLine varB4EAC82CA7396A68D541C85D26508E83_1471722227 = null; //Variable for return #1
+        StatusLine varB4EAC82CA7396A68D541C85D26508E83_474552666 = null; //Variable for return #1
         try 
         {
             dbg_enter("parse");
-            StatusLine retval;
-            retval = new StatusLine();
-            String version;
-            version = this.sipVersion();
+            StatusLine retval = new StatusLine();
+            String version = this.sipVersion();
             retval.setSipVersion(version);
             lexer.SPorHT();
-            int scode;
-            scode = statusCode();
+            int scode = statusCode();
             retval.setStatusCode(scode);
             lexer.SPorHT();
-            String rp;
-            rp = reasonPhrase();
+            String rp = reasonPhrase();
             retval.setReasonPhrase(rp);
             lexer.SPorHT();
-            varB4EAC82CA7396A68D541C85D26508E83_1471722227 = retval;
+            varB4EAC82CA7396A68D541C85D26508E83_474552666 = retval;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1471722227.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1471722227;
+        varB4EAC82CA7396A68D541C85D26508E83_474552666.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_474552666;
         // ---------- Original Method ----------
         //try {
             //if (debug)

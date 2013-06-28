@@ -20,17 +20,17 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
 public abstract class AbstractMessageWriter implements HttpMessageWriter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.828 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "7546C8F84D7739D4A1BA10808E25B0AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.610 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "7546C8F84D7739D4A1BA10808E25B0AE")
 
     protected SessionOutputBuffer sessionBuffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.828 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "3CE530BC037559228F5322CB75C414E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.610 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "3CE530BC037559228F5322CB75C414E0")
 
     protected CharArrayBuffer lineBuf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.838 -0400", hash_original_field = "F9CE68A7F7D0CBA6428185FFD4DE4D25", hash_generated_field = "9B2BF02A5898CE488D537E86AD344847")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.610 -0400", hash_original_field = "F9CE68A7F7D0CBA6428185FFD4DE4D25", hash_generated_field = "9B2BF02A5898CE488D537E86AD344847")
 
     protected LineFormatter lineFormatter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.839 -0400", hash_original_method = "81470EB0FA2062B136A4D8177B3454ED", hash_generated_method = "461E4520B327CC37BA23EC57A5590617")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.611 -0400", hash_original_method = "81470EB0FA2062B136A4D8177B3454ED", hash_generated_method = "461E4520B327CC37BA23EC57A5590617")
     public  AbstractMessageWriter(final SessionOutputBuffer buffer,
                                  final LineFormatter formatter,
                                  final HttpParams params) {
@@ -59,7 +59,7 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
         ;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.840 -0400", hash_original_method = "33F4F2FFED23975C76AB7BEDB0A8854B", hash_generated_method = "DD945234DD233E431A7E2F0782A162D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.611 -0400", hash_original_method = "33F4F2FFED23975C76AB7BEDB0A8854B", hash_generated_method = "67682817C166E595D49270078DDC4AD4")
     public void write(
             final HttpMessage message) throws IOException, HttpException {
         {
@@ -67,12 +67,10 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
         } //End block
         writeHeadLine(message);
         {
-            Iterator it;
-            it = message.headerIterator();
-            boolean var03729FD53960D8DCA3A41A13A0229637_926603257 = (it.hasNext());
+            Iterator it = message.headerIterator();
+            boolean var03729FD53960D8DCA3A41A13A0229637_1960213557 = (it.hasNext());
             {
-                Header header;
-                header = (Header) it.next();
+                Header header = (Header) it.next();
                 this.sessionBuffer.writeLine
                 (lineFormatter.formatHeader(this.lineBuf, header));
             } //End block

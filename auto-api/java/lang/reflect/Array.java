@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 public final class Array {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.051 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "8F496C8B0F35FBBE27EB4065BD3777B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.680 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "8F496C8B0F35FBBE27EB4065BD3777B5")
     private  Array() {
         // ---------- Original Method ----------
     }
 
     
-        public static Object get(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static Object get(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof Object[])
             return ((Object[]) array)[index];
         if (array instanceof boolean[])
@@ -41,7 +41,7 @@ public final class Array {
     }
 
     
-        public static boolean getBoolean(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static boolean getBoolean(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof boolean[]) {
             return ((boolean[]) array)[index];
         } else if (array == null) {
@@ -54,7 +54,7 @@ public final class Array {
     }
 
     
-        public static byte getByte(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static byte getByte(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof byte[]) {
             return ((byte[]) array)[index];
         } else {
@@ -63,7 +63,7 @@ public final class Array {
     }
 
     
-        public static char getChar(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static char getChar(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof char[]) {
             return ((char[]) array)[index];
         } else if (array == null) {
@@ -76,7 +76,7 @@ public final class Array {
     }
 
     
-        public static double getDouble(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static double getDouble(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof double[]) {
             return ((double[]) array)[index];
         } else {
@@ -85,7 +85,7 @@ public final class Array {
     }
 
     
-        public static float getFloat(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static float getFloat(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof float[]) {
             return ((float[]) array)[index];
         } else {
@@ -94,7 +94,7 @@ public final class Array {
     }
 
     
-        public static int getInt(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static int getInt(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof int[]) {
             return ((int[]) array)[index];
         } else {
@@ -103,7 +103,7 @@ public final class Array {
     }
 
     
-        public static int getLength(Object array) {
+    public static int getLength(Object array) {
         if (array instanceof Object[])
             return ((Object[]) array).length;
         if (array instanceof boolean[])
@@ -128,7 +128,7 @@ public final class Array {
     }
 
     
-        public static long getLong(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static long getLong(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof long[]) {
             return ((long[]) array)[index];
         } else {
@@ -137,14 +137,14 @@ public final class Array {
     }
 
     
-        public static short getShort(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static short getShort(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof short[])
             return ((short[]) array)[index];
         return getByte(array, index);
     }
 
     
-        public static Object newInstance(Class<?> componentType, int... dimensions) throws NegativeArraySizeException, IllegalArgumentException {
+    public static Object newInstance(Class<?> componentType, int... dimensions) throws NegativeArraySizeException, IllegalArgumentException {
         if (dimensions.length <= 0 || dimensions.length > 255)
             throw new IllegalArgumentException("Bad number of dimensions");
         if (componentType == void.class)
@@ -155,13 +155,13 @@ public final class Array {
     }
 
     
-        private static Object createMultiArray(Class<?> componentType,
+    private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        public static Object newInstance(Class<?> componentType, int size) throws NegativeArraySizeException {
+    public static Object newInstance(Class<?> componentType, int size) throws NegativeArraySizeException {
         if (!componentType.isPrimitive()) {
             return createObjectArray(componentType, size);
         }
@@ -196,13 +196,13 @@ public final class Array {
     }
 
     
-        private static Object createObjectArray(Class<?> componentType,
+    private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        public static void set(Object array, int index, Object value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void set(Object array, int index, Object value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (!array.getClass().isArray()) {
             throw new IllegalArgumentException("Not an array type");
         }
@@ -236,7 +236,7 @@ public final class Array {
     }
 
     
-        public static void setBoolean(Object array, int index, boolean value) {
+    public static void setBoolean(Object array, int index, boolean value) {
         if (array instanceof boolean[]) {
             ((boolean[]) array)[index] = value;
         } else {
@@ -245,7 +245,7 @@ public final class Array {
     }
 
     
-        public static void setByte(Object array, int index, byte value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setByte(Object array, int index, byte value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof byte[]) {
             ((byte[]) array)[index] = value;
         } else {
@@ -254,7 +254,7 @@ public final class Array {
     }
 
     
-        public static void setChar(Object array, int index, char value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setChar(Object array, int index, char value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof char[]) {
             ((char[]) array)[index] = value;
         } else if (array == null) {
@@ -267,7 +267,7 @@ public final class Array {
     }
 
     
-        public static void setDouble(Object array, int index, double value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setDouble(Object array, int index, double value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof double[]) {
             ((double[]) array)[index] = value;
         } else if (array == null) {
@@ -280,7 +280,7 @@ public final class Array {
     }
 
     
-        public static void setFloat(Object array, int index, float value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setFloat(Object array, int index, float value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof float[]) {
             ((float[]) array)[index] = value;
         } else {
@@ -289,7 +289,7 @@ public final class Array {
     }
 
     
-        public static void setInt(Object array, int index, int value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setInt(Object array, int index, int value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof int[]) {
             ((int[]) array)[index] = value;
         } else {
@@ -298,7 +298,7 @@ public final class Array {
     }
 
     
-        public static void setLong(Object array, int index, long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setLong(Object array, int index, long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof long[]) {
             ((long[]) array)[index] = value;
         } else {
@@ -307,7 +307,7 @@ public final class Array {
     }
 
     
-        public static void setShort(Object array, int index, short value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setShort(Object array, int index, short value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof short[]) {
             ((short[]) array)[index] = value;
         } else {

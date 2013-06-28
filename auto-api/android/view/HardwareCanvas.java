@@ -14,24 +14,24 @@ import android.graphics.Rect;
 
 public abstract class HardwareCanvas extends Canvas {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:48.212 -0400", hash_original_method = "B9875B3DDCC23B593D0FCAB83616982C", hash_generated_method = "B9875B3DDCC23B593D0FCAB83616982C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.433 -0400", hash_original_method = "B9875B3DDCC23B593D0FCAB83616982C", hash_generated_method = "B9875B3DDCC23B593D0FCAB83616982C")
     public HardwareCanvas ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:48.213 -0400", hash_original_method = "BD882F06CCC6AC9974E10A9883BC45CA", hash_generated_method = "8C453C017E25E74AA9C5D162A1AFF335")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.433 -0400", hash_original_method = "BD882F06CCC6AC9974E10A9883BC45CA", hash_generated_method = "CAE08316648F95666AFE312E89C2E187")
     @Override
     public boolean isHardwareAccelerated() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1680185994 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1680185994;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1655197646 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1655197646;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:48.214 -0400", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "BF1514EE48C976A7758AB254865300FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.434 -0400", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "BF1514EE48C976A7758AB254865300FC")
     @Override
     public void setBitmap(Bitmap bitmap) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -56,11 +56,11 @@ public abstract class HardwareCanvas extends Canvas {
     abstract void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:48.226 -0400", hash_original_method = "0FE8E55D6D4280D2FC5B882C82F13271", hash_generated_method = "68606C54B8C215A1C92F00F7FB07EA31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.435 -0400", hash_original_method = "0FE8E55D6D4280D2FC5B882C82F13271", hash_generated_method = "5D6B72256A0BCF7D23B6794DF677C924")
     public boolean callDrawGLFunction(int drawGLFunction) {
         addTaint(drawGLFunction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429530344 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_429530344;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937969822 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937969822;
         // ---------- Original Method ----------
         //return false;
     }

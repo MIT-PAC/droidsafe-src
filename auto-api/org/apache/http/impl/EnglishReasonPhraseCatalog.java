@@ -13,31 +13,28 @@ import org.apache.http.ReasonPhraseCatalog;
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.995 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.710 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
     protected  EnglishReasonPhraseCatalog() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.996 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "399CAA193A7D78448C19E42E59EC80D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.710 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "59A5E9808B5BBEF2189C8F48074F849D")
     public String getReason(int status, Locale loc) {
-        String varB4EAC82CA7396A68D541C85D26508E83_919168794 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_698990523 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Unknown category for status code " + status + ".");
         } //End block
-        int category;
-        category = status / 100;
-        int subcode;
-        subcode = status - 100*category;
-        String reason;
-        reason = null;
+        final int category = status / 100;
+        final int subcode = status - 100*category;
+        String reason = null;
         reason = REASON_PHRASES[category][subcode];
-        varB4EAC82CA7396A68D541C85D26508E83_919168794 = reason;
+        varB4EAC82CA7396A68D541C85D26508E83_698990523 = reason;
         addTaint(status);
         addTaint(loc.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_919168794.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_919168794;
+        varB4EAC82CA7396A68D541C85D26508E83_698990523.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_698990523;
         // ---------- Original Method ----------
         //if ((status < 100) || (status >= 600)) {
             //throw new IllegalArgumentException
@@ -52,20 +49,20 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     }
 
     
-        private static void setReason(int status, String reason) {
+    private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
         REASON_PHRASES[category][subcode] = reason;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.996 -0400", hash_original_field = "E2DE488DB38893EE28317061D8B6A367", hash_generated_field = "0300F07CA0C9570BD3547AEAE24AE263")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.711 -0400", hash_original_field = "E2DE488DB38893EE28317061D8B6A367", hash_generated_field = "0300F07CA0C9570BD3547AEAE24AE263")
 
     public final static EnglishReasonPhraseCatalog INSTANCE =
         new EnglishReasonPhraseCatalog();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.996 -0400", hash_original_field = "57A5A1B8340254B4D85331038E93BEFD", hash_generated_field = "E5E7A2629EEF7DBD3172B00AE52930BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.711 -0400", hash_original_field = "57A5A1B8340254B4D85331038E93BEFD", hash_generated_field = "0AF8F9600212ED6C05BE344BC451D7F8")
 
-    private static String[][] REASON_PHRASES = new String[][]{
+    private static final String[][] REASON_PHRASES = new String[][]{
         null,
         new String[3],  
         new String[8],  

@@ -44,14 +44,14 @@ import org.apache.commons.io.output.NullOutputStream;
 
 public class FileUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.325 -0400", hash_original_method = "0A55185A25FF095B6278724D9B8AC890", hash_generated_method = "5A201C4BEE4FA7D1A070653DE7AF18C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.138 -0400", hash_original_method = "0A55185A25FF095B6278724D9B8AC890", hash_generated_method = "5A201C4BEE4FA7D1A070653DE7AF18C7")
     public  FileUtils() {
         super();
         // ---------- Original Method ----------
     }
 
     
-        public static File getFile(File directory, String... names) {
+    public static File getFile(File directory, String... names) {
         if (directory == null) {
             throw new NullPointerException("directorydirectory must not be null");
         }
@@ -66,7 +66,7 @@ public class FileUtils {
     }
 
     
-        public static File getFile(String... names) {
+    public static File getFile(String... names) {
         if (names == null) {
             throw new NullPointerException("names must not be null");
         }
@@ -82,27 +82,27 @@ public class FileUtils {
     }
 
     
-        public static String getTempDirectoryPath() {
+    public static String getTempDirectoryPath() {
         return System.getProperty("java.io.tmpdir");
     }
 
     
-        public static File getTempDirectory() {
+    public static File getTempDirectory() {
         return new File(getTempDirectoryPath());
     }
 
     
-        public static String getUserDirectoryPath() {
+    public static String getUserDirectoryPath() {
         return System.getProperty("user.home");
     }
 
     
-        public static File getUserDirectory() {
+    public static File getUserDirectory() {
         return new File(getUserDirectoryPath());
     }
 
     
-        public static FileInputStream openInputStream(File file) throws IOException {
+    public static FileInputStream openInputStream(File file) throws IOException {
         if (file.exists()) {
             if (file.isDirectory()) {
                 throw new IOException("File '" + file + "' exists but is a directory");
@@ -117,12 +117,12 @@ public class FileUtils {
     }
 
     
-        public static FileOutputStream openOutputStream(File file) throws IOException {
+    public static FileOutputStream openOutputStream(File file) throws IOException {
         return openOutputStream(file, false);
     }
 
     
-        public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
+    public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
         if (file.exists()) {
             if (file.isDirectory()) {
                 throw new IOException("File '" + file + "' exists but is a directory");
@@ -142,7 +142,7 @@ public class FileUtils {
     }
 
     
-        public static String byteCountToDisplaySize(BigInteger size) {
+    public static String byteCountToDisplaySize(BigInteger size) {
         String displaySize;
         if (size.divide(ONE_EB_BI).compareTo(BigInteger.ZERO) > 0) {
             displaySize = String.valueOf(size.divide(ONE_EB_BI)) + " EB";
@@ -163,12 +163,12 @@ public class FileUtils {
     }
 
     
-        public static String byteCountToDisplaySize(long size) {
+    public static String byteCountToDisplaySize(long size) {
         return byteCountToDisplaySize(BigInteger.valueOf(size));
     }
 
     
-        public static void touch(File file) throws IOException {
+    public static void touch(File file) throws IOException {
         if (!file.exists()) {
             OutputStream out = openOutputStream(file);
             IOUtils.closeQuietly(out);
@@ -180,12 +180,12 @@ public class FileUtils {
     }
 
     
-        public static File[] convertFileCollectionToFileArray(Collection<File> files) {
+    public static File[] convertFileCollectionToFileArray(Collection<File> files) {
         return files.toArray(new File[files.size()]);
     }
 
     
-        private static void innerListFiles(Collection<File> files, File directory,
+    private static void innerListFiles(Collection<File> files, File directory,
             IOFileFilter filter, boolean includeSubDirectories) {
         File[] found = directory.listFiles((FileFilter) filter);
         if (found != null) {
@@ -203,7 +203,7 @@ public class FileUtils {
     }
 
     
-        public static Collection<File> listFiles(
+    public static Collection<File> listFiles(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         validateListFilesParameters(directory, fileFilter);
         IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
@@ -215,7 +215,7 @@ public class FileUtils {
     }
 
     
-        private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
+    private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
         if (!directory.isDirectory()) {
             throw new IllegalArgumentException("Parameter 'directory' is not a directory");
         }
@@ -225,18 +225,18 @@ public class FileUtils {
     }
 
     
-        private static IOFileFilter setUpEffectiveFileFilter(IOFileFilter fileFilter) {
+    private static IOFileFilter setUpEffectiveFileFilter(IOFileFilter fileFilter) {
         return FileFilterUtils.and(fileFilter, FileFilterUtils.notFileFilter(DirectoryFileFilter.INSTANCE));
     }
 
     
-        private static IOFileFilter setUpEffectiveDirFilter(IOFileFilter dirFilter) {
+    private static IOFileFilter setUpEffectiveDirFilter(IOFileFilter dirFilter) {
         return dirFilter == null ? FalseFileFilter.INSTANCE : FileFilterUtils.and(dirFilter,
                 DirectoryFileFilter.INSTANCE);
     }
 
     
-        public static Collection<File> listFilesAndDirs(
+    public static Collection<File> listFilesAndDirs(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         validateListFilesParameters(directory, fileFilter);
         IOFileFilter effFileFilter = setUpEffectiveFileFilter(fileFilter);
@@ -251,18 +251,18 @@ public class FileUtils {
     }
 
     
-        public static Iterator<File> iterateFiles(
+    public static Iterator<File> iterateFiles(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         return listFiles(directory, fileFilter, dirFilter).iterator();
     }
 
     
-        public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
+    public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         return listFilesAndDirs(directory, fileFilter, dirFilter).iterator();
     }
 
     
-        private static String[] toSuffixes(String[] extensions) {
+    private static String[] toSuffixes(String[] extensions) {
         String[] suffixes = new String[extensions.length];
         for (int i = 0; i < extensions.length; i++) {
             suffixes[i] = "." + extensions[i];
@@ -271,7 +271,7 @@ public class FileUtils {
     }
 
     
-        public static Collection<File> listFiles(
+    public static Collection<File> listFiles(
             File directory, String[] extensions, boolean recursive) {
         IOFileFilter filter;
         if (extensions == null) {
@@ -285,13 +285,13 @@ public class FileUtils {
     }
 
     
-        public static Iterator<File> iterateFiles(
+    public static Iterator<File> iterateFiles(
             File directory, String[] extensions, boolean recursive) {
         return listFiles(directory, extensions, recursive).iterator();
     }
 
     
-        public static boolean contentEquals(File file1, File file2) throws IOException {
+    public static boolean contentEquals(File file1, File file2) throws IOException {
         boolean file1Exists = file1.exists();
         if (file1Exists != file2.exists()) {
             return false;
@@ -321,7 +321,7 @@ public class FileUtils {
     }
 
     
-        public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws IOException {
+    public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws IOException {
         boolean file1Exists = file1.exists();
         if (file1Exists != file2.exists()) {
             return false;
@@ -353,7 +353,7 @@ public class FileUtils {
     }
 
     
-        public static File toFile(URL url) {
+    public static File toFile(URL url) {
         if (url == null || !"file".equalsIgnoreCase(url.getProtocol())) {
             return null;
         } else {
@@ -364,7 +364,7 @@ public class FileUtils {
     }
 
     
-        static String decodeUrl(String url) {
+    static String decodeUrl(String url) {
         String decoded = url;
         if (url != null && url.indexOf('%') >= 0) {
             int n = url.length();
@@ -396,7 +396,7 @@ public class FileUtils {
     }
 
     
-        public static File[] toFiles(URL[] urls) {
+    public static File[] toFiles(URL[] urls) {
         if (urls == null || urls.length == 0) {
             return EMPTY_FILE_ARRAY;
         }
@@ -415,7 +415,7 @@ public class FileUtils {
     }
 
     
-        public static URL[] toURLs(File[] files) throws IOException {
+    public static URL[] toURLs(File[] files) throws IOException {
         URL[] urls = new URL[files.length];
         for (int i = 0; i < urls.length; i++) {
             urls[i] = files[i].toURI().toURL();
@@ -424,12 +424,12 @@ public class FileUtils {
     }
 
     
-        public static void copyFileToDirectory(File srcFile, File destDir) throws IOException {
+    public static void copyFileToDirectory(File srcFile, File destDir) throws IOException {
         copyFileToDirectory(srcFile, destDir, true);
     }
 
     
-        public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws IOException {
+    public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws IOException {
         if (destDir == null) {
             throw new NullPointerException("Destination must not be null");
         }
@@ -441,12 +441,12 @@ public class FileUtils {
     }
 
     
-        public static void copyFile(File srcFile, File destFile) throws IOException {
+    public static void copyFile(File srcFile, File destFile) throws IOException {
         copyFile(srcFile, destFile, true);
     }
 
     
-        public static void copyFile(File srcFile, File destFile,
+    public static void copyFile(File srcFile, File destFile,
             boolean preserveFileDate) throws IOException {
         if (srcFile == null) {
             throw new NullPointerException("Source must not be null");
@@ -476,7 +476,7 @@ public class FileUtils {
     }
 
     
-        public static long copyFile(File input, OutputStream output) throws IOException {
+    public static long copyFile(File input, OutputStream output) throws IOException {
         final FileInputStream fis = new FileInputStream(input);
         try {
             return IOUtils.copyLarge(fis, output);
@@ -486,7 +486,7 @@ public class FileUtils {
     }
 
     
-        private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws IOException {
+    private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws IOException {
         if (destFile.exists() && destFile.isDirectory()) {
             throw new IOException("Destination '" + destFile + "' exists but is a directory");
         }
@@ -522,7 +522,7 @@ public class FileUtils {
     }
 
     
-        public static void copyDirectoryToDirectory(File srcDir, File destDir) throws IOException {
+    public static void copyDirectoryToDirectory(File srcDir, File destDir) throws IOException {
         if (srcDir == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -539,24 +539,24 @@ public class FileUtils {
     }
 
     
-        public static void copyDirectory(File srcDir, File destDir) throws IOException {
+    public static void copyDirectory(File srcDir, File destDir) throws IOException {
         copyDirectory(srcDir, destDir, true);
     }
 
     
-        public static void copyDirectory(File srcDir, File destDir,
+    public static void copyDirectory(File srcDir, File destDir,
             boolean preserveFileDate) throws IOException {
         copyDirectory(srcDir, destDir, null, preserveFileDate);
     }
 
     
-        public static void copyDirectory(File srcDir, File destDir,
+    public static void copyDirectory(File srcDir, File destDir,
             FileFilter filter) throws IOException {
         copyDirectory(srcDir, destDir, filter, true);
     }
 
     
-        public static void copyDirectory(File srcDir, File destDir,
+    public static void copyDirectory(File srcDir, File destDir,
             FileFilter filter, boolean preserveFileDate) throws IOException {
         if (srcDir == null) {
             throw new NullPointerException("Source must not be null");
@@ -588,7 +588,7 @@ public class FileUtils {
     }
 
     
-        private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter,
+    private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter,
             boolean preserveFileDate, List<String> exclusionList) throws IOException {
         File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
         if (srcFiles == null) {  
@@ -622,13 +622,13 @@ public class FileUtils {
     }
 
     
-        public static void copyURLToFile(URL source, File destination) throws IOException {
+    public static void copyURLToFile(URL source, File destination) throws IOException {
         InputStream input = source.openStream();
         copyInputStreamToFile(input, destination);
     }
 
     
-        public static void copyURLToFile(URL source, File destination,
+    public static void copyURLToFile(URL source, File destination,
             int connectionTimeout, int readTimeout) throws IOException {
         URLConnection connection = source.openConnection();
         connection.setConnectTimeout(connectionTimeout);
@@ -638,7 +638,7 @@ public class FileUtils {
     }
 
     
-        public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
+    public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
         try {
             FileOutputStream output = openOutputStream(destination);
             try {
@@ -653,7 +653,7 @@ public class FileUtils {
     }
 
     
-        public static void deleteDirectory(File directory) throws IOException {
+    public static void deleteDirectory(File directory) throws IOException {
         if (!directory.exists()) {
             return;
         }
@@ -668,7 +668,7 @@ public class FileUtils {
     }
 
     
-        public static boolean deleteQuietly(File file) {
+    public static boolean deleteQuietly(File file) {
         if (file == null) {
             return false;
         }
@@ -686,7 +686,7 @@ public class FileUtils {
     }
 
     
-        public static boolean directoryContains(final File directory, final File child) throws IOException {
+    public static boolean directoryContains(final File directory, final File child) throws IOException {
         if (directory == null) {
             throw new IllegalArgumentException("Directory must not be null");
         }
@@ -705,7 +705,7 @@ public class FileUtils {
     }
 
     
-        public static void cleanDirectory(File directory) throws IOException {
+    public static void cleanDirectory(File directory) throws IOException {
         if (!directory.exists()) {
             String message = directory + " does not exist";
             throw new IllegalArgumentException(message);
@@ -732,7 +732,7 @@ public class FileUtils {
     }
 
     
-        public static boolean waitFor(File file, int seconds) {
+    public static boolean waitFor(File file, int seconds) {
         int timeout = 0;
         int tick = 0;
         while (!file.exists()) {
@@ -753,7 +753,7 @@ public class FileUtils {
     }
 
     
-        public static String readFileToString(File file, Charset encoding) throws IOException {
+    public static String readFileToString(File file, Charset encoding) throws IOException {
         InputStream in = null;
         try {
             in = openInputStream(file);
@@ -764,17 +764,17 @@ public class FileUtils {
     }
 
     
-        public static String readFileToString(File file, String encoding) throws IOException {
+    public static String readFileToString(File file, String encoding) throws IOException {
         return readFileToString(file, Charsets.toCharset(encoding));
     }
 
     
-        public static String readFileToString(File file) throws IOException {
+    public static String readFileToString(File file) throws IOException {
         return readFileToString(file, Charset.defaultCharset());
     }
 
     
-        public static byte[] readFileToByteArray(File file) throws IOException {
+    public static byte[] readFileToByteArray(File file) throws IOException {
         InputStream in = null;
         try {
             in = openInputStream(file);
@@ -785,7 +785,7 @@ public class FileUtils {
     }
 
     
-        public static List<String> readLines(File file, Charset encoding) throws IOException {
+    public static List<String> readLines(File file, Charset encoding) throws IOException {
         InputStream in = null;
         try {
             in = openInputStream(file);
@@ -796,17 +796,17 @@ public class FileUtils {
     }
 
     
-        public static List<String> readLines(File file, String encoding) throws IOException {
+    public static List<String> readLines(File file, String encoding) throws IOException {
         return readLines(file, Charsets.toCharset(encoding));
     }
 
     
-        public static List<String> readLines(File file) throws IOException {
+    public static List<String> readLines(File file) throws IOException {
         return readLines(file, Charset.defaultCharset());
     }
 
     
-        public static LineIterator lineIterator(File file, String encoding) throws IOException {
+    public static LineIterator lineIterator(File file, String encoding) throws IOException {
         InputStream in = null;
         try {
             in = openInputStream(file);
@@ -821,22 +821,22 @@ public class FileUtils {
     }
 
     
-        public static LineIterator lineIterator(File file) throws IOException {
+    public static LineIterator lineIterator(File file) throws IOException {
         return lineIterator(file, null);
     }
 
     
-        public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
+    public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
         writeStringToFile(file, data, encoding, false);
     }
 
     
-        public static void writeStringToFile(File file, String data, String encoding) throws IOException {
+    public static void writeStringToFile(File file, String data, String encoding) throws IOException {
         writeStringToFile(file, data, encoding, false);
     }
 
     
-        public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
+    public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
         OutputStream out = null;
         try {
             out = openOutputStream(file, append);
@@ -848,58 +848,58 @@ public class FileUtils {
     }
 
     
-        public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
+    public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
         writeStringToFile(file, data, Charsets.toCharset(encoding), append);
     }
 
     
-        public static void writeStringToFile(File file, String data) throws IOException {
+    public static void writeStringToFile(File file, String data) throws IOException {
         writeStringToFile(file, data, Charset.defaultCharset(), false);
     }
 
     
-        public static void writeStringToFile(File file, String data, boolean append) throws IOException {
+    public static void writeStringToFile(File file, String data, boolean append) throws IOException {
         writeStringToFile(file, data, Charset.defaultCharset(), append);
     }
 
     
-        public static void write(File file, CharSequence data) throws IOException {
+    public static void write(File file, CharSequence data) throws IOException {
         write(file, data, Charset.defaultCharset(), false);
     }
 
     
-        public static void write(File file, CharSequence data, boolean append) throws IOException {
+    public static void write(File file, CharSequence data, boolean append) throws IOException {
         write(file, data, Charset.defaultCharset(), append);
     }
 
     
-        public static void write(File file, CharSequence data, Charset encoding) throws IOException {
+    public static void write(File file, CharSequence data, Charset encoding) throws IOException {
         write(file, data, encoding, false);
     }
 
     
-        public static void write(File file, CharSequence data, String encoding) throws IOException {
+    public static void write(File file, CharSequence data, String encoding) throws IOException {
         write(file, data, encoding, false);
     }
 
     
-        public static void write(File file, CharSequence data, Charset encoding, boolean append) throws IOException {
+    public static void write(File file, CharSequence data, Charset encoding, boolean append) throws IOException {
         String str = data == null ? null : data.toString();
         writeStringToFile(file, str, encoding, append);
     }
 
     
-        public static void write(File file, CharSequence data, String encoding, boolean append) throws IOException {
+    public static void write(File file, CharSequence data, String encoding, boolean append) throws IOException {
         write(file, data, Charsets.toCharset(encoding), append);
     }
 
     
-        public static void writeByteArrayToFile(File file, byte[] data) throws IOException {
+    public static void writeByteArrayToFile(File file, byte[] data) throws IOException {
         writeByteArrayToFile(file, data, false);
     }
 
     
-        public static void writeByteArrayToFile(File file, byte[] data, boolean append) throws IOException {
+    public static void writeByteArrayToFile(File file, byte[] data, boolean append) throws IOException {
         OutputStream out = null;
         try {
             out = openOutputStream(file, append);
@@ -911,32 +911,32 @@ public class FileUtils {
     }
 
     
-        public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
+    public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
         writeLines(file, encoding, lines, null, false);
     }
 
     
-        public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
+    public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
         writeLines(file, encoding, lines, null, append);
     }
 
     
-        public static void writeLines(File file, Collection<?> lines) throws IOException {
+    public static void writeLines(File file, Collection<?> lines) throws IOException {
         writeLines(file, null, lines, null, false);
     }
 
     
-        public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
+    public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
         writeLines(file, null, lines, null, append);
     }
 
     
-        public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) throws IOException {
+    public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) throws IOException {
         writeLines(file, encoding, lines, lineEnding, false);
     }
 
     
-        public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) throws IOException {
+    public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) throws IOException {
         FileOutputStream out = null;
         try {
             out = openOutputStream(file, append);
@@ -950,17 +950,17 @@ public class FileUtils {
     }
 
     
-        public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
+    public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
         writeLines(file, null, lines, lineEnding, false);
     }
 
     
-        public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) throws IOException {
+    public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) throws IOException {
         writeLines(file, null, lines, lineEnding, append);
     }
 
     
-        public static void forceDelete(File file) throws IOException {
+    public static void forceDelete(File file) throws IOException {
         if (file.isDirectory()) {
             deleteDirectory(file);
         } else {
@@ -977,7 +977,7 @@ public class FileUtils {
     }
 
     
-        public static void forceDeleteOnExit(File file) throws IOException {
+    public static void forceDeleteOnExit(File file) throws IOException {
         if (file.isDirectory()) {
             deleteDirectoryOnExit(file);
         } else {
@@ -986,7 +986,7 @@ public class FileUtils {
     }
 
     
-        private static void deleteDirectoryOnExit(File directory) throws IOException {
+    private static void deleteDirectoryOnExit(File directory) throws IOException {
         if (!directory.exists()) {
             return;
         }
@@ -997,7 +997,7 @@ public class FileUtils {
     }
 
     
-        private static void cleanDirectoryOnExit(File directory) throws IOException {
+    private static void cleanDirectoryOnExit(File directory) throws IOException {
         if (!directory.exists()) {
             String message = directory + " does not exist";
             throw new IllegalArgumentException(message);
@@ -1024,7 +1024,7 @@ public class FileUtils {
     }
 
     
-        public static void forceMkdir(File directory) throws IOException {
+    public static void forceMkdir(File directory) throws IOException {
         if (directory.exists()) {
             if (!directory.isDirectory()) {
                 String message =
@@ -1047,7 +1047,7 @@ public class FileUtils {
     }
 
     
-        public static long sizeOf(File file) {
+    public static long sizeOf(File file) {
         if (!file.exists()) {
             String message = file + " does not exist";
             throw new IllegalArgumentException(message);
@@ -1060,7 +1060,7 @@ public class FileUtils {
     }
 
     
-        public static BigInteger sizeOfAsBigInteger(File file) {
+    public static BigInteger sizeOfAsBigInteger(File file) {
         if (!file.exists()) {
             String message = file + " does not exist";
             throw new IllegalArgumentException(message);
@@ -1073,7 +1073,7 @@ public class FileUtils {
     }
 
     
-        public static long sizeOfDirectory(File directory) {
+    public static long sizeOfDirectory(File directory) {
         checkDirectory(directory);
         final File[] files = directory.listFiles();
         if (files == null) {  
@@ -1095,7 +1095,7 @@ public class FileUtils {
     }
 
     
-        public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
+    public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
         checkDirectory(directory);
         final File[] files = directory.listFiles();
         if (files == null) {  
@@ -1114,7 +1114,7 @@ public class FileUtils {
     }
 
     
-        private static void checkDirectory(File directory) {
+    private static void checkDirectory(File directory) {
         if (!directory.exists()) {
             throw new IllegalArgumentException(directory + " does not exist");
         }
@@ -1124,7 +1124,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileNewer(File file, File reference) {
+    public static boolean isFileNewer(File file, File reference) {
         if (reference == null) {
             throw new IllegalArgumentException("No specified reference file");
         }
@@ -1136,7 +1136,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileNewer(File file, Date date) {
+    public static boolean isFileNewer(File file, Date date) {
         if (date == null) {
             throw new IllegalArgumentException("No specified date");
         }
@@ -1144,7 +1144,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileNewer(File file, long timeMillis) {
+    public static boolean isFileNewer(File file, long timeMillis) {
         if (file == null) {
             throw new IllegalArgumentException("No specified file");
         }
@@ -1155,7 +1155,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileOlder(File file, File reference) {
+    public static boolean isFileOlder(File file, File reference) {
         if (reference == null) {
             throw new IllegalArgumentException("No specified reference file");
         }
@@ -1167,7 +1167,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileOlder(File file, Date date) {
+    public static boolean isFileOlder(File file, Date date) {
         if (date == null) {
             throw new IllegalArgumentException("No specified date");
         }
@@ -1175,7 +1175,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isFileOlder(File file, long timeMillis) {
+    public static boolean isFileOlder(File file, long timeMillis) {
         if (file == null) {
             throw new IllegalArgumentException("No specified file");
         }
@@ -1186,14 +1186,14 @@ public class FileUtils {
     }
 
     
-        public static long checksumCRC32(File file) throws IOException {
+    public static long checksumCRC32(File file) throws IOException {
         CRC32 crc = new CRC32();
         checksum(file, crc);
         return crc.getValue();
     }
 
     
-        public static Checksum checksum(File file, Checksum checksum) throws IOException {
+    public static Checksum checksum(File file, Checksum checksum) throws IOException {
         if (file.isDirectory()) {
             throw new IllegalArgumentException("Checksums can't be computed on directories");
         }
@@ -1208,7 +1208,7 @@ public class FileUtils {
     }
 
     
-        public static void moveDirectory(File srcDir, File destDir) throws IOException {
+    public static void moveDirectory(File srcDir, File destDir) throws IOException {
         if (srcDir == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -1239,7 +1239,7 @@ public class FileUtils {
     }
 
     
-        public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
+    public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
         if (src == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -1260,7 +1260,7 @@ public class FileUtils {
     }
 
     
-        public static void moveFile(File srcFile, File destFile) throws IOException {
+    public static void moveFile(File srcFile, File destFile) throws IOException {
         if (srcFile == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -1291,7 +1291,7 @@ public class FileUtils {
     }
 
     
-        public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws IOException {
+    public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws IOException {
         if (srcFile == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -1312,7 +1312,7 @@ public class FileUtils {
     }
 
     
-        public static void moveToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
+    public static void moveToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
         if (src == null) {
             throw new NullPointerException("Source must not be null");
         }
@@ -1330,7 +1330,7 @@ public class FileUtils {
     }
 
     
-        public static boolean isSymlink(File file) throws IOException {
+    public static boolean isSymlink(File file) throws IOException {
         if (file == null) {
             throw new NullPointerException("File must not be null");
         }
@@ -1352,56 +1352,56 @@ public class FileUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.460 -0400", hash_original_field = "341CAF801D1581520F6031438EC67724", hash_generated_field = "AC98EB3C79BA6E8E0D3CA5A91E4C5D8E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.154 -0400", hash_original_field = "341CAF801D1581520F6031438EC67724", hash_generated_field = "AC98EB3C79BA6E8E0D3CA5A91E4C5D8E")
 
     public static final long ONE_KB = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "39245CBB93EEEA1B7550D6F8D77FF48F", hash_generated_field = "F405DE3E8E5425D1CA46A7DC43E96F37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.154 -0400", hash_original_field = "39245CBB93EEEA1B7550D6F8D77FF48F", hash_generated_field = "F405DE3E8E5425D1CA46A7DC43E96F37")
 
     public static final BigInteger ONE_KB_BI = BigInteger.valueOf(ONE_KB);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "0E310369E83FBD080B3BB47B8CC0B2BF", hash_generated_field = "354FDE278DA5035BB13C55F0321932D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.154 -0400", hash_original_field = "0E310369E83FBD080B3BB47B8CC0B2BF", hash_generated_field = "354FDE278DA5035BB13C55F0321932D9")
 
     public static final long ONE_MB = ONE_KB * ONE_KB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4A3034D3DD04EB7392AA67A4E14F7872", hash_generated_field = "FCFA787511A89BE53D711A0DF34EA6D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.154 -0400", hash_original_field = "4A3034D3DD04EB7392AA67A4E14F7872", hash_generated_field = "FCFA787511A89BE53D711A0DF34EA6D2")
 
     public static final BigInteger ONE_MB_BI = ONE_KB_BI.multiply(ONE_KB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4DB23945C17C7AD00CCC1041A1039156", hash_generated_field = "383ED46A35FDBB6A80F81CC7C04D4D01")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "4DB23945C17C7AD00CCC1041A1039156", hash_generated_field = "14D9786E6E675AF8F9730EE318567F02")
 
-    private static long FILE_COPY_BUFFER_SIZE = ONE_MB * 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "0F436A8AC322C90D8240EB021102A2F5", hash_generated_field = "B3CA6D3671975E3889F13EF4731133E6")
+    private static final long FILE_COPY_BUFFER_SIZE = ONE_MB * 30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "0F436A8AC322C90D8240EB021102A2F5", hash_generated_field = "B3CA6D3671975E3889F13EF4731133E6")
 
     public static final long ONE_GB = ONE_KB * ONE_MB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "6586069461690F99E21918779CA8D95E", hash_generated_field = "83DA70F1C8B66565689A7C62D7396A8F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "6586069461690F99E21918779CA8D95E", hash_generated_field = "83DA70F1C8B66565689A7C62D7396A8F")
 
     public static final BigInteger ONE_GB_BI = ONE_KB_BI.multiply(ONE_MB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "790BEE8417BAAACB44BAFFEE47C1CBED", hash_generated_field = "0C88175C5B53C0F5D9849F9C631CFED0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "790BEE8417BAAACB44BAFFEE47C1CBED", hash_generated_field = "0C88175C5B53C0F5D9849F9C631CFED0")
 
     public static final long ONE_TB = ONE_KB * ONE_GB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "DF540A7F0C9D99F019B42BE8AEEA433E", hash_generated_field = "3823522D0F72DAF1B710461BC24CBB28")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "DF540A7F0C9D99F019B42BE8AEEA433E", hash_generated_field = "3823522D0F72DAF1B710461BC24CBB28")
 
     public static final BigInteger ONE_TB_BI = ONE_KB_BI.multiply(ONE_GB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "2FF30E56CDB368D1D753E026FA9E62FD", hash_generated_field = "0DFE5EE583D7DC5809F3AA95B22C4E4D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "2FF30E56CDB368D1D753E026FA9E62FD", hash_generated_field = "0DFE5EE583D7DC5809F3AA95B22C4E4D")
 
     public static final long ONE_PB = ONE_KB * ONE_TB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "24CF32A74B575C5BAFFD5253EB4B1F9F", hash_generated_field = "B03C4998BEFF2DBDDC5AA5902C004125")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "24CF32A74B575C5BAFFD5253EB4B1F9F", hash_generated_field = "B03C4998BEFF2DBDDC5AA5902C004125")
 
     public static final BigInteger ONE_PB_BI = ONE_KB_BI.multiply(ONE_TB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "1E5246C3B5079502D7970C96A35E7C69", hash_generated_field = "77EDE40E2B944855EA12659068EC689A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "1E5246C3B5079502D7970C96A35E7C69", hash_generated_field = "77EDE40E2B944855EA12659068EC689A")
 
     public static final long ONE_EB = ONE_KB * ONE_PB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "F7AD453AC2F96EB9BFA75988422F4E3F", hash_generated_field = "51FFF440C7C9DD913A9380310FCF85AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "F7AD453AC2F96EB9BFA75988422F4E3F", hash_generated_field = "51FFF440C7C9DD913A9380310FCF85AB")
 
     public static final BigInteger ONE_EB_BI = ONE_KB_BI.multiply(ONE_PB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "69DAA07EEC33D9997965F02D70E427B8", hash_generated_field = "AD7B0E72CB5A54615E4D9293576A33A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "69DAA07EEC33D9997965F02D70E427B8", hash_generated_field = "AD7B0E72CB5A54615E4D9293576A33A5")
 
     public static final BigInteger ONE_ZB = BigInteger.valueOf(ONE_KB).multiply(BigInteger.valueOf(ONE_EB));
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "2F2ACA45DD135D9E8899DDB66281A1A3", hash_generated_field = "AF6BA7A2C5CEBB9C927DC3FB96A744EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "2F2ACA45DD135D9E8899DDB66281A1A3", hash_generated_field = "AF6BA7A2C5CEBB9C927DC3FB96A744EF")
 
     public static final BigInteger ONE_YB = ONE_KB_BI.multiply(ONE_ZB);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4007859B3A1A055189F2EBDF2029B071", hash_generated_field = "B16C7A32CC8CA40E9426F58928BA7D97")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "4007859B3A1A055189F2EBDF2029B071", hash_generated_field = "B16C7A32CC8CA40E9426F58928BA7D97")
 
     public static final File[] EMPTY_FILE_ARRAY = new File[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "D0F4A9EBDD3457AF419B3A8D18010F1D", hash_generated_field = "0CE886DDB1202B23C9B7E65276EA2A26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.155 -0400", hash_original_field = "D0F4A9EBDD3457AF419B3A8D18010F1D", hash_generated_field = "55E2F519A2EBE5C6AB0BC1305FB28544")
 
-    private static Charset UTF8 = Charset.forName("UTF-8");
+    private static final Charset UTF8 = Charset.forName("UTF-8");
 }
 

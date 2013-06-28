@@ -12,14 +12,14 @@ import java.util.Vector;
 
 public final class Strings {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.819 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.223 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
     public Strings ()
     {
         //Synthesized constructor
     }
 
 
-        public static String fromUTF8ByteArray(byte[] bytes) {
+    public static String fromUTF8ByteArray(byte[] bytes) {
         int i = 0;
         int length = 0;
         while (i < bytes.length)
@@ -86,12 +86,12 @@ public final class Strings {
     }
 
     
-        public static byte[] toUTF8ByteArray(String string) {
+    public static byte[] toUTF8ByteArray(String string) {
         return toUTF8ByteArray(string.toCharArray());
     }
 
     
-        public static byte[] toUTF8ByteArray(char[] string) {
+    public static byte[] toUTF8ByteArray(char[] string) {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
         int i = 0;
@@ -138,7 +138,7 @@ public final class Strings {
     }
 
     
-        public static String toUpperCase(String string) {
+    public static String toUpperCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
         for (int i = 0; i != chars.length; i++)
@@ -158,7 +158,7 @@ public final class Strings {
     }
 
     
-        public static String toLowerCase(String string) {
+    public static String toLowerCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
         for (int i = 0; i != chars.length; i++)
@@ -178,7 +178,7 @@ public final class Strings {
     }
 
     
-        public static byte[] toByteArray(char[] chars) {
+    public static byte[] toByteArray(char[] chars) {
         byte[] bytes = new byte[chars.length];
         for (int i = 0; i != bytes.length; i++)
         {
@@ -188,7 +188,7 @@ public final class Strings {
     }
 
     
-        public static byte[] toByteArray(String string) {
+    public static byte[] toByteArray(String string) {
         byte[] bytes = new byte[string.length()];
         for (int i = 0; i != bytes.length; i++)
         {
@@ -199,7 +199,7 @@ public final class Strings {
     }
 
     
-        public static String[] split(String input, char delimiter) {
+    public static String[] split(String input, char delimiter) {
         Vector           v = new Vector();
         boolean moreTokens = true;
         String subString;

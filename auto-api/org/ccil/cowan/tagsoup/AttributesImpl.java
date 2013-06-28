@@ -10,14 +10,14 @@ import java.util.Iterator;
 import org.xml.sax.Attributes;
 
 public class AttributesImpl implements Attributes {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.113 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.647 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
 
     int length;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.113 -0400", hash_original_field = "9483150F544BF05C50199D7A88E919A3", hash_generated_field = "FF698A9C75F799EB4FE98C16A723AC90")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.647 -0400", hash_original_field = "9483150F544BF05C50199D7A88E919A3", hash_generated_field = "FF698A9C75F799EB4FE98C16A723AC90")
 
     String data[];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.116 -0400", hash_original_method = "6313F45FC494FF406CD3064C58B63747", hash_generated_method = "125C4A40CDC675B4E661BFA7A14FF3ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.648 -0400", hash_original_method = "6313F45FC494FF406CD3064C58B63747", hash_generated_method = "125C4A40CDC675B4E661BFA7A14FF3ED")
     public  AttributesImpl() {
         length = 0;
         data = null;
@@ -27,7 +27,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.116 -0400", hash_original_method = "8A0D874B41C17812C2FD00F4B363184D", hash_generated_method = "DECA55089DA1BBA83C0C88C650D479C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.648 -0400", hash_original_method = "8A0D874B41C17812C2FD00F4B363184D", hash_generated_method = "DECA55089DA1BBA83C0C88C650D479C0")
     public  AttributesImpl(Attributes atts) {
         setAttributes(atts);
         addTaint(atts.getTaint());
@@ -36,37 +36,37 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.116 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "C0272E025B312325DD14245C55B395E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.648 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "A73F8E3DE9749F4EB288101AD14E1F78")
     public int getLength() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633059991 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633059991;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382069224 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382069224;
         // ---------- Original Method ----------
         //return length;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.127 -0400", hash_original_method = "1BF0AE5363A8618B6A71FCEE06881B7C", hash_generated_method = "2585990CDEDC8818D88E7956DE26B833")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.649 -0400", hash_original_method = "1BF0AE5363A8618B6A71FCEE06881B7C", hash_generated_method = "CAF0DA35BAA9A1725A89D96006702032")
     public String getURI(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_458147116 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_545391340 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_902041253 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_720118935 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_458147116 = data[index*5];
+            varB4EAC82CA7396A68D541C85D26508E83_902041253 = data[index*5];
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_545391340 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_720118935 = null;
         } //End block
         addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_1677475219; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1099597975; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1677475219 = varB4EAC82CA7396A68D541C85D26508E83_458147116;
+                varA7E53CE21691AB073D9660D615818899_1099597975 = varB4EAC82CA7396A68D541C85D26508E83_902041253;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1677475219 = varB4EAC82CA7396A68D541C85D26508E83_545391340;
+                varA7E53CE21691AB073D9660D615818899_1099597975 = varB4EAC82CA7396A68D541C85D26508E83_720118935;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1677475219.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1677475219;
+        varA7E53CE21691AB073D9660D615818899_1099597975.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1099597975;
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //return data[index*5];
@@ -76,28 +76,28 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.128 -0400", hash_original_method = "92B1686F7E458511CE45EC4DB3E3CE89", hash_generated_method = "476E1FA918C54D532DCC05BB224FC3D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.650 -0400", hash_original_method = "92B1686F7E458511CE45EC4DB3E3CE89", hash_generated_method = "CBE14B50EA79E2AB8A3287BD8B674B80")
     public String getLocalName(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_690459985 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_484409131 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_165419056 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1104052856 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_690459985 = data[index*5+1];
+            varB4EAC82CA7396A68D541C85D26508E83_165419056 = data[index*5+1];
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_484409131 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1104052856 = null;
         } //End block
         addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_348817142; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2062861479; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_348817142 = varB4EAC82CA7396A68D541C85D26508E83_690459985;
+                varA7E53CE21691AB073D9660D615818899_2062861479 = varB4EAC82CA7396A68D541C85D26508E83_165419056;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_348817142 = varB4EAC82CA7396A68D541C85D26508E83_484409131;
+                varA7E53CE21691AB073D9660D615818899_2062861479 = varB4EAC82CA7396A68D541C85D26508E83_1104052856;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_348817142.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_348817142;
+        varA7E53CE21691AB073D9660D615818899_2062861479.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2062861479;
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //return data[index*5+1];
@@ -107,28 +107,28 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.129 -0400", hash_original_method = "32BD7D7FFA2C46007E9D534F2070D779", hash_generated_method = "FE1C391CA03FB0709A5F4A0918F7D52C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.650 -0400", hash_original_method = "32BD7D7FFA2C46007E9D534F2070D779", hash_generated_method = "3FE254F4D6B4F06E4854F4D77B058511")
     public String getQName(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1570461349 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2047658256 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_258466015 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1296550128 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1570461349 = data[index*5+2];
+            varB4EAC82CA7396A68D541C85D26508E83_258466015 = data[index*5+2];
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2047658256 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1296550128 = null;
         } //End block
         addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_1085843119; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1900689223; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1085843119 = varB4EAC82CA7396A68D541C85D26508E83_1570461349;
+                varA7E53CE21691AB073D9660D615818899_1900689223 = varB4EAC82CA7396A68D541C85D26508E83_258466015;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1085843119 = varB4EAC82CA7396A68D541C85D26508E83_2047658256;
+                varA7E53CE21691AB073D9660D615818899_1900689223 = varB4EAC82CA7396A68D541C85D26508E83_1296550128;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1085843119.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1085843119;
+        varA7E53CE21691AB073D9660D615818899_1900689223.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1900689223;
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //return data[index*5+2];
@@ -138,28 +138,28 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.130 -0400", hash_original_method = "CD55E4A1C2CBE3FE53B5A622E57F028C", hash_generated_method = "FF56B3D1F69266329DF62C83178B09DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.651 -0400", hash_original_method = "CD55E4A1C2CBE3FE53B5A622E57F028C", hash_generated_method = "E7AFACCBEF68936F8044779016E1E56B")
     public String getType(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1341316283 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_973878215 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_24399822 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1357233652 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1341316283 = data[index*5+3];
+            varB4EAC82CA7396A68D541C85D26508E83_24399822 = data[index*5+3];
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_973878215 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1357233652 = null;
         } //End block
         addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_1561623269; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1100753567; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1561623269 = varB4EAC82CA7396A68D541C85D26508E83_1341316283;
+                varA7E53CE21691AB073D9660D615818899_1100753567 = varB4EAC82CA7396A68D541C85D26508E83_24399822;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1561623269 = varB4EAC82CA7396A68D541C85D26508E83_973878215;
+                varA7E53CE21691AB073D9660D615818899_1100753567 = varB4EAC82CA7396A68D541C85D26508E83_1357233652;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1561623269.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1561623269;
+        varA7E53CE21691AB073D9660D615818899_1100753567.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1100753567;
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //return data[index*5+3];
@@ -169,28 +169,28 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.134 -0400", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "CC96F9DB89041A126FC263A45CF0CAD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.652 -0400", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "04B69B2FAF4DD09BB3F14E35AAD14262")
     public String getValue(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1921188604 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2041558205 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1696802891 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1079349297 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1921188604 = data[index*5+4];
+            varB4EAC82CA7396A68D541C85D26508E83_1696802891 = data[index*5+4];
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2041558205 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1079349297 = null;
         } //End block
         addTaint(index);
-        String varA7E53CE21691AB073D9660D615818899_1447469489; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2111790807; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1447469489 = varB4EAC82CA7396A68D541C85D26508E83_1921188604;
+                varA7E53CE21691AB073D9660D615818899_2111790807 = varB4EAC82CA7396A68D541C85D26508E83_1696802891;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1447469489 = varB4EAC82CA7396A68D541C85D26508E83_2041558205;
+                varA7E53CE21691AB073D9660D615818899_2111790807 = varB4EAC82CA7396A68D541C85D26508E83_1079349297;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1447469489.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1447469489;
+        varA7E53CE21691AB073D9660D615818899_2111790807.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2111790807;
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //return data[index*5+4];
@@ -200,24 +200,22 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.143 -0400", hash_original_method = "090A4B083F61ECB7CB7169BD1EF033DF", hash_generated_method = "61A730E868C5333E06DD8C8B0C34AB66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.653 -0400", hash_original_method = "090A4B083F61ECB7CB7169BD1EF033DF", hash_generated_method = "13220C71035D11130CDF1C6F18ECDFA2")
     public int getIndex(String uri, String localName) {
-        int max;
-        max = length * 5;
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_420459776 = (data[i].equals(uri) && data[i+1].equals(localName));
+                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_539727162 = (data[i].equals(uri) && data[i+1].equals(localName));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084307389 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084307389;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_358034242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_358034242;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -229,23 +227,21 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.143 -0400", hash_original_method = "EE3F059D65C038AB1F6CDD7302F8C95C", hash_generated_method = "D4BAAADB9C4401353CB48A30EB83E466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.653 -0400", hash_original_method = "EE3F059D65C038AB1F6CDD7302F8C95C", hash_generated_method = "52209054F3F621B6C68A6741AC2D1385")
     public int getIndex(String qName) {
-        int max;
-        max = length * 5;
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_1468226565 = (data[i+2].equals(qName));
+                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_1731458103 = (data[i+2].equals(qName));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(qName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723145849 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723145849;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988007502 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988007502;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -257,39 +253,37 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.144 -0400", hash_original_method = "B693D2A452C34B3F63F46AE3F73B4CD6", hash_generated_method = "DFD336B74E0816AC7C298B41B004392F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.654 -0400", hash_original_method = "B693D2A452C34B3F63F46AE3F73B4CD6", hash_generated_method = "B2DD140BE5EFC73BB19BF4372C723BB4")
     public String getType(String uri, String localName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_980080279 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1555954434 = null; //Variable for return #2
-        int max;
-        max = length * 5;
+        String varB4EAC82CA7396A68D541C85D26508E83_887999267 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2014441806 = null; //Variable for return #2
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_486263027 = (data[i].equals(uri) && data[i+1].equals(localName));
+                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_549389692 = (data[i].equals(uri) && data[i+1].equals(localName));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_980080279 = data[i+3];
+                        varB4EAC82CA7396A68D541C85D26508E83_887999267 = data[i+3];
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1555954434 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_2014441806 = null;
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1561774708; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1841026889; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1561774708 = varB4EAC82CA7396A68D541C85D26508E83_980080279;
+                varA7E53CE21691AB073D9660D615818899_1841026889 = varB4EAC82CA7396A68D541C85D26508E83_887999267;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1561774708 = varB4EAC82CA7396A68D541C85D26508E83_1555954434;
+                varA7E53CE21691AB073D9660D615818899_1841026889 = varB4EAC82CA7396A68D541C85D26508E83_2014441806;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1561774708.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1561774708;
+        varA7E53CE21691AB073D9660D615818899_1841026889.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1841026889;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -301,38 +295,36 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.145 -0400", hash_original_method = "EC27C5C1CA5357EEA1E16E770BA20FA2", hash_generated_method = "E8E3FDA02EE361B609D51B177B5A3421")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.654 -0400", hash_original_method = "EC27C5C1CA5357EEA1E16E770BA20FA2", hash_generated_method = "EBE9B36115E519BA3D58FC8A773E3028")
     public String getType(String qName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_921845318 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_232680551 = null; //Variable for return #2
-        int max;
-        max = length * 5;
+        String varB4EAC82CA7396A68D541C85D26508E83_1421542440 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_471698048 = null; //Variable for return #2
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_1374750305 = (data[i+2].equals(qName));
+                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_106584021 = (data[i+2].equals(qName));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_921845318 = data[i+3];
+                        varB4EAC82CA7396A68D541C85D26508E83_1421542440 = data[i+3];
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_232680551 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_471698048 = null;
         addTaint(qName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_667020495; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_848181370; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_667020495 = varB4EAC82CA7396A68D541C85D26508E83_921845318;
+                varA7E53CE21691AB073D9660D615818899_848181370 = varB4EAC82CA7396A68D541C85D26508E83_1421542440;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_667020495 = varB4EAC82CA7396A68D541C85D26508E83_232680551;
+                varA7E53CE21691AB073D9660D615818899_848181370 = varB4EAC82CA7396A68D541C85D26508E83_471698048;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_667020495.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_667020495;
+        varA7E53CE21691AB073D9660D615818899_848181370.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_848181370;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -344,39 +336,37 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.175 -0400", hash_original_method = "522BBD1273EB28D82A0CFFAB0B22501D", hash_generated_method = "89D353BF1AA09D5E9BE232BAC6C62AB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.655 -0400", hash_original_method = "522BBD1273EB28D82A0CFFAB0B22501D", hash_generated_method = "386CFC3ACA54263FBBF59AAFD05D62C4")
     public String getValue(String uri, String localName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_471748267 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1491097416 = null; //Variable for return #2
-        int max;
-        max = length * 5;
+        String varB4EAC82CA7396A68D541C85D26508E83_1304744143 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_551766217 = null; //Variable for return #2
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_1834468384 = (data[i].equals(uri) && data[i+1].equals(localName));
+                    boolean varAAE6B8DFDBCC8D3ED97D54A22B8218A3_1007745382 = (data[i].equals(uri) && data[i+1].equals(localName));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_471748267 = data[i+4];
+                        varB4EAC82CA7396A68D541C85D26508E83_1304744143 = data[i+4];
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1491097416 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_551766217 = null;
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_428736808; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_44587005; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_428736808 = varB4EAC82CA7396A68D541C85D26508E83_471748267;
+                varA7E53CE21691AB073D9660D615818899_44587005 = varB4EAC82CA7396A68D541C85D26508E83_1304744143;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_428736808 = varB4EAC82CA7396A68D541C85D26508E83_1491097416;
+                varA7E53CE21691AB073D9660D615818899_44587005 = varB4EAC82CA7396A68D541C85D26508E83_551766217;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_428736808.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_428736808;
+        varA7E53CE21691AB073D9660D615818899_44587005.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_44587005;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -388,38 +378,36 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.176 -0400", hash_original_method = "4282B0A2744D6B6FFA141D6FBFC4111A", hash_generated_method = "AE14A9D9391949BF946492A245201975")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.656 -0400", hash_original_method = "4282B0A2744D6B6FFA141D6FBFC4111A", hash_generated_method = "329683CE6A9AEA87BD433C3E414A4804")
     public String getValue(String qName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1342938978 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_602567844 = null; //Variable for return #2
-        int max;
-        max = length * 5;
+        String varB4EAC82CA7396A68D541C85D26508E83_1135674517 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1388771382 = null; //Variable for return #2
+        int max = length * 5;
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 5;
             {
                 {
-                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_1595445476 = (data[i+2].equals(qName));
+                    boolean var79D134C69AFAFBBA44E0F9F404A7B8C5_226611010 = (data[i+2].equals(qName));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1342938978 = data[i+4];
+                        varB4EAC82CA7396A68D541C85D26508E83_1135674517 = data[i+4];
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_602567844 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1388771382 = null;
         addTaint(qName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_2102144195; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1926932722; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2102144195 = varB4EAC82CA7396A68D541C85D26508E83_1342938978;
+                varA7E53CE21691AB073D9660D615818899_1926932722 = varB4EAC82CA7396A68D541C85D26508E83_1135674517;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2102144195 = varB4EAC82CA7396A68D541C85D26508E83_602567844;
+                varA7E53CE21691AB073D9660D615818899_1926932722 = varB4EAC82CA7396A68D541C85D26508E83_1388771382;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2102144195.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2102144195;
+        varA7E53CE21691AB073D9660D615818899_1926932722.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1926932722;
         // ---------- Original Method ----------
         //int max = length * 5;
         //for (int i = 0; i < max; i += 5) {
@@ -431,12 +419,11 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.176 -0400", hash_original_method = "03C848B66796F8DBDE7832677AAFA935", hash_generated_method = "BDEFF4DE4CFAAB98784BA60D61D9B8E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.656 -0400", hash_original_method = "03C848B66796F8DBDE7832677AAFA935", hash_generated_method = "92D92F557DB91C808602D1F195D7407C")
     public void clear() {
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
                 data [i] = null;
             } //End collapsed parenthetic
         } //End block
@@ -450,15 +437,14 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.187 -0400", hash_original_method = "AF86DF649668A0410832106AC7F2AE57", hash_generated_method = "69EAF91F95C75BDA8BE1B3A585586A11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.657 -0400", hash_original_method = "AF86DF649668A0410832106AC7F2AE57", hash_generated_method = "383454FA757E91BF22D812C0DD7AABDF")
     public void setAttributes(Attributes atts) {
         clear();
         length = atts.getLength();
         {
             data = new String[length*5];
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     data[i*5] = atts.getURI(i);
                     data[i*5+1] = atts.getLocalName(i);
@@ -484,7 +470,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.188 -0400", hash_original_method = "BEBCC50C9D4D6D2EEDEE155B4F15D792", hash_generated_method = "446F44EFE1522FA55D3A10F71A9677E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.657 -0400", hash_original_method = "BEBCC50C9D4D6D2EEDEE155B4F15D792", hash_generated_method = "446F44EFE1522FA55D3A10F71A9677E9")
     public void addAttribute(String uri, String localName, String qName,
 			      String type, String value) {
         ensureCapacity(length+1);
@@ -504,7 +490,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.196 -0400", hash_original_method = "FF1F65C71EB4DEEB1CAA0E424ECEBB91", hash_generated_method = "F36A939953328C3439DA8023CF3A1212")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.658 -0400", hash_original_method = "FF1F65C71EB4DEEB1CAA0E424ECEBB91", hash_generated_method = "0C86CEEC437F23C72B5341F30A939074")
     public void setAttribute(int index, String uri, String localName,
 			      String qName, String type, String value) {
         {
@@ -517,12 +503,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(uri.getTaint());
-        addTaint(localName.getTaint());
-        addTaint(qName.getTaint());
-        addTaint(type.getTaint());
-        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5] = uri;
@@ -536,7 +516,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.199 -0400", hash_original_method = "CCD3032C3525D921C0B3FD28370332A3", hash_generated_method = "B5190173607221806917170810758793")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.658 -0400", hash_original_method = "CCD3032C3525D921C0B3FD28370332A3", hash_generated_method = "30657D28074FA7318F5DCEEB81AE8346")
     public void removeAttribute(int index) {
         {
             {
@@ -553,7 +533,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //if (index < length - 1) {
@@ -573,7 +552,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.200 -0400", hash_original_method = "50F4EE4994BD814C254566A0C91A3159", hash_generated_method = "B4607727E2BFBD0C69C92D5CA9EE6E5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.659 -0400", hash_original_method = "50F4EE4994BD814C254566A0C91A3159", hash_generated_method = "189634784CC3D87714F94F95CA9AE40B")
     public void setURI(int index, String uri) {
         {
             data[index*5] = uri;
@@ -581,8 +560,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(uri.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5] = uri;
@@ -592,7 +569,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.203 -0400", hash_original_method = "752FFE3C27BC55D6B126D5816B29C527", hash_generated_method = "24C22C1A236B075D788E2D1468D7187C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.659 -0400", hash_original_method = "752FFE3C27BC55D6B126D5816B29C527", hash_generated_method = "EE4EC8CE033CC258B23E0FB3EE329175")
     public void setLocalName(int index, String localName) {
         {
             data[index*5+1] = localName;
@@ -600,8 +577,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(localName.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5+1] = localName;
@@ -611,7 +586,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.204 -0400", hash_original_method = "092FB5C36230E9F885C6748AEF4243E2", hash_generated_method = "757DCBBD31735DBDCE0DC1D29156141F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.659 -0400", hash_original_method = "092FB5C36230E9F885C6748AEF4243E2", hash_generated_method = "76CA5E4B31889C44B734382CBC5C6E51")
     public void setQName(int index, String qName) {
         {
             data[index*5+2] = qName;
@@ -619,8 +594,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(qName.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5+2] = qName;
@@ -630,7 +603,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.215 -0400", hash_original_method = "C2C16165C0A88812FD10B2DCA3F19338", hash_generated_method = "879767C66D5DDBB1CFF3245850923CC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.660 -0400", hash_original_method = "C2C16165C0A88812FD10B2DCA3F19338", hash_generated_method = "65D3BD8341FEBE938E1850C8859B2D71")
     public void setType(int index, String type) {
         {
             data[index*5+3] = type;
@@ -638,8 +611,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(type.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5+3] = type;
@@ -649,7 +620,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.215 -0400", hash_original_method = "384311AE4C6374A489D3CC7FA620C40E", hash_generated_method = "A72654E196B760AD425242B9C63A35E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.660 -0400", hash_original_method = "384311AE4C6374A489D3CC7FA620C40E", hash_generated_method = "7F3196238D00EEB51E7CF68BA42F8A65")
     public void setValue(int index, String value) {
         {
             data[index*5+4] = value;
@@ -657,8 +628,6 @@ public class AttributesImpl implements Attributes {
         {
             badIndex(index);
         } //End block
-        addTaint(index);
-        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index < length) {
 	    //data[index*5+4] = value;
@@ -668,7 +637,7 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.216 -0400", hash_original_method = "CB574EAE8A001C113E60067C9D40C52E", hash_generated_method = "C5AEF6B174B8219306F3AF6FA6335CE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.661 -0400", hash_original_method = "CB574EAE8A001C113E60067C9D40C52E", hash_generated_method = "7CB08C395D683F782E241B21632C5B7B")
     private void ensureCapacity(int n) {
         int max;
         {
@@ -680,8 +649,7 @@ public class AttributesImpl implements Attributes {
         {
             max *= 2;
         } //End block
-        String newData[];
-        newData = new String[max];
+        String newData[] = new String[max];
         {
             System.arraycopy(data, 0, newData, 0, length*5);
         } //End block
@@ -712,10 +680,9 @@ public class AttributesImpl implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.216 -0400", hash_original_method = "5A39796CA8340A67B1FFF4D32268D0FF", hash_generated_method = "5741BE8AFA74ABCF72FC32BDDEE79B14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.661 -0400", hash_original_method = "5A39796CA8340A67B1FFF4D32268D0FF", hash_generated_method = "0882442A793C9911842010C280906F43")
     private void badIndex(int index) throws ArrayIndexOutOfBoundsException {
-        String msg;
-        msg = "Attempt to modify attribute at illegal index: " + index;
+        String msg = "Attempt to modify attribute at illegal index: " + index;
         if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException(msg);
         addTaint(index);
         // ---------- Original Method ----------

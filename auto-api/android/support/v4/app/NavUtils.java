@@ -17,7 +17,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 public class NavUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.409 -0400", hash_original_method = "E75D43BE6A1853BDB1330AA34521ED0F", hash_generated_method = "40223732185F53587003CD833DE7D091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.149 -0400", hash_original_method = "E75D43BE6A1853BDB1330AA34521ED0F", hash_generated_method = "40223732185F53587003CD833DE7D091")
     private  NavUtils() {
         // ---------- Original Method ----------
     }
@@ -96,10 +96,10 @@ public class NavUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.422 -0400", hash_original_field = "0B2F296F20FC0F50F9875C1922FC874A", hash_generated_field = "A708AB4FC0558F0B79898C7392A4E9C2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.151 -0400", hash_original_field = "0B2F296F20FC0F50F9875C1922FC874A", hash_generated_field = "E417B6C891271FCB16EE938B8A1D32B3")
 
-    private static String TAG = "NavUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.422 -0400", hash_original_field = "7979D442068287A3411C320AE3F54D54", hash_generated_field = "28AFCA35319A9218F8E9B29ABAC120B0")
+    private static final String TAG = "NavUtils";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.151 -0400", hash_original_field = "7979D442068287A3411C320AE3F54D54", hash_generated_field = "28AFCA35319A9218F8E9B29ABAC120B0")
 
     public static final String PARENT_ACTIVITY = "android.support.PARENT_ACTIVITY";
 }

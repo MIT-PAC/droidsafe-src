@@ -13,17 +13,17 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 public final class DexFile {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.369 -0400", hash_original_field = "6E854C680205E153D6A9DE7BA337DEAC", hash_generated_field = "02A3A9994454C1152633199C0FF9DCC4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_field = "6E854C680205E153D6A9DE7BA337DEAC", hash_generated_field = "02A3A9994454C1152633199C0FF9DCC4")
 
     private int mCookie;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.369 -0400", hash_original_field = "65245EC8B4F9A383A7D88CBCE0DCE936", hash_generated_field = "AAA2A753F4CC89AA48A7F98FEF3601A3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_field = "65245EC8B4F9A383A7D88CBCE0DCE936", hash_generated_field = "AAA2A753F4CC89AA48A7F98FEF3601A3")
 
     private String mFileName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.369 -0400", hash_original_field = "73ABE739BEC4C3DB38D39FA43D36469F", hash_generated_field = "2D38C9B39338C5B15F94E3339CE63B3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_field = "73ABE739BEC4C3DB38D39FA43D36469F", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
 
-    private CloseGuard guard = CloseGuard.get();
+    private final CloseGuard guard = CloseGuard.get();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.369 -0400", hash_original_method = "DB9E956B9DDA3EEC264D03CBFDEFBF6F", hash_generated_method = "9E460D61C27B487B20C9A4F9A7002E15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_method = "DB9E956B9DDA3EEC264D03CBFDEFBF6F", hash_generated_method = "9E460D61C27B487B20C9A4F9A7002E15")
     public  DexFile(File file) throws IOException {
         this(file.getPath());
         addTaint(file.getTaint());
@@ -31,7 +31,7 @@ public final class DexFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.370 -0400", hash_original_method = "2B4E18996A051A13BE51394FD13F0A3C", hash_generated_method = "F42425DD98401A7DAF698362F1153DB2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_method = "2B4E18996A051A13BE51394FD13F0A3C", hash_generated_method = "F42425DD98401A7DAF698362F1153DB2")
     public  DexFile(String fileName) throws IOException {
         mCookie = openDexFile(fileName, null, 0);
         mFileName = fileName;
@@ -43,7 +43,7 @@ public final class DexFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.371 -0400", hash_original_method = "A9D59C5CAA6AEFC931B2439A85EC8214", hash_generated_method = "8D2E1506C95983BAF3F0866420E60844")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.649 -0400", hash_original_method = "A9D59C5CAA6AEFC931B2439A85EC8214", hash_generated_method = "8D2E1506C95983BAF3F0866420E60844")
     private  DexFile(String sourceName, String outputName, int flags) throws IOException {
         mCookie = openDexFile(sourceName, outputName, flags);
         mFileName = sourceName;
@@ -55,24 +55,24 @@ public final class DexFile {
     }
 
     
-        static public DexFile loadDex(String sourcePathName, String outputPathName,
+    static public DexFile loadDex(String sourcePathName, String outputPathName,
         int flags) throws IOException {
         return new DexFile(sourcePathName, outputPathName, flags);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.371 -0400", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "387944A4ECD16E30DB0DCF484EB2FDAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.650 -0400", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "CD4398CF109B4EAD6BC5AAFCFA391918")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_362212143 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_362212143 = mFileName;
-        varB4EAC82CA7396A68D541C85D26508E83_362212143.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_362212143;
+        String varB4EAC82CA7396A68D541C85D26508E83_181510391 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_181510391 = mFileName;
+        varB4EAC82CA7396A68D541C85D26508E83_181510391.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_181510391;
         // ---------- Original Method ----------
         //return mFileName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.371 -0400", hash_original_method = "9CC3987533495060FC4949865817E44B", hash_generated_method = "E86A97E31ACA959189568D3FF85B193D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.650 -0400", hash_original_method = "9CC3987533495060FC4949865817E44B", hash_generated_method = "E86A97E31ACA959189568D3FF85B193D")
     public void close() throws IOException {
         guard.close();
         closeDexFile(mCookie);
@@ -84,57 +84,56 @@ public final class DexFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.381 -0400", hash_original_method = "292E8055A30ED290AAAD3D0A5C7397D8", hash_generated_method = "A7F4D170CC773BBB47C897C66C63ABC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "292E8055A30ED290AAAD3D0A5C7397D8", hash_generated_method = "724610FE5364D69B6E8E57A4F649E645")
     public Class loadClass(String name, ClassLoader loader) {
-        Class varB4EAC82CA7396A68D541C85D26508E83_1268464772 = null; //Variable for return #1
-        String slashName;
-        slashName = name.replace('.', '/');
-        varB4EAC82CA7396A68D541C85D26508E83_1268464772 = loadClassBinaryName(slashName, loader);
+        Class varB4EAC82CA7396A68D541C85D26508E83_1827955259 = null; //Variable for return #1
+        String slashName = name.replace('.', '/');
+        varB4EAC82CA7396A68D541C85D26508E83_1827955259 = loadClassBinaryName(slashName, loader);
         addTaint(name.getTaint());
         addTaint(loader.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1268464772.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1268464772;
+        varB4EAC82CA7396A68D541C85D26508E83_1827955259.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1827955259;
         // ---------- Original Method ----------
         //String slashName = name.replace('.', '/');
         //return loadClassBinaryName(slashName, loader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.382 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "1BF368C8FE26E799446BC062A1685516")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "EFFED9465789BB2ED3870D97E83E0FF9")
     public Class loadClassBinaryName(String name, ClassLoader loader) {
-        Class varB4EAC82CA7396A68D541C85D26508E83_314421751 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_314421751 = defineClass(name, loader, mCookie);
+        Class varB4EAC82CA7396A68D541C85D26508E83_722685957 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_722685957 = defineClass(name, loader, mCookie);
         addTaint(name.getTaint());
         addTaint(loader.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_314421751.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_314421751;
+        varB4EAC82CA7396A68D541C85D26508E83_722685957.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_722685957;
         // ---------- Original Method ----------
         //return defineClass(name, loader, mCookie);
     }
 
     
-        private static Class defineClass(String name, ClassLoader loader, int cookie) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static Class defineClass(String name, ClassLoader loader, int cookie) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.383 -0400", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "273C0E2E5DCE140CA0E9215EC82E9D53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.652 -0400", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "38D5B706B89751CC14553B038B813969")
     public Enumeration<String> entries() {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_871819181 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_871819181 = new DFEnum(this);
-        varB4EAC82CA7396A68D541C85D26508E83_871819181.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_871819181;
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_366161473 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_366161473 = new DFEnum(this);
+        varB4EAC82CA7396A68D541C85D26508E83_366161473.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_366161473;
         // ---------- Original Method ----------
         //return new DFEnum(this);
     }
 
     
-        private static String[] getClassNameList(int cookie) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static String[] getClassNameList(int cookie) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.384 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.652 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -160,35 +159,38 @@ public final class DexFile {
     }
 
     
-        private static int openDexFile(String sourceName, String outputName,
+    private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
-        return DSUtils.UNKNOWN_INT;
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097;
     }
 
     
-        private static int openDexFile(byte[] fileContents) {
-        return DSUtils.UNKNOWN_INT;
+    private static int openDexFile(byte[] fileContents) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
 
     
-        private static void closeDexFile(int cookie) {
+    private static void closeDexFile(int cookie) {
     }
 
     
-        public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
-        return DSUtils.UNKNOWN_BOOLEAN;
+    public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;
     }
 
     
     private class DFEnum implements Enumeration<String> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.385 -0400", hash_original_field = "DEC4E8A5D764B68C732DE242B685EABE", hash_generated_field = "B8B828CADFFAE7A5A771AAB7A1527A20")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.653 -0400", hash_original_field = "DEC4E8A5D764B68C732DE242B685EABE", hash_generated_field = "B8B828CADFFAE7A5A771AAB7A1527A20")
 
         private int mIndex;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.385 -0400", hash_original_field = "C666A4E3804CDAD10450450904B324CE", hash_generated_field = "4537F844CA5ED71629B9545AE9D715A7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.653 -0400", hash_original_field = "C666A4E3804CDAD10450450904B324CE", hash_generated_field = "4537F844CA5ED71629B9545AE9D715A7")
 
         private String[] mNameList;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.385 -0400", hash_original_method = "4F1898FBD60AA29C9B2370CB647FB74F", hash_generated_method = "9D343B4BFCB6666D20AB83F17E02C5AD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.653 -0400", hash_original_method = "4F1898FBD60AA29C9B2370CB647FB74F", hash_generated_method = "9D343B4BFCB6666D20AB83F17E02C5AD")
           DFEnum(DexFile df) {
             mIndex = 0;
             mNameList = getClassNameList(mCookie);
@@ -199,21 +201,21 @@ public final class DexFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.404 -0400", hash_original_method = "44B49EF070D2DA767A519B4A12A72A0B", hash_generated_method = "1EA57389AB554EB28CDE098974FC3B59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.654 -0400", hash_original_method = "44B49EF070D2DA767A519B4A12A72A0B", hash_generated_method = "2D4929EF1314C00ABCF34ABA6EBCBA6A")
         public boolean hasMoreElements() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1928557646 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1928557646;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554841106 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554841106;
             // ---------- Original Method ----------
             //return (mIndex < mNameList.length);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.405 -0400", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "EC5AC5055CC86998B2BE68FDCA7A0458")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.655 -0400", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "B2188616125B4E794077892B10B25491")
         public String nextElement() {
-            String varB4EAC82CA7396A68D541C85D26508E83_986229850 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_986229850 = mNameList[mIndex++];
-            varB4EAC82CA7396A68D541C85D26508E83_986229850.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_986229850;
+            String varB4EAC82CA7396A68D541C85D26508E83_750601599 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_750601599 = mNameList[mIndex++];
+            varB4EAC82CA7396A68D541C85D26508E83_750601599.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_750601599;
             // ---------- Original Method ----------
             //return mNameList[mIndex++];
         }

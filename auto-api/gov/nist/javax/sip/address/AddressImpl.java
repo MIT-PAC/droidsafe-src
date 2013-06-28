@@ -11,17 +11,17 @@ import gov.nist.core.*;
 import javax.sip.address.*;
 
 public final class AddressImpl extends NetObject implements javax.sip.address.Address {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.092 -0400", hash_original_field = "40179AAEEFAA5FF10EF85408F632A065", hash_generated_field = "86D11EC31389BCB4DD7EA8E060BE2214")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.164 -0400", hash_original_field = "40179AAEEFAA5FF10EF85408F632A065", hash_generated_field = "86D11EC31389BCB4DD7EA8E060BE2214")
 
     protected int addressType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.092 -0400", hash_original_field = "4498E82679F1B611EFB2C09E044EDE31", hash_generated_field = "1A7036061B9FC3789F96C7F5C73AF8A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.164 -0400", hash_original_field = "4498E82679F1B611EFB2C09E044EDE31", hash_generated_field = "1A7036061B9FC3789F96C7F5C73AF8A8")
 
     protected String displayName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.092 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "F84007EB7463857C9E0240DCE9E79680")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.164 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "F84007EB7463857C9E0240DCE9E79680")
 
     protected GenericURI address;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.093 -0400", hash_original_method = "19BCE3FEC6F8BEE2FAC9ED705C20C9DE", hash_generated_method = "15E1C9067611157B0772065A0F22AF77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.165 -0400", hash_original_method = "19BCE3FEC6F8BEE2FAC9ED705C20C9DE", hash_generated_method = "15E1C9067611157B0772065A0F22AF77")
     public  AddressImpl() {
         this.addressType = NAME_ADDR;
         // ---------- Original Method ----------
@@ -29,22 +29,21 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.104 -0400", hash_original_method = "22D6B687019E482F52E54287A969D6A5", hash_generated_method = "4E886289665A068EEED123150DBA1D5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.165 -0400", hash_original_method = "22D6B687019E482F52E54287A969D6A5", hash_generated_method = "756B61C81C70FB93F63437601287C523")
     public boolean match(Object other) {
         {
-            AddressImpl that;
-            that = (AddressImpl) other;
+            AddressImpl that = (AddressImpl) other;
             {
-                boolean var702C910B5325E5C2A5847E8F6A867289_1166243277 = (that.getMatcher() != null);
-                boolean varCBA521E4644E20B802AFE04533C02C53_581333667 = (that.getMatcher().match(this.encode()));
-                boolean var60CA5F2E78075997A880589878115E51_1729285670 = (address.match(that.address));
-                boolean varCACD682A5D1E34F205E5DFC71C0D0D91_845910962 = (displayName.equalsIgnoreCase(that.displayName)
+                boolean var702C910B5325E5C2A5847E8F6A867289_520146230 = (that.getMatcher() != null);
+                boolean varCBA521E4644E20B802AFE04533C02C53_1882600743 = (that.getMatcher().match(this.encode()));
+                boolean var60CA5F2E78075997A880589878115E51_279396846 = (address.match(that.address));
+                boolean varCACD682A5D1E34F205E5DFC71C0D0D91_575197441 = (displayName.equalsIgnoreCase(that.displayName)
                     && address.match(that.address));
             } //End collapsed parenthetic
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_371716899 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_371716899;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_754706276 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_754706276;
         // ---------- Original Method ----------
         //if (other == null)
             //return true;
@@ -65,15 +64,14 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.105 -0400", hash_original_method = "A988603BA6459B5E85F0C286224314DC", hash_generated_method = "54746D021F67598F576E7A59C22CA6B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.166 -0400", hash_original_method = "A988603BA6459B5E85F0C286224314DC", hash_generated_method = "D97C9DD704D09E1802DA23E3D631D76B")
     public HostPort getHostPort() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_844911932 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_1652352785 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("address is not a SipUri");
-        SipUri uri;
-        uri = (SipUri) address;
-        varB4EAC82CA7396A68D541C85D26508E83_844911932 = uri.getHostPort();
-        varB4EAC82CA7396A68D541C85D26508E83_844911932.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_844911932;
+        SipUri uri = (SipUri) address;
+        varB4EAC82CA7396A68D541C85D26508E83_1652352785 = uri.getHostPort();
+        varB4EAC82CA7396A68D541C85D26508E83_1652352785.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1652352785;
         // ---------- Original Method ----------
         //if (!(address instanceof SipUri))
             //throw new RuntimeException("address is not a SipUri");
@@ -82,14 +80,13 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.106 -0400", hash_original_method = "D8DDF6A069BBACCEBB239C4EC58E5A27", hash_generated_method = "58C39E3263D35285A006DE8B18280CB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.166 -0400", hash_original_method = "D8DDF6A069BBACCEBB239C4EC58E5A27", hash_generated_method = "FE4C96222DB994DA3E60C77845C149CD")
     public int getPort() {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("address is not a SipUri");
-        SipUri uri;
-        uri = (SipUri) address;
-        int var29430954332FCA6688F9B47637AA218C_256372555 = (uri.getHostPort().getPort());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724506042 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724506042;
+        SipUri uri = (SipUri) address;
+        int var29430954332FCA6688F9B47637AA218C_73535361 = (uri.getHostPort().getPort());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40530690 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40530690;
         // ---------- Original Method ----------
         //if (!(address instanceof SipUri))
             //throw new RuntimeException("address is not a SipUri");
@@ -98,27 +95,26 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.106 -0400", hash_original_method = "172515F4F60E1E2B63F4DF9418CB15A7", hash_generated_method = "A5477E58DD0965C8E3E6669C565A7362")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.167 -0400", hash_original_method = "172515F4F60E1E2B63F4DF9418CB15A7", hash_generated_method = "7ADB07341E6202ECE720B0BAFA484D80")
     public String getUserAtHostPort() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1590493644 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_94264190 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1065785058 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1427224535 = null; //Variable for return #2
         {
-            SipUri uri;
-            uri = (SipUri) address;
-            varB4EAC82CA7396A68D541C85D26508E83_1590493644 = uri.getUserAtHostPort();
+            SipUri uri = (SipUri) address;
+            varB4EAC82CA7396A68D541C85D26508E83_1065785058 = uri.getUserAtHostPort();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_94264190 = address.toString();
-        String varA7E53CE21691AB073D9660D615818899_2136677122; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1427224535 = address.toString();
+        String varA7E53CE21691AB073D9660D615818899_599399552; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2136677122 = varB4EAC82CA7396A68D541C85D26508E83_1590493644;
+                varA7E53CE21691AB073D9660D615818899_599399552 = varB4EAC82CA7396A68D541C85D26508E83_1065785058;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2136677122 = varB4EAC82CA7396A68D541C85D26508E83_94264190;
+                varA7E53CE21691AB073D9660D615818899_599399552 = varB4EAC82CA7396A68D541C85D26508E83_1427224535;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2136677122.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2136677122;
+        varA7E53CE21691AB073D9660D615818899_599399552.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_599399552;
         // ---------- Original Method ----------
         //if (address instanceof SipUri) {
             //SipUri uri = (SipUri) address;
@@ -128,15 +124,14 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.109 -0400", hash_original_method = "C2899C61B0488A683F191A3E8A7E482B", hash_generated_method = "E11DB719FFC1DCA492ACABDCD30C9FA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.168 -0400", hash_original_method = "C2899C61B0488A683F191A3E8A7E482B", hash_generated_method = "D9AE27F7898D0F516F5F7C34328250E3")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1049331029 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1577046735 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("address is not a SipUri");
-        SipUri uri;
-        uri = (SipUri) address;
-        varB4EAC82CA7396A68D541C85D26508E83_1049331029 = uri.getHostPort().getHost().getHostname();
-        varB4EAC82CA7396A68D541C85D26508E83_1049331029.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1049331029;
+        SipUri uri = (SipUri) address;
+        varB4EAC82CA7396A68D541C85D26508E83_1577046735 = uri.getHostPort().getHost().getHostname();
+        varB4EAC82CA7396A68D541C85D26508E83_1577046735.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1577046735;
         // ---------- Original Method ----------
         //if (!(address instanceof SipUri))
             //throw new RuntimeException("address is not a SipUri");
@@ -145,11 +140,10 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.110 -0400", hash_original_method = "0E39EDEFDBAD265D57AEBE040714053D", hash_generated_method = "11A6E61BAFE3C37BA72210B69AE5ECB2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.169 -0400", hash_original_method = "0E39EDEFDBAD265D57AEBE040714053D", hash_generated_method = "661D6DAC2E27E16396D14ABA5C1BF10C")
     public void removeParameter(String parameterName) {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("address is not a SipUri");
-        SipUri uri;
-        uri = (SipUri) address;
+        SipUri uri = (SipUri) address;
         uri.removeParameter(parameterName);
         addTaint(parameterName.getTaint());
         // ---------- Original Method ----------
@@ -160,20 +154,20 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.110 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "44E8B9D94D021CC9E5A6266030612A97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.171 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "C8776556AE33E8F7F05B2683BECBB4A1")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1744203714 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1744203714 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1744203714.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1744203714;
+        String varB4EAC82CA7396A68D541C85D26508E83_1317387607 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1317387607 = encode(new StringBuffer()).toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1317387607.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1317387607;
         // ---------- Original Method ----------
         //return encode(new StringBuffer()).toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.111 -0400", hash_original_method = "F68604FD786D42AC18C162475B2762A0", hash_generated_method = "53F4F1217E3D53B64C64087BACAFB46F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.172 -0400", hash_original_method = "F68604FD786D42AC18C162475B2762A0", hash_generated_method = "01FB100C7F375ABB8F45438DAC4167BD")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_678881630 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_268076212 = null; //Variable for return #1
         {
             buffer.append('*');
         } //End block
@@ -190,10 +184,10 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
                 buffer.append(GREATER_THAN);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_678881630 = buffer;
+        varB4EAC82CA7396A68D541C85D26508E83_268076212 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_678881630.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_678881630;
+        varB4EAC82CA7396A68D541C85D26508E83_268076212.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_268076212;
         // ---------- Original Method ----------
         //if (this.addressType == WILD_CARD) {
             //buffer.append('*');
@@ -217,16 +211,16 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.111 -0400", hash_original_method = "93137A429171577005AC852AA3CBD92B", hash_generated_method = "9C7AADCD150AED7BC39171361C7330EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.173 -0400", hash_original_method = "93137A429171577005AC852AA3CBD92B", hash_generated_method = "A44FC3660D4E209A4E35DC19A50AAFD3")
     public int getAddressType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437296587 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437296587;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215300267 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215300267;
         // ---------- Original Method ----------
         //return addressType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.111 -0400", hash_original_method = "9F1FE4476648947E875579C9BD408A94", hash_generated_method = "9C4A3E70947FB3FDA091FB999E129026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.173 -0400", hash_original_method = "9F1FE4476648947E875579C9BD408A94", hash_generated_method = "9C4A3E70947FB3FDA091FB999E129026")
     public void setAddressType(int atype) {
         addressType = atype;
         // ---------- Original Method ----------
@@ -234,18 +228,18 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.122 -0400", hash_original_method = "050EB531E383683E34CFFBB41EC12665", hash_generated_method = "70C4DF7B395CDB56681AAE2E31CDB4F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "050EB531E383683E34CFFBB41EC12665", hash_generated_method = "CB2C8D114E99EB672520005A06950FD4")
     public String getDisplayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1414936549 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1414936549 = displayName;
-        varB4EAC82CA7396A68D541C85D26508E83_1414936549.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1414936549;
+        String varB4EAC82CA7396A68D541C85D26508E83_117155212 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_117155212 = displayName;
+        varB4EAC82CA7396A68D541C85D26508E83_117155212.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_117155212;
         // ---------- Original Method ----------
         //return displayName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.122 -0400", hash_original_method = "20237627212B7A29DEC009BA073F5A0F", hash_generated_method = "22F780AE0AAD394C441B1705A60742F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "20237627212B7A29DEC009BA073F5A0F", hash_generated_method = "22F780AE0AAD394C441B1705A60742F1")
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
         this.addressType = NAME_ADDR;
@@ -255,7 +249,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.122 -0400", hash_original_method = "EB99F908657CD76194DE95632B999EA3", hash_generated_method = "5BB3C8C1253F38C0663C21B0AFC0573D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.174 -0400", hash_original_method = "EB99F908657CD76194DE95632B999EA3", hash_generated_method = "5BB3C8C1253F38C0663C21B0AFC0573D")
     public void setAddess(javax.sip.address.URI address) {
         this.address = (GenericURI) address;
         // ---------- Original Method ----------
@@ -263,26 +257,25 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.123 -0400", hash_original_method = "3B6DAA204E499460163C13A0179862F4", hash_generated_method = "B968406B72076CBCBA96BED3CECDCD26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "3B6DAA204E499460163C13A0179862F4", hash_generated_method = "F322C07ACBD97E6FA4258DB590CF2265")
     public int hashCode() {
-        int var061A8066721511703856EB3A8F80EC74_714954867 = (this.address.hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850505874 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850505874;
+        int var061A8066721511703856EB3A8F80EC74_869513497 = (this.address.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108570576 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108570576;
         // ---------- Original Method ----------
         //return this.address.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.123 -0400", hash_original_method = "2FE036AE685D31E73E4BA8A8E1238828", hash_generated_method = "2F2A9FEF166F914FC2C86EC592796BC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "2FE036AE685D31E73E4BA8A8E1238828", hash_generated_method = "7F05BD51B65641333A0503074473FA7C")
     public boolean equals(Object other) {
         {
-            Address o;
-            o = (Address) other;
-            boolean var34AFE256CC6216D17FE120A6537E01FB_1928267938 = (this.getURI().equals( o.getURI() ));
+            final Address o = (Address) other;
+            boolean var34AFE256CC6216D17FE120A6537E01FB_258372592 = (this.getURI().equals( o.getURI() ));
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1511149299 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1511149299;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196625296 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_196625296;
         // ---------- Original Method ----------
         //if (this==other) return true;
         //if (other instanceof Address) {
@@ -293,16 +286,16 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.123 -0400", hash_original_method = "B0F53EB98996816F5E75DFC90AF9D2B6", hash_generated_method = "C80C0845C214557AE03B2A9D9C8F8CF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "B0F53EB98996816F5E75DFC90AF9D2B6", hash_generated_method = "86BD0B6DEB4300E57B84C635345130FC")
     public boolean hasDisplayName() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011270969 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011270969;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985594755 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_985594755;
         // ---------- Original Method ----------
         //return (displayName != null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.131 -0400", hash_original_method = "1C9F40C92EDF6ED97BB2D87B31D06D96", hash_generated_method = "5CD955E1E7F6119F595EEFAF2698F225")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.175 -0400", hash_original_method = "1C9F40C92EDF6ED97BB2D87B31D06D96", hash_generated_method = "5CD955E1E7F6119F595EEFAF2698F225")
     public void removeDisplayName() {
         displayName = null;
         // ---------- Original Method ----------
@@ -310,36 +303,36 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.132 -0400", hash_original_method = "DEDDE1E197FB1DB769CF6C0A06F1A55D", hash_generated_method = "CFC1F965C7C5AC881B43EC7D808557C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.176 -0400", hash_original_method = "DEDDE1E197FB1DB769CF6C0A06F1A55D", hash_generated_method = "542F8D629390932E6A8BA185F235D866")
     public boolean isSIPAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449133739 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449133739;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844373987 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1844373987;
         // ---------- Original Method ----------
         //return address instanceof SipUri;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.132 -0400", hash_original_method = "1CCD793210D749E7DAD6ED996CE553FC", hash_generated_method = "BA7A982B9221767BA8D611C86DB83953")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.176 -0400", hash_original_method = "1CCD793210D749E7DAD6ED996CE553FC", hash_generated_method = "00C7135BD92FD0101EE20B7F8598A213")
     public URI getURI() {
-        URI varB4EAC82CA7396A68D541C85D26508E83_1754786290 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1754786290 = this.address;
-        varB4EAC82CA7396A68D541C85D26508E83_1754786290.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1754786290;
+        URI varB4EAC82CA7396A68D541C85D26508E83_1124937113 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1124937113 = this.address;
+        varB4EAC82CA7396A68D541C85D26508E83_1124937113.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1124937113;
         // ---------- Original Method ----------
         //return this.address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.132 -0400", hash_original_method = "6DCA089E698119AE5E5CAA45D8347BA0", hash_generated_method = "4700FB0A147EA48720A3CD5B104554B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.177 -0400", hash_original_method = "6DCA089E698119AE5E5CAA45D8347BA0", hash_generated_method = "239789603FD327C51072A2AB53770919")
     public boolean isWildcard() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1140730763 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1140730763;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175799711 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1175799711;
         // ---------- Original Method ----------
         //return this.addressType == WILD_CARD;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.138 -0400", hash_original_method = "EE5571D54561E1127EBAFF3098CB1511", hash_generated_method = "07B1C81B131244B8D0886DCB048597CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.177 -0400", hash_original_method = "EE5571D54561E1127EBAFF3098CB1511", hash_generated_method = "07B1C81B131244B8D0886DCB048597CC")
     public void setURI(URI address) {
         this.address = (GenericURI) address;
         // ---------- Original Method ----------
@@ -347,7 +340,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.139 -0400", hash_original_method = "0E80639575489DB45C2F9AFF28620E23", hash_generated_method = "1C2FA3B94EDDE018E1E554932AD46F77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.178 -0400", hash_original_method = "0E80639575489DB45C2F9AFF28620E23", hash_generated_method = "1C2FA3B94EDDE018E1E554932AD46F77")
     public void setUser(String user) {
         ((SipUri) this.address).setUser(user);
         addTaint(user.getTaint());
@@ -356,7 +349,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.139 -0400", hash_original_method = "4CDCC5D804344627E65CF6AE2B92722E", hash_generated_method = "67822606963D210D20A964DD86A6F039")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.178 -0400", hash_original_method = "4CDCC5D804344627E65CF6AE2B92722E", hash_generated_method = "67822606963D210D20A964DD86A6F039")
     public void setWildCardFlag() {
         this.addressType = WILD_CARD;
         this.address = new SipUri();
@@ -368,15 +361,14 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.139 -0400", hash_original_method = "0B091F8828B1420FFE66EE8D50F59446", hash_generated_method = "45ACEEA77C9999BC4E769FFD6605638F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.179 -0400", hash_original_method = "0B091F8828B1420FFE66EE8D50F59446", hash_generated_method = "E4E7CF72AC4D51C5E88E88AF8D69D65E")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2107424194 = null; //Variable for return #1
-        AddressImpl retval;
-        retval = (AddressImpl) super.clone();
+        Object varB4EAC82CA7396A68D541C85D26508E83_357364891 = null; //Variable for return #1
+        AddressImpl retval = (AddressImpl) super.clone();
         retval.address = (GenericURI) this.address.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_2107424194 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_2107424194.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2107424194;
+        varB4EAC82CA7396A68D541C85D26508E83_357364891 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_357364891.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_357364891;
         // ---------- Original Method ----------
         //AddressImpl retval = (AddressImpl) super.clone();
         //if (this.address != null)
@@ -385,16 +377,16 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.140 -0400", hash_original_field = "B507F603877B2D8A3AA8AA4419600CFE", hash_generated_field = "90C65EB47E3A467319F1CF869F07E825")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.179 -0400", hash_original_field = "B507F603877B2D8A3AA8AA4419600CFE", hash_generated_field = "2326BD2A1EC89625540C772C74ACDC21")
 
-    private static long serialVersionUID = 429592779568617259L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.140 -0400", hash_original_field = "BE8003BF2E9AA0082803EE27135CDC7C", hash_generated_field = "222B3DF6AA7EC58590F0AE49E8EC6A9D")
+    private static final long serialVersionUID = 429592779568617259L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.179 -0400", hash_original_field = "BE8003BF2E9AA0082803EE27135CDC7C", hash_generated_field = "222B3DF6AA7EC58590F0AE49E8EC6A9D")
 
     public static final int NAME_ADDR = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.140 -0400", hash_original_field = "C1E542609A4B1773F293F63B2222A709", hash_generated_field = "2E93044CF8C5AA42D1F0A2CA07805A14")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.179 -0400", hash_original_field = "C1E542609A4B1773F293F63B2222A709", hash_generated_field = "2E93044CF8C5AA42D1F0A2CA07805A14")
 
     public static final int ADDRESS_SPEC = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.140 -0400", hash_original_field = "EF31971D96CF2A18B45B5D6CAA869866", hash_generated_field = "AA1965AB7CEEE0F896A9EFD409064D60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.179 -0400", hash_original_field = "EF31971D96CF2A18B45B5D6CAA869866", hash_generated_field = "AA1965AB7CEEE0F896A9EFD409064D60")
 
     public static final int WILD_CARD = 3;
 }

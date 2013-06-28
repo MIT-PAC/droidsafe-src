@@ -21,14 +21,14 @@ import org.apache.http.ProtocolException;
 
 public class RequestTargetHost implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.510 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.648 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
     public  RequestTargetHost() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.510 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "80BDF570F970559F9D80FE038A20CBAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.649 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "C74523EB77AEBB8BDBC8E4069A4AEDEC")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
@@ -37,29 +37,24 @@ public class RequestTargetHost implements HttpRequestInterceptor {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
         } //End block
         {
-            boolean var42F48AC317DCD4FCC14CFA497F63A10F_435212680 = (!request.containsHeader(HTTP.TARGET_HOST));
+            boolean var42F48AC317DCD4FCC14CFA497F63A10F_906651514 = (!request.containsHeader(HTTP.TARGET_HOST));
             {
-                HttpHost targethost;
-                targethost = (HttpHost) context
+                HttpHost targethost = (HttpHost) context
                 .getAttribute(ExecutionContext.HTTP_TARGET_HOST);
                 {
-                    HttpConnection conn;
-                    conn = (HttpConnection) context
+                    HttpConnection conn = (HttpConnection) context
                     .getAttribute(ExecutionContext.HTTP_CONNECTION);
                     {
-                        InetAddress address;
-                        address = ((HttpInetConnection) conn).getRemoteAddress();
-                        int port;
-                        port = ((HttpInetConnection) conn).getRemotePort();
+                        InetAddress address = ((HttpInetConnection) conn).getRemoteAddress();
+                        int port = ((HttpInetConnection) conn).getRemotePort();
                         {
                             targethost = new HttpHost(address.getHostName(), port);
                         } //End block
                     } //End block
                     {
-                        ProtocolVersion ver;
-                        ver = request.getRequestLine().getProtocolVersion();
+                        ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
                         {
-                            boolean var6975353BB6195CBDBBE6503768DE7665_1857099237 = (ver.lessEquals(HttpVersion.HTTP_1_0));
+                            boolean var6975353BB6195CBDBBE6503768DE7665_1868055831 = (ver.lessEquals(HttpVersion.HTTP_1_0));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Target host missing");
                             } //End block

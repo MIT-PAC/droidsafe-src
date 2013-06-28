@@ -11,35 +11,29 @@ import java.math.BigInteger;
 
 class WNafMultiplier implements ECMultiplier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.476 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.893 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
     public WNafMultiplier ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.483 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "D599387B9729858C582DDB255A4FDD2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.894 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "B3D368199CFD518FC1CCB87BD4860BAB")
     public byte[] windowNaf(byte width, BigInteger k) {
-        byte[] wnaf;
-        wnaf = new byte[k.bitLength() + 1];
-        short pow2wB;
-        pow2wB = (short)(1 << width);
-        BigInteger pow2wBI;
-        pow2wBI = BigInteger.valueOf(pow2wB);
-        int i;
-        i = 0;
-        int length;
-        length = 0;
+        byte[] wnaf = new byte[k.bitLength() + 1];
+        short pow2wB = (short)(1 << width);
+        BigInteger pow2wBI = BigInteger.valueOf(pow2wB);
+        int i = 0;
+        int length = 0;
         {
-            boolean var90BEB270CA27021819A075365AD08434_259846388 = (k.signum() > 0);
+            boolean var90BEB270CA27021819A075365AD08434_102403106 = (k.signum() > 0);
             {
                 {
-                    boolean var383F976E410154A745E3FC06B83A2214_615269018 = (k.testBit(0));
+                    boolean var383F976E410154A745E3FC06B83A2214_797256411 = (k.testBit(0));
                     {
-                        BigInteger remainder;
-                        remainder = k.mod(pow2wBI);
+                        BigInteger remainder = k.mod(pow2wBI);
                         {
-                            boolean var1DBB8A5A29EBE1DCC5BC003EFB8FD3E2_2080268756 = (remainder.testBit(width - 1));
+                            boolean var1DBB8A5A29EBE1DCC5BC003EFB8FD3E2_1073894253 = (remainder.testBit(width - 1));
                             {
                                 wnaf[i] = (byte)(remainder.intValue() - pow2wB);
                             } //End block
@@ -57,21 +51,20 @@ class WNafMultiplier implements ECMultiplier {
                 k = k.shiftRight(1);
             } //End block
         } //End collapsed parenthetic
-        byte[] wnafShort;
-        wnafShort = new byte[length];
+        byte[] wnafShort = new byte[length];
         System.arraycopy(wnaf, 0, wnafShort, 0, length);
         addTaint(width);
         addTaint(k.getTaint());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1840528470 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1840528470;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1145183222 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1145183222;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.486 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "38B82264B7777D382634911C35A119CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.897 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "A4B251DC9CDE5AB9FDD850B4272B4AC0")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_865188229 = null; //Variable for return #1
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_667666737 = null; //Variable for return #1
         WNafPreCompInfo wnafPreCompInfo;
         {
             wnafPreCompInfo = (WNafPreCompInfo)preCompInfo;
@@ -79,8 +72,7 @@ class WNafMultiplier implements ECMultiplier {
         {
             wnafPreCompInfo = new WNafPreCompInfo();
         } //End block
-        int m;
-        m = k.bitLength();
+        int m = k.bitLength();
         byte width;
         int reqPreCompLen;
         {
@@ -121,12 +113,9 @@ class WNafMultiplier implements ECMultiplier {
                 } //End block
             } //End block
         } //End block
-        int preCompLen;
-        preCompLen = 1;
-        ECPoint[] preComp;
-        preComp = wnafPreCompInfo.getPreComp();
-        ECPoint twiceP;
-        twiceP = wnafPreCompInfo.getTwiceP();
+        int preCompLen = 1;
+        ECPoint[] preComp = wnafPreCompInfo.getPreComp();
+        ECPoint twiceP = wnafPreCompInfo.getTwiceP();
         {
             preComp = new ECPoint[]{ p };
         } //End block
@@ -137,27 +126,21 @@ class WNafMultiplier implements ECMultiplier {
             twiceP = p.twice();
         } //End block
         {
-            ECPoint[] oldPreComp;
-            oldPreComp = preComp;
+            ECPoint[] oldPreComp = preComp;
             preComp = new ECPoint[reqPreCompLen];
             System.arraycopy(oldPreComp, 0, preComp, 0, preCompLen);
             {
-                int i;
-                i = preCompLen;
+                int i = preCompLen;
                 {
                     preComp[i] = twiceP.add(preComp[i - 1]);
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        byte[] wnaf;
-        wnaf = windowNaf(width, k);
-        int l;
-        l = wnaf.length;
-        ECPoint q;
-        q = p.getCurve().getInfinity();
+        byte[] wnaf = windowNaf(width, k);
+        int l = wnaf.length;
+        ECPoint q = p.getCurve().getInfinity();
         {
-            int i;
-            i = l - 1;
+            int i = l - 1;
             {
                 q = q.twice();
                 {
@@ -173,12 +156,12 @@ class WNafMultiplier implements ECMultiplier {
         wnafPreCompInfo.setPreComp(preComp);
         wnafPreCompInfo.setTwiceP(twiceP);
         p.setPreCompInfo(wnafPreCompInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_865188229 = q;
+        varB4EAC82CA7396A68D541C85D26508E83_667666737 = q;
         addTaint(p.getTaint());
         addTaint(k.getTaint());
         addTaint(preCompInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_865188229.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_865188229;
+        varB4EAC82CA7396A68D541C85D26508E83_667666737.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_667666737;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -18,7 +18,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class CipherSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.784 -0400", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "B175E18BC1028895593001486C8188AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.056 -0400", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "B175E18BC1028895593001486C8188AB")
     public  CipherSpi() {
         // ---------- Original Method ----------
     }
@@ -67,7 +67,7 @@ public abstract class CipherSpi {
             throws ShortBufferException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.811 -0400", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "90B55FBE93939985CF26E2730BED71E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.061 -0400", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "71641849169AEEBD0ACAE505BA011E25")
     protected int engineUpdate(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("input == null");
@@ -75,18 +75,15 @@ public abstract class CipherSpi {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("output == null");
         } //End block
-        int position;
-        position = input.position();
-        int limit;
-        limit = input.limit();
+        int position = input.position();
+        int limit = input.limit();
         byte[] bInput;
         byte[] bOutput;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_1404143011 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_1559161355 = (input.hasArray());
             {
                 bInput = input.array();
-                int offset;
-                offset = input.arrayOffset();
+                int offset = input.arrayOffset();
                 bOutput = engineUpdate(bInput, offset + position, limit - position);
                 input.position(limit);
             } //End block
@@ -97,7 +94,7 @@ public abstract class CipherSpi {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var57E518510FEB6FAA6CB151B8CC86FE3E_288159751 = (output.remaining() < bOutput.length);
+            boolean var57E518510FEB6FAA6CB151B8CC86FE3E_1575163896 = (output.remaining() < bOutput.length);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ShortBufferException("output buffer too small");
             } //End block
@@ -112,8 +109,8 @@ public abstract class CipherSpi {
         } //End block
         addTaint(input.getTaint());
         addTaint(output.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913194947 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913194947;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015271227 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015271227;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -129,7 +126,7 @@ public abstract class CipherSpi {
             BadPaddingException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.812 -0400", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "79BA61BF0738934D809B3998D4056F4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.064 -0400", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "C1ECF807D2EBF3F83B7FA62806CA45F7")
     protected int engineDoFinal(ByteBuffer input, ByteBuffer output) throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
         {
@@ -138,18 +135,15 @@ public abstract class CipherSpi {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("output == null");
         } //End block
-        int position;
-        position = input.position();
-        int limit;
-        limit = input.limit();
+        int position = input.position();
+        int limit = input.limit();
         byte[] bInput;
         byte[] bOutput;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_1804920689 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_529304860 = (input.hasArray());
             {
                 bInput = input.array();
-                int offset;
-                offset = input.arrayOffset();
+                int offset = input.arrayOffset();
                 bOutput = engineDoFinal(bInput, offset + position, limit - position);
                 input.position(limit);
             } //End block
@@ -160,7 +154,7 @@ public abstract class CipherSpi {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var57E518510FEB6FAA6CB151B8CC86FE3E_18200763 = (output.remaining() < bOutput.length);
+            boolean var57E518510FEB6FAA6CB151B8CC86FE3E_1795752021 = (output.remaining() < bOutput.length);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ShortBufferException("output buffer too small");
             } //End block
@@ -175,25 +169,25 @@ public abstract class CipherSpi {
         } //End block
         addTaint(input.getTaint());
         addTaint(output.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645876132 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645876132;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237770889 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237770889;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.817 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "884403F4AF67D2409672D23F267155B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.065 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "CC5924A50484645B334D815958150D7E")
     protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(key.getTaint());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2144826074 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_2144826074;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1677708424 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1677708424;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.821 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "6F6C9C17AA5B39A8A3D807E57401C88D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.065 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "6F6C9C17AA5B39A8A3D807E57401C88D")
     protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException, NoSuchAlgorithmException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -205,12 +199,12 @@ public abstract class CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.821 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "30EF0CA8997A8A5C310EA01F1FCE2F85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.066 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "9797C9D6FC41E54B05F84382F07D0323")
     protected int engineGetKeySize(Key key) throws InvalidKeyException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(key.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111473234 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111473234;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458416581 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458416581;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class ErrorInfoParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.726 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.940 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
     public  ErrorInfoParser(String errorInfo) {
         super(errorInfo);
         addTaint(errorInfo.getTaint());
@@ -21,7 +21,7 @@ public class ErrorInfoParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.726 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.940 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
     protected  ErrorInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,35 +29,31 @@ public class ErrorInfoParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.727 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "5DEF3CE6C3A3691D49C3535107DB7D7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.942 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "EBCF1238AE2BBD5FCD156C1D738901BD")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1418395132 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_106385511 = null; //Variable for return #1
         dbg_enter("ErrorInfoParser.parse");
-        ErrorInfoList list;
-        list = new ErrorInfoList();
+        ErrorInfoList list = new ErrorInfoList();
         try 
         {
             headerName(TokenTypes.ERROR_INFO);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_595270544 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1559255356 = (lexer.lookAhead(0) != '\n');
                 {
                     {
-                        ErrorInfo errorInfo;
-                        errorInfo = new ErrorInfo();
+                        ErrorInfo errorInfo = new ErrorInfo();
                         errorInfo.setHeaderName(SIPHeaderNames.ERROR_INFO);
                         this.lexer.SPorHT();
                         this.lexer.match('<');
-                        URLParser urlParser;
-                        urlParser = new URLParser((Lexer) this.lexer);
-                        GenericURI uri;
-                        uri = urlParser.uriReference( true );
+                        URLParser urlParser = new URLParser((Lexer) this.lexer);
+                        GenericURI uri = urlParser.uriReference( true );
                         errorInfo.setErrorInfo(uri);
                         this.lexer.match('>');
                         this.lexer.SPorHT();
                         super.parse(errorInfo);
                         list.add(errorInfo);
                         {
-                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_31744289 = (lexer.lookAhead(0) == ',');
+                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1783998622 = (lexer.lookAhead(0) == ',');
                             {
                                 this.lexer.match(',');
                             } //End block
@@ -65,14 +61,14 @@ public class ErrorInfoParser extends ParametersParser {
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1418395132 = list;
+            varB4EAC82CA7396A68D541C85D26508E83_106385511 = list;
         } //End block
         finally 
         {
             dbg_leave("ErrorInfoParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1418395132.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1418395132;
+        varB4EAC82CA7396A68D541C85D26508E83_106385511.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_106385511;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

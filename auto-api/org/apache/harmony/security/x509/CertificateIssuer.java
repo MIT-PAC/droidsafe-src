@@ -15,11 +15,11 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
 public final class CertificateIssuer extends ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.453 -0400", hash_original_field = "3E6C2BC1E7F7E5E8C450394C747A8E9F", hash_generated_field = "30FEA84FB35EF28DB029D29044BA91EC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.715 -0400", hash_original_field = "3E6C2BC1E7F7E5E8C450394C747A8E9F", hash_generated_field = "30FEA84FB35EF28DB029D29044BA91EC")
 
     private X500Principal issuer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.453 -0400", hash_original_method = "DA4BDBC496D2A998B5C29C74B17A91EA", hash_generated_method = "45AD7D84F74F2142DA3FF47565C306EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.715 -0400", hash_original_method = "DA4BDBC496D2A998B5C29C74B17A91EA", hash_generated_method = "45AD7D84F74F2142DA3FF47565C306EC")
     public  CertificateIssuer(byte[] encoding) {
         super(encoding);
         addTaint(encoding[0]);
@@ -27,15 +27,15 @@ public final class CertificateIssuer extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.453 -0400", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "95777FB7C45683DAA84E5AA8720AF5C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.716 -0400", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "3AB899224B2E9AD81C68A2A2DB13BA87")
     public X500Principal getIssuer() throws IOException {
-        X500Principal varB4EAC82CA7396A68D541C85D26508E83_830169855 = null; //Variable for return #1
+        X500Principal varB4EAC82CA7396A68D541C85D26508E83_239137413 = null; //Variable for return #1
         {
             issuer = (X500Principal) ASN1.decode(getEncoded());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_830169855 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_830169855.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_830169855;
+        varB4EAC82CA7396A68D541C85D26508E83_239137413 = issuer;
+        varB4EAC82CA7396A68D541C85D26508E83_239137413.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_239137413;
         // ---------- Original Method ----------
         //if (issuer == null) {
             //issuer = (X500Principal) ASN1.decode(getEncoded());
@@ -44,7 +44,7 @@ public final class CertificateIssuer extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.458 -0400", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "E4759D7A5C40065FD80574D86B7EEF98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.717 -0400", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "E4759D7A5C40065FD80574D86B7EEF98")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Certificate Issuer: ");
@@ -76,7 +76,7 @@ public final class CertificateIssuer extends ExtensionValue {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.458 -0400", hash_original_field = "26467BCE56C2E2E5052FBB838762A5FF", hash_generated_field = "FE3BF8D4A6349EB434E9E8BE6B183663")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.717 -0400", hash_original_field = "26467BCE56C2E2E5052FBB838762A5FF", hash_generated_field = "FE3BF8D4A6349EB434E9E8BE6B183663")
 
     public static final ASN1Type ASN1 = new ASN1Sequence(new ASN1Type[] { GeneralName.ASN1 }) {
         @Override public Object getDecodedObject(BerInputStream in) {
@@ -88,5 +88,16 @@ public final class CertificateIssuer extends ExtensionValue {
             values[0] = object;
         }
     };
+    // orphaned legacy method
+    @Override protected void getValues(Object object, Object[] values) {
+            values[0] = object;
+        }
+    
+    // orphaned legacy method
+    @Override public Object getDecodedObject(BerInputStream in) {
+            return ((Name) ((GeneralName) ((Object[]) in.content)[0])
+                    .getName()).getX500Principal();
+        }
+    
 }
 

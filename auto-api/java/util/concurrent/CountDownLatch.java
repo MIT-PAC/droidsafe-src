@@ -11,11 +11,11 @@ import java.util.concurrent.locks.*;
 import java.util.concurrent.atomic.*;
 
 public class CountDownLatch {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.347 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.732 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
     private Sync sync;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.347 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "17F26F23175D66830A53D7DC96BBD403")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.732 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "17F26F23175D66830A53D7DC96BBD403")
     public  CountDownLatch(int count) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("count < 0");
         this.sync = new Sync(count);
@@ -25,7 +25,7 @@ public class CountDownLatch {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.347 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
         // ---------- Original Method ----------
@@ -33,19 +33,19 @@ public class CountDownLatch {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.348 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "B70F8C19E150E4BF2369E81A2E67EAB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "DA42A080D1DB8237A43BD785CF17F9E5")
     public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
-        boolean varD12778331A5B05E1E52D9468F6FF0E07_1228938971 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
+        boolean varD12778331A5B05E1E52D9468F6FF0E07_1324949960 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
         addTaint(timeout);
         addTaint(unit.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853573662 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853573662;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356;
         // ---------- Original Method ----------
         //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.348 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
     public void countDown() {
         sync.releaseShared(1);
         // ---------- Original Method ----------
@@ -53,22 +53,22 @@ public class CountDownLatch {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.348 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "F535A0C546861A03B9FFFDAC871C3179")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "D87D4013127EF3F508CC65AB9219059D")
     public long getCount() {
-        long var3E7EE26A585DAEF98B448A2C779F0B42_504580203 = (sync.getCount());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1983493959 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1983493959;
+        long var3E7EE26A585DAEF98B448A2C779F0B42_1986119879 = (sync.getCount());
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677;
         // ---------- Original Method ----------
         //return sync.getCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.372 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "A0CCE097BE6581C0A9640D2D7F51D500")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "0D4C4DD29E49EB6C90F9B2C82E66BA44")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1741835581 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1741835581 = super.toString() + "[Count = " + sync.getCount() + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1741835581.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1741835581;
+        String varB4EAC82CA7396A68D541C85D26508E83_165540453 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_165540453 = super.toString() + "[Count = " + sync.getCount() + "]";
+        varB4EAC82CA7396A68D541C85D26508E83_165540453.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_165540453;
         // ---------- Original Method ----------
         //return super.toString() + "[Count = " + sync.getCount() + "]";
     }
@@ -76,7 +76,7 @@ public class CountDownLatch {
     
     private static final class Sync extends AbstractQueuedSynchronizer {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.372 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "9BB36C580E3DFB237981164E8A505DAF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.735 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "9BB36C580E3DFB237981164E8A505DAF")
           Sync(int count) {
             setState(count);
             addTaint(count);
@@ -85,43 +85,41 @@ public class CountDownLatch {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.372 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "4656CE709F4FAD8761CE8CCB442BF3F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.735 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "7621DB553093C3F06126807CD2505142")
          int getCount() {
-            int var376B5C2087169E76FB6628D31DCC9663_1351331216 = (getState());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_989644849 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_989644849;
+            int var376B5C2087169E76FB6628D31DCC9663_1358799117 = (getState());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722;
             // ---------- Original Method ----------
             //return getState();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.373 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "76A5C516B1360D91E9186B1D580F5172")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "4A0E07E5F8708787A96DFED36D869544")
         protected int tryAcquireShared(int acquires) {
             {
-                boolean varB9A8967EEEE626B2D88454F1CD4A1CB3_11471028 = ((getState() == 0));
+                boolean varB9A8967EEEE626B2D88454F1CD4A1CB3_997306760 = ((getState() == 0));
             } //End flattened ternary
             addTaint(acquires);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_118036020 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_118036020;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195;
             // ---------- Original Method ----------
             //return (getState() == 0) ? 1 : -1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.373 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "3A83BDFA419C8C46EB0872869F4E9BC6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "745CBE0E276CBDD7ADDF0A30C61B5EA1")
         protected boolean tryReleaseShared(int releases) {
             {
-                int c;
-                c = getState();
-                int nextc;
-                nextc = c-1;
+                int c = getState();
+                int nextc = c-1;
                 {
-                    boolean var525F59EF5A984E7DE1A679CCEEFC8101_1337132781 = (compareAndSetState(c, nextc));
+                    boolean var525F59EF5A984E7DE1A679CCEEFC8101_290086000 = (compareAndSetState(c, nextc));
                 } //End collapsed parenthetic
             } //End block
             addTaint(releases);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868835700 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868835700;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869;
             // ---------- Original Method ----------
             //for (;;) {
                 //int c = getState();
@@ -134,9 +132,9 @@ public class CountDownLatch {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.373 -0400", hash_original_field = "69F97A85B2FBB03A012E5B08317FA038", hash_generated_field = "149823ABB3559D1631C7C00C01D4A89F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.736 -0400", hash_original_field = "69F97A85B2FBB03A012E5B08317FA038", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
 
-        private static long serialVersionUID = 4982264981922014374L;
+        private static final long serialVersionUID = 4982264981922014374L;
     }
 
 

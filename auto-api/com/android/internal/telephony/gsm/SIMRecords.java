@@ -32,53 +32,53 @@ import com.android.internal.telephony.SmsMessageBase;
 import java.util.ArrayList;
 
 public class SIMRecords extends IccRecords {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.979 -0400", hash_original_field = "A6D54253A6E7A5BF5CFC7DB47F269D57", hash_generated_field = "3D45F4DC7928ADFBE49F3906732C5FDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "A6D54253A6E7A5BF5CFC7DB47F269D57", hash_generated_field = "3D45F4DC7928ADFBE49F3906732C5FDD")
 
     VoiceMailConstants mVmConfig;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.979 -0400", hash_original_field = "E040FD05576717C9CA830E49D86F56E5", hash_generated_field = "1D5FAB34B5B1DFA2FF0C72EB8EB1417D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "E040FD05576717C9CA830E49D86F56E5", hash_generated_field = "1D5FAB34B5B1DFA2FF0C72EB8EB1417D")
 
     SpnOverride mSpnOverride;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.980 -0400", hash_original_field = "2A3E692FB30211EBAAAF0E3BF2F7B04D", hash_generated_field = "C8FB6D75F33BBB165F89E1184AF1DAB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "2A3E692FB30211EBAAAF0E3BF2F7B04D", hash_generated_field = "C8FB6D75F33BBB165F89E1184AF1DAB5")
 
     private String imsi;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.980 -0400", hash_original_field = "D3724EA3C1583660418AAE7549D15B6B", hash_generated_field = "F3670A331578D3C800D2A8879CDAE6A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "D3724EA3C1583660418AAE7549D15B6B", hash_generated_field = "F3670A331578D3C800D2A8879CDAE6A2")
 
     private boolean callForwardingEnabled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "7A58A9F6FCDF3B6856A0262D5FF72428", hash_generated_field = "71EE1DCA9A91F37B8070C2DE70EBC3CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "7A58A9F6FCDF3B6856A0262D5FF72428", hash_generated_field = "71EE1DCA9A91F37B8070C2DE70EBC3CC")
 
     private Get_Spn_Fsm_State spnState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "CC93CCB29A5FE37184AD950A48100507", hash_generated_field = "B94C656CABFD2A097CE8CA776F9B3D25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "CC93CCB29A5FE37184AD950A48100507", hash_generated_field = "B94C656CABFD2A097CE8CA776F9B3D25")
 
     private byte[] mCphsInfo = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "1D3682655094CF36E1E3298A4C25ED91", hash_generated_field = "3B0DBAF5E1453033DE8A23FEF66CB6CF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "1D3682655094CF36E1E3298A4C25ED91", hash_generated_field = "3B0DBAF5E1453033DE8A23FEF66CB6CF")
 
     boolean mCspPlmnEnabled = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "D2C36B26FA6DBE28216F0234CF7213CA", hash_generated_field = "531BEBDA8DE453FA3ED736DAC070C337")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "D2C36B26FA6DBE28216F0234CF7213CA", hash_generated_field = "531BEBDA8DE453FA3ED736DAC070C337")
 
     byte[] efMWIS = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "95FFAD26D850D5EC0F2B1F6AAE5CD8CE", hash_generated_field = "F7BA255CC3AE0058E8CFC095600F245B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "95FFAD26D850D5EC0F2B1F6AAE5CD8CE", hash_generated_field = "F7BA255CC3AE0058E8CFC095600F245B")
 
     byte[] efCPHS_MWI = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "58264A603FE1A26D9B3DD780DF8AAC91", hash_generated_field = "27C9B421032889367442E38FD625EA3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "58264A603FE1A26D9B3DD780DF8AAC91", hash_generated_field = "27C9B421032889367442E38FD625EA3E")
 
     byte[] mEfCff = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "D6E9B336B4F61EEF8DC3ED94B6E2429B", hash_generated_field = "4CFC3799ACD516937F814E469F055B3D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "D6E9B336B4F61EEF8DC3ED94B6E2429B", hash_generated_field = "4CFC3799ACD516937F814E469F055B3D")
 
     byte[] mEfCfis = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "6E8DE6542D284DA95B6DF2FA3E03574A", hash_generated_field = "677DC81727BE9252421E71F32EAE57E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.876 -0400", hash_original_field = "6E8DE6542D284DA95B6DF2FA3E03574A", hash_generated_field = "677DC81727BE9252421E71F32EAE57E6")
 
     int spnDisplayCondition;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "E2A1ABC58A408D18FA38B6BF738C77C8", hash_generated_field = "9CBD8D86B3B910D521D7CFC4F4B05AE6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_field = "E2A1ABC58A408D18FA38B6BF738C77C8", hash_generated_field = "9CBD8D86B3B910D521D7CFC4F4B05AE6")
 
     ArrayList<String> spdiNetworks = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "C79C429F0ECF3DC640C19EFC7DA64CD0", hash_generated_field = "FC170B0C5C20481C238409EFCB48A036")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_field = "C79C429F0ECF3DC640C19EFC7DA64CD0", hash_generated_field = "FC170B0C5C20481C238409EFCB48A036")
 
     String pnnHomeName = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.988 -0400", hash_original_field = "06F1EF4000599F31B6960C354731E5E3", hash_generated_field = "433C8C040DD36FD17B8409B23AF92316")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_field = "06F1EF4000599F31B6960C354731E5E3", hash_generated_field = "433C8C040DD36FD17B8409B23AF92316")
 
     UsimServiceTable mUsimServiceTable;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.989 -0400", hash_original_method = "AA8710B4BBDFAECA42DF87898B5E71E9", hash_generated_method = "F453B0793EE78A6C0F14E38E4EB7DEBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_method = "AA8710B4BBDFAECA42DF87898B5E71E9", hash_generated_method = "F453B0793EE78A6C0F14E38E4EB7DEBF")
     public  SIMRecords(PhoneBase p) {
         super(p);
         adnCache = new AdnRecordCache(phone);
@@ -108,7 +108,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.989 -0400", hash_original_method = "60B34C0CDC881E5C8D40C8AAD990557F", hash_generated_method = "3EA07F3E006CA7F93EFE786B4B31CD0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_method = "60B34C0CDC881E5C8D40C8AAD990557F", hash_generated_method = "3EA07F3E006CA7F93EFE786B4B31CD0A")
     @Override
     public void dispose() {
         phone.mCM.unregisterForSIMReady(this);
@@ -121,7 +121,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.990 -0400", hash_original_method = "D676C6F3D2367DC0A4942786FE826692", hash_generated_method = "6E2BC99A5C88DFAF422E2B6A62A301F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.878 -0400", hash_original_method = "D676C6F3D2367DC0A4942786FE826692", hash_generated_method = "6E2BC99A5C88DFAF422E2B6A62A301F5")
     protected void finalize() {
         Log.d(LOG_TAG, "SIMRecords finalized");
         // ---------- Original Method ----------
@@ -129,7 +129,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.990 -0400", hash_original_method = "1C495E4F05849546A87C14B5D6E64BED", hash_generated_method = "DFF28017DADF7D467DB4EC42F6547305")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.878 -0400", hash_original_method = "1C495E4F05849546A87C14B5D6E64BED", hash_generated_method = "DFF28017DADF7D467DB4EC42F6547305")
     protected void onRadioOffOrNotAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         imsi = null;
@@ -168,49 +168,48 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.991 -0400", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "6840ABBBBED416DFFEF4744661EF4117")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.879 -0400", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "DC3BF66C3E0B0A7B072A54FD2C43AE57")
     @Override
     public String getIMSI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_976776495 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_976776495 = imsi;
-        varB4EAC82CA7396A68D541C85D26508E83_976776495.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_976776495;
+        String varB4EAC82CA7396A68D541C85D26508E83_1560255634 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1560255634 = imsi;
+        varB4EAC82CA7396A68D541C85D26508E83_1560255634.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1560255634;
         // ---------- Original Method ----------
         //return imsi;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:22.991 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "569B1211C4CA84BABD3E5F8D8B674C3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.880 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "ED1701BFFCA032A6099F4C40973EBF36")
     public String getMsisdnNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_315345127 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_315345127 = msisdn;
-        varB4EAC82CA7396A68D541C85D26508E83_315345127.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_315345127;
+        String varB4EAC82CA7396A68D541C85D26508E83_768962132 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_768962132 = msisdn;
+        varB4EAC82CA7396A68D541C85D26508E83_768962132.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_768962132;
         // ---------- Original Method ----------
         //return msisdn;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.006 -0400", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "703BE6FC3D585163518BB0A64E0ADBFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.881 -0400", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "757447D5198DCEACFDA593E927809AD4")
     @Override
     public UsimServiceTable getUsimServiceTable() {
-        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_746027370 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_746027370 = mUsimServiceTable;
-        varB4EAC82CA7396A68D541C85D26508E83_746027370.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_746027370;
+        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1037974135 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1037974135 = mUsimServiceTable;
+        varB4EAC82CA7396A68D541C85D26508E83_1037974135.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1037974135;
         // ---------- Original Method ----------
         //return mUsimServiceTable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.010 -0400", hash_original_method = "7B16D051528D70BC1665C409BE0B92A5", hash_generated_method = "A75C95348D3AA470A858F3911D181A5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.881 -0400", hash_original_method = "7B16D051528D70BC1665C409BE0B92A5", hash_generated_method = "6D93835E811DE359D8EF935EC46B9D1D")
     public void setMsisdnNumber(String alphaTag, String number,
             Message onComplete) {
         msisdn = number;
         msisdnTag = alphaTag;
         log("Set MSISDN: " + msisdnTag + " " +  "xxxxxxx");
-        AdnRecord adn;
-        adn = new AdnRecord(msisdnTag, msisdn);
+        AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
         new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
         addTaint(alphaTag.getTaint());
@@ -226,29 +225,29 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.010 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "F42B42CFC9D846A940B526B105ADF185")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.882 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "CA1449A6BA0CF18F5ECB4F5DA716BEBA")
     public String getMsisdnAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_439098199 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_439098199 = msisdnTag;
-        varB4EAC82CA7396A68D541C85D26508E83_439098199.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_439098199;
+        String varB4EAC82CA7396A68D541C85D26508E83_1141984702 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1141984702 = msisdnTag;
+        varB4EAC82CA7396A68D541C85D26508E83_1141984702.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1141984702;
         // ---------- Original Method ----------
         //return msisdnTag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.011 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "67FE64836C46A75F54500B2BBD4863F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.883 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "9CBF5276134A7217DB4EF34052C70ED4")
     public String getVoiceMailNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1860793659 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1860793659 = voiceMailNum;
-        varB4EAC82CA7396A68D541C85D26508E83_1860793659.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1860793659;
+        String varB4EAC82CA7396A68D541C85D26508E83_464295153 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_464295153 = voiceMailNum;
+        varB4EAC82CA7396A68D541C85D26508E83_464295153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_464295153;
         // ---------- Original Method ----------
         //return voiceMailNum;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.018 -0400", hash_original_method = "BBA59ED68AB83B35B5A29C09BCF3BE4C", hash_generated_method = "9F98F087FCF17C1ECB1CE9374D2E58F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.883 -0400", hash_original_method = "BBA59ED68AB83B35B5A29C09BCF3BE4C", hash_generated_method = "38417C56F3FDC2AE58D441C58C80C8AA")
     public void setVoiceMailNumber(String alphaTag, String voiceNumber,
             Message onComplete) {
         {
@@ -258,15 +257,14 @@ public class SIMRecords extends IccRecords {
         } //End block
         newVoiceMailNum = voiceNumber;
         newVoiceMailTag = alphaTag;
-        AdnRecord adn;
-        adn = new AdnRecord(newVoiceMailTag, newVoiceMailNum);
+        AdnRecord adn = new AdnRecord(newVoiceMailTag, newVoiceMailNum);
         {
             new AdnRecordLoader(phone).updateEF(adn, EF_MBDN, EF_EXT6,
                     mailboxIndex, null,
                     obtainMessage(EVENT_SET_MBDN_DONE, onComplete));
         } //End block
         {
-            boolean var49EDB32946FB23439D4ABEF334DBE8F4_1366287682 = (isCphsMailboxEnabled());
+            boolean var49EDB32946FB23439D4ABEF334DBE8F4_449718295 = (isCphsMailboxEnabled());
             {
                 new AdnRecordLoader(phone).updateEF(adn, EF_MAILBOX_CPHS,
                     EF_EXT1, 1, null,
@@ -286,18 +284,18 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.023 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "5DA94CEF8496F22D9568A33C4C1BC88D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.884 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "91A4A3399403859059A739256592860D")
     public String getVoiceMailAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1273633001 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1273633001 = voiceMailTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1273633001.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1273633001;
+        String varB4EAC82CA7396A68D541C85D26508E83_1844780881 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1844780881 = voiceMailTag;
+        varB4EAC82CA7396A68D541C85D26508E83_1844780881.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1844780881;
         // ---------- Original Method ----------
         //return voiceMailTag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.033 -0400", hash_original_method = "75BFE4AFE8A3A09F4E38976A214FAF70", hash_generated_method = "ED2C812C930BC414206CF263F8543B3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.885 -0400", hash_original_method = "75BFE4AFE8A3A09F4E38976A214FAF70", hash_generated_method = "ED2C812C930BC414206CF263F8543B3E")
     public void setVoiceMessageWaiting(int line, int countWaiting) {
         {
             countWaiting = -1;
@@ -338,17 +336,17 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.033 -0400", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "97B914DEC81E9EFB9076FB8D2A96D886")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.885 -0400", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "144CEDB00C1499D9FEC296ABD8FE7BA2")
     @Override
     public boolean getVoiceCallForwardingFlag() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_695813225 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_695813225;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647930140 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647930140;
         // ---------- Original Method ----------
         //return callForwardingEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.036 -0400", hash_original_method = "141082A6B47AB008F9D1AEFE7E7266B0", hash_generated_method = "7D470D879E0BE633F0C906E6A355A40F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.886 -0400", hash_original_method = "141082A6B47AB008F9D1AEFE7E7266B0", hash_generated_method = "7D470D879E0BE633F0C906E6A355A40F")
     @Override
     public void setVoiceCallForwardingFlag(int line, boolean enable) {
         callForwardingEnabled = enable;
@@ -388,7 +386,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.049 -0400", hash_original_method = "3729AD4A21CE0EDB3800382FBE3F87EC", hash_generated_method = "7912B183DD2EB642356E1DD30C60FE60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.886 -0400", hash_original_method = "3729AD4A21CE0EDB3800382FBE3F87EC", hash_generated_method = "7912B183DD2EB642356E1DD30C60FE60")
     public void onRefresh(boolean fileChanged, int[] fileList) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -403,35 +401,35 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:23.050 -0400", hash_original_method = "7E03E5ED77A0C757F38448793B936037", hash_generated_method = "0FB3A69A4F75398451C3E9AAEE605048")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.887 -0400", hash_original_method = "7E03E5ED77A0C757F38448793B936037", hash_generated_method = "F465C874A02EC2C70BF940A57072AF5D")
     @Override
     public String getOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_830130964 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1035324595 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_197939122 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_964642249 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_245775431 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1991624694 = null; //Variable for return #3
         {
             Log.d(LOG_TAG, "getOperatorNumeric: IMSI == null");
-            varB4EAC82CA7396A68D541C85D26508E83_830130964 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_964642249 = null;
         } //End block
         {
             Log.d(LOG_TAG, "getSIMOperatorNumeric: bad mncLength");
-            varB4EAC82CA7396A68D541C85D26508E83_1035324595 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_245775431 = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_197939122 = imsi.substring(0, 3 + mncLength);
-        String varA7E53CE21691AB073D9660D615818899_1448693502; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1991624694 = imsi.substring(0, 3 + mncLength);
+        String varA7E53CE21691AB073D9660D615818899_500184012; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1448693502 = varB4EAC82CA7396A68D541C85D26508E83_830130964;
+                varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_964642249;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1448693502 = varB4EAC82CA7396A68D541C85D26508E83_1035324595;
+                varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_245775431;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1448693502 = varB4EAC82CA7396A68D541C85D26508E83_197939122;
+                varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_1991624694;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1448693502.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1448693502;
+        varA7E53CE21691AB073D9660D615818899_500184012.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_500184012;
         // ---------- Original Method ----------
         //if (imsi == null) {
             //Log.d(LOG_TAG, "getOperatorNumeric: IMSI == null");
@@ -445,13 +443,12 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.898 -0400", hash_original_method = "5FA65278BC21B747191DBEA87B814DA9", hash_generated_method = "C2B0B34A340D6E01C3F88AE73FE0E5FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.271 -0400", hash_original_method = "5FA65278BC21B747191DBEA87B814DA9", hash_generated_method = "C4CEA5E6D5DE9F995A999EB8091F4467")
     public void handleMessage(Message msg) {
         AsyncResult ar;
         AdnRecord adn;
         byte data[];
-        boolean isRecordLoadResponse;
-        isRecordLoadResponse = false;
+        boolean isRecordLoadResponse = false;
         try 
         {
             //Begin case EVENT_SIM_READY 
@@ -471,7 +468,7 @@ public class SIMRecords extends IccRecords {
             //End case EVENT_GET_IMSI_DONE 
             //Begin case EVENT_GET_IMSI_DONE 
             {
-                boolean var830EA25F7AEDECBD15578DB21CAE52BA_1439517216 = (imsi != null && (imsi.length() < 6 || imsi.length() > 15));
+                boolean var830EA25F7AEDECBD15578DB21CAE52BA_1180645789 = (imsi != null && (imsi.length() < 6 || imsi.length() > 15));
                 {
                     imsi = null;
                 } //End block
@@ -482,18 +479,15 @@ public class SIMRecords extends IccRecords {
             //End case EVENT_GET_IMSI_DONE 
             //Begin case EVENT_GET_IMSI_DONE 
             {
-                boolean varAA3845750DE6743614D7EDB45EFDA541_1680469315 = (((mncLength == UNKNOWN) || (mncLength == 2)) &&
+                boolean varAA3845750DE6743614D7EDB45EFDA541_1042252715 = (((mncLength == UNKNOWN) || (mncLength == 2)) &&
                         ((imsi != null) && (imsi.length() >= 6)));
                 {
-                    String mccmncCode;
-                    mccmncCode = imsi.substring(0, 6);
+                    String mccmncCode = imsi.substring(0, 6);
                     {
-                        Iterator<String> varC240E69CE119782E8F47CC07C68C68DD_54870652 = (MCCMNC_CODES_HAVING_3DIGITS_MNC).iterator();
-                        varC240E69CE119782E8F47CC07C68C68DD_54870652.hasNext();
-                        String mccmnc = varC240E69CE119782E8F47CC07C68C68DD_54870652.next();
+                        String mccmnc = MCCMNC_CODES_HAVING_3DIGITS_MNC[0];
                         {
                             {
-                                boolean var7D3F2C7003F88A96589D9955600C8CFE_1000838218 = (mccmnc.equals(mccmncCode));
+                                boolean var7D3F2C7003F88A96589D9955600C8CFE_338658983 = (mccmnc.equals(mccmncCode));
                                 {
                                     mncLength = 3;
                                 } //End block
@@ -507,8 +501,7 @@ public class SIMRecords extends IccRecords {
             {
                 try 
                 {
-                    int mcc;
-                    mcc = Integer.parseInt(imsi.substring(0,3));
+                    int mcc = Integer.parseInt(imsi.substring(0,3));
                     mncLength = MccTable.smallestDigitsMccForMnc(mcc);
                 } //End block
                 catch (NumberFormatException e)
@@ -599,7 +592,7 @@ public class SIMRecords extends IccRecords {
             //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
             //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
             {
-                boolean var6E610A8EE073A016325ACA342BC92511_1631739897 = (adn.isEmpty() && msg.what == EVENT_GET_MBDN_DONE);
+                boolean var6E610A8EE073A016325ACA342BC92511_467372891 = (adn.isEmpty() && msg.what == EVENT_GET_MBDN_DONE);
                 {
                     recordsToLoad += 1;
                     new AdnRecordLoader(phone).loadFromEF(
@@ -672,8 +665,7 @@ public class SIMRecords extends IccRecords {
             } //End block
             //End case EVENT_GET_MWIS_DONE 
             //Begin case EVENT_GET_MWIS_DONE 
-            boolean voiceMailWaiting;
-            voiceMailWaiting = ((data[0] & 0x01) != 0);
+            boolean voiceMailWaiting = ((data[0] & 0x01) != 0);
             //End case EVENT_GET_MWIS_DONE 
             //Begin case EVENT_GET_MWIS_DONE 
             countVoiceMessages = data[1] & 0xff;
@@ -700,8 +692,7 @@ public class SIMRecords extends IccRecords {
             //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
             //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
             {
-                int indicator;
-                indicator = (int)(data[0] & 0xf);
+                int indicator = (int)(data[0] & 0xf);
                 {
                     countVoiceMessages = -1;
                 } //End block
@@ -748,18 +739,17 @@ public class SIMRecords extends IccRecords {
             finally 
             {
                 {
-                    boolean varA6967A0FC894379A31A07978EEE8D097_1564192928 = (((mncLength == UNINITIALIZED) || (mncLength == UNKNOWN) ||
+                    boolean varA6967A0FC894379A31A07978EEE8D097_954259293 = (((mncLength == UNINITIALIZED) || (mncLength == UNKNOWN) ||
                             (mncLength == 2)) && ((imsi != null) && (imsi.length() >= 6)));
                     {
-                        String mccmncCode;
-                        mccmncCode = imsi.substring(0, 6);
+                        String mccmncCode = imsi.substring(0, 6);
                         {
-                            Iterator<String> varC240E69CE119782E8F47CC07C68C68DD_336117518 = (MCCMNC_CODES_HAVING_3DIGITS_MNC).iterator();
-                            varC240E69CE119782E8F47CC07C68C68DD_336117518.hasNext();
-                            String mccmnc = varC240E69CE119782E8F47CC07C68C68DD_336117518.next();
+                            Iterator<String> varC240E69CE119782E8F47CC07C68C68DD_1300712988 = (MCCMNC_CODES_HAVING_3DIGITS_MNC).iterator();
+                            varC240E69CE119782E8F47CC07C68C68DD_1300712988.hasNext();
+                            String mccmnc = varC240E69CE119782E8F47CC07C68C68DD_1300712988.next();
                             {
                                 {
-                                    boolean var84BDA82F133A3C6DFBD3E95E8608ED9C_256256669 = (mccmnc.equals(mccmncCode));
+                                    boolean var84BDA82F133A3C6DFBD3E95E8608ED9C_1658156434 = (mccmnc.equals(mccmncCode));
                                     {
                                         mncLength = 3;
                                     } //End block
@@ -772,8 +762,7 @@ public class SIMRecords extends IccRecords {
                     {
                         try 
                         {
-                            int mcc;
-                            mcc = Integer.parseInt(imsi.substring(0,3));
+                            int mcc = Integer.parseInt(imsi.substring(0,3));
                             mncLength = MccTable.smallestDigitsMccForMnc(mcc);
                         } //End block
                         catch (NumberFormatException e)
@@ -848,16 +837,15 @@ public class SIMRecords extends IccRecords {
             data = (byte[])ar.result;
             //End case EVENT_GET_PNN_DONE 
             //Begin case EVENT_GET_PNN_DONE 
-            SimTlv tlv;
-            tlv = new SimTlv(data, 0, data.length);
+            SimTlv tlv = new SimTlv(data, 0, data.length);
             //End case EVENT_GET_PNN_DONE 
             //Begin case EVENT_GET_PNN_DONE 
             {
-                boolean varCB644CCA004D571A2231D5557A3D0712_1016460699 = (tlv.isValidObject());
+                boolean varCB644CCA004D571A2231D5557A3D0712_600031 = (tlv.isValidObject());
                 tlv.nextObject();
                 {
                     {
-                        boolean varA602311CA9E7B0FBD63424EF01DC038B_1902070626 = (tlv.getTag() == TAG_FULL_NETWORK_NAME);
+                        boolean varA602311CA9E7B0FBD63424EF01DC038B_2111260592 = (tlv.getTag() == TAG_FULL_NETWORK_NAME);
                         {
                             pnnHomeName
                             = IccUtils.networkNameToString(
@@ -883,8 +871,7 @@ public class SIMRecords extends IccRecords {
             ar = (AsyncResult)msg.obj;
             //End case EVENT_SMS_ON_SIM 
             //Begin case EVENT_SMS_ON_SIM 
-            int[] index;
-            index = (int[])ar.result;
+            int[] index = (int[])ar.result;
             //End case EVENT_SMS_ON_SIM 
             //Begin case EVENT_SMS_ON_SIM 
             {
@@ -945,11 +932,10 @@ public class SIMRecords extends IccRecords {
             //End case EVENT_SET_MBDN_DONE 
             //Begin case EVENT_SET_MBDN_DONE 
             {
-                boolean varDB6C50FA3E4BE068EAA8443655261A1E_358839640 = (isCphsMailboxEnabled());
+                boolean varDB6C50FA3E4BE068EAA8443655261A1E_796197387 = (isCphsMailboxEnabled());
                 {
                     adn = new AdnRecord(voiceMailTag, voiceMailNum);
-                    Message onCphsCompleted;
-                    onCphsCompleted = (Message) ar.userObj;
+                    Message onCphsCompleted = (Message) ar.userObj;
                     {
                         AsyncResult.forMessage(((Message) ar.userObj)).exception
                                 = null;
@@ -1061,7 +1047,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.906 -0400", hash_original_method = "E530DF481CB4FAA0037A4FE4ABD87373", hash_generated_method = "CF925A38E53DE3280062F2C1678C27C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "E530DF481CB4FAA0037A4FE4ABD87373", hash_generated_method = "CF925A38E53DE3280062F2C1678C27C7")
     private void handleFileUpdate(int efid) {
         //Begin case EF_MBDN 
         new AdnRecordLoader(phone).loadFromEF(EF_MBDN, EF_EXT6,
@@ -1087,7 +1073,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.907 -0400", hash_original_method = "CBD0F454D52453FACC84E0D26FD9E162", hash_generated_method = "6FA8F74BD3BFA67E6AD6437DE3804BA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "CBD0F454D52453FACC84E0D26FD9E162", hash_generated_method = "6F7CBFE63EFAA218F12FC0D0A1526E69")
     private void handleSimRefresh(int[] result) {
         {
             log("handleSimRefresh without input");
@@ -1096,8 +1082,7 @@ public class SIMRecords extends IccRecords {
         log("handleSimRefresh with SIM_REFRESH_FILE_UPDATED");
         //End case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
         //Begin case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
-        int efid;
-        efid = result[1];
+        int efid = result[1];
         //End case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
         //Begin case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
         handleFileUpdate(efid);
@@ -1126,28 +1111,25 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.914 -0400", hash_original_method = "0F425E7BAA03121C5111F3872E01B168", hash_generated_method = "B671F703805483FAC3828B6FAE9E193D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "0F425E7BAA03121C5111F3872E01B168", hash_generated_method = "D0B11F033A6A0BF726B093FA97601524")
     protected int dispatchGsmMessage(SmsMessageBase message) {
-        int varA522FA72751E3B8CCDC974402CB11ED3_1723500726 = (phone.mSMS.dispatchMessage(message));
+        int varA522FA72751E3B8CCDC974402CB11ED3_282000223 = (phone.mSMS.dispatchMessage(message));
         addTaint(message.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966283546 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966283546;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500356706 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500356706;
         // ---------- Original Method ----------
         //return phone.mSMS.dispatchMessage(message);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.914 -0400", hash_original_method = "3974DFF11A620863F24401AEED15BD51", hash_generated_method = "52F58C3496E57259FC9D443F0BA831D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.273 -0400", hash_original_method = "3974DFF11A620863F24401AEED15BD51", hash_generated_method = "FAE6B8C5FC7BDD8B08AEE377367766D1")
     private void handleSms(byte[] ba) {
         Log.d("ENF", "status : " + ba[0]);
         {
-            int n;
-            n = ba.length;
-            byte[] pdu;
-            pdu = new byte[n - 1];
+            int n = ba.length;
+            byte[] pdu = new byte[n - 1];
             System.arraycopy(ba, 1, pdu, 0, n - 1);
-            SmsMessage message;
-            message = SmsMessage.createFromPdu(pdu);
+            SmsMessage message = SmsMessage.createFromPdu(pdu);
             dispatchGsmMessage(message);
         } //End block
         addTaint(ba[0]);
@@ -1164,24 +1146,18 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.915 -0400", hash_original_method = "AAB2EB039B628CD9C66D57B4359C7EA6", hash_generated_method = "265B3FB9AE199BB56542E8602D16387D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.273 -0400", hash_original_method = "AAB2EB039B628CD9C66D57B4359C7EA6", hash_generated_method = "3A25439F4BB0217C6FEA131B643E0419")
     private void handleSmses(ArrayList messages) {
-        int count;
-        count = messages.size();
+        int count = messages.size();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                byte[] ba;
-                ba = (byte[]) messages.get(i);
+                byte[] ba = (byte[]) messages.get(i);
                 {
-                    int n;
-                    n = ba.length;
-                    byte[] pdu;
-                    pdu = new byte[n - 1];
+                    int n = ba.length;
+                    byte[] pdu = new byte[n - 1];
                     System.arraycopy(ba, 1, pdu, 0, n - 1);
-                    SmsMessage message;
-                    message = SmsMessage.createFromPdu(pdu);
+                    SmsMessage message = SmsMessage.createFromPdu(pdu);
                     dispatchGsmMessage(message);
                     ba[0] = 1;
                     {
@@ -1197,7 +1173,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.916 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "15D741D51610FD01EF0C6B9D8351E8E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.275 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "15D741D51610FD01EF0C6B9D8351E8E7")
     protected void onRecordLoaded() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         recordsToLoad -= 1;
@@ -1218,12 +1194,11 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.923 -0400", hash_original_method = "66CB4A941BE4FC702CDC8E50BFF0F26C", hash_generated_method = "D90773C7A1418372C2757D5F6B4C90D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.276 -0400", hash_original_method = "66CB4A941BE4FC702CDC8E50BFF0F26C", hash_generated_method = "055036E05FF5744D28E05ED9E2BF3DCE")
     protected void onAllRecordsLoaded() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         Log.d(LOG_TAG, "SIMRecords: record load complete");
-        String operator;
-        operator = getOperatorNumeric();
+        String operator = getOperatorNumeric();
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
         {
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
@@ -1255,10 +1230,10 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.923 -0400", hash_original_method = "F5FC22B4152F67EB826E6610A6C9072B", hash_generated_method = "478A9A18C9C3DE91040133EE861B6561")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.277 -0400", hash_original_method = "F5FC22B4152F67EB826E6610A6C9072B", hash_generated_method = "0ABB72C5A95B01F4F06EE096C3961E2C")
     private void setSpnFromConfig(String carrier) {
         {
-            boolean var421905470EB904055FD073228F381009_1757083831 = (mSpnOverride.containsCarrier(carrier));
+            boolean var421905470EB904055FD073228F381009_687234600 = (mSpnOverride.containsCarrier(carrier));
             {
                 spn = mSpnOverride.getSpn(carrier);
             } //End block
@@ -1271,10 +1246,10 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.939 -0400", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "D2B7D95123868E95A23FB96A819BA528")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.278 -0400", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "4B5DD787EAA14E40702454D2782D4911")
     private void setVoiceMailByCountry(String spn) {
         {
-            boolean var78FA3AAD64E283DFCBDA5E9AF5AFA96F_1554578655 = (mVmConfig.containsCarrier(spn));
+            boolean var78FA3AAD64E283DFCBDA5E9AF5AFA96F_835116859 = (mVmConfig.containsCarrier(spn));
             {
                 isVoiceMailFixed = true;
                 voiceMailNum = mVmConfig.getVoiceMailNumber(spn);
@@ -1291,7 +1266,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.940 -0400", hash_original_method = "9A96815ED791357C0C0DD55806DDDE67", hash_generated_method = "F27FE7CD305FE9A5DC0CE32EB9377D86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.280 -0400", hash_original_method = "9A96815ED791357C0C0DD55806DDDE67", hash_generated_method = "F27FE7CD305FE9A5DC0CE32EB9377D86")
     public void onSimReady() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         phone.mIccCard.broadcastIccStateChangedIntent(
@@ -1304,11 +1279,10 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.941 -0400", hash_original_method = "267620266787F01EC9F0E5E0AE15B613", hash_generated_method = "E89C138DE28C99B785301355932F0F70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.281 -0400", hash_original_method = "267620266787F01EC9F0E5E0AE15B613", hash_generated_method = "440A40E7179FC91A15744508075743DC")
     protected void fetchSimRecords() {
         recordsRequested = true;
-        IccFileHandler iccFh;
-        iccFh = phone.getIccFileHandler();
+        IccFileHandler iccFh = phone.getIccFileHandler();
         phone.mCM.getIMSI(obtainMessage(EVENT_GET_IMSI_DONE));
         iccFh.loadEFTransparent(EF_ICCID, obtainMessage(EVENT_GET_ICCID_DONE));
         new AdnRecordLoader(phone).loadFromEF(EF_MSISDN, EF_EXT1, 1,
@@ -1331,15 +1305,13 @@ public class SIMRecords extends IccRecords {
             iccFh.loadEFLinearFixedAll(EF_SMS, obtainMessage(EVENT_GET_ALL_SMS_DONE));
         } //End block
         {
-            String sms;
-            sms = "0107912160130310f20404d0110041007030208054832b0120"
+            String sms = "0107912160130310f20404d0110041007030208054832b0120"
                          + "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                          + "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                          + "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                          + "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                          + "ffffffffffffffffffffffffffffff";
-            byte[] ba;
-            ba = IccUtils.hexStringToBytes(sms);
+            byte[] ba = IccUtils.hexStringToBytes(sms);
             iccFh.updateEFLinearFixed(EF_SMS, 1, ba, null,
                             obtainMessage(EVENT_MARK_SMS_READ_DONE, 1));
         } //End block
@@ -1348,7 +1320,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.942 -0400", hash_original_method = "409DDAA47064BEED68B0319934A64CD2", hash_generated_method = "E0022522B43A7D15B8640910B46153C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.281 -0400", hash_original_method = "409DDAA47064BEED68B0319934A64CD2", hash_generated_method = "9DAEDAF73B4A4D8FDCA55D6DE1E351EC")
     @Override
     public int getDisplayRule(String plmn) {
         int rule;
@@ -1356,7 +1328,7 @@ public class SIMRecords extends IccRecords {
             rule = SPN_RULE_SHOW_PLMN;
         } //End block
         {
-            boolean var93D8A656618E8CC215C13DA82B4B7F6B_1841953722 = (isOnMatchingPlmn(plmn));
+            boolean var93D8A656618E8CC215C13DA82B4B7F6B_2045450016 = (isOnMatchingPlmn(plmn));
             {
                 rule = SPN_RULE_SHOW_SPN;
                 {
@@ -1371,8 +1343,8 @@ public class SIMRecords extends IccRecords {
             } //End block
         } //End collapsed parenthetic
         addTaint(plmn.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555960532 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555960532;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624317429 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624317429;
         // ---------- Original Method ----------
         //int rule;
         //if (spn == null || spnDisplayCondition == -1) {
@@ -1392,26 +1364,26 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.996 -0400", hash_original_method = "94EB8BB16DAD2AA5FAF871DB9935C4E1", hash_generated_method = "5F9A78E224C3F8E53D6702B6668F3BE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.291 -0400", hash_original_method = "94EB8BB16DAD2AA5FAF871DB9935C4E1", hash_generated_method = "29D26533AD0D6AF81ACC0A8DE2C7CF19")
     private boolean isOnMatchingPlmn(String plmn) {
         {
-            boolean var0FF98638333814881B939E2E997568A8_1534488063 = (plmn.equals(getOperatorNumeric()));
+            boolean var0FF98638333814881B939E2E997568A8_1285237761 = (plmn.equals(getOperatorNumeric()));
         } //End collapsed parenthetic
         {
             {
-                Iterator<String> var2DB1354A1A9DE1AE97AA82A80F522F26_1989588059 = (spdiNetworks).iterator();
-                var2DB1354A1A9DE1AE97AA82A80F522F26_1989588059.hasNext();
-                String spdiNet = var2DB1354A1A9DE1AE97AA82A80F522F26_1989588059.next();
+                Iterator<String> var2DB1354A1A9DE1AE97AA82A80F522F26_630432573 = (spdiNetworks).iterator();
+                var2DB1354A1A9DE1AE97AA82A80F522F26_630432573.hasNext();
+                String spdiNet = var2DB1354A1A9DE1AE97AA82A80F522F26_630432573.next();
                 {
                     {
-                        boolean var41CE6775E09518F8198A5D804233075F_1615974777 = (plmn.equals(spdiNet));
+                        boolean var41CE6775E09518F8198A5D804233075F_840953428 = (plmn.equals(spdiNet));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(plmn.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058991763 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2058991763;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589429165 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589429165;
         // ---------- Original Method ----------
         //if (plmn == null) return false;
         //if (plmn.equals(getOperatorNumeric())) {
@@ -1428,7 +1400,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:26.999 -0400", hash_original_method = "CF95CAB3FC09F3005867C57538604F5A", hash_generated_method = "0694F46C0760348BD60538CF2BA8A465")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.293 -0400", hash_original_method = "CF95CAB3FC09F3005867C57538604F5A", hash_generated_method = "0694F46C0760348BD60538CF2BA8A465")
     private void getSpnFsm(boolean start, AsyncResult ar) {
         byte[] data;
         {
@@ -1501,24 +1473,22 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.006 -0400", hash_original_method = "2AE095A71557CBF993C4F4933FD42467", hash_generated_method = "145842F502C4E4CD23F9900EB6F318AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.294 -0400", hash_original_method = "2AE095A71557CBF993C4F4933FD42467", hash_generated_method = "99591E4D5B9A55B3AAF9C1955ACED425")
     private void parseEfSpdi(byte[] data) {
-        SimTlv tlv;
-        tlv = new SimTlv(data, 0, data.length);
-        byte[] plmnEntries;
-        plmnEntries = null;
+        SimTlv tlv = new SimTlv(data, 0, data.length);
+        byte[] plmnEntries = null;
         {
-            boolean varD6DAE705252AE64CA27B233F668D159C_601195513 = (tlv.isValidObject());
+            boolean varD6DAE705252AE64CA27B233F668D159C_597287392 = (tlv.isValidObject());
             tlv.nextObject();
             {
                 {
-                    boolean var06676F894B0CE0AFE5FFB22891957C33_1985029740 = (tlv.getTag() == TAG_SPDI);
+                    boolean var06676F894B0CE0AFE5FFB22891957C33_530572213 = (tlv.getTag() == TAG_SPDI);
                     {
                         tlv = new SimTlv(tlv.getData(), 0, tlv.getData().length);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var737E9541DB57851299264A8B92818535_232704213 = (tlv.getTag() == TAG_SPDI_PLMN_LIST);
+                    boolean var737E9541DB57851299264A8B92818535_1601551955 = (tlv.getTag() == TAG_SPDI_PLMN_LIST);
                     {
                         plmnEntries = tlv.getData();
                     } //End block
@@ -1527,14 +1497,13 @@ public class SIMRecords extends IccRecords {
         } //End collapsed parenthetic
         spdiNetworks = new ArrayList<String>(plmnEntries.length / 3);
         {
-            int i;
-            i = 0;
+            int i = 0;
             i += 3;
             {
                 String plmnCode;
                 plmnCode = IccUtils.bcdToString(plmnEntries, i, 3);
                 {
-                    boolean var2A08EE5A8A72F3C48E7EDA0361A465D4_1707091898 = (plmnCode.length() >= 5);
+                    boolean var2A08EE5A8A72F3C48E7EDA0361A465D4_1837620797 = (plmnCode.length() >= 5);
                     {
                         log("EF_SPDI network: " + plmnCode);
                         spdiNetworks.add(plmnCode);
@@ -1548,17 +1517,17 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.007 -0400", hash_original_method = "3EE42FFEB0B4A779D022FF2A029DBC31", hash_generated_method = "23E8E92548A56E5310E8AA8CE97DC4B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.295 -0400", hash_original_method = "3EE42FFEB0B4A779D022FF2A029DBC31", hash_generated_method = "C9BC17C9B138CB806D6E74D3F458CB0E")
     private boolean isCphsMailboxEnabled() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309552159 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309552159;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399925829 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399925829;
         // ---------- Original Method ----------
         //if (mCphsInfo == null)  return false;
         //return ((mCphsInfo[1] & CPHS_SST_MBN_MASK) == CPHS_SST_MBN_ENABLED );
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.007 -0400", hash_original_method = "A8BE9816664C9DE6B42ACDFC7DA8D2D5", hash_generated_method = "80BD34BE1E1004B1AFCEA0216220D37A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.295 -0400", hash_original_method = "A8BE9816664C9DE6B42ACDFC7DA8D2D5", hash_generated_method = "80BD34BE1E1004B1AFCEA0216220D37A")
     protected void log(String s) {
         Log.d(LOG_TAG, "[SIMRecords] " + s);
         addTaint(s.getTaint());
@@ -1567,7 +1536,7 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.007 -0400", hash_original_method = "747DCE9A0C1CA0D85263EB0A5CECAE60", hash_generated_method = "9369A1FBEE7E35E0523A47E129631C96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.296 -0400", hash_original_method = "747DCE9A0C1CA0D85263EB0A5CECAE60", hash_generated_method = "9369A1FBEE7E35E0523A47E129631C96")
     protected void loge(String s) {
         addTaint(s.getTaint());
         // ---------- Original Method ----------
@@ -1575,25 +1544,22 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.007 -0400", hash_original_method = "545A7868DCB44F353BBAB91C69F027BF", hash_generated_method = "6E4C88BAB13E2CD03F552F93742F08FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.296 -0400", hash_original_method = "545A7868DCB44F353BBAB91C69F027BF", hash_generated_method = "1F0140305939BCE44F5D3909A2443E7C")
     public boolean isCspPlmnEnabled() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_618413871 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_618413871;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153257505 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_153257505;
         // ---------- Original Method ----------
         //return mCspPlmnEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_method = "5509D297F6B8CC0BD321C284BD8D086E", hash_generated_method = "9EF46C0E7828B182C8C8A9AC1D11E8AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_method = "5509D297F6B8CC0BD321C284BD8D086E", hash_generated_method = "DFD224299304ECBB1ABC55273DB7E080")
     private void handleEfCspData(byte[] data) {
-        int usedCspGroups;
-        usedCspGroups = data.length / 2;
-        byte valueAddedServicesGroup;
-        valueAddedServicesGroup = (byte)0xC0;
+        int usedCspGroups = data.length / 2;
+        byte valueAddedServicesGroup = (byte)0xC0;
         mCspPlmnEnabled = true;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 {
                     {
@@ -1621,138 +1587,138 @@ public class SIMRecords extends IccRecords {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "122B20F52DE0D566691CB293C46EE900")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "BD940BC52C3AB14198F71CB81F0E8FEB")
 
-    protected static String LOG_TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "BD51237ADEE637D214609A89D91C6B3D", hash_generated_field = "CB2BF79D9AEB2D899725B2F716957D2C")
+    protected static final String LOG_TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "BD51237ADEE637D214609A89D91C6B3D", hash_generated_field = "B1BDA8481E03A540852BC755DA2091B9")
 
-    private static boolean CRASH_RIL = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "D751668EF011EB030075908D0A6ACFD9")
+    private static final boolean CRASH_RIL = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
-    protected static boolean DBG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "EFFB07E9493825FFF5E2ADA97E52DB66", hash_generated_field = "DDB86E0F4E670E15CF6F8EB01CDF6493")
+    protected static final boolean DBG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "EFFB07E9493825FFF5E2ADA97E52DB66", hash_generated_field = "415E874A6EA7F4409F1FD3738AF676C5")
 
-    static int SPN_RULE_SHOW_SPN = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "F99FB3994E948E7784AB738BF033D56D", hash_generated_field = "F044C57BE2C2408E47AC45E441C607BF")
+    static final int SPN_RULE_SHOW_SPN = 0x01;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "F99FB3994E948E7784AB738BF033D56D", hash_generated_field = "9615ED2E5048F60365ECFB661BB5CFF2")
 
-    static int SPN_RULE_SHOW_PLMN = 0x02;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "81FFA7042D4CD8556CFB9D17E2D56708", hash_generated_field = "1A9582F0707591AB7F4698E44A68181C")
+    static final int SPN_RULE_SHOW_PLMN = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "81FFA7042D4CD8556CFB9D17E2D56708", hash_generated_field = "A4822F16D7D0722C09B349753F0A1C53")
 
-    static int TAG_SPDI = 0xA3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "5B55D09E701D389C1CD5414433547D53", hash_generated_field = "C8E5ED81E8B16B23D4186831554611AB")
+    static final int TAG_SPDI = 0xA3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "5B55D09E701D389C1CD5414433547D53", hash_generated_field = "C2D6252AE5B1E2BC23E6E6BEB3130A64")
 
-    static int TAG_SPDI_PLMN_LIST = 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "EE4E9897FB11D4CA652E750FCA253418", hash_generated_field = "082C09197B98DDA34C5477579714A8FB")
+    static final int TAG_SPDI_PLMN_LIST = 0x80;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_field = "EE4E9897FB11D4CA652E750FCA253418", hash_generated_field = "743085D93FE3601EDCC832FB91368066")
 
-    static int TAG_FULL_NETWORK_NAME = 0x43;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "A7C298598F035F582F2994CA0184ED57", hash_generated_field = "F522E2E3CE5A9958029166B188579A82")
+    static final int TAG_FULL_NETWORK_NAME = 0x43;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "A7C298598F035F582F2994CA0184ED57", hash_generated_field = "F9C22C8E909AE3B47754DE26713168A6")
 
-    static int TAG_SHORT_NETWORK_NAME = 0x45;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "A4DE335C8AB9D5CD22553519B84FC5E5", hash_generated_field = "01C4CC2440AFD7382FE428E35C270DFB")
+    static final int TAG_SHORT_NETWORK_NAME = 0x45;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "A4DE335C8AB9D5CD22553519B84FC5E5", hash_generated_field = "F76787922EB6AA2178B7A042FE279FE9")
 
-    static int CFF_UNCONDITIONAL_ACTIVE = 0x0a;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "B0E74EF7AE31DF824A2D801FE88BE298", hash_generated_field = "7DBD73890AC33E39B160EC08AB875D56")
+    static final int CFF_UNCONDITIONAL_ACTIVE = 0x0a;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "B0E74EF7AE31DF824A2D801FE88BE298", hash_generated_field = "E898789BE36EE5CC895C4580678DC3EE")
 
-    static int CFF_UNCONDITIONAL_DEACTIVE = 0x05;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "69BFCC7071EF603B4043F9190D9A95E1", hash_generated_field = "4CDCEEE68185A1853E3A9873A7AAEBC9")
+    static final int CFF_UNCONDITIONAL_DEACTIVE = 0x05;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "69BFCC7071EF603B4043F9190D9A95E1", hash_generated_field = "6D646CF1330D172C697FBE463F3E20DD")
 
-    static int CFF_LINE1_MASK = 0x0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "D32DF44EE00F04F24CD371F2B902BB93", hash_generated_field = "56844074047F5F2617772A6F2EDD33A3")
+    static final int CFF_LINE1_MASK = 0x0f;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "D32DF44EE00F04F24CD371F2B902BB93", hash_generated_field = "21B7855A8A75A6C0FBA7800A32927557")
 
-    static int CFF_LINE1_RESET = 0xf0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "42940E3334CBA3BAA9F1A0F7C2D979F2", hash_generated_field = "514C6184FA5FFBB14E94C55904ED9795")
+    static final int CFF_LINE1_RESET = 0xf0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "42940E3334CBA3BAA9F1A0F7C2D979F2", hash_generated_field = "DED73EE7FF558B0A8BCE28EA6F50AA32")
 
-    private static int CPHS_SST_MBN_MASK = 0x30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.008 -0400", hash_original_field = "0FA35357C28858D0DF2D19D905ED912E", hash_generated_field = "0E543B78AA0F69D0BC0BC276D388A921")
+    private static final int CPHS_SST_MBN_MASK = 0x30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "0FA35357C28858D0DF2D19D905ED912E", hash_generated_field = "90E2112308FC996159B6715487610C17")
 
-    private static int CPHS_SST_MBN_ENABLED = 0x30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.009 -0400", hash_original_field = "F15D5CBB2043757AB5313BDD33D4BBC7", hash_generated_field = "7346256AB076ABC3EDF7EB2B7905664F")
+    private static final int CPHS_SST_MBN_ENABLED = 0x30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "F15D5CBB2043757AB5313BDD33D4BBC7", hash_generated_field = "CA9D8FD5F6DA4FDAFDD2818A884111C6")
 
-    private static int EVENT_SIM_READY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.009 -0400", hash_original_field = "B41D6834011DAA4DB1A6AC940ADFA38E", hash_generated_field = "7BCF1FFF9022E22F04BC0FDC1FAA6FD5")
+    private static final int EVENT_SIM_READY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "B41D6834011DAA4DB1A6AC940ADFA38E", hash_generated_field = "C65DF4AD1462685EBC499AE583280BAA")
 
-    private static int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "1C7B2408ABBFF84C0AE773B343AAE081", hash_generated_field = "ED68E40A1C990775573EC4497C233665")
+    private static final int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "1C7B2408ABBFF84C0AE773B343AAE081", hash_generated_field = "C1B81CA82D779018C72F133549599B37")
 
-    protected static int EVENT_GET_IMSI_DONE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "448E89735034CA52094210C2C3805091", hash_generated_field = "E6FC683304020AB5C050A0886A6E5B50")
+    protected static final int EVENT_GET_IMSI_DONE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "448E89735034CA52094210C2C3805091", hash_generated_field = "FA13D8118051BEADD1DF91D4EC1C2052")
 
-    protected static int EVENT_GET_ICCID_DONE = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "32C87913BB9A9B8C0E774950157E52E2", hash_generated_field = "F3EAA05D5484B166AF7B8653372A3CD0")
+    protected static final int EVENT_GET_ICCID_DONE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "32C87913BB9A9B8C0E774950157E52E2", hash_generated_field = "AC488F40D96E33B7A9106EEA894C7BD2")
 
-    private static int EVENT_GET_MBI_DONE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "3E3F251CEC6926A6D2E784E6B7DAAEF0", hash_generated_field = "17BCCFFBFDBE059B1FB22C98918ED3E3")
+    private static final int EVENT_GET_MBI_DONE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "3E3F251CEC6926A6D2E784E6B7DAAEF0", hash_generated_field = "EDE69B90FE5CC250E0B91ECDBE9DE9D1")
 
-    private static int EVENT_GET_MBDN_DONE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "7248BB1DD465A3F59F510A80078BB34B", hash_generated_field = "E726DB385FE32A496B50B1526A70BEFA")
+    private static final int EVENT_GET_MBDN_DONE = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "7248BB1DD465A3F59F510A80078BB34B", hash_generated_field = "1ABA989B0F3362D2C70EEB5A70C87F0D")
 
-    private static int EVENT_GET_MWIS_DONE = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "370CB56A39D5391291430562D9A723EE", hash_generated_field = "F0747DDDF06034BE553C36699AA9812D")
+    private static final int EVENT_GET_MWIS_DONE = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "370CB56A39D5391291430562D9A723EE", hash_generated_field = "5165FAAB5F7CD18E9D5F96D2818657FA")
 
-    private static int EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "C924AEAB30A16AD11ED99D61AA5708C4", hash_generated_field = "1E50443C230905CE95A5D2416D01C8D1")
+    private static final int EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "C924AEAB30A16AD11ED99D61AA5708C4", hash_generated_field = "AF8D9BB0B036F882F1D0C816581372A7")
 
-    protected static int EVENT_GET_AD_DONE = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "16E2029513C20709A62FF531D3DD5014", hash_generated_field = "E94A0EE24EA5FD74E400C7CE94630F1F")
+    protected static final int EVENT_GET_AD_DONE = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "16E2029513C20709A62FF531D3DD5014", hash_generated_field = "7E6BDAACDB02FB8DBDE5B121D1D96B80")
 
-    protected static int EVENT_GET_MSISDN_DONE = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "31D8AABE5416BED99B19A990923D8C0E", hash_generated_field = "6E93B9D00D59D54D5C3CB165DAE2C64A")
+    protected static final int EVENT_GET_MSISDN_DONE = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "31D8AABE5416BED99B19A990923D8C0E", hash_generated_field = "16316F56D2B66BC0712FA6DCCB623FD8")
 
-    private static int EVENT_GET_CPHS_MAILBOX_DONE = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.029 -0400", hash_original_field = "BD1F2474793DBD794A60F38D867722DC", hash_generated_field = "1BBE85C2AFBDD448AF1B3B024B4E94CE")
+    private static final int EVENT_GET_CPHS_MAILBOX_DONE = 11;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "BD1F2474793DBD794A60F38D867722DC", hash_generated_field = "A9380C4C24D6B84D11AA10394A8A4655")
 
-    private static int EVENT_GET_SPN_DONE = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "6C5AAA199C42018DFEBF9DB3106941D8", hash_generated_field = "A0279C3D00F5C25D6C120AEF0FCECEC7")
+    private static final int EVENT_GET_SPN_DONE = 12;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "6C5AAA199C42018DFEBF9DB3106941D8", hash_generated_field = "23B20EDB29F4E6ACE5BC6B6E3131138F")
 
-    private static int EVENT_GET_SPDI_DONE = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "529053860FA14F8B31FBDEC20F5F5B03", hash_generated_field = "B0B78B92D79876F59FE3B5A8E316C0E4")
+    private static final int EVENT_GET_SPDI_DONE = 13;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "529053860FA14F8B31FBDEC20F5F5B03", hash_generated_field = "7C08F6997CDB1F95B53292AC6E4DA474")
 
-    private static int EVENT_UPDATE_DONE = 14;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "221898CECF6E8C9F50998ADFEF8B06D1", hash_generated_field = "925973ED5457F95D459E85F099AAEE66")
+    private static final int EVENT_UPDATE_DONE = 14;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "221898CECF6E8C9F50998ADFEF8B06D1", hash_generated_field = "A297125EDFFC4F42969DFEF4BE44F8AC")
 
-    private static int EVENT_GET_PNN_DONE = 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "1E3C0E257296800F8D76872CD2E55387", hash_generated_field = "00CE47005B4DE2ED0049E52758A5C603")
+    private static final int EVENT_GET_PNN_DONE = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "1E3C0E257296800F8D76872CD2E55387", hash_generated_field = "9BD29131ACB6B8193EA3976774320615")
 
-    protected static int EVENT_GET_SST_DONE = 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "3B79516072415E285E9DD48ECF8C32E3", hash_generated_field = "1E34B501E28E4512D34E6566C6DC5F9E")
+    protected static final int EVENT_GET_SST_DONE = 17;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "3B79516072415E285E9DD48ECF8C32E3", hash_generated_field = "9F464D691ED618E65FF918987EFF9274")
 
-    private static int EVENT_GET_ALL_SMS_DONE = 18;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "5EB21554FBD2F493FD526FF035BA3944", hash_generated_field = "19C1026B8F804F62066BB3602553F56D")
+    private static final int EVENT_GET_ALL_SMS_DONE = 18;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.298 -0400", hash_original_field = "5EB21554FBD2F493FD526FF035BA3944", hash_generated_field = "961A7A4D60E11CE78834F70BC49A219A")
 
-    private static int EVENT_MARK_SMS_READ_DONE = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "E456F51692CD77EC7FABB0627F1E741E", hash_generated_field = "2E96C317A429ADDCCD834DB76AEC4794")
+    private static final int EVENT_MARK_SMS_READ_DONE = 19;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "E456F51692CD77EC7FABB0627F1E741E", hash_generated_field = "F05CD6C947B2B1AA00E5D1063F179FDF")
 
-    private static int EVENT_SET_MBDN_DONE = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "7040E283E3C6429991BBA3AAE2DFC6BA", hash_generated_field = "011CEFC8FA7227226413ACE63F73A982")
+    private static final int EVENT_SET_MBDN_DONE = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "7040E283E3C6429991BBA3AAE2DFC6BA", hash_generated_field = "32F13C0B04E96171B7B8D712BBC53B0A")
 
-    private static int EVENT_SMS_ON_SIM = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "17E27DF4CEFFF43554FD32CB85BD7662", hash_generated_field = "2E17A31BF2AA6CC5E5F0D8A7BA22651E")
+    private static final int EVENT_SMS_ON_SIM = 21;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "17E27DF4CEFFF43554FD32CB85BD7662", hash_generated_field = "18FB3B701347968BBB3DB68B7D9FA9E0")
 
-    private static int EVENT_GET_SMS_DONE = 22;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "3D7336F8F10AF2644854C342FE6A5B62", hash_generated_field = "D7909EC1A88E3D3ED7DCDE35D5CEFEA6")
+    private static final int EVENT_GET_SMS_DONE = 22;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "3D7336F8F10AF2644854C342FE6A5B62", hash_generated_field = "778675A2DDF2BB258371DC2061683859")
 
-    private static int EVENT_GET_CFF_DONE = 24;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "60FC5DEEB2B572B1AF1F2074AB4AF616", hash_generated_field = "1E7A5C7D54DDFE5A1728DE2BF4556F88")
+    private static final int EVENT_GET_CFF_DONE = 24;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "60FC5DEEB2B572B1AF1F2074AB4AF616", hash_generated_field = "5818D0009EC83D0304F736A07B44ED18")
 
-    private static int EVENT_SET_CPHS_MAILBOX_DONE = 25;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "B179DBEA5D80A114C092309538D3A988", hash_generated_field = "1A97DE321FCD36D31BBE1083FB238805")
+    private static final int EVENT_SET_CPHS_MAILBOX_DONE = 25;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "B179DBEA5D80A114C092309538D3A988", hash_generated_field = "8D3AD55D8107BA8230AA0810AF1F7304")
 
-    private static int EVENT_GET_INFO_CPHS_DONE = 26;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "E775C0820692BDD407C8D22F0A74404C", hash_generated_field = "C01BA6872B08834CB3086979CD931EA1")
+    private static final int EVENT_GET_INFO_CPHS_DONE = 26;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "E775C0820692BDD407C8D22F0A74404C", hash_generated_field = "BE715D1FD0CE243424B798654ACC75BA")
 
-    private static int EVENT_SET_MSISDN_DONE = 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "44F3B6DB71F91630605B5A6876BFD3A4", hash_generated_field = "140300D784859496BD719C91C95E8DAF")
+    private static final int EVENT_SET_MSISDN_DONE = 30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "44F3B6DB71F91630605B5A6876BFD3A4", hash_generated_field = "0FDD8C86CA2531BA62F4A95521E434F5")
 
-    private static int EVENT_SIM_REFRESH = 31;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "4A3450DC04C4C053A9A850983E872C19", hash_generated_field = "665BC9FB734DCF495D7B385CC8F547B4")
+    private static final int EVENT_SIM_REFRESH = 31;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "4A3450DC04C4C053A9A850983E872C19", hash_generated_field = "F29A42DEBAB245F7C058BE162E7F91ED")
 
-    private static int EVENT_GET_CFIS_DONE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "B0A927A61DAD1AD86AB00D245EB2C803", hash_generated_field = "BB374D02727C27AB0849A3E57F77A666")
+    private static final int EVENT_GET_CFIS_DONE = 32;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "B0A927A61DAD1AD86AB00D245EB2C803", hash_generated_field = "3DCE777E62AE6095ECB53822D16E8FE9")
 
-    private static int EVENT_GET_CSP_CPHS_DONE = 33;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_field = "1B81364A8EB1E2266EAA74C0C5553905", hash_generated_field = "341396DEB003F5ABFA5D5489D5B17EE5")
+    private static final int EVENT_GET_CSP_CPHS_DONE = 33;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.299 -0400", hash_original_field = "1B81364A8EB1E2266EAA74C0C5553905", hash_generated_field = "7E3BF9E363667067579B2DD88404B9BE")
 
-    private static String[] MCCMNC_CODES_HAVING_3DIGITS_MNC = {
+    private static final String[] MCCMNC_CODES_HAVING_3DIGITS_MNC = {
         "405025", "405026", "405027", "405028", "405029", "405030", "405031", "405032",
         "405033", "405034", "405035", "405036", "405037", "405038", "405039", "405040",
         "405041", "405042", "405043", "405044", "405045", "405046", "405047", "405750",

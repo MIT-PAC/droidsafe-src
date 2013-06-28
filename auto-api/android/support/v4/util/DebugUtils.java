@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class DebugUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:34.643 -0400", hash_original_method = "09D0F8538A2479079AB46637D5733AC2", hash_generated_method = "09D0F8538A2479079AB46637D5733AC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.424 -0400", hash_original_method = "09D0F8538A2479079AB46637D5733AC2", hash_generated_method = "09D0F8538A2479079AB46637D5733AC2")
     public DebugUtils ()
     {
         //Synthesized constructor

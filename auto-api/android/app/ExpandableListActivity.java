@@ -22,24 +22,24 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import java.util.Map;
 
 public class ExpandableListActivity extends Activity implements OnCreateContextMenuListener, ExpandableListView.OnChildClickListener, ExpandableListView.OnGroupCollapseListener, ExpandableListView.OnGroupExpandListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.107 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "C8593FDE34702C978989DD9A527E81D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "C8593FDE34702C978989DD9A527E81D9")
 
     ExpandableListAdapter mAdapter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.107 -0400", hash_original_field = "F796A16BE866311501B24C73148D80F1", hash_generated_field = "94BF7FD28918CF535D64E578C0C1523E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_field = "F796A16BE866311501B24C73148D80F1", hash_generated_field = "94BF7FD28918CF535D64E578C0C1523E")
 
     ExpandableListView mList;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.126 -0400", hash_original_field = "FF0486143720AAA2762E6DFB7A1926B6", hash_generated_field = "5D1EC77CB5A18285CC99B754B6D1F724")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_field = "FF0486143720AAA2762E6DFB7A1926B6", hash_generated_field = "5D1EC77CB5A18285CC99B754B6D1F724")
 
     boolean mFinishedStart = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.126 -0400", hash_original_method = "D0B536468FD65D0C7A3A3997AB1356FB", hash_generated_method = "D0B536468FD65D0C7A3A3997AB1356FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_method = "D0B536468FD65D0C7A3A3997AB1356FB", hash_generated_method = "D0B536468FD65D0C7A3A3997AB1356FB")
     public ExpandableListActivity ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.128 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "EF5273206446CE58A67FA48842F38A9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.741 -0400", hash_original_method = "85F2A519B2781A30F4BC68DB47459C98", hash_generated_method = "EF5273206446CE58A67FA48842F38A9C")
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -50,7 +50,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.133 -0400", hash_original_method = "148B1F725EE0240ACB0F014B88EF7B7D", hash_generated_method = "D50BF0C134597D20A41EF3357AFE9DA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.742 -0400", hash_original_method = "148B1F725EE0240ACB0F014B88EF7B7D", hash_generated_method = "623D57167DF44B7078A5BD300B12430A")
     public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
             int childPosition, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -59,14 +59,14 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
         addTaint(groupPosition);
         addTaint(childPosition);
         addTaint(id);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260701992 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1260701992;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_604273189 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_604273189;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.135 -0400", hash_original_method = "2841CE4526AD3DDF27C3902DF7F1E509", hash_generated_method = "450666481CA5602827D87A6CF40F4A36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.742 -0400", hash_original_method = "2841CE4526AD3DDF27C3902DF7F1E509", hash_generated_method = "450666481CA5602827D87A6CF40F4A36")
     public void onGroupCollapse(int groupPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(groupPosition);
@@ -74,7 +74,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.158 -0400", hash_original_method = "78995B15C7B4DD7E0C829C6483E342E9", hash_generated_method = "C709029D167B3D1FE7AEB11441234665")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.743 -0400", hash_original_method = "78995B15C7B4DD7E0C829C6483E342E9", hash_generated_method = "C709029D167B3D1FE7AEB11441234665")
     public void onGroupExpand(int groupPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(groupPosition);
@@ -82,7 +82,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.160 -0400", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "BF7257B9ACDA2CB1B16AF9A1E032DB34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.744 -0400", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "BF7257B9ACDA2CB1B16AF9A1E032DB34")
     @Override
     protected void onRestoreInstanceState(Bundle state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -95,13 +95,12 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.162 -0400", hash_original_method = "DC93441AA7886210FB8B7D4BBF66C0C2", hash_generated_method = "04D0F77EEEC2A0905DEC4968A385C743")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.745 -0400", hash_original_method = "DC93441AA7886210FB8B7D4BBF66C0C2", hash_generated_method = "9324DC00A2517C8AD00C6B9C1FD2CF91")
     @Override
     public void onContentChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onContentChanged();
-        View emptyView;
-        emptyView = findViewById(com.android.internal.R.id.empty);
+        View emptyView = findViewById(com.android.internal.R.id.empty);
         mList = (ExpandableListView)findViewById(com.android.internal.R.id.list);
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
@@ -140,7 +139,7 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.176 -0400", hash_original_method = "A29D9C463A320B0EEFF4CD23C93CB5C7", hash_generated_method = "C63ADA8CAB0EDB43DBCD790638CC701E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.746 -0400", hash_original_method = "A29D9C463A320B0EEFF4CD23C93CB5C7", hash_generated_method = "C63ADA8CAB0EDB43DBCD790638CC701E")
     public void setListAdapter(ExpandableListAdapter adapter) {
         {
             ensureList();
@@ -156,31 +155,31 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.189 -0400", hash_original_method = "2F22B94C75DB37CE8939976B81D6509B", hash_generated_method = "2AAE15E3ED9FFB223B54CD49885EBFB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.747 -0400", hash_original_method = "2F22B94C75DB37CE8939976B81D6509B", hash_generated_method = "C0F1F2C57F74E1BCE4221C268D714D2F")
     public ExpandableListView getExpandableListView() {
-        ExpandableListView varB4EAC82CA7396A68D541C85D26508E83_1432484933 = null; //Variable for return #1
+        ExpandableListView varB4EAC82CA7396A68D541C85D26508E83_1328745966 = null; //Variable for return #1
         ensureList();
-        varB4EAC82CA7396A68D541C85D26508E83_1432484933 = mList;
-        varB4EAC82CA7396A68D541C85D26508E83_1432484933.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1432484933;
+        varB4EAC82CA7396A68D541C85D26508E83_1328745966 = mList;
+        varB4EAC82CA7396A68D541C85D26508E83_1328745966.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1328745966;
         // ---------- Original Method ----------
         //ensureList();
         //return mList;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.203 -0400", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "05CA02105695FB52702FD14A557E9439")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.748 -0400", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "DADE37D4B14134E5D74449CAB12D98B9")
     public ExpandableListAdapter getExpandableListAdapter() {
-        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_411580303 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_411580303 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_411580303.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_411580303;
+        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_559791915 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_559791915 = mAdapter;
+        varB4EAC82CA7396A68D541C85D26508E83_559791915.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_559791915;
         // ---------- Original Method ----------
         //return mAdapter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.205 -0400", hash_original_method = "747EB77893A53326BE6690546CE6B949", hash_generated_method = "542ACE1F6554559722EA9AE169C011BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.748 -0400", hash_original_method = "747EB77893A53326BE6690546CE6B949", hash_generated_method = "542ACE1F6554559722EA9AE169C011BF")
     private void ensureList() {
         setContentView(com.android.internal.R.layout.expandable_list_content);
         // ---------- Original Method ----------
@@ -191,40 +190,40 @@ public class ExpandableListActivity extends Activity implements OnCreateContextM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.218 -0400", hash_original_method = "D269A0D02850950126987DFFB8BC24BB", hash_generated_method = "9A69E17464094100190C15DF28FB4C85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.749 -0400", hash_original_method = "D269A0D02850950126987DFFB8BC24BB", hash_generated_method = "28A0F5233805B392AE2EFC37EAAC7460")
     public long getSelectedId() {
-        long var275880C98508413C8AA1CCF0D9FCA240_1447053134 = (mList.getSelectedId());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_445037812 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_445037812;
+        long var275880C98508413C8AA1CCF0D9FCA240_1875237550 = (mList.getSelectedId());
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1256923823 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1256923823;
         // ---------- Original Method ----------
         //return mList.getSelectedId();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.225 -0400", hash_original_method = "0A3ABCC5DF6D266750E60E7B93EFBFA9", hash_generated_method = "B6BA0EDC5117F5B17ECEA95DE2D7E3C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.750 -0400", hash_original_method = "0A3ABCC5DF6D266750E60E7B93EFBFA9", hash_generated_method = "ED3712F6ADBFAB8260CF6BC1DF2F68D0")
     public long getSelectedPosition() {
-        long var9D496FDFB5DF60B4E9FC191016FB8057_792443336 = (mList.getSelectedPosition());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_186377653 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_186377653;
+        long var9D496FDFB5DF60B4E9FC191016FB8057_1544117294 = (mList.getSelectedPosition());
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_630482363 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_630482363;
         // ---------- Original Method ----------
         //return mList.getSelectedPosition();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.227 -0400", hash_original_method = "12D5BB1A8EA5B36CE9F4C13B45510FF0", hash_generated_method = "55E01401FA24FB4185D0FB114C4713B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.750 -0400", hash_original_method = "12D5BB1A8EA5B36CE9F4C13B45510FF0", hash_generated_method = "A7EF25F58B4581ACF59643D753F56448")
     public boolean setSelectedChild(int groupPosition, int childPosition, boolean shouldExpandGroup) {
-        boolean varC061CFB78B119A902BAA937D31B5F566_1818697566 = (mList.setSelectedChild(groupPosition, childPosition, shouldExpandGroup));
+        boolean varC061CFB78B119A902BAA937D31B5F566_78820873 = (mList.setSelectedChild(groupPosition, childPosition, shouldExpandGroup));
         addTaint(groupPosition);
         addTaint(childPosition);
         addTaint(shouldExpandGroup);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666394200 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666394200;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_831356430 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_831356430;
         // ---------- Original Method ----------
         //return mList.setSelectedChild(groupPosition, childPosition, shouldExpandGroup);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.228 -0400", hash_original_method = "3A247D892E79B521DDD1AEE43FAB3391", hash_generated_method = "F643F409B52515D14CF1DEE6083F3E1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.751 -0400", hash_original_method = "3A247D892E79B521DDD1AEE43FAB3391", hash_generated_method = "F643F409B52515D14CF1DEE6083F3E1F")
     public void setSelectedGroup(int groupPosition) {
         mList.setSelectedGroup(groupPosition);
         addTaint(groupPosition);

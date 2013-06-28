@@ -19,24 +19,24 @@ import java.io.Writer;
 
 public class CopyUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.673 -0400", hash_original_method = "1212272BD01F83C868E797A5AC3981E4", hash_generated_method = "84A2CF188DB904FA9BBABD4289B541CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.217 -0400", hash_original_method = "1212272BD01F83C868E797A5AC3981E4", hash_generated_method = "84A2CF188DB904FA9BBABD4289B541CA")
     public  CopyUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static void copy(byte[] input, OutputStream output) throws IOException {
+    public static void copy(byte[] input, OutputStream output) throws IOException {
         output.write(input);
     }
 
     
-        public static void copy(byte[] input, Writer output) throws IOException {
+    public static void copy(byte[] input, Writer output) throws IOException {
         ByteArrayInputStream in = new ByteArrayInputStream(input);
         copy(in, output);
     }
 
     
-        public static void copy(
+    public static void copy(
             byte[] input,
             Writer output,
             String encoding) throws IOException {
@@ -45,7 +45,7 @@ public class CopyUtils {
     }
 
     
-        public static int copy(
+    public static int copy(
             InputStream input,
             OutputStream output) throws IOException {
         byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
@@ -59,7 +59,7 @@ public class CopyUtils {
     }
 
     
-        public static int copy(
+    public static int copy(
             Reader input,
             Writer output) throws IOException {
         char[] buffer = new char[DEFAULT_BUFFER_SIZE];
@@ -73,7 +73,7 @@ public class CopyUtils {
     }
 
     
-        public static void copy(
+    public static void copy(
             InputStream input,
             Writer output) throws IOException {
         InputStreamReader in = new InputStreamReader(input);
@@ -81,7 +81,7 @@ public class CopyUtils {
     }
 
     
-        public static void copy(
+    public static void copy(
             InputStream input,
             Writer output,
             String encoding) throws IOException {
@@ -90,7 +90,7 @@ public class CopyUtils {
     }
 
     
-        public static void copy(
+    public static void copy(
             Reader input,
             OutputStream output) throws IOException {
         OutputStreamWriter out = new OutputStreamWriter(output);
@@ -99,7 +99,7 @@ public class CopyUtils {
     }
 
     
-        public static void copy(
+    public static void copy(
             String input,
             OutputStream output) throws IOException {
         StringReader in = new StringReader(input);
@@ -109,13 +109,13 @@ public class CopyUtils {
     }
 
     
-        public static void copy(String input, Writer output) throws IOException {
+    public static void copy(String input, Writer output) throws IOException {
         output.write(input);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.675 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "19283AD58CF3BCD369226CF2BDDD521B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.220 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "AD1955EA27A1323BB99B1EE414E7EB17")
 
-    private static int DEFAULT_BUFFER_SIZE = 1024 * 4;
+    private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
 }
 

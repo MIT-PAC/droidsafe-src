@@ -18,30 +18,29 @@ import org.bouncycastle.asn1.DEREncodable;
 import org.bouncycastle.asn1.DERObject;
 
 public class ContentInfo extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.553 -0400", hash_original_field = "DF5FEAFAB86601EA0E1E6FE6E20DF6C5", hash_generated_field = "B8723365A049B92E62BB2E1CD2ECFAD9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.915 -0400", hash_original_field = "DF5FEAFAB86601EA0E1E6FE6E20DF6C5", hash_generated_field = "B8723365A049B92E62BB2E1CD2ECFAD9")
 
     private ASN1ObjectIdentifier contentType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.553 -0400", hash_original_field = "9A0364B9E99BB480DD25E1F0284C8555", hash_generated_field = "11432CB547B86FEE63A81F195D38FA38")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.915 -0400", hash_original_field = "9A0364B9E99BB480DD25E1F0284C8555", hash_generated_field = "11432CB547B86FEE63A81F195D38FA38")
 
     private DEREncodable content;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.554 -0400", hash_original_method = "ACECF8DCEA349FB5AA8E3A5A4DDD5C04", hash_generated_method = "BB9F6B2B5E6E6298FBE67A6F5A13E487")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.916 -0400", hash_original_method = "ACECF8DCEA349FB5AA8E3A5A4DDD5C04", hash_generated_method = "8B19947F96C042B55097E572BE44D37D")
     public  ContentInfo(
         ASN1Sequence  seq) {
         {
-            boolean var20EF5DADDEFE74257652D6C1EB58B13A_97912221 = (seq.size() < 1 || seq.size() > 2);
+            boolean var20EF5DADDEFE74257652D6C1EB58B13A_1098141546 = (seq.size() < 1 || seq.size() > 2);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: " + seq.size());
             } //End block
         } //End collapsed parenthetic
         contentType = (ASN1ObjectIdentifier)seq.getObjectAt(0);
         {
-            boolean var64350C32E290C0E21F2C2729462EE694_1132103817 = (seq.size() > 1);
+            boolean var64350C32E290C0E21F2C2729462EE694_2114686712 = (seq.size() > 1);
             {
-                ASN1TaggedObject tagged;
-                tagged = (ASN1TaggedObject)seq.getObjectAt(1);
+                ASN1TaggedObject tagged = (ASN1TaggedObject)seq.getObjectAt(1);
                 {
-                    boolean var9E7F2387763A4CE52A266B5991C1EF86_1611225272 = (!tagged.isExplicit() || tagged.getTagNo() != 0);
+                    boolean var9E7F2387763A4CE52A266B5991C1EF86_1674924737 = (!tagged.isExplicit() || tagged.getTagNo() != 0);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad tag for 'content'");
                     } //End block
@@ -67,7 +66,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.554 -0400", hash_original_method = "AB0717E658192592AF8930AA14355CFE", hash_generated_method = "A3BA825DF17E5D0A0A8AF41AB3ABF408")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.916 -0400", hash_original_method = "AB0717E658192592AF8930AA14355CFE", hash_generated_method = "A3BA825DF17E5D0A0A8AF41AB3ABF408")
     public  ContentInfo(
         ASN1ObjectIdentifier contentType,
         DEREncodable        content) {
@@ -79,7 +78,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
-        public static ContentInfo getInstance(
+    public static ContentInfo getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ContentInfo)
         {
@@ -93,40 +92,39 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.555 -0400", hash_original_method = "53E059E7B37D744FA8DA51063C1D9E4B", hash_generated_method = "6F407E7E6C4A23C3E9AC6D80AFF91FE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.917 -0400", hash_original_method = "53E059E7B37D744FA8DA51063C1D9E4B", hash_generated_method = "36F390D31E7D937F1F830898A1D2745F")
     public ASN1ObjectIdentifier getContentType() {
-        ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_732378042 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_732378042 = contentType;
-        varB4EAC82CA7396A68D541C85D26508E83_732378042.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_732378042;
+        ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_239549259 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_239549259 = contentType;
+        varB4EAC82CA7396A68D541C85D26508E83_239549259.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_239549259;
         // ---------- Original Method ----------
         //return contentType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.555 -0400", hash_original_method = "188E73C2A8286EF39F391EFEF33436C4", hash_generated_method = "46D9FC1F05DE1505B8D443144D805AD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.917 -0400", hash_original_method = "188E73C2A8286EF39F391EFEF33436C4", hash_generated_method = "B1124B25B311CACCB88856CC7AD38453")
     public DEREncodable getContent() {
-        DEREncodable varB4EAC82CA7396A68D541C85D26508E83_147392970 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_147392970 = content;
-        varB4EAC82CA7396A68D541C85D26508E83_147392970.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_147392970;
+        DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1725085792 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1725085792 = content;
+        varB4EAC82CA7396A68D541C85D26508E83_1725085792.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1725085792;
         // ---------- Original Method ----------
         //return content;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.556 -0400", hash_original_method = "2158A385B6C0B5A4AB87745CBE53ED1A", hash_generated_method = "6F9CA06C40B2182AF145A6882C936B50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.918 -0400", hash_original_method = "2158A385B6C0B5A4AB87745CBE53ED1A", hash_generated_method = "CF42CB06466F5BC65CF737097073BC15")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1438515067 = null; //Variable for return #1
-        ASN1EncodableVector v;
-        v = new ASN1EncodableVector();
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_2770573 = null; //Variable for return #1
+        ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(contentType);
         {
             v.add(new BERTaggedObject(0, content));
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1438515067 = new BERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1438515067.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1438515067;
+        varB4EAC82CA7396A68D541C85D26508E83_2770573 = new BERSequence(v);
+        varB4EAC82CA7396A68D541C85D26508E83_2770573.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2770573;
         // ---------- Original Method ----------
         //ASN1EncodableVector  v = new ASN1EncodableVector();
         //v.add(contentType);

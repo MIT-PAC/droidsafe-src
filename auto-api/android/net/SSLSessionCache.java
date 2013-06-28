@@ -15,11 +15,11 @@ import java.io.File;
 import java.io.IOException;
 
 public final class SSLSessionCache {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.150 -0400", hash_original_field = "8713673389F715AC61146DC2ACD6B364", hash_generated_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.025 -0400", hash_original_field = "8713673389F715AC61146DC2ACD6B364", hash_generated_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707")
 
     SSLClientSessionCache mSessionCache;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.151 -0400", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "BFF2023672F9B3C3573F503758C24A48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.025 -0400", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "BFF2023672F9B3C3573F503758C24A48")
     public  SSLSessionCache(File dir) throws IOException {
         mSessionCache = FileClientSessionCache.usingDirectory(dir);
         // ---------- Original Method ----------
@@ -27,12 +27,10 @@ public final class SSLSessionCache {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.152 -0400", hash_original_method = "5579597B1129E64225215E4123F94CC0", hash_generated_method = "93090276E48B88AE332147DAA139A9FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.026 -0400", hash_original_method = "5579597B1129E64225215E4123F94CC0", hash_generated_method = "BBCC35CF66ABEE603C111760F8B1A6BF")
     public  SSLSessionCache(Context context) {
-        File dir;
-        dir = context.getDir("sslcache", Context.MODE_PRIVATE);
-        SSLClientSessionCache cache;
-        cache = null;
+        File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
+        SSLClientSessionCache cache = null;
         try 
         {
             cache = FileClientSessionCache.usingDirectory(dir);
@@ -53,8 +51,8 @@ public final class SSLSessionCache {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.152 -0400", hash_original_field = "F49A29534D2CB7814A731E7945B4ECD0", hash_generated_field = "FC99E8B7A9D6AE716487BD48DB64632C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.026 -0400", hash_original_field = "F49A29534D2CB7814A731E7945B4ECD0", hash_generated_field = "AD0B528015E7884FCFBB50D4A7FE6352")
 
-    private static String TAG = "SSLSessionCache";
+    private static final String TAG = "SSLSessionCache";
 }
 

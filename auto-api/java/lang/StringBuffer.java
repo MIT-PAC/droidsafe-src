@@ -15,13 +15,13 @@ import java.io.Serializable;
 
 public final class StringBuffer extends AbstractStringBuilder implements Appendable, Serializable, CharSequence {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.375 -0400", hash_original_method = "6484BCA0EF411C515D6EAFFBE43997C3", hash_generated_method = "B53623B6085D93C1ED4728D6C0E442AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.933 -0400", hash_original_method = "6484BCA0EF411C515D6EAFFBE43997C3", hash_generated_method = "B53623B6085D93C1ED4728D6C0E442AB")
     public  StringBuffer() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.375 -0400", hash_original_method = "7B7971D2835EB2D685FF89EC3D85C02A", hash_generated_method = "ACD878A65D547DD5A7E0BF7E057DECCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.933 -0400", hash_original_method = "7B7971D2835EB2D685FF89EC3D85C02A", hash_generated_method = "ACD878A65D547DD5A7E0BF7E057DECCD")
     public  StringBuffer(int capacity) {
         super(capacity);
         addTaint(capacity);
@@ -29,7 +29,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.375 -0400", hash_original_method = "505E372B31FD7A37A1258BF28C555BD1", hash_generated_method = "AD616103A91E5BA346BA773E408C1684")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.933 -0400", hash_original_method = "505E372B31FD7A37A1258BF28C555BD1", hash_generated_method = "AD616103A91E5BA346BA773E408C1684")
     public  StringBuffer(String string) {
         super(string);
         addTaint(string.getTaint());
@@ -37,7 +37,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.376 -0400", hash_original_method = "8B31F280D5DC89D8F89BF293509278C5", hash_generated_method = "E056CFC31B947A7FDB5A5FB4E73192A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.933 -0400", hash_original_method = "8B31F280D5DC89D8F89BF293509278C5", hash_generated_method = "E056CFC31B947A7FDB5A5FB4E73192A5")
     public  StringBuffer(CharSequence cs) {
         super(cs.toString());
         addTaint(cs.getTaint());
@@ -45,101 +45,101 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.376 -0400", hash_original_method = "AD3312372D1C20C6FA4349EE546D8C31", hash_generated_method = "75D736A68716F98B28B536E39CB1EE8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.934 -0400", hash_original_method = "AD3312372D1C20C6FA4349EE546D8C31", hash_generated_method = "92E3B146FF50AA34F8B9E4D41D1E528B")
     public StringBuffer append(boolean b) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1391465933 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1391465933 = append(b ? "true" : "false");
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1674484998 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1674484998 = append(b ? "true" : "false");
         addTaint(b);
-        varB4EAC82CA7396A68D541C85D26508E83_1391465933.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1391465933;
+        varB4EAC82CA7396A68D541C85D26508E83_1674484998.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1674484998;
         // ---------- Original Method ----------
         //return append(b ? "true" : "false");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.377 -0400", hash_original_method = "CEE54B5A4214CACDA44FA719AFBE18BD", hash_generated_method = "3A4846798A0AA29F04B0911030E98B43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.934 -0400", hash_original_method = "CEE54B5A4214CACDA44FA719AFBE18BD", hash_generated_method = "18D81E55A4F57A24929564C063696912")
     public synchronized StringBuffer append(char ch) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_945079043 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_472059995 = null; //Variable for return #1
         append0(ch);
-        varB4EAC82CA7396A68D541C85D26508E83_945079043 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_472059995 = this;
         addTaint(ch);
-        varB4EAC82CA7396A68D541C85D26508E83_945079043.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_945079043;
+        varB4EAC82CA7396A68D541C85D26508E83_472059995.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_472059995;
         // ---------- Original Method ----------
         //append0(ch);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.378 -0400", hash_original_method = "0AFE0A1757F436EAD0779848DAA16349", hash_generated_method = "953C4EFFCE5EC991B965AA5EFBC4206C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.935 -0400", hash_original_method = "0AFE0A1757F436EAD0779848DAA16349", hash_generated_method = "4B1A85617DA4FC8FCE4500897AC37796")
     public StringBuffer append(double d) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_848595072 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_167505195 = null; //Variable for return #1
         RealToString.getInstance().appendDouble(this, d);
-        varB4EAC82CA7396A68D541C85D26508E83_848595072 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_167505195 = this;
         addTaint(d);
-        varB4EAC82CA7396A68D541C85D26508E83_848595072.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_848595072;
+        varB4EAC82CA7396A68D541C85D26508E83_167505195.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_167505195;
         // ---------- Original Method ----------
         //RealToString.getInstance().appendDouble(this, d);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.378 -0400", hash_original_method = "E91CEA6395085A2C805805AEC660F914", hash_generated_method = "EF1398B6E24A759FBA181A7909A88493")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.935 -0400", hash_original_method = "E91CEA6395085A2C805805AEC660F914", hash_generated_method = "29C6029DCB33450F6CAE38C52F08E0DD")
     public StringBuffer append(float f) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1374985566 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1058039843 = null; //Variable for return #1
         RealToString.getInstance().appendFloat(this, f);
-        varB4EAC82CA7396A68D541C85D26508E83_1374985566 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1058039843 = this;
         addTaint(f);
-        varB4EAC82CA7396A68D541C85D26508E83_1374985566.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1374985566;
+        varB4EAC82CA7396A68D541C85D26508E83_1058039843.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1058039843;
         // ---------- Original Method ----------
         //RealToString.getInstance().appendFloat(this, f);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.378 -0400", hash_original_method = "BEA181157FE20523F8DAE95D96DA45D4", hash_generated_method = "CCD0A6486C863B97E5AA4620BF765BFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.936 -0400", hash_original_method = "BEA181157FE20523F8DAE95D96DA45D4", hash_generated_method = "331AB9C5654CF96A946B0AEE6F28680C")
     public StringBuffer append(int i) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1566970760 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_2048730478 = null; //Variable for return #1
         IntegralToString.appendInt(this, i);
-        varB4EAC82CA7396A68D541C85D26508E83_1566970760 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_2048730478 = this;
         addTaint(i);
-        varB4EAC82CA7396A68D541C85D26508E83_1566970760.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1566970760;
+        varB4EAC82CA7396A68D541C85D26508E83_2048730478.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2048730478;
         // ---------- Original Method ----------
         //IntegralToString.appendInt(this, i);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.396 -0400", hash_original_method = "83E6088E5FD422B34A78952B80516F81", hash_generated_method = "42F2AA4D32AB1C8A6B8B44DB1F7AA8B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.936 -0400", hash_original_method = "83E6088E5FD422B34A78952B80516F81", hash_generated_method = "A6395D7DC857B039BAFE1DB766D6E46B")
     public StringBuffer append(long l) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1016426671 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1751005857 = null; //Variable for return #1
         IntegralToString.appendLong(this, l);
-        varB4EAC82CA7396A68D541C85D26508E83_1016426671 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1751005857 = this;
         addTaint(l);
-        varB4EAC82CA7396A68D541C85D26508E83_1016426671.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1016426671;
+        varB4EAC82CA7396A68D541C85D26508E83_1751005857.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1751005857;
         // ---------- Original Method ----------
         //IntegralToString.appendLong(this, l);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.397 -0400", hash_original_method = "2D15CD6872414C1946401A7870801F7E", hash_generated_method = "DDDA351CAFAD48D9B90BFC6C00FBE99A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.937 -0400", hash_original_method = "2D15CD6872414C1946401A7870801F7E", hash_generated_method = "C8FEBA3A41844AD7FD1DC3AD7B4DE2B4")
     public synchronized StringBuffer append(Object obj) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_877439851 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_2055517015 = null; //Variable for return #1
         {
             appendNull();
         } //End block
         {
             append0(obj.toString());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_877439851 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_2055517015 = this;
         addTaint(obj.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_877439851.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_877439851;
+        varB4EAC82CA7396A68D541C85D26508E83_2055517015.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2055517015;
         // ---------- Original Method ----------
         //if (obj == null) {
             //appendNull();
@@ -150,23 +150,23 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.397 -0400", hash_original_method = "BA0CFF22AB5EB829F1FAF589162ABBEB", hash_generated_method = "E51C9ECA7E8C3A33909AD61142FFEBDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.937 -0400", hash_original_method = "BA0CFF22AB5EB829F1FAF589162ABBEB", hash_generated_method = "D8835352628534A0FA8FAE165AAB55A0")
     public synchronized StringBuffer append(String string) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_37129853 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_415894721 = null; //Variable for return #1
         append0(string);
-        varB4EAC82CA7396A68D541C85D26508E83_37129853 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_415894721 = this;
         addTaint(string.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_37129853.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_37129853;
+        varB4EAC82CA7396A68D541C85D26508E83_415894721.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_415894721;
         // ---------- Original Method ----------
         //append0(string);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.398 -0400", hash_original_method = "F6E1A459EC09255D7DD48512D99C9457", hash_generated_method = "8387346C038371514899C79D184C600B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.937 -0400", hash_original_method = "F6E1A459EC09255D7DD48512D99C9457", hash_generated_method = "7A7CDE0103683CF1AE828FF600F50D85")
     public synchronized StringBuffer append(StringBuffer sb) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1167201359 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1452717546 = null; //Variable for return #1
         {
             appendNull();
         } //End block
@@ -175,10 +175,10 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
                 append0(sb.getValue(), 0, sb.length());
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1167201359 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1452717546 = this;
         addTaint(sb.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1167201359.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1167201359;
+        varB4EAC82CA7396A68D541C85D26508E83_1452717546.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1452717546;
         // ---------- Original Method ----------
         //if (sb == null) {
             //appendNull();
@@ -191,49 +191,49 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.398 -0400", hash_original_method = "711104B80207109E628FE8DD74956179", hash_generated_method = "B886976EB5DE4F02A8E25845B84FFC7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.938 -0400", hash_original_method = "711104B80207109E628FE8DD74956179", hash_generated_method = "0D51EC06BBC4AC4F5626630AFFC02F0D")
     public synchronized StringBuffer append(char[] chars) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_520828961 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_962173871 = null; //Variable for return #1
         append0(chars);
-        varB4EAC82CA7396A68D541C85D26508E83_520828961 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_962173871 = this;
         addTaint(chars[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_520828961.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_520828961;
+        varB4EAC82CA7396A68D541C85D26508E83_962173871.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_962173871;
         // ---------- Original Method ----------
         //append0(chars);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.399 -0400", hash_original_method = "46001E95C0F59DFED22A324D2D070740", hash_generated_method = "8860D0764B9A7DAE532816C49997C455")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.938 -0400", hash_original_method = "46001E95C0F59DFED22A324D2D070740", hash_generated_method = "56B4590FA6BFDE48F508B580892DB67F")
     public synchronized StringBuffer append(char[] chars, int start, int length) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_442157698 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_867304594 = null; //Variable for return #1
         append0(chars, start, length);
-        varB4EAC82CA7396A68D541C85D26508E83_442157698 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_867304594 = this;
         addTaint(chars[0]);
         addTaint(start);
         addTaint(length);
-        varB4EAC82CA7396A68D541C85D26508E83_442157698.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_442157698;
+        varB4EAC82CA7396A68D541C85D26508E83_867304594.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_867304594;
         // ---------- Original Method ----------
         //append0(chars, start, length);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.409 -0400", hash_original_method = "2C28D2E65709E046DB9D8E48F9D4C881", hash_generated_method = "D9408CC212F8AEEB9E962BF6BB18CD8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.939 -0400", hash_original_method = "2C28D2E65709E046DB9D8E48F9D4C881", hash_generated_method = "22644C426EF409F1E38A7ACB51BF0FBC")
     public synchronized StringBuffer append(CharSequence s) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_504065069 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1852150414 = null; //Variable for return #1
         {
             appendNull();
         } //End block
         {
             append0(s, 0, s.length());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_504065069 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1852150414 = this;
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_504065069.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_504065069;
+        varB4EAC82CA7396A68D541C85D26508E83_1852150414.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1852150414;
         // ---------- Original Method ----------
         //if (s == null) {
             //appendNull();
@@ -244,113 +244,113 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.409 -0400", hash_original_method = "C1E3B870A5740951AADEEF0491CD7264", hash_generated_method = "399A813EF34D948FFF8140D9F8E15B9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.939 -0400", hash_original_method = "C1E3B870A5740951AADEEF0491CD7264", hash_generated_method = "7791C564433B21DA8ECFCFC14AAF5C60")
     public synchronized StringBuffer append(CharSequence s, int start, int end) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_48654787 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_741417761 = null; //Variable for return #1
         append0(s, start, end);
-        varB4EAC82CA7396A68D541C85D26508E83_48654787 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_741417761 = this;
         addTaint(s.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_48654787.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_48654787;
+        varB4EAC82CA7396A68D541C85D26508E83_741417761.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_741417761;
         // ---------- Original Method ----------
         //append0(s, start, end);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.410 -0400", hash_original_method = "4B31A9F498F093ACA181C8BA507E02E7", hash_generated_method = "DE904AC57CE52D8CC73630E74E8E9B2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.940 -0400", hash_original_method = "4B31A9F498F093ACA181C8BA507E02E7", hash_generated_method = "5DE79553E53FAA07CAB5C272195B4CB5")
     public StringBuffer appendCodePoint(int codePoint) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_393271457 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_393271457 = append(Character.toChars(codePoint));
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_229866883 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_229866883 = append(Character.toChars(codePoint));
         addTaint(codePoint);
-        varB4EAC82CA7396A68D541C85D26508E83_393271457.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_393271457;
+        varB4EAC82CA7396A68D541C85D26508E83_229866883.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_229866883;
         // ---------- Original Method ----------
         //return append(Character.toChars(codePoint));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.411 -0400", hash_original_method = "52E39D47ECD902DE3C84A8ACBB2DE582", hash_generated_method = "FA4A3F253E3BBE4C27A30DFE43D48F26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.940 -0400", hash_original_method = "52E39D47ECD902DE3C84A8ACBB2DE582", hash_generated_method = "F885BE564DCED538BE33EFF6E8C3C6EA")
     @Override
     public synchronized char charAt(int index) {
-        char var67343F6FBD7200EB4B6E0B11BF615A09_1044705164 = (super.charAt(index));
+        char var67343F6FBD7200EB4B6E0B11BF615A09_1385373532 = (super.charAt(index));
         addTaint(index);
-        char varA87DEB01C5F539E6BDA34829C8EF2368_701512834 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_701512834;
+        char varA87DEB01C5F539E6BDA34829C8EF2368_577455701 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_577455701;
         // ---------- Original Method ----------
         //return super.charAt(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.411 -0400", hash_original_method = "48A83889A4814C372999BC69DB011FE1", hash_generated_method = "BCE6B36A9BD22F57DF85111BC134408F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.941 -0400", hash_original_method = "48A83889A4814C372999BC69DB011FE1", hash_generated_method = "EC8D0D89D8A5CAE4E6ECA404B5F94217")
     @Override
     public synchronized int codePointAt(int index) {
-        int var87028839F2D2E61732A658D75862070C_1243797349 = (super.codePointAt(index));
+        int var87028839F2D2E61732A658D75862070C_578216128 = (super.codePointAt(index));
         addTaint(index);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732430186 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732430186;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_950891026 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_950891026;
         // ---------- Original Method ----------
         //return super.codePointAt(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.411 -0400", hash_original_method = "E2FD7EE4758777A7F8810D08D8C81C5F", hash_generated_method = "A458E87254BA81F72722C982CAFB8A25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.941 -0400", hash_original_method = "E2FD7EE4758777A7F8810D08D8C81C5F", hash_generated_method = "04D0564B9500C8B58BA8FBF08AE60E0D")
     @Override
     public synchronized int codePointBefore(int index) {
-        int var4F5E6A41BD327C670531AB1C8E85EDF9_1049487289 = (super.codePointBefore(index));
+        int var4F5E6A41BD327C670531AB1C8E85EDF9_2036561054 = (super.codePointBefore(index));
         addTaint(index);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1995771167 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1995771167;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027112652 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027112652;
         // ---------- Original Method ----------
         //return super.codePointBefore(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.411 -0400", hash_original_method = "C17E5B71844DF6A2EACD3D99CBFE136F", hash_generated_method = "ED295E9872D4E1B7F87869D8C5BE2B33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.942 -0400", hash_original_method = "C17E5B71844DF6A2EACD3D99CBFE136F", hash_generated_method = "E8D9DE37674E13689C5FC49BBEF9EAA1")
     @Override
     public synchronized int codePointCount(int beginIndex, int endIndex) {
-        int varC3B3B69B865D0E48792B1447F2B7D0D0_1092005983 = (super.codePointCount(beginIndex, endIndex));
+        int varC3B3B69B865D0E48792B1447F2B7D0D0_1616779029 = (super.codePointCount(beginIndex, endIndex));
         addTaint(beginIndex);
         addTaint(endIndex);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583047838 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583047838;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328734106 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328734106;
         // ---------- Original Method ----------
         //return super.codePointCount(beginIndex, endIndex);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.412 -0400", hash_original_method = "235414C6394F3123BE59FBE1973087EC", hash_generated_method = "BF632CBE6E290412255378FF24DED6AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.942 -0400", hash_original_method = "235414C6394F3123BE59FBE1973087EC", hash_generated_method = "970E82AD2F41452316075312777E53EE")
     public synchronized StringBuffer delete(int start, int end) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_59192050 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1138139742 = null; //Variable for return #1
         delete0(start, end);
-        varB4EAC82CA7396A68D541C85D26508E83_59192050 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1138139742 = this;
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_59192050.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_59192050;
+        varB4EAC82CA7396A68D541C85D26508E83_1138139742.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1138139742;
         // ---------- Original Method ----------
         //delete0(start, end);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.412 -0400", hash_original_method = "737D447D9524E38B88FDFD3CE0E844F0", hash_generated_method = "45F737804424AEF7320591ACB528E8E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.943 -0400", hash_original_method = "737D447D9524E38B88FDFD3CE0E844F0", hash_generated_method = "D37C487461E3B6FB977F8E77A4D531C8")
     public synchronized StringBuffer deleteCharAt(int location) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_725935573 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_44498 = null; //Variable for return #1
         deleteCharAt0(location);
-        varB4EAC82CA7396A68D541C85D26508E83_725935573 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_44498 = this;
         addTaint(location);
-        varB4EAC82CA7396A68D541C85D26508E83_725935573.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_725935573;
+        varB4EAC82CA7396A68D541C85D26508E83_44498.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_44498;
         // ---------- Original Method ----------
         //deleteCharAt0(location);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.413 -0400", hash_original_method = "1B87A2C630A8B8AD61E299E2980BE5BA", hash_generated_method = "B7A5F28489197DBA043A15080FD326DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.944 -0400", hash_original_method = "1B87A2C630A8B8AD61E299E2980BE5BA", hash_generated_method = "B7A5F28489197DBA043A15080FD326DB")
     @Override
     public synchronized void ensureCapacity(int min) {
         super.ensureCapacity(min);
@@ -360,7 +360,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.413 -0400", hash_original_method = "037A31D5BC34DCBBE5FD8C41FC89B29B", hash_generated_method = "C71095F66A2A940F5CA6459ABB858CEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.944 -0400", hash_original_method = "037A31D5BC34DCBBE5FD8C41FC89B29B", hash_generated_method = "C71095F66A2A940F5CA6459ABB858CEF")
     @Override
     public synchronized void getChars(int start, int end, char[] buffer, int idx) {
         super.getChars(start, end, buffer, idx);
@@ -373,248 +373,248 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.432 -0400", hash_original_method = "BF7B498FDD44487B77C2BA2659BC8482", hash_generated_method = "5E478B8C1366D7AA583CB9BBC2AF2CDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.945 -0400", hash_original_method = "BF7B498FDD44487B77C2BA2659BC8482", hash_generated_method = "6F12EB263429CB9392F4E2830AA915C4")
     @Override
     public synchronized int indexOf(String subString, int start) {
-        int var908E3533399C11D447675EC6DD3F4900_1703354941 = (super.indexOf(subString, start));
+        int var908E3533399C11D447675EC6DD3F4900_1553237338 = (super.indexOf(subString, start));
         addTaint(subString.getTaint());
         addTaint(start);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314174716 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314174716;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844218033 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844218033;
         // ---------- Original Method ----------
         //return super.indexOf(subString, start);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.433 -0400", hash_original_method = "CE1956BD7F5F63F118F54E2B606E5A97", hash_generated_method = "344C86E8FF01CAFB9A43FBD5B63B8176")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.946 -0400", hash_original_method = "CE1956BD7F5F63F118F54E2B606E5A97", hash_generated_method = "98D05B4982D44200CB3AD139E28B095C")
     public synchronized StringBuffer insert(int index, char ch) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_463060480 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1668362472 = null; //Variable for return #1
         insert0(index, ch);
-        varB4EAC82CA7396A68D541C85D26508E83_463060480 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1668362472 = this;
         addTaint(index);
         addTaint(ch);
-        varB4EAC82CA7396A68D541C85D26508E83_463060480.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_463060480;
+        varB4EAC82CA7396A68D541C85D26508E83_1668362472.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1668362472;
         // ---------- Original Method ----------
         //insert0(index, ch);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.433 -0400", hash_original_method = "162176ED227569BA5BCA4BCD896EB6BD", hash_generated_method = "D14ED97CD12E34190E570B4D1A26C72F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.946 -0400", hash_original_method = "162176ED227569BA5BCA4BCD896EB6BD", hash_generated_method = "D3AEAC87DB13C409400DF1556813A9EA")
     public StringBuffer insert(int index, boolean b) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_421587332 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_421587332 = insert(index, b ? "true" : "false");
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1755282105 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1755282105 = insert(index, b ? "true" : "false");
         addTaint(index);
         addTaint(b);
-        varB4EAC82CA7396A68D541C85D26508E83_421587332.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_421587332;
+        varB4EAC82CA7396A68D541C85D26508E83_1755282105.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1755282105;
         // ---------- Original Method ----------
         //return insert(index, b ? "true" : "false");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.434 -0400", hash_original_method = "5A54C4D4DA42D98D57F22399AE362D5B", hash_generated_method = "FEF5BDA8F2BE78C1AA32FF86DE3801BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.947 -0400", hash_original_method = "5A54C4D4DA42D98D57F22399AE362D5B", hash_generated_method = "B77A5DE22BD3061C88CD5A5A65252F39")
     public StringBuffer insert(int index, int i) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_666853207 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_666853207 = insert(index, Integer.toString(i));
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1065588177 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1065588177 = insert(index, Integer.toString(i));
         addTaint(index);
         addTaint(i);
-        varB4EAC82CA7396A68D541C85D26508E83_666853207.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_666853207;
+        varB4EAC82CA7396A68D541C85D26508E83_1065588177.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1065588177;
         // ---------- Original Method ----------
         //return insert(index, Integer.toString(i));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.435 -0400", hash_original_method = "5D8E4B66E2DC4C0F0AE2C3587B4A421D", hash_generated_method = "ED12944ADF4AD607C74922447FDEFCCA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.948 -0400", hash_original_method = "5D8E4B66E2DC4C0F0AE2C3587B4A421D", hash_generated_method = "0FFFEAE42BE8D512FF58BFB03B237851")
     public StringBuffer insert(int index, long l) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_416801979 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_416801979 = insert(index, Long.toString(l));
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1827083919 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1827083919 = insert(index, Long.toString(l));
         addTaint(index);
         addTaint(l);
-        varB4EAC82CA7396A68D541C85D26508E83_416801979.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_416801979;
+        varB4EAC82CA7396A68D541C85D26508E83_1827083919.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1827083919;
         // ---------- Original Method ----------
         //return insert(index, Long.toString(l));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.435 -0400", hash_original_method = "6F91201558DE19CA8BB7D7C8218AE116", hash_generated_method = "D8F42DDA487D9D20726BC843A478E0D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.949 -0400", hash_original_method = "6F91201558DE19CA8BB7D7C8218AE116", hash_generated_method = "A3EEA17E6117B270FA9FC469901991BF")
     public StringBuffer insert(int index, double d) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1196735369 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1196735369 = insert(index, Double.toString(d));
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_111870094 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_111870094 = insert(index, Double.toString(d));
         addTaint(index);
         addTaint(d);
-        varB4EAC82CA7396A68D541C85D26508E83_1196735369.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1196735369;
+        varB4EAC82CA7396A68D541C85D26508E83_111870094.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_111870094;
         // ---------- Original Method ----------
         //return insert(index, Double.toString(d));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.442 -0400", hash_original_method = "F7E2A65D054608BBB689E2070378B818", hash_generated_method = "0FA414C6BBF8E210FDC41F9FE426D6B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.950 -0400", hash_original_method = "F7E2A65D054608BBB689E2070378B818", hash_generated_method = "821D12F1B6F40944205ED6E4E570F2FD")
     public StringBuffer insert(int index, float f) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1360986192 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1360986192 = insert(index, Float.toString(f));
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1780696243 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1780696243 = insert(index, Float.toString(f));
         addTaint(index);
         addTaint(f);
-        varB4EAC82CA7396A68D541C85D26508E83_1360986192.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1360986192;
+        varB4EAC82CA7396A68D541C85D26508E83_1780696243.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1780696243;
         // ---------- Original Method ----------
         //return insert(index, Float.toString(f));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.443 -0400", hash_original_method = "474B289AA5CB68BD472602D89AE62101", hash_generated_method = "9F46155E53C12C356AE1B31254799911")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.951 -0400", hash_original_method = "474B289AA5CB68BD472602D89AE62101", hash_generated_method = "54E70706094DF2C94FEC01772A2330DA")
     public StringBuffer insert(int index, Object obj) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1557744027 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1557744027 = insert(index, obj == null ? "null" : obj.toString());
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_214255889 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_214255889 = insert(index, obj == null ? "null" : obj.toString());
         addTaint(index);
         addTaint(obj.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1557744027.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1557744027;
+        varB4EAC82CA7396A68D541C85D26508E83_214255889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_214255889;
         // ---------- Original Method ----------
         //return insert(index, obj == null ? "null" : obj.toString());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.444 -0400", hash_original_method = "5591CE5A2850A371416D9B24730643D5", hash_generated_method = "3CDE48CD01BA1B7E6A271D5D1C4EE737")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.952 -0400", hash_original_method = "5591CE5A2850A371416D9B24730643D5", hash_generated_method = "56307BB90D9885B01ED08AC56E862D0D")
     public synchronized StringBuffer insert(int index, String string) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1544926416 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1874709453 = null; //Variable for return #1
         insert0(index, string);
-        varB4EAC82CA7396A68D541C85D26508E83_1544926416 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1874709453 = this;
         addTaint(index);
         addTaint(string.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1544926416.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1544926416;
+        varB4EAC82CA7396A68D541C85D26508E83_1874709453.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1874709453;
         // ---------- Original Method ----------
         //insert0(index, string);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.444 -0400", hash_original_method = "1121EB69A68046BEB419CFEB2B6021C8", hash_generated_method = "88E564FF1C07464021ED4ED1AC44F97F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.953 -0400", hash_original_method = "1121EB69A68046BEB419CFEB2B6021C8", hash_generated_method = "C4272479F741ABF89FD694D24397C3A4")
     public synchronized StringBuffer insert(int index, char[] chars) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_196817319 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_293638994 = null; //Variable for return #1
         insert0(index, chars);
-        varB4EAC82CA7396A68D541C85D26508E83_196817319 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_293638994 = this;
         addTaint(index);
         addTaint(chars[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_196817319.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_196817319;
+        varB4EAC82CA7396A68D541C85D26508E83_293638994.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_293638994;
         // ---------- Original Method ----------
         //insert0(index, chars);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.445 -0400", hash_original_method = "E3508FF8AABC28C56148C557B4E38064", hash_generated_method = "BAF71515C3F5212F2CC7B1A8C516914B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.954 -0400", hash_original_method = "E3508FF8AABC28C56148C557B4E38064", hash_generated_method = "9F248E4EA3CFB8DDEA0A8D63E73F1788")
     public synchronized StringBuffer insert(int index, char[] chars, int start, int length) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_439352182 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_596043669 = null; //Variable for return #1
         insert0(index, chars, start, length);
-        varB4EAC82CA7396A68D541C85D26508E83_439352182 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_596043669 = this;
         addTaint(index);
         addTaint(chars[0]);
         addTaint(start);
         addTaint(length);
-        varB4EAC82CA7396A68D541C85D26508E83_439352182.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_439352182;
+        varB4EAC82CA7396A68D541C85D26508E83_596043669.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_596043669;
         // ---------- Original Method ----------
         //insert0(index, chars, start, length);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.457 -0400", hash_original_method = "313D5F48F5D2BFD8C8C3947312396740", hash_generated_method = "D18D37A8EE810D524A9304AAC711611C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.955 -0400", hash_original_method = "313D5F48F5D2BFD8C8C3947312396740", hash_generated_method = "2228D13B1BA9768E2622349A88BAA3E4")
     public synchronized StringBuffer insert(int index, CharSequence s) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1893754926 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_658564536 = null; //Variable for return #1
         insert0(index, s == null ? "null" : s.toString());
-        varB4EAC82CA7396A68D541C85D26508E83_1893754926 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_658564536 = this;
         addTaint(index);
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1893754926.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1893754926;
+        varB4EAC82CA7396A68D541C85D26508E83_658564536.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_658564536;
         // ---------- Original Method ----------
         //insert0(index, s == null ? "null" : s.toString());
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.458 -0400", hash_original_method = "BBD93AF1317886AF1B5FFE12E83BEB02", hash_generated_method = "E44CB70ABB7BF3DB8C8C9AD5E02E83DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.957 -0400", hash_original_method = "BBD93AF1317886AF1B5FFE12E83BEB02", hash_generated_method = "F9D083B5193874936E8A3C4296074366")
     public synchronized StringBuffer insert(int index, CharSequence s,
             int start, int end) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1466207398 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_2035155052 = null; //Variable for return #1
         insert0(index, s, start, end);
-        varB4EAC82CA7396A68D541C85D26508E83_1466207398 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_2035155052 = this;
         addTaint(index);
         addTaint(s.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1466207398.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1466207398;
+        varB4EAC82CA7396A68D541C85D26508E83_2035155052.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2035155052;
         // ---------- Original Method ----------
         //insert0(index, s, start, end);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.458 -0400", hash_original_method = "39077D4F93550F62A3B71E5EF9B37555", hash_generated_method = "D5DC56A893546A9BCA7F059ADB116832")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.959 -0400", hash_original_method = "39077D4F93550F62A3B71E5EF9B37555", hash_generated_method = "2B3B934A531FEAE4C18DF7C898E79646")
     @Override
     public synchronized int lastIndexOf(String subString, int start) {
-        int var5E66E0A664D3EA61A5B243FCAE7F27E6_1654903792 = (super.lastIndexOf(subString, start));
+        int var5E66E0A664D3EA61A5B243FCAE7F27E6_2069438229 = (super.lastIndexOf(subString, start));
         addTaint(subString.getTaint());
         addTaint(start);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746598461 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746598461;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464207730 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464207730;
         // ---------- Original Method ----------
         //return super.lastIndexOf(subString, start);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.458 -0400", hash_original_method = "C8ABB25D4960EE5BE30D58FFF30054AF", hash_generated_method = "DAA3E9E9786EE76E850AB4DC9D3265AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.960 -0400", hash_original_method = "C8ABB25D4960EE5BE30D58FFF30054AF", hash_generated_method = "657583FDCC0B5993FACBD5969C66AFC0")
     @Override
     public synchronized int offsetByCodePoints(int index, int codePointOffset) {
-        int var6A111C2FA13ECAF03A3B30B414C79D57_548036391 = (super.offsetByCodePoints(index, codePointOffset));
+        int var6A111C2FA13ECAF03A3B30B414C79D57_2136559545 = (super.offsetByCodePoints(index, codePointOffset));
         addTaint(index);
         addTaint(codePointOffset);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645695142 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645695142;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111182758 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111182758;
         // ---------- Original Method ----------
         //return super.offsetByCodePoints(index, codePointOffset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.459 -0400", hash_original_method = "7F162AB48D360AADEB1B9DD8B238BF48", hash_generated_method = "821B3C925187B3198BD3DB282E7B62C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.961 -0400", hash_original_method = "7F162AB48D360AADEB1B9DD8B238BF48", hash_generated_method = "47A8113F37921EC6E7F08F663A063E35")
     public synchronized StringBuffer replace(int start, int end, String string) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_889586534 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1999187027 = null; //Variable for return #1
         replace0(start, end, string);
-        varB4EAC82CA7396A68D541C85D26508E83_889586534 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1999187027 = this;
         addTaint(start);
         addTaint(end);
         addTaint(string.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_889586534.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_889586534;
+        varB4EAC82CA7396A68D541C85D26508E83_1999187027.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1999187027;
         // ---------- Original Method ----------
         //replace0(start, end, string);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.459 -0400", hash_original_method = "098653D6B0F25929404FF528DA5234A0", hash_generated_method = "A042970A662D76F5F40D2C3C70CCBCDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.963 -0400", hash_original_method = "098653D6B0F25929404FF528DA5234A0", hash_generated_method = "D38A7AF775090175B5FDE71AE947BCEB")
     public synchronized StringBuffer reverse() {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_596187849 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1326267771 = null; //Variable for return #1
         reverse0();
-        varB4EAC82CA7396A68D541C85D26508E83_596187849 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_596187849.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_596187849;
+        varB4EAC82CA7396A68D541C85D26508E83_1326267771 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1326267771.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1326267771;
         // ---------- Original Method ----------
         //reverse0();
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.462 -0400", hash_original_method = "5E8E344457E07DCAD9D3AB0618D1D4EE", hash_generated_method = "D9AE4CA4323AA1B6D019FACB19D61285")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.963 -0400", hash_original_method = "5E8E344457E07DCAD9D3AB0618D1D4EE", hash_generated_method = "D9AE4CA4323AA1B6D019FACB19D61285")
     @Override
     public synchronized void setCharAt(int index, char ch) {
         super.setCharAt(index, ch);
@@ -625,7 +625,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.463 -0400", hash_original_method = "384C5D925F648A6C0E5C9532F172E2E9", hash_generated_method = "3402CE4F18B02713E2BF8FB12CD8BEA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.964 -0400", hash_original_method = "384C5D925F648A6C0E5C9532F172E2E9", hash_generated_method = "3402CE4F18B02713E2BF8FB12CD8BEA1")
     @Override
     public synchronized void setLength(int length) {
         super.setLength(length);
@@ -635,60 +635,60 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.463 -0400", hash_original_method = "A9B709A81F57A675D3A25B35A00D1C6F", hash_generated_method = "8ACF6206EC680C5F669641CCA0647B74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.965 -0400", hash_original_method = "A9B709A81F57A675D3A25B35A00D1C6F", hash_generated_method = "314269D4311E7DC24884603999063867")
     @Override
     public synchronized CharSequence subSequence(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1636617559 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1636617559 = super.substring(start, end);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1126045865 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1126045865 = super.substring(start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1636617559.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1636617559;
+        varB4EAC82CA7396A68D541C85D26508E83_1126045865.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1126045865;
         // ---------- Original Method ----------
         //return super.substring(start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.463 -0400", hash_original_method = "9DB8630678DB6396B8F68E9EC4290146", hash_generated_method = "5BBB3205B33433AA5F46306F04F04FE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.966 -0400", hash_original_method = "9DB8630678DB6396B8F68E9EC4290146", hash_generated_method = "EDA289DA3062F9FF53E45B4793F34790")
     @Override
     public synchronized String substring(int start) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2025481634 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2025481634 = super.substring(start);
+        String varB4EAC82CA7396A68D541C85D26508E83_579886868 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_579886868 = super.substring(start);
         addTaint(start);
-        varB4EAC82CA7396A68D541C85D26508E83_2025481634.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2025481634;
+        varB4EAC82CA7396A68D541C85D26508E83_579886868.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_579886868;
         // ---------- Original Method ----------
         //return super.substring(start);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.464 -0400", hash_original_method = "8F6436CA8EA2D690A9089AF2007B25C6", hash_generated_method = "BBE86C11AA4B0A934BA6A40352199297")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.967 -0400", hash_original_method = "8F6436CA8EA2D690A9089AF2007B25C6", hash_generated_method = "5DDAA4137AED5FACB2B30E8B18A442EA")
     @Override
     public synchronized String substring(int start, int end) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1586285648 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1586285648 = super.substring(start, end);
+        String varB4EAC82CA7396A68D541C85D26508E83_1556735256 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1556735256 = super.substring(start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1586285648.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1586285648;
+        varB4EAC82CA7396A68D541C85D26508E83_1556735256.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1556735256;
         // ---------- Original Method ----------
         //return super.substring(start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.464 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "FDF862340CD6B731EC39E28D4D918E7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.968 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "1B9A30DBC10A6F5CECF93AED6F372010")
     @Override
     public synchronized String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_37827560 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_37827560 = super.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_37827560.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_37827560;
+        String varB4EAC82CA7396A68D541C85D26508E83_1344121517 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1344121517 = super.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1344121517.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1344121517;
         // ---------- Original Method ----------
         //return super.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.467 -0400", hash_original_method = "596F21FA7699F8C3786ED3A552D7371B", hash_generated_method = "4AD64ABAA1448088FDC29C19AFB55B5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.968 -0400", hash_original_method = "596F21FA7699F8C3786ED3A552D7371B", hash_generated_method = "4AD64ABAA1448088FDC29C19AFB55B5C")
     @Override
     public synchronized void trimToSize() {
         super.trimToSize();
@@ -697,10 +697,9 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.468 -0400", hash_original_method = "1BC53113CC0063A57FC602AA53299ECD", hash_generated_method = "1294FC9FE85B07DF679D5FEDC99E947B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.968 -0400", hash_original_method = "1BC53113CC0063A57FC602AA53299ECD", hash_generated_method = "43D22BC7D942240AC40FBA18A84F0CE6")
     private synchronized void writeObject(ObjectOutputStream out) throws IOException {
-        ObjectOutputStream.PutField fields;
-        fields = out.putFields();
+        ObjectOutputStream.PutField fields = out.putFields();
         fields.put("count", length());
         fields.put("shared", false);
         fields.put("value", getValue());
@@ -715,15 +714,12 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.468 -0400", hash_original_method = "9B6E3FB5AF7FD24ED316678958241184", hash_generated_method = "B2B90D2337B0D6B79DA91B0227E261E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.969 -0400", hash_original_method = "9B6E3FB5AF7FD24ED316678958241184", hash_generated_method = "11B6300FEF8F4CC97FE18AF0AC330D71")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
-        ObjectInputStream.GetField fields;
-        fields = in.readFields();
-        int count;
-        count = fields.get("count", 0);
-        char[] value;
-        value = (char[]) fields.get("value", null);
+        ObjectInputStream.GetField fields = in.readFields();
+        int count = fields.get("count", 0);
+        char[] value = (char[]) fields.get("value", null);
         set(value, count);
         addTaint(in.getTaint());
         // ---------- Original Method ----------
@@ -734,12 +730,12 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.468 -0400", hash_original_field = "98690DEA52FA41F3A04A5E4B46C7BC91", hash_generated_field = "DBBC791224A069773BAC94871CD87C81")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.969 -0400", hash_original_field = "98690DEA52FA41F3A04A5E4B46C7BC91", hash_generated_field = "FC0674932C46ABA4FCCDFE0606287381")
 
-    private static long serialVersionUID = 3388685877147921107L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.469 -0400", hash_original_field = "1335615F33A067E5F7D76F56EAD9B80B", hash_generated_field = "041D577DE2AB15A0301441F139839D44")
+    private static final long serialVersionUID = 3388685877147921107L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.969 -0400", hash_original_field = "1335615F33A067E5F7D76F56EAD9B80B", hash_generated_field = "B99DBA28D5BC805935B08D57FFE80361")
 
-    private static ObjectStreamField[] serialPersistentFields = {
+    private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("count", int.class),
         new ObjectStreamField("shared", boolean.class),
         new ObjectStreamField("value", char[].class),

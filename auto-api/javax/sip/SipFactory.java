@@ -16,23 +16,23 @@ import javax.sip.header.HeaderFactory;
 import javax.sip.message.MessageFactory;
 
 public class SipFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.574 -0400", hash_original_field = "F15291B53700565A1AF38AB3C8B76F75", hash_generated_field = "0A333A66907627CDEDE0F61BF2FFB75E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.088 -0400", hash_original_field = "F15291B53700565A1AF38AB3C8B76F75", hash_generated_field = "0A333A66907627CDEDE0F61BF2FFB75E")
 
     private Map<String, SipStack> mNameSipStackMap = new HashMap<String, SipStack>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.578 -0400", hash_original_method = "310FD6F79BE3873A4CC6341AA537481F", hash_generated_method = "8EE8B7CE3FF369FB663AE49D47AA71E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.089 -0400", hash_original_method = "310FD6F79BE3873A4CC6341AA537481F", hash_generated_method = "8EE8B7CE3FF369FB663AE49D47AA71E3")
     private  SipFactory() {
         // ---------- Original Method ----------
     }
 
     
-        public static synchronized SipFactory getInstance() {
+    public static synchronized SipFactory getInstance() {
         if (sSipFactory == null) sSipFactory = new SipFactory();
         return sSipFactory;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.581 -0400", hash_original_method = "4674ABC43EF2CEE4F0AE8B5BE63244D8", hash_generated_method = "1563E944C31091A298AF7AA59469E4FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.090 -0400", hash_original_method = "4674ABC43EF2CEE4F0AE8B5BE63244D8", hash_generated_method = "1563E944C31091A298AF7AA59469E4FE")
     public synchronized void resetFactory() {
         mNameSipStackMap.clear();
         // ---------- Original Method ----------
@@ -40,11 +40,10 @@ public class SipFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.590 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "19ACD6D883BD4FE593AB3B16E22A741A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.091 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "8026EE57CEEBBED3140ECB10BA0C37D7")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
-        SipStack varB4EAC82CA7396A68D541C85D26508E83_1913431021 = null; //Variable for return #1
-        String name;
-        name = properties.getProperty(IP_ADDRESS_PROP);
+        SipStack varB4EAC82CA7396A68D541C85D26508E83_732974557 = null; //Variable for return #1
+        String name = properties.getProperty(IP_ADDRESS_PROP);
         {
             name = properties.getProperty(STACK_NAME_PROP);
             {
@@ -52,11 +51,9 @@ public class SipFactory {
                         STACK_NAME_PROP + " property not found");
             } //End block
         } //End block
-        SipStack sipStack;
-        sipStack = mNameSipStackMap.get(name);
+        SipStack sipStack = mNameSipStackMap.get(name);
         {
-            String implClassName;
-            implClassName = "gov.nist."
+            String implClassName = "gov.nist."
                     + SipStack.class.getCanonicalName() + "Impl";
             try 
             {
@@ -72,21 +69,21 @@ public class SipFactory {
             } //End block
             mNameSipStackMap.put(name, sipStack);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1913431021 = sipStack;
+        varB4EAC82CA7396A68D541C85D26508E83_732974557 = sipStack;
         addTaint(properties.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1913431021.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1913431021;
+        varB4EAC82CA7396A68D541C85D26508E83_732974557.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_732974557;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.599 -0400", hash_original_method = "131499B33C0579C2805DA9334AD4F6E4", hash_generated_method = "3B849FF6E7081F2C68E828E55ABB2656")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.092 -0400", hash_original_method = "131499B33C0579C2805DA9334AD4F6E4", hash_generated_method = "F722D449EF7A4C85E981BFB2EAC46FB9")
     public AddressFactory createAddressFactory() throws PeerUnavailableException {
-        AddressFactory varB4EAC82CA7396A68D541C85D26508E83_636736221 = null; //Variable for return #1
+        AddressFactory varB4EAC82CA7396A68D541C85D26508E83_1359382278 = null; //Variable for return #1
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_636736221 = new gov.nist.javax.sip.address.AddressFactoryImpl();
+            varB4EAC82CA7396A68D541C85D26508E83_1359382278 = new gov.nist.javax.sip.address.AddressFactoryImpl();
         } //End block
         catch (Exception e)
         {
@@ -98,8 +95,8 @@ public class SipFactory {
                         "Failed to create AddressFactory", e);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_636736221.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_636736221;
+        varB4EAC82CA7396A68D541C85D26508E83_1359382278.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1359382278;
         // ---------- Original Method ----------
         //try {
             //return new gov.nist.javax.sip.address.AddressFactoryImpl();
@@ -114,12 +111,12 @@ public class SipFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.609 -0400", hash_original_method = "0FA4F64CC80ADFAB389758154B5AE216", hash_generated_method = "71C5A4DCD0DE5C577BFB15BCE13F1761")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.092 -0400", hash_original_method = "0FA4F64CC80ADFAB389758154B5AE216", hash_generated_method = "9B3D8A8E92F671181AFD5486AB3DF822")
     public HeaderFactory createHeaderFactory() throws PeerUnavailableException {
-        HeaderFactory varB4EAC82CA7396A68D541C85D26508E83_654097055 = null; //Variable for return #1
+        HeaderFactory varB4EAC82CA7396A68D541C85D26508E83_1367458765 = null; //Variable for return #1
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_654097055 = new gov.nist.javax.sip.header.HeaderFactoryImpl();
+            varB4EAC82CA7396A68D541C85D26508E83_1367458765 = new gov.nist.javax.sip.header.HeaderFactoryImpl();
         } //End block
         catch (Exception e)
         {
@@ -131,8 +128,8 @@ public class SipFactory {
                         "Failed to create HeaderFactory", e);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_654097055.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_654097055;
+        varB4EAC82CA7396A68D541C85D26508E83_1367458765.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1367458765;
         // ---------- Original Method ----------
         //try {
             //return new gov.nist.javax.sip.header.HeaderFactoryImpl();
@@ -147,12 +144,12 @@ public class SipFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.613 -0400", hash_original_method = "633D2CDB57C82E2B47B87FEFEA967AF9", hash_generated_method = "44F03709F4849CC2710807CAB5BCC84E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.094 -0400", hash_original_method = "633D2CDB57C82E2B47B87FEFEA967AF9", hash_generated_method = "37DB8B4DC633F9F680450CA27ACA7F2A")
     public MessageFactory createMessageFactory() throws PeerUnavailableException {
-        MessageFactory varB4EAC82CA7396A68D541C85D26508E83_1240715842 = null; //Variable for return #1
+        MessageFactory varB4EAC82CA7396A68D541C85D26508E83_138701568 = null; //Variable for return #1
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1240715842 = new gov.nist.javax.sip.message.MessageFactoryImpl();
+            varB4EAC82CA7396A68D541C85D26508E83_138701568 = new gov.nist.javax.sip.message.MessageFactoryImpl();
         } //End block
         catch (Exception e)
         {
@@ -164,8 +161,8 @@ public class SipFactory {
                         "Failed to create MessageFactory", e);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1240715842.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1240715842;
+        varB4EAC82CA7396A68D541C85D26508E83_138701568.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_138701568;
         // ---------- Original Method ----------
         //try {
             //return new gov.nist.javax.sip.message.MessageFactoryImpl();
@@ -180,13 +177,13 @@ public class SipFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.614 -0400", hash_original_field = "B52DAE80C3C897CBB987F034AC046F76", hash_generated_field = "75C1CF51B9B33DF2A13C2B4492B115B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.094 -0400", hash_original_field = "B52DAE80C3C897CBB987F034AC046F76", hash_generated_field = "34C141ED4403B005310012F8C335B3E5")
 
-    private static String IP_ADDRESS_PROP = "javax.sip.IP_ADDRESS";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.614 -0400", hash_original_field = "23382FC72ADC4B0693230F251509D9FF", hash_generated_field = "0CD395322606645C702E622B38AB94AA")
+    private static final String IP_ADDRESS_PROP = "javax.sip.IP_ADDRESS";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.094 -0400", hash_original_field = "23382FC72ADC4B0693230F251509D9FF", hash_generated_field = "2EFFA539BE9A2D5A1CF91EB3DFF2617A")
 
-    private static String STACK_NAME_PROP = "javax.sip.STACK_NAME";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.614 -0400", hash_original_field = "6F2288AC88E3EAF10AED7DA17F531E2F", hash_generated_field = "72CBBA349D76B2D2024E1DEDE9F885E4")
+    private static final String STACK_NAME_PROP = "javax.sip.STACK_NAME";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.094 -0400", hash_original_field = "6F2288AC88E3EAF10AED7DA17F531E2F", hash_generated_field = "72CBBA349D76B2D2024E1DEDE9F885E4")
 
     private static SipFactory sSipFactory = null;
 }

@@ -32,17 +32,17 @@ import libcore.io.StructAddrinfo;
 import static libcore.io.OsConstants.*;
 
 public class InetAddress implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.591 -0400", hash_original_field = "0D3FDA0BDBB9D619E09CDF3EECBA7999", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.304 -0400", hash_original_field = "0D3FDA0BDBB9D619E09CDF3EECBA7999", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")
 
     private int family;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.591 -0400", hash_original_field = "59FBC8DF7B0BEA3A26A2FB6771EA3EEE", hash_generated_field = "90EA25AB4D338372155DC6F7EC59D04E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.304 -0400", hash_original_field = "59FBC8DF7B0BEA3A26A2FB6771EA3EEE", hash_generated_field = "90EA25AB4D338372155DC6F7EC59D04E")
 
     byte[] ipaddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.591 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.304 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
 
     String hostName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.591 -0400", hash_original_method = "D743789B4770A2F65AD981CCEDC5E9F2", hash_generated_method = "2E1DC10CC44AF4781FBC49399E601EDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.305 -0400", hash_original_method = "D743789B4770A2F65AD981CCEDC5E9F2", hash_generated_method = "2E1DC10CC44AF4781FBC49399E601EDD")
       InetAddress(int family, byte[] ipaddress, String hostName) {
         this.family = family;
         this.ipaddress = ipaddress;
@@ -54,13 +54,13 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.592 -0400", hash_original_method = "3AAFCD043D3971ACCC1BC5F122FB0BE0", hash_generated_method = "609CDECB372B317C8DAAFE9B5D94FCBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.305 -0400", hash_original_method = "3AAFCD043D3971ACCC1BC5F122FB0BE0", hash_generated_method = "810AB7E85CF5541A973D94986EDA8D54")
     @Override
     public boolean equals(Object obj) {
-        boolean var736C841577D8C25E47C4A18B061F61D3_458698899 = (Arrays.equals(this.ipaddress, ((InetAddress) obj).ipaddress));
+        boolean var736C841577D8C25E47C4A18B061F61D3_573301378 = (Arrays.equals(this.ipaddress, ((InetAddress) obj).ipaddress));
         addTaint(obj.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693284390 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_693284390;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_38982059 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_38982059;
         // ---------- Original Method ----------
         //if (!(obj instanceof InetAddress)) {
             //return false;
@@ -69,17 +69,17 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.592 -0400", hash_original_method = "0983A0B23668071C038C0A3F8002A354", hash_generated_method = "6E67440A5D1C0959D6C45A693A32D766")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.305 -0400", hash_original_method = "0983A0B23668071C038C0A3F8002A354", hash_generated_method = "D69B31DD7D7145A22AC998BB07D84487")
     public byte[] getAddress() {
-        byte[] var2347CEE6C132BC5594CEE5BBD0F30A9A_1541741409 = (ipaddress.clone());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1370666787 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1370666787;
+        byte[] var2347CEE6C132BC5594CEE5BBD0F30A9A_473749414 = (ipaddress.clone());
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1827030782 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1827030782;
         // ---------- Original Method ----------
         //return ipaddress.clone();
     }
 
     
-        private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName) throws UnknownHostException {
+    private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName) throws UnknownHostException {
         InetAddress[] returnedAddresses = new InetAddress[rawAddresses.length];
         for (int i = 0; i < rawAddresses.length; i++) {
             returnedAddresses[i] = makeInetAddress(rawAddresses[i], hostName);
@@ -88,12 +88,12 @@ public class InetAddress implements Serializable {
     }
 
     
-        public static InetAddress[] getAllByName(String host) throws UnknownHostException {
+    public static InetAddress[] getAllByName(String host) throws UnknownHostException {
         return getAllByNameImpl(host).clone();
     }
 
     
-        private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
+    private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
         if (host == null || host.isEmpty()) {
             return loopbackAddresses();
         }
@@ -109,7 +109,7 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
+    private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
         if (bytes.length == 4) {
             return new Inet4Address(bytes, hostName);
         } else if (bytes.length == 16) {
@@ -120,7 +120,7 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
+    private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
         if (!(inetAddress instanceof Inet4Address) || address.indexOf(':') != -1) {
             return inetAddress;
         }
@@ -128,7 +128,7 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress parseNumericAddressNoThrow(String address) {
+    private static InetAddress parseNumericAddressNoThrow(String address) {
         if (address.startsWith("[") && address.endsWith("]") && address.indexOf(':') != -1) {
             address = address.substring(1, address.length() - 1);
         }
@@ -143,25 +143,25 @@ public class InetAddress implements Serializable {
     }
 
     
-        public static InetAddress getByName(String host) throws UnknownHostException {
+    public static InetAddress getByName(String host) throws UnknownHostException {
         return getAllByNameImpl(host)[0];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.601 -0400", hash_original_method = "A1139ABF91D0374599D7EB888F5DB646", hash_generated_method = "72454ED2E6800FD9FD028503633DD18A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.307 -0400", hash_original_method = "A1139ABF91D0374599D7EB888F5DB646", hash_generated_method = "C89FB1B5781680283E5BEF3A7AF61513")
     public String getHostAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1431218778 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1431218778 = Libcore.os.getnameinfo(this, NI_NUMERICHOST);
-        varB4EAC82CA7396A68D541C85D26508E83_1431218778.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1431218778;
+        String varB4EAC82CA7396A68D541C85D26508E83_280225534 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_280225534 = Libcore.os.getnameinfo(this, NI_NUMERICHOST);
+        varB4EAC82CA7396A68D541C85D26508E83_280225534.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_280225534;
         // ---------- Original Method ----------
         //return Libcore.os.getnameinfo(this, NI_NUMERICHOST);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.603 -0400", hash_original_method = "4F443763E78EE7A4BDC306A79DFCDBBC", hash_generated_method = "DE240D8A3F820CCA18B9D3C7C143F041")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.308 -0400", hash_original_method = "4F443763E78EE7A4BDC306A79DFCDBBC", hash_generated_method = "8B6D40A8BC5D0BDAE0D981DB7947FD8C")
     public String getHostName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2003319726 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1971414047 = null; //Variable for return #1
         {
             try 
             {
@@ -172,9 +172,9 @@ public class InetAddress implements Serializable {
                 hostName = getHostAddress();
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2003319726 = hostName;
-        varB4EAC82CA7396A68D541C85D26508E83_2003319726.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2003319726;
+        varB4EAC82CA7396A68D541C85D26508E83_1971414047 = hostName;
+        varB4EAC82CA7396A68D541C85D26508E83_1971414047.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1971414047;
         // ---------- Original Method ----------
         //if (hostName == null) {
             //try {
@@ -187,29 +187,29 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.626 -0400", hash_original_method = "A5A62CAEFD7FCA56AB200DB74BB59546", hash_generated_method = "CFBFEE050461893DB0F92B9D5A72A8BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.309 -0400", hash_original_method = "A5A62CAEFD7FCA56AB200DB74BB59546", hash_generated_method = "3A09A60104C15149CBD9D31ECBE9AA8C")
     public String getCanonicalHostName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_519698752 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_305163782 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1348687704 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1085817577 = null; //Variable for return #2
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_519698752 = getHostByAddrImpl(this).hostName;
+            varB4EAC82CA7396A68D541C85D26508E83_1348687704 = getHostByAddrImpl(this).hostName;
         } //End block
         catch (UnknownHostException ex)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_305163782 = getHostAddress();
+            varB4EAC82CA7396A68D541C85D26508E83_1085817577 = getHostAddress();
         } //End block
-        String varA7E53CE21691AB073D9660D615818899_1148304963; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_890828437; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1148304963 = varB4EAC82CA7396A68D541C85D26508E83_519698752;
+                varA7E53CE21691AB073D9660D615818899_890828437 = varB4EAC82CA7396A68D541C85D26508E83_1348687704;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1148304963 = varB4EAC82CA7396A68D541C85D26508E83_305163782;
+                varA7E53CE21691AB073D9660D615818899_890828437 = varB4EAC82CA7396A68D541C85D26508E83_1085817577;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1148304963.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1148304963;
+        varA7E53CE21691AB073D9660D615818899_890828437.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_890828437;
         // ---------- Original Method ----------
         //try {
             //return getHostByAddrImpl(this).hostName;
@@ -219,24 +219,24 @@ public class InetAddress implements Serializable {
     }
 
     
-        public static InetAddress getLocalHost() throws UnknownHostException {
+    public static InetAddress getLocalHost() throws UnknownHostException {
         String host = Libcore.os.uname().nodename;
         return lookupHostByName(host)[0];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.627 -0400", hash_original_method = "70D58F36ADD2B32D6B4870D6C7A22922", hash_generated_method = "C96B8A563E34751D60D5660E763D5D4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.310 -0400", hash_original_method = "70D58F36ADD2B32D6B4870D6C7A22922", hash_generated_method = "3B8324D3972E6B396B047B0760A52291")
     @Override
     public int hashCode() {
-        int var7810AFBE6CE34C4D0D867B5084406399_533194378 = (Arrays.hashCode(ipaddress));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058431628 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058431628;
+        int var7810AFBE6CE34C4D0D867B5084406399_686876972 = (Arrays.hashCode(ipaddress));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640165748 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640165748;
         // ---------- Original Method ----------
         //return Arrays.hashCode(ipaddress);
     }
 
     
-        private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
+    private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         Object cachedResult = addressCache.get(host);
         if (cachedResult != null) {
@@ -265,12 +265,12 @@ public class InetAddress implements Serializable {
     }
 
     
-        public static void clearDnsCache() {
+    public static void clearDnsCache() {
         addressCache.clear();
     }
 
     
-        private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
+    private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         try {
             String hostname = Libcore.os.getnameinfo(address, NI_NAMEREQD);
@@ -281,25 +281,25 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.628 -0400", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "8DD57079F64AC45A9E37665CFF7DA1D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.311 -0400", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "96EC4CC30D2393F2C17BFF1EB1D3C6E5")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_383573101 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_383573101 = (hostName == null ? "" : hostName) + "/" + getHostAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_383573101.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_383573101;
+        String varB4EAC82CA7396A68D541C85D26508E83_1411645163 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1411645163 = (hostName == null ? "" : hostName) + "/" + getHostAddress();
+        varB4EAC82CA7396A68D541C85D26508E83_1411645163.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1411645163;
         // ---------- Original Method ----------
         //return (hostName == null ? "" : hostName) + "/" + getHostAddress();
     }
 
     
-        public static boolean isNumeric(String address) {
+    public static boolean isNumeric(String address) {
         InetAddress inetAddress = parseNumericAddressNoThrow(address);
         return inetAddress != null && disallowDeprecatedFormats(address, inetAddress) != null;
     }
 
     
-        public static InetAddress parseNumericAddress(String numericAddress) {
+    public static InetAddress parseNumericAddress(String numericAddress) {
         if (numericAddress == null || numericAddress.isEmpty()) {
             return Inet6Address.LOOPBACK;
         }
@@ -312,153 +312,149 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress[] loopbackAddresses() {
+    private static InetAddress[] loopbackAddresses() {
         return new InetAddress[] { Inet6Address.LOOPBACK, Inet4Address.LOOPBACK };
     }
 
     
-        public static InetAddress getLoopbackAddress() {
+    public static InetAddress getLoopbackAddress() {
         return Inet6Address.LOOPBACK;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.630 -0400", hash_original_method = "0DFB661E6E123FAAEACDB840E13652D3", hash_generated_method = "11024E59A7A5FBFB39C50B69C6B7A5B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.312 -0400", hash_original_method = "0DFB661E6E123FAAEACDB840E13652D3", hash_generated_method = "AE97447B0ED1BFED4B90BDC9BD0FE393")
     public boolean isAnyLocalAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059842822 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059842822;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_162807180 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_162807180;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.630 -0400", hash_original_method = "C2C85D69F5C8114C53B505B2C48FBA38", hash_generated_method = "53E15CD5A3B1C6244C60A42EBA032885")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.312 -0400", hash_original_method = "C2C85D69F5C8114C53B505B2C48FBA38", hash_generated_method = "0AF11685BA819A62E3D04678E3E0CE0E")
     public boolean isLinkLocalAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_756707412 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_756707412;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64687892 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_64687892;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.631 -0400", hash_original_method = "F4A838CB0E6897A23081D395162E9DA1", hash_generated_method = "298A9B644EC6FF510CEE27A5F35CBE3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "F4A838CB0E6897A23081D395162E9DA1", hash_generated_method = "0EF4AF4323EDF2198986676B60DB586D")
     public boolean isLoopbackAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397315205 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_397315205;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55812026 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_55812026;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.631 -0400", hash_original_method = "FDE6DFC941C3F6CDB3A8E59F11467602", hash_generated_method = "55CB2D14F9C779146C7C32CA4F89AC2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "FDE6DFC941C3F6CDB3A8E59F11467602", hash_generated_method = "55F0CE456D6466A8C7A57080AAA9CC84")
     public boolean isMCGlobal() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_945176426 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_945176426;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_220491909 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_220491909;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.631 -0400", hash_original_method = "633857E8ABB2714E861E7CC407521B8A", hash_generated_method = "1F70CD3C19288A7FF122DA333D6A3091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "633857E8ABB2714E861E7CC407521B8A", hash_generated_method = "0797BAE18A7ACB0DBBED5DF33FE94975")
     public boolean isMCLinkLocal() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_544585953 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_544585953;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895852998 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_895852998;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.650 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "D4E7C75005E7A926C710662321837732")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "2537EABB11F60963D6C582C69D2092EF")
     public boolean isMCNodeLocal() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104833055 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104833055;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1400633899 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1400633899;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.651 -0400", hash_original_method = "8083E84E7FB8B51C8E4E9091B5CE2BBD", hash_generated_method = "2D67AD37FDC447AAF42ADAE4BB6F1DC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.313 -0400", hash_original_method = "8083E84E7FB8B51C8E4E9091B5CE2BBD", hash_generated_method = "8432B77EB7691F15A5C7915620E701D4")
     public boolean isMCOrgLocal() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1397427184 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1397427184;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787574688 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_787574688;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.651 -0400", hash_original_method = "5286F1AFCB89409D5250A9F370D7AC47", hash_generated_method = "CD7122A6668494785287B10A439AD1B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "5286F1AFCB89409D5250A9F370D7AC47", hash_generated_method = "9B39E6D3546533B46B93EAB43B997610")
     public boolean isMCSiteLocal() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773680190 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773680190;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_27933923 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_27933923;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.651 -0400", hash_original_method = "93032F84680D1BDFF6DF524AE8984C63", hash_generated_method = "46F3FA898F45252770A1ED2E2B632480")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "93032F84680D1BDFF6DF524AE8984C63", hash_generated_method = "547AE1E6C24D460CD086960D8A1E6D8F")
     public boolean isMulticastAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88802157 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_88802157;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965899403 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_965899403;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.652 -0400", hash_original_method = "34E7BECA5A41D39726D6E4A4A4838C8A", hash_generated_method = "2D24F10DFE75D3F08DDA11975BA500DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "34E7BECA5A41D39726D6E4A4A4838C8A", hash_generated_method = "DC31856B194A6A910603A7BA5207A7F9")
     public boolean isSiteLocalAddress() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495579458 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_495579458;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_513391450 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_513391450;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.652 -0400", hash_original_method = "C5AA36E6C7DFD1C45750A6D7AE21AFCC", hash_generated_method = "91F87F685FF9C0C6D5319E1679A4B8E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.314 -0400", hash_original_method = "C5AA36E6C7DFD1C45750A6D7AE21AFCC", hash_generated_method = "81F923A1D33CAA39D44507B5798753C6")
     public boolean isReachable(int timeout) throws IOException {
-        boolean var79CB746A93A3D3E65B7122FECE6F9BB8_189304736 = (isReachable(null, 0, timeout));
+        boolean var79CB746A93A3D3E65B7122FECE6F9BB8_1034102872 = (isReachable(null, 0, timeout));
         addTaint(timeout);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17427142 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_17427142;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1201531937 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1201531937;
         // ---------- Original Method ----------
         //return isReachable(null, 0, timeout);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.729 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "FCB305CDDBB3E306277E0EC3530BDB79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.322 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "45D7529510DDE4EC0BB6EB7BAE79A180")
     public boolean isReachable(NetworkInterface networkInterface, final int ttl, final int timeout) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("ttl < 0 || timeout < 0");
         } //End block
         {
-            boolean varE90BF27773AA71DDBE5F32BAE585508C_884876635 = (isReachable(this, null, timeout));
+            boolean varE90BF27773AA71DDBE5F32BAE585508C_1598869420 = (isReachable(this, null, timeout));
         } //End block
-        List<InetAddress> sourceAddresses;
-        sourceAddresses = Collections.list(networkInterface.getInetAddresses());
+        List<InetAddress> sourceAddresses = Collections.list(networkInterface.getInetAddresses());
         {
-            boolean var62C2047A8A14391C51272AF278381770_108668457 = (sourceAddresses.isEmpty());
+            boolean var62C2047A8A14391C51272AF278381770_1928047546 = (sourceAddresses.isEmpty());
         } //End collapsed parenthetic
-        InetAddress destinationAddress;
-        destinationAddress = this;
-        CountDownLatch latch;
-        latch = new CountDownLatch(sourceAddresses.size());
-        AtomicBoolean isReachable;
-        isReachable = new AtomicBoolean(false);
+        final InetAddress destinationAddress = this;
+        final CountDownLatch latch = new CountDownLatch(sourceAddresses.size());
+        final AtomicBoolean isReachable = new AtomicBoolean(false);
         {
-            Iterator<InetAddress> varBD264B6AB6F51D0C5A90F893347FF495_1929309495 = (sourceAddresses).iterator();
-            varBD264B6AB6F51D0C5A90F893347FF495_1929309495.hasNext();
-            final InetAddress sourceAddress = varBD264B6AB6F51D0C5A90F893347FF495_1929309495.next();
+            Iterator<InetAddress> varBD264B6AB6F51D0C5A90F893347FF495_1517953380 = (sourceAddresses).iterator();
+            varBD264B6AB6F51D0C5A90F893347FF495_1517953380.hasNext();
+            final InetAddress sourceAddress = varBD264B6AB6F51D0C5A90F893347FF495_1517953380.next();
             {
                 new Thread() {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.725 -0400", hash_original_method = "B701C9C990A30C345CD440F261C9D387", hash_generated_method = "222AF584E727A985E6DBA2FBEDDB988A")
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.322 -0400", hash_original_method = "B701C9C990A30C345CD440F261C9D387", hash_generated_method = "967801C6C64B4F69F530D03EC1271971")
                     @Override
                     public void run() {
                         try 
                         {
                             {
-                                boolean var41C8F9D0A375DDBE03CBB8B034FCFB59_919079637 = (isReachable(destinationAddress, sourceAddress, timeout));
+                                boolean var41C8F9D0A375DDBE03CBB8B034FCFB59_1213764672 = (isReachable(destinationAddress, sourceAddress, timeout));
                                 {
                                     isReachable.set(true);
                                     {
-                                        boolean var8847E7E96F1F56F28816D013D8F8553D_248584010 = (latch.getCount() > 0);
+                                        boolean var8847E7E96F1F56F28816D013D8F8553D_753670740 = (latch.getCount() > 0);
                                         {
                                             latch.countDown();
                                         } //End block
@@ -492,23 +488,21 @@ public class InetAddress implements Serializable {
         {
             Thread.currentThread().interrupt();
         } //End block
-        boolean varA1124C2A3F7643822A53302B8D28AC66_940677289 = (isReachable.get());
+        boolean varA1124C2A3F7643822A53302B8D28AC66_650536437 = (isReachable.get());
         addTaint(networkInterface.getTaint());
         addTaint(ttl);
         addTaint(timeout);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1776252543 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1776252543;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511676818 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_511676818;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.734 -0400", hash_original_method = "296F60C65F61166BD9A8DF4CB4E70272", hash_generated_method = "37F690974BB6BD1BAB78DEA9C9B5BC1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.323 -0400", hash_original_method = "296F60C65F61166BD9A8DF4CB4E70272", hash_generated_method = "3206BF0F24AC02C1C2BBE0EDD22293AF")
     private boolean isReachable(InetAddress destination, InetAddress source, int timeout) throws IOException {
-        FileDescriptor fd;
-        fd = IoBridge.socket(true);
-        boolean reached;
-        reached = false;
+        FileDescriptor fd = IoBridge.socket(true);
+        boolean reached = false;
         try 
         {
             {
@@ -520,7 +514,7 @@ public class InetAddress implements Serializable {
         catch (IOException e)
         {
             {
-                boolean varF7A18AD86880F63E4E9705AC2F05468E_295759534 = (e.getCause() instanceof ErrnoException);
+                boolean varF7A18AD86880F63E4E9705AC2F05468E_443201510 = (e.getCause() instanceof ErrnoException);
                 {
                     reached = (((ErrnoException) e.getCause()).errno == ECONNREFUSED);
                 } //End block
@@ -530,8 +524,8 @@ public class InetAddress implements Serializable {
         addTaint(destination.getTaint());
         addTaint(source.getTaint());
         addTaint(timeout);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695070396 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695070396;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752999150 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752999150;
         // ---------- Original Method ----------
         //FileDescriptor fd = IoBridge.socket(true);
         //boolean reached = false;
@@ -609,10 +603,9 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.746 -0400", hash_original_method = "EA85F511D24184DD59F5742DCBE8C620", hash_generated_method = "86D6C5354575E037DAA2D7C5347E0EF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.325 -0400", hash_original_method = "EA85F511D24184DD59F5742DCBE8C620", hash_generated_method = "A6374255963FDB94D51B73B315AA2E2B")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        ObjectOutputStream.PutField fields;
-        fields = stream.putFields();
+        ObjectOutputStream.PutField fields = stream.putFields();
         {
             fields.put("address", 0);
         } //End block
@@ -636,12 +629,10 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.747 -0400", hash_original_method = "8E54F0F7AE1E424107F71EAAF0F6F90C", hash_generated_method = "51F27159B3F02F4AD21A47EB6544F4A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.325 -0400", hash_original_method = "8E54F0F7AE1E424107F71EAAF0F6F90C", hash_generated_method = "B00FBD496D915F53997BCB065006CF22")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        ObjectInputStream.GetField fields;
-        fields = stream.readFields();
-        int addr;
-        addr = fields.get("address", 0);
+        ObjectInputStream.GetField fields = stream.readFields();
+        int addr = fields.get("address", 0);
         ipaddress = new byte[4];
         Memory.pokeInt(ipaddress, 0, addr, ByteOrder.BIG_ENDIAN);
         hostName = (String) fields.get("hostName", null);
@@ -657,29 +648,29 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.747 -0400", hash_original_method = "08DCB3CBD406BD7814E8362202DC0D50", hash_generated_method = "4E0D43D36D111C1C070AFB4FC6DB1EF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.325 -0400", hash_original_method = "08DCB3CBD406BD7814E8362202DC0D50", hash_generated_method = "CD0DAE8C04F35CE92D5A12BCD8002279")
     private Object readResolve() throws ObjectStreamException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1382140439 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1382140439 = new Inet4Address(ipaddress, hostName);
-        varB4EAC82CA7396A68D541C85D26508E83_1382140439.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1382140439;
+        Object varB4EAC82CA7396A68D541C85D26508E83_652245341 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_652245341 = new Inet4Address(ipaddress, hostName);
+        varB4EAC82CA7396A68D541C85D26508E83_652245341.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_652245341;
         // ---------- Original Method ----------
         //return new Inet4Address(ipaddress, hostName);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.747 -0400", hash_original_field = "06D3EFD07AE631BF7A16FDDC7793B09D", hash_generated_field = "4D5FBC220B6413D051E58000DC22B512")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.326 -0400", hash_original_field = "06D3EFD07AE631BF7A16FDDC7793B09D", hash_generated_field = "B26AF2805292D25D065DC27D7F380542")
 
-    private static AddressCache addressCache = new AddressCache();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.748 -0400", hash_original_field = "6457221FED36AEA41AF6CB769203E35C", hash_generated_field = "FB607DA6C774EC8A3CC3DADFB3E8AC93")
+    private static final AddressCache addressCache = new AddressCache();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.326 -0400", hash_original_field = "6457221FED36AEA41AF6CB769203E35C", hash_generated_field = "D810DA6D1E5ECCA9B74B4757EAD39B08")
 
-    private static long serialVersionUID = 3286316764910316507L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.748 -0400", hash_original_field = "AD70106DDC81CA0C32DA24B6870F6537", hash_generated_field = "119C92FDA430C8C47E72137BCDA943A4")
+    private static final long serialVersionUID = 3286316764910316507L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.326 -0400", hash_original_field = "AD70106DDC81CA0C32DA24B6870F6537", hash_generated_field = "119C92FDA430C8C47E72137BCDA943A4")
 
     public static final InetAddress UNSPECIFIED = new InetAddress(AF_UNSPEC, null, null);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.748 -0400", hash_original_field = "56295EAA1211F6276AB88DEF534334A7", hash_generated_field = "2AD8942E4F27C97546091085CFEE4FF4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.326 -0400", hash_original_field = "56295EAA1211F6276AB88DEF534334A7", hash_generated_field = "550C29BECD712FE70617B34B15180466")
 
-    private static ObjectStreamField[] serialPersistentFields = {
+    private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("address", int.class),
         new ObjectStreamField("family", int.class),
         new ObjectStreamField("hostName", String.class),

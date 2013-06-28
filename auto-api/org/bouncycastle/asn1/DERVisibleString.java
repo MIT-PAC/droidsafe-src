@@ -10,18 +10,16 @@ import java.util.Iterator;
 import java.io.IOException;
 
 public class DERVisibleString extends ASN1Object implements DERString {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.402 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "38EA5C212184AA9651934368805B840B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.846 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
     String string;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.416 -0400", hash_original_method = "9E5952D16AC98B93920C8F7137608462", hash_generated_method = "8E2F094D974B8E0FCE260A6D2E3E2061")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.847 -0400", hash_original_method = "9E5952D16AC98B93920C8F7137608462", hash_generated_method = "D655E36D2A38D3553CAA2216CCE4FAD8")
     public  DERVisibleString(
         byte[]   string) {
-        char[] cs;
-        cs = new char[string.length];
+        char[] cs = new char[string.length];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 cs[i] = (char)(string[i] & 0xff);
             } //End block
@@ -37,7 +35,7 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.416 -0400", hash_original_method = "C35105E6557DD0D425C7A0BF0E564EC8", hash_generated_method = "98383A6DB956062CDFE27D3D6F7188CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.847 -0400", hash_original_method = "C35105E6557DD0D425C7A0BF0E564EC8", hash_generated_method = "98383A6DB956062CDFE27D3D6F7188CB")
     public  DERVisibleString(
         String   string) {
         this.string = string;
@@ -46,7 +44,7 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-        public static DERVisibleString getInstance(
+    public static DERVisibleString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERVisibleString)
         {
@@ -64,50 +62,47 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-        public static DERVisibleString getInstance(
+    public static DERVisibleString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.417 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "6EB3B821E286DEBD6CA946B1E294B912")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.848 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "2F8BDB71E48F8577EDCD2B79AE30155E")
     public String getString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_192109863 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_192109863 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_192109863.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_192109863;
+        String varB4EAC82CA7396A68D541C85D26508E83_766117493 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_766117493 = string;
+        varB4EAC82CA7396A68D541C85D26508E83_766117493.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_766117493;
         // ---------- Original Method ----------
         //return string;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.417 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "976577F5468FBE051D375786EF77DBF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.848 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "266F2006FAC376B56DB0431707AAA200")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_70530670 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_70530670 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_70530670.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_70530670;
+        String varB4EAC82CA7396A68D541C85D26508E83_1832833860 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1832833860 = string;
+        varB4EAC82CA7396A68D541C85D26508E83_1832833860.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1832833860;
         // ---------- Original Method ----------
         //return string;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.418 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "31577CE54A6AD639F96C0D4BF3CABEED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.849 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "1A8FD832C1B4984B301ABF1AF9CE9928")
     public byte[] getOctets() {
-        char[] cs;
-        cs = string.toCharArray();
-        byte[] bs;
-        bs = new byte[cs.length];
+        char[] cs = string.toCharArray();
+        byte[] bs = new byte[cs.length];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 bs[i] = (byte)cs[i];
             } //End block
         } //End collapsed parenthetic
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1210600929 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1210600929;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1007515498 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1007515498;
         // ---------- Original Method ----------
         //char[]  cs = string.toCharArray();
         //byte[]  bs = new byte[cs.length];
@@ -119,7 +114,7 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.418 -0400", hash_original_method = "EDEDEE2045D008C87CEA62CE5CC5E8C6", hash_generated_method = "5B6DA5132EE74EDB2EE9F8776183609D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.849 -0400", hash_original_method = "EDEDEE2045D008C87CEA62CE5CC5E8C6", hash_generated_method = "5B6DA5132EE74EDB2EE9F8776183609D")
      void encode(
         DEROutputStream  out) throws IOException {
         out.writeEncoded(VISIBLE_STRING, this.getOctets());
@@ -129,13 +124,13 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.419 -0400", hash_original_method = "D3E4E4BB0C90F60625E75FAD6BCA1138", hash_generated_method = "1EABFDA53924CF19CA6BDABB156DECFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.849 -0400", hash_original_method = "D3E4E4BB0C90F60625E75FAD6BCA1138", hash_generated_method = "F53794276DE1B8761DF8438A9ACFF3F9")
      boolean asn1Equals(
         DERObject  o) {
-        boolean var61367506D5D445678970BDDC79C23C61_883812682 = (this.getString().equals(((DERVisibleString)o).getString()));
+        boolean var61367506D5D445678970BDDC79C23C61_1664136914 = (this.getString().equals(((DERVisibleString)o).getString()));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65159870 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_65159870;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1563878601 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1563878601;
         // ---------- Original Method ----------
         //if (!(o instanceof DERVisibleString))
         //{
@@ -145,11 +140,11 @@ public class DERVisibleString extends ASN1Object implements DERString {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.419 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "C0A1619907EF81DAA38C0C2DC7E830D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.849 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "8D1147FFFB44FB02F12D4905A844B170")
     public int hashCode() {
-        int var21276083EDE53370F5E1E00F33D2C218_1891870194 = (this.getString().hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706688597 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706688597;
+        int var21276083EDE53370F5E1E00F33D2C218_1761049080 = (this.getString().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916758132 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916758132;
         // ---------- Original Method ----------
         //return this.getString().hashCode();
     }

@@ -32,18 +32,18 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.ExecutionContext;
 
 public class RequestAddCookies implements HttpRequestInterceptor {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.029 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "4E4E630304492253CB8147CAE1C7D2A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.825 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-    private Log log = LogFactory.getLog(getClass());
+    private final Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.035 -0400", hash_original_method = "33F7F2F89F06A1D5C3C4E627DB5C44E6", hash_generated_method = "FD33866982A2765D2C23205A551EF459")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.825 -0400", hash_original_method = "33F7F2F89F06A1D5C3C4E627DB5C44E6", hash_generated_method = "FD33866982A2765D2C23205A551EF459")
     public  RequestAddCookies() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.154 -0400", hash_original_method = "6C6FAAF5CABF854B7199A55A540BF3C8", hash_generated_method = "0C2331C8E0B5DA95C242C34DAFB675D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.840 -0400", hash_original_method = "6C6FAAF5CABF854B7199A55A540BF3C8", hash_generated_method = "2281AE098F5248A24BF64E8C6CE9A30B")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
@@ -51,34 +51,29 @@ public class RequestAddCookies implements HttpRequestInterceptor {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
         } //End block
-        CookieStore cookieStore;
-        cookieStore = (CookieStore) context.getAttribute(
+        CookieStore cookieStore = (CookieStore) context.getAttribute(
                 ClientContext.COOKIE_STORE);
         {
             this.log.info("Cookie store not available in HTTP context");
         } //End block
-        CookieSpecRegistry registry;
-        registry = (CookieSpecRegistry) context.getAttribute(
+        CookieSpecRegistry registry = (CookieSpecRegistry) context.getAttribute(
                 ClientContext.COOKIESPEC_REGISTRY);
         {
             this.log.info("CookieSpec registry not available in HTTP context");
         } //End block
-        HttpHost targetHost;
-        targetHost = (HttpHost) context.getAttribute(
+        HttpHost targetHost = (HttpHost) context.getAttribute(
                 ExecutionContext.HTTP_TARGET_HOST);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Target host not specified in HTTP context");
         } //End block
-        ManagedClientConnection conn;
-        conn = (ManagedClientConnection) context.getAttribute(
+        ManagedClientConnection conn = (ManagedClientConnection) context.getAttribute(
                 ExecutionContext.HTTP_CONNECTION);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Client connection not specified in HTTP context");
         } //End block
-        String policy;
-        policy = HttpClientParams.getCookiePolicy(request.getParams());
+        String policy = HttpClientParams.getCookiePolicy(request.getParams());
         {
-            boolean var2083B5DFA3893791124BEF94A917A00D_1627748980 = (this.log.isDebugEnabled());
+            boolean var2083B5DFA3893791124BEF94A917A00D_1866643485 = (this.log.isDebugEnabled());
             {
                 this.log.debug("CookieSpec selected: " + policy);
             } //End block
@@ -98,35 +93,29 @@ public class RequestAddCookies implements HttpRequestInterceptor {
                         request.getRequestLine().getUri(), ex);
             } //End block
         } //End block
-        String hostName;
-        hostName = targetHost.getHostName();
-        int port;
-        port = targetHost.getPort();
+        String hostName = targetHost.getHostName();
+        int port = targetHost.getPort();
         {
             port = conn.getRemotePort();
         } //End block
-        CookieOrigin cookieOrigin;
-        cookieOrigin = new CookieOrigin(
+        CookieOrigin cookieOrigin = new CookieOrigin(
                 hostName, 
                 port, 
                 requestURI.getPath(),
                 conn.isSecure());
-        CookieSpec cookieSpec;
-        cookieSpec = registry.getCookieSpec(policy, request.getParams());
-        List<Cookie> cookies;
-        cookies = new ArrayList<Cookie>(cookieStore.getCookies());
-        List<Cookie> matchedCookies;
-        matchedCookies = new ArrayList<Cookie>();
+        CookieSpec cookieSpec = registry.getCookieSpec(policy, request.getParams());
+        List<Cookie> cookies = new ArrayList<Cookie>(cookieStore.getCookies());
+        List<Cookie> matchedCookies = new ArrayList<Cookie>();
         {
-            Iterator<Cookie> var122FD713E52C825D20E0B3FA83D127D8_890388385 = (cookies).iterator();
-            var122FD713E52C825D20E0B3FA83D127D8_890388385.hasNext();
-            Cookie cookie = var122FD713E52C825D20E0B3FA83D127D8_890388385.next();
+            Iterator<Cookie> var122FD713E52C825D20E0B3FA83D127D8_169943664 = (cookies).iterator();
+            var122FD713E52C825D20E0B3FA83D127D8_169943664.hasNext();
+            Cookie cookie = var122FD713E52C825D20E0B3FA83D127D8_169943664.next();
             {
                 {
-                    boolean var0FF047161CF32E1929613C05DB808628_1114675721 = (cookieSpec.match(cookie, cookieOrigin));
+                    boolean var0FF047161CF32E1929613C05DB808628_424929136 = (cookieSpec.match(cookie, cookieOrigin));
                     {
                         {
-                            boolean var77FE74E3FD18153DC8BA47A287E94E9C_521200071 = (this.log.isDebugEnabled());
+                            boolean var77FE74E3FD18153DC8BA47A287E94E9C_397602013 = (this.log.isDebugEnabled());
                             {
                                 this.log.debug("Cookie " + cookie + " match " + cookieOrigin);
                             } //End block
@@ -137,32 +126,29 @@ public class RequestAddCookies implements HttpRequestInterceptor {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var39BCE6116D6320BA679FCA2D20CAA501_33559223 = (!matchedCookies.isEmpty());
+            boolean var39BCE6116D6320BA679FCA2D20CAA501_782639937 = (!matchedCookies.isEmpty());
             {
-                List<Header> headers;
-                headers = cookieSpec.formatCookies(matchedCookies);
+                List<Header> headers = cookieSpec.formatCookies(matchedCookies);
                 {
-                    Iterator<Header> varEB4B2371BC0CCACE92E0AF8B1282EFFC_1496224840 = (headers).iterator();
-                    varEB4B2371BC0CCACE92E0AF8B1282EFFC_1496224840.hasNext();
-                    Header header = varEB4B2371BC0CCACE92E0AF8B1282EFFC_1496224840.next();
+                    Iterator<Header> varEB4B2371BC0CCACE92E0AF8B1282EFFC_2140194923 = (headers).iterator();
+                    varEB4B2371BC0CCACE92E0AF8B1282EFFC_2140194923.hasNext();
+                    Header header = varEB4B2371BC0CCACE92E0AF8B1282EFFC_2140194923.next();
                     {
                         request.addHeader(header);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        int ver;
-        ver = cookieSpec.getVersion();
+        int ver = cookieSpec.getVersion();
         {
-            boolean needVersionHeader;
-            needVersionHeader = false;
+            boolean needVersionHeader = false;
             {
-                Iterator<Cookie> var48A26F2CE0607EBC42B8BB68A715D819_947082837 = (matchedCookies).iterator();
-                var48A26F2CE0607EBC42B8BB68A715D819_947082837.hasNext();
-                Cookie cookie = var48A26F2CE0607EBC42B8BB68A715D819_947082837.next();
+                Iterator<Cookie> var48A26F2CE0607EBC42B8BB68A715D819_907101667 = (matchedCookies).iterator();
+                var48A26F2CE0607EBC42B8BB68A715D819_907101667.hasNext();
+                Cookie cookie = var48A26F2CE0607EBC42B8BB68A715D819_907101667.next();
                 {
                     {
-                        boolean var58174ECE9271A4B92BFA8ED180513081_530721579 = (ver != cookie.getVersion());
+                        boolean var58174ECE9271A4B92BFA8ED180513081_570694318 = (ver != cookie.getVersion());
                         {
                             needVersionHeader = true;
                         } //End block
@@ -170,8 +156,7 @@ public class RequestAddCookies implements HttpRequestInterceptor {
                 } //End block
             } //End collapsed parenthetic
             {
-                Header header;
-                header = cookieSpec.getVersionHeader();
+                Header header = cookieSpec.getVersionHeader();
                 {
                     request.addHeader(header);
                 } //End block

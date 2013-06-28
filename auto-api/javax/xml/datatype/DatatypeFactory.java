@@ -13,13 +13,13 @@ import java.util.GregorianCalendar;
 
 public abstract class DatatypeFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.973 -0400", hash_original_method = "6AA3D0D92E54B6A7BA707A3B727E668C", hash_generated_method = "0558D3C965ED9BE449CE780E5E411E47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.400 -0400", hash_original_method = "6AA3D0D92E54B6A7BA707A3B727E668C", hash_generated_method = "0558D3C965ED9BE449CE780E5E411E47")
     protected  DatatypeFactory() {
         // ---------- Original Method ----------
     }
 
     
-        public static DatatypeFactory newInstance() throws DatatypeConfigurationException {
+    public static DatatypeFactory newInstance() throws DatatypeConfigurationException {
         try {
             return (DatatypeFactory) FactoryFinder.find(
                     DATATYPEFACTORY_PROPERTY,
@@ -31,7 +31,7 @@ public abstract class DatatypeFactory {
     }
 
     
-        public static DatatypeFactory newInstance(String factoryClassName, ClassLoader classLoader) throws DatatypeConfigurationException {
+    public static DatatypeFactory newInstance(String factoryClassName, ClassLoader classLoader) throws DatatypeConfigurationException {
         if (factoryClassName == null) {
             throw new DatatypeConfigurationException("factoryClassName == null");
         }
@@ -69,7 +69,7 @@ public abstract class DatatypeFactory {
             final BigDecimal seconds);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.975 -0400", hash_original_method = "0411875E7E9416CDC69781A523A9E7BE", hash_generated_method = "3247CE008DD006F1D0549DA78B0B02C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.401 -0400", hash_original_method = "0411875E7E9416CDC69781A523A9E7BE", hash_generated_method = "0A271AF7A58E9BFDE4AC9191F65655A0")
     public Duration newDuration(
             final boolean isPositive,
             final int years,
@@ -78,7 +78,7 @@ public abstract class DatatypeFactory {
             final int hours,
             final int minutes,
             final int seconds) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_1698368118 = null; //Variable for return #1
+        Duration varB4EAC82CA7396A68D541C85D26508E83_1175150263 = null; //Variable for return #1
         BigInteger realYears;
         realYears = BigInteger.valueOf((long) years);
         realYears = null;
@@ -97,7 +97,7 @@ public abstract class DatatypeFactory {
         BigDecimal realSeconds;
         realSeconds = BigDecimal.valueOf((long) seconds);
         realSeconds = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1698368118 = newDuration(
+        varB4EAC82CA7396A68D541C85D26508E83_1175150263 = newDuration(
                 isPositive,
                 realYears,
                 realMonths,
@@ -113,39 +113,36 @@ public abstract class DatatypeFactory {
         addTaint(hours);
         addTaint(minutes);
         addTaint(seconds);
-        varB4EAC82CA7396A68D541C85D26508E83_1698368118.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1698368118;
+        varB4EAC82CA7396A68D541C85D26508E83_1175150263.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1175150263;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.987 -0400", hash_original_method = "53DC4E20BA01B9A5F54EFBBB0F7676DB", hash_generated_method = "4F5D79C27E735C639A79BA1170EA2F1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.402 -0400", hash_original_method = "53DC4E20BA01B9A5F54EFBBB0F7676DB", hash_generated_method = "7696F9C44FB1533BF80E5AF1D3DDB0A7")
     public Duration newDurationDayTime(final String lexicalRepresentation) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_1206646864 = null; //Variable for return #1
+        Duration varB4EAC82CA7396A68D541C85D26508E83_654164714 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The lexical representation cannot be null.");
         } //End block
-        int pos;
-        pos = lexicalRepresentation.indexOf('T');
+        int pos = lexicalRepresentation.indexOf('T');
         int length;
         length = pos;
         length = lexicalRepresentation.length();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                char c;
-                c = lexicalRepresentation.charAt(i);
+                char c = lexicalRepresentation.charAt(i);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid dayTimeDuration value: " + lexicalRepresentation);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1206646864 = newDuration(lexicalRepresentation);
+        varB4EAC82CA7396A68D541C85D26508E83_654164714 = newDuration(lexicalRepresentation);
         addTaint(lexicalRepresentation.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1206646864.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1206646864;
+        varB4EAC82CA7396A68D541C85D26508E83_654164714.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_654164714;
         // ---------- Original Method ----------
         //if (lexicalRepresentation == null) {
             //throw new NullPointerException("The lexical representation cannot be null.");
@@ -162,20 +159,18 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.989 -0400", hash_original_method = "D4082C7434AC7344FED55B715B9658DF", hash_generated_method = "AD14E2B749E27F76BE488D2C9055856B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.404 -0400", hash_original_method = "D4082C7434AC7344FED55B715B9658DF", hash_generated_method = "8D1ABEC9BFEBF4DA00F2953C17C663DB")
     public Duration newDurationDayTime(final long durationInMilliseconds) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_1838985107 = null; //Variable for return #1
-        Duration varB4EAC82CA7396A68D541C85D26508E83_107367403 = null; //Variable for return #2
-        Duration varB4EAC82CA7396A68D541C85D26508E83_442233511 = null; //Variable for return #3
-        Duration varB4EAC82CA7396A68D541C85D26508E83_821173148 = null; //Variable for return #4
-        long _durationInMilliseconds;
-        _durationInMilliseconds = durationInMilliseconds;
+        Duration varB4EAC82CA7396A68D541C85D26508E83_1470935516 = null; //Variable for return #1
+        Duration varB4EAC82CA7396A68D541C85D26508E83_1864216395 = null; //Variable for return #2
+        Duration varB4EAC82CA7396A68D541C85D26508E83_775067169 = null; //Variable for return #3
+        Duration varB4EAC82CA7396A68D541C85D26508E83_1319661279 = null; //Variable for return #4
+        long _durationInMilliseconds = durationInMilliseconds;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1838985107 = newDuration(true, DatatypeConstants.FIELD_UNDEFINED,
+            varB4EAC82CA7396A68D541C85D26508E83_1470935516 = newDuration(true, DatatypeConstants.FIELD_UNDEFINED,
                     DatatypeConstants.FIELD_UNDEFINED, 0, 0, 0, 0);
         } //End block
-        boolean tooLong;
-        tooLong = false;
+        boolean tooLong = false;
         boolean isPositive;
         {
             isPositive = false;
@@ -187,75 +182,65 @@ public abstract class DatatypeFactory {
         {
             isPositive = true;
         } //End block
-        long val;
-        val = _durationInMilliseconds;
-        int milliseconds;
-        milliseconds = (int) (val % 60000L);
+        long val = _durationInMilliseconds;
+        int milliseconds = (int) (val % 60000L);
         {
-            int seconds;
-            seconds = milliseconds / 1000;
+            int seconds = milliseconds / 1000;
             val = val / 60000L;
-            int minutes;
-            minutes = (int) (val % 60L);
+            int minutes = (int) (val % 60L);
             val = val / 60L;
-            int hours;
-            hours = (int) (val % 24L);
-            long days;
-            days = val / 24L;
+            int hours = (int) (val % 24L);
+            long days = val / 24L;
             {
-                varB4EAC82CA7396A68D541C85D26508E83_107367403 = newDuration(isPositive, DatatypeConstants.FIELD_UNDEFINED,
+                varB4EAC82CA7396A68D541C85D26508E83_1864216395 = newDuration(isPositive, DatatypeConstants.FIELD_UNDEFINED,
                         DatatypeConstants.FIELD_UNDEFINED, (int) days, hours, minutes, seconds);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_442233511 = newDuration(isPositive, null, null,
+                varB4EAC82CA7396A68D541C85D26508E83_775067169 = newDuration(isPositive, null, null,
                         BigInteger.valueOf(days), BigInteger.valueOf(hours),
                         BigInteger.valueOf(minutes), BigDecimal.valueOf(milliseconds, 3));
             } //End block
         } //End block
-        BigDecimal seconds;
-        seconds = BigDecimal.valueOf(milliseconds, 3);
+        BigDecimal seconds = BigDecimal.valueOf(milliseconds, 3);
         val = val / 60000L;
-        BigInteger minutes;
-        minutes = BigInteger.valueOf(val % 60L);
+        BigInteger minutes = BigInteger.valueOf(val % 60L);
         val = val / 60L;
-        BigInteger hours;
-        hours = BigInteger.valueOf(val % 24L);
+        BigInteger hours = BigInteger.valueOf(val % 24L);
         val = val / 24L;
-        BigInteger days;
-        days = BigInteger.valueOf(val);
-        varB4EAC82CA7396A68D541C85D26508E83_821173148 = newDuration(isPositive, null, null, days, hours, minutes, seconds);
+        BigInteger days = BigInteger.valueOf(val);
+        varB4EAC82CA7396A68D541C85D26508E83_1319661279 = newDuration(isPositive, null, null, days, hours, minutes, seconds);
         addTaint(durationInMilliseconds);
-        Duration varA7E53CE21691AB073D9660D615818899_806966814; //Final return value
+        Duration varA7E53CE21691AB073D9660D615818899_1600750479; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_806966814 = varB4EAC82CA7396A68D541C85D26508E83_1838985107;
+                varA7E53CE21691AB073D9660D615818899_1600750479 = varB4EAC82CA7396A68D541C85D26508E83_1470935516;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_806966814 = varB4EAC82CA7396A68D541C85D26508E83_107367403;
+                varA7E53CE21691AB073D9660D615818899_1600750479 = varB4EAC82CA7396A68D541C85D26508E83_1864216395;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_806966814 = varB4EAC82CA7396A68D541C85D26508E83_442233511;
+                varA7E53CE21691AB073D9660D615818899_1600750479 = varB4EAC82CA7396A68D541C85D26508E83_775067169;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_806966814 = varB4EAC82CA7396A68D541C85D26508E83_821173148;
+                varA7E53CE21691AB073D9660D615818899_1600750479 = varB4EAC82CA7396A68D541C85D26508E83_1319661279;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_806966814.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_806966814;
+        varA7E53CE21691AB073D9660D615818899_1600750479.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1600750479;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.990 -0400", hash_original_method = "6B6A6A22BBF17FD376AF1DBB2EA2AFC0", hash_generated_method = "851D5D63F18E9E235B5787614E95BBF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.405 -0400", hash_original_method = "6B6A6A22BBF17FD376AF1DBB2EA2AFC0", hash_generated_method = "7099BF71D550233082443E02013B54C8")
     public Duration newDurationDayTime(
             final boolean isPositive,
             final BigInteger day,
             final BigInteger hour,
             final BigInteger minute,
             final BigInteger second) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_512322633 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_512322633 = newDuration(
+        Duration varB4EAC82CA7396A68D541C85D26508E83_28522541 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_28522541 = newDuration(
                 isPositive,
                 null,  
                 null, 
@@ -269,8 +254,8 @@ public abstract class DatatypeFactory {
         addTaint(hour.getTaint());
         addTaint(minute.getTaint());
         addTaint(second.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_512322633.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_512322633;
+        varB4EAC82CA7396A68D541C85D26508E83_28522541.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_28522541;
         // ---------- Original Method ----------
         //return newDuration(
                 //isPositive,
@@ -284,15 +269,15 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.990 -0400", hash_original_method = "C2B5E3B114408400012B36FAE716B74D", hash_generated_method = "F1C94392EBA676BA3956F4264B0F63F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.406 -0400", hash_original_method = "C2B5E3B114408400012B36FAE716B74D", hash_generated_method = "22839A348605A48DD6C479C580F9CD71")
     public Duration newDurationDayTime(
             final boolean isPositive,
             final int day,
             final int hour,
             final int minute,
             final int second) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_1519040069 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1519040069 = newDuration(isPositive,
+        Duration varB4EAC82CA7396A68D541C85D26508E83_275871020 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_275871020 = newDuration(isPositive,
                 DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED,
                 day, hour, minute, second);
         addTaint(isPositive);
@@ -300,8 +285,8 @@ public abstract class DatatypeFactory {
         addTaint(hour);
         addTaint(minute);
         addTaint(second);
-        varB4EAC82CA7396A68D541C85D26508E83_1519040069.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1519040069;
+        varB4EAC82CA7396A68D541C85D26508E83_275871020.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_275871020;
         // ---------- Original Method ----------
         //return newDuration(isPositive,
                 //DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED,
@@ -309,29 +294,26 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.001 -0400", hash_original_method = "846082B3412BDC6279D2A475B2E6526F", hash_generated_method = "C6F2389495603F7EB824E71C7750DDF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.408 -0400", hash_original_method = "846082B3412BDC6279D2A475B2E6526F", hash_generated_method = "E74B608BDBA1136C16D71A95BB3C249E")
     public Duration newDurationYearMonth(final String lexicalRepresentation) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_108666388 = null; //Variable for return #1
+        Duration varB4EAC82CA7396A68D541C85D26508E83_679065758 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The lexical representation cannot be null.");
         } //End block
-        int length;
-        length = lexicalRepresentation.length();
+        int length = lexicalRepresentation.length();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                char c;
-                c = lexicalRepresentation.charAt(i);
+                char c = lexicalRepresentation.charAt(i);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid yearMonthDuration value: " + lexicalRepresentation);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_108666388 = newDuration(lexicalRepresentation);
+        varB4EAC82CA7396A68D541C85D26508E83_679065758 = newDuration(lexicalRepresentation);
         addTaint(lexicalRepresentation.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_108666388.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_108666388;
+        varB4EAC82CA7396A68D541C85D26508E83_679065758.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_679065758;
         // ---------- Original Method ----------
         //if (lexicalRepresentation == null) {
             //throw new NullPointerException("The lexical representation cannot be null.");
@@ -347,25 +329,25 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.014 -0400", hash_original_method = "056A5041DE6AEBE035AD076AE760E408", hash_generated_method = "C693208529E6CE76CDB932848375F7AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.408 -0400", hash_original_method = "056A5041DE6AEBE035AD076AE760E408", hash_generated_method = "EE62777EE9307EFC64081ED5467407E8")
     public Duration newDurationYearMonth(final long durationInMilliseconds) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_979934940 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_979934940 = newDuration(durationInMilliseconds);
+        Duration varB4EAC82CA7396A68D541C85D26508E83_1626161266 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1626161266 = newDuration(durationInMilliseconds);
         addTaint(durationInMilliseconds);
-        varB4EAC82CA7396A68D541C85D26508E83_979934940.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_979934940;
+        varB4EAC82CA7396A68D541C85D26508E83_1626161266.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1626161266;
         // ---------- Original Method ----------
         //return newDuration(durationInMilliseconds);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.014 -0400", hash_original_method = "4B21C678040027406BF85976F89C7B54", hash_generated_method = "810A67C8BBBABCC34FB85EA6F3E64856")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.409 -0400", hash_original_method = "4B21C678040027406BF85976F89C7B54", hash_generated_method = "2C62F99046F8F2AA3F2E71D552F89904")
     public Duration newDurationYearMonth(
             final boolean isPositive,
             final BigInteger year,
             final BigInteger month) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_2141959593 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2141959593 = newDuration(
+        Duration varB4EAC82CA7396A68D541C85D26508E83_2212803 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2212803 = newDuration(
                 isPositive,
                 year,
                 month,
@@ -377,8 +359,8 @@ public abstract class DatatypeFactory {
         addTaint(isPositive);
         addTaint(year.getTaint());
         addTaint(month.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2141959593.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2141959593;
+        varB4EAC82CA7396A68D541C85D26508E83_2212803.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2212803;
         // ---------- Original Method ----------
         //return newDuration(
                 //isPositive,
@@ -392,20 +374,20 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.015 -0400", hash_original_method = "C5590381C9E7B3EA48F5709CED7F72BF", hash_generated_method = "B063270DEFC76258B2B73BF23B238246")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.410 -0400", hash_original_method = "C5590381C9E7B3EA48F5709CED7F72BF", hash_generated_method = "5D1E401ED58F129FDCED20719505C3CF")
     public Duration newDurationYearMonth(
             final boolean isPositive,
             final int year,
             final int month) {
-        Duration varB4EAC82CA7396A68D541C85D26508E83_367851265 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_367851265 = newDuration(isPositive, year, month,
+        Duration varB4EAC82CA7396A68D541C85D26508E83_74675047 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_74675047 = newDuration(isPositive, year, month,
                 DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED,
                 DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED);
         addTaint(isPositive);
         addTaint(year);
         addTaint(month);
-        varB4EAC82CA7396A68D541C85D26508E83_367851265.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_367851265;
+        varB4EAC82CA7396A68D541C85D26508E83_74675047.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_74675047;
         // ---------- Original Method ----------
         //return newDuration(isPositive, year, month,
                 //DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED,
@@ -433,7 +415,7 @@ public abstract class DatatypeFactory {
             final int timezone);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.016 -0400", hash_original_method = "8A3498A1338596D8B749E79A1AFF033B", hash_generated_method = "1A3B659B12979BE9241F9081600C14BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.412 -0400", hash_original_method = "8A3498A1338596D8B749E79A1AFF033B", hash_generated_method = "82B164FA9A250129FA09F36185B0988B")
     public XMLGregorianCalendar newXMLGregorianCalendar(
             final int year,
             final int month,
@@ -443,12 +425,11 @@ public abstract class DatatypeFactory {
             final int second,
             final int millisecond,
             final int timezone) {
-        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_1004053723 = null; //Variable for return #1
+        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_1271214775 = null; //Variable for return #1
         BigInteger realYear;
         realYear = BigInteger.valueOf((long) year);
         realYear = null;
-        BigDecimal realMillisecond;
-        realMillisecond = null;
+        BigDecimal realMillisecond = null;
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -459,7 +440,7 @@ public abstract class DatatypeFactory {
             } //End block
             realMillisecond = BigDecimal.valueOf((long) millisecond, 3);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1004053723 = newXMLGregorianCalendar(
+        varB4EAC82CA7396A68D541C85D26508E83_1271214775 = newXMLGregorianCalendar(
                 realYear,
                 month,
                 day,
@@ -477,21 +458,21 @@ public abstract class DatatypeFactory {
         addTaint(second);
         addTaint(millisecond);
         addTaint(timezone);
-        varB4EAC82CA7396A68D541C85D26508E83_1004053723.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1004053723;
+        varB4EAC82CA7396A68D541C85D26508E83_1271214775.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1271214775;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.025 -0400", hash_original_method = "6ED4795EE71DC061A554DCC049589B7F", hash_generated_method = "87E2843CFB0ED019BEC4327779E4838E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.418 -0400", hash_original_method = "6ED4795EE71DC061A554DCC049589B7F", hash_generated_method = "03D36DE8429227B42DC5B307BD1ACF95")
     public XMLGregorianCalendar newXMLGregorianCalendarDate(
             final int year,
             final int month,
             final int day,
             final int timezone) {
-        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_409180598 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_409180598 = newXMLGregorianCalendar(
+        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_36272839 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_36272839 = newXMLGregorianCalendar(
                 year,
                 month,
                 day,
@@ -504,8 +485,8 @@ public abstract class DatatypeFactory {
         addTaint(month);
         addTaint(day);
         addTaint(timezone);
-        varB4EAC82CA7396A68D541C85D26508E83_409180598.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_409180598;
+        varB4EAC82CA7396A68D541C85D26508E83_36272839.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_36272839;
         // ---------- Original Method ----------
         //return newXMLGregorianCalendar(
                 //year,
@@ -519,14 +500,14 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.025 -0400", hash_original_method = "1E346DFC9A40C730EDE4FF1E673B8E12", hash_generated_method = "D091B7C4F1F5C7BCD1516A9C1131B457")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.420 -0400", hash_original_method = "1E346DFC9A40C730EDE4FF1E673B8E12", hash_generated_method = "50E50292A1132BCFF32A3C77DC7BAC48")
     public XMLGregorianCalendar newXMLGregorianCalendarTime(
             final int hours,
             final int minutes,
             final int seconds,
             final int timezone) {
-        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_892006443 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_892006443 = newXMLGregorianCalendar(
+        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_607212023 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_607212023 = newXMLGregorianCalendar(
                 DatatypeConstants.FIELD_UNDEFINED, 
                 DatatypeConstants.FIELD_UNDEFINED, 
                 DatatypeConstants.FIELD_UNDEFINED, 
@@ -539,8 +520,8 @@ public abstract class DatatypeFactory {
         addTaint(minutes);
         addTaint(seconds);
         addTaint(timezone);
-        varB4EAC82CA7396A68D541C85D26508E83_892006443.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_892006443;
+        varB4EAC82CA7396A68D541C85D26508E83_607212023.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_607212023;
         // ---------- Original Method ----------
         //return newXMLGregorianCalendar(
                 //DatatypeConstants.FIELD_UNDEFINED, 
@@ -554,15 +535,15 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.026 -0400", hash_original_method = "F351AA210E9E98B5592EE4A1FD395A9B", hash_generated_method = "752E07EB8036D05A46074C884E29F610")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.421 -0400", hash_original_method = "F351AA210E9E98B5592EE4A1FD395A9B", hash_generated_method = "15492A9AB179FE0CCC57C5713E5F0ED1")
     public XMLGregorianCalendar newXMLGregorianCalendarTime(
             final int hours,
             final int minutes,
             final int seconds,
             final BigDecimal fractionalSecond,
             final int timezone) {
-        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_98828292 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_98828292 = newXMLGregorianCalendar(
+        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_919843864 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_919843864 = newXMLGregorianCalendar(
                 null, 
                 DatatypeConstants.FIELD_UNDEFINED, 
                 DatatypeConstants.FIELD_UNDEFINED, 
@@ -576,8 +557,8 @@ public abstract class DatatypeFactory {
         addTaint(seconds);
         addTaint(fractionalSecond.getTaint());
         addTaint(timezone);
-        varB4EAC82CA7396A68D541C85D26508E83_98828292.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_98828292;
+        varB4EAC82CA7396A68D541C85D26508E83_919843864.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_919843864;
         // ---------- Original Method ----------
         //return newXMLGregorianCalendar(
                 //null, 
@@ -591,16 +572,15 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.027 -0400", hash_original_method = "2B05C064D85FF3588769E9C14DEF6EB8", hash_generated_method = "17F0510D0DAF7D6E6C180EFC5461141E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.422 -0400", hash_original_method = "2B05C064D85FF3588769E9C14DEF6EB8", hash_generated_method = "66F36ACFBBB246728F0B40BFEB0B6174")
     public XMLGregorianCalendar newXMLGregorianCalendarTime(
             final int hours,
             final int minutes,
             final int seconds,
             final int milliseconds,
             final int timezone) {
-        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_1638552393 = null; //Variable for return #1
-        BigDecimal realMilliseconds;
-        realMilliseconds = null;
+        XMLGregorianCalendar varB4EAC82CA7396A68D541C85D26508E83_865650735 = null; //Variable for return #1
+        BigDecimal realMilliseconds = null;
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -611,7 +591,7 @@ public abstract class DatatypeFactory {
             } //End block
             realMilliseconds = BigDecimal.valueOf((long) milliseconds, 3);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1638552393 = newXMLGregorianCalendarTime(
+        varB4EAC82CA7396A68D541C85D26508E83_865650735 = newXMLGregorianCalendarTime(
                 hours,
                 minutes,
                 seconds,
@@ -623,8 +603,8 @@ public abstract class DatatypeFactory {
         addTaint(seconds);
         addTaint(milliseconds);
         addTaint(timezone);
-        varB4EAC82CA7396A68D541C85D26508E83_1638552393.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1638552393;
+        varB4EAC82CA7396A68D541C85D26508E83_865650735.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_865650735;
         // ---------- Original Method ----------
         //BigDecimal realMilliseconds = null;
         //if (milliseconds != DatatypeConstants.FIELD_UNDEFINED) {
@@ -647,10 +627,10 @@ public abstract class DatatypeFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.027 -0400", hash_original_field = "8A643B8E76E57C0958A72BBB8DDAED03", hash_generated_field = "1F1E8E0A96B491EB9D4E8354A783E019")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.422 -0400", hash_original_field = "8A643B8E76E57C0958A72BBB8DDAED03", hash_generated_field = "1F1E8E0A96B491EB9D4E8354A783E019")
 
     public static final String DATATYPEFACTORY_PROPERTY = "javax.xml.datatype.DatatypeFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.027 -0400", hash_original_field = "C6B08B0490B961EE292603BF75BB45A8", hash_generated_field = "E99494A37A07F4D4D964C3B6A0C3C783")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.422 -0400", hash_original_field = "C6B08B0490B961EE292603BF75BB45A8", hash_generated_field = "E99494A37A07F4D4D964C3B6A0C3C783")
 
     public static final String DATATYPEFACTORY_IMPLEMENTATION_CLASS = new String("org.apache.xerces.jaxp.datatype.DatatypeFactoryImpl");
 }

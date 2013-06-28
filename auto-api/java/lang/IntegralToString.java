@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 public final class IntegralToString {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.975 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.231 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
     private  IntegralToString() {
         // ---------- Original Method ----------
     }
 
     
-        public static String intToString(int i, int radix) {
+    public static String intToString(int i, int radix) {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             radix = 10;
         }
@@ -44,17 +44,17 @@ public final class IntegralToString {
     }
 
     
-        public static String intToString(int i) {
+    public static String intToString(int i) {
         return convertInt(null, i);
     }
 
     
-        public static void appendInt(AbstractStringBuilder sb, int i) {
+    public static void appendInt(AbstractStringBuilder sb, int i) {
         convertInt(sb, i);
     }
 
     
-        private static String convertInt(AbstractStringBuilder sb, int i) {
+    private static String convertInt(AbstractStringBuilder sb, int i) {
         boolean negative = false;
         String quickResult = null;
         if (i < 0) {
@@ -115,7 +115,7 @@ public final class IntegralToString {
     }
 
     
-        public static String longToString(long v, int radix) {
+    public static String longToString(long v, int radix) {
         int i = (int) v;
         if (i == v) {
             return intToString(i, radix);
@@ -147,17 +147,17 @@ public final class IntegralToString {
     }
 
     
-        public static String longToString(long l) {
+    public static String longToString(long l) {
         return convertLong(null, l);
     }
 
     
-        public static void appendLong(AbstractStringBuilder sb, long l) {
+    public static void appendLong(AbstractStringBuilder sb, long l) {
         convertLong(sb, l);
     }
 
     
-        private static String convertLong(AbstractStringBuilder sb, long n) {
+    private static String convertLong(AbstractStringBuilder sb, long n) {
         int i = (int) n;
         if (i == n) {
             return convertInt(sb, i);
@@ -208,7 +208,7 @@ public final class IntegralToString {
     }
 
     
-        private static int intIntoCharArray(char[] buf, int cursor, int n) {
+    private static int intIntoCharArray(char[] buf, int cursor, int n) {
         while ((n & 0xffff0000) != 0) {
             int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
             int r = n - 100*q;
@@ -226,7 +226,7 @@ public final class IntegralToString {
     }
 
     
-        public static String intToBinaryString(int i) {
+    public static String intToBinaryString(int i) {
         int bufLen = 32;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -237,7 +237,7 @@ public final class IntegralToString {
     }
 
     
-        public static String longToBinaryString(long v) {
+    public static String longToBinaryString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToBinaryString(i);
@@ -252,7 +252,7 @@ public final class IntegralToString {
     }
 
     
-        public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
+    public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         sb.append(digits[(b >> 4) & 0xf]);
         sb.append(digits[b & 0xf]);
@@ -260,7 +260,7 @@ public final class IntegralToString {
     }
 
     
-        public static String byteToHexString(byte b, boolean upperCase) {
+    public static String byteToHexString(byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[2];
         buf[0] = digits[(b >> 4) & 0xf];
@@ -269,7 +269,7 @@ public final class IntegralToString {
     }
 
     
-        public static String bytesToHexString(byte[] bytes, boolean upperCase) {
+    public static String bytesToHexString(byte[] bytes, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[bytes.length * 2];
         int c = 0;
@@ -281,7 +281,7 @@ public final class IntegralToString {
     }
 
     
-        public static String intToHexString(int i, boolean upperCase, int minWidth) {
+    public static String intToHexString(int i, boolean upperCase, int minWidth) {
         int bufLen = 8;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -293,7 +293,7 @@ public final class IntegralToString {
     }
 
     
-        public static String longToHexString(long v) {
+    public static String longToHexString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToHexString(i, false, 0);
@@ -308,7 +308,7 @@ public final class IntegralToString {
     }
 
     
-        public static String intToOctalString(int i) {
+    public static String intToOctalString(int i) {
         int bufLen = 11;
         char[] buf = new char[bufLen];
         int cursor = bufLen;
@@ -319,7 +319,7 @@ public final class IntegralToString {
     }
 
     
-        public static String longToOctalString(long v) {
+    public static String longToOctalString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
             return intToOctalString(i);
@@ -334,35 +334,35 @@ public final class IntegralToString {
     }
 
     
-        private static String stringOf(char... args) {
+    private static String stringOf(char... args) {
         return new String(0, args.length, args);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "8AD508834A2E263DC74238ED8029A90E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "425773BE567620BA8858A8C9A806C3AB")
 
-    private static ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "ADDCB1B380136AB7A6AE92DBED93A04D")
+    private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "DD3C6EC86D330D1AF7830345AF558804")
         @Override
         protected char[] initialValue() {
-            char[] var401101FA2F200BBC59DD27CE1AD00AD7_206108451 = (new char[20]);
-            char[] var50607924ABD4C17119BAF3A1CE41C0EC_1395728718 = {getTaintChar()};
-            return var50607924ABD4C17119BAF3A1CE41C0EC_1395728718;
+            char[] var401101FA2F200BBC59DD27CE1AD00AD7_83035988 = (new char[20]);
+            char[] var50607924ABD4C17119BAF3A1CE41C0EC_66101806 = {getTaintChar()};
+            return var50607924ABD4C17119BAF3A1CE41C0EC_66101806;
             // ---------- Original Method ----------
             //return new char[20];
         }
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_field = "EAFB73603CE2CB8500F6DCC368134B80", hash_generated_field = "10F1A9F0A79564FDF741D9913F8DBDA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "EAFB73603CE2CB8500F6DCC368134B80", hash_generated_field = "3F7A7621FDECF4B1F00F7F02BB032983")
 
-    private static String[] SMALL_NONNEGATIVE_VALUES = new String[100];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_field = "488857CAEF9939FF9A91517F8184C90C", hash_generated_field = "C47224BEF3BE0FC2C1A8150BECD5E9C0")
+    private static final String[] SMALL_NONNEGATIVE_VALUES = new String[100];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "488857CAEF9939FF9A91517F8184C90C", hash_generated_field = "0F2C6CD52D3AC35204AE87E543B933FE")
 
-    private static String[] SMALL_NEGATIVE_VALUES = new String[100];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_field = "4E44F8641CA299D7987D949BD06F7C5E", hash_generated_field = "68C7FA84510C0524E50BF6C1F48BD9D7")
+    private static final String[] SMALL_NEGATIVE_VALUES = new String[100];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "4E44F8641CA299D7987D949BD06F7C5E", hash_generated_field = "F4F0B5078F2B36CA1654493CC02FBE1B")
 
-    private static char[] TENS = {
+    private static final char[] TENS = {
         '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
         '1', '1', '1', '1', '1', '1', '1', '1', '1', '1',
         '2', '2', '2', '2', '2', '2', '2', '2', '2', '2',
@@ -374,9 +374,9 @@ public final class IntegralToString {
         '8', '8', '8', '8', '8', '8', '8', '8', '8', '8',
         '9', '9', '9', '9', '9', '9', '9', '9', '9', '9'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.014 -0400", hash_original_field = "2DFD29EBB5934DA81BA3D203A821EF23", hash_generated_field = "CB6C53CAC71A6E377B6CF2D65D2CE0CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "2DFD29EBB5934DA81BA3D203A821EF23", hash_generated_field = "C40FC9CE2E1863E8D99B8E9E8459B998")
 
-    private static char[] ONES = {
+    private static final char[] ONES = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -388,22 +388,22 @@ public final class IntegralToString {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.015 -0400", hash_original_field = "611CCEC708888401FC95E85326BFD8A1", hash_generated_field = "4053C21BAD08799368EE812BB91CAC34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "611CCEC708888401FC95E85326BFD8A1", hash_generated_field = "7ECA72DEBCDA6EB92131D3D0F3D8765E")
 
-    private static char[] MOD_10_TABLE = {
+    private static final char[] MOD_10_TABLE = {
         0, 1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 8, 9, 0
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.015 -0400", hash_original_field = "4102EFFF5068B86037B1783FBB3A87A6", hash_generated_field = "BE62EDD64B26316CFE9CFEFCB0F9FCEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "4102EFFF5068B86037B1783FBB3A87A6", hash_generated_field = "0F077AEAC9BBB0ADF3D0D4E6AACE2DF1")
 
-    private static char[] DIGITS = {
+    private static final char[] DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
         'u', 'v', 'w', 'x', 'y', 'z'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.015 -0400", hash_original_field = "26697557AFB8BA6B08D03FD60A18E4FF", hash_generated_field = "2EC575EC5DA043F36ABE10BA832724C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "26697557AFB8BA6B08D03FD60A18E4FF", hash_generated_field = "C31924D8CB8753379AD2B96C86ABBAE8")
 
-    private static char[] UPPER_CASE_DIGITS = {
+    private static final char[] UPPER_CASE_DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
         'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',

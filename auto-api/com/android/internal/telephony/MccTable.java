@@ -23,14 +23,14 @@ import libcore.icu.TimeZones;
 
 public final class MccTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.019 -0400", hash_original_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED", hash_generated_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.290 -0400", hash_original_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED", hash_generated_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED")
     public MccTable ()
     {
         //Synthesized constructor
     }
 
 
-        private static MccEntry entryForMcc(int mcc) {
+    private static MccEntry entryForMcc(int mcc) {
         int index;
         MccEntry m;
         m = new MccEntry(mcc, null, 0);
@@ -43,7 +43,7 @@ public final class MccTable {
     }
 
     
-        public static String defaultTimeZoneForMcc(int mcc) {
+    public static String defaultTimeZoneForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
         if (entry == null || entry.iso == null) {
@@ -62,7 +62,7 @@ public final class MccTable {
     }
 
     
-        public static String countryCodeForMcc(int mcc) {
+    public static String countryCodeForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
         if (entry == null) {
@@ -73,7 +73,7 @@ public final class MccTable {
     }
 
     
-        public static String defaultLanguageForMcc(int mcc) {
+    public static String defaultLanguageForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
         if (entry == null) {
@@ -84,7 +84,7 @@ public final class MccTable {
     }
 
     
-        public static int smallestDigitsMccForMnc(int mcc) {
+    public static int smallestDigitsMccForMnc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
         if (entry == null) {
@@ -95,7 +95,7 @@ public final class MccTable {
     }
 
     
-        public static void updateMccMncConfiguration(PhoneBase phone, String mccmnc) {
+    public static void updateMccMncConfiguration(PhoneBase phone, String mccmnc) {
         if (!TextUtils.isEmpty(mccmnc)) {
             int mcc, mnc;
             try {
@@ -127,7 +127,7 @@ public final class MccTable {
     }
 
     
-        private static void setTimezoneFromMccIfNeeded(PhoneBase phone, int mcc) {
+    private static void setTimezoneFromMccIfNeeded(PhoneBase phone, int mcc) {
         String timezone = SystemProperties.get(ServiceStateTracker.TIMEZONE_PROPERTY);
         if (timezone == null || timezone.length() == 0) {
             String zoneId = defaultTimeZoneForMcc(mcc);
@@ -142,7 +142,7 @@ public final class MccTable {
     }
 
     
-        private static void setLocaleFromMccIfNeeded(PhoneBase phone, int mcc) {
+    private static void setLocaleFromMccIfNeeded(PhoneBase phone, int mcc) {
         String language = MccTable.defaultLanguageForMcc(mcc);
         String country = MccTable.countryCodeForMcc(mcc);
         Log.d(LOG_TAG, "locale set to "+language+"_"+country);
@@ -150,7 +150,7 @@ public final class MccTable {
     }
 
     
-        private static void setWifiCountryCodeFromMcc(PhoneBase phone, int mcc) {
+    private static void setWifiCountryCodeFromMcc(PhoneBase phone, int mcc) {
         String country = MccTable.countryCodeForMcc(mcc);
         if (!country.isEmpty()) {
             Context context = phone.getContext();
@@ -162,20 +162,20 @@ public final class MccTable {
 
     
     static class MccEntry implements Comparable<MccEntry> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.030 -0400", hash_original_field = "F46F944E351F8B92E40C3308318738A3", hash_generated_field = "B8D429B3E1B3107CAF57EB461C4539D2")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_field = "F46F944E351F8B92E40C3308318738A3", hash_generated_field = "B8D429B3E1B3107CAF57EB461C4539D2")
 
         int mcc;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.030 -0400", hash_original_field = "E906EC779AB4AC6CBFDF30DB5CBB3F1C", hash_generated_field = "74A542B78F8B7E956A7D95FA4AB9F9D8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_field = "E906EC779AB4AC6CBFDF30DB5CBB3F1C", hash_generated_field = "74A542B78F8B7E956A7D95FA4AB9F9D8")
 
         String iso;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.030 -0400", hash_original_field = "8DF0CE1CE35D09B6CC00D5F106E7D75E", hash_generated_field = "BDB6AD26CFAC6708F3B7FBCCF0838A6D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_field = "8DF0CE1CE35D09B6CC00D5F106E7D75E", hash_generated_field = "BDB6AD26CFAC6708F3B7FBCCF0838A6D")
 
         int smallestDigitsMnc;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.030 -0400", hash_original_field = "8512AE7D57B1396273F76FE6ED341A23", hash_generated_field = "B8E4277A72E7EC5E4B1FB3FD7EE3E3AC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_field = "8512AE7D57B1396273F76FE6ED341A23", hash_generated_field = "B8E4277A72E7EC5E4B1FB3FD7EE3E3AC")
 
         String language;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.030 -0400", hash_original_method = "41A45D7D8A8860CA53114CE32C0688B1", hash_generated_method = "8DA8283CAE7666CF3878D584A14535E4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_method = "41A45D7D8A8860CA53114CE32C0688B1", hash_generated_method = "8DA8283CAE7666CF3878D584A14535E4")
           MccEntry(int mnc, String iso, int smallestDigitsMCC) {
             this(mnc, iso, smallestDigitsMCC, null);
             addTaint(mnc);
@@ -185,7 +185,7 @@ public final class MccTable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.031 -0400", hash_original_method = "91C885F681691E0843CDB4B5BE838DB3", hash_generated_method = "DAC515F7D8BAF120AD6D6F9132E89A28")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.292 -0400", hash_original_method = "91C885F681691E0843CDB4B5BE838DB3", hash_generated_method = "DAC515F7D8BAF120AD6D6F9132E89A28")
           MccEntry(int mnc, String iso, int smallestDigitsMCC, String language) {
             this.mcc = mnc;
             this.iso = iso;
@@ -199,11 +199,11 @@ public final class MccTable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.031 -0400", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "5210F78333EFF76BEAC301FAF65F724D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.293 -0400", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "04E5FF8D81FDE3C835BB8879632100D9")
         public int compareTo(MccEntry o) {
             addTaint(o.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909950351 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909950351;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261663935 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261663935;
             // ---------- Original Method ----------
             //return mcc - o.mcc;
         }
@@ -213,10 +213,10 @@ public final class MccTable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.031 -0400", hash_original_field = "F40DDBD55A5B8A06D89ACE29E9986F43", hash_generated_field = "1FE5167AE7D4227AC7A50204364012D6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.293 -0400", hash_original_field = "F40DDBD55A5B8A06D89ACE29E9986F43", hash_generated_field = "91299B070A273124B228616071AB9B50")
 
-    static String LOG_TAG = "MccTable";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:17.031 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "A68C3B7682C762BEA6B5DD9CED55AB83")
+    static final String LOG_TAG = "MccTable";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.293 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "A68C3B7682C762BEA6B5DD9CED55AB83")
 
     static ArrayList<MccEntry> table;
     static {

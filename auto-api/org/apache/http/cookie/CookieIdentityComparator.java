@@ -12,25 +12,22 @@ import java.util.Comparator;
 
 public class CookieIdentityComparator implements Serializable, Comparator<Cookie> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.751 -0400", hash_original_method = "4E7102072F2E26643CD713A2D98D9246", hash_generated_method = "4E7102072F2E26643CD713A2D98D9246")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.502 -0400", hash_original_method = "4E7102072F2E26643CD713A2D98D9246", hash_generated_method = "4E7102072F2E26643CD713A2D98D9246")
     public CookieIdentityComparator ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.757 -0400", hash_original_method = "74E51A596EC4BD1E3C9EC5F43F5A06D0", hash_generated_method = "2C5543F39725C3C3183889C4B31BCFEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.502 -0400", hash_original_method = "74E51A596EC4BD1E3C9EC5F43F5A06D0", hash_generated_method = "5EAE944975FAEBCC108D755C2266BA2C")
     public int compare(final Cookie c1, final Cookie c2) {
-        int res;
-        res = c1.getName().compareTo(c2.getName());
+        int res = c1.getName().compareTo(c2.getName());
         {
-            String d1;
-            d1 = c1.getDomain();
+            String d1 = c1.getDomain();
             {
                 d1 = "";
             } //End block
-            String d2;
-            d2 = c2.getDomain();
+            String d2 = c2.getDomain();
             {
                 d2 = "";
             } //End block
@@ -38,8 +35,8 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
         } //End block
         addTaint(c1.getTaint());
         addTaint(c2.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924639793 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924639793;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625977909 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625977909;
         // ---------- Original Method ----------
         //int res = c1.getName().compareTo(c2.getName());
         //if (res == 0) {
@@ -57,8 +54,8 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.757 -0400", hash_original_field = "4DA255DBE83D131A84FE5201DE20E4F7", hash_generated_field = "8DA17150DBC7DDFCAE70429811BC0BA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.502 -0400", hash_original_field = "4DA255DBE83D131A84FE5201DE20E4F7", hash_generated_field = "D3FD79FDAFB7FA673E2878DF81465E57")
 
-    private static long serialVersionUID = 4466565437490631532L;
+    private static final long serialVersionUID = 4466565437490631532L;
 }
 

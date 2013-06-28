@@ -30,67 +30,67 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager.LayoutParams;
 
 public class ZoomButtonsController implements View.OnTouchListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "1CC5B944F91B1CAEF9E1C10ED13D1F97", hash_generated_field = "31366FBB195E6D4943166A1CF4E59210")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "1CC5B944F91B1CAEF9E1C10ED13D1F97", hash_generated_field = "31366FBB195E6D4943166A1CF4E59210")
 
     private int mTouchPaddingScaledSq;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
 
     private WindowManager mWindowManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "FE8EE9D888F7779DD5F42BE5328C37C3", hash_generated_field = "E32C26221A599AF38CE047CEA9708612")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "FE8EE9D888F7779DD5F42BE5328C37C3", hash_generated_field = "E32C26221A599AF38CE047CEA9708612")
 
     private boolean mAutoDismissControls = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "9328FA61A62F4AFB2BABF8F19BE1C98A", hash_generated_field = "E5DC02A18C4817B413C22883E087C5E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "9328FA61A62F4AFB2BABF8F19BE1C98A", hash_generated_field = "E5DC02A18C4817B413C22883E087C5E5")
 
     private View mOwnerView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "4F5AE11A75135D267DFD11C03893C565", hash_generated_field = "559495B950DF1669D23D36FAF1107DD9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "4F5AE11A75135D267DFD11C03893C565", hash_generated_field = "778B5A3646480827509FB2BFB25E57EC")
 
-    private int[] mOwnerViewRawLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.131 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "DE7D4566565DA445D3E9FC64F9F679E7")
+    private final int[] mOwnerViewRawLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "DE7D4566565DA445D3E9FC64F9F679E7")
 
     private FrameLayout mContainer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "37DF3A2FD7F1A3950C59EB4236FC5193", hash_generated_field = "3C55C1D38F1D3A12D40650C5BEE8D028")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "37DF3A2FD7F1A3950C59EB4236FC5193", hash_generated_field = "3C55C1D38F1D3A12D40650C5BEE8D028")
 
     private LayoutParams mContainerLayoutParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "46F0BA02F06C8EB1652566BC7F9B4CFE", hash_generated_field = "D48F12305776FA6E99878DB676CC226E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "46F0BA02F06C8EB1652566BC7F9B4CFE", hash_generated_field = "E3C0FB2A785E1B8D5D1C914264C73BEA")
 
-    private int[] mContainerRawLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "8DA686741271C843AD84C8022C413C01", hash_generated_field = "EA1868BE7D996683F2989202D2AC4DDD")
+    private final int[] mContainerRawLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "8DA686741271C843AD84C8022C413C01", hash_generated_field = "EA1868BE7D996683F2989202D2AC4DDD")
 
     private ZoomControls mControls;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "02A61E15C056169827183200421D0E22", hash_generated_field = "4214AAFC096B21883792ABCE78232C36")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "02A61E15C056169827183200421D0E22", hash_generated_field = "4214AAFC096B21883792ABCE78232C36")
 
     private View mTouchTargetView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "FF2E4B5120660D7EC9A7A9BCC5CD7106", hash_generated_field = "0B05305DB7910A02136AD9D3707473C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "FF2E4B5120660D7EC9A7A9BCC5CD7106", hash_generated_field = "0F94F89170BE0719490D13F384546F40")
 
-    private int[] mTouchTargetWindowLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "8E4AFED5ED55DE09DBF63202BD03FD89", hash_generated_field = "B050564438297A698F60861F546D1BDC")
+    private final int[] mTouchTargetWindowLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "8E4AFED5ED55DE09DBF63202BD03FD89", hash_generated_field = "B050564438297A698F60861F546D1BDC")
 
     private boolean mReleaseTouchListenerOnUp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "3841FA617DC417560C9ACBBE88413EC6", hash_generated_field = "16B558D924DF2404F3A2E9E477E1C239")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "3841FA617DC417560C9ACBBE88413EC6", hash_generated_field = "16B558D924DF2404F3A2E9E477E1C239")
 
     private boolean mIsVisible;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
-    private Rect mTempRect = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.140 -0400", hash_original_field = "F6FD3D6247A2F446133C6FE9981D05F5", hash_generated_field = "3F37314F4AB77205AD54497621D94DB8")
+    private final Rect mTempRect = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "F6FD3D6247A2F446133C6FE9981D05F5", hash_generated_field = "37699E1557DE199CB1E3D694670D31BB")
 
-    private int[] mTempIntArray = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.141 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "69BC292DD0AFDA8A4F57DC4BCBE69348")
+    private final int[] mTempIntArray = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "69BC292DD0AFDA8A4F57DC4BCBE69348")
 
     private OnZoomListener mCallback;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.141 -0400", hash_original_field = "C98BBC28C3ECC9AFA024709DA03CECB8", hash_generated_field = "1ED441E7D4D48C31070345ADC5874E3A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "C98BBC28C3ECC9AFA024709DA03CECB8", hash_generated_field = "1ED441E7D4D48C31070345ADC5874E3A")
 
     private Runnable mPostedVisibleInitializer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.141 -0400", hash_original_field = "54942985B0978FF368CEED03D9313DD3", hash_generated_field = "2685C6012FE6DC8BEA0BBFFF2E0AB460")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.331 -0400", hash_original_field = "54942985B0978FF368CEED03D9313DD3", hash_generated_field = "314D614F45BCFBC7FD4D2764A847AE51")
 
-    private IntentFilter mConfigurationChangedFilter = new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.141 -0400", hash_original_field = "F7238A3294ACE5864BA2567DBF187A8E", hash_generated_field = "E2993D84BD1FCA27A38408CE0FB1B8F4")
+    private final IntentFilter mConfigurationChangedFilter = new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "F7238A3294ACE5864BA2567DBF187A8E", hash_generated_field = "E4D2EB0B4308FE203FF175FADAC6AA6E")
 
-    private BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.141 -0400", hash_original_method = "CBA4474B6B69D8EAAD5A5C11EB839616", hash_generated_method = "F83C34B85F2FCA1335A3AC869BD1F32D")
+    private final BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "CBA4474B6B69D8EAAD5A5C11EB839616", hash_generated_method = "F83C34B85F2FCA1335A3AC869BD1F32D")
         @Override
         public void onReceive(Context context, Intent intent) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -106,10 +106,10 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.142 -0400", hash_original_field = "E7709E2A554C5D6ACC0DCFB2BB1FB7B7", hash_generated_field = "70E48035E51BB88ED42CF01C0C22B91E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "E7709E2A554C5D6ACC0DCFB2BB1FB7B7", hash_generated_field = "F70694DA0401A421E844EF7D59C877AC")
 
-    private Handler mHandler = new Handler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.142 -0400", hash_original_method = "08D68F0747526F6C2171A582DECDF849", hash_generated_method = "D9AA51752D54E5FD2F3696831ED2F5CA")
+    private final Handler mHandler = new Handler() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "08D68F0747526F6C2171A582DECDF849", hash_generated_method = "CFC43127320AFEBB55812F13C5DF794D")
         @Override
         public void handleMessage(Message msg) {
             //Begin case MSG_POST_CONFIGURATION_CHANGED 
@@ -120,7 +120,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
             //End case MSG_DISMISS_ZOOM_CONTROLS 
             //Begin case MSG_POST_SET_VISIBLE 
             {
-                boolean var2D6B4C7133C3E09470E253CD882AC4AE_403043413 = (mOwnerView.getWindowToken() == null);
+                boolean var2D6B4C7133C3E09470E253CD882AC4AE_619523215 = (mOwnerView.getWindowToken() == null);
                 {
                     setVisible(true);
                 } //End block
@@ -150,7 +150,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.150 -0400", hash_original_method = "380DC2A7E4A728E8B8A622AB5FAF03E2", hash_generated_method = "0A58F7464A42BDD3A103DF6B2DF3EF11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "380DC2A7E4A728E8B8A622AB5FAF03E2", hash_generated_method = "0A58F7464A42BDD3A103DF6B2DF3EF11")
     public  ZoomButtonsController(View ownerView) {
         mContext = ownerView.getContext();
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -170,7 +170,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.150 -0400", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "5B5524A67352B23E546BDFBCDCF3BABB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "5B5524A67352B23E546BDFBCDCF3BABB")
     public void setZoomInEnabled(boolean enabled) {
         mControls.setIsZoomInEnabled(enabled);
         addTaint(enabled);
@@ -179,7 +179,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.151 -0400", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "C2B70333222D9B2089EBD0281528A3C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.333 -0400", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "C2B70333222D9B2089EBD0281528A3C2")
     public void setZoomOutEnabled(boolean enabled) {
         mControls.setIsZoomOutEnabled(enabled);
         addTaint(enabled);
@@ -188,7 +188,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.151 -0400", hash_original_method = "18B39697A9CAB4F925A2FDB6BE61BBD8", hash_generated_method = "2C45338C4D3F860DD9834F9C40C14B9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.334 -0400", hash_original_method = "18B39697A9CAB4F925A2FDB6BE61BBD8", hash_generated_method = "2C45338C4D3F860DD9834F9C40C14B9B")
     public void setZoomSpeed(long speed) {
         mControls.setZoomSpeed(speed);
         addTaint(speed);
@@ -197,11 +197,10 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.174 -0400", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "EC6C1552FA8627D9ED30FE627236B97F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "EDDC24707FF71AA105EA0C11F3805F3E")
     private FrameLayout createContainer() {
-        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_2063530711 = null; //Variable for return #1
-        LayoutParams lp;
-        lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_1305403530 = null; //Variable for return #1
+        LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.TOP | Gravity.LEFT;
         lp.flags = LayoutParams.FLAG_NOT_TOUCHABLE |
                 LayoutParams.FLAG_NOT_FOCUSABLE |
@@ -213,17 +212,15 @@ public class ZoomButtonsController implements View.OnTouchListener {
         lp.format = PixelFormat.TRANSLUCENT;
         lp.windowAnimations = com.android.internal.R.style.Animation_ZoomButtons;
         mContainerLayoutParams = lp;
-        FrameLayout container;
-        container = new Container(mContext);
+        FrameLayout container = new Container(mContext);
         container.setLayoutParams(lp);
         container.setMeasureAllChildren(true);
-        LayoutInflater inflater;
-        inflater = (LayoutInflater) mContext
+        LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(com.android.internal.R.layout.zoom_container, container);
         mControls = (ZoomControls) container.findViewById(com.android.internal.R.id.zoomControls);
         mControls.setOnZoomInClickListener(new OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.173 -0400", hash_original_method = "C8D887B971B187EA9E40E1FCF6E6B11D", hash_generated_method = "F9D4F3B6846D05276EA8F4AB2A7DE190")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "C8D887B971B187EA9E40E1FCF6E6B11D", hash_generated_method = "F9D4F3B6846D05276EA8F4AB2A7DE190")
             public void onClick(View v) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
                 dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
@@ -235,7 +232,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
             }
 });
         mControls.setOnZoomOutClickListener(new OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.174 -0400", hash_original_method = "CBCA91EA6C5A6BFF58378B31FA0529F1", hash_generated_method = "B3CABA981A0915206EC38E80A85E32B5")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.336 -0400", hash_original_method = "CBCA91EA6C5A6BFF58378B31FA0529F1", hash_generated_method = "B3CABA981A0915206EC38E80A85E32B5")
             public void onClick(View v) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
                 dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
@@ -246,15 +243,15 @@ public class ZoomButtonsController implements View.OnTouchListener {
                 //if (mCallback != null) mCallback.onZoom(false);
             }
 });
-        varB4EAC82CA7396A68D541C85D26508E83_2063530711 = container;
-        varB4EAC82CA7396A68D541C85D26508E83_2063530711.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2063530711;
+        varB4EAC82CA7396A68D541C85D26508E83_1305403530 = container;
+        varB4EAC82CA7396A68D541C85D26508E83_1305403530.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1305403530;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.178 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
     public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
         // ---------- Original Method ----------
@@ -262,10 +259,9 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.179 -0400", hash_original_method = "E1DA778FA5C81D94D4F0CBAFCCB18381", hash_generated_method = "6ED1C33B0C4275B875818C9D2B82F47E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "E1DA778FA5C81D94D4F0CBAFCCB18381", hash_generated_method = "5A67C1BBB3C0539FF3AD635528D08F49")
     public void setFocusable(boolean focusable) {
-        int oldFlags;
-        oldFlags = mContainerLayoutParams.flags;
+        int oldFlags = mContainerLayoutParams.flags;
         {
             mContainerLayoutParams.flags &= ~LayoutParams.FLAG_NOT_FOCUSABLE;
         } //End block
@@ -289,16 +285,16 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.180 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "87D32BE490B08FE421FEB05D47A65C4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.337 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "22E87F28B9FE3773C4E7248D48818487")
     public boolean isAutoDismissed() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624442346 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_624442346;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431469012 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_431469012;
         // ---------- Original Method ----------
         //return mAutoDismissControls;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.180 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "0658DFBD9214CCF478A566E2F117C6C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "0658DFBD9214CCF478A566E2F117C6C3")
     public void setAutoDismissed(boolean autoDismiss) {
         mAutoDismissControls = autoDismiss;
         // ---------- Original Method ----------
@@ -307,23 +303,23 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.180 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "DD4F4CBE1E77C865439BAC7505566BC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.338 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "89547EF1BC8ABDC6AA887F84B5AA5A31")
     public boolean isVisible() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1319945226 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1319945226;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1813214079 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1813214079;
         // ---------- Original Method ----------
         //return mIsVisible;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.200 -0400", hash_original_method = "E965560D7B92B1F08EBD9F8DCDBB0D54", hash_generated_method = "8521B7E066426400E512A7D889B1BA0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.339 -0400", hash_original_method = "E965560D7B92B1F08EBD9F8DCDBB0D54", hash_generated_method = "45DCC12D0565274522F102A2CDEDCFC8")
     public void setVisible(boolean visible) {
         {
             {
-                boolean var2D6B4C7133C3E09470E253CD882AC4AE_527749263 = (mOwnerView.getWindowToken() == null);
+                boolean var2D6B4C7133C3E09470E253CD882AC4AE_1953970584 = (mOwnerView.getWindowToken() == null);
                 {
                     {
-                        boolean var9A4E95F470ACBC1003187D9BC10AE161_1374053855 = (!mHandler.hasMessages(MSG_POST_SET_VISIBLE));
+                        boolean var9A4E95F470ACBC1003187D9BC10AE161_1424065401 = (!mHandler.hasMessages(MSG_POST_SET_VISIBLE));
                         {
                             mHandler.sendEmptyMessage(MSG_POST_SET_VISIBLE);
                         } //End block
@@ -340,7 +336,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
             mWindowManager.addView(mContainer, mContainerLayoutParams);
             {
                 mPostedVisibleInitializer = new Runnable() {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.186 -0400", hash_original_method = "EAB472F3FC4942C1E0EBF0AC1701A96E", hash_generated_method = "10B0682055CC46BB4AF0F95C79CAE8B9")
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.339 -0400", hash_original_method = "EAB472F3FC4942C1E0EBF0AC1701A96E", hash_generated_method = "10B0682055CC46BB4AF0F95C79CAE8B9")
                     public void run() {
                         refreshPositioningVariables();
                         {
@@ -378,29 +374,29 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.201 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "49FD2FEEFC64169519990F94FC9259F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "C7B08934075EC6E0A9925D290294FCD1")
     public ViewGroup getContainer() {
-        ViewGroup varB4EAC82CA7396A68D541C85D26508E83_1133877251 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1133877251 = mContainer;
-        varB4EAC82CA7396A68D541C85D26508E83_1133877251.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1133877251;
+        ViewGroup varB4EAC82CA7396A68D541C85D26508E83_1146447410 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1146447410 = mContainer;
+        varB4EAC82CA7396A68D541C85D26508E83_1146447410.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1146447410;
         // ---------- Original Method ----------
         //return mContainer;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.201 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "8FF5C62935CAF27E2944EDB406D5FFE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "978FF6ACC2B7E2860EA02FD77F7B8163")
     public View getZoomControls() {
-        View varB4EAC82CA7396A68D541C85D26508E83_562475771 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_562475771 = mControls;
-        varB4EAC82CA7396A68D541C85D26508E83_562475771.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_562475771;
+        View varB4EAC82CA7396A68D541C85D26508E83_1381706562 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1381706562 = mControls;
+        varB4EAC82CA7396A68D541C85D26508E83_1381706562.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1381706562;
         // ---------- Original Method ----------
         //return mControls;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.201 -0400", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "934674E6B4B6B9EC034599A9FD28A0D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.340 -0400", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "934674E6B4B6B9EC034599A9FD28A0D7")
     private void dismissControlsDelayed(int delay) {
         {
             mHandler.removeMessages(MSG_DISMISS_ZOOM_CONTROLS);
@@ -415,22 +411,18 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.210 -0400", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "577AA3418364DE8B951A9D09B77A802B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.341 -0400", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "93D4DAA59BBDD94FBD37C4AE5C1C2B8E")
     private void refreshPositioningVariables() {
         {
-            boolean var2D4339CEF2CDEECF31246867A013F13B_1117788688 = (mOwnerView.getWindowToken() == null);
+            boolean var2D4339CEF2CDEECF31246867A013F13B_323100371 = (mOwnerView.getWindowToken() == null);
         } //End collapsed parenthetic
-        int ownerHeight;
-        ownerHeight = mOwnerView.getHeight();
-        int ownerWidth;
-        ownerWidth = mOwnerView.getWidth();
-        int containerOwnerYOffset;
-        containerOwnerYOffset = ownerHeight - mContainer.getHeight();
+        int ownerHeight = mOwnerView.getHeight();
+        int ownerWidth = mOwnerView.getWidth();
+        int containerOwnerYOffset = ownerHeight - mContainer.getHeight();
         mOwnerView.getLocationOnScreen(mOwnerViewRawLocation);
         mContainerRawLocation[0] = mOwnerViewRawLocation[0];
         mContainerRawLocation[1] = mOwnerViewRawLocation[1] + containerOwnerYOffset;
-        int[] ownerViewWindowLoc;
-        ownerViewWindowLoc = mTempIntArray;
+        int[] ownerViewWindowLoc = mTempIntArray;
         mOwnerView.getLocationInWindow(ownerViewWindowLoc);
         mContainerLayoutParams.x = ownerViewWindowLoc[0];
         mContainerLayoutParams.width = ownerWidth;
@@ -443,28 +435,26 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.211 -0400", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "F284B8A52CF8B4A551B7968AA96D5E6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.341 -0400", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "E6F6D16E5E7C3C3E65E91F04EB5C47B1")
     private boolean onContainerKey(KeyEvent event) {
-        int keyCode;
-        keyCode = event.getKeyCode();
+        int keyCode = event.getKeyCode();
         {
-            boolean varD9C7815C9811CC574B958A7386252FC9_1083577710 = (isInterestingKey(keyCode));
+            boolean varD9C7815C9811CC574B958A7386252FC9_261391717 = (isInterestingKey(keyCode));
             {
                 {
                     {
-                        boolean varF456D875C94EFA50F4F83E456081D7DC_1939710810 = (event.getAction() == KeyEvent.ACTION_DOWN
+                        boolean varF456D875C94EFA50F4F83E456081D7DC_973454365 = (event.getAction() == KeyEvent.ACTION_DOWN
                         && event.getRepeatCount() == 0);
                         {
                             {
-                                KeyEvent.DispatcherState ds;
-                                ds = mOwnerView.getKeyDispatcherState();
+                                KeyEvent.DispatcherState ds = mOwnerView.getKeyDispatcherState();
                                 {
                                     ds.startTracking(event, this);
                                 } //End block
                             } //End block
                         } //End block
                         {
-                            boolean varEC493C69A44980199FBD06318B95FEEB_157214637 = (event.getAction() == KeyEvent.ACTION_UP
+                            boolean varEC493C69A44980199FBD06318B95FEEB_1855504593 = (event.getAction() == KeyEvent.ACTION_UP
                         && event.isTracking() && !event.isCanceled());
                             {
                                 setVisible(false);
@@ -477,26 +467,25 @@ public class ZoomButtonsController implements View.OnTouchListener {
                 } //End block
             } //End block
             {
-                ViewRootImpl viewRoot;
-                viewRoot = getOwnerViewRootImpl();
+                ViewRootImpl viewRoot = getOwnerViewRootImpl();
                 {
                     viewRoot.dispatchKey(event);
                 } //End block
             } //End block
         } //End collapsed parenthetic
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_377781669 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_377781669;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120011874 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120011874;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.212 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "510C5A4B8306904CEFCDF535885645E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.342 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "1760E1225F3682815C500655F0F27694")
     private boolean isInterestingKey(int keyCode) {
         addTaint(keyCode);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944782854 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944782854;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1930105552 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1930105552;
         // ---------- Original Method ----------
         //switch (keyCode) {
             //case KeyEvent.KEYCODE_DPAD_CENTER:
@@ -513,38 +502,36 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.230 -0400", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "EA0DFA114836026DECD68710401E64B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.342 -0400", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "4C6582A361E685D81C674A0C5EF66AB3")
     private ViewRootImpl getOwnerViewRootImpl() {
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1606918593 = null; //Variable for return #1
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_737151433 = null; //Variable for return #2
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_292528659 = null; //Variable for return #3
-        View rootViewOfOwner;
-        rootViewOfOwner = mOwnerView.getRootView();
+        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1734630607 = null; //Variable for return #1
+        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1941558748 = null; //Variable for return #2
+        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_1820123894 = null; //Variable for return #3
+        View rootViewOfOwner = mOwnerView.getRootView();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1606918593 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1734630607 = null;
         } //End block
-        ViewParent parentOfRootView;
-        parentOfRootView = rootViewOfOwner.getParent();
+        ViewParent parentOfRootView = rootViewOfOwner.getParent();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_737151433 = (ViewRootImpl) parentOfRootView;
+            varB4EAC82CA7396A68D541C85D26508E83_1941558748 = (ViewRootImpl) parentOfRootView;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_292528659 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1820123894 = null;
         } //End block
-        ViewRootImpl varA7E53CE21691AB073D9660D615818899_2108697719; //Final return value
+        ViewRootImpl varA7E53CE21691AB073D9660D615818899_993390537; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2108697719 = varB4EAC82CA7396A68D541C85D26508E83_1606918593;
+                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1734630607;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_2108697719 = varB4EAC82CA7396A68D541C85D26508E83_737151433;
+                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1941558748;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2108697719 = varB4EAC82CA7396A68D541C85D26508E83_292528659;
+                varA7E53CE21691AB073D9660D615818899_993390537 = varB4EAC82CA7396A68D541C85D26508E83_1820123894;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2108697719.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2108697719;
+        varA7E53CE21691AB073D9660D615818899_993390537.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_993390537;
         // ---------- Original Method ----------
         //View rootViewOfOwner = mOwnerView.getRootView();
         //if (rootViewOfOwner == null) {
@@ -559,13 +546,12 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.233 -0400", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "22744B145302684D4D746567D1C9E9ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.343 -0400", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "E442132D3274BF1CDB53E1FD854C0BC0")
     public boolean onTouch(View v, MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        int action;
-        action = event.getAction();
+        int action = event.getAction();
         {
-            boolean var1AEB63FDD5BAA0960B45EA0BA88A4345_2062247267 = (event.getPointerCount() > 1);
+            boolean var1AEB63FDD5BAA0960B45EA0BA88A4345_816783097 = (event.getPointerCount() > 1);
         } //End collapsed parenthetic
         {
             {
@@ -575,8 +561,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
             } //End block
         } //End block
         dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
-        View targetView;
-        targetView = mTouchTargetView;
+        View targetView = mTouchTargetView;
         //Begin case MotionEvent.ACTION_DOWN 
         targetView = findViewForTouch((int) event.getRawX(), (int) event.getRawY());
         //End case MotionEvent.ACTION_DOWN 
@@ -587,38 +572,32 @@ public class ZoomButtonsController implements View.OnTouchListener {
         setTouchTargetView(null);
         //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
         {
-            int targetViewRawX;
-            targetViewRawX = mContainerRawLocation[0] + mTouchTargetWindowLocation[0];
-            int targetViewRawY;
-            targetViewRawY = mContainerRawLocation[1] + mTouchTargetWindowLocation[1];
-            MotionEvent containerEvent;
-            containerEvent = MotionEvent.obtain(event);
+            int targetViewRawX = mContainerRawLocation[0] + mTouchTargetWindowLocation[0];
+            int targetViewRawY = mContainerRawLocation[1] + mTouchTargetWindowLocation[1];
+            MotionEvent containerEvent = MotionEvent.obtain(event);
             containerEvent.offsetLocation(mOwnerViewRawLocation[0] - targetViewRawX,
                     mOwnerViewRawLocation[1] - targetViewRawY);
-            float containerX;
-            containerX = containerEvent.getX();
-            float containerY;
-            containerY = containerEvent.getY();
+            float containerX = containerEvent.getX();
+            float containerY = containerEvent.getY();
             {
                 containerEvent.offsetLocation(-containerX, 0);
             } //End block
             {
                 containerEvent.offsetLocation(0, -containerY);
             } //End block
-            boolean retValue;
-            retValue = targetView.dispatchTouchEvent(containerEvent);
+            boolean retValue = targetView.dispatchTouchEvent(containerEvent);
             containerEvent.recycle();
         } //End block
         addTaint(v.getTaint());
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427203223 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427203223;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185066121 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_185066121;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.233 -0400", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "5F4FB54A418235009CE2C82EBDBF8503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.344 -0400", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "5F4FB54A418235009CE2C82EBDBF8503")
     private void setTouchTargetView(View view) {
         mTouchTargetView = view;
         {
@@ -632,34 +611,27 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.246 -0400", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "7274CAD5F9E4EF247B4105C4E4BAD4E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.346 -0400", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "AD3DBDCFE6537E89C910AC08D12F385A")
     private View findViewForTouch(int rawX, int rawY) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1092923104 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_2015993409 = null; //Variable for return #2
-        int containerCoordsX;
-        containerCoordsX = rawX - mContainerRawLocation[0];
-        int containerCoordsY;
-        containerCoordsY = rawY - mContainerRawLocation[1];
-        Rect frame;
-        frame = mTempRect;
-        View closestChild;
-        closestChild = null;
-        int closestChildDistanceSq;
-        closestChildDistanceSq = Integer.MAX_VALUE;
+        View varB4EAC82CA7396A68D541C85D26508E83_2035623568 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_143239815 = null; //Variable for return #2
+        int containerCoordsX = rawX - mContainerRawLocation[0];
+        int containerCoordsY = rawY - mContainerRawLocation[1];
+        Rect frame = mTempRect;
+        View closestChild = null;
+        int closestChildDistanceSq = Integer.MAX_VALUE;
         {
-            int i;
-            i = mContainer.getChildCount() - 1;
+            int i = mContainer.getChildCount() - 1;
             {
-                View child;
-                child = mContainer.getChildAt(i);
+                View child = mContainer.getChildAt(i);
                 {
-                    boolean varDC14093C8CD60D90554507229044E659_67536329 = (child.getVisibility() != View.VISIBLE);
+                    boolean varDC14093C8CD60D90554507229044E659_862333985 = (child.getVisibility() != View.VISIBLE);
                 } //End collapsed parenthetic
                 child.getHitRect(frame);
                 {
-                    boolean var066E484B2EAC769EC84C7D51A6C5B7CD_1337206086 = (frame.contains(containerCoordsX, containerCoordsY));
+                    boolean var066E484B2EAC769EC84C7D51A6C5B7CD_203343175 = (frame.contains(containerCoordsX, containerCoordsY));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1092923104 = child;
+                        varB4EAC82CA7396A68D541C85D26508E83_2035623568 = child;
                     } //End block
                 } //End collapsed parenthetic
                 int distanceX;
@@ -678,34 +650,33 @@ public class ZoomButtonsController implements View.OnTouchListener {
                     distanceY = Math.min(Math.abs(frame.top - containerCoordsY),
                         Math.abs(containerCoordsY - frame.bottom));
                 } //End block
-                int distanceSq;
-                distanceSq = distanceX * distanceX + distanceY * distanceY;
+                int distanceSq = distanceX * distanceX + distanceY * distanceY;
                 {
                     closestChild = child;
                     closestChildDistanceSq = distanceSq;
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_2015993409 = closestChild;
+        varB4EAC82CA7396A68D541C85D26508E83_143239815 = closestChild;
         addTaint(rawX);
         addTaint(rawY);
-        View varA7E53CE21691AB073D9660D615818899_1149675315; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_201136861; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1149675315 = varB4EAC82CA7396A68D541C85D26508E83_1092923104;
+                varA7E53CE21691AB073D9660D615818899_201136861 = varB4EAC82CA7396A68D541C85D26508E83_2035623568;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1149675315 = varB4EAC82CA7396A68D541C85D26508E83_2015993409;
+                varA7E53CE21691AB073D9660D615818899_201136861 = varB4EAC82CA7396A68D541C85D26508E83_143239815;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1149675315.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1149675315;
+        varA7E53CE21691AB073D9660D615818899_201136861.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_201136861;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.246 -0400", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "F20F1B1E54FFC0101AD0D428F6B397DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.347 -0400", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "F20F1B1E54FFC0101AD0D428F6B397DF")
     private void onPostConfigurationChanged() {
         dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
         refreshPositioningVariables();
@@ -717,7 +688,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     
     private class Container extends FrameLayout {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.259 -0400", hash_original_method = "F501EF92597324297985E451C1487263", hash_generated_method = "6C7FE0A8EC88EB82037FA3CBCBCDAEFE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_method = "F501EF92597324297985E451C1487263", hash_generated_method = "6C7FE0A8EC88EB82037FA3CBCBCDAEFE")
         public  Container(Context context) {
             super(context);
             addTaint(context.getTaint());
@@ -725,16 +696,16 @@ public class ZoomButtonsController implements View.OnTouchListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.260 -0400", hash_original_method = "9ADB1F3C4E22FAC9B13C38DB47141BED", hash_generated_method = "62AE086B114B32F3C140763C85623BCF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_method = "9ADB1F3C4E22FAC9B13C38DB47141BED", hash_generated_method = "649B03E93753D80B603EEFFC6E1D1D65")
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
             {
-                boolean var9DAF16109AC94402109430D71D88F9D2_870182142 = (onContainerKey(event));
-                Object varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_123701241 = (super.dispatchKeyEvent(event));
+                boolean var9DAF16109AC94402109430D71D88F9D2_132953447 = (onContainerKey(event));
+                Object varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_1431555546 = (super.dispatchKeyEvent(event));
             } //End flattened ternary
             addTaint(event.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1441703916 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1441703916;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894169348 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_894169348;
             // ---------- Original Method ----------
             //return onContainerKey(event) ? true : super.dispatchKeyEvent(event);
         }
@@ -753,23 +724,23 @@ public class ZoomButtonsController implements View.OnTouchListener {
         void onZoom(boolean zoomIn);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.260 -0400", hash_original_field = "788A21D54466EA345DF78A210F61BFDB", hash_generated_field = "4EBFDC0CF7EA368DE9C7C091D395F272")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "788A21D54466EA345DF78A210F61BFDB", hash_generated_field = "87F8ED6A4B66277018F995319915D6F8")
 
-    private static String TAG = "ZoomButtonsController";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.260 -0400", hash_original_field = "5D6E37BCE72DAC569EA42869CC543F50", hash_generated_field = "FCE967ABC3937F16571B698CADCDDDF2")
+    private static final String TAG = "ZoomButtonsController";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "5D6E37BCE72DAC569EA42869CC543F50", hash_generated_field = "19FF76A0C8B907CD835165D9C0A3D60D")
 
-    private static int ZOOM_CONTROLS_TIMEOUT = (int) ViewConfiguration.getZoomControlsTimeout();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.261 -0400", hash_original_field = "28FE46A9CB38173700937CBF032F0465", hash_generated_field = "6EDDCAC16313FA2EDBDC02151E4911C6")
+    private static final int ZOOM_CONTROLS_TIMEOUT = (int) ViewConfiguration.getZoomControlsTimeout();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "28FE46A9CB38173700937CBF032F0465", hash_generated_field = "EB3746A9386522BF21631ADC5B5B668F")
 
-    private static int ZOOM_CONTROLS_TOUCH_PADDING = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.261 -0400", hash_original_field = "DF4E4863EC3A9B2BAA55B086A497D764", hash_generated_field = "F80DD488C6EE193B5189853008E9DD5B")
+    private static final int ZOOM_CONTROLS_TOUCH_PADDING = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.348 -0400", hash_original_field = "DF4E4863EC3A9B2BAA55B086A497D764", hash_generated_field = "29D97A85E5F3DFC1C5D054BECA9FCF49")
 
-    private static int MSG_POST_CONFIGURATION_CHANGED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.261 -0400", hash_original_field = "9FD71970941437D96FFAD21A41D4DDF8", hash_generated_field = "A4F5B53AA4024FBB2F155389323393A2")
+    private static final int MSG_POST_CONFIGURATION_CHANGED = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.349 -0400", hash_original_field = "9FD71970941437D96FFAD21A41D4DDF8", hash_generated_field = "D23053980B5F5589F5746F54AA99A519")
 
-    private static int MSG_DISMISS_ZOOM_CONTROLS = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.261 -0400", hash_original_field = "B1D6E8B124954621CBC6331033C52C66", hash_generated_field = "214B9A229CA53E18604CFAD0EF7EACD2")
+    private static final int MSG_DISMISS_ZOOM_CONTROLS = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.349 -0400", hash_original_field = "B1D6E8B124954621CBC6331033C52C66", hash_generated_field = "9FE51466CFB2AFD8319C533EAB3AA236")
 
-    private static int MSG_POST_SET_VISIBLE = 4;
+    private static final int MSG_POST_SET_VISIBLE = 4;
 }
 

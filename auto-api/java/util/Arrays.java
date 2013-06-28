@@ -12,23 +12,23 @@ import java.lang.reflect.Array;
 
 public class Arrays {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.891 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.886 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
         // ---------- Original Method ----------
     }
 
     
-        public static <T> List<T> asList(T... array) {
+    public static <T> List<T> asList(T... array) {
         return new ArrayList<T>(array);
     }
 
     
-        public static int binarySearch(byte[] array, byte value) {
+    public static int binarySearch(byte[] array, byte value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
+    public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -47,12 +47,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(char[] array, char value) {
+    public static int binarySearch(char[] array, char value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
+    public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -71,12 +71,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(double[] array, double value) {
+    public static int binarySearch(double[] array, double value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
+    public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -105,12 +105,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(float[] array, float value) {
+    public static int binarySearch(float[] array, float value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
+    public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -139,12 +139,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(int[] array, int value) {
+    public static int binarySearch(int[] array, int value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
+    public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -163,12 +163,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(long[] array, long value) {
+    public static int binarySearch(long[] array, long value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
+    public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -187,12 +187,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(Object[] array, Object value) {
+    public static int binarySearch(Object[] array, Object value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
+    public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -212,12 +212,12 @@ public class Arrays {
     }
 
     
-        public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
+    public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
         return binarySearch(array, 0, array.length, value, comparator);
     }
 
     
-        public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
+    public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
             Comparator<? super T> comparator) {
         if (comparator == null) {
             return binarySearch(array, startIndex, endIndex, value);
@@ -240,12 +240,12 @@ public class Arrays {
     }
 
     
-        public static int binarySearch(short[] array, short value) {
+    public static int binarySearch(short[] array, short value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
+    public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -264,7 +264,7 @@ public class Arrays {
     }
 
     
-        private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
+    private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
         if (startIndex > endIndex) {
             throw new IllegalArgumentException();
         }
@@ -274,14 +274,14 @@ public class Arrays {
     }
 
     
-        public static void fill(byte[] array, byte value) {
+    public static void fill(byte[] array, byte value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(byte[] array, int start, int end, byte value) {
+    public static void fill(byte[] array, int start, int end, byte value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -289,14 +289,14 @@ public class Arrays {
     }
 
     
-        public static void fill(short[] array, short value) {
+    public static void fill(short[] array, short value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(short[] array, int start, int end, short value) {
+    public static void fill(short[] array, int start, int end, short value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -304,14 +304,14 @@ public class Arrays {
     }
 
     
-        public static void fill(char[] array, char value) {
+    public static void fill(char[] array, char value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(char[] array, int start, int end, char value) {
+    public static void fill(char[] array, int start, int end, char value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -319,14 +319,14 @@ public class Arrays {
     }
 
     
-        public static void fill(int[] array, int value) {
+    public static void fill(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(int[] array, int start, int end, int value) {
+    public static void fill(int[] array, int start, int end, int value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -334,14 +334,14 @@ public class Arrays {
     }
 
     
-        public static void fill(long[] array, long value) {
+    public static void fill(long[] array, long value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(long[] array, int start, int end, long value) {
+    public static void fill(long[] array, int start, int end, long value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -349,14 +349,14 @@ public class Arrays {
     }
 
     
-        public static void fill(float[] array, float value) {
+    public static void fill(float[] array, float value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(float[] array, int start, int end, float value) {
+    public static void fill(float[] array, int start, int end, float value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -364,14 +364,14 @@ public class Arrays {
     }
 
     
-        public static void fill(double[] array, double value) {
+    public static void fill(double[] array, double value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(double[] array, int start, int end, double value) {
+    public static void fill(double[] array, int start, int end, double value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -379,14 +379,14 @@ public class Arrays {
     }
 
     
-        public static void fill(boolean[] array, boolean value) {
+    public static void fill(boolean[] array, boolean value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(boolean[] array, int start, int end, boolean value) {
+    public static void fill(boolean[] array, int start, int end, boolean value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -394,14 +394,14 @@ public class Arrays {
     }
 
     
-        public static void fill(Object[] array, Object value) {
+    public static void fill(Object[] array, Object value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
     }
 
     
-        public static void fill(Object[] array, int start, int end, Object value) {
+    public static void fill(Object[] array, int start, int end, Object value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -409,7 +409,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(boolean[] array) {
+    public static int hashCode(boolean[] array) {
         if (array == null) {
             return 0;
         }
@@ -421,7 +421,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(int[] array) {
+    public static int hashCode(int[] array) {
         if (array == null) {
             return 0;
         }
@@ -433,7 +433,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(short[] array) {
+    public static int hashCode(short[] array) {
         if (array == null) {
             return 0;
         }
@@ -445,7 +445,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(char[] array) {
+    public static int hashCode(char[] array) {
         if (array == null) {
             return 0;
         }
@@ -457,7 +457,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(byte[] array) {
+    public static int hashCode(byte[] array) {
         if (array == null) {
             return 0;
         }
@@ -469,7 +469,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(long[] array) {
+    public static int hashCode(long[] array) {
         if (array == null) {
             return 0;
         }
@@ -482,7 +482,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(float[] array) {
+    public static int hashCode(float[] array) {
         if (array == null) {
             return 0;
         }
@@ -494,7 +494,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(double[] array) {
+    public static int hashCode(double[] array) {
         if (array == null) {
             return 0;
         }
@@ -507,7 +507,7 @@ public class Arrays {
     }
 
     
-        public static int hashCode(Object[] array) {
+    public static int hashCode(Object[] array) {
         if (array == null) {
             return 0;
         }
@@ -525,7 +525,7 @@ public class Arrays {
     }
 
     
-        public static int deepHashCode(Object[] array) {
+    public static int deepHashCode(Object[] array) {
         if (array == null) {
             return 0;
         }
@@ -538,7 +538,7 @@ public class Arrays {
     }
 
     
-        private static int deepHashCodeElement(Object element) {
+    private static int deepHashCodeElement(Object element) {
         Class<?> cl;
         if (element == null) {
             return 0;
@@ -575,7 +575,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(byte[] array1, byte[] array2) {
+    public static boolean equals(byte[] array1, byte[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -591,7 +591,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(short[] array1, short[] array2) {
+    public static boolean equals(short[] array1, short[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -607,7 +607,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(char[] array1, char[] array2) {
+    public static boolean equals(char[] array1, char[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -623,7 +623,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(int[] array1, int[] array2) {
+    public static boolean equals(int[] array1, int[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -639,7 +639,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(long[] array1, long[] array2) {
+    public static boolean equals(long[] array1, long[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -655,7 +655,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(float[] array1, float[] array2) {
+    public static boolean equals(float[] array1, float[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -672,7 +672,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(double[] array1, double[] array2) {
+    public static boolean equals(double[] array1, double[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -689,7 +689,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(boolean[] array1, boolean[] array2) {
+    public static boolean equals(boolean[] array1, boolean[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -705,7 +705,7 @@ public class Arrays {
     }
 
     
-        public static boolean equals(Object[] array1, Object[] array2) {
+    public static boolean equals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -722,7 +722,7 @@ public class Arrays {
     }
 
     
-        public static boolean deepEquals(Object[] array1, Object[] array2) {
+    public static boolean deepEquals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -739,7 +739,7 @@ public class Arrays {
     }
 
     
-        private static boolean deepEqualsElements(Object e1, Object e2) {
+    private static boolean deepEqualsElements(Object e1, Object e2) {
         Class<?> cl1, cl2;
         if (e1 == e2) {
             return true;
@@ -783,17 +783,17 @@ public class Arrays {
     }
 
     
-        public static void sort(byte[] array) {
+    public static void sort(byte[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(byte[] array, int start, int end) {
+    public static void sort(byte[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
+    public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
         if ((offset | count) < 0 || offset > arrayLength || arrayLength - offset < count) {
             throw new ArrayIndexOutOfBoundsException(arrayLength, offset,
                     count);
@@ -801,7 +801,7 @@ public class Arrays {
     }
 
     
-        public static void checkStartAndEnd(int len, int start, int end) {
+    public static void checkStartAndEnd(int len, int start, int end) {
         if (start < 0 || end > len) {
             throw new ArrayIndexOutOfBoundsException("start < 0 || end > len."
                     + " start=" + start + ", end=" + end + ", len=" + len);
@@ -812,87 +812,87 @@ public class Arrays {
     }
 
     
-        public static void sort(char[] array) {
+    public static void sort(char[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(char[] array, int start, int end) {
+    public static void sort(char[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(double[] array) {
+    public static void sort(double[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(double[] array, int start, int end) {
+    public static void sort(double[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(float[] array) {
+    public static void sort(float[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(float[] array, int start, int end) {
+    public static void sort(float[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(int[] array) {
+    public static void sort(int[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(int[] array, int start, int end) {
+    public static void sort(int[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(long[] array) {
+    public static void sort(long[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(long[] array, int start, int end) {
+    public static void sort(long[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(short[] array) {
+    public static void sort(short[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        public static void sort(short[] array, int start, int end) {
+    public static void sort(short[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        public static void sort(Object[] array) {
+    public static void sort(Object[] array) {
         ComparableTimSort.sort(array);
     }
 
     
-        public static void sort(Object[] array, int start, int end) {
+    public static void sort(Object[] array, int start, int end) {
         ComparableTimSort.sort(array, start, end);
     }
 
     
-        public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
+    public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
         TimSort.sort(array, start, end, comparator);
     }
 
     
-        public static <T> void sort(T[] array, Comparator<? super T> comparator) {
+    public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         TimSort.sort(array, comparator);
     }
 
     
-        public static String toString(boolean[] array) {
+    public static String toString(boolean[] array) {
         if (array == null) {
             return "null";
         }
@@ -911,7 +911,7 @@ public class Arrays {
     }
 
     
-        public static String toString(byte[] array) {
+    public static String toString(byte[] array) {
         if (array == null) {
             return "null";
         }
@@ -930,7 +930,7 @@ public class Arrays {
     }
 
     
-        public static String toString(char[] array) {
+    public static String toString(char[] array) {
         if (array == null) {
             return "null";
         }
@@ -949,7 +949,7 @@ public class Arrays {
     }
 
     
-        public static String toString(double[] array) {
+    public static String toString(double[] array) {
         if (array == null) {
             return "null";
         }
@@ -968,7 +968,7 @@ public class Arrays {
     }
 
     
-        public static String toString(float[] array) {
+    public static String toString(float[] array) {
         if (array == null) {
             return "null";
         }
@@ -987,7 +987,7 @@ public class Arrays {
     }
 
     
-        public static String toString(int[] array) {
+    public static String toString(int[] array) {
         if (array == null) {
             return "null";
         }
@@ -1006,7 +1006,7 @@ public class Arrays {
     }
 
     
-        public static String toString(long[] array) {
+    public static String toString(long[] array) {
         if (array == null) {
             return "null";
         }
@@ -1025,7 +1025,7 @@ public class Arrays {
     }
 
     
-        public static String toString(short[] array) {
+    public static String toString(short[] array) {
         if (array == null) {
             return "null";
         }
@@ -1044,7 +1044,7 @@ public class Arrays {
     }
 
     
-        public static String toString(Object[] array) {
+    public static String toString(Object[] array) {
         if (array == null) {
             return "null";
         }
@@ -1063,7 +1063,7 @@ public class Arrays {
     }
 
     
-        public static String deepToString(Object[] array) {
+    public static String deepToString(Object[] array) {
         if (array == null) {
             return "null";
         }
@@ -1073,7 +1073,7 @@ public class Arrays {
     }
 
     
-        private static void deepToStringImpl(Object[] array, Object[] origArrays,
+    private static void deepToStringImpl(Object[] array, Object[] origArrays,
             StringBuilder sb) {
         if (array == null) {
             sb.append("null");
@@ -1133,7 +1133,7 @@ public class Arrays {
     }
 
     
-        private static boolean deepToStringImplContains(Object[] origArrays,
+    private static boolean deepToStringImplContains(Object[] origArrays,
             Object array) {
         if (origArrays == null || origArrays.length == 0) {
             return false;
@@ -1147,7 +1147,7 @@ public class Arrays {
     }
 
     
-        public static boolean[] copyOf(boolean[] original, int newLength) {
+    public static boolean[] copyOf(boolean[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1155,7 +1155,7 @@ public class Arrays {
     }
 
     
-        public static byte[] copyOf(byte[] original, int newLength) {
+    public static byte[] copyOf(byte[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1163,7 +1163,7 @@ public class Arrays {
     }
 
     
-        public static char[] copyOf(char[] original, int newLength) {
+    public static char[] copyOf(char[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1171,7 +1171,7 @@ public class Arrays {
     }
 
     
-        public static double[] copyOf(double[] original, int newLength) {
+    public static double[] copyOf(double[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1179,7 +1179,7 @@ public class Arrays {
     }
 
     
-        public static float[] copyOf(float[] original, int newLength) {
+    public static float[] copyOf(float[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1187,7 +1187,7 @@ public class Arrays {
     }
 
     
-        public static int[] copyOf(int[] original, int newLength) {
+    public static int[] copyOf(int[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1195,7 +1195,7 @@ public class Arrays {
     }
 
     
-        public static long[] copyOf(long[] original, int newLength) {
+    public static long[] copyOf(long[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1203,7 +1203,7 @@ public class Arrays {
     }
 
     
-        public static short[] copyOf(short[] original, int newLength) {
+    public static short[] copyOf(short[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1211,7 +1211,7 @@ public class Arrays {
     }
 
     
-        public static <T> T[] copyOf(T[] original, int newLength) {
+    public static <T> T[] copyOf(T[] original, int newLength) {
         if (original == null) {
             throw new NullPointerException();
         }
@@ -1222,7 +1222,7 @@ public class Arrays {
     }
 
     
-        public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
+    public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1230,7 +1230,7 @@ public class Arrays {
     }
 
     
-        public static boolean[] copyOfRange(boolean[] original, int start, int end) {
+    public static boolean[] copyOfRange(boolean[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1246,7 +1246,7 @@ public class Arrays {
     }
 
     
-        public static byte[] copyOfRange(byte[] original, int start, int end) {
+    public static byte[] copyOfRange(byte[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1262,7 +1262,7 @@ public class Arrays {
     }
 
     
-        public static char[] copyOfRange(char[] original, int start, int end) {
+    public static char[] copyOfRange(char[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1278,7 +1278,7 @@ public class Arrays {
     }
 
     
-        public static double[] copyOfRange(double[] original, int start, int end) {
+    public static double[] copyOfRange(double[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1294,7 +1294,7 @@ public class Arrays {
     }
 
     
-        public static float[] copyOfRange(float[] original, int start, int end) {
+    public static float[] copyOfRange(float[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1310,7 +1310,7 @@ public class Arrays {
     }
 
     
-        public static int[] copyOfRange(int[] original, int start, int end) {
+    public static int[] copyOfRange(int[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1326,7 +1326,7 @@ public class Arrays {
     }
 
     
-        public static long[] copyOfRange(long[] original, int start, int end) {
+    public static long[] copyOfRange(long[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1342,7 +1342,7 @@ public class Arrays {
     }
 
     
-        public static short[] copyOfRange(short[] original, int start, int end) {
+    public static short[] copyOfRange(short[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -1358,7 +1358,7 @@ public class Arrays {
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static <T> T[] copyOfRange(T[] original, int start, int end) {
         int originalLength = original.length;
         if (start > end) {
@@ -1375,7 +1375,7 @@ public class Arrays {
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static <T, U> T[] copyOfRange(U[] original, int start, int end, Class<? extends T[]> newType) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1393,11 +1393,11 @@ public class Arrays {
 
     
     private static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.011 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.904 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
 
         private E[] a;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.013 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "69E854F45B7D1288F7982DC306A9D40F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.905 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "69E854F45B7D1288F7982DC306A9D40F")
           ArrayList(E[] storage) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -1411,7 +1411,7 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.064 -0400", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "41495554111A961DAC0717AA1DABAE57")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.914 -0400", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "DD84EEF63B7DDCBED20F478811824AE5")
         @Override
         public boolean contains(Object object) {
             {
@@ -1419,7 +1419,7 @@ public class Arrays {
                     E element = a[0];
                     {
                         {
-                            boolean var97B4224D5E3FF3963F495EAD32377EDA_1060494298 = (object.equals(element));
+                            boolean var97B4224D5E3FF3963F495EAD32377EDA_474410534 = (object.equals(element));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -1430,8 +1430,8 @@ public class Arrays {
                 } //End collapsed parenthetic
             } //End block
             addTaint(object.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_840555089 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_840555089;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531275806 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531275806;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (E element : a) {
@@ -1450,21 +1450,21 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.064 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "093F8749A5BE474909C4809C856F0112")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.915 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "C7535451322573D6A8676974BB27525E")
         @Override
         public E get(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_38929136 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_2134654842 = null; //Variable for return #1
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_38929136 = a[location];
+                varB4EAC82CA7396A68D541C85D26508E83_2134654842 = a[location];
             } //End block
             catch (ArrayIndexOutOfBoundsException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw java.util.ArrayList.throwIndexOutOfBoundsException(location, a.length);
             } //End block
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_38929136.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_38929136;
+            varB4EAC82CA7396A68D541C85D26508E83_2134654842.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2134654842;
             // ---------- Original Method ----------
             //try {
                 //return a[location];
@@ -1474,29 +1474,27 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.065 -0400", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "0A8C1F518CEF313EA81623A537B35F37")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.916 -0400", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "7AC7EAABDE51BA39D0D613F233027A4F")
         @Override
         public int indexOf(Object object) {
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         {
-                            boolean var6683716CAAF219D7EC79AD371A9177DA_1545229374 = (object.equals(a[i]));
+                            boolean var6683716CAAF219D7EC79AD371A9177DA_1838003318 = (object.equals(a[i]));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                 } //End collapsed parenthetic
             } //End block
             addTaint(object.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859613579 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859613579;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782029837 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782029837;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (int i = 0; i < a.length; i++) {
@@ -1515,29 +1513,27 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.066 -0400", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "6C2F427DC6FFC635FAB6A311DF41ADD2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.916 -0400", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "449B235863DB18FF239F3F1680B83447")
         @Override
         public int lastIndexOf(Object object) {
             {
                 {
-                    int i;
-                    i = a.length - 1;
+                    int i = a.length - 1;
                     {
                         {
-                            boolean var6683716CAAF219D7EC79AD371A9177DA_1990801249 = (object.equals(a[i]));
+                            boolean var6683716CAAF219D7EC79AD371A9177DA_302753564 = (object.equals(a[i]));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    int i;
-                    i = a.length - 1;
+                    int i = a.length - 1;
                 } //End collapsed parenthetic
             } //End block
             addTaint(object.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179033521 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179033521;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148736536 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148736536;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (int i = a.length - 1; i >= 0; i--) {
@@ -1556,16 +1552,15 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.077 -0400", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "CD51F337DDB727D87FDFCEFDE690F042")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.917 -0400", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "D8309DB905C0E1AE2C08B02FEE7AD042")
         @Override
         public E set(int location, E object) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1248735193 = null; //Variable for return #1
-            E result;
-            result = a[location];
+            E varB4EAC82CA7396A68D541C85D26508E83_2030999293 = null; //Variable for return #1
+            E result = a[location];
             a[location] = object;
-            varB4EAC82CA7396A68D541C85D26508E83_1248735193 = result;
-            varB4EAC82CA7396A68D541C85D26508E83_1248735193.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1248735193;
+            varB4EAC82CA7396A68D541C85D26508E83_2030999293 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_2030999293.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2030999293;
             // ---------- Original Method ----------
             //E result = a[location];
             //a[location] = object;
@@ -1573,48 +1568,46 @@ public class Arrays {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.077 -0400", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "911C9612424BBE8AB7299C9B870BA064")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.917 -0400", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "759AC9F52187FFD2DDD0EC3505D269BD")
         @Override
         public int size() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441465425 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441465425;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400197933 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400197933;
             // ---------- Original Method ----------
             //return a.length;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.078 -0400", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "3BF8275DD301319B7EB7EFB6533B7846")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.918 -0400", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "F330D6163C358C6D9DEF04CE8B02C0F8")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1913395560 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1913395560 = a.clone();
-            varB4EAC82CA7396A68D541C85D26508E83_1913395560.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1913395560;
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1955576424 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1955576424 = a.clone();
+            varB4EAC82CA7396A68D541C85D26508E83_1955576424.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1955576424;
             // ---------- Original Method ----------
             //return a.clone();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.091 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "8EAF7061DA4318925487CE6904630C13")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.918 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "B65F5324EEB5CCED1854A3982C9F5D32")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})
         public <T> T[] toArray(T[] contents) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_1216478472 = null; //Variable for return #1
-            int size;
-            size = size();
+            T[] varB4EAC82CA7396A68D541C85D26508E83_378204530 = null; //Variable for return #1
+            int size = size();
             {
-                Class<?> ct;
-                ct = contents.getClass().getComponentType();
+                Class<?> ct = contents.getClass().getComponentType();
                 contents = (T[]) Array.newInstance(ct, size);
             } //End block
             System.arraycopy(a, 0, contents, 0, size);
             {
                 contents[size] = null;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1216478472 = contents;
+            varB4EAC82CA7396A68D541C85D26508E83_378204530 = contents;
             addTaint(contents[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1216478472.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1216478472;
+            varB4EAC82CA7396A68D541C85D26508E83_378204530.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_378204530;
             // ---------- Original Method ----------
             //int size = size();
             //if (size > contents.length) {
@@ -1629,9 +1622,9 @@ public class Arrays {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.091 -0400", hash_original_field = "9722346E49DFE0324A719B44FDFE9526", hash_generated_field = "AD53FA7A1AACF5D5FA47C6E4FF3049FD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.918 -0400", hash_original_field = "9722346E49DFE0324A719B44FDFE9526", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
 
-        private static long serialVersionUID = -2764017481108945198L;
+        private static final long serialVersionUID = -2764017481108945198L;
     }
 
 

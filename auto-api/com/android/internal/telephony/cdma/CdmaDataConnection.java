@@ -16,7 +16,7 @@ import com.android.internal.telephony.RetryManager;
 
 public class CdmaDataConnection extends DataConnection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.138 -0400", hash_original_method = "90BEBC84F90039055B8CE59477380674", hash_generated_method = "CFCAA3A7DAB097D73558B18A0E89B29E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.599 -0400", hash_original_method = "90BEBC84F90039055B8CE59477380674", hash_generated_method = "CFCAA3A7DAB097D73558B18A0E89B29E")
     private  CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm) {
         super(phone, name, id, rm);
         addTaint(phone.getTaint());
@@ -27,7 +27,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-        static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm) {
+    static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm) {
         synchronized (mCountLock) {
             mCount += 1;
         }
@@ -39,7 +39,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.139 -0400", hash_original_method = "1E0A08AF35615E9E10187C3143DD41F0", hash_generated_method = "04A0624D8077E5F14A22EBAC6BFE7547")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.600 -0400", hash_original_method = "1E0A08AF35615E9E10187C3143DD41F0", hash_generated_method = "84A53D7B5BE67DE7414D191D806C3F4E")
     @Override
     protected void onConnect(ConnectionParams cp) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -50,7 +50,7 @@ public class CdmaDataConnection extends DataConnection {
         lastFailCause = FailCause.NONE;
         int dataProfile;
         {
-            boolean var74177C9596C4964B7FDF6CB920D0B850_17815874 = ((cp.apn != null) && (cp.apn.types.length > 0) && (cp.apn.types[0] != null) &&
+            boolean var74177C9596C4964B7FDF6CB920D0B850_728320061 = ((cp.apn != null) && (cp.apn.types.length > 0) && (cp.apn.types[0] != null) &&
                 (cp.apn.types[0].equals(Phone.APN_TYPE_DUN)));
             {
                 log("CdmaDataConnection using DUN");
@@ -60,8 +60,7 @@ public class CdmaDataConnection extends DataConnection {
                 dataProfile = RILConstants.DATA_PROFILE_DEFAULT;
             } //End block
         } //End collapsed parenthetic
-        Message msg;
-        msg = obtainMessage(EVENT_SETUP_DATA_CONNECTION_DONE, cp);
+        Message msg = obtainMessage(EVENT_SETUP_DATA_CONNECTION_DONE, cp);
         msg.obj = cp;
         phone.mCM.setupDataCall(
                 Integer.toString(getRadioTechnology(RILConstants.SETUP_DATA_TECH_CDMA)),
@@ -75,31 +74,31 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.140 -0400", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "FCDD70B57A3D3CBEB8FD846D3A22E049")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.601 -0400", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "DE60BEA7247E69636EBADEDAFF6060DC")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_755161432 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_755161432 = "State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
+        String varB4EAC82CA7396A68D541C85D26508E83_1407137396 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1407137396 = "State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
                 + lastFailTime + " lastFasilCause=" + lastFailCause;
-        varB4EAC82CA7396A68D541C85D26508E83_755161432.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_755161432;
+        varB4EAC82CA7396A68D541C85D26508E83_1407137396.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1407137396;
         // ---------- Original Method ----------
         //return "State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
                 //+ lastFailTime + " lastFasilCause=" + lastFailCause;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.152 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "D9D6F0E16CE89263276A2A103C9BB8DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.601 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "183655E9843957C294A97508140858FF")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
         {
-            boolean var8C06B76FEAE693BB0F1D1CC645E9B66E_1212466186 = (NULL_IP.equals(domainNameServers[0])
+            boolean var8C06B76FEAE693BB0F1D1CC645E9B66E_51951519 = (NULL_IP.equals(domainNameServers[0])
                 && NULL_IP.equals(domainNameServers[1])
                 && !phone.isDnsCheckDisabled());
         } //End collapsed parenthetic
         addTaint(domainNameServers[0].getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_749255986 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_749255986;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_127054245 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_127054245;
         // ---------- Original Method ----------
         //if (NULL_IP.equals(domainNameServers[0])
                 //&& NULL_IP.equals(domainNameServers[1])
@@ -111,7 +110,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.155 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "EB8C75A46F3714E41BD20C8651699298")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.602 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "EB8C75A46F3714E41BD20C8651699298")
     @Override
     protected void log(String s) {
         Log.d(LOG_TAG, "[" + getName() + "] " + s);
@@ -121,8 +120,8 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.155 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3180393FBDFF3695C5B6689D6A3679D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.602 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "1718F4DE7305211326235C8400C02ED3")
 
-    private static String LOG_TAG = "CDMA";
+    private static final String LOG_TAG = "CDMA";
 }
 

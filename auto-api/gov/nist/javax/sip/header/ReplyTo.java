@@ -13,14 +13,14 @@ import javax.sip.header.*;
 
 public final class ReplyTo extends AddressParametersHeader implements ReplyToHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.395 -0400", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "9351E959CBBABCA53952EE7B443BEEAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.036 -0400", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "9351E959CBBABCA53952EE7B443BEEAE")
     public  ReplyTo() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.396 -0400", hash_original_method = "FAB557ADCBC2DA51C11496316EFDCBFF", hash_generated_method = "D9FA9DCA5D12A32B0DD17F9F9AE033D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.037 -0400", hash_original_method = "FAB557ADCBC2DA51C11496316EFDCBFF", hash_generated_method = "D9FA9DCA5D12A32B0DD17F9F9AE033D0")
     public  ReplyTo(AddressImpl address) {
         super(NAME);
         this.address = address;
@@ -30,44 +30,43 @@ public final class ReplyTo extends AddressParametersHeader implements ReplyToHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.396 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "D119F61D7B41294E90DF9ABED8EC8E9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.038 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "5A7A8C830B6DBE049B46B035BE1C11EC")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_244894867 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_244894867 = headerName + COLON + SP + encodeBody() + NEWLINE;
-        varB4EAC82CA7396A68D541C85D26508E83_244894867.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_244894867;
+        String varB4EAC82CA7396A68D541C85D26508E83_1898998142 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1898998142 = headerName + COLON + SP + encodeBody() + NEWLINE;
+        varB4EAC82CA7396A68D541C85D26508E83_1898998142.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1898998142;
         // ---------- Original Method ----------
         //return headerName + COLON + SP + encodeBody() + NEWLINE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.425 -0400", hash_original_method = "248CC4EEE70871BA210925CAD15B2704", hash_generated_method = "224D6CB9E6D60CFE857FB1D66E5D7178")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.039 -0400", hash_original_method = "248CC4EEE70871BA210925CAD15B2704", hash_generated_method = "70C3B10DD2E60901ECB1AE28AE211CF5")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_964888374 = null; //Variable for return #1
-        String retval;
-        retval = "";
+        String varB4EAC82CA7396A68D541C85D26508E83_1049133160 = null; //Variable for return #1
+        String retval = "";
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1872215494 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1513061913 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += LESS_THAN;
             } //End block
         } //End collapsed parenthetic
         retval += address.encode();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_79777867 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1902710898 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += GREATER_THAN;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_801130375 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_954881351 = (!parameters.isEmpty());
             {
                 retval += SEMICOLON + parameters.encode();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_964888374 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_964888374.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_964888374;
+        varB4EAC82CA7396A68D541C85D26508E83_1049133160 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1049133160.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1049133160;
         // ---------- Original Method ----------
         //String retval = "";
         //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
@@ -84,30 +83,30 @@ public final class ReplyTo extends AddressParametersHeader implements ReplyToHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.426 -0400", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "986D98E581271CC954AEB36053B41C76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.040 -0400", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "8202C0B356AD923310B3F5F6DAE9FA39")
     public HostPort getHostPort() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_1084131296 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1084131296 = address.getHostPort();
-        varB4EAC82CA7396A68D541C85D26508E83_1084131296.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1084131296;
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_495581239 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_495581239 = address.getHostPort();
+        varB4EAC82CA7396A68D541C85D26508E83_495581239.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_495581239;
         // ---------- Original Method ----------
         //return address.getHostPort();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.427 -0400", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "04BFD4D6D95E40A574E6704C1A8E4C61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.040 -0400", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "AB645F495D4637388CF17A2216758CF2")
     public String getDisplayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2119037650 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2119037650 = address.getDisplayName();
-        varB4EAC82CA7396A68D541C85D26508E83_2119037650.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2119037650;
+        String varB4EAC82CA7396A68D541C85D26508E83_1392187283 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1392187283 = address.getDisplayName();
+        varB4EAC82CA7396A68D541C85D26508E83_1392187283.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1392187283;
         // ---------- Original Method ----------
         //return address.getDisplayName();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.427 -0400", hash_original_field = "90C22B20F9F107B1942A4AAE75CB93E1", hash_generated_field = "96E66966C0D7BA1F67EF89E8A7742AF8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.040 -0400", hash_original_field = "90C22B20F9F107B1942A4AAE75CB93E1", hash_generated_field = "236E3B2333C15B09CBC94B2F5B379AB6")
 
-    private static long serialVersionUID = -9103698729465531373L;
+    private static final long serialVersionUID = -9103698729465531373L;
 }
 

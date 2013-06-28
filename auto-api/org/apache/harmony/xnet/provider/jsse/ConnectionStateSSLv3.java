@@ -17,44 +17,39 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLProtocolException;
 
 public class ConnectionStateSSLv3 extends ConnectionState {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "ABD8CEEC1ABEC18BFFD5F706BD225E2C", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "ABD8CEEC1ABEC18BFFD5F706BD225E2C", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")
 
     private MessageDigest messageDigest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "F85BBA0E630CCB87E9E057F7843E5155", hash_generated_field = "52F0A7E7FB8F697BA2DBD34D808EE930")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "F85BBA0E630CCB87E9E057F7843E5155", hash_generated_field = "52F0A7E7FB8F697BA2DBD34D808EE930")
 
     private byte[] mac_write_secret;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "3B74FE391AD121B35F4BE239E37BF1FC", hash_generated_field = "8761BC41F67E290D2E4C5002A6776D51")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "3B74FE391AD121B35F4BE239E37BF1FC", hash_generated_field = "8761BC41F67E290D2E4C5002A6776D51")
 
     private byte[] mac_read_secret;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "D60CD0414222997422D40AFDFECFC5D1", hash_generated_field = "F7AB63294607944F603CC7ED7CDCFB7E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "D60CD0414222997422D40AFDFECFC5D1", hash_generated_field = "F7AB63294607944F603CC7ED7CDCFB7E")
 
     private byte[] pad_1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "73A175169C50E148A373BDA5B6FE3A81", hash_generated_field = "BB8A0D4D3287636E4CC9DC82B8FCDD50")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "73A175169C50E148A373BDA5B6FE3A81", hash_generated_field = "BB8A0D4D3287636E4CC9DC82B8FCDD50")
 
     private byte[] pad_2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.792 -0400", hash_original_field = "19F0223DFC6BB343CC9A355E163DEDDF", hash_generated_field = "F5AA97A99B3282312E34C79F4A415BDB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.963 -0400", hash_original_field = "19F0223DFC6BB343CC9A355E163DEDDF", hash_generated_field = "3C4B9C5B847CA0007A0D4E0FD6F78DEC")
 
-    private byte[] mac_material_part = new byte[3];
+    private final byte[] mac_material_part = new byte[3];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.807 -0400", hash_original_method = "1B482CA9527A6F5074105168D7DF9619", hash_generated_method = "B12B2A06385A7BBA561789620DAC99E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.965 -0400", hash_original_method = "1B482CA9527A6F5074105168D7DF9619", hash_generated_method = "3B1F5A02B9EADBDCBEFDC6EB5564C1FD")
     protected  ConnectionStateSSLv3(SSLSessionImpl session) {
         try 
         {
-            CipherSuite cipherSuite;
-            cipherSuite = session.cipherSuite;
-            boolean is_exportabe;
-            is_exportabe = cipherSuite.isExportable();
+            CipherSuite cipherSuite = session.cipherSuite;
+            boolean is_exportabe = cipherSuite.isExportable();
             hash_size = cipherSuite.getMACLength();
             int key_size;
             key_size = cipherSuite.keyMaterial;
             key_size = cipherSuite.expandedKeyMaterial;
-            int iv_size;
-            iv_size = cipherSuite.ivSize;
+            int iv_size = cipherSuite.ivSize;
             block_size = cipherSuite.getBlockSize();
-            String algName;
-            algName = cipherSuite.getBulkEncryptionAlgorithm();
-            String hashName;
-            hashName = cipherSuite.getHashName();
+            String algName = cipherSuite.getBulkEncryptionAlgorithm();
+            String hashName = cipherSuite.getHashName();
             {
                 logger.println("ConnectionStateSSLv3.create:");
                 logger.println("  cipher suite name: "
@@ -66,44 +61,32 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                 logger.println("  IV size:" + iv_size);
                 logger.println("  key size: " + key_size);
             } //End block
-            byte[] clientRandom;
-            clientRandom = session.clientRandom;
-            byte[] serverRandom;
-            serverRandom = session.serverRandom;
-            byte[] key_block;
-            key_block = new byte[2*hash_size + 2*key_size + 2*iv_size];
-            byte[] seed;
-            seed = new byte[clientRandom.length + serverRandom.length];
+            byte[] clientRandom = session.clientRandom;
+            byte[] serverRandom = session.serverRandom;
+            byte[] key_block = new byte[2*hash_size + 2*key_size + 2*iv_size];
+            byte[] seed = new byte[clientRandom.length + serverRandom.length];
             System.arraycopy(serverRandom, 0, seed, 0, serverRandom.length);
             System.arraycopy(clientRandom, 0, seed, serverRandom.length,
                     clientRandom.length);
             PRF.computePRF_SSLv3(key_block, session.master_secret, seed);
-            byte[] client_mac_secret;
-            client_mac_secret = new byte[hash_size];
-            byte[] server_mac_secret;
-            server_mac_secret = new byte[hash_size];
-            byte[] client_key;
-            client_key = new byte[key_size];
-            byte[] server_key;
-            server_key = new byte[key_size];
-            boolean is_client;
-            is_client = !session.isServer;
+            byte[] client_mac_secret = new byte[hash_size];
+            byte[] server_mac_secret = new byte[hash_size];
+            byte[] client_key = new byte[key_size];
+            byte[] server_key = new byte[key_size];
+            boolean is_client = !session.isServer;
             System.arraycopy(key_block, 0, client_mac_secret, 0, hash_size);
             System.arraycopy(key_block, hash_size,
                     server_mac_secret, 0, hash_size);
             System.arraycopy(key_block, 2*hash_size, client_key, 0, key_size);
             System.arraycopy(key_block, 2*hash_size+key_size,
                     server_key, 0, key_size);
-            IvParameterSpec clientIV;
-            clientIV = null;
-            IvParameterSpec serverIV;
-            serverIV = null;
+            IvParameterSpec clientIV = null;
+            IvParameterSpec serverIV = null;
             {
                 {
                     logger.println("ConnectionStateSSLv3: is_exportable");
                 } //End block
-                MessageDigest md5;
-                md5 = MessageDigest.getInstance("MD5");
+                MessageDigest md5 = MessageDigest.getInstance("MD5");
                 md5.update(client_key);
                 md5.update(clientRandom);
                 md5.update(serverRandom);
@@ -188,7 +171,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                 mac_read_secret = client_mac_secret;
             } //End block
             {
-                boolean var91F9EA995693DCE9DEFB76439E7B2DA0_1463864796 = (hashName.equals("MD5"));
+                boolean var91F9EA995693DCE9DEFB76439E7B2DA0_1876226154 = (hashName.equals("MD5"));
                 {
                     pad_1 = SSLv3Constants.MD5pad1;
                     pad_2 = SSLv3Constants.MD5pad2;
@@ -212,18 +195,16 @@ public class ConnectionStateSSLv3 extends ConnectionState {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.821 -0400", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "5AA3726ED8E9A11DC08D7E56FFAF7483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.966 -0400", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "1EB2CAA4704DD625B02E01851072043A")
     @Override
     protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
         try 
         {
-            int content_mac_length;
-            content_mac_length = len + hash_size;
+            int content_mac_length = len + hash_size;
             int padding_length;
             padding_length = 0;
             padding_length = getPaddingSize(++content_mac_length);
-            byte[] res;
-            res = new byte[content_mac_length + padding_length];
+            byte[] res = new byte[content_mac_length + padding_length];
             System.arraycopy(fragment, offset, res, 0, len);
             mac_material_part[0] = type;
             mac_material_part[1] = (byte) ((0x00FF00 & len) >> 8);
@@ -233,8 +214,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
             messageDigest.update(write_seq_num);
             messageDigest.update(mac_material_part);
             messageDigest.update(fragment, offset, len);
-            byte[] digest;
-            digest = messageDigest.digest();
+            byte[] digest = messageDigest.digest();
             messageDigest.update(mac_write_secret);
             messageDigest.update(pad_2);
             messageDigest.update(digest);
@@ -252,8 +232,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                             : "GenericStreamCipher:"));
                 logger.print(res);
             } //End block
-            byte[] rez;
-            rez = new byte[encCipher.getOutputSize(res.length)];
+            byte[] rez = new byte[encCipher.getOutputSize(res.length)];
             encCipher.update(res, 0, res.length, rez);
             incSequenceNumber(write_seq_num);
         } //End block
@@ -265,26 +244,23 @@ public class ConnectionStateSSLv3 extends ConnectionState {
         } //End block
         addTaint(fragment[0]);
         addTaint(offset);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1257303872 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1257303872;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1491318679 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1491318679;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.830 -0400", hash_original_method = "227FECEA7131D056EF18EE2E9369B9A1", hash_generated_method = "5D99EDB8AD36EBE6C1553C5BCD9C8BAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.967 -0400", hash_original_method = "227FECEA7131D056EF18EE2E9369B9A1", hash_generated_method = "55E3BD03F91BC2EB17EAE873B910C2CB")
     @Override
     protected byte[] decrypt(byte type, byte[] fragment,
             int offset, int len) {
-        byte[] data;
-        data = decCipher.update(fragment, offset, len);
+        byte[] data = decCipher.update(fragment, offset, len);
         byte[] content;
         {
-            int padding_length;
-            padding_length = data[data.length-1];
+            int padding_length = data[data.length-1];
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     {
                         if (DroidSafeAndroidRuntime.control) throw new AlertException(
@@ -320,8 +296,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
             logger.print(mac_value);
         } //End block
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.BAD_RECORD_MAC,
@@ -334,14 +309,14 @@ public class ConnectionStateSSLv3 extends ConnectionState {
         addTaint(fragment[0]);
         addTaint(offset);
         addTaint(len);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1730239831 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1730239831;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_12606125 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_12606125;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.830 -0400", hash_original_method = "193A05B6A3D6926494D4F0030FC865D1", hash_generated_method = "D2F12FCD4357D1B9B048448619BB3025")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.968 -0400", hash_original_method = "193A05B6A3D6926494D4F0030FC865D1", hash_generated_method = "D2F12FCD4357D1B9B048448619BB3025")
     @Override
     protected void shutdown() {
         Arrays.fill(mac_write_secret, (byte) 0);

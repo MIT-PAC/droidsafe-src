@@ -13,14 +13,14 @@ import java.io.InputStream;
 import org.bouncycastle.util.io.Streams;
 
 class DefiniteLengthInputStream extends LimitedInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.414 -0400", hash_original_field = "2906002244F44764B3BEBF63B4E23DCA", hash_generated_field = "1665FC1E3CFF38838A5E1CB7D836EA25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.857 -0400", hash_original_field = "2906002244F44764B3BEBF63B4E23DCA", hash_generated_field = "1665FC1E3CFF38838A5E1CB7D836EA25")
 
     private int _originalLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.414 -0400", hash_original_field = "991DDDCC8A2D812FA4B424FF9EEFC021", hash_generated_field = "46A946FCA3AF0E5717A8BBE27253E4C6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.857 -0400", hash_original_field = "991DDDCC8A2D812FA4B424FF9EEFC021", hash_generated_field = "46A946FCA3AF0E5717A8BBE27253E4C6")
 
     private int _remaining;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.415 -0400", hash_original_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57", hash_generated_method = "092B3E97AC9414E795EE5DD01C8239FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.858 -0400", hash_original_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57", hash_generated_method = "092B3E97AC9414E795EE5DD01C8239FE")
       DefiniteLengthInputStream(
         InputStream in,
         int         length) {
@@ -48,27 +48,26 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.423 -0400", hash_original_method = "D30FA562EE05AC3CB636487C62BCEE80", hash_generated_method = "C5F749B9035DD7CEBD7CA31F322EB2ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.858 -0400", hash_original_method = "D30FA562EE05AC3CB636487C62BCEE80", hash_generated_method = "34DE4FAD9A1AF476B38DC696F5144CB4")
      int getRemaining() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425162116 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425162116;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061908548 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061908548;
         // ---------- Original Method ----------
         //return _remaining;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.424 -0400", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "0272145121BC12B0325E6B49510359BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.858 -0400", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "073500295D39CA0CC5F5C6471A8E6E36")
     public int read() throws IOException {
-        int b;
-        b = _in.read();
+        int b = _in.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
         } //End block
         {
             setParentEofDetect(true);
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1791725947 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1791725947;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142458823 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142458823;
         // ---------- Original Method ----------
         //if (_remaining == 0)
         //{
@@ -87,17 +86,15 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.425 -0400", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "02DA7C9140AF800FAD75DEB7F48BFBFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.859 -0400", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "D1083B63FD87F1AE202AE538F3527654")
     public int read(byte[] buf, int off, int len) throws IOException {
-        int toRead;
-        toRead = Math.min(len, _remaining);
-        int numRead;
-        numRead = _in.read(buf, off, toRead);
+        int toRead = Math.min(len, _remaining);
+        int numRead = _in.read(buf, off, toRead);
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
         } //End block
         {
-            boolean var7DC1F1C134E4EB2EDC913D527DDDB35A_354262942 = ((_remaining -= numRead) == 0);
+            boolean var7DC1F1C134E4EB2EDC913D527DDDB35A_2119115933 = ((_remaining -= numRead) == 0);
             {
                 setParentEofDetect(true);
             } //End block
@@ -105,8 +102,8 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         addTaint(buf[0]);
         addTaint(off);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862297545 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862297545;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273471358 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273471358;
         // ---------- Original Method ----------
         //if (_remaining == 0)
         //{
@@ -126,19 +123,18 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.426 -0400", hash_original_method = "2B4E4858B5FC3F43B2D34DE081975A19", hash_generated_method = "A441B4340681E5595225310F5F7628C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.859 -0400", hash_original_method = "2B4E4858B5FC3F43B2D34DE081975A19", hash_generated_method = "4B0F18AC757C3B05C53240D85F0541A2")
      byte[] toByteArray() throws IOException {
-        byte[] bytes;
-        bytes = new byte[_remaining];
+        byte[] bytes = new byte[_remaining];
         {
-            boolean var61DCEE07B8C67DB539A45C1CC538D8A7_1257841433 = ((_remaining -= Streams.readFully(_in, bytes)) != 0);
+            boolean var61DCEE07B8C67DB539A45C1CC538D8A7_1982935224 = ((_remaining -= Streams.readFully(_in, bytes)) != 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
             } //End block
         } //End collapsed parenthetic
         setParentEofDetect(true);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_599862367 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_599862367;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_189397693 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_189397693;
         // ---------- Original Method ----------
         //if (_remaining == 0)
         //{
@@ -154,8 +150,8 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.434 -0400", hash_original_field = "29B3D4C662B5BB7978CBC0322B561C2A", hash_generated_field = "31F8FE77B2C5CB0650135BDA1E336A3B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.859 -0400", hash_original_field = "29B3D4C662B5BB7978CBC0322B561C2A", hash_generated_field = "24B4EEE1E95392A851171438FBC625E7")
 
-    private static byte[] EMPTY_BYTES = new byte[0];
+    private static final byte[] EMPTY_BYTES = new byte[0];
 }
 

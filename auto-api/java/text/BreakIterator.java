@@ -12,17 +12,17 @@ import libcore.icu.ICU;
 import libcore.icu.NativeBreakIterator;
 
 public abstract class BreakIterator implements Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.259 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "CF9D4EF05D56B4D14C66F6CD08D197A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.514 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "CF9D4EF05D56B4D14C66F6CD08D197A2")
 
     NativeBreakIterator wrapped;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.260 -0400", hash_original_method = "472E6BA7B975B8FFC4413000E223456D", hash_generated_method = "6FAD5F17105AA87E99EE906D945E3AD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.514 -0400", hash_original_method = "472E6BA7B975B8FFC4413000E223456D", hash_generated_method = "6FAD5F17105AA87E99EE906D945E3AD3")
     protected  BreakIterator() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.261 -0400", hash_original_method = "72AAB41934B49D5B08FCF4597E7486A8", hash_generated_method = "2D0429676C289659EEA8E15847385912")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.515 -0400", hash_original_method = "72AAB41934B49D5B08FCF4597E7486A8", hash_generated_method = "2D0429676C289659EEA8E15847385912")
       BreakIterator(NativeBreakIterator iterator) {
         wrapped = iterator;
         // ---------- Original Method ----------
@@ -30,74 +30,74 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
-        public static Locale[] getAvailableLocales() {
+    public static Locale[] getAvailableLocales() {
         return ICU.getAvailableBreakIteratorLocales();
     }
 
     
-        public static BreakIterator getCharacterInstance() {
+    public static BreakIterator getCharacterInstance() {
         return getCharacterInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getCharacterInstance(Locale where) {
+    public static BreakIterator getCharacterInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getCharacterInstance(where));
     }
 
     
-        public static BreakIterator getLineInstance() {
+    public static BreakIterator getLineInstance() {
         return getLineInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getLineInstance(Locale where) {
+    public static BreakIterator getLineInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getLineInstance(where));
     }
 
     
-        public static BreakIterator getSentenceInstance() {
+    public static BreakIterator getSentenceInstance() {
         return getSentenceInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getSentenceInstance(Locale where) {
+    public static BreakIterator getSentenceInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getSentenceInstance(where));
     }
 
     
-        public static BreakIterator getWordInstance() {
+    public static BreakIterator getWordInstance() {
         return getWordInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getWordInstance(Locale where) {
+    public static BreakIterator getWordInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getWordInstance(where));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.274 -0400", hash_original_method = "A8CE13377E2BE8338E384DB518A75EF1", hash_generated_method = "79445C0BE194584E21E884C8C9CDFC2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.519 -0400", hash_original_method = "A8CE13377E2BE8338E384DB518A75EF1", hash_generated_method = "8A98DD0C62E6508256DA567FE74FBBE4")
     public boolean isBoundary(int offset) {
-        boolean var07A670DF3E20C08BF3ACC7905CB9625F_1671305222 = (wrapped.isBoundary(offset));
+        boolean var07A670DF3E20C08BF3ACC7905CB9625F_1999535483 = (wrapped.isBoundary(offset));
         addTaint(offset);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_600110282 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_600110282;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816809249 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816809249;
         // ---------- Original Method ----------
         //return wrapped.isBoundary(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.274 -0400", hash_original_method = "2EB9AD97D64682279E3EECC38916DED9", hash_generated_method = "6E403736E52464B2FF9FED4C56856A86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.520 -0400", hash_original_method = "2EB9AD97D64682279E3EECC38916DED9", hash_generated_method = "53DBE7792810A0A496BE5AAFFD2E6DFA")
     public int preceding(int offset) {
-        int var14341653A1F5B35705434E8CE35431DA_643746562 = (wrapped.preceding(offset));
+        int var14341653A1F5B35705434E8CE35431DA_1480927270 = (wrapped.preceding(offset));
         addTaint(offset);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325096326 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325096326;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295905798 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295905798;
         // ---------- Original Method ----------
         //return wrapped.preceding(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.274 -0400", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "FBEDC7319143BB7CC131602A892314EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.520 -0400", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "FBEDC7319143BB7CC131602A892314EE")
     public void setText(String newText) {
         wrapped.setText(newText);
         addTaint(newText.getTaint());
@@ -133,23 +133,22 @@ public abstract class BreakIterator implements Cloneable {
     public abstract void setText(CharacterIterator newText);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.300 -0400", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "F171289CCEC85C22435148E9C67382A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.525 -0400", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "99138CC946583E3CCE017A6104793E14")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_682577839 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_980114493 = null; //Variable for return #1
         try 
         {
-            BreakIterator cloned;
-            cloned = (BreakIterator) super.clone();
+            BreakIterator cloned = (BreakIterator) super.clone();
             cloned.wrapped = (NativeBreakIterator) wrapped.clone();
-            varB4EAC82CA7396A68D541C85D26508E83_682577839 = cloned;
+            varB4EAC82CA7396A68D541C85D26508E83_980114493 = cloned;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_682577839.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_682577839;
+        varB4EAC82CA7396A68D541C85D26508E83_980114493.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_980114493;
         // ---------- Original Method ----------
         //try {
             //BreakIterator cloned = (BreakIterator) super.clone();
@@ -161,7 +160,7 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:47.300 -0400", hash_original_field = "AE5795245BD72341C1863329F63CD2D5", hash_generated_field = "E294711A5AAD88DB0E975ABC422940FE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.525 -0400", hash_original_field = "AE5795245BD72341C1863329F63CD2D5", hash_generated_field = "E294711A5AAD88DB0E975ABC422940FE")
 
     public static final int DONE = -1;
 }

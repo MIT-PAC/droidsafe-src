@@ -47,23 +47,23 @@ import org.bouncycastle.x509.X509AttributeCertificate;
 import org.bouncycastle.x509.X509V2AttributeCertificate;
 
 public class MiscPEMGenerator implements PemObjectGenerator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.675 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
 
     private Object obj;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.675 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
     private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.675 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
 
     private char[] password;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.675 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "47462950F1DBF0D228B8D6FE202BDA9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "47462950F1DBF0D228B8D6FE202BDA9F")
 
     private SecureRandom random;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.675 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private Provider provider;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.684 -0400", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "2850ED16A7B9528D560ED52741366F34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "2850ED16A7B9528D560ED52741366F34")
     public  MiscPEMGenerator(Object o) {
         this.obj = o;
         // ---------- Original Method ----------
@@ -71,7 +71,7 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.685 -0400", hash_original_method = "AD2D21FAE267AE7BA19486B70A7A435E", hash_generated_method = "9975F4F1D94CD2D098CEA7C2FCAAB346")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.996 -0400", hash_original_method = "AD2D21FAE267AE7BA19486B70A7A435E", hash_generated_method = "9975F4F1D94CD2D098CEA7C2FCAAB346")
     public  MiscPEMGenerator(
         Object       obj,
         String       algorithm,
@@ -92,7 +92,7 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.686 -0400", hash_original_method = "FC3CFC06395928A5BA1B88C136A7A3A1", hash_generated_method = "8F0E47186590BFC9DE756B04ECB162F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.996 -0400", hash_original_method = "FC3CFC06395928A5BA1B88C136A7A3A1", hash_generated_method = "8F0E47186590BFC9DE756B04ECB162F4")
     public  MiscPEMGenerator(
         Object       obj,
         String       algorithm,
@@ -125,19 +125,19 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.688 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "2404D61CADC0DE12C9887F9D442CAB06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.998 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "F10B018644319F7C1AFCE43E53FDDC93")
     private PemObject createPemObject(Object o) throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_1819864824 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_1496747736 = null; //Variable for return #2
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_375331630 = null; //Variable for return #3
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_395211214 = null; //Variable for return #4
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_453449152 = null; //Variable for return #1
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_619031605 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_1187530678 = null; //Variable for return #3
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_165482801 = null; //Variable for return #4
         String type;
         byte[] encoding;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1819864824 = (PemObject)o;
+            varB4EAC82CA7396A68D541C85D26508E83_453449152 = (PemObject)o;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1496747736 = ((PemObjectGenerator)o).generate();
+            varB4EAC82CA7396A68D541C85D26508E83_619031605 = ((PemObjectGenerator)o).generate();
         } //End block
         {
             type = "CERTIFICATE";
@@ -162,11 +162,10 @@ public class MiscPEMGenerator implements PemObjectGenerator {
             } //End block
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_375331630 = createPemObject(((KeyPair)o).getPrivate());
+            varB4EAC82CA7396A68D541C85D26508E83_1187530678 = createPemObject(((KeyPair)o).getPrivate());
         } //End block
         {
-            PrivateKeyInfo info;
-            info = new PrivateKeyInfo(
+            PrivateKeyInfo info = new PrivateKeyInfo(
                 (ASN1Sequence) ASN1Object.fromByteArray(((Key)o).getEncoded()));
             {
                 type = "RSA PRIVATE KEY";
@@ -174,24 +173,20 @@ public class MiscPEMGenerator implements PemObjectGenerator {
             } //End block
             {
                 type = "DSA PRIVATE KEY";
-                DSAParameter p;
-                p = DSAParameter.getInstance(info.getAlgorithmId().getParameters());
-                ASN1EncodableVector v;
-                v = new ASN1EncodableVector();
+                DSAParameter p = DSAParameter.getInstance(info.getAlgorithmId().getParameters());
+                ASN1EncodableVector v = new ASN1EncodableVector();
                 v.add(new DERInteger(0));
                 v.add(new DERInteger(p.getP()));
                 v.add(new DERInteger(p.getQ()));
                 v.add(new DERInteger(p.getG()));
-                BigInteger x;
-                x = ((DSAPrivateKey)o).getX();
-                BigInteger y;
-                y = p.getG().modPow(x, p.getP());
+                BigInteger x = ((DSAPrivateKey)o).getX();
+                BigInteger y = p.getG().modPow(x, p.getP());
                 v.add(new DERInteger(y));
                 v.add(new DERInteger(x));
                 encoding = new DERSequence(v).getEncoded();
             } //End block
             {
-                boolean var32F95F35AF334BEC5DE8195500E1E92A_1109067168 = (((PrivateKey)o).getAlgorithm().equals("ECDSA"));
+                boolean var32F95F35AF334BEC5DE8195500E1E92A_1072664020 = (((PrivateKey)o).getAlgorithm().equals("ECDSA"));
                 {
                     type = "EC PRIVATE KEY";
                     encoding = info.getPrivateKey().getEncoded();
@@ -220,47 +215,45 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         {
             if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("unknown object passed - can't encode.");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_395211214 = new PemObject(type, encoding);
+        varB4EAC82CA7396A68D541C85D26508E83_165482801 = new PemObject(type, encoding);
         addTaint(o.getTaint());
-        PemObject varA7E53CE21691AB073D9660D615818899_94731912; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_538579244; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_94731912 = varB4EAC82CA7396A68D541C85D26508E83_1819864824;
+                varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_453449152;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_94731912 = varB4EAC82CA7396A68D541C85D26508E83_1496747736;
+                varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_619031605;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_94731912 = varB4EAC82CA7396A68D541C85D26508E83_375331630;
+                varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_1187530678;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_94731912 = varB4EAC82CA7396A68D541C85D26508E83_395211214;
+                varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_165482801;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_94731912.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_94731912;
+        varA7E53CE21691AB073D9660D615818899_538579244.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_538579244;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.690 -0400", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "E4BBCB629537D6F4DA813E0ACA587343")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.000 -0400", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "D4983773D80B6B21ECB2AD53A3DA322F")
     private String getHexEncoded(byte[] bytes) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_341961984 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1957309397 = null; //Variable for return #1
         bytes = Hex.encode(bytes);
-        char[] chars;
-        chars = new char[bytes.length];
+        char[] chars = new char[bytes.length];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 chars[i] = (char)bytes[i];
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_341961984 = new String(chars);
+        varB4EAC82CA7396A68D541C85D26508E83_1957309397 = new String(chars);
         addTaint(bytes[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_341961984.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_341961984;
+        varB4EAC82CA7396A68D541C85D26508E83_1957309397.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1957309397;
         // ---------- Original Method ----------
         //bytes = Hex.encode(bytes);
         //char[] chars = new char[bytes.length];
@@ -272,27 +265,23 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.698 -0400", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "03A8E585F6D6B4139578C4D3FF7A329A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.002 -0400", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "5CA384A1D824333875D16E267BE33C7D")
     private PemObject createPemObject(
         Object       obj,
         String       algorithm,
         char[]       password,
         SecureRandom random) throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_1755963662 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_956519928 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_18399006 = null; //Variable for return #1
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_242265949 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1755963662 = createPemObject(((KeyPair)obj).getPrivate(), algorithm, password, random);
+            varB4EAC82CA7396A68D541C85D26508E83_18399006 = createPemObject(((KeyPair)obj).getPrivate(), algorithm, password, random);
         } //End block
-        String type;
-        type = null;
-        byte[] keyData;
-        keyData = null;
+        String type = null;
+        byte[] keyData = null;
         {
             type = "RSA PRIVATE KEY";
-            RSAPrivateCrtKey k;
-            k = (RSAPrivateCrtKey)obj;
-            RSAPrivateKeyStructure keyStruct;
-            keyStruct = new RSAPrivateKeyStructure(
+            RSAPrivateCrtKey k = (RSAPrivateCrtKey)obj;
+            RSAPrivateKeyStructure keyStruct = new RSAPrivateKeyStructure(
                 k.getModulus(),
                 k.getPublicExponent(),
                 k.getPrivateExponent(),
@@ -305,104 +294,94 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         } //End block
         {
             type = "DSA PRIVATE KEY";
-            DSAPrivateKey k;
-            k = (DSAPrivateKey)obj;
-            DSAParams p;
-            p = k.getParams();
-            ASN1EncodableVector v;
-            v = new ASN1EncodableVector();
+            DSAPrivateKey k = (DSAPrivateKey)obj;
+            DSAParams p = k.getParams();
+            ASN1EncodableVector v = new ASN1EncodableVector();
             v.add(new DERInteger(0));
             v.add(new DERInteger(p.getP()));
             v.add(new DERInteger(p.getQ()));
             v.add(new DERInteger(p.getG()));
-            BigInteger x;
-            x = k.getX();
-            BigInteger y;
-            y = p.getG().modPow(x, p.getP());
+            BigInteger x = k.getX();
+            BigInteger y = p.getG().modPow(x, p.getP());
             v.add(new DERInteger(y));
             v.add(new DERInteger(x));
             keyData = new DERSequence(v).getEncoded();
         } //End block
         {
-            boolean var621AD920A4A1C3B37CFC4E1CFAD8A164_968774966 = (obj instanceof PrivateKey && "ECDSA".equals(((PrivateKey)obj).getAlgorithm()));
+            boolean var621AD920A4A1C3B37CFC4E1CFAD8A164_1089152390 = (obj instanceof PrivateKey && "ECDSA".equals(((PrivateKey)obj).getAlgorithm()));
             {
                 type = "EC PRIVATE KEY";
-                PrivateKeyInfo privInfo;
-                privInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(((PrivateKey)obj).getEncoded()));
+                PrivateKeyInfo privInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(((PrivateKey)obj).getEncoded()));
                 keyData = privInfo.getPrivateKey().getEncoded();
             } //End block
         } //End collapsed parenthetic
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Object type not supported: " + obj.getClass().getName());
         } //End block
-        String dekAlgName;
-        dekAlgName = Strings.toUpperCase(algorithm);
+        String dekAlgName = Strings.toUpperCase(algorithm);
         {
-            boolean var8D78E20A60FC206B65EF4CDCEB738EC3_428918906 = (dekAlgName.equals("DESEDE"));
+            boolean var8D78E20A60FC206B65EF4CDCEB738EC3_184737617 = (dekAlgName.equals("DESEDE"));
             {
                 dekAlgName = "DES-EDE3-CBC";
             } //End block
         } //End collapsed parenthetic
         int ivLength;
-        boolean var1D30E47A11D832D47735AD6C7AF21620_1814387140 = (dekAlgName.startsWith("AES-"));
+        boolean var1D30E47A11D832D47735AD6C7AF21620_1039871409 = (dekAlgName.startsWith("AES-"));
         ivLength = 16;
         ivLength = 8;
-        byte[] iv;
-        iv = new byte[ivLength];
+        byte[] iv = new byte[ivLength];
         random.nextBytes(iv);
-        byte[] encData;
-        encData = PEMUtilities.crypt(true, provider, keyData, password, dekAlgName, iv);
-        List headers;
-        headers = new ArrayList(2);
+        byte[] encData = PEMUtilities.crypt(true, provider, keyData, password, dekAlgName, iv);
+        List headers = new ArrayList(2);
         headers.add(new PemHeader("Proc-Type", "4,ENCRYPTED"));
         headers.add(new PemHeader("DEK-Info", dekAlgName + "," + getHexEncoded(iv)));
-        varB4EAC82CA7396A68D541C85D26508E83_956519928 = new PemObject(type, headers, encData);
+        varB4EAC82CA7396A68D541C85D26508E83_242265949 = new PemObject(type, headers, encData);
         addTaint(obj.getTaint());
         addTaint(algorithm.getTaint());
         addTaint(password[0]);
         addTaint(random.getTaint());
-        PemObject varA7E53CE21691AB073D9660D615818899_559236992; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_2145949823; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_559236992 = varB4EAC82CA7396A68D541C85D26508E83_1755963662;
+                varA7E53CE21691AB073D9660D615818899_2145949823 = varB4EAC82CA7396A68D541C85D26508E83_18399006;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_559236992 = varB4EAC82CA7396A68D541C85D26508E83_956519928;
+                varA7E53CE21691AB073D9660D615818899_2145949823 = varB4EAC82CA7396A68D541C85D26508E83_242265949;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_559236992.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_559236992;
+        varA7E53CE21691AB073D9660D615818899_2145949823.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2145949823;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.700 -0400", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "967896AF712B3C65B14DB6AA2AB70FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.003 -0400", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "8F53E9D12F0260319613CE17789DBC8A")
     public PemObject generate() throws PemGenerationException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_1407871817 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_508843815 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_654788706 = null; //Variable for return #1
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_987707347 = null; //Variable for return #2
         try 
         {
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1407871817 = createPemObject(obj, algorithm, password, random);
+                varB4EAC82CA7396A68D541C85D26508E83_654788706 = createPemObject(obj, algorithm, password, random);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_508843815 = createPemObject(obj);
+            varB4EAC82CA7396A68D541C85D26508E83_987707347 = createPemObject(obj);
         } //End block
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("encoding exception: " + e.getMessage(), e);
         } //End block
-        PemObject varA7E53CE21691AB073D9660D615818899_668321845; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_548164310; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_668321845 = varB4EAC82CA7396A68D541C85D26508E83_1407871817;
+                varA7E53CE21691AB073D9660D615818899_548164310 = varB4EAC82CA7396A68D541C85D26508E83_654788706;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_668321845 = varB4EAC82CA7396A68D541C85D26508E83_508843815;
+                varA7E53CE21691AB073D9660D615818899_548164310 = varB4EAC82CA7396A68D541C85D26508E83_987707347;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_668321845.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_668321845;
+        varA7E53CE21691AB073D9660D615818899_548164310.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_548164310;
         // ---------- Original Method ----------
         //try
         //{

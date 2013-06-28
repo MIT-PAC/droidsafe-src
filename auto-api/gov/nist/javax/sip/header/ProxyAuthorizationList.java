@@ -11,22 +11,21 @@ import javax.sip.header.*;
 
 public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.269 -0400", hash_original_method = "7E2339716E9E591A456966370DA5C67A", hash_generated_method = "13BE6CAE5E4586734CD6519D7633A9B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.935 -0400", hash_original_method = "7E2339716E9E591A456966370DA5C67A", hash_generated_method = "13BE6CAE5E4586734CD6519D7633A9B2")
     public  ProxyAuthorizationList() {
         super(ProxyAuthorization.class, ProxyAuthorizationHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.271 -0400", hash_original_method = "99D8471E873632F99CA4FA915EADF5BB", hash_generated_method = "89FC1BD1F2F5479F63F19534CD3CB290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.936 -0400", hash_original_method = "99D8471E873632F99CA4FA915EADF5BB", hash_generated_method = "ADD61537D7BB76B0F09E4CC88E4A4ABC")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1603141513 = null; //Variable for return #1
-        ProxyAuthorizationList retval;
-        retval = new ProxyAuthorizationList();
+        Object varB4EAC82CA7396A68D541C85D26508E83_709882959 = null; //Variable for return #1
+        ProxyAuthorizationList retval = new ProxyAuthorizationList();
         retval.clonehlist(this.hlist);
-        varB4EAC82CA7396A68D541C85D26508E83_1603141513 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1603141513.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1603141513;
+        varB4EAC82CA7396A68D541C85D26508E83_709882959 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_709882959.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_709882959;
         // ---------- Original Method ----------
         //ProxyAuthorizationList retval = new ProxyAuthorizationList();
         //retval.clonehlist(this.hlist);
@@ -34,8 +33,8 @@ public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.271 -0400", hash_original_field = "E460F7E4ADA0B134B90E3C7ACE044BAF", hash_generated_field = "C237B70726DD39073961E4D5475E682F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.936 -0400", hash_original_field = "E460F7E4ADA0B134B90E3C7ACE044BAF", hash_generated_field = "EC74D7B41C3C9002F8FE992882CA7626")
 
-    private static long serialVersionUID = -1L;
+    private static final long serialVersionUID = -1L;
 }
 

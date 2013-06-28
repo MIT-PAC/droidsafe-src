@@ -9,14 +9,14 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class NumberParseException extends Exception {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.989 -0400", hash_original_field = "2A8BCE4C57FBA6E1E2136D9DB057B722", hash_generated_field = "84B9E028BBF2DC9E5382F00380C2F272")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.617 -0400", hash_original_field = "2A8BCE4C57FBA6E1E2136D9DB057B722", hash_generated_field = "84B9E028BBF2DC9E5382F00380C2F272")
 
     private ErrorType errorType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.989 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.617 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
 
     private String message;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.989 -0400", hash_original_method = "E3BFB23E8C79BF87D1C5A9FB2A377F86", hash_generated_method = "3806F73A468A4900F06EBC218AF22D9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.618 -0400", hash_original_method = "E3BFB23E8C79BF87D1C5A9FB2A377F86", hash_generated_method = "3806F73A468A4900F06EBC218AF22D9C")
     public  NumberParseException(ErrorType errorType, String message) {
         super(message);
         this.message = message;
@@ -27,24 +27,24 @@ public class NumberParseException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.990 -0400", hash_original_method = "D589126B13584B530A9FB2F071914799", hash_generated_method = "3CB4900B1FB491091E8DC00F7F5E8080")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.618 -0400", hash_original_method = "D589126B13584B530A9FB2F071914799", hash_generated_method = "8517CD2BCD8F21AC35359BF1F75F86EC")
     public ErrorType getErrorType() {
-        ErrorType varB4EAC82CA7396A68D541C85D26508E83_1323581833 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1323581833 = errorType;
-        varB4EAC82CA7396A68D541C85D26508E83_1323581833.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1323581833;
+        ErrorType varB4EAC82CA7396A68D541C85D26508E83_1973672239 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1973672239 = errorType;
+        varB4EAC82CA7396A68D541C85D26508E83_1973672239.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1973672239;
         // ---------- Original Method ----------
         //return errorType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.991 -0400", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "C6B637823CC17F645373274174ED5E68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.619 -0400", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "5D0E184FA4FE8041D0DD9D6AA870A55A")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_918330186 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_918330186 = "Error type: " + errorType + ". " + message;
-        varB4EAC82CA7396A68D541C85D26508E83_918330186.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_918330186;
+        String varB4EAC82CA7396A68D541C85D26508E83_690376206 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_690376206 = "Error type: " + errorType + ". " + message;
+        varB4EAC82CA7396A68D541C85D26508E83_690376206.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_690376206;
         // ---------- Original Method ----------
         //return "Error type: " + errorType + ". " + message;
     }

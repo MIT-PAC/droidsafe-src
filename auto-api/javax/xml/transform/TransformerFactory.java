@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 public abstract class TransformerFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.509 -0400", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "2BC7FF716052BC1AB7666C5153E272F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.999 -0400", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "2BC7FF716052BC1AB7666C5153E272F2")
     protected  TransformerFactory() {
         // ---------- Original Method ----------
     }
 
     
-        public static TransformerFactory newInstance() throws TransformerFactoryConfigurationError {
+    public static TransformerFactory newInstance() throws TransformerFactoryConfigurationError {
         String className = "org.apache.xalan.processor.TransformerFactoryImpl";
         try {
             return (TransformerFactory) Class.forName(className).newInstance();
@@ -26,7 +26,7 @@ public abstract class TransformerFactory {
     }
 
     
-        public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader) throws TransformerFactoryConfigurationError {
+    public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader) throws TransformerFactoryConfigurationError {
         if (factoryClassName == null) {
             throw new TransformerFactoryConfigurationError("factoryClassName == null");
         }

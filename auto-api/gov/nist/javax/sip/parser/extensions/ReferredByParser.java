@@ -14,7 +14,7 @@ import gov.nist.javax.sip.parser.*;
 
 public class ReferredByParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.547 -0400", hash_original_method = "B42987DBDBA12D8A1BC8285C2A945786", hash_generated_method = "C9FBBE0DB0ED57749A664431F28AF13A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.030 -0400", hash_original_method = "B42987DBDBA12D8A1BC8285C2A945786", hash_generated_method = "C9FBBE0DB0ED57749A664431F28AF13A")
     public  ReferredByParser(String referBy) {
         super(referBy);
         addTaint(referBy.getTaint());
@@ -22,7 +22,7 @@ public class ReferredByParser extends AddressParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.548 -0400", hash_original_method = "CCD7CFF6FCA48FCEC6FB3D9B7402721E", hash_generated_method = "B489F8353291A605BC8CE38D58B2E5FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.030 -0400", hash_original_method = "CCD7CFF6FCA48FCEC6FB3D9B7402721E", hash_generated_method = "B489F8353291A605BC8CE38D58B2E5FF")
     protected  ReferredByParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -30,17 +30,16 @@ public class ReferredByParser extends AddressParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.554 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "2973FBE1090E2EEB953C0B7554FD9C57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.030 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "B3808804A640A51C318EBD36A2BE6768")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_985683650 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1668613540 = null; //Variable for return #1
         headerName(TokenTypes.REFERREDBY_TO);
-        ReferredBy referBy;
-        referBy = new ReferredBy();
+        ReferredBy referBy = new ReferredBy();
         super.parse(referBy);
         this.lexer.match('\n');
-        varB4EAC82CA7396A68D541C85D26508E83_985683650 = referBy;
-        varB4EAC82CA7396A68D541C85D26508E83_985683650.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_985683650;
+        varB4EAC82CA7396A68D541C85D26508E83_1668613540 = referBy;
+        varB4EAC82CA7396A68D541C85D26508E83_1668613540.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1668613540;
         // ---------- Original Method ----------
         //headerName(TokenTypes.REFERREDBY_TO);
         //ReferredBy referBy = new ReferredBy();
@@ -50,7 +49,7 @@ public class ReferredByParser extends AddressParametersParser {
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Referred-By: <sip:dave@denver.example.org?" +
                     "Replaces=12345%40192.168.118.3%3Bto-tag%3D12345%3Bfrom-tag%3D5FFE-3994>\n",

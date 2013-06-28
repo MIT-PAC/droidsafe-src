@@ -14,14 +14,14 @@ import libcore.util.BasicLruCache;
 import libcore.util.EmptyArray;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.599 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.968 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.599 -0400", hash_original_field = "281858037F7DCF7ED49271BB92C60526", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.968 -0400", hash_original_field = "281858037F7DCF7ED49271BB92C60526", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
 
     int ordinal;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.599 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
     protected  Enum(String name, int ordinal) {
         this.name = name;
         this.ordinal = ordinal;
@@ -31,61 +31,61 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.600 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "609B1672B36D4EC59EE10BD17D217A28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "79CA60EE9D1057A7D6581BCAFED470BD")
     public final String name() {
-        String varB4EAC82CA7396A68D541C85D26508E83_781569570 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_781569570 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_781569570.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_781569570;
+        String varB4EAC82CA7396A68D541C85D26508E83_80574957 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_80574957 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_80574957.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_80574957;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.600 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "CAC2E4B05A36BFC517AF596CFBA4508B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.969 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "8B4678E6142587D6657D8215ED485DD8")
     public final int ordinal() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_54442476 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_54442476;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_863636262 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_863636262;
         // ---------- Original Method ----------
         //return ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.613 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "F4A6F17D2EEFEAB607CA8D6C7C265AE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "63FE3120529F360F42489B5082934718")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1904179633 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1904179633 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1904179633.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1904179633;
+        String varB4EAC82CA7396A68D541C85D26508E83_317817671 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_317817671 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_317817671.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_317817671;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.614 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "6E070BBC16987171C3536EF302A2F978")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "8750797A248F8B1AB247D8AF0503CD74")
     @Override
     public final boolean equals(Object other) {
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161886426 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_161886426;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_561549600 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_561549600;
         // ---------- Original Method ----------
         //return this == other;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.614 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "E324CFF7A361198EA96BF07CEF07E958")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "7E5AA309F267D16B92DE0E0E24ECB228")
     @Override
     public final int hashCode() {
-        int var7757EFC4B98575F4A69036771684C57E_388005965 = (ordinal + (name == null ? 0 : name.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798798760 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798798760;
+        int var7757EFC4B98575F4A69036771684C57E_2117114853 = (ordinal + (name == null ? 0 : name.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237067515 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237067515;
         // ---------- Original Method ----------
         //return ordinal + (name == null ? 0 : name.hashCode());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.614 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "7CFDAA36D607D56DCBB441FFA1E83CF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "7CFDAA36D607D56DCBB441FFA1E83CF5")
     @Override
     protected final Object clone() throws CloneNotSupportedException {
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("Enums may not be cloned");
@@ -94,40 +94,38 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.615 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "056470D9A6075F995F9289637EA25B45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.971 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "52D6F20A9BAF4D24D53B52CB63AEC7A4")
     public final int compareTo(E o) {
         addTaint(o.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660586480 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660586480;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_68555680 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_68555680;
         // ---------- Original Method ----------
         //return ordinal - o.ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.615 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "A2E34276DDFA5D9A960835AE4E481233")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.971 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "3641F5E846FAD51B672403C675422EBC")
     @SuppressWarnings("unchecked")
     public final Class<E> getDeclaringClass() {
-        Class<E> varB4EAC82CA7396A68D541C85D26508E83_83913373 = null; //Variable for return #1
-        Class<E> varB4EAC82CA7396A68D541C85D26508E83_1393183723 = null; //Variable for return #2
-        Class<?> myClass;
-        myClass = getClass();
-        Class<?> mySuperClass;
-        mySuperClass = myClass.getSuperclass();
+        Class<E> varB4EAC82CA7396A68D541C85D26508E83_1360417961 = null; //Variable for return #1
+        Class<E> varB4EAC82CA7396A68D541C85D26508E83_478588676 = null; //Variable for return #2
+        Class<?> myClass = getClass();
+        Class<?> mySuperClass = myClass.getSuperclass();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_83913373 = (Class<E>)myClass;
+            varB4EAC82CA7396A68D541C85D26508E83_1360417961 = (Class<E>)myClass;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1393183723 = (Class<E>)mySuperClass;
-        Class<E> varA7E53CE21691AB073D9660D615818899_1810536050; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_478588676 = (Class<E>)mySuperClass;
+        Class<E> varA7E53CE21691AB073D9660D615818899_98375339; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1810536050 = varB4EAC82CA7396A68D541C85D26508E83_83913373;
+                varA7E53CE21691AB073D9660D615818899_98375339 = varB4EAC82CA7396A68D541C85D26508E83_1360417961;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1810536050 = varB4EAC82CA7396A68D541C85D26508E83_1393183723;
+                varA7E53CE21691AB073D9660D615818899_98375339 = varB4EAC82CA7396A68D541C85D26508E83_478588676;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1810536050.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1810536050;
+        varA7E53CE21691AB073D9660D615818899_98375339.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_98375339;
         // ---------- Original Method ----------
         //Class<?> myClass = getClass();
         //Class<?> mySuperClass = myClass.getSuperclass();
@@ -138,7 +136,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-        public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
+    public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         if (enumType == null || name == null) {
             throw new NullPointerException("enumType == null || name == null");
         }
@@ -154,13 +152,13 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static <T extends Enum<T>> T[] getSharedConstants(Class<T> enumType) {
         return (T[]) sharedConstantsCache.get(enumType);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.627 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.972 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
     @Override
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
     protected final void finalize() {
@@ -168,22 +166,21 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.627 -0400", hash_original_field = "7DBCEA52E8DCD6AE5AC7B75D618534F3", hash_generated_field = "7965F57B8F8F319E8512B13FAE13C9AD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.972 -0400", hash_original_field = "7DBCEA52E8DCD6AE5AC7B75D618534F3", hash_generated_field = "F6C6D1A2DF29E3B35FCE4B7C508D18C8")
 
-    private static long serialVersionUID = -4300926546619394005L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.636 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "3E95ED194D1858736525397152EC0ADB")
+    private static final long serialVersionUID = -4300926546619394005L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "B4F6D6026899BCE9E7B0DB1ABDB36603")
 
-    private static BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.636 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "20753000DBF394B173E2AB465986CA05")
+    private static final BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "7F031794B7075609744F8874AE3F398D")
         @Override
         protected Object[] create(Class<? extends Enum> enumType) {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_24291959 = null; //Variable for return #1
-            Method method;
-            method = (Method) Class.getDeclaredConstructorOrMethod(
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1848793963 = null; //Variable for return #1
+            Method method = (Method) Class.getDeclaredConstructorOrMethod(
                     enumType, "values", EmptyArray.CLASS);
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_24291959 = (Object[]) method.invoke((Object[]) null);
+                varB4EAC82CA7396A68D541C85D26508E83_1848793963 = (Object[]) method.invoke((Object[]) null);
             } //End block
             catch (IllegalAccessException impossible)
             {
@@ -194,8 +191,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             } //End block
             addTaint(enumType.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_24291959.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_24291959;
+            varB4EAC82CA7396A68D541C85D26508E83_1848793963.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1848793963;
             // ---------- Original Method ----------
             //Method method = (Method) Class.getDeclaredConstructorOrMethod(
                     //enumType, "values", EmptyArray.CLASS);

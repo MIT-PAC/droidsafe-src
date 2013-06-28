@@ -11,17 +11,17 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public abstract class ThresholdingOutputStream extends OutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.624 -0400", hash_original_field = "F0598264A691A8F62272ACA0E79AF374", hash_generated_field = "831F8FC1A32CF07BE696149BB6AEA9AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.793 -0400", hash_original_field = "F0598264A691A8F62272ACA0E79AF374", hash_generated_field = "831F8FC1A32CF07BE696149BB6AEA9AA")
 
     private int threshold;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.624 -0400", hash_original_field = "9CC26FA09CE37BC95AFE01BC718836D1", hash_generated_field = "C6743BCE3F1A0F9070591F7112B3B8ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.793 -0400", hash_original_field = "9CC26FA09CE37BC95AFE01BC718836D1", hash_generated_field = "C6743BCE3F1A0F9070591F7112B3B8ED")
 
     private long written;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.624 -0400", hash_original_field = "1BDEDCC31758B35D15DDCAF4609EEEA9", hash_generated_field = "5E8665C6D9CAC8C9DDEA8BC1F29622E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.793 -0400", hash_original_field = "1BDEDCC31758B35D15DDCAF4609EEEA9", hash_generated_field = "5E8665C6D9CAC8C9DDEA8BC1F29622E7")
 
     private boolean thresholdExceeded;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.625 -0400", hash_original_method = "77C2ECB5C285EF71184BF3F2AC3FDA1E", hash_generated_method = "6EFB5AA431D618543ED37CD003D63A47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.793 -0400", hash_original_method = "77C2ECB5C285EF71184BF3F2AC3FDA1E", hash_generated_method = "6EFB5AA431D618543ED37CD003D63A47")
     public  ThresholdingOutputStream(int threshold) {
         this.threshold = threshold;
         // ---------- Original Method ----------
@@ -29,7 +29,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.625 -0400", hash_original_method = "A749941175ED4946E5E13C756C47A3BF", hash_generated_method = "1B16ACFA175D8DE83701F847D4306C0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.793 -0400", hash_original_method = "A749941175ED4946E5E13C756C47A3BF", hash_generated_method = "1B16ACFA175D8DE83701F847D4306C0E")
     @Override
     public void write(int b) throws IOException {
         checkThreshold(1);
@@ -42,7 +42,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.626 -0400", hash_original_method = "BDE8F5646F213B56F0E18C72C563121D", hash_generated_method = "2A7FA011EB0B78EE8C968BF8C7C0F902")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.794 -0400", hash_original_method = "BDE8F5646F213B56F0E18C72C563121D", hash_generated_method = "2A7FA011EB0B78EE8C968BF8C7C0F902")
     @Override
     public void write(byte b[]) throws IOException {
         checkThreshold(b.length);
@@ -55,13 +55,13 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.626 -0400", hash_original_method = "63B0905E0F7F5A890F09CED6998445D1", hash_generated_method = "4F9A9D8789BB4384B43452ABBA614060")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.794 -0400", hash_original_method = "63B0905E0F7F5A890F09CED6998445D1", hash_generated_method = "546C15F14F66FED3B8F659700882C3B5")
     @Override
     public void write(byte b[], int off, int len) throws IOException {
         checkThreshold(len);
         getStream().write(b, off, len);
         written += len;
-        addTaint(b);
+        addTaint(b[0]);
         addTaint(off);
         // ---------- Original Method ----------
         //checkThreshold(len);
@@ -70,7 +70,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.626 -0400", hash_original_method = "7DA4C958A096834DFED555D27E028982", hash_generated_method = "395693CB9ECAF5848281296D19170B8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.794 -0400", hash_original_method = "7DA4C958A096834DFED555D27E028982", hash_generated_method = "395693CB9ECAF5848281296D19170B8F")
     @Override
     public void flush() throws IOException {
         getStream().flush();
@@ -79,7 +79,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.627 -0400", hash_original_method = "D4B771243EF7B4BDA5F26E7A828E3C67", hash_generated_method = "5C34C055951B1151A39D8A541244097F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.794 -0400", hash_original_method = "D4B771243EF7B4BDA5F26E7A828E3C67", hash_generated_method = "5C34C055951B1151A39D8A541244097F")
     @Override
     public void close() throws IOException {
         try 
@@ -101,34 +101,34 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.627 -0400", hash_original_method = "D74160AE6FC7C2C8DE051989EE60B0B3", hash_generated_method = "26105C9B66EE4B53CF2957CC407D3B9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "D74160AE6FC7C2C8DE051989EE60B0B3", hash_generated_method = "1C6F4C57ABAEFDA2D9AE6DAE54CCACFA")
     public int getThreshold() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578804511 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578804511;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756687547 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756687547;
         // ---------- Original Method ----------
         //return threshold;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.641 -0400", hash_original_method = "406CBD57F94439414A20EAD4F95AFAE5", hash_generated_method = "EB000A184DE92BDB6C00F77D56D357C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "406CBD57F94439414A20EAD4F95AFAE5", hash_generated_method = "64B476F24EB47A128C2F18E3CD291736")
     public long getByteCount() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_578668937 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_578668937;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_881428555 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_881428555;
         // ---------- Original Method ----------
         //return written;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.641 -0400", hash_original_method = "1EA9299850929B3D5FCE42AA4C38FE08", hash_generated_method = "EF8DF0C0C0228149ACCA47430EF4E162")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "1EA9299850929B3D5FCE42AA4C38FE08", hash_generated_method = "4289DC490B2B9A05A6DAC165976F1693")
     public boolean isThresholdExceeded() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970797093 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_970797093;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625081790 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_625081790;
         // ---------- Original Method ----------
         //return written > threshold;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.642 -0400", hash_original_method = "16D96BE3274D83A99EFD52BEDEDB0485", hash_generated_method = "5E7E02C3D354A6FFC063414AC2021AA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.795 -0400", hash_original_method = "16D96BE3274D83A99EFD52BEDEDB0485", hash_generated_method = "5E7E02C3D354A6FFC063414AC2021AA0")
     protected void checkThreshold(int count) throws IOException {
         {
             thresholdExceeded = true;
@@ -144,7 +144,7 @@ public abstract class ThresholdingOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.654 -0400", hash_original_method = "30120E8670CD410900DBC3B4D1B240BE", hash_generated_method = "27A32EB1C009ED9E66461A03B0F831A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.796 -0400", hash_original_method = "30120E8670CD410900DBC3B4D1B240BE", hash_generated_method = "27A32EB1C009ED9E66461A03B0F831A0")
     protected void resetByteCount() {
         this.thresholdExceeded = false;
         this.written = 0;

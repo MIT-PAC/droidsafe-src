@@ -14,171 +14,171 @@ import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
 public class EGLImpl implements EGL10 {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.141 -0400", hash_original_field = "0F8898C409B0E41427A2E6AA6C67E1EC", hash_generated_field = "299BB99E9FA7B75F06D17EB158F11EC7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_field = "0F8898C409B0E41427A2E6AA6C67E1EC", hash_generated_field = "299BB99E9FA7B75F06D17EB158F11EC7")
 
     private EGLContextImpl mContext = new EGLContextImpl(-1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.141 -0400", hash_original_field = "A8BAED30807DC75517DDAE7C4EFB1286", hash_generated_field = "66FCEFDB57492E5584274D8BC130FFAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_field = "A8BAED30807DC75517DDAE7C4EFB1286", hash_generated_field = "66FCEFDB57492E5584274D8BC130FFAD")
 
     private EGLDisplayImpl mDisplay = new EGLDisplayImpl(-1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.141 -0400", hash_original_field = "A3FE23ED2289FC865AF994EFF579711B", hash_generated_field = "A9E68FD08AADF48015530582ECAAFB47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_field = "A3FE23ED2289FC865AF994EFF579711B", hash_generated_field = "A9E68FD08AADF48015530582ECAAFB47")
 
     private EGLSurfaceImpl mSurface = new EGLSurfaceImpl(-1);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.142 -0400", hash_original_method = "1F432E8932AB5EEB87E85C95C31E8080", hash_generated_method = "1F432E8932AB5EEB87E85C95C31E8080")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_method = "1F432E8932AB5EEB87E85C95C31E8080", hash_generated_method = "1F432E8932AB5EEB87E85C95C31E8080")
     public EGLImpl ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.142 -0400", hash_original_method = "0FE9F08E24E0D2453B9577BF62363101", hash_generated_method = "220DE8AA259E2636C7D4FFD164B27835")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_method = "0FE9F08E24E0D2453B9577BF62363101", hash_generated_method = "6E696855C61DA52195651501FC474974")
     public boolean eglInitialize(EGLDisplay display, int[] major_minor) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_133464107 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_133464107;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638854290 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638854290;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.142 -0400", hash_original_method = "F079BB68B5D124389F3B0A1B80EDA8E6", hash_generated_method = "2BEAAAB01E84F04C142CDA009CD24289")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "F079BB68B5D124389F3B0A1B80EDA8E6", hash_generated_method = "3C4D8FCE56D23112076A5307A2BF5A39")
     public boolean eglQueryContext(EGLDisplay display, EGLContext context, int attribute, int[] value) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1151075039 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1151075039;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1722070311 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1722070311;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.143 -0400", hash_original_method = "543FE727862E36E7BB38AE92834CF157", hash_generated_method = "A6C14776598DA0567821ECCFF660F753")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "543FE727862E36E7BB38AE92834CF157", hash_generated_method = "43DA74FD94EAC997ADAEB46238DE7C68")
     public boolean eglQuerySurface(EGLDisplay display, EGLSurface surface, int attribute, int[] value) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031342203 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031342203;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789790392 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789790392;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.143 -0400", hash_original_method = "BAFD3BC777B3DA03D70496857F209CFE", hash_generated_method = "2017DB19CEF4353F84DD8D5B8B4A09CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.386 -0400", hash_original_method = "BAFD3BC777B3DA03D70496857F209CFE", hash_generated_method = "289F15B88EA0B41E8E302F50FD360034")
     public boolean eglReleaseThread() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1003400250 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1003400250;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399342504 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399342504;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.144 -0400", hash_original_method = "597806537D1EB9D066DEDBB0F5CABF82", hash_generated_method = "ECF40821075048D356744A10F92542ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "597806537D1EB9D066DEDBB0F5CABF82", hash_generated_method = "CA8E60B9F9A0A9200CE8E32B7ACAB15A")
     public boolean eglChooseConfig(EGLDisplay display, int[] attrib_list, EGLConfig[] configs, int config_size, int[] num_config) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_816748478 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_816748478;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_950449160 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_950449160;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.144 -0400", hash_original_method = "CE0C84B918062E5840E34AEA7F4A16CD", hash_generated_method = "99208C30F2B017898CF9288DDB58DC16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "CE0C84B918062E5840E34AEA7F4A16CD", hash_generated_method = "224491AA50D9B776DA77A6BABC5E6146")
     public boolean eglGetConfigAttrib(EGLDisplay display, EGLConfig config, int attribute, int[] value) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308262515 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308262515;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105741969 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105741969;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.144 -0400", hash_original_method = "1FF43B35756785946FBC969447AE4429", hash_generated_method = "701B7AA4EA216BE88A7326A1FC6897F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "1FF43B35756785946FBC969447AE4429", hash_generated_method = "65F2B89865BCFC3373119699769EBC32")
     public boolean eglGetConfigs(EGLDisplay display, EGLConfig[] configs, int config_size, int[] num_config) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_282795399 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_282795399;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380875338 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_380875338;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.148 -0400", hash_original_method = "30167F0B844356CC78AEA2C709085F0A", hash_generated_method = "9468FF4537EC01DC4802C0EB640A4CDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "30167F0B844356CC78AEA2C709085F0A", hash_generated_method = "BB059EE6F2BD6CF44962E6F7A4368801")
     public int eglGetError() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570499221 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570499221;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411198359 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411198359;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.157 -0400", hash_original_method = "F2C45513A57BFF3B5C76E0152AB1D6FE", hash_generated_method = "01CF03F4E8B07860F5ECB55A54DC6F8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "F2C45513A57BFF3B5C76E0152AB1D6FE", hash_generated_method = "B994F28195F5D730364640D4071ED1EF")
     public boolean eglDestroyContext(EGLDisplay display, EGLContext context) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1547952075 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1547952075;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229939847 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_229939847;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.165 -0400", hash_original_method = "F8BE74B02C97D5EFE0B64C835DE94243", hash_generated_method = "1D1810C992D07292117944C744A3C03C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "F8BE74B02C97D5EFE0B64C835DE94243", hash_generated_method = "68C03229CED5FFB6FFE103E44883537E")
     public boolean eglDestroySurface(EGLDisplay display, EGLSurface surface) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2062348233 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2062348233;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072506081 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2072506081;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.166 -0400", hash_original_method = "D0A5BC4F7F6AC39FDE4C2E9D6BB5947A", hash_generated_method = "CAA3E2A34B16D48760DDE0287719EA3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "D0A5BC4F7F6AC39FDE4C2E9D6BB5947A", hash_generated_method = "D5FCA466ACE9FF219DE3B6AB746DBAB7")
     public boolean eglMakeCurrent(EGLDisplay display, EGLSurface draw, EGLSurface read, EGLContext context) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1699196056 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1699196056;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1635027542 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1635027542;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.166 -0400", hash_original_method = "7F0F6E22A72F3EFD03B53C72B8A334B5", hash_generated_method = "FD75A226178BC0A876B19864D0D93C7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "7F0F6E22A72F3EFD03B53C72B8A334B5", hash_generated_method = "FD75A226178BC0A876B19864D0D93C7A")
     public String eglQueryString(EGLDisplay display, int name) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.166 -0400", hash_original_method = "3CBB90A352CD62A4CE70C5B74A91066B", hash_generated_method = "C0105590E7EB09CCC05678DEEE388723")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "3CBB90A352CD62A4CE70C5B74A91066B", hash_generated_method = "8AD02DFF166F078243356BA79D8C89FC")
     public boolean eglSwapBuffers(EGLDisplay display, EGLSurface surface) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251791204 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_251791204;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695774213 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695774213;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.170 -0400", hash_original_method = "76CDC4A068B49052D1DE694B54AD997D", hash_generated_method = "8209A31953549DB259D239A9F133AB62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "76CDC4A068B49052D1DE694B54AD997D", hash_generated_method = "57043AC130FE20E9FF34DA6F8DCCCCAE")
     public boolean eglTerminate(EGLDisplay display) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960311364 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_960311364;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801888869 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801888869;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.171 -0400", hash_original_method = "4BC9AB9F0FAFDEDE82B7BBC20123D960", hash_generated_method = "CA07ECCAC075C869799A83820E420F82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "4BC9AB9F0FAFDEDE82B7BBC20123D960", hash_generated_method = "70D9E0851C486D0AD99AAC5926D7FB0F")
     public boolean eglCopyBuffers(EGLDisplay display, EGLSurface surface, Object native_pixmap) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_245076639 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_245076639;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1731790315 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1731790315;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.171 -0400", hash_original_method = "CC5C6C40253D90C1249B907D63B6D41E", hash_generated_method = "E3E8431C924719D8F53B9AFC62132D32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "CC5C6C40253D90C1249B907D63B6D41E", hash_generated_method = "1B5BEDDC05C3786A9666985A04B776AC")
     public boolean eglWaitGL() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18895054 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_18895054;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1811915031 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1811915031;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.171 -0400", hash_original_method = "65BB1CF445260F062394F987EBFCAA01", hash_generated_method = "12D741AD50BB321718A1710B5D59482C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.389 -0400", hash_original_method = "65BB1CF445260F062394F987EBFCAA01", hash_generated_method = "CD4B0B5C872750A998A142257C3E527F")
     public boolean eglWaitNative(int engine, Object bindTarget) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057083201 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057083201;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1952974093 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1952974093;
     }
 
     
-        public static int getInitCount(EGLDisplay display) {
-        return DSUtils.UNKNOWN_INT;
+    public static int getInitCount(EGLDisplay display) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.172 -0400", hash_original_method = "CAD561FB9C34D7001DB982C1B864CD0D", hash_generated_method = "B1D69BB068A3DF41BFB3382A376676DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.390 -0400", hash_original_method = "CAD561FB9C34D7001DB982C1B864CD0D", hash_generated_method = "4642949BA7694EFB30720E0B52DED01D")
     public EGLContext eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext share_context, int[] attrib_list) {
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1331069035 = null; //Variable for return #1
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1551533624 = null; //Variable for return #2
-        int eglContextId;
-        eglContextId = _eglCreateContext(display, config, share_context, attrib_list);
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_2066146964 = null; //Variable for return #1
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1518076539 = null; //Variable for return #2
+        int eglContextId = _eglCreateContext(display, config, share_context, attrib_list);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1331069035 = EGL10.EGL_NO_CONTEXT;
+            varB4EAC82CA7396A68D541C85D26508E83_2066146964 = EGL10.EGL_NO_CONTEXT;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1551533624 = new EGLContextImpl( eglContextId );
+        varB4EAC82CA7396A68D541C85D26508E83_1518076539 = new EGLContextImpl( eglContextId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(share_context.getTaint());
         addTaint(attrib_list[0]);
-        EGLContext varA7E53CE21691AB073D9660D615818899_1013382712; //Final return value
+        EGLContext varA7E53CE21691AB073D9660D615818899_519194204; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1013382712 = varB4EAC82CA7396A68D541C85D26508E83_1331069035;
+                varA7E53CE21691AB073D9660D615818899_519194204 = varB4EAC82CA7396A68D541C85D26508E83_2066146964;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1013382712 = varB4EAC82CA7396A68D541C85D26508E83_1551533624;
+                varA7E53CE21691AB073D9660D615818899_519194204 = varB4EAC82CA7396A68D541C85D26508E83_1518076539;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1013382712.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1013382712;
+        varA7E53CE21691AB073D9660D615818899_519194204.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_519194204;
         // ---------- Original Method ----------
         //int eglContextId = _eglCreateContext(display, config, share_context, attrib_list);
         //if (eglContextId == 0) {
@@ -188,30 +188,29 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.173 -0400", hash_original_method = "E59A00AD2A74A21C0F4005F77A95ED7D", hash_generated_method = "76BF04354D3045493502F77BD7DA3493")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.391 -0400", hash_original_method = "E59A00AD2A74A21C0F4005F77A95ED7D", hash_generated_method = "9C1AB63C58CD3A8C9ED15C9F6EFF6BC3")
     public EGLSurface eglCreatePbufferSurface(EGLDisplay display, EGLConfig config, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1274561087 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_2001317942 = null; //Variable for return #2
-        int eglSurfaceId;
-        eglSurfaceId = _eglCreatePbufferSurface(display, config, attrib_list);
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_208735326 = null; //Variable for return #1
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_740510547 = null; //Variable for return #2
+        int eglSurfaceId = _eglCreatePbufferSurface(display, config, attrib_list);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1274561087 = EGL10.EGL_NO_SURFACE;
+            varB4EAC82CA7396A68D541C85D26508E83_208735326 = EGL10.EGL_NO_SURFACE;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2001317942 = new EGLSurfaceImpl( eglSurfaceId );
+        varB4EAC82CA7396A68D541C85D26508E83_740510547 = new EGLSurfaceImpl( eglSurfaceId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_721867913; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_1324474817; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_721867913 = varB4EAC82CA7396A68D541C85D26508E83_1274561087;
+                varA7E53CE21691AB073D9660D615818899_1324474817 = varB4EAC82CA7396A68D541C85D26508E83_208735326;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_721867913 = varB4EAC82CA7396A68D541C85D26508E83_2001317942;
+                varA7E53CE21691AB073D9660D615818899_1324474817 = varB4EAC82CA7396A68D541C85D26508E83_740510547;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_721867913.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_721867913;
+        varA7E53CE21691AB073D9660D615818899_1324474817.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1324474817;
         // ---------- Original Method ----------
         //int eglSurfaceId = _eglCreatePbufferSurface(display, config, attrib_list);
         //if (eglSurfaceId == 0) {
@@ -221,32 +220,31 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.180 -0400", hash_original_method = "1913DE6E1812314106CFABA8D0690133", hash_generated_method = "0B53AD467D85C8CEFB94B30938EFD28C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.392 -0400", hash_original_method = "1913DE6E1812314106CFABA8D0690133", hash_generated_method = "340586A1878B3D10B04E55C0B46B540E")
     public EGLSurface eglCreatePixmapSurface(EGLDisplay display, EGLConfig config, Object native_pixmap, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_2071061163 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1480859317 = null; //Variable for return #2
-        EGLSurfaceImpl sur;
-        sur = new EGLSurfaceImpl();
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1380947791 = null; //Variable for return #1
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1436403230 = null; //Variable for return #2
+        EGLSurfaceImpl sur = new EGLSurfaceImpl();
         _eglCreatePixmapSurface(sur, display, config, native_pixmap, attrib_list);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2071061163 = EGL10.EGL_NO_SURFACE;
+            varB4EAC82CA7396A68D541C85D26508E83_1380947791 = EGL10.EGL_NO_SURFACE;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1480859317 = sur;
+        varB4EAC82CA7396A68D541C85D26508E83_1436403230 = sur;
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(native_pixmap.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_1009327543; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_924826853; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1009327543 = varB4EAC82CA7396A68D541C85D26508E83_2071061163;
+                varA7E53CE21691AB073D9660D615818899_924826853 = varB4EAC82CA7396A68D541C85D26508E83_1380947791;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1009327543 = varB4EAC82CA7396A68D541C85D26508E83_1480859317;
+                varA7E53CE21691AB073D9660D615818899_924826853 = varB4EAC82CA7396A68D541C85D26508E83_1436403230;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1009327543.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1009327543;
+        varA7E53CE21691AB073D9660D615818899_924826853.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_924826853;
         // ---------- Original Method ----------
         //EGLSurfaceImpl sur = new EGLSurfaceImpl();
         //_eglCreatePixmapSurface(sur, display, config, native_pixmap, attrib_list);
@@ -257,20 +255,17 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.181 -0400", hash_original_method = "A3C23A2D0F372302CCCB5BF8EDDCD71A", hash_generated_method = "D8437B206C7E08CDF5582BF4D3AE6B80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.394 -0400", hash_original_method = "A3C23A2D0F372302CCCB5BF8EDDCD71A", hash_generated_method = "0AC3D8C0DD57B4B12D712AFAB11961BB")
     public EGLSurface eglCreateWindowSurface(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1501910527 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_714275962 = null; //Variable for return #2
-        Surface sur;
-        sur = null;
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1906463715 = null; //Variable for return #1
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1384160120 = null; //Variable for return #2
+        Surface sur = null;
         {
-            SurfaceView surfaceView;
-            surfaceView = (SurfaceView)native_window;
+            SurfaceView surfaceView = (SurfaceView)native_window;
             sur = surfaceView.getHolder().getSurface();
         } //End block
         {
-            SurfaceHolder holder;
-            holder = (SurfaceHolder)native_window;
+            SurfaceHolder holder = (SurfaceHolder)native_window;
             sur = holder.getSurface();
         } //End block
         int eglSurfaceId;
@@ -288,52 +283,51 @@ public class EGLImpl implements EGL10 {
                 "this will be fixed later.");
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1501910527 = EGL10.EGL_NO_SURFACE;
+            varB4EAC82CA7396A68D541C85D26508E83_1906463715 = EGL10.EGL_NO_SURFACE;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_714275962 = new EGLSurfaceImpl( eglSurfaceId );
+        varB4EAC82CA7396A68D541C85D26508E83_1384160120 = new EGLSurfaceImpl( eglSurfaceId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(native_window.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_555693878; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_1583245670; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_555693878 = varB4EAC82CA7396A68D541C85D26508E83_1501910527;
+                varA7E53CE21691AB073D9660D615818899_1583245670 = varB4EAC82CA7396A68D541C85D26508E83_1906463715;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_555693878 = varB4EAC82CA7396A68D541C85D26508E83_714275962;
+                varA7E53CE21691AB073D9660D615818899_1583245670 = varB4EAC82CA7396A68D541C85D26508E83_1384160120;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_555693878.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_555693878;
+        varA7E53CE21691AB073D9660D615818899_1583245670.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1583245670;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.182 -0400", hash_original_method = "BEC2EA85C18256200276555D8D849688", hash_generated_method = "E2830283E5881F4D4CA650B0AA41880A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.395 -0400", hash_original_method = "BEC2EA85C18256200276555D8D849688", hash_generated_method = "387EF7F0D5381FC08BD585F6E04796E4")
     public synchronized EGLDisplay eglGetDisplay(Object native_display) {
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_379114035 = null; //Variable for return #1
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1002081394 = null; //Variable for return #2
-        int value;
-        value = _eglGetDisplay(native_display);
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1104650714 = null; //Variable for return #1
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1107209266 = null; //Variable for return #2
+        int value = _eglGetDisplay(native_display);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_379114035 = EGL10.EGL_NO_DISPLAY;
+            varB4EAC82CA7396A68D541C85D26508E83_1104650714 = EGL10.EGL_NO_DISPLAY;
         } //End block
         mDisplay = new EGLDisplayImpl(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1002081394 = mDisplay;
+        varB4EAC82CA7396A68D541C85D26508E83_1107209266 = mDisplay;
         addTaint(native_display.getTaint());
-        EGLDisplay varA7E53CE21691AB073D9660D615818899_388557704; //Final return value
+        EGLDisplay varA7E53CE21691AB073D9660D615818899_1884758373; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_388557704 = varB4EAC82CA7396A68D541C85D26508E83_379114035;
+                varA7E53CE21691AB073D9660D615818899_1884758373 = varB4EAC82CA7396A68D541C85D26508E83_1104650714;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_388557704 = varB4EAC82CA7396A68D541C85D26508E83_1002081394;
+                varA7E53CE21691AB073D9660D615818899_1884758373 = varB4EAC82CA7396A68D541C85D26508E83_1107209266;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_388557704.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_388557704;
+        varA7E53CE21691AB073D9660D615818899_1884758373.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1884758373;
         // ---------- Original Method ----------
         //int value = _eglGetDisplay(native_display);
         //if (value == 0) {
@@ -345,28 +339,27 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.195 -0400", hash_original_method = "36FE38451D664CBAEEF58B0CA2F2C184", hash_generated_method = "C24C9A948B7B3B19E1F80A3E5CC12050")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.396 -0400", hash_original_method = "36FE38451D664CBAEEF58B0CA2F2C184", hash_generated_method = "AC3DDCC977925B14971A607286CC064A")
     public synchronized EGLContext eglGetCurrentContext() {
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_38155001 = null; //Variable for return #1
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_380725039 = null; //Variable for return #2
-        int value;
-        value = _eglGetCurrentContext();
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_663094778 = null; //Variable for return #1
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1635427122 = null; //Variable for return #2
+        int value = _eglGetCurrentContext();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_38155001 = EGL10.EGL_NO_CONTEXT;
+            varB4EAC82CA7396A68D541C85D26508E83_663094778 = EGL10.EGL_NO_CONTEXT;
         } //End block
         mContext = new EGLContextImpl(value);
-        varB4EAC82CA7396A68D541C85D26508E83_380725039 = mContext;
-        EGLContext varA7E53CE21691AB073D9660D615818899_298678106; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1635427122 = mContext;
+        EGLContext varA7E53CE21691AB073D9660D615818899_1758890619; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_298678106 = varB4EAC82CA7396A68D541C85D26508E83_38155001;
+                varA7E53CE21691AB073D9660D615818899_1758890619 = varB4EAC82CA7396A68D541C85D26508E83_663094778;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_298678106 = varB4EAC82CA7396A68D541C85D26508E83_380725039;
+                varA7E53CE21691AB073D9660D615818899_1758890619 = varB4EAC82CA7396A68D541C85D26508E83_1635427122;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_298678106.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_298678106;
+        varA7E53CE21691AB073D9660D615818899_1758890619.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1758890619;
         // ---------- Original Method ----------
         //int value = _eglGetCurrentContext();
         //if (value == 0) {
@@ -378,28 +371,27 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.196 -0400", hash_original_method = "2AD52C4EA481E23FFE9D610E551D647C", hash_generated_method = "77F721B37D7D852004B6673246E094E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.397 -0400", hash_original_method = "2AD52C4EA481E23FFE9D610E551D647C", hash_generated_method = "68208ED853F739A52DF1330CCFDB5C04")
     public synchronized EGLDisplay eglGetCurrentDisplay() {
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_352273452 = null; //Variable for return #1
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1222505795 = null; //Variable for return #2
-        int value;
-        value = _eglGetCurrentDisplay();
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_959751300 = null; //Variable for return #1
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1357428348 = null; //Variable for return #2
+        int value = _eglGetCurrentDisplay();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_352273452 = EGL10.EGL_NO_DISPLAY;
+            varB4EAC82CA7396A68D541C85D26508E83_959751300 = EGL10.EGL_NO_DISPLAY;
         } //End block
         mDisplay = new EGLDisplayImpl(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1222505795 = mDisplay;
-        EGLDisplay varA7E53CE21691AB073D9660D615818899_829730835; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1357428348 = mDisplay;
+        EGLDisplay varA7E53CE21691AB073D9660D615818899_51644405; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_829730835 = varB4EAC82CA7396A68D541C85D26508E83_352273452;
+                varA7E53CE21691AB073D9660D615818899_51644405 = varB4EAC82CA7396A68D541C85D26508E83_959751300;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_829730835 = varB4EAC82CA7396A68D541C85D26508E83_1222505795;
+                varA7E53CE21691AB073D9660D615818899_51644405 = varB4EAC82CA7396A68D541C85D26508E83_1357428348;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_829730835.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_829730835;
+        varA7E53CE21691AB073D9660D615818899_51644405.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_51644405;
         // ---------- Original Method ----------
         //int value = _eglGetCurrentDisplay();
         //if (value == 0) {
@@ -411,29 +403,28 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.197 -0400", hash_original_method = "1056D87FF6AF8A6633AE7A0382D42E2B", hash_generated_method = "DC36900FC728335F4A82AEAA8F329A85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.397 -0400", hash_original_method = "1056D87FF6AF8A6633AE7A0382D42E2B", hash_generated_method = "2FD5493BFD9AD25EA2B30B4B69ED0874")
     public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_321792421 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1994153405 = null; //Variable for return #2
-        int value;
-        value = _eglGetCurrentSurface(readdraw);
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1649067813 = null; //Variable for return #1
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_345424726 = null; //Variable for return #2
+        int value = _eglGetCurrentSurface(readdraw);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_321792421 = EGL10.EGL_NO_SURFACE;
+            varB4EAC82CA7396A68D541C85D26508E83_1649067813 = EGL10.EGL_NO_SURFACE;
         } //End block
         mSurface = new EGLSurfaceImpl(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1994153405 = mSurface;
+        varB4EAC82CA7396A68D541C85D26508E83_345424726 = mSurface;
         addTaint(readdraw);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_189480552; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_36656572; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_189480552 = varB4EAC82CA7396A68D541C85D26508E83_321792421;
+                varA7E53CE21691AB073D9660D615818899_36656572 = varB4EAC82CA7396A68D541C85D26508E83_1649067813;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_189480552 = varB4EAC82CA7396A68D541C85D26508E83_1994153405;
+                varA7E53CE21691AB073D9660D615818899_36656572 = varB4EAC82CA7396A68D541C85D26508E83_345424726;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_189480552.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_189480552;
+        varA7E53CE21691AB073D9660D615818899_36656572.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_36656572;
         // ---------- Original Method ----------
         //int value = _eglGetCurrentSurface(readdraw);
         //if (value == 0) {
@@ -445,68 +436,68 @@ public class EGLImpl implements EGL10 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.197 -0400", hash_original_method = "00A9769D3FCB2BCA752959A2156960BA", hash_generated_method = "244F90B41948CA1F495A88E482FD1FE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "00A9769D3FCB2BCA752959A2156960BA", hash_generated_method = "05FBD9B00C27855220ED3588BDD28C98")
     private int _eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext share_context, int[] attrib_list) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026577504 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026577504;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885766922 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885766922;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.197 -0400", hash_original_method = "9C66F8DAF2CF1DF35D1777997045841F", hash_generated_method = "81A7F373588266A91B8040D13775BFDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "9C66F8DAF2CF1DF35D1777997045841F", hash_generated_method = "48EA57098ED674FC9FD22E702DC6F910")
     private int _eglCreatePbufferSurface(EGLDisplay display, EGLConfig config, int[] attrib_list) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695900167 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695900167;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480476591 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480476591;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.197 -0400", hash_original_method = "37A0D40F82301EFE54D93A3E184BD2AE", hash_generated_method = "67B71D5B2B8EA12F14EA13A7D4D22EC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.398 -0400", hash_original_method = "37A0D40F82301EFE54D93A3E184BD2AE", hash_generated_method = "67B71D5B2B8EA12F14EA13A7D4D22EC8")
     private void _eglCreatePixmapSurface(EGLSurface sur, EGLDisplay display, EGLConfig config, Object native_pixmap, int[] attrib_list) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.197 -0400", hash_original_method = "73053A5CE6D69977C0A5A55B454424E0", hash_generated_method = "D3E3D55D3F573A4CBB62CFA4B0D31A34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "73053A5CE6D69977C0A5A55B454424E0", hash_generated_method = "8476AF037716767B08B91BD3F4726D80")
     private int _eglCreateWindowSurface(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_620531608 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_620531608;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851951462 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851951462;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.198 -0400", hash_original_method = "C683AABBDC194C692A1DD6C73D5E2B96", hash_generated_method = "9B6E319610AABFED0B68A2BF41E5E67A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "C683AABBDC194C692A1DD6C73D5E2B96", hash_generated_method = "2A809D27404EE88110441E01C2A5B5B6")
     private int _eglCreateWindowSurfaceTexture(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695188353 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695188353;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241517995 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241517995;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.198 -0400", hash_original_method = "E8D546530FFFC5C2FC6E86FFB85AACEC", hash_generated_method = "8730731485724C0853921599C5A350D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.399 -0400", hash_original_method = "E8D546530FFFC5C2FC6E86FFB85AACEC", hash_generated_method = "A85227FF1019C42593EB3E398860336C")
     private int _eglGetDisplay(Object native_display) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724537452 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724537452;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800272887 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800272887;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.198 -0400", hash_original_method = "37AAAAC75A3E4652292E435C97659047", hash_generated_method = "CB07ACA206C702AC71C6D52941DB7A88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "37AAAAC75A3E4652292E435C97659047", hash_generated_method = "FA44BCDADE6564FB8DCDFE1C7427C607")
     private int _eglGetCurrentContext() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050666198 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050666198;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552301368 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552301368;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.198 -0400", hash_original_method = "AF8954095CE356BE495ED3F59D7027C3", hash_generated_method = "F85C2E1A3F7FD639694A7A733277BE6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "AF8954095CE356BE495ED3F59D7027C3", hash_generated_method = "2DEA0616F04F1CBAB2AFB6D28FDE10EA")
     private int _eglGetCurrentDisplay() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019517786 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019517786;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619656359 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619656359;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.209 -0400", hash_original_method = "9F7D143F548ED01AA850BEE267C7749A", hash_generated_method = "7B2997522DBA48435FA6BDC08BEEA402")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.400 -0400", hash_original_method = "9F7D143F548ED01AA850BEE267C7749A", hash_generated_method = "1302405BE8B110457193D0BFC295B5F0")
     private int _eglGetCurrentSurface(int readdraw) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644406770 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644406770;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_417553124 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_417553124;
     }
 
     
-        private static void _nativeClassInit() {
+    private static void _nativeClassInit() {
     }
 
     

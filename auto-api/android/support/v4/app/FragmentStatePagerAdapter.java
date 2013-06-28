@@ -16,23 +16,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public abstract class FragmentStatePagerAdapter extends PagerAdapter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.681 -0400", hash_original_field = "7D2A9E7103D695106505452E5AB8F67C", hash_generated_field = "F8BD8E8005099844A113591459546070")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_field = "7D2A9E7103D695106505452E5AB8F67C", hash_generated_field = "F8BD8E8005099844A113591459546070")
 
     private FragmentManager mFragmentManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.681 -0400", hash_original_field = "F059B80392FC866852597EAF19CC7B60", hash_generated_field = "45681C0640ABED8BB32E7E47A23478AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_field = "F059B80392FC866852597EAF19CC7B60", hash_generated_field = "45681C0640ABED8BB32E7E47A23478AF")
 
     private FragmentTransaction mCurTransaction = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.681 -0400", hash_original_field = "523EF184A1F0C6BCE0541D0D0C707AFE", hash_generated_field = "CDC8F8852D870F8FEA0C86CD6810CCC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_field = "523EF184A1F0C6BCE0541D0D0C707AFE", hash_generated_field = "CDC8F8852D870F8FEA0C86CD6810CCC2")
 
     private ArrayList<Fragment.SavedState> mSavedState = new ArrayList<Fragment.SavedState>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.681 -0400", hash_original_field = "43D310D7FF156A0E4034AA33B303A13E", hash_generated_field = "163196A7E9407ED0942AC9B3574F16B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_field = "43D310D7FF156A0E4034AA33B303A13E", hash_generated_field = "163196A7E9407ED0942AC9B3574F16B2")
 
     private ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.681 -0400", hash_original_field = "49FB18B1876842494DD756909F545BE4", hash_generated_field = "3FD1F349465E20607A1ACB2506873721")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_field = "49FB18B1876842494DD756909F545BE4", hash_generated_field = "3FD1F349465E20607A1ACB2506873721")
 
     private Fragment mCurrentPrimaryItem = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.691 -0400", hash_original_method = "EE48EE9088057B7790D43246967DC373", hash_generated_method = "53CD49E0865EB681A99E124A06DA9CE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.994 -0400", hash_original_method = "EE48EE9088057B7790D43246967DC373", hash_generated_method = "53CD49E0865EB681A99E124A06DA9CE4")
     public  FragmentStatePagerAdapter(FragmentManager fm) {
         mFragmentManager = fm;
         // ---------- Original Method ----------
@@ -43,7 +43,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     public abstract Fragment getItem(int position);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.692 -0400", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "369CD737611E25F82302A46324A3B366")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.996 -0400", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "369CD737611E25F82302A46324A3B366")
     @Override
     public void startUpdate(ViewGroup container) {
         addTaint(container.getTaint());
@@ -51,38 +51,35 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.693 -0400", hash_original_method = "A9E8B65E23BADC9CC95581215460751D", hash_generated_method = "EC580903E5EB1A91F76595F0F4C44D34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.997 -0400", hash_original_method = "A9E8B65E23BADC9CC95581215460751D", hash_generated_method = "86271097C2F40011AFDF28EB83C6CE40")
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_797428415 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1476635618 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1747532395 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1036773276 = null; //Variable for return #2
         {
-            boolean varB4074D34C1025AA391EBC85C09248B83_806702553 = (mFragments.size() > position);
+            boolean varB4074D34C1025AA391EBC85C09248B83_1650582219 = (mFragments.size() > position);
             {
-                Fragment f;
-                f = mFragments.get(position);
+                Fragment f = mFragments.get(position);
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_797428415 = f;
+                    varB4EAC82CA7396A68D541C85D26508E83_1747532395 = f;
                 } //End block
             } //End block
         } //End collapsed parenthetic
         {
             mCurTransaction = mFragmentManager.beginTransaction();
         } //End block
-        Fragment fragment;
-        fragment = getItem(position);
+        Fragment fragment = getItem(position);
         {
-            boolean var4AE0823620EE80F5CD6D886BCFC47C41_2080744381 = (mSavedState.size() > position);
+            boolean var4AE0823620EE80F5CD6D886BCFC47C41_187589104 = (mSavedState.size() > position);
             {
-                Fragment.SavedState fss;
-                fss = mSavedState.get(position);
+                Fragment.SavedState fss = mSavedState.get(position);
                 {
                     fragment.setInitialSavedState(fss);
                 } //End block
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var215DA5D801599CA7F5B6FA6DBC68F8A6_11220094 = (mFragments.size() <= position);
+            boolean var215DA5D801599CA7F5B6FA6DBC68F8A6_1977347476 = (mFragments.size() <= position);
             {
                 mFragments.add(null);
             } //End block
@@ -91,35 +88,34 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
         fragment.setUserVisibleHint(false);
         mFragments.set(position, fragment);
         mCurTransaction.add(container.getId(), fragment);
-        varB4EAC82CA7396A68D541C85D26508E83_1476635618 = fragment;
+        varB4EAC82CA7396A68D541C85D26508E83_1036773276 = fragment;
         addTaint(container.getTaint());
         addTaint(position);
-        Object varA7E53CE21691AB073D9660D615818899_1917413248; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_611547595; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1917413248 = varB4EAC82CA7396A68D541C85D26508E83_797428415;
+                varA7E53CE21691AB073D9660D615818899_611547595 = varB4EAC82CA7396A68D541C85D26508E83_1747532395;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1917413248 = varB4EAC82CA7396A68D541C85D26508E83_1476635618;
+                varA7E53CE21691AB073D9660D615818899_611547595 = varB4EAC82CA7396A68D541C85D26508E83_1036773276;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1917413248.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1917413248;
+        varA7E53CE21691AB073D9660D615818899_611547595.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_611547595;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.712 -0400", hash_original_method = "755EB6CA7B109EC556DEC84EC15F7654", hash_generated_method = "FE32798ACD5D96EFE0BC403AFA08A97B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.998 -0400", hash_original_method = "755EB6CA7B109EC556DEC84EC15F7654", hash_generated_method = "269FAD242FBC273D21380D188DBC6D9C")
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        Fragment fragment;
-        fragment = (Fragment)object;
+        Fragment fragment = (Fragment)object;
         {
             mCurTransaction = mFragmentManager.beginTransaction();
         } //End block
         {
-            boolean varC2FAF9BB13565371CBC7E749D60BE815_152262315 = (mSavedState.size() <= position);
+            boolean varC2FAF9BB13565371CBC7E749D60BE815_1409992847 = (mSavedState.size() <= position);
             {
                 mSavedState.add(null);
             } //End block
@@ -146,11 +142,10 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.715 -0400", hash_original_method = "C523B4C098494E2FCA3311FDB475454B", hash_generated_method = "44818FB3AD150694500DADC328AABDB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.998 -0400", hash_original_method = "C523B4C098494E2FCA3311FDB475454B", hash_generated_method = "C20525D3EEA39CC49C821323CEC33BAF")
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
-        Fragment fragment;
-        fragment = (Fragment)object;
+        Fragment fragment = (Fragment)object;
         {
             {
                 mCurrentPrimaryItem.setMenuVisibility(false);
@@ -181,7 +176,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.716 -0400", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "15FE14EC160C5F3BA84D03661684293C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.999 -0400", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "15FE14EC160C5F3BA84D03661684293C")
     @Override
     public void finishUpdate(ViewGroup container) {
         {
@@ -199,55 +194,50 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.717 -0400", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "01B05D3E812E68D8CA0D485D5612EEB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.999 -0400", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "1A876384CD8B4FFA6FA638D62A1A938C")
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        boolean var779CA2DF34F5491A810C0B90DD7A88C3_171501170 = (((Fragment)object).getView() == view);
+        boolean var779CA2DF34F5491A810C0B90DD7A88C3_894064159 = (((Fragment)object).getView() == view);
         addTaint(view.getTaint());
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595339353 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595339353;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1708823762 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1708823762;
         // ---------- Original Method ----------
         //return ((Fragment)object).getView() == view;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:32.718 -0400", hash_original_method = "B988CD8342A7322440FF2844127CCD46", hash_generated_method = "CD301B53B9949FF7662BA54B676B0873")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.000 -0400", hash_original_method = "B988CD8342A7322440FF2844127CCD46", hash_generated_method = "DB8D844D014E580487D9AD2F2895C222")
     @Override
     public Parcelable saveState() {
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_403987431 = null; //Variable for return #1
-        Bundle state;
-        state = null;
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_971178879 = null; //Variable for return #1
+        Bundle state = null;
         {
-            boolean varA9184B00060830F15C86237890F5EC79_1645268394 = (mSavedState.size() > 0);
+            boolean varA9184B00060830F15C86237890F5EC79_1069373565 = (mSavedState.size() > 0);
             {
                 state = new Bundle();
-                Fragment.SavedState[] fss;
-                fss = new Fragment.SavedState[mSavedState.size()];
+                Fragment.SavedState[] fss = new Fragment.SavedState[mSavedState.size()];
                 mSavedState.toArray(fss);
                 state.putParcelableArray("states", fss);
             } //End block
         } //End collapsed parenthetic
         {
-            int i;
-            i = 0;
-            boolean var5F1822902745C364FAFC77FB679FF68F_2059135753 = (i<mFragments.size());
+            int i = 0;
+            boolean var5F1822902745C364FAFC77FB679FF68F_921664459 = (i<mFragments.size());
             {
-                Fragment f;
-                f = mFragments.get(i);
+                Fragment f = mFragments.get(i);
                 {
                     {
                         state = new Bundle();
                     } //End block
-                    String key;
-                    key = "f" + i;
+                    String key = "f" + i;
                     mFragmentManager.putFragment(state, key, f);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_403987431 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_403987431.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_403987431;
+        varB4EAC82CA7396A68D541C85D26508E83_971178879 = state;
+        varB4EAC82CA7396A68D541C85D26508E83_971178879.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_971178879;
         // ---------- Original Method ----------
         //Bundle state = null;
         //if (mSavedState.size() > 0) {
@@ -270,43 +260,35 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.027 -0400", hash_original_method = "25FE30AF757A8A2C6A4CB7F31C78F0A7", hash_generated_method = "F8BD9D0A024EECA9F5373A38AC4F4FBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.007 -0400", hash_original_method = "25FE30AF757A8A2C6A4CB7F31C78F0A7", hash_generated_method = "92D7B83925FDFAE59099216CA180E2CD")
     @Override
     public void restoreState(Parcelable state, ClassLoader loader) {
         {
-            Bundle bundle;
-            bundle = (Bundle)state;
+            Bundle bundle = (Bundle)state;
             bundle.setClassLoader(loader);
-            Parcelable[] fss;
-            fss = bundle.getParcelableArray("states");
+            Parcelable[] fss = bundle.getParcelableArray("states");
             mSavedState.clear();
             mFragments.clear();
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         mSavedState.add((Fragment.SavedState)fss[i]);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            Iterable<String> keys;
-            keys = bundle.keySet();
+            Iterable<String> keys = bundle.keySet();
             {
-                Iterator<String> varD994FB31D100DF03FACE33D44B4081C0_638732679 = (keys).iterator();
-                varD994FB31D100DF03FACE33D44B4081C0_638732679.hasNext();
-                String key = varD994FB31D100DF03FACE33D44B4081C0_638732679.next();
+                String key = keys[0];
                 {
                     {
-                        boolean var438EA0C07332A92EACC3F9E3A9BA678E_269060951 = (key.startsWith("f"));
+                        boolean var438EA0C07332A92EACC3F9E3A9BA678E_57809883 = (key.startsWith("f"));
                         {
-                            int index;
-                            index = Integer.parseInt(key.substring(1));
-                            Fragment f;
-                            f = mFragmentManager.getFragment(bundle, key);
+                            int index = Integer.parseInt(key.substring(1));
+                            Fragment f = mFragmentManager.getFragment(bundle, key);
                             {
                                 {
-                                    boolean var7DCBE80AC930E07F9E5F4B6571152656_538816175 = (mFragments.size() <= index);
+                                    boolean var7DCBE80AC930E07F9E5F4B6571152656_2122021522 = (mFragments.size() <= index);
                                     {
                                         mFragments.add(null);
                                     } //End block
@@ -326,11 +308,11 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.027 -0400", hash_original_field = "71E918188668590487FFB691ECDE7B30", hash_generated_field = "A563E66FBDDA116CACD9EA37D54AC88C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.007 -0400", hash_original_field = "71E918188668590487FFB691ECDE7B30", hash_generated_field = "3D3955276B61BDF25576BE3CF5006FA7")
 
-    private static String TAG = "FragmentStatePagerAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.027 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    private static final String TAG = "FragmentStatePagerAdapter";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.007 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-    private static boolean DEBUG = false;
+    private static final boolean DEBUG = false;
 }
 

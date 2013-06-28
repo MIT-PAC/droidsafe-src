@@ -11,22 +11,21 @@ import javax.sip.header.*;
 
 public class ProxyRequireList extends SIPHeaderList<ProxyRequire> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.265 -0400", hash_original_method = "029C98C6EA119F5ED189F5C1632A9558", hash_generated_method = "2056F217F92BE2216FB0A4CD03CA3055")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.945 -0400", hash_original_method = "029C98C6EA119F5ED189F5C1632A9558", hash_generated_method = "2056F217F92BE2216FB0A4CD03CA3055")
     public  ProxyRequireList() {
         super(ProxyRequire.class, ProxyRequireHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.266 -0400", hash_original_method = "013E28988AF93ED240675D60306569D5", hash_generated_method = "0689103BB852CF8D04291E42E99756C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.946 -0400", hash_original_method = "013E28988AF93ED240675D60306569D5", hash_generated_method = "AFF44889AF68DF95B4362055B7A63981")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_559055913 = null; //Variable for return #1
-        ProxyRequireList retval;
-        retval = new ProxyRequireList();
+        Object varB4EAC82CA7396A68D541C85D26508E83_823797200 = null; //Variable for return #1
+        ProxyRequireList retval = new ProxyRequireList();
         retval.clonehlist(this.hlist);
-        varB4EAC82CA7396A68D541C85D26508E83_559055913 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_559055913.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_559055913;
+        varB4EAC82CA7396A68D541C85D26508E83_823797200 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_823797200.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_823797200;
         // ---------- Original Method ----------
         //ProxyRequireList retval = new ProxyRequireList();
         //retval.clonehlist(this.hlist);
@@ -34,8 +33,8 @@ public class ProxyRequireList extends SIPHeaderList<ProxyRequire> {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.266 -0400", hash_original_field = "1A2A1D3686B95721391BC268C1B09305", hash_generated_field = "07543FE04B893E82F6752132B3145C03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.946 -0400", hash_original_field = "1A2A1D3686B95721391BC268C1B09305", hash_generated_field = "210395FBA80388CA1983FDB080800955")
 
-    private static long serialVersionUID = 5648630649476486042L;
+    private static final long serialVersionUID = 5648630649476486042L;
 }
 

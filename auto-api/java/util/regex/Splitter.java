@@ -12,13 +12,13 @@ import java.util.List;
 
 public class Splitter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.374 -0400", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "4F7ABE410345F930060448FAB205D46B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.695 -0400", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "4F7ABE410345F930060448FAB205D46B")
     private  Splitter() {
         // ---------- Original Method ----------
     }
 
     
-        public static String[] fastSplit(String re, String input, int limit) {
+    public static String[] fastSplit(String re, String input, int limit) {
         int len = re.length();
         if (len == 0) {
             return null;
@@ -48,7 +48,7 @@ public class Splitter {
     }
 
     
-        public static String[] split(Pattern pattern, String re, String input, int limit) {
+    public static String[] split(Pattern pattern, String re, String input, int limit) {
         String[] fastResult = fastSplit(re, input, limit);
         if (fastResult != null) {
             return fastResult;
@@ -68,7 +68,7 @@ public class Splitter {
     }
 
     
-        private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
+    private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
         if (begin < input.length()) {
             list.add(input.substring(begin));
         } else if (limit != 0) { 
@@ -85,8 +85,8 @@ public class Splitter {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.396 -0400", hash_original_field = "0BA7AB9BF46151E8C8BBE62F232D038C", hash_generated_field = "9475A72A0595271F6064605FEA14BE0E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.695 -0400", hash_original_field = "0BA7AB9BF46151E8C8BBE62F232D038C", hash_generated_field = "B2FC8B6E50D0FCFCC52E2829DE0BADB1")
 
-    private static String METACHARACTERS = "\\?*+[](){}^$.|";
+    private static final String METACHARACTERS = "\\?*+[](){}^$.|";
 }
 

@@ -19,23 +19,23 @@ import static java.nio.charset.Charsets.UTF_8;
 import libcore.io.IoUtils;
 
 public abstract class ResourceBundle {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.236 -0400", hash_original_field = "D0E45878043844FFC41AAC437E86B602", hash_generated_field = "EB43973F1559584562CFC00E839EB2BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.617 -0400", hash_original_field = "D0E45878043844FFC41AAC437E86B602", hash_generated_field = "EB43973F1559584562CFC00E839EB2BD")
 
     protected ResourceBundle parent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.236 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.618 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
     private Locale locale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.236 -0400", hash_original_field = "3466618A402CD9627C00D29C4F1E86DD", hash_generated_field = "7B08633B611AECF1A2DAD9D2043C79EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.618 -0400", hash_original_field = "3466618A402CD9627C00D29C4F1E86DD", hash_generated_field = "7B08633B611AECF1A2DAD9D2043C79EB")
 
     private long lastLoadTime = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.237 -0400", hash_original_method = "D851446F8E957DA41A03795AD93701D3", hash_generated_method = "5DB393969C6D50D5978689CA2C066976")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.618 -0400", hash_original_method = "D851446F8E957DA41A03795AD93701D3", hash_generated_method = "5DB393969C6D50D5978689CA2C066976")
     public  ResourceBundle() {
         // ---------- Original Method ----------
     }
 
     
-        public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
+    public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
         ClassLoader classLoader = VMStack.getCallingClassLoader();
         if (classLoader == null) {
             classLoader = getLoader();
@@ -44,7 +44,7 @@ public abstract class ResourceBundle {
     }
 
     
-        public static ResourceBundle getBundle(String bundleName, Locale locale) {
+    public static ResourceBundle getBundle(String bundleName, Locale locale) {
         ClassLoader classLoader = VMStack.getCallingClassLoader();
         if (classLoader == null) {
             classLoader = getLoader();
@@ -53,7 +53,7 @@ public abstract class ResourceBundle {
     }
 
     
-        public static ResourceBundle getBundle(String bundleName, Locale locale,
+    public static ResourceBundle getBundle(String bundleName, Locale locale,
             ClassLoader loader) throws MissingResourceException {
         if (loader == null || bundleName == null) {
             throw new NullPointerException();
@@ -77,24 +77,24 @@ public abstract class ResourceBundle {
     }
 
     
-        private static MissingResourceException missingResourceException(String className, String key) {
+    private static MissingResourceException missingResourceException(String className, String key) {
         String detail = "Can't find resource for bundle '" + className + "', key '" + key + "'";
         throw new MissingResourceException(detail, className, key);
     }
 
     
-        public static ResourceBundle getBundle(String baseName, ResourceBundle.Control control) {
+    public static ResourceBundle getBundle(String baseName, ResourceBundle.Control control) {
         return getBundle(baseName, Locale.getDefault(), getLoader(), control);
     }
 
     
-        public static ResourceBundle getBundle(String baseName,
+    public static ResourceBundle getBundle(String baseName,
             Locale targetLocale, ResourceBundle.Control control) {
         return getBundle(baseName, targetLocale, getLoader(), control);
     }
 
     
-        private static ClassLoader getLoader() {
+    private static ClassLoader getLoader() {
         ClassLoader cl = ResourceBundle.class.getClassLoader();
         if (cl == null) {
             cl = ClassLoader.getSystemClassLoader();
@@ -103,7 +103,7 @@ public abstract class ResourceBundle {
     }
 
     
-        public static ResourceBundle getBundle(String baseName,
+    public static ResourceBundle getBundle(String baseName,
             Locale targetLocale, ClassLoader loader,
             ResourceBundle.Control control) {
         boolean expired = false;
@@ -135,7 +135,7 @@ public abstract class ResourceBundle {
     }
 
     
-        private static ResourceBundle processGetBundle(String baseName,
+    private static ResourceBundle processGetBundle(String baseName,
             Locale targetLocale, ClassLoader loader,
             ResourceBundle.Control control, boolean expired,
             ResourceBundle result) {
@@ -203,35 +203,34 @@ public abstract class ResourceBundle {
     public abstract Enumeration<String> getKeys();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.258 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "7E82FDD9F6A0F207B622B7106B08A87B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.620 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "9A4632412C1B56665F0D4048B962E462")
     public Locale getLocale() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_597024176 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_597024176 = locale;
-        varB4EAC82CA7396A68D541C85D26508E83_597024176.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_597024176;
+        Locale varB4EAC82CA7396A68D541C85D26508E83_1738556197 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1738556197 = locale;
+        varB4EAC82CA7396A68D541C85D26508E83_1738556197.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1738556197;
         // ---------- Original Method ----------
         //return locale;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.260 -0400", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "6DEF310607B7C0780D3A380D0A9FB4FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.621 -0400", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "21A2C307B4544986EE4AA4B0E8113049")
     public final Object getObject(String key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1351825404 = null; //Variable for return #1
-        ResourceBundle last, theParent;
-        theParent = this;
+        Object varB4EAC82CA7396A68D541C85D26508E83_1201033221 = null; //Variable for return #1
+        ResourceBundle last;
+        ResourceBundle theParent = this;
         {
-            Object result;
-            result = theParent.handleGetObject(key);
+            Object result = theParent.handleGetObject(key);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1351825404 = result;
+                varB4EAC82CA7396A68D541C85D26508E83_1201033221 = result;
             } //End block
             last = theParent;
             theParent = theParent.parent;
         } //End block
         if (DroidSafeAndroidRuntime.control) throw missingResourceException(last.getClass().getName(), key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1351825404.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1351825404;
+        varB4EAC82CA7396A68D541C85D26508E83_1201033221.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1201033221;
         // ---------- Original Method ----------
         //ResourceBundle last, theParent = this;
         //do {
@@ -246,31 +245,31 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.260 -0400", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "3A13A560FF6B93D6477085D36766D2B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.622 -0400", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "E63E3D7CFFA309B218E04322F0C843A0")
     public final String getString(String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_158283405 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_158283405 = (String) getObject(key);
+        String varB4EAC82CA7396A68D541C85D26508E83_1932733927 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1932733927 = (String) getObject(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_158283405.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_158283405;
+        varB4EAC82CA7396A68D541C85D26508E83_1932733927.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1932733927;
         // ---------- Original Method ----------
         //return (String) getObject(key);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.261 -0400", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "81411428F374F8D5986A3F348AADCB0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.623 -0400", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "CEE32EF5B2B54E30FEF2333EB0427E23")
     public final String[] getStringArray(String key) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1194698342 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1194698342 = (String[]) getObject(key);
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1173201234 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1173201234 = (String[]) getObject(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1194698342.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1194698342;
+        varB4EAC82CA7396A68D541C85D26508E83_1173201234.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1173201234;
         // ---------- Original Method ----------
         //return (String[]) getObject(key);
     }
 
     
-        private static ResourceBundle handleGetBundle(boolean loadBase, String base, Locale locale,
+    private static ResourceBundle handleGetBundle(boolean loadBase, String base, Locale locale,
             ClassLoader loader) {
         String localeName = locale.toString();
         String bundleName = localeName.isEmpty()
@@ -343,7 +342,7 @@ public abstract class ResourceBundle {
     }
 
     
-        private static Hashtable<String, ResourceBundle> getLoaderCache(Object cacheKey) {
+    private static Hashtable<String, ResourceBundle> getLoaderCache(Object cacheKey) {
         synchronized (cache) {
             Hashtable<String, ResourceBundle> loaderCache = cache.get(cacheKey);
             if (loaderCache == null) {
@@ -358,7 +357,7 @@ public abstract class ResourceBundle {
     protected abstract Object handleGetObject(String key);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.272 -0400", hash_original_method = "D114069C12BFDC5397D50DBECBCF423F", hash_generated_method = "A62ECC3BD9BC4EEE3A10E4238EC03CC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.624 -0400", hash_original_method = "D114069C12BFDC5397D50DBECBCF423F", hash_generated_method = "A62ECC3BD9BC4EEE3A10E4238EC03CC2")
     protected void setParent(ResourceBundle bundle) {
         parent = bundle;
         // ---------- Original Method ----------
@@ -366,7 +365,7 @@ public abstract class ResourceBundle {
     }
 
     
-        private static Locale strip(Locale locale) {
+    private static Locale strip(Locale locale) {
         String language = locale.getLanguage();
         String country = locale.getCountry();
         String variant = locale.getVariant();
@@ -383,7 +382,7 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.273 -0400", hash_original_method = "B4C0A2B69538F3C9760ADE4F445366A0", hash_generated_method = "B437BB1B169BA6A1FAF1F1173446D3B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.625 -0400", hash_original_method = "B4C0A2B69538F3C9760ADE4F445366A0", hash_generated_method = "B437BB1B169BA6A1FAF1F1173446D3B3")
     private void setLocale(Locale locale) {
         this.locale = locale;
         // ---------- Original Method ----------
@@ -391,12 +390,12 @@ public abstract class ResourceBundle {
     }
 
     
-        public static void clearCache() {
+    public static void clearCache() {
         cache.remove(ClassLoader.getSystemClassLoader());
     }
 
     
-        public static void clearCache(ClassLoader loader) {
+    public static void clearCache(ClassLoader loader) {
         if (loader == null) {
             throw new NullPointerException();
         }
@@ -404,15 +403,15 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.279 -0400", hash_original_method = "2C99687E9BDD3B9ED091517A1B0B0A5F", hash_generated_method = "A26003AC90AA810C896A3BA01B6711FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.625 -0400", hash_original_method = "2C99687E9BDD3B9ED091517A1B0B0A5F", hash_generated_method = "9135B4954C46D0549948368BEBD483C6")
     public boolean containsKey(String key) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
-        boolean varC1F1394BBE1C1666EB466B1C1659D67F_798046344 = (keySet().contains(key));
+        boolean varC1F1394BBE1C1666EB466B1C1659D67F_1040520313 = (keySet().contains(key));
         addTaint(key.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278800203 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278800203;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1807067139 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1807067139;
         // ---------- Original Method ----------
         //if (key == null) {
             //throw new NullPointerException();
@@ -421,22 +420,20 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.279 -0400", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "FBD9A301C455ECF0D659E1035E73FFC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.626 -0400", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "640DA5D6D526944321D1343A4007F8C2")
     public Set<String> keySet() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_187322719 = null; //Variable for return #1
-        Set<String> ret;
-        ret = new HashSet<String>();
-        Enumeration<String> keys;
-        keys = getKeys();
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_475290792 = null; //Variable for return #1
+        Set<String> ret = new HashSet<String>();
+        Enumeration<String> keys = getKeys();
         {
-            boolean var92FA05435258CA7C805716F7AD9C73B4_1298736213 = (keys.hasMoreElements());
+            boolean var92FA05435258CA7C805716F7AD9C73B4_1249138732 = (keys.hasMoreElements());
             {
                 ret.add(keys.nextElement());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_187322719 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_187322719.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_187322719;
+        varB4EAC82CA7396A68D541C85D26508E83_475290792 = ret;
+        varB4EAC82CA7396A68D541C85D26508E83_475290792.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_475290792;
         // ---------- Original Method ----------
         //Set<String> ret = new HashSet<String>();
         //Enumeration<String> keys = getKeys();
@@ -447,29 +444,27 @@ public abstract class ResourceBundle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.294 -0400", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "CFCECFAAF8A8D55E18FD3511C73111D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.628 -0400", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "A7508734029470C495BF1F89A6171197")
     protected Set<String> handleKeySet() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1033554232 = null; //Variable for return #1
-        Set<String> set;
-        set = keySet();
-        Set<String> ret;
-        ret = new HashSet<String>();
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_283995607 = null; //Variable for return #1
+        Set<String> set = keySet();
+        Set<String> ret = new HashSet<String>();
         {
-            Iterator<String> var2F95B2C08B227486FC481950E8FAAAD3_326029684 = (set).iterator();
-            var2F95B2C08B227486FC481950E8FAAAD3_326029684.hasNext();
-            String key = var2F95B2C08B227486FC481950E8FAAAD3_326029684.next();
+            Iterator<String> var2F95B2C08B227486FC481950E8FAAAD3_126142453 = (set).iterator();
+            var2F95B2C08B227486FC481950E8FAAAD3_126142453.hasNext();
+            String key = var2F95B2C08B227486FC481950E8FAAAD3_126142453.next();
             {
                 {
-                    boolean var3EACB5F53EB01121F6C3A0A5551029B5_1359291341 = (handleGetObject(key) != null);
+                    boolean var3EACB5F53EB01121F6C3A0A5551029B5_1358741402 = (handleGetObject(key) != null);
                     {
                         ret.add(key);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1033554232 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_1033554232.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1033554232;
+        varB4EAC82CA7396A68D541C85D26508E83_283995607 = ret;
+        varB4EAC82CA7396A68D541C85D26508E83_283995607.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_283995607;
         // ---------- Original Method ----------
         //Set<String> set = keySet();
         //Set<String> ret = new HashSet<String>();
@@ -484,33 +479,33 @@ public abstract class ResourceBundle {
     
     static class MissingBundle extends ResourceBundle {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.294 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.629 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
         public MissingBundle ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.295 -0400", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "3B22158E73B09EF02E4CDAC5AFC08D0C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.629 -0400", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "73B1D44295A401E524F1CD8F1AD588B8")
         @Override
         public Enumeration<String> getKeys() {
-            Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_719540852 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_719540852 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_719540852.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_719540852;
+            Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_683304669 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_683304669 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_683304669.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_683304669;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.296 -0400", hash_original_method = "F3BE912397EA9F5D184546387C802359", hash_generated_method = "808DE3C6B06479C622F81E931BF3F8AE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.630 -0400", hash_original_method = "F3BE912397EA9F5D184546387C802359", hash_generated_method = "7D0B38FEE9DBAE4051407AEEA4BEB34F")
         @Override
         public Object handleGetObject(String name) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_203068417 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_203068417 = null;
+            Object varB4EAC82CA7396A68D541C85D26508E83_1284166791 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1284166791 = null;
             addTaint(name.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_203068417.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_203068417;
+            varB4EAC82CA7396A68D541C85D26508E83_1284166791.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1284166791;
             // ---------- Original Method ----------
             //return null;
         }
@@ -522,7 +517,7 @@ public abstract class ResourceBundle {
     
     private static class NoFallbackControl extends Control {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.297 -0400", hash_original_method = "FB8596E95C5FFB192AB3B86CF874FD9D", hash_generated_method = "074066B24BB275764F86BA5FCA19CC07")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.631 -0400", hash_original_method = "FB8596E95C5FFB192AB3B86CF874FD9D", hash_generated_method = "074066B24BB275764F86BA5FCA19CC07")
         public  NoFallbackControl(String format) {
             listClass = new ArrayList<String>();
             listClass.add(format);
@@ -535,7 +530,7 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.297 -0400", hash_original_method = "EC736F9DA869A1318E5C5EA158F0C9E2", hash_generated_method = "C55FA7F6A2A409F7FCFB5FA7019632EF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.631 -0400", hash_original_method = "EC736F9DA869A1318E5C5EA158F0C9E2", hash_generated_method = "C55FA7F6A2A409F7FCFB5FA7019632EF")
         public  NoFallbackControl(List<String> list) {
             super.format = list;
             addTaint(list.getTaint());
@@ -544,18 +539,18 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.305 -0400", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "B1D713F3BB9C43AE3EF29E8697A289AC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.632 -0400", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "AC1B401EE7A43C9C2C9EFDB06DA478E0")
         @Override
         public Locale getFallbackLocale(String baseName, Locale locale) {
-            Locale varB4EAC82CA7396A68D541C85D26508E83_1077669226 = null; //Variable for return #1
+            Locale varB4EAC82CA7396A68D541C85D26508E83_111745060 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1077669226 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_111745060 = null;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1077669226.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1077669226;
+            varB4EAC82CA7396A68D541C85D26508E83_111745060.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_111745060;
             // ---------- Original Method ----------
             //if (baseName == null || locale == null) {
                 //throw new NullPointerException();
@@ -564,17 +559,17 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.306 -0400", hash_original_field = "F0BE005252D735BA1B008ACFEBCCB6DC", hash_generated_field = "F01E29DC2AF1F2C962B272838404D5DD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.633 -0400", hash_original_field = "F0BE005252D735BA1B008ACFEBCCB6DC", hash_generated_field = "311001FFE9CF90DDC4781726BDC7CC2A")
 
-        static Control NOFALLBACK_FORMAT_PROPERTIES_CONTROL = new NoFallbackControl(
+        static final Control NOFALLBACK_FORMAT_PROPERTIES_CONTROL = new NoFallbackControl(
                 JAVAPROPERTIES);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.306 -0400", hash_original_field = "51B0D5060DC59A690DB1ABEC684DE2DD", hash_generated_field = "AC57768C749CB98DBCAB09ED35E93945")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.633 -0400", hash_original_field = "51B0D5060DC59A690DB1ABEC684DE2DD", hash_generated_field = "477E16589760E3D71EC82A0A4D59108B")
 
-        static Control NOFALLBACK_FORMAT_CLASS_CONTROL = new NoFallbackControl(
+        static final Control NOFALLBACK_FORMAT_CLASS_CONTROL = new NoFallbackControl(
                 JAVACLASS);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.306 -0400", hash_original_field = "12D373EA3CFB9B59F7610021F329A559", hash_generated_field = "1C547BB91F8AC6E9504A1A68218BF81E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.633 -0400", hash_original_field = "12D373EA3CFB9B59F7610021F329A559", hash_generated_field = "58917EB628BB81A37E51203F85E79CF8")
 
-        static Control NOFALLBACK_FORMAT_DEFAULT_CONTROL = new NoFallbackControl(
+        static final Control NOFALLBACK_FORMAT_DEFAULT_CONTROL = new NoFallbackControl(
                 listDefault);
     }
 
@@ -582,7 +577,7 @@ public abstract class ResourceBundle {
     
     private static class SimpleControl extends Control {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.307 -0400", hash_original_method = "3FE57273BBED2EFD79C4104DD304532B", hash_generated_method = "B04E0DA4BDA79C8653C74D4007EA1B71")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.634 -0400", hash_original_method = "3FE57273BBED2EFD79C4104DD304532B", hash_generated_method = "B04E0DA4BDA79C8653C74D4007EA1B71")
         public  SimpleControl(String format) {
             listClass = new ArrayList<String>();
             listClass.add(format);
@@ -600,11 +595,11 @@ public abstract class ResourceBundle {
 
     
     public static class Control {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.307 -0400", hash_original_field = "1DDCB92ADE31C8FBD370001F9B29A7D9", hash_generated_field = "5C4A176E73E3AD8A44C29D1E04A3B849")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.634 -0400", hash_original_field = "1DDCB92ADE31C8FBD370001F9B29A7D9", hash_generated_field = "5C4A176E73E3AD8A44C29D1E04A3B849")
 
         List<String> format;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.308 -0400", hash_original_method = "95C40A3E350A764DF5A1D8A784434E7C", hash_generated_method = "949CF8FAA99C36B6D02001CFF1C3EFE2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.634 -0400", hash_original_method = "95C40A3E350A764DF5A1D8A784434E7C", hash_generated_method = "949CF8FAA99C36B6D02001CFF1C3EFE2")
         protected  Control() {
             listClass = new ArrayList<String>();
             listClass.add(JAVACLASS);
@@ -618,7 +613,7 @@ public abstract class ResourceBundle {
         }
 
         
-                public static Control getControl(List<String> formats) {
+        public static Control getControl(List<String> formats) {
             switch (formats.size()) {
             case 1:
                 if (formats.contains(JAVACLASS)) {
@@ -638,7 +633,7 @@ public abstract class ResourceBundle {
         }
 
         
-                public static Control getNoFallbackControl(List<String> formats) {
+        public static Control getNoFallbackControl(List<String> formats) {
             switch (formats.size()) {
             case 1:
                 if (formats.contains(JAVACLASS)) {
@@ -658,44 +653,40 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.314 -0400", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "FF86B564AE42C1B27028548953C8237B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.636 -0400", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "0D1D1ABDF102E0F090FE9936ED34EA77")
         public List<Locale> getCandidateLocales(String baseName, Locale locale) {
-            List<Locale> varB4EAC82CA7396A68D541C85D26508E83_1195660009 = null; //Variable for return #1
+            List<Locale> varB4EAC82CA7396A68D541C85D26508E83_437142843 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            List<Locale> retList;
-            retList = new ArrayList<Locale>();
-            String language;
-            language = locale.getLanguage();
-            String country;
-            country = locale.getCountry();
-            String variant;
-            variant = locale.getVariant();
+            List<Locale> retList = new ArrayList<Locale>();
+            String language = locale.getLanguage();
+            String country = locale.getCountry();
+            String variant = locale.getVariant();
             {
-                boolean varEC1127D11A1A0019D583D076F527D9CF_1922871201 = (!EMPTY_STRING.equals(variant));
+                boolean varEC1127D11A1A0019D583D076F527D9CF_2069231101 = (!EMPTY_STRING.equals(variant));
                 {
                     retList.add(new Locale(language, country, variant));
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varDEA1B14FA01AF7B442A3DD6CA499F74C_1275528019 = (!EMPTY_STRING.equals(country));
+                boolean varDEA1B14FA01AF7B442A3DD6CA499F74C_1165196512 = (!EMPTY_STRING.equals(country));
                 {
                     retList.add(new Locale(language, country));
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varDCEF02BC51EEAFB5ACD7D89F7C557080_1893860161 = (!EMPTY_STRING.equals(language));
+                boolean varDCEF02BC51EEAFB5ACD7D89F7C557080_598794 = (!EMPTY_STRING.equals(language));
                 {
                     retList.add(new Locale(language));
                 } //End block
             } //End collapsed parenthetic
             retList.add(Locale.ROOT);
-            varB4EAC82CA7396A68D541C85D26508E83_1195660009 = retList;
+            varB4EAC82CA7396A68D541C85D26508E83_437142843 = retList;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1195660009.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1195660009;
+            varB4EAC82CA7396A68D541C85D26508E83_437142843.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_437142843;
             // ---------- Original Method ----------
             //if (baseName == null || locale == null) {
                 //throw new NullPointerException();
@@ -718,16 +709,16 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.319 -0400", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "11E75E11757194252DCE9BEA688968EB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.636 -0400", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "EE4D8B3A27CB2DADFB42BC1415D60CAC")
         public List<String> getFormats(String baseName) {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_101222202 = null; //Variable for return #1
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_1907271248 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_101222202 = format;
+            varB4EAC82CA7396A68D541C85D26508E83_1907271248 = format;
             addTaint(baseName.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_101222202.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_101222202;
+            varB4EAC82CA7396A68D541C85D26508E83_1907271248.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1907271248;
             // ---------- Original Method ----------
             //if (baseName == null) {
                 //throw new NullPointerException();
@@ -736,33 +727,33 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.320 -0400", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "978F2BD420D025AA4B8E942AFF193818")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.637 -0400", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "51D4958E8DEC4475135981345FB2F88D")
         public Locale getFallbackLocale(String baseName, Locale locale) {
-            Locale varB4EAC82CA7396A68D541C85D26508E83_1216196262 = null; //Variable for return #1
-            Locale varB4EAC82CA7396A68D541C85D26508E83_864827898 = null; //Variable for return #2
+            Locale varB4EAC82CA7396A68D541C85D26508E83_2005977983 = null; //Variable for return #1
+            Locale varB4EAC82CA7396A68D541C85D26508E83_1865693614 = null; //Variable for return #2
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
             {
-                boolean varDEF5D6FEDD750F75376A958DD95E60D5_1283074172 = (Locale.getDefault() != locale);
+                boolean varDEF5D6FEDD750F75376A958DD95E60D5_730149004 = (Locale.getDefault() != locale);
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1216196262 = Locale.getDefault();
+                    varB4EAC82CA7396A68D541C85D26508E83_2005977983 = Locale.getDefault();
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_864827898 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1865693614 = null;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            Locale varA7E53CE21691AB073D9660D615818899_1680219582; //Final return value
+            Locale varA7E53CE21691AB073D9660D615818899_1358746106; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1680219582 = varB4EAC82CA7396A68D541C85D26508E83_1216196262;
+                    varA7E53CE21691AB073D9660D615818899_1358746106 = varB4EAC82CA7396A68D541C85D26508E83_2005977983;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1680219582 = varB4EAC82CA7396A68D541C85D26508E83_864827898;
+                    varA7E53CE21691AB073D9660D615818899_1358746106 = varB4EAC82CA7396A68D541C85D26508E83_1865693614;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1680219582.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1680219582;
+            varA7E53CE21691AB073D9660D615818899_1358746106.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1358746106;
             // ---------- Original Method ----------
             //if (baseName == null || locale == null) {
                 //throw new NullPointerException();
@@ -774,29 +765,26 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.331 -0400", hash_original_method = "90658AB613E6A89EDB72A67F02A5F78D", hash_generated_method = "973A2B382B38ED18B39D5365870D2DD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.638 -0400", hash_original_method = "90658AB613E6A89EDB72A67F02A5F78D", hash_generated_method = "B4E5CC5B87FD2B4C447CE5E577FC76A4")
         public ResourceBundle newBundle(String baseName, Locale locale,
                 String format, ClassLoader loader, boolean reload) throws IllegalAccessException, InstantiationException,
                 IOException {
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1191753211 = null; //Variable for return #1
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_111602491 = null; //Variable for return #2
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_380915240 = null; //Variable for return #3
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1031508758 = null; //Variable for return #4
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_295641503 = null; //Variable for return #5
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_847738595 = null; //Variable for return #6
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1627065801 = null; //Variable for return #1
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1773894970 = null; //Variable for return #2
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1030994065 = null; //Variable for return #3
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_32822887 = null; //Variable for return #4
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_592096044 = null; //Variable for return #5
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1054788342 = null; //Variable for return #6
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            String bundleName;
-            bundleName = toBundleName(baseName, locale);
-            ClassLoader clsloader;
-            clsloader = loader;
+            final String bundleName = toBundleName(baseName, locale);
+            final ClassLoader clsloader = loader;
             ResourceBundle ret;
             {
-                boolean var363A8B2CC1CE315300A409E41427D499_257540619 = (format.equals(JAVACLASS));
+                boolean var363A8B2CC1CE315300A409E41427D499_298677578 = (format.equals(JAVACLASS));
                 {
-                    Class<?> cls;
-                    cls = null;
+                    Class<?> cls = null;
                     try 
                     {
                         cls = clsloader.loadClass(bundleName);
@@ -806,31 +794,27 @@ public abstract class ResourceBundle {
                     catch (NoClassDefFoundError e)
                     { }
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1191753211 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_1627065801 = null;
                     } //End block
                     try 
                     {
-                        ResourceBundle bundle;
-                        bundle = (ResourceBundle) cls.newInstance();
+                        ResourceBundle bundle = (ResourceBundle) cls.newInstance();
                         bundle.setLocale(locale);
-                        varB4EAC82CA7396A68D541C85D26508E83_111602491 = bundle;
+                        varB4EAC82CA7396A68D541C85D26508E83_1773894970 = bundle;
                     } //End block
                     catch (NullPointerException e)
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_380915240 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_1030994065 = null;
                     } //End block
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varD6A8253E2C839BC6EC4A2010754A1DCD_783631947 = (format.equals(JAVAPROPERTIES));
+                boolean varD6A8253E2C839BC6EC4A2010754A1DCD_1122598986 = (format.equals(JAVAPROPERTIES));
                 {
-                    InputStream streams;
-                    streams = null;
-                    String resourceName;
-                    resourceName = toResourceName(bundleName, "properties");
+                    InputStream streams = null;
+                    final String resourceName = toResourceName(bundleName, "properties");
                     {
-                        URL url;
-                        url = null;
+                        URL url = null;
                         try 
                         {
                             url = loader.getResource(resourceName);
@@ -838,8 +822,7 @@ public abstract class ResourceBundle {
                         catch (NullPointerException e)
                         { }
                         {
-                            URLConnection con;
-                            con = url.openConnection();
+                            URLConnection con = url.openConnection();
                             con.setUseCaches(false);
                             streams = con.getInputStream();
                         } //End block
@@ -861,11 +844,11 @@ public abstract class ResourceBundle {
                         } //End block
                         catch (IOException e)
                         {
-                            varB4EAC82CA7396A68D541C85D26508E83_1031508758 = null;
+                            varB4EAC82CA7396A68D541C85D26508E83_32822887 = null;
                         } //End block
-                        varB4EAC82CA7396A68D541C85D26508E83_295641503 = ret;
+                        varB4EAC82CA7396A68D541C85D26508E83_592096044 = ret;
                     } //End block
-                    varB4EAC82CA7396A68D541C85D26508E83_847738595 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_1054788342 = null;
                 } //End block
             } //End collapsed parenthetic
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
@@ -874,43 +857,43 @@ public abstract class ResourceBundle {
             addTaint(format.getTaint());
             addTaint(loader.getTaint());
             addTaint(reload);
-            ResourceBundle varA7E53CE21691AB073D9660D615818899_1243955588; //Final return value
+            ResourceBundle varA7E53CE21691AB073D9660D615818899_1202625203; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_1191753211;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1627065801;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_111602491;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1773894970;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_380915240;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1030994065;
                     break;
                 case 4: //Assign result for return ordinal #4
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_1031508758;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_32822887;
                     break;
                 case 5: //Assign result for return ordinal #5
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_295641503;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_592096044;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1243955588 = varB4EAC82CA7396A68D541C85D26508E83_847738595;
+                    varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1054788342;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1243955588.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1243955588;
+            varA7E53CE21691AB073D9660D615818899_1202625203.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1202625203;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.332 -0400", hash_original_method = "7BA29E8DE065D9912A86853D625E45B1", hash_generated_method = "2F258EE60B014F12B28CAFFEAF3B188A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.638 -0400", hash_original_method = "7BA29E8DE065D9912A86853D625E45B1", hash_generated_method = "C342E9FB3D18DE79F005BA1106190467")
         public long getTimeToLive(String baseName, Locale locale) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            long var0F5264038205EDFB1AC05FBB0E8C5E94_1127855712 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1127855712;
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1744883068 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1744883068;
             // ---------- Original Method ----------
             //if (baseName == null || locale == null) {
                 //throw new NullPointerException();
@@ -919,38 +902,32 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.333 -0400", hash_original_method = "C3CC28923ED9707E414F789F1523116A", hash_generated_method = "7E100D210A449F64059430EE7B17CC8B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.639 -0400", hash_original_method = "C3CC28923ED9707E414F789F1523116A", hash_generated_method = "C0F347BC51F4B7A95653C0A529DB01CD")
         public boolean needsReload(String baseName, Locale locale,
                 String format, ClassLoader loader, ResourceBundle bundle,
                 long loadTime) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            String bundleName;
-            bundleName = toBundleName(baseName, locale);
-            String suffix;
-            suffix = format;
+            String bundleName = toBundleName(baseName, locale);
+            String suffix = format;
             {
-                boolean var363A8B2CC1CE315300A409E41427D499_177487217 = (format.equals(JAVACLASS));
+                boolean var363A8B2CC1CE315300A409E41427D499_1653360362 = (format.equals(JAVACLASS));
                 {
                     suffix = "class";
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varD6A8253E2C839BC6EC4A2010754A1DCD_246266044 = (format.equals(JAVAPROPERTIES));
+                boolean varD6A8253E2C839BC6EC4A2010754A1DCD_836050670 = (format.equals(JAVAPROPERTIES));
                 {
                     suffix = "properties";
                 } //End block
             } //End collapsed parenthetic
-            String urlname;
-            urlname = toResourceName(bundleName, suffix);
-            URL url;
-            url = loader.getResource(urlname);
+            String urlname = toResourceName(bundleName, suffix);
+            URL url = loader.getResource(urlname);
             {
-                String fileName;
-                fileName = url.getFile();
-                long lastModified;
-                lastModified = new File(fileName).lastModified();
+                String fileName = url.getFile();
+                long lastModified = new File(fileName).lastModified();
             } //End block
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
@@ -958,8 +935,8 @@ public abstract class ResourceBundle {
             addTaint(loader.getTaint());
             addTaint(bundle.getTaint());
             addTaint(loadTime);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_646942675 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_646942675;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44975184 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_44975184;
             // ---------- Original Method ----------
             //if (bundle == null) {
                 //throw new NullPointerException();
@@ -985,25 +962,20 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.338 -0400", hash_original_method = "95EF33F16C513E472DD742F40E256E32", hash_generated_method = "F927C61D2C4FA46946657C2EABB92FFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.641 -0400", hash_original_method = "95EF33F16C513E472DD742F40E256E32", hash_generated_method = "26290CB3EC8A08B70E5F93EC7D7A4D00")
         public String toBundleName(String baseName, Locale locale) {
-            String varB4EAC82CA7396A68D541C85D26508E83_442239797 = null; //Variable for return #1
-            String emptyString;
-            emptyString = EMPTY_STRING;
-            String preString;
-            preString = UNDER_SCORE;
-            String underline;
-            underline = UNDER_SCORE;
+            String varB4EAC82CA7396A68D541C85D26508E83_858811815 = null; //Variable for return #1
+            final String emptyString = EMPTY_STRING;
+            final String preString = UNDER_SCORE;
+            final String underline = UNDER_SCORE;
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            StringBuilder ret;
-            ret = new StringBuilder();
-            StringBuilder prefix;
-            prefix = new StringBuilder();
+            StringBuilder ret = new StringBuilder();
+            StringBuilder prefix = new StringBuilder();
             ret.append(baseName);
             {
-                boolean var8116C9E993A89CC711D61AA067C5543D_1980302391 = (!locale.getLanguage().equals(emptyString));
+                boolean var8116C9E993A89CC711D61AA067C5543D_1738120311 = (!locale.getLanguage().equals(emptyString));
                 {
                     ret.append(underline);
                     ret.append(locale.getLanguage());
@@ -1013,7 +985,7 @@ public abstract class ResourceBundle {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var019626354072A0B1F8CE16171922D987_1282424721 = (!locale.getCountry().equals(emptyString));
+                boolean var019626354072A0B1F8CE16171922D987_1394255929 = (!locale.getCountry().equals(emptyString));
                 {
                     ret.append((CharSequence) prefix);
                     ret.append(underline);
@@ -1025,38 +997,37 @@ public abstract class ResourceBundle {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var38517FCA653A00384EA828777964B7DD_63804744 = (!locale.getVariant().equals(emptyString));
+                boolean var38517FCA653A00384EA828777964B7DD_845416492 = (!locale.getVariant().equals(emptyString));
                 {
                     ret.append((CharSequence) prefix);
                     ret.append(underline);
                     ret.append(locale.getVariant());
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_442239797 = ret.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_858811815 = ret.toString();
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_442239797.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_442239797;
+            varB4EAC82CA7396A68D541C85D26508E83_858811815.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_858811815;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_method = "FCB3528CF98D643CACA491DF306BC818", hash_generated_method = "B2A5C4ED76C76EB940D84BAB06209F5B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_method = "FCB3528CF98D643CACA491DF306BC818", hash_generated_method = "C679175326445015B196DA7963DD43AC")
         public final String toResourceName(String bundleName, String suffix) {
-            String varB4EAC82CA7396A68D541C85D26508E83_2145028687 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2116066450 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            StringBuilder ret;
-            ret = new StringBuilder(bundleName.replace('.', '/'));
+            StringBuilder ret = new StringBuilder(bundleName.replace('.', '/'));
             ret.append('.');
             ret.append(suffix);
-            varB4EAC82CA7396A68D541C85D26508E83_2145028687 = ret.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_2116066450 = ret.toString();
             addTaint(bundleName.getTaint());
             addTaint(suffix.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2145028687.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2145028687;
+            varB4EAC82CA7396A68D541C85D26508E83_2116066450.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2116066450;
             // ---------- Original Method ----------
             //if (suffix == null) {
                 //throw new NullPointerException();
@@ -1068,19 +1039,19 @@ public abstract class ResourceBundle {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "F883DF0BE51C6E6DE4D20E70AB2328E4", hash_generated_field = "7FAB5EFC8D0A39F92C2066ED7F83F277")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_field = "F883DF0BE51C6E6DE4D20E70AB2328E4", hash_generated_field = "7FAB5EFC8D0A39F92C2066ED7F83F277")
 
         static List<String> listDefault = new ArrayList<String>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "E23066AFBA5FD9CE9DF4C3FA202E457B", hash_generated_field = "73FAB74F5A6B4799EFDB4572A408B125")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_field = "E23066AFBA5FD9CE9DF4C3FA202E457B", hash_generated_field = "73FAB74F5A6B4799EFDB4572A408B125")
 
         static List<String> listClass = new ArrayList<String>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "AFE0A77B730E680380CFE6EA55C51DFD", hash_generated_field = "2563531F9CF47ED6FC1FDD970ECD4F16")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_field = "AFE0A77B730E680380CFE6EA55C51DFD", hash_generated_field = "2563531F9CF47ED6FC1FDD970ECD4F16")
 
         static List<String> listProperties = new ArrayList<String>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "9958D37192A39A85F8CC51B79E70B8C2", hash_generated_field = "F1888E6AB92B35D00E8781C6258E3EE0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_field = "9958D37192A39A85F8CC51B79E70B8C2", hash_generated_field = "F1888E6AB92B35D00E8781C6258E3EE0")
 
         static String JAVACLASS = "java.class";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "1C2FF60CB53FAA0B881ADB89C22D3B95", hash_generated_field = "07BB0B876307E7CB6E2F167DC153078B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "1C2FF60CB53FAA0B881ADB89C22D3B95", hash_generated_field = "07BB0B876307E7CB6E2F167DC153078B")
 
         static String JAVAPROPERTIES = "java.properties";
         static {
@@ -1090,55 +1061,55 @@ public abstract class ResourceBundle {
             listProperties.add(JAVAPROPERTIES);
         }
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.343 -0400", hash_original_field = "1F661A88B9A779DBAC839396964A04D3", hash_generated_field = "F1424B45B48922D540F30BB96F5544C9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "1F661A88B9A779DBAC839396964A04D3", hash_generated_field = "F1424B45B48922D540F30BB96F5544C9")
 
         public static final List<String> FORMAT_DEFAULT = Collections
                 .unmodifiableList(listDefault);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "4C0F5D8334D6DA9DD047A3E56F9935D9", hash_generated_field = "238B12F80DDF174B061C6B9B9ADB9205")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "4C0F5D8334D6DA9DD047A3E56F9935D9", hash_generated_field = "238B12F80DDF174B061C6B9B9ADB9205")
 
         public static final List<String> FORMAT_CLASS = Collections
                 .unmodifiableList(listClass);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "90A269AD00605FE1555547E25BD2EC09", hash_generated_field = "AA1FEB25A6C045A701D589ABAE627BD6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "90A269AD00605FE1555547E25BD2EC09", hash_generated_field = "AA1FEB25A6C045A701D589ABAE627BD6")
 
         public static final List<String> FORMAT_PROPERTIES = Collections
                 .unmodifiableList(listProperties);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "4480A4BC9B756BD79CE2693AEB964C0F", hash_generated_field = "4947107FB4B8533751EC5231E42008C3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "4480A4BC9B756BD79CE2693AEB964C0F", hash_generated_field = "4947107FB4B8533751EC5231E42008C3")
 
         public static final long TTL_DONT_CACHE = -1L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "EC499B03368757C4B60EAD81CB227B4D", hash_generated_field = "65CF7FF426B0EE2E1D9FD78179803819")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "EC499B03368757C4B60EAD81CB227B4D", hash_generated_field = "65CF7FF426B0EE2E1D9FD78179803819")
 
         public static final long TTL_NO_EXPIRATION_CONTROL = -2L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "C4393F6F971CE5F5B9724C11749155A4", hash_generated_field = "1343B1D0074801B0A8C09619B1FC5FB4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "C4393F6F971CE5F5B9724C11749155A4", hash_generated_field = "E479AC9CE55FC38AA66AEB9C06A435BA")
 
-        private static Control FORMAT_PROPERTIES_CONTROL = new SimpleControl(
+        private static final Control FORMAT_PROPERTIES_CONTROL = new SimpleControl(
                 JAVAPROPERTIES);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "2F9B352D101093DE430A17439BD1673B", hash_generated_field = "6E6856BDC5CF82EB80BEEF956CCA7465")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "2F9B352D101093DE430A17439BD1673B", hash_generated_field = "72CD7F4B7C3573EE5BEF1523C244BC01")
 
-        private static Control FORMAT_CLASS_CONTROL = new SimpleControl(
+        private static final Control FORMAT_CLASS_CONTROL = new SimpleControl(
                 JAVACLASS);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "108817DB34C2523A65A647CB1C10AFB1", hash_generated_field = "04D603A0DFE82E4788849AB35811BE9C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "108817DB34C2523A65A647CB1C10AFB1", hash_generated_field = "06188B6C636AFB65149581CD9F1C0A50")
 
-        private static Control FORMAT_DEFAULT_CONTROL = new Control();
+        private static final Control FORMAT_DEFAULT_CONTROL = new Control();
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "6CE7142F7AF3BCCD7A3950C3FEDFA77E", hash_generated_field = "6BE8CEB44FB29B06C10C0FD0A1F00016")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "6CE7142F7AF3BCCD7A3950C3FEDFA77E", hash_generated_field = "E5AACE7C1FB793E41B40495A16336A99")
 
-    private static String UNDER_SCORE = "_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "898133B79D24539B71595F1C8C6BBF6C", hash_generated_field = "89E30ABADC5DB1339122C473BA7A3B1C")
+    private static final String UNDER_SCORE = "_";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "898133B79D24539B71595F1C8C6BBF6C", hash_generated_field = "D14895E2C9628BA7CEA3A352030E9445")
 
-    private static String EMPTY_STRING = "";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "A749795A23092ECB9BB3757F664C6407", hash_generated_field = "4DF1AB31E1DA08E2FDBD716CF4CF813C")
+    private static final String EMPTY_STRING = "";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.643 -0400", hash_original_field = "A749795A23092ECB9BB3757F664C6407", hash_generated_field = "85F7743A8A2325A7A53FE506DF5E477C")
 
-    private static ResourceBundle MISSING = new MissingBundle();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "C13F6920F8D183CB8736ED99060F9BA6", hash_generated_field = "C23E82D19DB80C05E088244349A011E6")
+    private static final ResourceBundle MISSING = new MissingBundle();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.644 -0400", hash_original_field = "C13F6920F8D183CB8736ED99060F9BA6", hash_generated_field = "88C3120A32FE602FF897F593D3471105")
 
-    private static ResourceBundle MISSINGBASE = new MissingBundle();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "CF1F6725974173FA855D6DA9746F184D", hash_generated_field = "CF926CC1090606B22F43A6129299B141")
+    private static final ResourceBundle MISSINGBASE = new MissingBundle();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.644 -0400", hash_original_field = "CF1F6725974173FA855D6DA9746F184D", hash_generated_field = "02B8BB57FAC4063B50B258C20ED67E99")
 
-    private static WeakHashMap<Object, Hashtable<String, ResourceBundle>> cache = new WeakHashMap<Object, Hashtable<String, ResourceBundle>>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:53.344 -0400", hash_original_field = "BD37D96B8058F3E7A7D028244344ED3D", hash_generated_field = "FB53443D57FD33E6486E78E1759D3531")
+    private static final WeakHashMap<Object, Hashtable<String, ResourceBundle>> cache = new WeakHashMap<Object, Hashtable<String, ResourceBundle>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.644 -0400", hash_original_field = "BD37D96B8058F3E7A7D028244344ED3D", hash_generated_field = "FB53443D57FD33E6486E78E1759D3531")
 
     private static Locale cacheLocale = Locale.getDefault();
 }

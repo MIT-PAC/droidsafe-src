@@ -16,14 +16,14 @@ import java.util.TimeZone;
 
 public final class HttpDate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.964 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.806 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {
         //Synthesized constructor
     }
 
 
-        public static Date parse(String value) {
+    public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
         } catch (ParseException ignore) {
@@ -38,24 +38,23 @@ public final class HttpDate {
     }
 
     
-        public static String format(Date value) {
+    public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_field = "7070321CEDCE8DDA350092605D887EA6", hash_generated_field = "39D91B51F6DD7EFBEE233BC10CBA0AAF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_field = "7070321CEDCE8DDA350092605D887EA6", hash_generated_field = "CF56E75DA635218131CA8ED5FD9CB318")
 
-    private static ThreadLocal<DateFormat> STANDARD_DATE_FORMAT = new ThreadLocal<DateFormat>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "52E22DE675DCE14B9C20667C1A31DA76")
+    private static final ThreadLocal<DateFormat> STANDARD_DATE_FORMAT = new ThreadLocal<DateFormat>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "C825C1CF5D34F144303E23409DAA668A")
         @Override
         protected DateFormat initialValue() {
-            DateFormat varB4EAC82CA7396A68D541C85D26508E83_171501484 = null; //Variable for return #1
-            DateFormat rfc1123;
-            rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
+            DateFormat varB4EAC82CA7396A68D541C85D26508E83_748319768 = null; //Variable for return #1
+            DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
             rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
-            varB4EAC82CA7396A68D541C85D26508E83_171501484 = rfc1123;
-            varB4EAC82CA7396A68D541C85D26508E83_171501484.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_171501484;
+            varB4EAC82CA7396A68D541C85D26508E83_748319768 = rfc1123;
+            varB4EAC82CA7396A68D541C85D26508E83_748319768.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_748319768;
             // ---------- Original Method ----------
             //DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
             //rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -64,9 +63,9 @@ public final class HttpDate {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "7A81702EDEE426418BF1FFE0450C95BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "BEEAED429442B6C53D9D9D627997B72C")
 
-    private static String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
+    private static final String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
             
             "EEEE, dd-MMM-yy HH:mm:ss zzz", 
             "EEE MMM d HH:mm:ss yyyy", 

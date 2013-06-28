@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public abstract class ContentHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.145 -0400", hash_original_method = "34235149EC6F1F14A33FF6A78502D340", hash_generated_method = "34235149EC6F1F14A33FF6A78502D340")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.036 -0400", hash_original_method = "34235149EC6F1F14A33FF6A78502D340", hash_generated_method = "34235149EC6F1F14A33FF6A78502D340")
     public ContentHandler ()
     {
         //Synthesized constructor
@@ -21,39 +21,37 @@ public abstract class ContentHandler {
     public abstract Object getContent(URLConnection uConn) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.145 -0400", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "2478681B337BCA5D6F69F13BDB3A1251")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.037 -0400", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "F7975C7F0AE06F57450FB4F045866B5A")
     @SuppressWarnings("unchecked")
     public Object getContent(URLConnection uConn, Class[] types) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1424018236 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1168940160 = null; //Variable for return #2
-        Object content;
-        content = getContent(uConn);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1783059528 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1333230609 = null; //Variable for return #2
+        Object content = getContent(uConn);
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 {
-                    boolean varD335B318B75970DDE3AA8452F6D1E99A_1322857246 = (types[i].isInstance(content));
+                    boolean varD335B318B75970DDE3AA8452F6D1E99A_895064457 = (types[i].isInstance(content));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1424018236 = content;
+                        varB4EAC82CA7396A68D541C85D26508E83_1783059528 = content;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1168940160 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1333230609 = null;
         addTaint(uConn.getTaint());
         addTaint(types[0].getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_110552376; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1772363300; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_110552376 = varB4EAC82CA7396A68D541C85D26508E83_1424018236;
+                varA7E53CE21691AB073D9660D615818899_1772363300 = varB4EAC82CA7396A68D541C85D26508E83_1783059528;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_110552376 = varB4EAC82CA7396A68D541C85D26508E83_1168940160;
+                varA7E53CE21691AB073D9660D615818899_1772363300 = varB4EAC82CA7396A68D541C85D26508E83_1333230609;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_110552376.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_110552376;
+        varA7E53CE21691AB073D9660D615818899_1772363300.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1772363300;
         // ---------- Original Method ----------
         //Object content = getContent(uConn);
         //for (int i = 0; i < types.length; i++) {

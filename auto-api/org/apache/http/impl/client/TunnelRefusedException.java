@@ -11,11 +11,11 @@ import org.apache.http.HttpException;
 import org.apache.http.HttpResponse;
 
 public class TunnelRefusedException extends HttpException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.554 -0400", hash_original_field = "D1FC8EAF36937BE0C3BA8CFE0A2C1BFE", hash_generated_field = "641533335E49C8228D29EFDDBF1B520B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.321 -0400", hash_original_field = "D1FC8EAF36937BE0C3BA8CFE0A2C1BFE", hash_generated_field = "641533335E49C8228D29EFDDBF1B520B")
 
     private HttpResponse response;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.555 -0400", hash_original_method = "E6490728CC48382F5DF5760ED5B82BB5", hash_generated_method = "61EA5A1940435F65CD748EA8C0409BFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.321 -0400", hash_original_method = "E6490728CC48382F5DF5760ED5B82BB5", hash_generated_method = "61EA5A1940435F65CD748EA8C0409BFF")
     public  TunnelRefusedException(final String message, final HttpResponse response) {
         super(message);
         this.response = response;
@@ -25,19 +25,19 @@ public class TunnelRefusedException extends HttpException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.555 -0400", hash_original_method = "3C5BCF9DD6B811984123D054EF330499", hash_generated_method = "60A40A265F596B46368E39214B9E3AF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.322 -0400", hash_original_method = "3C5BCF9DD6B811984123D054EF330499", hash_generated_method = "E513FEADBC73829BA57D39622419E271")
     public HttpResponse getResponse() {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1914808128 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1914808128 = this.response;
-        varB4EAC82CA7396A68D541C85D26508E83_1914808128.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1914808128;
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1792164881 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1792164881 = this.response;
+        varB4EAC82CA7396A68D541C85D26508E83_1792164881.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1792164881;
         // ---------- Original Method ----------
         //return this.response;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.555 -0400", hash_original_field = "444E3819A6F3EF9AD2831E3832D30207", hash_generated_field = "9D294D666BEC09952FEC5EC95CE8EAB0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.322 -0400", hash_original_field = "444E3819A6F3EF9AD2831E3832D30207", hash_generated_field = "B459F0506B32570E8618A9CEE66C0FB8")
 
-    private static long serialVersionUID = -8646722842745617323L;
+    private static final long serialVersionUID = -8646722842745617323L;
 }
 

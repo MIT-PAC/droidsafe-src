@@ -18,29 +18,29 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 
 public class AlgNameMapper {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.968 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.313 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
     private  AlgNameMapper() {
         // ---------- Original Method ----------
     }
 
     
-        public static String map2OID(String algName) {
+    public static String map2OID(String algName) {
         return alg2OidMap.get(algName.toUpperCase(Locale.US));
     }
 
     
-        public static String map2AlgName(String oid) {
+    public static String map2AlgName(String oid) {
         String algUC = oid2AlgMap.get(oid);
         return algUC == null ? null : algAliasesMap.get(algUC);
     }
 
     
-        public static String getStandardName(String algName) {
+    public static String getStandardName(String algName) {
         return algAliasesMap.get(algName.toUpperCase(Locale.US));
     }
 
     
-        private static void selectEntries(Provider p) {
+    private static void selectEntries(Provider p) {
         Set<Map.Entry<Object, Object>> entrySet = p.entrySet();
         for (String service : serviceName) {
             String keyPrfix2find = "Alg.Alias." + service + ".";
@@ -74,28 +74,28 @@ public class AlgNameMapper {
     }
 
     
-        public static boolean isOID(String alias) {
+    public static boolean isOID(String alias) {
         return ObjectIdentifier.isOID(normalize(alias));
     }
 
     
-        public static String normalize(String oid) {
+    public static String normalize(String oid) {
         return oid.startsWith("OID.")
             ? oid.substring(4)
             : oid;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.969 -0400", hash_original_field = "95C84005255BA71E4E0DFD9847C47864", hash_generated_field = "8D8C8ACC9EE772D50D406A63C517F115")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.316 -0400", hash_original_field = "95C84005255BA71E4E0DFD9847C47864", hash_generated_field = "5B3209CE00A02D35075FCE27482EB452")
 
-    private static String[] serviceName = {
+    private static final String[] serviceName = {
             "Cipher",
             "AlgorithmParameters",
             "Signature"
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.969 -0400", hash_original_field = "21B74BFA2FABF0E6722E810CB277A776", hash_generated_field = "5862FA8DDD15B487B29AC9AACE51BAE8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.316 -0400", hash_original_field = "21B74BFA2FABF0E6722E810CB277A776", hash_generated_field = "A962EA8E18EE34D6D78785249A076B18")
 
-    private static String[][] knownAlgMappings = {
+    private static final String[][] knownAlgMappings = {
         {"1.2.840.10040.4.1",       "DSA"},
         {"1.2.840.10040.4.3",       "SHA1withDSA"},
         {"1.2.840.113549.1.1.1",    "RSA"},
@@ -120,15 +120,15 @@ public class AlgNameMapper {
         {"1.2.840.113549.3.10",     "DESCDMF"},
         {"2.23.42.9.11.4.1",        "ECDSA"},
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.970 -0400", hash_original_field = "79AEE170E734025FB4D0A1CA8B23FF1E", hash_generated_field = "AA7E25703B08667214E260C0765B3356")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.316 -0400", hash_original_field = "79AEE170E734025FB4D0A1CA8B23FF1E", hash_generated_field = "11D4611592559DD6C26CF40B7FAA58FB")
 
-    private static Map<String, String> alg2OidMap = new HashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.970 -0400", hash_original_field = "63669FC13871444DFC9A8E37922F5C59", hash_generated_field = "972FBC59AC4E460DBDAD1ABBE1593F18")
+    private static final Map<String, String> alg2OidMap = new HashMap<String, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.316 -0400", hash_original_field = "63669FC13871444DFC9A8E37922F5C59", hash_generated_field = "5895D55E9FDDA0E0353CE42466F9F51D")
 
-    private static Map<String, String> oid2AlgMap = new HashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.970 -0400", hash_original_field = "C445BEF557E723787EE59416CAA70AB4", hash_generated_field = "F0CE86D12D62C8E46193001437152EA4")
+    private static final Map<String, String> oid2AlgMap = new HashMap<String, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.316 -0400", hash_original_field = "C445BEF557E723787EE59416CAA70AB4", hash_generated_field = "0F358DFC7E18735BA0EC9B4314046FA6")
 
-    private static Map<String, String> algAliasesMap = new HashMap<String, String>();
+    private static final Map<String, String> algAliasesMap = new HashMap<String, String>();
     static {
         for (String[] element : knownAlgMappings) {
             String algUC = element[1].toUpperCase(Locale.US);

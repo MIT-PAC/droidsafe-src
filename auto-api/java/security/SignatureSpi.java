@@ -11,11 +11,11 @@ import java.nio.ByteBuffer;
 import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class SignatureSpi {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.573 -0400", hash_original_field = "7F0E25AE98CB8CAAE133E519F90D8F55", hash_generated_field = "179FDAA6281D622A7488CD99E06D8FD3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.876 -0400", hash_original_field = "7F0E25AE98CB8CAAE133E519F90D8F55", hash_generated_field = "179FDAA6281D622A7488CD99E06D8FD3")
 
     protected SecureRandom appRandom;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.573 -0400", hash_original_method = "579C0D6C0992E59A5D82007FD2101B72", hash_generated_method = "579C0D6C0992E59A5D82007FD2101B72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.876 -0400", hash_original_method = "579C0D6C0992E59A5D82007FD2101B72", hash_generated_method = "579C0D6C0992E59A5D82007FD2101B72")
     public SignatureSpi ()
     {
         //Synthesized constructor
@@ -30,7 +30,7 @@ public abstract class SignatureSpi {
             throws InvalidKeyException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.583 -0400", hash_original_method = "B296906AC674D1ED6BCB89B75E33BE26", hash_generated_method = "D4BFE09E7FEF5095911C1C9BDF919E2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.876 -0400", hash_original_method = "B296906AC674D1ED6BCB89B75E33BE26", hash_generated_method = "D4BFE09E7FEF5095911C1C9BDF919E2C")
     protected void engineInitSign(PrivateKey privateKey, SecureRandom random) throws InvalidKeyException {
         appRandom = random;
         engineInitSign(privateKey);
@@ -48,22 +48,19 @@ public abstract class SignatureSpi {
             throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.584 -0400", hash_original_method = "71C4E934CEE377EFD0E73DFCB679FE83", hash_generated_method = "61685A863314BA682E095E19D92D8C0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.877 -0400", hash_original_method = "71C4E934CEE377EFD0E73DFCB679FE83", hash_generated_method = "3CD6D0B225580AEC37070BCA9FB165B9")
     protected void engineUpdate(ByteBuffer input) {
         {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_1979585794 = (!input.hasRemaining());
+            boolean varE54245A319FB90E6E4BB7E9A96B716C3_764533994 = (!input.hasRemaining());
         } //End collapsed parenthetic
         byte[] tmp;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_688536590 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_989730166 = (input.hasArray());
             {
                 tmp = input.array();
-                int offset;
-                offset = input.arrayOffset();
-                int position;
-                position = input.position();
-                int limit;
-                limit = input.limit();
+                int offset = input.arrayOffset();
+                int position = input.position();
+                int limit = input.limit();
                 try 
                 {
                     engineUpdate(tmp, offset + position, limit - position);
@@ -119,10 +116,9 @@ public abstract class SignatureSpi {
     protected abstract byte[] engineSign() throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.591 -0400", hash_original_method = "1C34A6699CF243CE14ADEEFCA006987F", hash_generated_method = "031A8BC8E008C5C3088975A8A12B4AA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.878 -0400", hash_original_method = "1C34A6699CF243CE14ADEEFCA006987F", hash_generated_method = "BE22E15BD84B80A92F38A1ACAC51ED68")
     protected int engineSign(byte[] outbuf, int offset, int len) throws SignatureException {
-        byte[] tmp;
-        tmp = engineSign();
+        byte[] tmp = engineSign();
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("The value of len parameter is less than the actual signature length");
         } //End block
@@ -136,8 +132,8 @@ public abstract class SignatureSpi {
         addTaint(outbuf[0]);
         addTaint(offset);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439796418 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439796418;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567193539 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567193539;
         // ---------- Original Method ----------
         //byte[] tmp = engineSign();
         //if (tmp == null) {
@@ -161,17 +157,16 @@ public abstract class SignatureSpi {
             throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.598 -0400", hash_original_method = "1A108B8DE7E13E12F61358DC32E2687B", hash_generated_method = "D483559B6F62902672433064014070C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.879 -0400", hash_original_method = "1A108B8DE7E13E12F61358DC32E2687B", hash_generated_method = "DAA0C55EAFEE52442F1098D9C5C3C950")
     protected boolean engineVerify(byte[] sigBytes, int offset, int length) throws SignatureException {
-        byte[] tmp;
-        tmp = new byte[length];
+        byte[] tmp = new byte[length];
         System.arraycopy(sigBytes, offset, tmp, 0, length);
-        boolean var1E1A814EA269B82FF70BA29FE59F4B53_1575172699 = (engineVerify(tmp));
+        boolean var1E1A814EA269B82FF70BA29FE59F4B53_736174736 = (engineVerify(tmp));
         addTaint(sigBytes[0]);
         addTaint(offset);
         addTaint(length);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1710379281 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1710379281;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1749958139 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1749958139;
         // ---------- Original Method ----------
         //byte[] tmp = new byte[length];
         //System.arraycopy(sigBytes, offset, tmp, 0, length);
@@ -179,12 +174,12 @@ public abstract class SignatureSpi {
     }
 
     
-        @Deprecated
+    @Deprecated
 protected abstract void engineSetParameter(String param, Object value)
             throws InvalidParameterException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.599 -0400", hash_original_method = "09773BC31BC521068D3A412C371D22F3", hash_generated_method = "93DAA0D9AA1F787D91827786DAA2CB92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.879 -0400", hash_original_method = "09773BC31BC521068D3A412C371D22F3", hash_generated_method = "93DAA0D9AA1F787D91827786DAA2CB92")
     protected void engineSetParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(params.getTaint());
@@ -193,7 +188,7 @@ protected abstract void engineSetParameter(String param, Object value)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.613 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "7D60887B06E007D941A2154E83C7DFA5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.880 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "7D60887B06E007D941A2154E83C7DFA5")
     protected AlgorithmParameters engineGetParameters() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         // ---------- Original Method ----------
@@ -201,21 +196,21 @@ protected abstract void engineSetParameter(String param, Object value)
     }
 
     
-        @Deprecated
+    @Deprecated
 protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.613 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "4E346774A1DA2810627D8ABF7100A812")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.881 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "C3E5CEA67E375983A2086A8E6D6DD07C")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1179929871 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1662326121 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1179929871 = super.clone();
+            varB4EAC82CA7396A68D541C85D26508E83_1662326121 = super.clone();
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
-        varB4EAC82CA7396A68D541C85D26508E83_1179929871.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1179929871;
+        varB4EAC82CA7396A68D541C85D26508E83_1662326121.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1662326121;
         // ---------- Original Method ----------
         //if (this instanceof Cloneable) {
             //return super.clone();

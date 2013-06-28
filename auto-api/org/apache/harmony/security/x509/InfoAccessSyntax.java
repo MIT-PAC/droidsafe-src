@@ -15,14 +15,14 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
 public final class InfoAccessSyntax extends ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.851 -0400", hash_original_field = "791E34A4C4E0B8B231743C7BE60C4EB0", hash_generated_field = "677A1C50FB50E227670E2B82296409DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.113 -0400", hash_original_field = "791E34A4C4E0B8B231743C7BE60C4EB0", hash_generated_field = "677A1C50FB50E227670E2B82296409DA")
 
     private List<?> accessDescriptions;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.862 -0400", hash_original_method = "4CEC0F2DDF7912449CE6AD3ED26DAD30", hash_generated_method = "C87CE1E1A24A5D6C2584715CE7A6DBB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.114 -0400", hash_original_method = "4CEC0F2DDF7912449CE6AD3ED26DAD30", hash_generated_method = "FB8BA1127AC034039A2160EAB2A8E29F")
     private  InfoAccessSyntax(List<?> accessDescriptions, byte[] encoding) throws IOException {
         {
-            boolean varEDA4CC78796AF28C94BCF92FF99890A6_1656840452 = (accessDescriptions == null || accessDescriptions.isEmpty());
+            boolean varEDA4CC78796AF28C94BCF92FF99890A6_812621047 = (accessDescriptions == null || accessDescriptions.isEmpty());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("AccessDescriptions list is null or empty");
             } //End block
@@ -39,14 +39,14 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.862 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "DD54768326A88424F2E84F7FA233A0EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.114 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "87B6CA4D1F83CEDFEFB44950A1E1A012")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_93372826 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_93372826;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1334861319 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1334861319;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -55,23 +55,22 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-        public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
+    public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
         return ((InfoAccessSyntax) ASN1.decode(encoding));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.907 -0400", hash_original_method = "CB86A2DBB1FE1A1292A1258597C50E5F", hash_generated_method = "FA77F590FFD0AEA52229A906F05B7D89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.119 -0400", hash_original_method = "CB86A2DBB1FE1A1292A1258597C50E5F", hash_generated_method = "7AF004182B3B225E3D9E5F184C06770B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_152699629 = null; //Variable for return #1
-        StringBuilder res;
-        res = new StringBuilder();
+        String varB4EAC82CA7396A68D541C85D26508E83_550703251 = null; //Variable for return #1
+        StringBuilder res = new StringBuilder();
         res.append("\n---- InfoAccessSyntax:");
         {
             {
-                Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_828654086 = (accessDescriptions).iterator();
-                var5E094A91BA5D34A81EEFA278B694B106_828654086.hasNext();
-                Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_828654086.next();
+                Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_332091518 = (accessDescriptions).iterator();
+                var5E094A91BA5D34A81EEFA278B694B106_332091518.hasNext();
+                Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_332091518.next();
                 {
                     res.append('\n');
                     res.append(accessDescription);
@@ -79,9 +78,9 @@ public final class InfoAccessSyntax extends ExtensionValue {
             } //End collapsed parenthetic
         } //End block
         res.append("\n---- InfoAccessSyntax END\n");
-        varB4EAC82CA7396A68D541C85D26508E83_152699629 = res.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_152699629.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_152699629;
+        varB4EAC82CA7396A68D541C85D26508E83_550703251 = res.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_550703251.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_550703251;
         // ---------- Original Method ----------
         //StringBuilder res = new StringBuilder();
         //res.append("\n---- InfoAccessSyntax:");
@@ -96,20 +95,20 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.933 -0400", hash_original_method = "781E3C6C6D65C7307F0C093EFF5048AD", hash_generated_method = "45704363B65884A75C7F4D4438D7F500")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.127 -0400", hash_original_method = "781E3C6C6D65C7307F0C093EFF5048AD", hash_generated_method = "396EBDF3356C7B085DC2E0C2F274B6B6")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("AccessDescriptions:\n");
         {
-            boolean varEDA4CC78796AF28C94BCF92FF99890A6_901361370 = (accessDescriptions == null || accessDescriptions.isEmpty());
+            boolean varEDA4CC78796AF28C94BCF92FF99890A6_323283257 = (accessDescriptions == null || accessDescriptions.isEmpty());
             {
                 sb.append("NULL\n");
             } //End block
             {
                 {
-                    Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_1805196362 = (accessDescriptions).iterator();
-                    var5E094A91BA5D34A81EEFA278B694B106_1805196362.hasNext();
-                    Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_1805196362.next();
+                    Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_1625829309 = (accessDescriptions).iterator();
+                    var5E094A91BA5D34A81EEFA278B694B106_1625829309.hasNext();
+                    Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_1625829309.next();
                     {
                         sb.append(accessDescription.toString());
                     } //End block
@@ -130,7 +129,7 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.933 -0400", hash_original_field = "E611BBC850EAC486F3CEF9633B2E6F73", hash_generated_field = "5FA1DEAA374D887C0615B0A6E5AC612B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.127 -0400", hash_original_field = "E611BBC850EAC486F3CEF9633B2E6F73", hash_generated_field = "5FA1DEAA374D887C0615B0A6E5AC612B")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(AccessDescription.ASN1) {
         @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -141,5 +140,15 @@ public final class InfoAccessSyntax extends ExtensionValue {
             return ((InfoAccessSyntax) object).accessDescriptions;
         }
     };
+    // orphaned legacy method
+    @Override public Collection getValues(Object object) {
+            return ((InfoAccessSyntax) object).accessDescriptions;
+        }
+    
+    // orphaned legacy method
+    @Override public Object getDecodedObject(BerInputStream in) throws IOException {
+            return new InfoAccessSyntax((List<?>) in.content, in.getEncoded());
+        }
+    
 }
 

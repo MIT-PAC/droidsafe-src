@@ -16,36 +16,36 @@ import com.android.internal.policy.IPolicy;
 
 public final class PolicyManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.884 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
     private  PolicyManager() {
         // ---------- Original Method ----------
     }
 
     
-        public static Window makeNewWindow(Context context) {
+    public static Window makeNewWindow(Context context) {
         return sPolicy.makeNewWindow(context);
     }
 
     
-        public static LayoutInflater makeNewLayoutInflater(Context context) {
+    public static LayoutInflater makeNewLayoutInflater(Context context) {
         return sPolicy.makeNewLayoutInflater(context);
     }
 
     
-        public static WindowManagerPolicy makeNewWindowManager() {
+    public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
     
-        public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
+    public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_field = "CC1EE3A6531AE6E81333C3C9BE207A23", hash_generated_field = "75FDBB2FF14EF7ED5A4443F549717B4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.886 -0400", hash_original_field = "CC1EE3A6531AE6E81333C3C9BE207A23", hash_generated_field = "F2EC3626690C6C0CDE9F04BA5A37D39E")
 
-    private static String POLICY_IMPL_CLASS_NAME = "com.android.internal.policy.impl.Policy";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_field = "C0FFFDB7650DF02B56107C0B1FCBC1F0", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
+    private static final String POLICY_IMPL_CLASS_NAME = "com.android.internal.policy.impl.Policy";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.886 -0400", hash_original_field = "C0FFFDB7650DF02B56107C0B1FCBC1F0", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
 
     private static IPolicy sPolicy;
     static {

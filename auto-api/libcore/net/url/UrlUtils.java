@@ -11,13 +11,13 @@ import java.util.Locale;
 
 public final class UrlUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.413 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.963 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
     private  UrlUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static String canonicalizePath(String path, boolean discardRelativePrefix) {
+    public static String canonicalizePath(String path, boolean discardRelativePrefix) {
         int segmentStart = 0;
         int deletableSegments = 0;
         for (int i = 0; i <= path.length(); ) {
@@ -55,7 +55,7 @@ public final class UrlUtils {
     }
 
     
-        public static String authoritySafePath(String authority, String path) {
+    public static String authoritySafePath(String authority, String path) {
         if (authority != null && !authority.isEmpty() && !path.isEmpty() && !path.startsWith("/")) {
             return "/" + path;
         }
@@ -63,7 +63,7 @@ public final class UrlUtils {
     }
 
     
-        public static String getSchemePrefix(String spec) {
+    public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
         if (colon < 1) {
             return null;
@@ -78,7 +78,7 @@ public final class UrlUtils {
     }
 
     
-        public static boolean isValidSchemeChar(int index, char c) {
+    public static boolean isValidSchemeChar(int index, char c) {
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             return true;
         }
@@ -89,7 +89,7 @@ public final class UrlUtils {
     }
 
     
-        public static int findFirstOf(String string, String chars, int start, int end) {
+    public static int findFirstOf(String string, String chars, int start, int end) {
         for (int i = start; i < end; i++) {
             char c = string.charAt(i);
             if (chars.indexOf(c) != -1) {

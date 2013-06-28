@@ -16,13 +16,13 @@ import org.xml.sax.XMLReader;
 
 final public class XMLReaderFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:23.284 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.092 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
     private  XMLReaderFactory() {
         // ---------- Original Method ----------
     }
 
     
-        public static XMLReader createXMLReader() throws SAXException {
+    public static XMLReader createXMLReader() throws SAXException {
         String        className = null;
         ClassLoader    loader = NewInstance.getClassLoader ();
         try { className = System.getProperty (property); }
@@ -57,12 +57,12 @@ final public class XMLReaderFactory {
     }
 
     
-        public static XMLReader createXMLReader(String className) throws SAXException {
+    public static XMLReader createXMLReader(String className) throws SAXException {
         return loadClass (NewInstance.getClassLoader (), className);
     }
 
     
-        private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
+    private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
         try {
         return (XMLReader) NewInstance.newInstance (loader, className);
     } catch (ClassNotFoundException e1) {
@@ -82,8 +82,8 @@ final public class XMLReaderFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:23.285 -0400", hash_original_field = "A9E1BFE5D4796BA4F422ABAD85F1E5EE", hash_generated_field = "B307478EE1B1A000CBEEAC21A6451C8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.093 -0400", hash_original_field = "A9E1BFE5D4796BA4F422ABAD85F1E5EE", hash_generated_field = "21C340AAACD5354B279B5877FDAA9460")
 
-    private static String property = "org.xml.sax.driver";
+    private static final String property = "org.xml.sax.driver";
 }
 

@@ -24,8 +24,8 @@ public class SweepGradient extends Shader {
         native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
         addTaint(cx);
         addTaint(cy);
-        addTaint(colors);
-        addTaint(positions);
+        addTaint(colors[0]);
+        addTaint(positions[0]);
         // ---------- Original Method ----------
         //if (colors.length < 2) {
             //throw new IllegalArgumentException("needs >= 2 number of colors");
@@ -39,7 +39,7 @@ public class SweepGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.555 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "373ADA740D8DE786DBE7403B2FAAFD84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.451 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "373ADA740D8DE786DBE7403B2FAAFD84")
     public  SweepGradient(float cx, float cy, int color0, int color1) {
         native_instance = nativeCreate2(cx, cy, color0, color1);
         native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);
@@ -53,23 +53,23 @@ public class SweepGradient extends Shader {
     }
 
     
-        private static int nativeCreate1(float x, float y, int colors[], float positions[]) {
+    private static int nativeCreate1(float x, float y, int colors[], float positions[]) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativeCreate2(float x, float y, int color0, int color1) {
+    private static int nativeCreate2(float x, float y, int color0, int color1) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativePostCreate1(int native_shader, float cx, float cy,
+    private static int nativePostCreate1(int native_shader, float cx, float cy,
             int[] colors, float[] positions) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
-        private static int nativePostCreate2(int native_shader, float cx, float cy,
+    private static int nativePostCreate2(int native_shader, float cx, float cy,
             int color0, int color1) {
         return DSUtils.UNKNOWN_INT;
     }

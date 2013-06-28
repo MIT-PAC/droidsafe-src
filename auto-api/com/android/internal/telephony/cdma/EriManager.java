@@ -24,23 +24,23 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public final class EriManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.083 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "E7BDAD23CF4F53103B9ED94B380FFE2A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.433 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "E7BDAD23CF4F53103B9ED94B380FFE2A")
 
     private PhoneBase mPhone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.083 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.433 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.083 -0400", hash_original_field = "A757B28B600867D7632EA7A4EAF519EA", hash_generated_field = "BE050A394E5DDA84CD7D9B82D09CD0DF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.433 -0400", hash_original_field = "A757B28B600867D7632EA7A4EAF519EA", hash_generated_field = "BE050A394E5DDA84CD7D9B82D09CD0DF")
 
     private int mEriFileSource = ERI_FROM_XML;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.097 -0400", hash_original_field = "583264D6B6FB2E8327A962B767E7361D", hash_generated_field = "D44D6DD6E8F17217EFA480219059C42D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.433 -0400", hash_original_field = "583264D6B6FB2E8327A962B767E7361D", hash_generated_field = "D44D6DD6E8F17217EFA480219059C42D")
 
     private boolean isEriFileLoaded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.097 -0400", hash_original_field = "368C9D55284EA57A4D72C138088A7AEA", hash_generated_field = "F63AB3051D8F51BADF0A35205FF6E8C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.434 -0400", hash_original_field = "368C9D55284EA57A4D72C138088A7AEA", hash_generated_field = "F63AB3051D8F51BADF0A35205FF6E8C1")
 
     private EriFile mEriFile;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.106 -0400", hash_original_method = "3CF9033327C5802237473AC2EBF5A9A4", hash_generated_method = "DE2FD4EC78744ED88F4F1E9E56C3186D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.434 -0400", hash_original_method = "3CF9033327C5802237473AC2EBF5A9A4", hash_generated_method = "DE2FD4EC78744ED88F4F1E9E56C3186D")
     public  EriManager(PhoneBase phone, Context context, int eriFileSource) {
         this.mPhone = phone;
         this.mContext = context;
@@ -54,7 +54,7 @@ public final class EriManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.106 -0400", hash_original_method = "E6DC952A5F138026D46EF70E48873C6A", hash_generated_method = "63E6418D6E31FB076F0ABE7FE7C0BC71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.434 -0400", hash_original_method = "E6DC952A5F138026D46EF70E48873C6A", hash_generated_method = "63E6418D6E31FB076F0ABE7FE7C0BC71")
     public void dispose() {
         mEriFile = new EriFile();
         isEriFileLoaded = false;
@@ -64,7 +64,7 @@ public final class EriManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.107 -0400", hash_original_method = "79759E789BC701587754CBB5AD9F0BEC", hash_generated_method = "9AD1C333977B2F5366B5F750F19BD008")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "79759E789BC701587754CBB5AD9F0BEC", hash_generated_method = "9AD1C333977B2F5366B5F750F19BD008")
     public void loadEriFile() {
         //Begin case ERI_FROM_MODEM 
         loadEriFileFromModem();
@@ -91,26 +91,23 @@ public final class EriManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.107 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.107 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.112 -0400", hash_original_method = "C6A3384D5129DFA3EA95328C5EF0C849", hash_generated_method = "52E1DCE4A6A4EF99A664E725A579C6A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.436 -0400", hash_original_method = "C6A3384D5129DFA3EA95328C5EF0C849", hash_generated_method = "7B67EB2485CE914721A49C786A198E62")
     private void loadEriFileFromXml() {
-        XmlPullParser parser;
-        parser = null;
-        FileInputStream stream;
-        stream = null;
-        Resources r;
-        r = mContext.getResources();
+        XmlPullParser parser = null;
+        FileInputStream stream = null;
+        Resources r = mContext.getResources();
         try 
         {
             Log.d(LOG_TAG, "loadEriFileFromXml: check for alternate file");
@@ -143,40 +140,30 @@ public final class EriManager {
                     parser.getAttributeValue(null, "NumberOfEriEntries"));
             mEriFile.mEriFileType = Integer.parseInt(
                     parser.getAttributeValue(null, "EriFileType"));
-            int parsedEriEntries;
-            parsedEriEntries = 0;
+            int parsedEriEntries = 0;
             {
                 XmlUtils.nextElement(parser);
-                String name;
-                name = parser.getName();
+                String name = parser.getName();
                 {
-                    boolean varE80C698A9C3F8E5666F4303FE2067665_633533215 = (name.equals("CallPromptId"));
+                    boolean varE80C698A9C3F8E5666F4303FE2067665_2055302659 = (name.equals("CallPromptId"));
                     {
-                        int id;
-                        id = Integer.parseInt(parser.getAttributeValue(null, "Id"));
-                        String text;
-                        text = parser.getAttributeValue(null, "CallPromptText");
+                        int id = Integer.parseInt(parser.getAttributeValue(null, "Id"));
+                        String text = parser.getAttributeValue(null, "CallPromptText");
                         {
                             mEriFile.mCallPromptId[id] = text;
                         } //End block
                     } //End block
                     {
-                        boolean var899A8E63ADE4001FCB3DF2C3D92C8FA5_1629687038 = (name.equals("EriInfo"));
+                        boolean var899A8E63ADE4001FCB3DF2C3D92C8FA5_1609603201 = (name.equals("EriInfo"));
                         {
-                            int roamingIndicator;
-                            roamingIndicator = Integer.parseInt(
+                            int roamingIndicator = Integer.parseInt(
                             parser.getAttributeValue(null, "RoamingIndicator"));
-                            int iconIndex;
-                            iconIndex = Integer.parseInt(parser.getAttributeValue(null, "IconIndex"));
-                            int iconMode;
-                            iconMode = Integer.parseInt(parser.getAttributeValue(null, "IconMode"));
-                            String eriText;
-                            eriText = parser.getAttributeValue(null, "EriText");
-                            int callPromptId;
-                            callPromptId = Integer.parseInt(
+                            int iconIndex = Integer.parseInt(parser.getAttributeValue(null, "IconIndex"));
+                            int iconMode = Integer.parseInt(parser.getAttributeValue(null, "IconMode"));
+                            String eriText = parser.getAttributeValue(null, "EriText");
+                            int callPromptId = Integer.parseInt(
                             parser.getAttributeValue(null, "CallPromptId"));
-                            int alertId;
-                            alertId = Integer.parseInt(parser.getAttributeValue(null, "AlertId"));
+                            int alertId = Integer.parseInt(parser.getAttributeValue(null, "AlertId"));
                             mEriFile.mRoamIndTable.put(roamingIndicator, new EriInfo (roamingIndicator,
                             iconIndex, iconMode, eriText, callPromptId, alertId));
                         } //End block
@@ -207,67 +194,67 @@ public final class EriManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.113 -0400", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "BCEB2138415E04FBA3803B30B7A962E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.437 -0400", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "C36FEC4137EB0E8D452C32CF93B49039")
     public int getEriFileVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619746028 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619746028;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677688634 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677688634;
         // ---------- Original Method ----------
         //return mEriFile.mVersionNumber;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.113 -0400", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "60B425BD43FB9379F5296C516EEB2588")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.437 -0400", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3B7668F37DB3D9E3FB7E2E61797946D8")
     public int getEriNumberOfEntries() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1662124816 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1662124816;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11966921 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11966921;
         // ---------- Original Method ----------
         //return mEriFile.mNumberOfEriEntries;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.113 -0400", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "6B3C246BD10304E17D02CA9326CC8532")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.438 -0400", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "4338A98036BAF8698AED63AAE68BA403")
     public int getEriFileType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040472349 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040472349;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090584144 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090584144;
         // ---------- Original Method ----------
         //return mEriFile.mEriFileType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.113 -0400", hash_original_method = "82EFBDE53CEDFA09C7F551715591238A", hash_generated_method = "1B9FD6FE043D47CCE41BA5FCD629EAA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.438 -0400", hash_original_method = "82EFBDE53CEDFA09C7F551715591238A", hash_generated_method = "8FDB32BEBEC0513E605ACEDB639DC0BD")
     public boolean isEriFileLoaded() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1002674244 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1002674244;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461918942 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461918942;
         // ---------- Original Method ----------
         //return isEriFileLoaded;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.121 -0400", hash_original_method = "EC9DEB76FD43053D10B144FC41192B14", hash_generated_method = "5A7FBD7D1B1380A78C466CF5A18700D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.440 -0400", hash_original_method = "EC9DEB76FD43053D10B144FC41192B14", hash_generated_method = "1F337327BA8F6CA4345FE0205B5898C6")
     private EriInfo getEriInfo(int roamingIndicator) {
-        EriInfo varB4EAC82CA7396A68D541C85D26508E83_1305160410 = null; //Variable for return #1
-        EriInfo varB4EAC82CA7396A68D541C85D26508E83_590206064 = null; //Variable for return #2
+        EriInfo varB4EAC82CA7396A68D541C85D26508E83_967756654 = null; //Variable for return #1
+        EriInfo varB4EAC82CA7396A68D541C85D26508E83_1061082206 = null; //Variable for return #2
         {
-            boolean var57ABABFD2A3B3C6B754E21C0F57554B9_1613434961 = (mEriFile.mRoamIndTable.containsKey(roamingIndicator));
+            boolean var57ABABFD2A3B3C6B754E21C0F57554B9_1255232367 = (mEriFile.mRoamIndTable.containsKey(roamingIndicator));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1305160410 = mEriFile.mRoamIndTable.get(roamingIndicator);
+                varB4EAC82CA7396A68D541C85D26508E83_967756654 = mEriFile.mRoamIndTable.get(roamingIndicator);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_590206064 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1061082206 = null;
             } //End block
         } //End collapsed parenthetic
         addTaint(roamingIndicator);
-        EriInfo varA7E53CE21691AB073D9660D615818899_237220335; //Final return value
+        EriInfo varA7E53CE21691AB073D9660D615818899_421779949; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_237220335 = varB4EAC82CA7396A68D541C85D26508E83_1305160410;
+                varA7E53CE21691AB073D9660D615818899_421779949 = varB4EAC82CA7396A68D541C85D26508E83_967756654;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_237220335 = varB4EAC82CA7396A68D541C85D26508E83_590206064;
+                varA7E53CE21691AB073D9660D615818899_421779949 = varB4EAC82CA7396A68D541C85D26508E83_1061082206;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_237220335.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_237220335;
+        varA7E53CE21691AB073D9660D615818899_421779949.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_421779949;
         // ---------- Original Method ----------
         //if (mEriFile.mRoamIndTable.containsKey(roamingIndicator)) {
             //return mEriFile.mRoamIndTable.get(roamingIndicator);
@@ -277,20 +264,19 @@ public final class EriManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.146 -0400", hash_original_method = "D2C726FAB5040CEBEF6EB4A1388860BE", hash_generated_method = "7519E8F1DBE24FB28FE29E601C926493")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.448 -0400", hash_original_method = "D2C726FAB5040CEBEF6EB4A1388860BE", hash_generated_method = "00D8126185AD2017604D4D9E4B4A4E9C")
     private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamInd) {
-        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_122170229 = null; //Variable for return #1
-        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_720170700 = null; //Variable for return #2
+        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_840848368 = null; //Variable for return #1
+        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_1769402472 = null; //Variable for return #2
         EriDisplayInformation ret;
         {
-            EriInfo eriInfo;
-            eriInfo = getEriInfo(roamInd);
+            EriInfo eriInfo = getEriInfo(roamInd);
             {
                 ret = new EriDisplayInformation(
                         eriInfo.mIconIndex,
                         eriInfo.mIconMode,
                         eriInfo.mEriText);
-                varB4EAC82CA7396A68D541C85D26508E83_122170229 = ret;
+                varB4EAC82CA7396A68D541C85D26508E83_840848368 = ret;
             } //End block
         } //End block
         //Begin case EriInfo.ROAMING_INDICATOR_ON 
@@ -409,10 +395,8 @@ public final class EriManager {
             } //End block
         } //End block
         {
-            EriInfo eriInfo;
-            eriInfo = getEriInfo(roamInd);
-            EriInfo defEriInfo;
-            defEriInfo = getEriInfo(defRoamInd);
+            EriInfo eriInfo = getEriInfo(roamInd);
+            EriInfo defEriInfo = getEriInfo(defRoamInd);
             {
                 {
                     ret = new EriDisplayInformation(
@@ -436,80 +420,80 @@ public final class EriManager {
             } //End block
         } //End block
         //End case default 
-        varB4EAC82CA7396A68D541C85D26508E83_720170700 = ret;
+        varB4EAC82CA7396A68D541C85D26508E83_1769402472 = ret;
         addTaint(roamInd);
         addTaint(defRoamInd);
-        EriDisplayInformation varA7E53CE21691AB073D9660D615818899_1765135938; //Final return value
+        EriDisplayInformation varA7E53CE21691AB073D9660D615818899_1850635916; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1765135938 = varB4EAC82CA7396A68D541C85D26508E83_122170229;
+                varA7E53CE21691AB073D9660D615818899_1850635916 = varB4EAC82CA7396A68D541C85D26508E83_840848368;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1765135938 = varB4EAC82CA7396A68D541C85D26508E83_720170700;
+                varA7E53CE21691AB073D9660D615818899_1850635916 = varB4EAC82CA7396A68D541C85D26508E83_1769402472;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1765135938.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1765135938;
+        varA7E53CE21691AB073D9660D615818899_1850635916.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1850635916;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.147 -0400", hash_original_method = "0CC10569A68EA715FF25360AD6D9EC97", hash_generated_method = "D94FE69610527CFEE7B1C380805946C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.449 -0400", hash_original_method = "0CC10569A68EA715FF25360AD6D9EC97", hash_generated_method = "20D8886E6C9B9DF5AE6F6EEA9264F2F4")
     public int getCdmaEriIconIndex(int roamInd, int defRoamInd) {
-        int var515FFAA8B10D5444FFA319B784D84C94_288447738 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex);
+        int var515FFAA8B10D5444FFA319B784D84C94_92816638 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex);
         addTaint(roamInd);
         addTaint(defRoamInd);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644946033 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644946033;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46915422 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46915422;
         // ---------- Original Method ----------
         //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.147 -0400", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "19A2DF0524E17B01DD5C9731783C60BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.450 -0400", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "CF18E3787E216C72CA0EDDF2F85A1E6D")
     public int getCdmaEriIconMode(int roamInd, int defRoamInd) {
-        int var29D805AE6BA7F58D859AF81BAF606D7F_295912874 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode);
+        int var29D805AE6BA7F58D859AF81BAF606D7F_129397670 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode);
         addTaint(roamInd);
         addTaint(defRoamInd);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713724543 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713724543;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147219611 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147219611;
         // ---------- Original Method ----------
         //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.147 -0400", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "F7E940B35B8C8A3765025A0954287E71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.451 -0400", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "CE80F9D7E3AE2F72FB5E463F4A89D197")
     public String getCdmaEriText(int roamInd, int defRoamInd) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1923011338 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1923011338 = getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
+        String varB4EAC82CA7396A68D541C85D26508E83_2052243572 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2052243572 = getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
         addTaint(roamInd);
         addTaint(defRoamInd);
-        varB4EAC82CA7396A68D541C85D26508E83_1923011338.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1923011338;
+        varB4EAC82CA7396A68D541C85D26508E83_2052243572.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2052243572;
         // ---------- Original Method ----------
         //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
     }
 
     
     class EriFile {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_field = "CA3B6F228A22FE5E587CFE3500DB0235", hash_generated_field = "7213E6068BB9156E973788AD57203866")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.451 -0400", hash_original_field = "CA3B6F228A22FE5E587CFE3500DB0235", hash_generated_field = "7213E6068BB9156E973788AD57203866")
 
         public int mVersionNumber;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_field = "C42433D66F2C2DBC9799A789B2B48B1D", hash_generated_field = "FDCC1E3B4FD2295A26ED5003CFA706F3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.451 -0400", hash_original_field = "C42433D66F2C2DBC9799A789B2B48B1D", hash_generated_field = "FDCC1E3B4FD2295A26ED5003CFA706F3")
 
         public int mNumberOfEriEntries;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_field = "AD315A22B51F691A15FF83833BF75CD9", hash_generated_field = "E9576BD6C3AB66FA7A330571C9CA95FE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.452 -0400", hash_original_field = "AD315A22B51F691A15FF83833BF75CD9", hash_generated_field = "E9576BD6C3AB66FA7A330571C9CA95FE")
 
         public int mEriFileType;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_field = "2FB0AC8DD26FF5F0DD2CA5B243F49CAB", hash_generated_field = "AFBDC935694CE0774D1C68BD6FD348E1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.452 -0400", hash_original_field = "2FB0AC8DD26FF5F0DD2CA5B243F49CAB", hash_generated_field = "AFBDC935694CE0774D1C68BD6FD348E1")
 
         public String[] mCallPromptId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_field = "4FC2074114FB09A5F4C098DD58728B23", hash_generated_field = "777F27FBAB0D81E98C7637CE98514EB6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.452 -0400", hash_original_field = "4FC2074114FB09A5F4C098DD58728B23", hash_generated_field = "777F27FBAB0D81E98C7637CE98514EB6")
 
         public HashMap<Integer, EriInfo> mRoamIndTable;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.148 -0400", hash_original_method = "2EA3C22290A4E78EE72B7E98713E9994", hash_generated_method = "198DE2BB12791BAD0A6900555629D6CA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.453 -0400", hash_original_method = "2EA3C22290A4E78EE72B7E98713E9994", hash_generated_method = "198DE2BB12791BAD0A6900555629D6CA")
         public  EriFile() {
             this.mVersionNumber = -1;
             this.mNumberOfEriEntries = 0;
@@ -530,17 +514,17 @@ public final class EriManager {
 
     
     class EriDisplayInformation {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.149 -0400", hash_original_field = "5C2EEBB55B73259BA23EEAF20EEA7208", hash_generated_field = "D41D6FF190F02ADC6B00CBC4CA09758B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.453 -0400", hash_original_field = "5C2EEBB55B73259BA23EEAF20EEA7208", hash_generated_field = "D41D6FF190F02ADC6B00CBC4CA09758B")
 
         public int mEriIconIndex;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.149 -0400", hash_original_field = "EBB2869EEC015D02DBBB42BC561755A0", hash_generated_field = "567015E9F1EBB9480DDA52E1D3755433")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.453 -0400", hash_original_field = "EBB2869EEC015D02DBBB42BC561755A0", hash_generated_field = "567015E9F1EBB9480DDA52E1D3755433")
 
         public int mEriIconMode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.149 -0400", hash_original_field = "950CBE7B17588C814951F20D86DEFDC5", hash_generated_field = "FE7B91EA19745F159F421B316262311F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.453 -0400", hash_original_field = "950CBE7B17588C814951F20D86DEFDC5", hash_generated_field = "FE7B91EA19745F159F421B316262311F")
 
         public String mEriIconText;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.150 -0400", hash_original_method = "4EF117935273C0A391AF6FA851E1F0DC", hash_generated_method = "7B98B4E282FBDCCFB11D0BC5C762DE79")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.454 -0400", hash_original_method = "4EF117935273C0A391AF6FA851E1F0DC", hash_generated_method = "7B98B4E282FBDCCFB11D0BC5C762DE79")
         public  EriDisplayInformation(int eriIconIndex, int eriIconMode, String eriIconText) {
             mEriIconIndex = eriIconIndex;
             mEriIconMode = eriIconMode;
@@ -552,14 +536,14 @@ public final class EriManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.150 -0400", hash_original_method = "AD3807950D152469EF511B007C55D141", hash_generated_method = "9604ED6421C1CCEE4CD24F22CF72E06C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_method = "AD3807950D152469EF511B007C55D141", hash_generated_method = "C060756F8F03546A2D8669AA14016CFD")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_301675236 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_301675236 = "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
+            String varB4EAC82CA7396A68D541C85D26508E83_1822651615 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1822651615 = "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
                     + mEriIconMode + " EriIconText: " + mEriIconText + " }";
-            varB4EAC82CA7396A68D541C85D26508E83_301675236.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_301675236;
+            varB4EAC82CA7396A68D541C85D26508E83_1822651615.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1822651615;
             // ---------- Original Method ----------
             //return "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
                     //+ mEriIconMode + " EriIconText: " + mEriIconText + " }";
@@ -570,22 +554,22 @@ public final class EriManager {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.168 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3180393FBDFF3695C5B6689D6A3679D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "1718F4DE7305211326235C8400C02ED3")
 
-    private static String LOG_TAG = "CDMA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.169 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "EA7FF8772A7B2A0121F9F6C2158F8474")
+    private static final String LOG_TAG = "CDMA";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
 
-    private static boolean DBG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.169 -0400", hash_original_field = "F731EB70B21910E383F52051C1671657", hash_generated_field = "CC544916A8B1096E680ADE82FEC5BF9D")
+    private static final boolean DBG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "F731EB70B21910E383F52051C1671657", hash_generated_field = "D02AF5D06ADE430F9873A441F2773872")
 
-    private static boolean VDBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.169 -0400", hash_original_field = "5593BB933254AF080B241EF8A7D85975", hash_generated_field = "00C3C5EFF0729D5E68BE0BDCAA7114C6")
+    private static final boolean VDBG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "5593BB933254AF080B241EF8A7D85975", hash_generated_field = "00C3C5EFF0729D5E68BE0BDCAA7114C6")
 
     public static final int ERI_FROM_XML          = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.169 -0400", hash_original_field = "75287E9282EF2CA3FA6D4E6197DEF8B2", hash_generated_field = "02B1498635DB5093BFD38B42915E1A9B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "75287E9282EF2CA3FA6D4E6197DEF8B2", hash_generated_field = "02B1498635DB5093BFD38B42915E1A9B")
 
     public static final int ERI_FROM_FILE_SYSTEM  = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:21.169 -0400", hash_original_field = "5CC67EE3C8CE1461E5FE0D948907D471", hash_generated_field = "468B5F78F500D1FE21D0E4DF6EAF48F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_field = "5CC67EE3C8CE1461E5FE0D948907D471", hash_generated_field = "468B5F78F500D1FE21D0E4DF6EAF48F6")
 
     public static final int ERI_FROM_MODEM        = 2;
 }

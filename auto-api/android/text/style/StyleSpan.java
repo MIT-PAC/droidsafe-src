@@ -15,11 +15,11 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.855 -0400", hash_original_field = "16896C9E7463BF6DF9DB6B58257F1327", hash_generated_field = "2C93712457B79293762FFB4C4660914F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.892 -0400", hash_original_field = "16896C9E7463BF6DF9DB6B58257F1327", hash_generated_field = "2C93712457B79293762FFB4C4660914F")
 
     private int mStyle;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.856 -0400", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "20E261DB45592C7A8E2B0565C32D51B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.892 -0400", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "20E261DB45592C7A8E2B0565C32D51B3")
     public  StyleSpan(int style) {
         mStyle = style;
         // ---------- Original Method ----------
@@ -27,7 +27,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.857 -0400", hash_original_method = "02AE991FD30EFB3911FE5E70F7128BC4", hash_generated_method = "DA3F115CA81C47BA19C70316FB6DD3C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.893 -0400", hash_original_method = "02AE991FD30EFB3911FE5E70F7128BC4", hash_generated_method = "DA3F115CA81C47BA19C70316FB6DD3C3")
     public  StyleSpan(Parcel src) {
         mStyle = src.readInt();
         // ---------- Original Method ----------
@@ -35,25 +35,25 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.862 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "A1C087BDB4B280C893885BC94048CB57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.893 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "A5E582A70E5272643BC03FA954DFF815")
     public int getSpanTypeId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299349823 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299349823;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491945936 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491945936;
         // ---------- Original Method ----------
         //return TextUtils.STYLE_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.862 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ACB707AC2227BF9BA5511D8D991EE95E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.893 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7A3A45F169786F180686BE9DAA70DDBE")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897884489 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897884489;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925921224 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925921224;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.863 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "AEFE324C6D2DD56DF1A0D9A77D7D3A9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.894 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "AEFE324C6D2DD56DF1A0D9A77D7D3A9F")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mStyle);
         addTaint(dest.getTaint());
@@ -63,16 +63,16 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.863 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "BE861132D5217966F80F048480FD5E5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.894 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "7DD1EC4FE2A95BE30F02150A4A4B42E1")
     public int getStyle() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330113390 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330113390;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093443683 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093443683;
         // ---------- Original Method ----------
         //return mStyle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.867 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "E364188F21EA713099CD2402C631CAF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.894 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "E364188F21EA713099CD2402C631CAF2")
     @Override
     public void updateDrawState(TextPaint ds) {
         apply(ds, mStyle);
@@ -82,7 +82,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.868 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "CE2E525CD4AB250DB76C4A2C66201128")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.895 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "CE2E525CD4AB250DB76C4A2C66201128")
     @Override
     public void updateMeasureState(TextPaint paint) {
         apply(paint, mStyle);
@@ -92,7 +92,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-        private static void apply(Paint paint, int style) {
+    private static void apply(Paint paint, int style) {
         int oldStyle;
         Typeface old = paint.getTypeface();
         if (old == null) {

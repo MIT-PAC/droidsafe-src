@@ -54,152 +54,151 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public class InputMethodService extends AbstractInputMethodService {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "47E3DC1D02320FF11860FCA10E93021A", hash_generated_field = "01719032B78A2D912F910E37CD479B69")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "47E3DC1D02320FF11860FCA10E93021A", hash_generated_field = "01719032B78A2D912F910E37CD479B69")
 
     InputMethodManager mImm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "9C44372B6B78B59807C8DF03A1965EF9", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "9C44372B6B78B59807C8DF03A1965EF9", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
 
     int mTheme = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
 
     LayoutInflater mInflater;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "51146EF3EA2889FD9B2525C6E53C7975", hash_generated_field = "B7C98FA3B531CC028C7A59F94DC2AFFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "51146EF3EA2889FD9B2525C6E53C7975", hash_generated_field = "B7C98FA3B531CC028C7A59F94DC2AFFF")
 
     TypedArray mThemeAttrs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "03503F4E2878305C59038D192AB3AC15", hash_generated_field = "6D0C26C611FBD233667A9FA9104CED21")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "03503F4E2878305C59038D192AB3AC15", hash_generated_field = "6D0C26C611FBD233667A9FA9104CED21")
 
     View mRootView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "F4214BE1FFE044F8CA79EEDDDED72016", hash_generated_field = "507E6EFA97CB0E77FA79A4D01B3ED4A3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "F4214BE1FFE044F8CA79EEDDDED72016", hash_generated_field = "507E6EFA97CB0E77FA79A4D01B3ED4A3")
 
     SoftInputWindow mWindow;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.999 -0400", hash_original_field = "57006E58594DC862E67D1855FDF16FEE", hash_generated_field = "C9E05499054E8056F0A4805D1295DEC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "57006E58594DC862E67D1855FDF16FEE", hash_generated_field = "C9E05499054E8056F0A4805D1295DEC9")
 
     boolean mInitialized;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "C0D2E2C93F79DA8713BDE478E1537ED0", hash_generated_field = "FE6B5FDA79102585E4703AA7755D8A1D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "C0D2E2C93F79DA8713BDE478E1537ED0", hash_generated_field = "FE6B5FDA79102585E4703AA7755D8A1D")
 
     boolean mWindowCreated;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "86E4FECD64C3696106A1C2B8A242AA04", hash_generated_field = "218C970370BBF49B29F07C78706BEE0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "86E4FECD64C3696106A1C2B8A242AA04", hash_generated_field = "218C970370BBF49B29F07C78706BEE0F")
 
     boolean mWindowAdded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "F4BEAD71055EFB5C1D3AE1819E120D49", hash_generated_field = "71207F91BCFA87F10E39CE8F643F27A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "F4BEAD71055EFB5C1D3AE1819E120D49", hash_generated_field = "71207F91BCFA87F10E39CE8F643F27A2")
 
     boolean mWindowVisible;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "90DB2BA0D89316B5F84014C89B3C5A49", hash_generated_field = "DC6F9BCE5EC968FD18904FAB6E1E26EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "90DB2BA0D89316B5F84014C89B3C5A49", hash_generated_field = "DC6F9BCE5EC968FD18904FAB6E1E26EA")
 
     boolean mWindowWasVisible;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "AA66B10DBD6B09095C3413E3E854E354", hash_generated_field = "393177CC055DA847245CCD680AD17E8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "AA66B10DBD6B09095C3413E3E854E354", hash_generated_field = "393177CC055DA847245CCD680AD17E8C")
 
     boolean mInShowWindow;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "FDFE1E462F69BA102A7B8F8BCFAC963E", hash_generated_field = "15182820025992AE750DB9E78ACD70F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "FDFE1E462F69BA102A7B8F8BCFAC963E", hash_generated_field = "15182820025992AE750DB9E78ACD70F3")
 
     ViewGroup mFullscreenArea;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "3A05208DCCF4A0B7E79ED0C5D037E06F", hash_generated_field = "13D1A7834031B0B293BDFE378DF08473")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "3A05208DCCF4A0B7E79ED0C5D037E06F", hash_generated_field = "13D1A7834031B0B293BDFE378DF08473")
 
     FrameLayout mExtractFrame;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "560899D96824DB522510CBBACE726143", hash_generated_field = "E6B39B5292209EE43935C8AAB586E41A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "560899D96824DB522510CBBACE726143", hash_generated_field = "E6B39B5292209EE43935C8AAB586E41A")
 
     FrameLayout mCandidatesFrame;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.000 -0400", hash_original_field = "E71070589690CB7B22255920EF5417C2", hash_generated_field = "8060C3896FC8C6EEC2A4B224AC19B8A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "E71070589690CB7B22255920EF5417C2", hash_generated_field = "8060C3896FC8C6EEC2A4B224AC19B8A5")
 
     FrameLayout mInputFrame;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.001 -0400", hash_original_field = "98E8D2ECD335C543A384E2B940159AF2", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "98E8D2ECD335C543A384E2B940159AF2", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
 
     IBinder mToken;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.018 -0400", hash_original_field = "023A158D0015238EFA1E574793716DF1", hash_generated_field = "AFA59EA1150C21AB6E344984735AF2EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "023A158D0015238EFA1E574793716DF1", hash_generated_field = "AFA59EA1150C21AB6E344984735AF2EB")
 
     InputBinding mInputBinding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.018 -0400", hash_original_field = "A2D010B7C3546462A260EC1C5E1ED4C6", hash_generated_field = "0C4E3C3C223DA7FB43EF5D532A5B3E04")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "A2D010B7C3546462A260EC1C5E1ED4C6", hash_generated_field = "0C4E3C3C223DA7FB43EF5D532A5B3E04")
 
     InputConnection mInputConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.018 -0400", hash_original_field = "782D39EBDAC05F2DB212AB8342884C64", hash_generated_field = "D15B1F449CE3CDE14A0008B2465EE7E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "782D39EBDAC05F2DB212AB8342884C64", hash_generated_field = "D15B1F449CE3CDE14A0008B2465EE7E3")
 
     boolean mInputStarted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.018 -0400", hash_original_field = "997F4B1392777ED6D28F46C5D817E4B7", hash_generated_field = "514EB139852D82B47A3950B6F3E19CF6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "997F4B1392777ED6D28F46C5D817E4B7", hash_generated_field = "514EB139852D82B47A3950B6F3E19CF6")
 
     boolean mInputViewStarted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.018 -0400", hash_original_field = "000D18FCF61C40AD69E3E56BEB71A5A6", hash_generated_field = "4626543A6FCF1F8B8B73D10B97975D09")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.798 -0400", hash_original_field = "000D18FCF61C40AD69E3E56BEB71A5A6", hash_generated_field = "4626543A6FCF1F8B8B73D10B97975D09")
 
     boolean mCandidatesViewStarted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "90E29B0FBB7D81AF12FD516A1C18EE0A", hash_generated_field = "60FF159378B9E2B6E495E1B7233D3981")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "90E29B0FBB7D81AF12FD516A1C18EE0A", hash_generated_field = "60FF159378B9E2B6E495E1B7233D3981")
 
     InputConnection mStartedInputConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "EDB1ADCF132EE49252AA404EA0C42BDC", hash_generated_field = "0A7D4D3889811FF61BF27942BE846641")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "EDB1ADCF132EE49252AA404EA0C42BDC", hash_generated_field = "0A7D4D3889811FF61BF27942BE846641")
 
     EditorInfo mInputEditorInfo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "9B0BEB2912C7407E921A6905D7C94F4B", hash_generated_field = "293541479A1626BCDA923AA8063FA9A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "9B0BEB2912C7407E921A6905D7C94F4B", hash_generated_field = "293541479A1626BCDA923AA8063FA9A6")
 
     int mShowInputFlags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "3130E5E55A7C8BB928012D0F32C408DB", hash_generated_field = "7599FBE37A9716825A76F29F0FE2FD55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "3130E5E55A7C8BB928012D0F32C408DB", hash_generated_field = "7599FBE37A9716825A76F29F0FE2FD55")
 
     boolean mShowInputRequested;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "E059488A4BAF82E3EB1514BBEF6A5C04", hash_generated_field = "46B9F45DD04B32BAA4E84977F39214E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "E059488A4BAF82E3EB1514BBEF6A5C04", hash_generated_field = "46B9F45DD04B32BAA4E84977F39214E7")
 
     boolean mLastShowInputRequested;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "22665F4551D5A5EC46B2D94EDA2C4B99", hash_generated_field = "A9B119877C3EB8E978CAEECF1D6BD14B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "22665F4551D5A5EC46B2D94EDA2C4B99", hash_generated_field = "A9B119877C3EB8E978CAEECF1D6BD14B")
 
     int mCandidatesVisibility;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "C0ED2CFA44D0D69EEA23C8E4C66CE227", hash_generated_field = "497159238D66DB93A282D483EC1CA3AC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "C0ED2CFA44D0D69EEA23C8E4C66CE227", hash_generated_field = "497159238D66DB93A282D483EC1CA3AC")
 
     CompletionInfo[] mCurCompletions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.019 -0400", hash_original_field = "27CC66322143CE51D330735DF962162F", hash_generated_field = "0A08F53EED6C8EEC9D7CC85E98FAC447")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "27CC66322143CE51D330735DF962162F", hash_generated_field = "0A08F53EED6C8EEC9D7CC85E98FAC447")
 
     boolean mShowInputForced;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "0FD506CFFBAF2760EA3C8C7A61A1EC34", hash_generated_field = "269508F0F9EF09EB866044C649D586B1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "0FD506CFFBAF2760EA3C8C7A61A1EC34", hash_generated_field = "269508F0F9EF09EB866044C649D586B1")
 
     boolean mFullscreenApplied;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "54AB7B409DAEC84F47F83754E82B9CF7", hash_generated_field = "9CA62515CAD4DE9A3596FC712B0811BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "54AB7B409DAEC84F47F83754E82B9CF7", hash_generated_field = "9CA62515CAD4DE9A3596FC712B0811BA")
 
     boolean mIsFullscreen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "A1FE7A1C3E639FA004091CB9A1C3BADC", hash_generated_field = "77749D3AEC38C02813E052F85601DCFE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "A1FE7A1C3E639FA004091CB9A1C3BADC", hash_generated_field = "77749D3AEC38C02813E052F85601DCFE")
 
     View mExtractView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "63BD8F8E7390940615BF50D62ABA7B61", hash_generated_field = "41C2A191F101A74E110D9728B296F375")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "63BD8F8E7390940615BF50D62ABA7B61", hash_generated_field = "41C2A191F101A74E110D9728B296F375")
 
     boolean mExtractViewHidden;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "DF23DA4699300FCC03743118373EEB29", hash_generated_field = "10C7C27B9EFB4B449D020D2FD7D681C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "DF23DA4699300FCC03743118373EEB29", hash_generated_field = "10C7C27B9EFB4B449D020D2FD7D681C8")
 
     ExtractEditText mExtractEditText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "D3312E3FB49BA27FC912A51A3BE0EB28", hash_generated_field = "49FE9D4C4E2B1ED741DB08F3BECEA464")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "D3312E3FB49BA27FC912A51A3BE0EB28", hash_generated_field = "49FE9D4C4E2B1ED741DB08F3BECEA464")
 
     ViewGroup mExtractAccessories;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "0EC10097C9F7737C7F02A1274F00634D", hash_generated_field = "4EF514D7B6A680A68FB4FA03A08F5D2D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "0EC10097C9F7737C7F02A1274F00634D", hash_generated_field = "4EF514D7B6A680A68FB4FA03A08F5D2D")
 
     Button mExtractAction;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "A034AA34A307E777C43933E669A375DC", hash_generated_field = "7C5C99560AB4918E13830D06100AC03C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "A034AA34A307E777C43933E669A375DC", hash_generated_field = "7C5C99560AB4918E13830D06100AC03C")
 
     ExtractedText mExtractedText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.020 -0400", hash_original_field = "3B05C3A55FB18FD1556EDCEA83357EA4", hash_generated_field = "E322EFE9A47EF352CC52DE566A5DCA94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "3B05C3A55FB18FD1556EDCEA83357EA4", hash_generated_field = "E322EFE9A47EF352CC52DE566A5DCA94")
 
     int mExtractedToken;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.021 -0400", hash_original_field = "CC1A335F32158BD1BD949E24E11AE1DC", hash_generated_field = "DD75F3DC122E5FCA3B30C64DE9D6C9CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "CC1A335F32158BD1BD949E24E11AE1DC", hash_generated_field = "DD75F3DC122E5FCA3B30C64DE9D6C9CD")
 
     View mInputView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.021 -0400", hash_original_field = "05E05DFE926C9F572FDAAECF32DC796C", hash_generated_field = "77B5EB3473D5B10089CC95C2ED94891E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "05E05DFE926C9F572FDAAECF32DC796C", hash_generated_field = "77B5EB3473D5B10089CC95C2ED94891E")
 
     boolean mIsInputViewShown;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.028 -0400", hash_original_field = "1C10330016E3D1BDEB192DB6D2AE8892", hash_generated_field = "98EF9B06A59A7DC308ADD81484067F39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "1C10330016E3D1BDEB192DB6D2AE8892", hash_generated_field = "98EF9B06A59A7DC308ADD81484067F39")
 
     int mStatusIcon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.029 -0400", hash_original_field = "269EBC9196383CF7ED8E2C7FC1F02A76", hash_generated_field = "FD8B0612F7004ABC6C691A56C2D256FE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "269EBC9196383CF7ED8E2C7FC1F02A76", hash_generated_field = "FD8B0612F7004ABC6C691A56C2D256FE")
 
     int mBackDisposition;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.029 -0400", hash_original_field = "FA246E03DDB3F75A905A719A7A70B1A3", hash_generated_field = "68F5252D64F8D4159C578F571A77AB54")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "FA246E03DDB3F75A905A719A7A70B1A3", hash_generated_field = "F25E6A5ACF83E487D08AEE0325304099")
 
-    Insets mTmpInsets = new Insets();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.029 -0400", hash_original_field = "4BC786D43E92B4BEDC23ACC8C07672C0", hash_generated_field = "18ECE134BF0FC41944D7DF74E92F279C")
+    final Insets mTmpInsets = new Insets();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.799 -0400", hash_original_field = "4BC786D43E92B4BEDC23ACC8C07672C0", hash_generated_field = "192CBA0F154C36DD2A24DDE2AD97DD40")
 
-    int[] mTmpLocation = new int[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.038 -0400", hash_original_field = "142F5B53CE3CC0CB3C0E6D7392FA4726", hash_generated_field = "72BFB074A2ACBC8D7FFE56E592BCC8F8")
+    final int[] mTmpLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.800 -0400", hash_original_field = "142F5B53CE3CC0CB3C0E6D7392FA4726", hash_generated_field = "9D9565E91A7FEF8950C3A14F9D3149EC")
 
-    ViewTreeObserver.OnComputeInternalInsetsListener mInsetsComputer = new ViewTreeObserver.OnComputeInternalInsetsListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.038 -0400", hash_original_method = "3A80214106299C195F4E4A04B9DB62AA", hash_generated_method = "814E5A3A56DBD590CB1EE516E81B9AB4")
+    final ViewTreeObserver.OnComputeInternalInsetsListener mInsetsComputer = new ViewTreeObserver.OnComputeInternalInsetsListener() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.800 -0400", hash_original_method = "3A80214106299C195F4E4A04B9DB62AA", hash_generated_method = "4D6CFA468B0FC825A18D2D61E083253E")
         public void onComputeInternalInsets(ViewTreeObserver.InternalInsetsInfo info) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                boolean var1E9E12E1C314AB48D78EC2186631F908_2133365291 = (isExtractViewShown());
+                boolean var1E9E12E1C314AB48D78EC2186631F908_497923133 = (isExtractViewShown());
                 {
-                    View decor;
-                    decor = getWindow().getWindow().getDecorView();
+                    View decor = getWindow().getWindow().getDecorView();
                     info.contentInsets.top = info.visibleInsets.top
                         = decor.getHeight();
                     info.touchableRegion.setEmpty();
@@ -232,16 +231,14 @@ public class InputMethodService extends AbstractInputMethodService {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.040 -0400", hash_original_field = "C94A4138F2315FEEC71C08F04887EF50", hash_generated_field = "481194142DA750C85FCCD99258B2E184")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.801 -0400", hash_original_field = "C94A4138F2315FEEC71C08F04887EF50", hash_generated_field = "637074E4948BB4D273503B0842435434")
 
-    View.OnClickListener mActionClickListener = new View.OnClickListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.040 -0400", hash_original_method = "F78C13955980C6EBFBCB4858D6B59E8E", hash_generated_method = "C2B30C0F3F7A675F1B932CE62236C061")
+    final View.OnClickListener mActionClickListener = new View.OnClickListener() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.801 -0400", hash_original_method = "F78C13955980C6EBFBCB4858D6B59E8E", hash_generated_method = "452C45D9980B5EA2C69EA15855896959")
         public void onClick(View v) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            EditorInfo ei;
-            ei = getCurrentInputEditorInfo();
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            final EditorInfo ei = getCurrentInputEditorInfo();
+            final InputConnection ic = getCurrentInputConnection();
             {
                 {
                     ic.performEditorAction(ei.actionId);
@@ -267,14 +264,14 @@ public class InputMethodService extends AbstractInputMethodService {
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.061 -0400", hash_original_method = "1525492D8EE98BBF3E2138610F838AAF", hash_generated_method = "1525492D8EE98BBF3E2138610F838AAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.801 -0400", hash_original_method = "1525492D8EE98BBF3E2138610F838AAF", hash_generated_method = "1525492D8EE98BBF3E2138610F838AAF")
     public InputMethodService ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.062 -0400", hash_original_method = "A950397745137F47AE3797B428EC17A0", hash_generated_method = "83B58C51650A0D9F086F4FB4DFABB584")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.802 -0400", hash_original_method = "A950397745137F47AE3797B428EC17A0", hash_generated_method = "83B58C51650A0D9F086F4FB4DFABB584")
     @Override
     public void setTheme(int theme) {
         {
@@ -289,7 +286,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.078 -0400", hash_original_method = "A4061C51E6B315B625647A4DAEF1D932", hash_generated_method = "DE550ABE012B963890E5EA21805F7878")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.802 -0400", hash_original_method = "A4061C51E6B315B625647A4DAEF1D932", hash_generated_method = "DE550ABE012B963890E5EA21805F7878")
     @Override
     public void onCreate() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -323,14 +320,14 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.079 -0400", hash_original_method = "76EDD2B848D79265B59C656C09132FEB", hash_generated_method = "83EE169EF2FBBDAF4C6A06E84EF30B78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.804 -0400", hash_original_method = "76EDD2B848D79265B59C656C09132FEB", hash_generated_method = "83EE169EF2FBBDAF4C6A06E84EF30B78")
     public void onInitializeInterface() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.080 -0400", hash_original_method = "F1A6BBC586CE4C5158D93D758F9EE4FD", hash_generated_method = "7C63C721EAC547413CE5708A1F496E22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.804 -0400", hash_original_method = "F1A6BBC586CE4C5158D93D758F9EE4FD", hash_generated_method = "7C63C721EAC547413CE5708A1F496E22")
      void initialize() {
         {
             mInitialized = true;
@@ -344,7 +341,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.123 -0400", hash_original_method = "E6A2B0DBCD46A23062A8849E041DB211", hash_generated_method = "C8CC8A3881A9A740F01923688480393B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.805 -0400", hash_original_method = "E6A2B0DBCD46A23062A8849E041DB211", hash_generated_method = "53FA4FD74B5AF584B0878762CB88EFFB")
      void initViews() {
         mInitialized = false;
         mWindowCreated = false;
@@ -356,7 +353,7 @@ public class InputMethodService extends AbstractInputMethodService {
         mWindow.setContentView(mRootView);
         mRootView.getViewTreeObserver().addOnComputeInternalInsetsListener(mInsetsComputer);
         {
-            boolean var42B91C3FC5E7160C1292C676D44C7C35_694940799 = (Settings.System.getInt(getContentResolver(),
+            boolean var42B91C3FC5E7160C1292C676D44C7C35_1203351617 = (Settings.System.getInt(getContentResolver(),
                 Settings.System.FANCY_IME_ANIMATIONS, 0) != 0);
             {
                 mWindow.getWindow().setWindowAnimations(
@@ -384,7 +381,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.136 -0400", hash_original_method = "03BF0E4B83AB5EEC5EA04DACA2552646", hash_generated_method = "FED5ACC4025145E20089A53DCC14F84F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.806 -0400", hash_original_method = "03BF0E4B83AB5EEC5EA04DACA2552646", hash_generated_method = "FED5ACC4025145E20089A53DCC14F84F")
     @Override
     public void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -408,19 +405,15 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.138 -0400", hash_original_method = "0B7AD8CA788BAE093A6DAEC0C292F050", hash_generated_method = "D4E381B8DE4910359DF4E618F4A0ADDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.806 -0400", hash_original_method = "0B7AD8CA788BAE093A6DAEC0C292F050", hash_generated_method = "FDB6176567DA712789EB96DBE7BC74C1")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onConfigurationChanged(newConfig);
-        boolean visible;
-        visible = mWindowVisible;
-        int showFlags;
-        showFlags = mShowInputFlags;
-        boolean showingInput;
-        showingInput = mShowInputRequested;
-        CompletionInfo[] completions;
-        completions = mCurCompletions;
+        boolean visible = mWindowVisible;
+        int showFlags = mShowInputFlags;
+        boolean showingInput = mShowInputRequested;
+        CompletionInfo[] completions = mCurCompletions;
         initViews();
         mInputViewStarted = false;
         mCandidatesViewStarted = false;
@@ -431,7 +424,7 @@ public class InputMethodService extends AbstractInputMethodService {
         {
             {
                 {
-                    boolean varE76E4AD258BBF3AE36D8B1906DE05BFD_2057071374 = (onShowInputRequested(showFlags, true));
+                    boolean varE76E4AD258BBF3AE36D8B1906DE05BFD_1172838077 = (onShowInputRequested(showFlags, true));
                     {
                         showWindow(true);
                         {
@@ -450,8 +443,7 @@ public class InputMethodService extends AbstractInputMethodService {
             {
                 hideWindow();
             } //End block
-            boolean showing;
-            showing = onEvaluateInputViewShown();
+            boolean showing = onEvaluateInputViewShown();
             mImm.setImeWindowStatus(mToken, IME_ACTIVE | (showing ? IME_VISIBLE : 0),
                     mBackDisposition);
         } //End block
@@ -461,55 +453,55 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.145 -0400", hash_original_method = "4C23D68F9AF6231E77018CB50F89B333", hash_generated_method = "5DD2846BA866E74CB282CE02D1821BE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.807 -0400", hash_original_method = "4C23D68F9AF6231E77018CB50F89B333", hash_generated_method = "D82C51158B4E26120A30C2C0FE764C82")
     @Override
     public AbstractInputMethodImpl onCreateInputMethodInterface() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        AbstractInputMethodImpl varB4EAC82CA7396A68D541C85D26508E83_1407572042 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1407572042 = new InputMethodImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1407572042.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1407572042;
+        AbstractInputMethodImpl varB4EAC82CA7396A68D541C85D26508E83_1295309994 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1295309994 = new InputMethodImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1295309994.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1295309994;
         // ---------- Original Method ----------
         //return new InputMethodImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.163 -0400", hash_original_method = "A293E788F38BE631F0B24DA3CBEC4EAD", hash_generated_method = "03C6B4C35D5994B81519AB97C190CDB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.808 -0400", hash_original_method = "A293E788F38BE631F0B24DA3CBEC4EAD", hash_generated_method = "F9ACA9A7DBFC7D90F04B3CF009E4E4C7")
     @Override
     public AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        AbstractInputMethodSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1853976728 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1853976728 = new InputMethodSessionImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1853976728.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1853976728;
+        AbstractInputMethodSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1385651064 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1385651064 = new InputMethodSessionImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_1385651064.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1385651064;
         // ---------- Original Method ----------
         //return new InputMethodSessionImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.164 -0400", hash_original_method = "F107DE3A8547E443866FF02369203993", hash_generated_method = "C5B403656BDF84A54A24B4255189DE4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.808 -0400", hash_original_method = "F107DE3A8547E443866FF02369203993", hash_generated_method = "8ADCBE3B48BCD1B7617670CE296EB904")
     public LayoutInflater getLayoutInflater() {
-        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_423121635 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_423121635 = mInflater;
-        varB4EAC82CA7396A68D541C85D26508E83_423121635.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_423121635;
+        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_1515384177 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1515384177 = mInflater;
+        varB4EAC82CA7396A68D541C85D26508E83_1515384177.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1515384177;
         // ---------- Original Method ----------
         //return mInflater;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.165 -0400", hash_original_method = "B35683FF457638BA2516208C83F2FBFC", hash_generated_method = "B4907E0E183017CF49FF7B8B4B7369CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.810 -0400", hash_original_method = "B35683FF457638BA2516208C83F2FBFC", hash_generated_method = "C093EAF53B8A265913ED51E570EE21D8")
     public Dialog getWindow() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_1874219070 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1874219070 = mWindow;
-        varB4EAC82CA7396A68D541C85D26508E83_1874219070.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1874219070;
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_553326512 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_553326512 = mWindow;
+        varB4EAC82CA7396A68D541C85D26508E83_553326512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_553326512;
         // ---------- Original Method ----------
         //return mWindow;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.166 -0400", hash_original_method = "4B38ED63C74A7D25A43EF42301FB70B0", hash_generated_method = "46A6C22207C263E445ACBEE325B9DE9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.814 -0400", hash_original_method = "4B38ED63C74A7D25A43EF42301FB70B0", hash_generated_method = "46A6C22207C263E445ACBEE325B9DE9D")
     public void setBackDisposition(int disposition) {
         mBackDisposition = disposition;
         // ---------- Original Method ----------
@@ -517,60 +509,58 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.166 -0400", hash_original_method = "FA0668AA74F2A3E40C75CD8A8BEC8D4A", hash_generated_method = "B7F5D880E7A29CA8C83B153841B07666")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.815 -0400", hash_original_method = "FA0668AA74F2A3E40C75CD8A8BEC8D4A", hash_generated_method = "63E89147D48A4CFA4C76DF6DA4E6266B")
     public int getBackDisposition() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548939942 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548939942;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1087724259 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1087724259;
         // ---------- Original Method ----------
         //return mBackDisposition;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.183 -0400", hash_original_method = "BF0CCCE3A6DFBF869485401A0C0B52E1", hash_generated_method = "927C46B4485AA397C9A773CFEE8F28D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.815 -0400", hash_original_method = "BF0CCCE3A6DFBF869485401A0C0B52E1", hash_generated_method = "9BAC342CF34FE5399B36A7D20E8F8E3E")
     public int getMaxWidth() {
-        WindowManager wm;
-        wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        int var2277AEB58FD93D1A35DD1F32A4E8EB14_2047763206 = (wm.getDefaultDisplay().getWidth());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655470063 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655470063;
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        int var2277AEB58FD93D1A35DD1F32A4E8EB14_1189127496 = (wm.getDefaultDisplay().getWidth());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430725310 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430725310;
         // ---------- Original Method ----------
         //WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         //return wm.getDefaultDisplay().getWidth();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.185 -0400", hash_original_method = "064CBE2A131D4B226EADDD6A40CEAEED", hash_generated_method = "280DE48BFBDB0B7194DF8E056CC229D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.816 -0400", hash_original_method = "064CBE2A131D4B226EADDD6A40CEAEED", hash_generated_method = "99B32E14519E887523ED4555B3A5B1DA")
     public InputBinding getCurrentInputBinding() {
-        InputBinding varB4EAC82CA7396A68D541C85D26508E83_1805938887 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1805938887 = mInputBinding;
-        varB4EAC82CA7396A68D541C85D26508E83_1805938887.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1805938887;
+        InputBinding varB4EAC82CA7396A68D541C85D26508E83_107482753 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_107482753 = mInputBinding;
+        varB4EAC82CA7396A68D541C85D26508E83_107482753.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_107482753;
         // ---------- Original Method ----------
         //return mInputBinding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.197 -0400", hash_original_method = "25EFF753F3CF5167178BD7379B9659BF", hash_generated_method = "56CFCFA56D3904E3AF733822EF09621F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.816 -0400", hash_original_method = "25EFF753F3CF5167178BD7379B9659BF", hash_generated_method = "5C7C96C7F184CFE8D5732D2DDE9992B0")
     public InputConnection getCurrentInputConnection() {
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_429678908 = null; //Variable for return #1
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1176259622 = null; //Variable for return #2
-        InputConnection ic;
-        ic = mStartedInputConnection;
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1153641656 = null; //Variable for return #1
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1770058770 = null; //Variable for return #2
+        InputConnection ic = mStartedInputConnection;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_429678908 = ic;
+            varB4EAC82CA7396A68D541C85D26508E83_1153641656 = ic;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1176259622 = mInputConnection;
-        InputConnection varA7E53CE21691AB073D9660D615818899_1693576272; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1770058770 = mInputConnection;
+        InputConnection varA7E53CE21691AB073D9660D615818899_332099451; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1693576272 = varB4EAC82CA7396A68D541C85D26508E83_429678908;
+                varA7E53CE21691AB073D9660D615818899_332099451 = varB4EAC82CA7396A68D541C85D26508E83_1153641656;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1693576272 = varB4EAC82CA7396A68D541C85D26508E83_1176259622;
+                varA7E53CE21691AB073D9660D615818899_332099451 = varB4EAC82CA7396A68D541C85D26508E83_1770058770;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1693576272.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1693576272;
+        varA7E53CE21691AB073D9660D615818899_332099451.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_332099451;
         // ---------- Original Method ----------
         //InputConnection ic = mStartedInputConnection;
         //if (ic != null) {
@@ -580,42 +570,38 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.198 -0400", hash_original_method = "26F207E076BC370412C35CB8C7E97837", hash_generated_method = "7741BF9396C4D1C2A5A5BA0FF9675103")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.817 -0400", hash_original_method = "26F207E076BC370412C35CB8C7E97837", hash_generated_method = "8ABBBDC599E8570F1AA7CCB9D5C0FFDE")
     public boolean getCurrentInputStarted() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073125892 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073125892;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131138293 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131138293;
         // ---------- Original Method ----------
         //return mInputStarted;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.199 -0400", hash_original_method = "659C592D4ABB3DB82261D1C4692ABF2E", hash_generated_method = "DECEC0B83EED4308B076641F36735DC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.817 -0400", hash_original_method = "659C592D4ABB3DB82261D1C4692ABF2E", hash_generated_method = "248E7A8B8A32D85F04EA27A88C3D165D")
     public EditorInfo getCurrentInputEditorInfo() {
-        EditorInfo varB4EAC82CA7396A68D541C85D26508E83_1787899118 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1787899118 = mInputEditorInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1787899118.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1787899118;
+        EditorInfo varB4EAC82CA7396A68D541C85D26508E83_1498711046 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1498711046 = mInputEditorInfo;
+        varB4EAC82CA7396A68D541C85D26508E83_1498711046.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1498711046;
         // ---------- Original Method ----------
         //return mInputEditorInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.218 -0400", hash_original_method = "27763B4939D9D4CE4F4BEBC3E63AF469", hash_generated_method = "14F454B8A6A0D5A84A2D83C72E0D003D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.818 -0400", hash_original_method = "27763B4939D9D4CE4F4BEBC3E63AF469", hash_generated_method = "94E45A224C13DD556AE603FF07F07E2E")
     public void updateFullscreenMode() {
-        boolean isFullscreen;
-        isFullscreen = mShowInputRequested && onEvaluateFullscreenMode();
-        boolean changed;
-        changed = mLastShowInputRequested != mShowInputRequested;
+        boolean isFullscreen = mShowInputRequested && onEvaluateFullscreenMode();
+        boolean changed = mLastShowInputRequested != mShowInputRequested;
         {
             changed = true;
             mIsFullscreen = isFullscreen;
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             ic.reportFullscreenMode(isFullscreen);
             mFullscreenApplied = true;
             initialize();
-            LinearLayout.LayoutParams lp;
-            lp = (LinearLayout.LayoutParams)
+            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams)
                     mFullscreenArea.getLayoutParams();
             {
                 mFullscreenArea.setBackgroundDrawable(mThemeAttrs.getDrawable(
@@ -632,8 +618,7 @@ public class InputMethodService extends AbstractInputMethodService {
                     mFullscreenArea, lp);
             {
                 {
-                    View v;
-                    v = onCreateExtractTextView();
+                    View v = onCreateExtractTextView();
                     {
                         setExtractView(v);
                     } //End block
@@ -651,7 +636,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.226 -0400", hash_original_method = "57F13E10195CB2F326F03FED8DB64B03", hash_generated_method = "C60A9927525ADC98040635D9889BA8F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.818 -0400", hash_original_method = "57F13E10195CB2F326F03FED8DB64B03", hash_generated_method = "C60A9927525ADC98040635D9889BA8F6")
     public void onConfigureWindow(Window win, boolean isFullscreen,
             boolean isCandidatesOnly) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -673,22 +658,21 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.226 -0400", hash_original_method = "0B558CA7980DF9D2EBB981E6DDF5DF60", hash_generated_method = "8FA14823328E1463BC4212645C1A2A0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.818 -0400", hash_original_method = "0B558CA7980DF9D2EBB981E6DDF5DF60", hash_generated_method = "A448E83390B053BB81B915FC62C7C85C")
     public boolean isFullscreenMode() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1569585680 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1569585680;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_319414110 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_319414110;
         // ---------- Original Method ----------
         //return mIsFullscreen;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.227 -0400", hash_original_method = "F5927891A0B192B06619C4589486FDC4", hash_generated_method = "4497DFAD2172503012DB5772DDD76361")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.818 -0400", hash_original_method = "F5927891A0B192B06619C4589486FDC4", hash_generated_method = "F2618501852F563FB5C4EEA3300E4C99")
     public boolean onEvaluateFullscreenMode() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        Configuration config;
-        config = getResources().getConfiguration();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_392830476 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_392830476;
+        Configuration config = getResources().getConfiguration();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117529405 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117529405;
         // ---------- Original Method ----------
         //Configuration config = getResources().getConfiguration();
         //if (config.orientation != Configuration.ORIENTATION_LANDSCAPE) {
@@ -702,7 +686,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.247 -0400", hash_original_method = "D4950711A20DE11BC2C7EA5EC93FE5E0", hash_generated_method = "9A1C7B3C016AB62708C38E181AF256B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.819 -0400", hash_original_method = "D4950711A20DE11BC2C7EA5EC93FE5E0", hash_generated_method = "9A1C7B3C016AB62708C38E181AF256B9")
     public void setExtractViewShown(boolean shown) {
         {
             mExtractViewHidden = !shown;
@@ -716,20 +700,20 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.248 -0400", hash_original_method = "DE07F0C980519D51E427F21507DA3D90", hash_generated_method = "80FA4A44860C458D147C499137689597")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.820 -0400", hash_original_method = "DE07F0C980519D51E427F21507DA3D90", hash_generated_method = "5BF29279B56799F9851E5ADB18924D6E")
     public boolean isExtractViewShown() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1210439974 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1210439974;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978115611 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_978115611;
         // ---------- Original Method ----------
         //return mIsFullscreen && !mExtractViewHidden;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.251 -0400", hash_original_method = "7CD3F30CDD4A5DA751939DF09DB853BA", hash_generated_method = "88E92FB3FBFE3275710323248AE93210")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.821 -0400", hash_original_method = "7CD3F30CDD4A5DA751939DF09DB853BA", hash_generated_method = "6B018199AFB1DEE0326CDE9F925A62A5")
      void updateExtractFrameVisibility() {
         int vis;
         {
-            boolean varDA1B124F93BA93414CB6CAF390A362A8_865935119 = (isFullscreenMode());
+            boolean varDA1B124F93BA93414CB6CAF390A362A8_559799497 = (isFullscreenMode());
             {
                 vis = mExtractViewHidden ? View.INVISIBLE : View.VISIBLE;
                 mExtractFrame.setVisibility(View.VISIBLE);
@@ -741,10 +725,9 @@ public class InputMethodService extends AbstractInputMethodService {
         } //End collapsed parenthetic
         updateCandidatesVisibility(mCandidatesVisibility == View.VISIBLE);
         {
-            boolean var548700EC502290A06EC6C7AD18983A79_5764612 = (mWindowWasVisible && mFullscreenArea.getVisibility() != vis);
+            boolean var548700EC502290A06EC6C7AD18983A79_176354970 = (mWindowWasVisible && mFullscreenArea.getVisibility() != vis);
             {
-                int animRes;
-                animRes = mThemeAttrs.getResourceId(vis == View.VISIBLE
+                int animRes = mThemeAttrs.getResourceId(vis == View.VISIBLE
                     ? com.android.internal.R.styleable.InputMethodService_imeExtractEnterAnimation
                     : com.android.internal.R.styleable.InputMethodService_imeExtractExitAnimation,
                     0);//DSFIXME:  CODE0008: Nested ternary operator in expression
@@ -760,27 +743,24 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.271 -0400", hash_original_method = "46EC672E73C1227D1C1A9029A1E1F3EE", hash_generated_method = "C4D16AB1A269249A89EE2D6D0AF9F959")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.822 -0400", hash_original_method = "46EC672E73C1227D1C1A9029A1E1F3EE", hash_generated_method = "00800894A3644FC1CE421FF9664D9F39")
     public void onComputeInsets(Insets outInsets) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        int[] loc;
-        loc = mTmpLocation;
+        int[] loc = mTmpLocation;
         {
-            boolean var79E067E94CDE3882F5E84A741E69778F_91180289 = (mInputFrame.getVisibility() == View.VISIBLE);
+            boolean var79E067E94CDE3882F5E84A741E69778F_445661275 = (mInputFrame.getVisibility() == View.VISIBLE);
             {
                 mInputFrame.getLocationInWindow(loc);
             } //End block
             {
-                View decor;
-                decor = getWindow().getWindow().getDecorView();
+                View decor = getWindow().getWindow().getDecorView();
                 loc[1] = decor.getHeight();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varDA1B124F93BA93414CB6CAF390A362A8_902969215 = (isFullscreenMode());
+            boolean varDA1B124F93BA93414CB6CAF390A362A8_1308587956 = (isFullscreenMode());
             {
-                View decor;
-                decor = getWindow().getWindow().getDecorView();
+                View decor = getWindow().getWindow().getDecorView();
                 outInsets.contentTopInsets = decor.getHeight();
             } //End block
             {
@@ -788,7 +768,7 @@ public class InputMethodService extends AbstractInputMethodService {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD90E8A6553A0F92E94122AA94D382E19_2130308155 = (mCandidatesFrame.getVisibility() == View.VISIBLE);
+            boolean varD90E8A6553A0F92E94122AA94D382E19_82106135 = (mCandidatesFrame.getVisibility() == View.VISIBLE);
             {
                 mCandidatesFrame.getLocationInWindow(loc);
             } //End block
@@ -820,17 +800,15 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.272 -0400", hash_original_method = "0265E8D9142690DEBAB6C995400C2A87", hash_generated_method = "AA5D25F42180E5A4529390C34477E9ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.823 -0400", hash_original_method = "0265E8D9142690DEBAB6C995400C2A87", hash_generated_method = "5686792C62D00F1B990BB8635418AFE6")
     public void updateInputViewShown() {
-        boolean isShown;
-        isShown = mShowInputRequested && onEvaluateInputViewShown();
+        boolean isShown = mShowInputRequested && onEvaluateInputViewShown();
         {
             mIsInputViewShown = isShown;
             mInputFrame.setVisibility(isShown ? View.VISIBLE : View.GONE);
             {
                 initialize();
-                View v;
-                v = onCreateInputView();
+                View v = onCreateInputView();
                 {
                     setInputView(v);
                 } //End block
@@ -852,31 +830,30 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.283 -0400", hash_original_method = "CE1497EC29214CA28D281C89DC587F5D", hash_generated_method = "FAADAB610C8EB2829D3E7BF0CDEFB9E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.824 -0400", hash_original_method = "CE1497EC29214CA28D281C89DC587F5D", hash_generated_method = "5509CCC1A2A0D5678EF5987570517E58")
     public boolean isShowInputRequested() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_414441373 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_414441373;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1233717088 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1233717088;
         // ---------- Original Method ----------
         //return mShowInputRequested;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.284 -0400", hash_original_method = "FAB0B10F230F7249B0A5682A6CF03BDF", hash_generated_method = "5ED40B22B67D066FB2859FC410BC82D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.826 -0400", hash_original_method = "FAB0B10F230F7249B0A5682A6CF03BDF", hash_generated_method = "86F0047951EA164E43F925E2C613F750")
     public boolean isInputViewShown() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_94675114 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_94675114;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522019097 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_522019097;
         // ---------- Original Method ----------
         //return mIsInputViewShown && mWindowVisible;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.284 -0400", hash_original_method = "1FE8D4523FDD0EE9294351AC86397C44", hash_generated_method = "121508FC4C7C75D520F4ACAED0F74D99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.827 -0400", hash_original_method = "1FE8D4523FDD0EE9294351AC86397C44", hash_generated_method = "70AB92CBF94BABE3755C621C14FA031F")
     public boolean onEvaluateInputViewShown() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        Configuration config;
-        config = getResources().getConfiguration();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8132589 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_8132589;
+        Configuration config = getResources().getConfiguration();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236435584 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236435584;
         // ---------- Original Method ----------
         //Configuration config = getResources().getConfiguration();
         //return config.keyboard == Configuration.KEYBOARD_NOKEYS
@@ -884,7 +861,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.285 -0400", hash_original_method = "3ADC6F28D6F2E8A9F55D9BD9F82BC8D2", hash_generated_method = "2596C08761B57C262DB3FB0E4520A40D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.828 -0400", hash_original_method = "3ADC6F28D6F2E8A9F55D9BD9F82BC8D2", hash_generated_method = "2596C08761B57C262DB3FB0E4520A40D")
     public void setCandidatesViewShown(boolean shown) {
         updateCandidatesVisibility(shown);
         {
@@ -908,7 +885,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.286 -0400", hash_original_method = "4164AC2B45DCCBE42C527D3F966F5882", hash_generated_method = "7273FFFBF842D94403313099DBFAF9C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.829 -0400", hash_original_method = "4164AC2B45DCCBE42C527D3F966F5882", hash_generated_method = "7273FFFBF842D94403313099DBFAF9C4")
      void updateCandidatesVisibility(boolean shown) {
         int vis;
         vis = View.VISIBLE;
@@ -927,19 +904,19 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.287 -0400", hash_original_method = "587D3BCB04C3551F0F314F802D60C565", hash_generated_method = "67EC5D80D5B0995BB7B99B8CC6C2F3D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.830 -0400", hash_original_method = "587D3BCB04C3551F0F314F802D60C565", hash_generated_method = "476F683162C00BFEBA7E45DC0BA8A6B4")
     public int getCandidatesHiddenVisibility() {
         {
-            boolean varED8C2CEF57D48CBEF71A26459BE2DF41_1196579206 = (isExtractViewShown());
+            boolean varED8C2CEF57D48CBEF71A26459BE2DF41_1453522424 = (isExtractViewShown());
         } //End flattened ternary
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364908276 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364908276;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304229400 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304229400;
         // ---------- Original Method ----------
         //return isExtractViewShown() ? View.GONE : View.INVISIBLE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.305 -0400", hash_original_method = "09F11407FBE421F2EB35629AC776C29A", hash_generated_method = "DECC09ED0847FD21887B434C8C7A2F55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.830 -0400", hash_original_method = "09F11407FBE421F2EB35629AC776C29A", hash_generated_method = "DECC09ED0847FD21887B434C8C7A2F55")
     public void showStatusIcon(int iconResId) {
         mStatusIcon = iconResId;
         mImm.showStatusIcon(mToken, getPackageName(), iconResId);
@@ -949,7 +926,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.307 -0400", hash_original_method = "F1217201D04BC19DA5F1842A9EA12AC0", hash_generated_method = "1FEC1D46E33E85CCE5B5210B4D8FEDD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.831 -0400", hash_original_method = "F1217201D04BC19DA5F1842A9EA12AC0", hash_generated_method = "1FEC1D46E33E85CCE5B5210B4D8FEDD0")
     public void hideStatusIcon() {
         mStatusIcon = 0;
         mImm.hideStatusIcon(mToken);
@@ -959,7 +936,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.307 -0400", hash_original_method = "65B927BAD02A0A8652162D17880CBC94", hash_generated_method = "FCC4926ADFC2ECEE94B9C332F39E19F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.831 -0400", hash_original_method = "65B927BAD02A0A8652162D17880CBC94", hash_generated_method = "FCC4926ADFC2ECEE94B9C332F39E19F4")
     public void switchInputMethod(String id) {
         mImm.setInputMethod(mToken, id);
         addTaint(id.getTaint());
@@ -968,7 +945,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.313 -0400", hash_original_method = "7F30721F4F1DC6518EC25FA69EEA9DD8", hash_generated_method = "CDA9D00F13C5A4E9F4F27CD30F04BCC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.832 -0400", hash_original_method = "7F30721F4F1DC6518EC25FA69EEA9DD8", hash_generated_method = "CDA9D00F13C5A4E9F4F27CD30F04BCC1")
     public void setExtractView(View view) {
         mExtractFrame.removeAllViews();
         mExtractFrame.addView(view, new FrameLayout.LayoutParams(
@@ -997,7 +974,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.340 -0400", hash_original_method = "8648EAF39F078D77783E311D9636B394", hash_generated_method = "5F49A98A89E7C6853457A2DBB9C200C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.833 -0400", hash_original_method = "8648EAF39F078D77783E311D9636B394", hash_generated_method = "5F49A98A89E7C6853457A2DBB9C200C5")
     public void setCandidatesView(View view) {
         mCandidatesFrame.removeAllViews();
         mCandidatesFrame.addView(view, new FrameLayout.LayoutParams(
@@ -1012,7 +989,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.341 -0400", hash_original_method = "F530779F20B702B2AC3AEE15911FE235", hash_generated_method = "448C234ECEA41219ABFCADD0A5752A31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.834 -0400", hash_original_method = "F530779F20B702B2AC3AEE15911FE235", hash_generated_method = "448C234ECEA41219ABFCADD0A5752A31")
     public void setInputView(View view) {
         mInputFrame.removeAllViews();
         mInputFrame.addView(view, new FrameLayout.LayoutParams(
@@ -1028,45 +1005,45 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.359 -0400", hash_original_method = "A13C1AA9A5FD5770C02F503628C51194", hash_generated_method = "381DA5054D547F403E474A6E7E2DE53D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.837 -0400", hash_original_method = "A13C1AA9A5FD5770C02F503628C51194", hash_generated_method = "6892A6AA8FFD16A944E319AF2CD4C6DB")
     public View onCreateExtractTextView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_934766221 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_934766221 = mInflater.inflate(
+        View varB4EAC82CA7396A68D541C85D26508E83_2141005836 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2141005836 = mInflater.inflate(
                 com.android.internal.R.layout.input_method_extract_view, null);
-        varB4EAC82CA7396A68D541C85D26508E83_934766221.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_934766221;
+        varB4EAC82CA7396A68D541C85D26508E83_2141005836.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2141005836;
         // ---------- Original Method ----------
         //return mInflater.inflate(
                 //com.android.internal.R.layout.input_method_extract_view, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.361 -0400", hash_original_method = "F89AAD61B39578A3862B8537E7226DB5", hash_generated_method = "AFA25CF1DCA2FE9D282D03FBFA42E296")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.838 -0400", hash_original_method = "F89AAD61B39578A3862B8537E7226DB5", hash_generated_method = "F00AC552D86FB5EE84872347F60998DD")
     public View onCreateCandidatesView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_246603313 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_246603313 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_246603313.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_246603313;
+        View varB4EAC82CA7396A68D541C85D26508E83_829622698 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_829622698 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_829622698.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_829622698;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.366 -0400", hash_original_method = "75C53F9A7550BADCC3EEC67DE46E8BC4", hash_generated_method = "2D1184A82AEC0CD8BE15B08D1F10A761")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.839 -0400", hash_original_method = "75C53F9A7550BADCC3EEC67DE46E8BC4", hash_generated_method = "0B4311C697C5C6CF0A58D380F5E8042F")
     public View onCreateInputView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_2055992856 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2055992856 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_2055992856.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2055992856;
+        View varB4EAC82CA7396A68D541C85D26508E83_1341208093 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1341208093 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1341208093.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1341208093;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.366 -0400", hash_original_method = "4B7A497965AEC42ECF0C79E271F7AFEF", hash_generated_method = "E916951172883C0F58CDCC3747E38446")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.840 -0400", hash_original_method = "4B7A497965AEC42ECF0C79E271F7AFEF", hash_generated_method = "E916951172883C0F58CDCC3747E38446")
     public void onStartInputView(EditorInfo info, boolean restarting) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
@@ -1075,12 +1052,11 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.367 -0400", hash_original_method = "126397FC018D546EBB3D17AA8B426F4F", hash_generated_method = "1FBD64062950E0194461EC4060B9B9C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.841 -0400", hash_original_method = "126397FC018D546EBB3D17AA8B426F4F", hash_generated_method = "8724C1B08ABA32FAD0D517829E93493C")
     public void onFinishInputView(boolean finishingInput) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             {
                 ic.finishComposingText();
             } //End block
@@ -1096,7 +1072,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.368 -0400", hash_original_method = "C1D318033051A63629AB7F18935A055B", hash_generated_method = "7BE62851E5BD3F3C78A4B38A6A2455C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.841 -0400", hash_original_method = "C1D318033051A63629AB7F18935A055B", hash_generated_method = "7BE62851E5BD3F3C78A4B38A6A2455C3")
     public void onStartCandidatesView(EditorInfo info, boolean restarting) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
@@ -1105,12 +1081,11 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.368 -0400", hash_original_method = "7B21B5BD050EBE81B79EA707D7F10503", hash_generated_method = "19B5C464DC1E592182AA9585CC0C45C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.842 -0400", hash_original_method = "7B21B5BD050EBE81B79EA707D7F10503", hash_generated_method = "BB05EB6B62551D1A2141B3FD4F12AA17")
     public void onFinishCandidatesView(boolean finishingInput) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             {
                 ic.finishComposingText();
             } //End block
@@ -1126,26 +1101,25 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.376 -0400", hash_original_method = "7116B74C32B9543E489CB78AF9B82E3D", hash_generated_method = "BC6CEB6A19CE9709CB358BFB5485BBA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.843 -0400", hash_original_method = "7116B74C32B9543E489CB78AF9B82E3D", hash_generated_method = "416943D6395F47D0A07821C0A78E5ACC")
     public boolean onShowInputRequested(int flags, boolean configChange) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var9151F215B67E3E110B8160488A310989_1242813873 = (!onEvaluateInputViewShown());
+            boolean var9151F215B67E3E110B8160488A310989_1200842717 = (!onEvaluateInputViewShown());
         } //End collapsed parenthetic
         {
             {
-                boolean varB1105F93C8A3332B01967E57F54EA7F5_2071525185 = (!configChange && onEvaluateFullscreenMode());
+                boolean varB1105F93C8A3332B01967E57F54EA7F5_385037421 = (!configChange && onEvaluateFullscreenMode());
             } //End collapsed parenthetic
-            Configuration config;
-            config = getResources().getConfiguration();
+            Configuration config = getResources().getConfiguration();
         } //End block
         {
             mShowInputForced = true;
         } //End block
         addTaint(flags);
         addTaint(configChange);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2035870691 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2035870691;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1872969187 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1872969187;
         // ---------- Original Method ----------
         //if (!onEvaluateInputViewShown()) {
             //return false;
@@ -1166,7 +1140,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.396 -0400", hash_original_method = "119016FA69877024FD5AD688A6BA764A", hash_generated_method = "B8885889E0A48F19B4706A903BBEFEF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.844 -0400", hash_original_method = "119016FA69877024FD5AD688A6BA764A", hash_generated_method = "B8885889E0A48F19B4706A903BBEFEF7")
     public void showWindow(boolean showInput) {
         try 
         {
@@ -1202,12 +1176,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.410 -0400", hash_original_method = "CB135560325B3F8C18497A9052C17028", hash_generated_method = "0512E0A9EAA6EB26A1E8755F134B3A1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.846 -0400", hash_original_method = "CB135560325B3F8C18497A9052C17028", hash_generated_method = "BF8967DB4BA4ACC2520B715AC7B8E149")
      void showWindowInner(boolean showInput) {
-        boolean doShowInput;
-        doShowInput = false;
-        boolean wasVisible;
-        wasVisible = mWindowVisible;
+        boolean doShowInput = false;
+        boolean wasVisible = mWindowVisible;
         mWindowVisible = true;
         {
             {
@@ -1227,8 +1199,7 @@ public class InputMethodService extends AbstractInputMethodService {
             mWindowAdded = true;
             mWindowCreated = true;
             initialize();
-            View v;
-            v = onCreateCandidatesView();
+            View v = onCreateCandidatesView();
             {
                 setCandidatesView(v);
             } //End block
@@ -1257,7 +1228,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.420 -0400", hash_original_method = "AE7818A6DC114C265A5A8660654BB926", hash_generated_method = "4D5A11064569AA5F7303EF116AEDEAA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.847 -0400", hash_original_method = "AE7818A6DC114C265A5A8660654BB926", hash_generated_method = "4D5A11064569AA5F7303EF116AEDEAA3")
     private void finishViews() {
         {
             onFinishInputView(false);
@@ -1280,7 +1251,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.430 -0400", hash_original_method = "09134BCCF788D1D9024485AE6DA1693C", hash_generated_method = "16EEEC9F8593063A82AAF47B525A09E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.848 -0400", hash_original_method = "09134BCCF788D1D9024485AE6DA1693C", hash_generated_method = "16EEEC9F8593063A82AAF47B525A09E8")
     public void hideWindow() {
         finishViews();
         mImm.setImeWindowStatus(mToken, 0, mBackDisposition);
@@ -1302,35 +1273,35 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.431 -0400", hash_original_method = "D99B15EAA68884714BB333A2583A0571", hash_generated_method = "E797350F14362CA554D013A5659543F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.849 -0400", hash_original_method = "D99B15EAA68884714BB333A2583A0571", hash_generated_method = "E797350F14362CA554D013A5659543F1")
     public void onWindowShown() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.431 -0400", hash_original_method = "C1BA79DB491FC590F2A9A222970A46B9", hash_generated_method = "82493FCA94AEB547B2950C787893F07B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.849 -0400", hash_original_method = "C1BA79DB491FC590F2A9A222970A46B9", hash_generated_method = "82493FCA94AEB547B2950C787893F07B")
     public void onWindowHidden() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.432 -0400", hash_original_method = "56BEE8816781B99E44028AA4DD49AFE8", hash_generated_method = "9A3D5E9EBB717318D195E3F6D8803AE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.850 -0400", hash_original_method = "56BEE8816781B99E44028AA4DD49AFE8", hash_generated_method = "9A3D5E9EBB717318D195E3F6D8803AE5")
     public void onBindInput() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.432 -0400", hash_original_method = "D52B154580F2280F1D8D5CF7DCC6C0BF", hash_generated_method = "049C427B4927AA2DB3B5531ABC79BA72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.850 -0400", hash_original_method = "D52B154580F2280F1D8D5CF7DCC6C0BF", hash_generated_method = "049C427B4927AA2DB3B5531ABC79BA72")
     public void onUnbindInput() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.432 -0400", hash_original_method = "3ADFFB39DB97C5354271962A42564DD7", hash_generated_method = "4C0B9C5E6309EE4241134758A86A3D42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.851 -0400", hash_original_method = "3ADFFB39DB97C5354271962A42564DD7", hash_generated_method = "4C0B9C5E6309EE4241134758A86A3D42")
     public void onStartInput(EditorInfo attribute, boolean restarting) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(attribute.getTaint());
@@ -1339,7 +1310,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.449 -0400", hash_original_method = "D870334B8409E203BCA5DBA60A032B6F", hash_generated_method = "246F9011D67E57587BF93602711A96F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.851 -0400", hash_original_method = "D870334B8409E203BCA5DBA60A032B6F", hash_generated_method = "246F9011D67E57587BF93602711A96F2")
      void doFinishInput() {
         {
             onFinishInputView(true);
@@ -1375,7 +1346,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.466 -0400", hash_original_method = "D70A8E32EEED9199B71D72D85567D543", hash_generated_method = "7A6306B23521605091A12339D03CC401")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.852 -0400", hash_original_method = "D70A8E32EEED9199B71D72D85567D543", hash_generated_method = "7A6306B23521605091A12339D03CC401")
      void doStartInput(InputConnection ic, EditorInfo attribute, boolean restarting) {
         {
             doFinishInput();
@@ -1402,11 +1373,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.467 -0400", hash_original_method = "E745A863BE4D98B94E02F169B272F08C", hash_generated_method = "4FDABE53DFC0FB8D4F16FAB7D6D0DC57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.853 -0400", hash_original_method = "E745A863BE4D98B94E02F169B272F08C", hash_generated_method = "2735EC8CCC520252B7D6484924DC8C63")
     public void onFinishInput() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection ic;
-        ic = getCurrentInputConnection();
+        InputConnection ic = getCurrentInputConnection();
         {
             ic.finishComposingText();
         } //End block
@@ -1418,7 +1388,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.474 -0400", hash_original_method = "75C3F475CAD98FE8CF4A523C8BDA8BB1", hash_generated_method = "B39F7F3BEFB24E502F188051870EED91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.854 -0400", hash_original_method = "75C3F475CAD98FE8CF4A523C8BDA8BB1", hash_generated_method = "B39F7F3BEFB24E502F188051870EED91")
     public void onDisplayCompletions(CompletionInfo[] completions) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(completions[0].getTaint());
@@ -1426,7 +1396,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.475 -0400", hash_original_method = "CC541C375904CEFCC1DC228363FE0C44", hash_generated_method = "07B266CDA4EFB2DD2809EEECD681E7DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.856 -0400", hash_original_method = "CC541C375904CEFCC1DC228363FE0C44", hash_generated_method = "07B266CDA4EFB2DD2809EEECD681E7DB")
     public void onUpdateExtractedText(int token, ExtractedText text) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -1449,23 +1419,20 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.482 -0400", hash_original_method = "08F34B1B106CF5B01DE522670D82A3BC", hash_generated_method = "EDC129DF48485D0347C41BB417797238")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.857 -0400", hash_original_method = "08F34B1B106CF5B01DE522670D82A3BC", hash_generated_method = "38FF0A4FC35FB5CD454F42A92891631C")
     public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd,
             int candidatesStart, int candidatesEnd) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        ExtractEditText eet;
-        eet = mExtractEditText;
+        final ExtractEditText eet = mExtractEditText;
         {
-            boolean var07839FB6DDF532AEC3BACA070CA2FC06_1975081589 = (eet != null && isFullscreenMode() && mExtractedText != null);
+            boolean var07839FB6DDF532AEC3BACA070CA2FC06_2053200179 = (eet != null && isFullscreenMode() && mExtractedText != null);
             {
-                int off;
-                off = mExtractedText.startOffset;
+                final int off = mExtractedText.startOffset;
                 eet.startInternalChanges();
                 newSelStart -= off;
                 newSelEnd -= off;
-                int len;
-                len = eet.getText().length();
+                final int len = eet.getText().length();
                 newSelStart = 0;
                 newSelStart = len;
                 newSelEnd = 0;
@@ -1498,7 +1465,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.483 -0400", hash_original_method = "D49077B58DC986892621B88ACD9BF0F7", hash_generated_method = "87A26FC82293103A524EB821FB8B0059")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.858 -0400", hash_original_method = "D49077B58DC986892621B88ACD9BF0F7", hash_generated_method = "87A26FC82293103A524EB821FB8B0059")
     public void onViewClicked(boolean focusChanged) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(focusChanged);
@@ -1506,7 +1473,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.484 -0400", hash_original_method = "F8EB5FE11A8138FB360940D74155758A", hash_generated_method = "4CB7960253167CFAAB602CD800822ACE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.858 -0400", hash_original_method = "F8EB5FE11A8138FB360940D74155758A", hash_generated_method = "4CB7960253167CFAAB602CD800822ACE")
     public void onUpdateCursor(Rect newCursor) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newCursor.getTaint());
@@ -1514,7 +1481,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.484 -0400", hash_original_method = "53762C81936F5FCD41F3F903406EE4C3", hash_generated_method = "F4B819E34691FF54D81086410C9F0E54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.859 -0400", hash_original_method = "53762C81936F5FCD41F3F903406EE4C3", hash_generated_method = "F4B819E34691FF54D81086410C9F0E54")
     public void requestHideSelf(int flags) {
         mImm.hideSoftInputFromInputMethod(mToken, flags);
         addTaint(flags);
@@ -1523,7 +1490,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.485 -0400", hash_original_method = "939E9922D22E9C6523AEB259C97CBC65", hash_generated_method = "70BFF6F3D592ABB72D21315BE8B13CA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.859 -0400", hash_original_method = "939E9922D22E9C6523AEB259C97CBC65", hash_generated_method = "70BFF6F3D592ABB72D21315BE8B13CA7")
     private void requestShowSelf(int flags) {
         mImm.showSoftInputFromInputMethod(mToken, flags);
         addTaint(flags);
@@ -1532,16 +1499,15 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.505 -0400", hash_original_method = "2F1E84CCA4C2BB5EFB606DA289F60F64", hash_generated_method = "2254331362629DFBFFB62E898B4AA49A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.860 -0400", hash_original_method = "2F1E84CCA4C2BB5EFB606DA289F60F64", hash_generated_method = "FECB8CDF9342BB276C33286BF38CAF3E")
     private boolean handleBack(boolean doIt) {
         {
             {
-                boolean var702D5193BDDB49ACD0C022D27D4F16B7_1169281946 = (isExtractViewShown() && mExtractView instanceof ExtractEditLayout);
+                boolean var702D5193BDDB49ACD0C022D27D4F16B7_784178992 = (isExtractViewShown() && mExtractView instanceof ExtractEditLayout);
                 {
-                    ExtractEditLayout extractEditLayout;
-                    extractEditLayout = (ExtractEditLayout) mExtractView;
+                    ExtractEditLayout extractEditLayout = (ExtractEditLayout) mExtractView;
                     {
-                        boolean var5924543FB4797135854B81B78B99C485_275874625 = (extractEditLayout.isActionModeStarted());
+                        boolean var5924543FB4797135854B81B78B99C485_1074308882 = (extractEditLayout.isActionModeStarted());
                         {
                             extractEditLayout.finishActionMode();
                         } //End block
@@ -1559,32 +1525,32 @@ public class InputMethodService extends AbstractInputMethodService {
             } //End block
         } //End block
         addTaint(doIt);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030087944 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030087944;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434955204 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_434955204;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.506 -0400", hash_original_method = "6D39318911C6DEDF33A28EA4D06A473F", hash_generated_method = "F1A4555F08CA3339A2A8477BE76BD852")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.861 -0400", hash_original_method = "6D39318911C6DEDF33A28EA4D06A473F", hash_generated_method = "2FE442AE647A355717BDC77A13FD6406")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var5900307FC72CF55A885B11E67B5ADB96_642242781 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK);
+            boolean var5900307FC72CF55A885B11E67B5ADB96_1450635093 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK);
             {
                 {
-                    boolean var30194127B59F20B8D15CB7440CF6FB54_1570507842 = (handleBack(false));
+                    boolean var30194127B59F20B8D15CB7440CF6FB54_392956065 = (handleBack(false));
                     {
                         event.startTracking();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        boolean varBC0795DACA35C6A9F77201B924F9EBCC_1823600732 = (doMovementKey(keyCode, event, MOVEMENT_DOWN));
+        boolean varBC0795DACA35C6A9F77201B924F9EBCC_851150085 = (doMovementKey(keyCode, event, MOVEMENT_DOWN));
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057762192 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057762192;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1744595771 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1744595771;
         // ---------- Original Method ----------
         //if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
             //if (handleBack(false)) {
@@ -1597,47 +1563,47 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.517 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "D9F799BC1B28DDFA98577CA5C4E232BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.862 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "F5702FA0236C3E2021F98207E3F3E683")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_384820252 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_384820252;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147145887 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147145887;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.518 -0400", hash_original_method = "3CC4F52C9B71FCD2A0600FA46D6F06E5", hash_generated_method = "D8A4FF9E4CDE0D3A275A5CEDF966417D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.862 -0400", hash_original_method = "3CC4F52C9B71FCD2A0600FA46D6F06E5", hash_generated_method = "40A9DD698BEC7C7E227697D5879EED59")
     public boolean onKeyMultiple(int keyCode, int count, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        boolean var690BBBD39586299984278532B3B9C485_12923219 = (doMovementKey(keyCode, event, count));
+        boolean var690BBBD39586299984278532B3B9C485_1014682957 = (doMovementKey(keyCode, event, count));
         addTaint(keyCode);
         addTaint(count);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_392591700 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_392591700;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_721041732 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_721041732;
         // ---------- Original Method ----------
         //return doMovementKey(keyCode, event, count);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.534 -0400", hash_original_method = "BCD4505881DB97C910099D82B7A22807", hash_generated_method = "C14B663FE9739646841CDAA9D93932A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.863 -0400", hash_original_method = "BCD4505881DB97C910099D82B7A22807", hash_generated_method = "0A41E4718533D584907BAFFB164DD7E8")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var5922C562AF2EE989EFA0391BD79A8FD9_485344568 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.isTracking()
+            boolean var5922C562AF2EE989EFA0391BD79A8FD9_762942664 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.isTracking()
                 && !event.isCanceled());
             {
-                boolean varD293510AE3D22D4016F47B37DB94AA22_742291142 = (handleBack(true));
+                boolean varD293510AE3D22D4016F47B37DB94AA22_1338674667 = (handleBack(true));
             } //End block
         } //End collapsed parenthetic
-        boolean var8B63F1B3C4C5EA6147670BB023C5C4C4_1550934418 = (doMovementKey(keyCode, event, MOVEMENT_UP));
+        boolean var8B63F1B3C4C5EA6147670BB023C5C4C4_2014596956 = (doMovementKey(keyCode, event, MOVEMENT_UP));
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860213837 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860213837;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844258248 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_844258248;
         // ---------- Original Method ----------
         //if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.isTracking()
                 //&& !event.isCanceled()) {
@@ -1647,19 +1613,19 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.535 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "CAB33C2180BF2A7F4B04DB5180079348")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.864 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "226874E0804CDBA87785E1F8ED9DFAC6")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685617785 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_685617785;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_433710988 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_433710988;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.536 -0400", hash_original_method = "E2F219F9B605C6393794145B9C28D4D7", hash_generated_method = "152610093C22CA4DD8518A4BDB847682")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.865 -0400", hash_original_method = "E2F219F9B605C6393794145B9C28D4D7", hash_generated_method = "152610093C22CA4DD8518A4BDB847682")
     public void onAppPrivateCommand(String action, Bundle data) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(action.getTaint());
@@ -1668,10 +1634,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.536 -0400", hash_original_method = "F1BA2156F30663683BD63E2F68C8FA5C", hash_generated_method = "38D1619E65808946C04AED1EB36B72D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.866 -0400", hash_original_method = "F1BA2156F30663683BD63E2F68C8FA5C", hash_generated_method = "C5B57779CD7C9F5A77BEF05631CD4D00")
     private void onToggleSoftInput(int showFlags, int hideFlags) {
         {
-            boolean var257AAF3411A7EBF3C3725C7C8F2C478F_775457798 = (isInputViewShown());
+            boolean var257AAF3411A7EBF3C3725C7C8F2C478F_1795126688 = (isInputViewShown());
             {
                 requestHideSelf(hideFlags);
             } //End block
@@ -1691,11 +1657,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.537 -0400", hash_original_method = "9C1F09BC7693D3503A84F47A8DD2E9B8", hash_generated_method = "C1A7F24B63EEA2C9DE27CD969792EB87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.867 -0400", hash_original_method = "9C1F09BC7693D3503A84F47A8DD2E9B8", hash_generated_method = "A3611ABE5682D1722740C923197897E1")
      void reportExtractedMovement(int keyCode, int count) {
-        int dx, dy;
-        dx = 0;
-        dy = 0;
+        int dx = 0;
+        int dy = 0;
         //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
         dx = -count;
         //End case KeyEvent.KEYCODE_DPAD_LEFT 
@@ -1731,21 +1696,18 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.559 -0400", hash_original_method = "CADA6E3534C513A6E5A0D2EB184E3B48", hash_generated_method = "BA27658A182FA990448CEFF8F6C46B66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.869 -0400", hash_original_method = "CADA6E3534C513A6E5A0D2EB184E3B48", hash_generated_method = "12A2DF7777B1B7D86952D962373475A9")
      boolean doMovementKey(int keyCode, KeyEvent event, int count) {
-        ExtractEditText eet;
-        eet = mExtractEditText;
+        final ExtractEditText eet = mExtractEditText;
         {
-            boolean var94228B74C2263F815EDE31A941CF869D_1006870880 = (isExtractViewShown() && isInputViewShown() && eet != null);
+            boolean var94228B74C2263F815EDE31A941CF869D_1490929891 = (isExtractViewShown() && isInputViewShown() && eet != null);
             {
-                MovementMethod movement;
-                movement = eet.getMovementMethod();
-                Layout layout;
-                layout = eet.getLayout();
+                MovementMethod movement = eet.getMovementMethod();
+                Layout layout = eet.getLayout();
                 {
                     {
                         {
-                            boolean var963C81CEB3E2936CF5F881BEB18A9EC6_1835342451 = (movement.onKeyDown(eet,
+                            boolean var963C81CEB3E2936CF5F881BEB18A9EC6_1104444862 = (movement.onKeyDown(eet,
                             (Spannable)eet.getText(), keyCode, event));
                             {
                                 reportExtractedMovement(keyCode, 1);
@@ -1754,25 +1716,23 @@ public class InputMethodService extends AbstractInputMethodService {
                     } //End block
                     {
                         {
-                            boolean varDB98AC32177DBB5E1C8506FFA61B86E0_385384217 = (movement.onKeyUp(eet,
+                            boolean varDB98AC32177DBB5E1C8506FFA61B86E0_1589985269 = (movement.onKeyUp(eet,
                             (Spannable)eet.getText(), keyCode, event));
                         } //End collapsed parenthetic
                     } //End block
                     {
                         {
-                            boolean var498F283C3C6269EC555383DEA743554E_1157123642 = (movement.onKeyOther(eet, (Spannable)eet.getText(), event));
+                            boolean var498F283C3C6269EC555383DEA743554E_1703086702 = (movement.onKeyOther(eet, (Spannable)eet.getText(), event));
                             {
                                 reportExtractedMovement(keyCode, count);
                             } //End block
                             {
-                                KeyEvent down;
-                                down = KeyEvent.changeAction(event, KeyEvent.ACTION_DOWN);
+                                KeyEvent down = KeyEvent.changeAction(event, KeyEvent.ACTION_DOWN);
                                 {
-                                    boolean varD21AC42920869AC37E02C57F302DAAF5_689237602 = (movement.onKeyDown(eet,
+                                    boolean varD21AC42920869AC37E02C57F302DAAF5_589455945 = (movement.onKeyDown(eet,
                                 (Spannable)eet.getText(), keyCode, down));
                                     {
-                                        KeyEvent up;
-                                        up = KeyEvent.changeAction(event, KeyEvent.ACTION_UP);
+                                        KeyEvent up = KeyEvent.changeAction(event, KeyEvent.ACTION_UP);
                                         movement.onKeyUp(eet,
                                     (Spannable)eet.getText(), keyCode, up);
                                         {
@@ -1793,19 +1753,17 @@ public class InputMethodService extends AbstractInputMethodService {
         addTaint(keyCode);
         addTaint(event.getTaint());
         addTaint(count);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1433388385 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1433388385;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1761535034 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1761535034;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.561 -0400", hash_original_method = "79E896FD8459E186D0AA684976DF9590", hash_generated_method = "743B72FA7AAACDBD4E3F3D1C6FA8EAAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.869 -0400", hash_original_method = "79E896FD8459E186D0AA684976DF9590", hash_generated_method = "527D63ED7FDE325B27B090B450551B29")
     public void sendDownUpKeyEvents(int keyEventCode) {
-        InputConnection ic;
-        ic = getCurrentInputConnection();
-        long eventTime;
-        eventTime = SystemClock.uptimeMillis();
+        InputConnection ic = getCurrentInputConnection();
+        long eventTime = SystemClock.uptimeMillis();
         ic.sendKeyEvent(new KeyEvent(eventTime, eventTime,
                 KeyEvent.ACTION_DOWN, keyEventCode, 0, 0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
                 KeyEvent.FLAG_SOFT_KEYBOARD|KeyEvent.FLAG_KEEP_TOUCH_MODE));
@@ -1826,20 +1784,18 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.588 -0400", hash_original_method = "84DA6B1414DFECBCA6744FD6285B6A00", hash_generated_method = "A9F131B4D74D60FA0AC4244EAD65EF63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.870 -0400", hash_original_method = "84DA6B1414DFECBCA6744FD6285B6A00", hash_generated_method = "A36F37B3CF81B6132B9DE6E2494F386D")
     public boolean sendDefaultEditorAction(boolean fromEnterKey) {
-        EditorInfo ei;
-        ei = getCurrentInputEditorInfo();
+        EditorInfo ei = getCurrentInputEditorInfo();
         {
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             {
                 ic.performEditorAction(ei.imeOptions&EditorInfo.IME_MASK_ACTION);
             } //End block
         } //End block
         addTaint(fromEnterKey);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1557333195 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1557333195;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1052603018 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1052603018;
         // ---------- Original Method ----------
         //EditorInfo ei = getCurrentInputEditorInfo();
         //if (ei != null &&
@@ -1857,11 +1813,11 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.589 -0400", hash_original_method = "CB96ACC643B76CE6B3516B92D9424351", hash_generated_method = "555ED6A6B8423C087FCDCD1714D8167B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.871 -0400", hash_original_method = "CB96ACC643B76CE6B3516B92D9424351", hash_generated_method = "0EFCDB25F4123D5B589445F7A836D040")
     public void sendKeyChar(char charCode) {
         //Begin case '\n' 
         {
-            boolean var7FAAA40E562A94AE6D757E1CEC431AF1_1862360402 = (!sendDefaultEditorAction(true));
+            boolean var7FAAA40E562A94AE6D757E1CEC431AF1_1707278429 = (!sendDefaultEditorAction(true));
             {
                 sendDownUpKeyEvents(KeyEvent.KEYCODE_ENTER);
             } //End block
@@ -1872,8 +1828,7 @@ public class InputMethodService extends AbstractInputMethodService {
             sendDownUpKeyEvents(charCode - '0' + KeyEvent.KEYCODE_0);
         } //End block
         {
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             {
                 ic.commitText(String.valueOf((char) charCode), 1);
             } //End block
@@ -1901,11 +1856,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.597 -0400", hash_original_method = "B848FD2302E48E43854FF3AB55ABE7CC", hash_generated_method = "87B5FC8E1AE262BC8D5F0126D2A653A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.872 -0400", hash_original_method = "B848FD2302E48E43854FF3AB55ABE7CC", hash_generated_method = "17787109CFB8BC9A6EFB151D4E9E0E99")
     public void onExtractedSelectionChanged(int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection conn;
-        conn = getCurrentInputConnection();
+        InputConnection conn = getCurrentInputConnection();
         {
             conn.setSelection(start, end);
         } //End block
@@ -1919,11 +1873,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.598 -0400", hash_original_method = "56B9FB82082DF66D8709DA9479270344", hash_generated_method = "8F4D9A7954E23166A636ACF9EAFC3F1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.872 -0400", hash_original_method = "56B9FB82082DF66D8709DA9479270344", hash_generated_method = "8601C13BCF473FB92B303DF846214ACD")
     public void onExtractedDeleteText(int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection conn;
-        conn = getCurrentInputConnection();
+        InputConnection conn = getCurrentInputConnection();
         {
             conn.setSelection(start, start);
             conn.deleteSurroundingText(0, end-start);
@@ -1939,11 +1892,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.610 -0400", hash_original_method = "3752CFC0704EAA41A71F5FCC4C7F691D", hash_generated_method = "3C18BEB8D0CB0F1256244F9125183738")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.873 -0400", hash_original_method = "3752CFC0704EAA41A71F5FCC4C7F691D", hash_generated_method = "4635D80C9F88CEF3560A54B4C45624DE")
     public void onExtractedReplaceText(int start, int end, CharSequence text) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection conn;
-        conn = getCurrentInputConnection();
+        InputConnection conn = getCurrentInputConnection();
         {
             conn.setComposingRegion(start, end);
             conn.commitText(text, 1);
@@ -1960,17 +1912,15 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.613 -0400", hash_original_method = "2386EADCDB176594EC064F3F20DE5D60", hash_generated_method = "74BE0E66B2D139A7044CFA7F9C4FA8C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.874 -0400", hash_original_method = "2386EADCDB176594EC064F3F20DE5D60", hash_generated_method = "0C9C89BC564E432FDE87CC72A3E916D1")
     public void onExtractedSetSpan(Object span, int start, int end, int flags) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection conn;
-        conn = getCurrentInputConnection();
+        InputConnection conn = getCurrentInputConnection();
         {
             {
-                boolean varD960B03B483BFF53BB8B9F9042E2BA47_1057604128 = (!conn.setSelection(start, end));
+                boolean varD960B03B483BFF53BB8B9F9042E2BA47_310399510 = (!conn.setSelection(start, end));
             } //End collapsed parenthetic
-            CharSequence text;
-            text = conn.getSelectedText(InputConnection.GET_TEXT_WITH_STYLES);
+            CharSequence text = conn.getSelectedText(InputConnection.GET_TEXT_WITH_STYLES);
             {
                 ((Spannable) text).setSpan(span, 0, text.length(), flags);
                 conn.setComposingRegion(start, end);
@@ -1995,11 +1945,11 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.634 -0400", hash_original_method = "672EAF0A2CC265CDC19E0FE05714B327", hash_generated_method = "2259E7F610E855000C2EDABA8F2708C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.875 -0400", hash_original_method = "672EAF0A2CC265CDC19E0FE05714B327", hash_generated_method = "B9F50BF4ACE0325999B56A5E071D38D9")
     public void onExtractedTextClicked() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varA215564B7B15BCB949555AE2A66D446A_16663980 = (mExtractEditText.hasVerticalScrollBar());
+            boolean varA215564B7B15BCB949555AE2A66D446A_778810662 = (mExtractEditText.hasVerticalScrollBar());
             {
                 setCandidatesViewShown(false);
             } //End block
@@ -2014,11 +1964,11 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.638 -0400", hash_original_method = "33B88CC3E792B5DBD4A2FEF9CD5D26B5", hash_generated_method = "3C9CB1E358C797438052CD297D0555E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.876 -0400", hash_original_method = "33B88CC3E792B5DBD4A2FEF9CD5D26B5", hash_generated_method = "55C55F682227DE462418F200C5B0D778")
     public void onExtractedCursorMovement(int dx, int dy) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varA215564B7B15BCB949555AE2A66D446A_1561466468 = (mExtractEditText.hasVerticalScrollBar());
+            boolean varA215564B7B15BCB949555AE2A66D446A_1626982534 = (mExtractEditText.hasVerticalScrollBar());
             {
                 setCandidatesViewShown(false);
             } //End block
@@ -2035,17 +1985,16 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.640 -0400", hash_original_method = "FA4A3D7B1537F03835F5D4F28B4BC905", hash_generated_method = "8921C615985A75EB96A0162E08D08ABD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.877 -0400", hash_original_method = "FA4A3D7B1537F03835F5D4F28B4BC905", hash_generated_method = "C5E0CF9A82B76A2B1B262D8B911D02D0")
     public boolean onExtractTextContextMenuItem(int id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection ic;
-        ic = getCurrentInputConnection();
+        InputConnection ic = getCurrentInputConnection();
         {
             ic.performContextMenuAction(id);
         } //End block
         addTaint(id);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_670949045 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_670949045;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690787156 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_690787156;
         // ---------- Original Method ----------
         //InputConnection ic = getCurrentInputConnection();
         //if (ic != null) {
@@ -2055,76 +2004,76 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.662 -0400", hash_original_method = "9F91BE1CB3CE4671D110A2B57AE2570E", hash_generated_method = "000B8E784EC81665FFBE03127AC08472")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.879 -0400", hash_original_method = "9F91BE1CB3CE4671D110A2B57AE2570E", hash_generated_method = "1EA1F2B179555CD873C44ECDAF155A3E")
     public CharSequence getTextForImeAction(int imeOptions) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_864419556 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1915084881 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_842891030 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1362358653 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1045245534 = null; //Variable for return #5
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1004842522 = null; //Variable for return #6
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1597170229 = null; //Variable for return #7
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_545628475 = null; //Variable for return #8
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_95831614 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_354202940 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_638410133 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1776536384 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1242680844 = null; //Variable for return #5
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1334870840 = null; //Variable for return #6
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_676305156 = null; //Variable for return #7
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1163650420 = null; //Variable for return #8
         //Begin case EditorInfo.IME_ACTION_NONE 
-        varB4EAC82CA7396A68D541C85D26508E83_864419556 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_95831614 = null;
         //End case EditorInfo.IME_ACTION_NONE 
         //Begin case EditorInfo.IME_ACTION_GO 
-        varB4EAC82CA7396A68D541C85D26508E83_1915084881 = getText(com.android.internal.R.string.ime_action_go);
+        varB4EAC82CA7396A68D541C85D26508E83_354202940 = getText(com.android.internal.R.string.ime_action_go);
         //End case EditorInfo.IME_ACTION_GO 
         //Begin case EditorInfo.IME_ACTION_SEARCH 
-        varB4EAC82CA7396A68D541C85D26508E83_842891030 = getText(com.android.internal.R.string.ime_action_search);
+        varB4EAC82CA7396A68D541C85D26508E83_638410133 = getText(com.android.internal.R.string.ime_action_search);
         //End case EditorInfo.IME_ACTION_SEARCH 
         //Begin case EditorInfo.IME_ACTION_SEND 
-        varB4EAC82CA7396A68D541C85D26508E83_1362358653 = getText(com.android.internal.R.string.ime_action_send);
+        varB4EAC82CA7396A68D541C85D26508E83_1776536384 = getText(com.android.internal.R.string.ime_action_send);
         //End case EditorInfo.IME_ACTION_SEND 
         //Begin case EditorInfo.IME_ACTION_NEXT 
-        varB4EAC82CA7396A68D541C85D26508E83_1045245534 = getText(com.android.internal.R.string.ime_action_next);
+        varB4EAC82CA7396A68D541C85D26508E83_1242680844 = getText(com.android.internal.R.string.ime_action_next);
         //End case EditorInfo.IME_ACTION_NEXT 
         //Begin case EditorInfo.IME_ACTION_DONE 
-        varB4EAC82CA7396A68D541C85D26508E83_1004842522 = getText(com.android.internal.R.string.ime_action_done);
+        varB4EAC82CA7396A68D541C85D26508E83_1334870840 = getText(com.android.internal.R.string.ime_action_done);
         //End case EditorInfo.IME_ACTION_DONE 
         //Begin case EditorInfo.IME_ACTION_PREVIOUS 
-        varB4EAC82CA7396A68D541C85D26508E83_1597170229 = getText(com.android.internal.R.string.ime_action_previous);
+        varB4EAC82CA7396A68D541C85D26508E83_676305156 = getText(com.android.internal.R.string.ime_action_previous);
         //End case EditorInfo.IME_ACTION_PREVIOUS 
         //Begin case default 
-        varB4EAC82CA7396A68D541C85D26508E83_545628475 = getText(com.android.internal.R.string.ime_action_default);
+        varB4EAC82CA7396A68D541C85D26508E83_1163650420 = getText(com.android.internal.R.string.ime_action_default);
         //End case default 
         addTaint(imeOptions);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1480769263; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1935526868; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_864419556;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_95831614;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_1915084881;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_354202940;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_842891030;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_638410133;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_1362358653;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_1776536384;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_1045245534;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_1242680844;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_1004842522;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_1334870840;
                 break;
             case 7: //Assign result for return ordinal #7
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_1597170229;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_676305156;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1480769263 = varB4EAC82CA7396A68D541C85D26508E83_545628475;
+                varA7E53CE21691AB073D9660D615818899_1935526868 = varB4EAC82CA7396A68D541C85D26508E83_1163650420;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1480769263.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1480769263;
+        varA7E53CE21691AB073D9660D615818899_1935526868.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1935526868;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.664 -0400", hash_original_method = "8796655A783A46466BACE236BCA7DD97", hash_generated_method = "6238B41A7B5435B0D9D8E8F7CADDE18D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.880 -0400", hash_original_method = "8796655A783A46466BACE236BCA7DD97", hash_generated_method = "6238B41A7B5435B0D9D8E8F7CADDE18D")
     public void onUpdateExtractingVisibility(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -2142,14 +2091,13 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.670 -0400", hash_original_method = "EAD47E132E9ECD3692FAA5C1AB9CEE12", hash_generated_method = "A882731EB722678388B5C4363D035AF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.881 -0400", hash_original_method = "EAD47E132E9ECD3692FAA5C1AB9CEE12", hash_generated_method = "65A8717311DE111910B01BD5A17E32D3")
     public void onUpdateExtractingViews(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var87F8135436C414A49235B50C0BEE24F1_1416518562 = (!isExtractViewShown());
+            boolean var87F8135436C414A49235B50C0BEE24F1_996559694 = (!isExtractViewShown());
         } //End collapsed parenthetic
-        boolean hasAction;
-        hasAction = ei.actionLabel != null || (
+        final boolean hasAction = ei.actionLabel != null || (
                 (ei.imeOptions&EditorInfo.IME_MASK_ACTION) != EditorInfo.IME_ACTION_NONE &&
                 (ei.imeOptions&EditorInfo.IME_FLAG_NO_ACCESSORY_ACTION) == 0 &&
                 ei.inputType != InputType.TYPE_NULL);
@@ -2177,7 +2125,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.671 -0400", hash_original_method = "B8550D5274B7AC063AD577912E9B5BF9", hash_generated_method = "0FFAAF964485579153E2E3988A3EE39A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.882 -0400", hash_original_method = "B8550D5274B7AC063AD577912E9B5BF9", hash_generated_method = "0FFAAF964485579153E2E3988A3EE39A")
     public void onExtractingInputChanged(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -2191,33 +2139,28 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.793 -0400", hash_original_method = "4C67EC88DE5F38ABAC11BF6FC64666D8", hash_generated_method = "3ADBD2ABBF9E3D64EE7536BC3E916956")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.883 -0400", hash_original_method = "4C67EC88DE5F38ABAC11BF6FC64666D8", hash_generated_method = "2D0E02EDC4FED280AA45B1B3B8194625")
      void startExtractingText(boolean inputChanged) {
-        ExtractEditText eet;
-        eet = mExtractEditText;
+        final ExtractEditText eet = mExtractEditText;
         {
-            boolean var4B45048747F7E34CB0EFEC67D57A6FDB_1223128839 = (eet != null && getCurrentInputStarted()
+            boolean var4B45048747F7E34CB0EFEC67D57A6FDB_1274374857 = (eet != null && getCurrentInputStarted()
                 && isFullscreenMode());
             {
-                ExtractedTextRequest req;
-                req = new ExtractedTextRequest();
+                ExtractedTextRequest req = new ExtractedTextRequest();
                 req.token = mExtractedToken;
                 req.flags = InputConnection.GET_TEXT_WITH_STYLES;
                 req.hintMaxLines = 10;
                 req.hintMaxChars = 10000;
-                InputConnection ic;
-                ic = getCurrentInputConnection();
+                InputConnection ic = getCurrentInputConnection();
                 mExtractedText = ic == null? null
                     : ic.getExtractedText(req, InputConnection.GET_EXTRACTED_TEXT_MONITOR);
-                EditorInfo ei;
-                ei = getCurrentInputEditorInfo();
+                final EditorInfo ei = getCurrentInputEditorInfo();
                 try 
                 {
                     eet.startInternalChanges();
                     onUpdateExtractingVisibility(ei);
                     onUpdateExtractingViews(ei);
-                    int inputType;
-                    inputType = ei.inputType;
+                    int inputType = ei.inputType;
                     {
                         {
                             inputType |= EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE;
@@ -2249,16 +2192,13 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.801 -0400", hash_original_method = "18DCEDE4996E63CB2DB494AAC7CE4961", hash_generated_method = "F3A10FF54ED27FE06FB651085D88A314")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.884 -0400", hash_original_method = "18DCEDE4996E63CB2DB494AAC7CE4961", hash_generated_method = "22FF06AE96EBFAD2C10CC25B4574EC44")
     protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            int nameResId;
-            nameResId = newSubtype.getNameResId();
-            String mode;
-            mode = newSubtype.getMode();
-            String output;
-            output = "changeInputMethodSubtype:"
+            int nameResId = newSubtype.getNameResId();
+            String mode = newSubtype.getMode();
+            String output = "changeInputMethodSubtype:"
                 + (nameResId == 0 ? "<none>" : getString(nameResId)) + ","
                 + mode + ","
                 + newSubtype.getLocale() + "," + newSubtype.getExtraValue();//DSFIXME:  CODE0008: Nested ternary operator in expression
@@ -2277,11 +2217,10 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.829 -0400", hash_original_method = "ABDAB14391C840F473C7CB9BB20D3C33", hash_generated_method = "E06AAD0BB6B15136ECA82DA430CB77F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.886 -0400", hash_original_method = "ABDAB14391C840F473C7CB9BB20D3C33", hash_generated_method = "E99845C97EBDD11ADF93A9F58238DD17")
     @Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
-        Printer p;
-        p = new PrintWriterPrinter(fout);
+        final Printer p = new PrintWriterPrinter(fout);
         p.println("Input method service state for " + this + ":");
         p.println("  mWindowCreated=" + mWindowCreated
                 + " mWindowAdded=" + mWindowAdded);
@@ -2340,14 +2279,14 @@ public class InputMethodService extends AbstractInputMethodService {
     
     public class InputMethodImpl extends AbstractInputMethodImpl {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.829 -0400", hash_original_method = "F0421074EFC32AA5D8F43C6593C3D141", hash_generated_method = "F0421074EFC32AA5D8F43C6593C3D141")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.887 -0400", hash_original_method = "F0421074EFC32AA5D8F43C6593C3D141", hash_generated_method = "F0421074EFC32AA5D8F43C6593C3D141")
         public InputMethodImpl ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.830 -0400", hash_original_method = "2246D0F0FC59D2518EAEE0F0671903AA", hash_generated_method = "A51CC7CD13A1E9A36365BA401FA778B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.888 -0400", hash_original_method = "2246D0F0FC59D2518EAEE0F0671903AA", hash_generated_method = "A51CC7CD13A1E9A36365BA401FA778B0")
         public void attachToken(IBinder token) {
             {
                 mToken = token;
@@ -2362,12 +2301,11 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.831 -0400", hash_original_method = "96E89AA7F2E1A70ABC64DBDE36024534", hash_generated_method = "3335803F89E176A3D429610A50941D13")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.888 -0400", hash_original_method = "96E89AA7F2E1A70ABC64DBDE36024534", hash_generated_method = "3AB886EAA119042B32960EA36493930E")
         public void bindInput(InputBinding binding) {
             mInputBinding = binding;
             mInputConnection = binding.getConnection();
-            InputConnection ic;
-            ic = getCurrentInputConnection();
+            InputConnection ic = getCurrentInputConnection();
             ic.reportFullscreenMode(mIsFullscreen);
             initialize();
             onBindInput();
@@ -2384,7 +2322,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.832 -0400", hash_original_method = "5DFC78D3BA0A9E107E4BC0A877A8E6D3", hash_generated_method = "6B3CEDF4200C9C7C80218F8DD5B5F50D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.889 -0400", hash_original_method = "5DFC78D3BA0A9E107E4BC0A877A8E6D3", hash_generated_method = "6B3CEDF4200C9C7C80218F8DD5B5F50D")
         public void unbindInput() {
             onUnbindInput();
             mInputStarted = false;
@@ -2400,7 +2338,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.863 -0400", hash_original_method = "ABB2165AD965E17C2FE21B1141C40C8F", hash_generated_method = "6AD7FD20C8DDACBEABA6596734A044AD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.890 -0400", hash_original_method = "ABB2165AD965E17C2FE21B1141C40C8F", hash_generated_method = "6AD7FD20C8DDACBEABA6596734A044AD")
         public void startInput(InputConnection ic, EditorInfo attribute) {
             doStartInput(ic, attribute, false);
             addTaint(ic.getTaint());
@@ -2411,7 +2349,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.864 -0400", hash_original_method = "FBDDF384E0FE523BAEFE6359495BE0E1", hash_generated_method = "DD9B1A84FD0F4D6523FB95D732F7F0D1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.890 -0400", hash_original_method = "FBDDF384E0FE523BAEFE6359495BE0E1", hash_generated_method = "DD9B1A84FD0F4D6523FB95D732F7F0D1")
         public void restartInput(InputConnection ic, EditorInfo attribute) {
             doStartInput(ic, attribute, true);
             addTaint(ic.getTaint());
@@ -2422,10 +2360,9 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.865 -0400", hash_original_method = "3A4CCDB7EB28BA706C897E348F128E61", hash_generated_method = "76C94D8C457A6B74BA588D77494BC0BD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.891 -0400", hash_original_method = "3A4CCDB7EB28BA706C897E348F128E61", hash_generated_method = "FBD1E66E9D12359F3F233704C788F170")
         public void hideSoftInput(int flags, ResultReceiver resultReceiver) {
-            boolean wasVis;
-            wasVis = isInputViewShown();
+            boolean wasVis = isInputViewShown();
             mShowInputFlags = 0;
             mShowInputRequested = false;
             mShowInputForced = false;
@@ -2454,19 +2391,17 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.876 -0400", hash_original_method = "FA726B6A215F3C1D91F0883D01FD2750", hash_generated_method = "C0E017D662A6D0E60A8F176E48366A63")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.892 -0400", hash_original_method = "FA726B6A215F3C1D91F0883D01FD2750", hash_generated_method = "5137850DBC27993FCD65F229442D502A")
         public void showSoftInput(int flags, ResultReceiver resultReceiver) {
-            boolean wasVis;
-            wasVis = isInputViewShown();
+            boolean wasVis = isInputViewShown();
             mShowInputFlags = 0;
             {
-                boolean var0345BB707617653FF624969C451A707D_958514125 = (onShowInputRequested(flags, false));
+                boolean var0345BB707617653FF624969C451A707D_1519937520 = (onShowInputRequested(flags, false));
                 {
                     showWindow(true);
                 } //End block
             } //End collapsed parenthetic
-            boolean showing;
-            showing = onEvaluateInputViewShown();
+            boolean showing = onEvaluateInputViewShown();
             mImm.setImeWindowStatus(mToken, IME_ACTIVE | (showing ? IME_VISIBLE : 0),
                     mBackDisposition);
             {
@@ -2496,7 +2431,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.877 -0400", hash_original_method = "A5FC41682DA51C285C2C6651867F8D99", hash_generated_method = "A16AAF9A841479641C6E964FA07E0985")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.892 -0400", hash_original_method = "A5FC41682DA51C285C2C6651867F8D99", hash_generated_method = "A16AAF9A841479641C6E964FA07E0985")
         public void changeInputMethodSubtype(InputMethodSubtype subtype) {
             onCurrentInputMethodSubtypeChanged(subtype);
             addTaint(subtype.getTaint());
@@ -2511,17 +2446,17 @@ public class InputMethodService extends AbstractInputMethodService {
     
     public class InputMethodSessionImpl extends AbstractInputMethodSessionImpl {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.877 -0400", hash_original_method = "0FFA9D5BB925C1ECDC26428126FD587D", hash_generated_method = "0FFA9D5BB925C1ECDC26428126FD587D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.893 -0400", hash_original_method = "0FFA9D5BB925C1ECDC26428126FD587D", hash_generated_method = "0FFA9D5BB925C1ECDC26428126FD587D")
         public InputMethodSessionImpl ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.878 -0400", hash_original_method = "3439BC8F3B3DD615353E38FBC0555505", hash_generated_method = "E24C93E804E49483892B74B0E8332250")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.893 -0400", hash_original_method = "3439BC8F3B3DD615353E38FBC0555505", hash_generated_method = "B2089176CE3732879AD9805EA61308D2")
         public void finishInput() {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_256664482 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_257843403 = (!isEnabled());
             } //End collapsed parenthetic
             doFinishInput();
             // ---------- Original Method ----------
@@ -2533,10 +2468,10 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.879 -0400", hash_original_method = "6A0353E151F9F29333A27C5421A53B38", hash_generated_method = "B1E1189EFF2C1022ABF76E42B37282AC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.894 -0400", hash_original_method = "6A0353E151F9F29333A27C5421A53B38", hash_generated_method = "7E325DEB830C1CCE3C59050B40C2733F")
         public void displayCompletions(CompletionInfo[] completions) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_662296931 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_499277893 = (!isEnabled());
             } //End collapsed parenthetic
             mCurCompletions = completions;
             onDisplayCompletions(completions);
@@ -2550,10 +2485,10 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.880 -0400", hash_original_method = "0102DD0EEEDCD27552C577307A27FE88", hash_generated_method = "055F9EDA5E666774DE75B10D88D593C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.895 -0400", hash_original_method = "0102DD0EEEDCD27552C577307A27FE88", hash_generated_method = "4DDB545A1A368739D540A5CEF288FCF0")
         public void updateExtractedText(int token, ExtractedText text) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_199582954 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_1849396756 = (!isEnabled());
             } //End collapsed parenthetic
             onUpdateExtractedText(token, text);
             addTaint(token);
@@ -2566,12 +2501,12 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.880 -0400", hash_original_method = "8EA462F0F0CF12CBAE81AB6E28205A3D", hash_generated_method = "5708894C7122DAB0B0652F9FFF9F9007")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.897 -0400", hash_original_method = "8EA462F0F0CF12CBAE81AB6E28205A3D", hash_generated_method = "6543A4311207C62398D1F1E5319D9955")
         public void updateSelection(int oldSelStart, int oldSelEnd,
                 int newSelStart, int newSelEnd,
                 int candidatesStart, int candidatesEnd) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_1634096746 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_1616628598 = (!isEnabled());
             } //End collapsed parenthetic
             InputMethodService.this.onUpdateSelection(oldSelStart, oldSelEnd,
                     newSelStart, newSelEnd, candidatesStart, candidatesEnd);
@@ -2590,11 +2525,11 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.898 -0400", hash_original_method = "7D0F3CDF004B0AA88B105A90C3B2EFF2", hash_generated_method = "A15B23CACBA1E6AC8EF7D04A984557C3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.898 -0400", hash_original_method = "7D0F3CDF004B0AA88B105A90C3B2EFF2", hash_generated_method = "6D5DA40FB956AC854D18F7B7A6994676")
         @Override
         public void viewClicked(boolean focusChanged) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_1158054087 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_62137434 = (!isEnabled());
             } //End collapsed parenthetic
             InputMethodService.this.onViewClicked(focusChanged);
             addTaint(focusChanged);
@@ -2606,10 +2541,10 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.899 -0400", hash_original_method = "5A756230FCCA173B557966360DF4EF77", hash_generated_method = "D8A161B5FA9080ED74F04274739ABC27")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.899 -0400", hash_original_method = "5A756230FCCA173B557966360DF4EF77", hash_generated_method = "12C7C093A5655E04921EFE4C1F8CB034")
         public void updateCursor(Rect newCursor) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_325481078 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_233272326 = (!isEnabled());
             } //End collapsed parenthetic
             InputMethodService.this.onUpdateCursor(newCursor);
             addTaint(newCursor.getTaint());
@@ -2621,10 +2556,10 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.899 -0400", hash_original_method = "681E840BDEA7B80F2F006F7D9B6B3563", hash_generated_method = "5870506F155AA95105136AC31068DCE3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.900 -0400", hash_original_method = "681E840BDEA7B80F2F006F7D9B6B3563", hash_generated_method = "A971EC2D1A8255552DE8D0B01179F760")
         public void appPrivateCommand(String action, Bundle data) {
             {
-                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_562070923 = (!isEnabled());
+                boolean varC3AD07CBBFDAC9CFAEE0700F705E9164_1491275998 = (!isEnabled());
             } //End collapsed parenthetic
             InputMethodService.this.onAppPrivateCommand(action, data);
             addTaint(action.getTaint());
@@ -2637,7 +2572,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.912 -0400", hash_original_method = "F1C4F6A09FBC1E433445388BE149C06F", hash_generated_method = "930D3ACC499E481F5AC897BB0703F898")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.900 -0400", hash_original_method = "F1C4F6A09FBC1E433445388BE149C06F", hash_generated_method = "930D3ACC499E481F5AC897BB0703F898")
         public void toggleSoftInput(int showFlags, int hideFlags) {
             InputMethodService.this.onToggleSoftInput(showFlags, hideFlags);
             addTaint(showFlags);
@@ -2652,39 +2587,39 @@ public class InputMethodService extends AbstractInputMethodService {
 
     
     public static final class Insets {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.912 -0400", hash_original_field = "6B844646D0C6EADB76028E296D97D26E", hash_generated_field = "0848E8A3B2603B51400EBA2544607CD8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.900 -0400", hash_original_field = "6B844646D0C6EADB76028E296D97D26E", hash_generated_field = "0848E8A3B2603B51400EBA2544607CD8")
 
         public int contentTopInsets;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.912 -0400", hash_original_field = "A2E8AB53B3DDAFAA3E389A47908EE03A", hash_generated_field = "4E5B62BB5E3FD9065410077ABCEFD6F5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "A2E8AB53B3DDAFAA3E389A47908EE03A", hash_generated_field = "4E5B62BB5E3FD9065410077ABCEFD6F5")
 
         public int visibleTopInsets;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.912 -0400", hash_original_field = "5CC4EAB992E3E01BAE580BFE4B7ACFD9", hash_generated_field = "F31B38C680C4D4319AF069970A80B1D9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "5CC4EAB992E3E01BAE580BFE4B7ACFD9", hash_generated_field = "F49DB2DF83C2B114A730FA19005C8733")
 
-        public Region touchableRegion = new Region();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.912 -0400", hash_original_field = "FB0951D59D942FF6CA5CA9E62DD65AED", hash_generated_field = "70DA720827DA3605384693EAE5E21AF8")
+        public final Region touchableRegion = new Region();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "FB0951D59D942FF6CA5CA9E62DD65AED", hash_generated_field = "70DA720827DA3605384693EAE5E21AF8")
 
         public int touchableInsets;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_method = "AB0F14C8125953D4D984387CD9B8D05E", hash_generated_method = "AB0F14C8125953D4D984387CD9B8D05E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_method = "AB0F14C8125953D4D984387CD9B8D05E", hash_generated_method = "AB0F14C8125953D4D984387CD9B8D05E")
         public Insets ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "A2BD6A2D2FAE4B0F2A6389403948A9DB", hash_generated_field = "A903B8D9E85FE8268399FAA8EA9A5E31")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "A2BD6A2D2FAE4B0F2A6389403948A9DB", hash_generated_field = "A903B8D9E85FE8268399FAA8EA9A5E31")
 
         public static final int TOUCHABLE_INSETS_FRAME
                 = ViewTreeObserver.InternalInsetsInfo.TOUCHABLE_INSETS_FRAME;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "A5CDA3247D70BA69B10B6C0010FDC255", hash_generated_field = "16D23B51E9664EA10F8919E161911777")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "A5CDA3247D70BA69B10B6C0010FDC255", hash_generated_field = "16D23B51E9664EA10F8919E161911777")
 
         public static final int TOUCHABLE_INSETS_CONTENT
                 = ViewTreeObserver.InternalInsetsInfo.TOUCHABLE_INSETS_CONTENT;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "838E61A62623937065E74D6492529D84", hash_generated_field = "CFCF2141909DD954AF9ECFE0CCA49151")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "838E61A62623937065E74D6492529D84", hash_generated_field = "CFCF2141909DD954AF9ECFE0CCA49151")
 
         public static final int TOUCHABLE_INSETS_VISIBLE
                 = ViewTreeObserver.InternalInsetsInfo.TOUCHABLE_INSETS_VISIBLE;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "76E5A63ED3A610EE6AB6EB3A21422CFD", hash_generated_field = "2D48D24763A14D18AF2E1A2EBFB364B0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "76E5A63ED3A610EE6AB6EB3A21422CFD", hash_generated_field = "2D48D24763A14D18AF2E1A2EBFB364B0")
 
         public static final int TOUCHABLE_INSETS_REGION
                 = ViewTreeObserver.InternalInsetsInfo.TOUCHABLE_INSETS_REGION;
@@ -2692,32 +2627,32 @@ public class InputMethodService extends AbstractInputMethodService {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "4C210C59F731B7259273CB52E6EAB487", hash_generated_field = "0BAD7290314E160F5C1B9295CF802F47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "4C210C59F731B7259273CB52E6EAB487", hash_generated_field = "9CF0118E5FF5051520996A9D15AE838E")
 
-    static String TAG = "InputMethodService";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "99DFF1318F5BF79C590B7B00A696225C")
+    static final String TAG = "InputMethodService";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
 
-    static boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "2C29A4B5619C3A910834AA526BCE13BA", hash_generated_field = "4162B60B07B580ECBA3A261DC0CE993C")
+    static final boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "2C29A4B5619C3A910834AA526BCE13BA", hash_generated_field = "4162B60B07B580ECBA3A261DC0CE993C")
 
     public static final int BACK_DISPOSITION_DEFAULT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.913 -0400", hash_original_field = "97E64829EE19D1C26581E470E551F6F1", hash_generated_field = "5EE67BE6E8CA7600A488D83901D53781")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "97E64829EE19D1C26581E470E551F6F1", hash_generated_field = "5EE67BE6E8CA7600A488D83901D53781")
 
     public static final int BACK_DISPOSITION_WILL_NOT_DISMISS = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.914 -0400", hash_original_field = "203C7BC5EBC13AD8BC33775F4404CC44", hash_generated_field = "1CE0B7C8A6A795BBDBCCD6070E9E96CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "203C7BC5EBC13AD8BC33775F4404CC44", hash_generated_field = "1CE0B7C8A6A795BBDBCCD6070E9E96CA")
 
     public static final int BACK_DISPOSITION_WILL_DISMISS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.914 -0400", hash_original_field = "0DDE1628212000DAF18C459BAEF81192", hash_generated_field = "911D20D022B12D5BDC027B47C99E815F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "0DDE1628212000DAF18C459BAEF81192", hash_generated_field = "911D20D022B12D5BDC027B47C99E815F")
 
     public static final int IME_ACTIVE = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.914 -0400", hash_original_field = "D1ECF6CE3C86B3EDFDFFA575C6C38827", hash_generated_field = "54453599413B853A6378E68D3D2217C5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "D1ECF6CE3C86B3EDFDFFA575C6C38827", hash_generated_field = "54453599413B853A6378E68D3D2217C5")
 
     public static final int IME_VISIBLE = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.914 -0400", hash_original_field = "F851B83995A9D4F3E431A958CAF5A8BE", hash_generated_field = "064FB601B903A00E51147D238E475961")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "F851B83995A9D4F3E431A958CAF5A8BE", hash_generated_field = "3B517107D2F173893643769189022B46")
 
-    static int MOVEMENT_DOWN = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:18.914 -0400", hash_original_field = "E702B70F996310DE47359709E5994159", hash_generated_field = "76CE82B281E21759DD4DD073C3A2E31B")
+    static final int MOVEMENT_DOWN = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.901 -0400", hash_original_field = "E702B70F996310DE47359709E5994159", hash_generated_field = "31973F9CFC4CEDE663F654F0137BD973")
 
-    static int MOVEMENT_UP = -2;
+    static final int MOVEMENT_UP = -2;
 }
 

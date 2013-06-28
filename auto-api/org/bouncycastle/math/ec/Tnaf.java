@@ -11,14 +11,14 @@ import java.math.BigInteger;
 
 class Tnaf {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.723 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.867 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
     public Tnaf ()
     {
         //Synthesized constructor
     }
 
 
-        public static BigInteger norm(final byte mu, ZTauElement lambda) {
+    public static BigInteger norm(final byte mu, ZTauElement lambda) {
         BigInteger norm;
         BigInteger s1 = lambda.u.multiply(lambda.u);
         BigInteger s2 = lambda.u.multiply(lambda.v);
@@ -39,7 +39,7 @@ class Tnaf {
     }
 
     
-        public static SimpleBigDecimal norm(final byte mu, SimpleBigDecimal u,
+    public static SimpleBigDecimal norm(final byte mu, SimpleBigDecimal u,
             SimpleBigDecimal v) {
         SimpleBigDecimal norm;
         SimpleBigDecimal s1 = u.multiply(u);
@@ -61,7 +61,7 @@ class Tnaf {
     }
 
     
-        public static ZTauElement round(SimpleBigDecimal lambda0,
+    public static ZTauElement round(SimpleBigDecimal lambda0,
             SimpleBigDecimal lambda1, byte mu) {
         int scale = lambda0.getScale();
         if (lambda1.getScale() != scale)
@@ -144,7 +144,7 @@ class Tnaf {
     }
 
     
-        public static SimpleBigDecimal approximateDivisionByN(BigInteger k,
+    public static SimpleBigDecimal approximateDivisionByN(BigInteger k,
             BigInteger s, BigInteger vm, byte a, int m, int c) {
         int _k = (m + 5)/2 + c;
         BigInteger ns = k.shiftRight(m - _k - 2 + a);
@@ -161,7 +161,7 @@ class Tnaf {
     }
 
     
-        public static byte[] tauAdicNaf(byte mu, ZTauElement lambda) {
+    public static byte[] tauAdicNaf(byte mu, ZTauElement lambda) {
         if (!((mu == 1) || (mu == -1)))
         {
             throw new IllegalArgumentException("mu must be 1 or -1");
@@ -213,7 +213,7 @@ class Tnaf {
     }
 
     
-        public static ECPoint.F2m tau(ECPoint.F2m p) {
+    public static ECPoint.F2m tau(ECPoint.F2m p) {
         if (p.isInfinity())
         {
             return p;
@@ -224,7 +224,7 @@ class Tnaf {
     }
 
     
-        public static byte getMu(ECCurve.F2m curve) {
+    public static byte getMu(ECCurve.F2m curve) {
         BigInteger a = curve.getA().toBigInteger();
         byte mu;
         if (a.equals(ECConstants.ZERO))
@@ -244,7 +244,7 @@ class Tnaf {
     }
 
     
-        public static BigInteger[] getLucas(byte mu, int k, boolean doV) {
+    public static BigInteger[] getLucas(byte mu, int k, boolean doV) {
         if (!((mu == 1) || (mu == -1)))
         {
             throw new IllegalArgumentException("mu must be 1 or -1");
@@ -282,7 +282,7 @@ class Tnaf {
     }
 
     
-        public static BigInteger getTw(byte mu, int w) {
+    public static BigInteger getTw(byte mu, int w) {
         if (w == 4)
         {
             if (mu == 1)
@@ -306,7 +306,7 @@ class Tnaf {
     }
 
     
-        public static BigInteger[] getSi(ECCurve.F2m curve) {
+    public static BigInteger[] getSi(ECCurve.F2m curve) {
         if (!curve.isKoblitz())
         {
             throw new IllegalArgumentException("si is defined for Koblitz curves only");
@@ -352,7 +352,7 @@ class Tnaf {
     }
 
     
-        public static ZTauElement partModReduction(BigInteger k, int m, byte a,
+    public static ZTauElement partModReduction(BigInteger k, int m, byte a,
             BigInteger[] s, byte mu, byte c) {
         BigInteger d0;
         if (mu == 1)
@@ -377,7 +377,7 @@ class Tnaf {
     }
 
     
-        public static ECPoint.F2m multiplyRTnaf(ECPoint.F2m p, BigInteger k) {
+    public static ECPoint.F2m multiplyRTnaf(ECPoint.F2m p, BigInteger k) {
         ECCurve.F2m curve = (ECCurve.F2m) p.getCurve();
         int m = curve.getM();
         byte a = (byte) curve.getA().toBigInteger().intValue();
@@ -388,7 +388,7 @@ class Tnaf {
     }
 
     
-        public static ECPoint.F2m multiplyTnaf(ECPoint.F2m p, ZTauElement lambda) {
+    public static ECPoint.F2m multiplyTnaf(ECPoint.F2m p, ZTauElement lambda) {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         byte mu = curve.getMu();
         byte[] u = tauAdicNaf(mu, lambda);
@@ -397,7 +397,7 @@ class Tnaf {
     }
 
     
-        public static ECPoint.F2m multiplyFromTnaf(ECPoint.F2m p, byte[] u) {
+    public static ECPoint.F2m multiplyFromTnaf(ECPoint.F2m p, byte[] u) {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         ECPoint.F2m q = (ECPoint.F2m) curve.getInfinity();
         for (int i = u.length - 1; i >= 0; i--)
@@ -416,7 +416,7 @@ class Tnaf {
     }
 
     
-        public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
+    public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
             byte width, BigInteger pow2w, BigInteger tw, ZTauElement[] alpha) {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -483,7 +483,7 @@ class Tnaf {
     }
 
     
-        public static ECPoint.F2m[] getPreComp(ECPoint.F2m p, byte a) {
+    public static ECPoint.F2m[] getPreComp(ECPoint.F2m p, byte a) {
         ECPoint.F2m[] pu;
         pu = new ECPoint.F2m[16];
         pu[1] = p;
@@ -505,22 +505,22 @@ class Tnaf {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "46940386C5E4B7F858F2360BD51B3E0B", hash_generated_field = "1BA3E5D826B9068D25D7A667E7C69204")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.871 -0400", hash_original_field = "46940386C5E4B7F858F2360BD51B3E0B", hash_generated_field = "E47A0708357590CCE79AC42AC8295DDF")
 
-    private static BigInteger MINUS_ONE = ECConstants.ONE.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "E028E87A2D4B7B8682848C5038475291", hash_generated_field = "61FB5C0CF710CA5BA4D96388BA5DAAF4")
+    private static final BigInteger MINUS_ONE = ECConstants.ONE.negate();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.871 -0400", hash_original_field = "E028E87A2D4B7B8682848C5038475291", hash_generated_field = "233983D0ED664D901E87017E2630A217")
 
-    private static BigInteger MINUS_TWO = ECConstants.TWO.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "A0A4249CE7D103C1D2E1CA663ED74910", hash_generated_field = "C18CD016DD03C55EA80E4C9ADE71CC0A")
+    private static final BigInteger MINUS_TWO = ECConstants.TWO.negate();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "A0A4249CE7D103C1D2E1CA663ED74910", hash_generated_field = "08C22EA714BE24B9BEB625FE05C99244")
 
-    private static BigInteger MINUS_THREE = ECConstants.THREE.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "672E91342A9CD68768AB135997317B75", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
+    private static final BigInteger MINUS_THREE = ECConstants.THREE.negate();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "672E91342A9CD68768AB135997317B75", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
 
     public static final byte WIDTH = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "DC21CE98F8126B37FACA40EE6BFEA402", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "DC21CE98F8126B37FACA40EE6BFEA402", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
 
     public static final byte POW_2_WIDTH = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "8F9C346BAE23F193BC224F479E430F3E", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "8F9C346BAE23F193BC224F479E430F3E", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
 
     public static final ZTauElement[] alpha0 = {
         null,
@@ -529,12 +529,12 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, MINUS_ONE), null,
         new ZTauElement(ECConstants.ONE, MINUS_ONE), null
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "EA28EFCACE8665B00CEDB38808A55DDB", hash_generated_field = "2610932BBC232F1B35161A474C555605")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "EA28EFCACE8665B00CEDB38808A55DDB", hash_generated_field = "2610932BBC232F1B35161A474C555605")
 
     public static final byte[][] alpha0Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, 1}
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "D40189B030BA142DBB62F29BB65B3753", hash_generated_field = "B27BD535E864081052B48483622B9F55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "D40189B030BA142DBB62F29BB65B3753", hash_generated_field = "B27BD535E864081052B48483622B9F55")
 
     public static final ZTauElement[] alpha1 = {null,
         new ZTauElement(ECConstants.ONE, ECConstants.ZERO), null,
@@ -542,7 +542,7 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, ECConstants.ONE), null,
         new ZTauElement(ECConstants.ONE, ECConstants.ONE), null
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "B265920709CACADAC6D749B57869C9BF", hash_generated_field = "429E234FB060570ACC226375F178F480")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.872 -0400", hash_original_field = "B265920709CACADAC6D749B57869C9BF", hash_generated_field = "429E234FB060570ACC226375F178F480")
 
     public static final byte[][] alpha1Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, -1}

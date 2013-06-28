@@ -11,14 +11,14 @@ import android.text.Layout.Directions;
 
 class AndroidBidi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.484 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.479 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
     public AndroidBidi ()
     {
         //Synthesized constructor
     }
 
 
-        public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
+    public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
         if (chs == null || chInfo == null) {
             throw new NullPointerException();
         }
@@ -38,7 +38,7 @@ class AndroidBidi {
     }
 
     
-        public static Directions directions(int dir, byte[] levels, int lstart,
+    public static Directions directions(int dir, byte[] levels, int lstart,
             char[] chars, int cstart, int len) {
         int baseLevel = dir == Layout.DIR_LEFT_TO_RIGHT ? 0 : 1;
         int curLevel = levels[lstart];
@@ -130,8 +130,9 @@ class AndroidBidi {
     }
 
     
-        private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
-        return DSUtils.UNKNOWN_INT;
+    private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656;
     }
 
     

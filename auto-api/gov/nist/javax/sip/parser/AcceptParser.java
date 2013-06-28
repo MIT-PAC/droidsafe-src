@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class AcceptParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.258 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.661 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
     public  AcceptParser(String accept) {
         super(accept);
         addTaint(accept.getTaint());
@@ -21,7 +21,7 @@ public class AcceptParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.258 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.661 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
     protected  AcceptParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,22 +29,19 @@ public class AcceptParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.270 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "0945DEB82573B0B5100D586570A5D16A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.662 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "F0E198A86A7FCB914B55039D92065E64")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_961869752 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_156479035 = null; //Variable for return #1
         dbg_enter("AcceptParser.parse");
-        AcceptList list;
-        list = new AcceptList();
+        AcceptList list = new AcceptList();
         try 
         {
             headerName(TokenTypes.ACCEPT);
-            Accept accept;
-            accept = new Accept();
+            Accept accept = new Accept();
             accept.setHeaderName(SIPHeaderNames.ACCEPT);
             this.lexer.SPorHT();
             this.lexer.match(TokenTypes.ID);
-            Token token;
-            token = lexer.getNextToken();
+            Token token = lexer.getNextToken();
             accept.setContentType(token.getTokenValue());
             this.lexer.match('/');
             this.lexer.match(TokenTypes.ID);
@@ -54,7 +51,7 @@ public class AcceptParser extends ParametersParser {
             super.parse(accept);
             list.add(accept);
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1820101380 = (lexer.lookAhead(0) == ',');
+                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1745204061 = (lexer.lookAhead(0) == ',');
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
@@ -71,14 +68,14 @@ public class AcceptParser extends ParametersParser {
                     list.add(accept);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_961869752 = list;
+            varB4EAC82CA7396A68D541C85D26508E83_156479035 = list;
         } //End block
         finally 
         {
             dbg_leave("AcceptParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_961869752.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_961869752;
+        varB4EAC82CA7396A68D541C85D26508E83_156479035.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_156479035;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

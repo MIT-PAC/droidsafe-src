@@ -15,7 +15,7 @@ import javax.sip.*;
 
 public class SessionExpiresParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.576 -0400", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "545C555B9486493C4D866EE22D7C9C8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.053 -0400", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "545C555B9486493C4D866EE22D7C9C8B")
     public  SessionExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
@@ -23,7 +23,7 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.578 -0400", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "44A1638EF63BA8B620473329084C8EBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.053 -0400", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "44A1638EF63BA8B620473329084C8EBC")
     protected  SessionExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -31,21 +31,18 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.582 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "85B5AA311342DA00414BE049AF43306B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.053 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "568E69171809E4C172967FA7B079112E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_27245354 = null; //Variable for return #1
-        SessionExpires se;
-        se = new SessionExpires();
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_580260293 = null; //Variable for return #1
+        SessionExpires se = new SessionExpires();
         dbg_enter("parse");
         try 
         {
             headerName(TokenTypes.SESSIONEXPIRES_TO);
-            String nextId;
-            nextId = lexer.getNextId();
+            String nextId = lexer.getNextId();
             try 
             {
-                int delta;
-                delta = Integer.parseInt(nextId);
+                int delta = Integer.parseInt(nextId);
                 se.setExpires(delta);
             } //End block
             catch (NumberFormatException ex)
@@ -58,14 +55,14 @@ public class SessionExpiresParser extends ParametersParser {
             } //End block
             this.lexer.SPorHT();
             super.parse(se);
-            varB4EAC82CA7396A68D541C85D26508E83_27245354 = se;
+            varB4EAC82CA7396A68D541C85D26508E83_580260293 = se;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_27245354.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_27245354;
+        varB4EAC82CA7396A68D541C85D26508E83_580260293.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_580260293;
         // ---------- Original Method ----------
         //SessionExpires se = new SessionExpires();
         //if (debug)
@@ -91,7 +88,7 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Session-Expires: 30\n",
                 "Session-Expires: 45;refresher=uac\n",

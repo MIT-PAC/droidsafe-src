@@ -17,30 +17,27 @@ import org.apache.http.protocol.HTTP;
 
 public class StrictContentLengthStrategy implements ContentLengthStrategy {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.798 -0400", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "D45C93F906D0EA835886288481D205FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.573 -0400", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "D45C93F906D0EA835886288481D205FA")
     public  StrictContentLengthStrategy() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.799 -0400", hash_original_method = "27CE2D4FD8280195B6E05E2B487DF036", hash_generated_method = "EBFC25303B47A0062F440D3E89E38AB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.574 -0400", hash_original_method = "27CE2D4FD8280195B6E05E2B487DF036", hash_generated_method = "9FDD01032805A525ACC680C33ACAD5E9")
     public long determineLength(final HttpMessage message) throws HttpException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP message may not be null");
         } //End block
-        Header transferEncodingHeader;
-        transferEncodingHeader = message.getFirstHeader(HTTP.TRANSFER_ENCODING);
-        Header contentLengthHeader;
-        contentLengthHeader = message.getFirstHeader(HTTP.CONTENT_LEN);
+        Header transferEncodingHeader = message.getFirstHeader(HTTP.TRANSFER_ENCODING);
+        Header contentLengthHeader = message.getFirstHeader(HTTP.CONTENT_LEN);
         {
-            String s;
-            s = transferEncodingHeader.getValue();
+            String s = transferEncodingHeader.getValue();
             {
-                boolean var27CE5E0B53386BA287AE10A4E0178F22_209697993 = (HTTP.CHUNK_CODING.equalsIgnoreCase(s));
+                boolean var27CE5E0B53386BA287AE10A4E0178F22_95122181 = (HTTP.CHUNK_CODING.equalsIgnoreCase(s));
                 {
                     {
-                        boolean var9175B9ED7F5A8E8F71546399FB60FBE4_961813762 = (message.getProtocolVersion().lessEquals(HttpVersion.HTTP_1_0));
+                        boolean var9175B9ED7F5A8E8F71546399FB60FBE4_2002554873 = (message.getProtocolVersion().lessEquals(HttpVersion.HTTP_1_0));
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ProtocolException(
                             "Chunked transfer encoding not allowed for " + 
@@ -49,7 +46,7 @@ public class StrictContentLengthStrategy implements ContentLengthStrategy {
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varFCE811B82D72E59F887FAB90CE29F26F_254111454 = (HTTP.IDENTITY_CODING.equalsIgnoreCase(s));
+                    boolean varFCE811B82D72E59F887FAB90CE29F26F_611002688 = (HTTP.IDENTITY_CODING.equalsIgnoreCase(s));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new ProtocolException(
                         "Unsupported transfer encoding: " + s);
@@ -58,12 +55,10 @@ public class StrictContentLengthStrategy implements ContentLengthStrategy {
             } //End collapsed parenthetic
         } //End block
         {
-            String s;
-            s = contentLengthHeader.getValue();
+            String s = contentLengthHeader.getValue();
             try 
             {
-                long len;
-                len = Long.parseLong(s);
+                long len = Long.parseLong(s);
             } //End block
             catch (NumberFormatException e)
             {
@@ -71,8 +66,8 @@ public class StrictContentLengthStrategy implements ContentLengthStrategy {
             } //End block
         } //End block
         addTaint(message.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1690183519 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1690183519;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1817648321 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1817648321;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

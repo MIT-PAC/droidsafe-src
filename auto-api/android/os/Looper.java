@@ -12,20 +12,20 @@ import android.util.Printer;
 import android.util.PrefixPrinter;
 
 public class Looper {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.897 -0400", hash_original_field = "2D043F2822EC0D4E2690BDFE63EDDFCA", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.430 -0400", hash_original_field = "2D043F2822EC0D4E2690BDFE63EDDFCA", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
 
     MessageQueue mQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.897 -0400", hash_original_field = "1E66AA878E170B83C94516726B34414A", hash_generated_field = "8CE20653889294789C714060A391C40F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.430 -0400", hash_original_field = "1E66AA878E170B83C94516726B34414A", hash_generated_field = "8CE20653889294789C714060A391C40F")
 
     Thread mThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.897 -0400", hash_original_field = "AF5E499F38EC2270F329B29BB567CB7C", hash_generated_field = "977197925E2F2B56E95713ADFFCAE82C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.430 -0400", hash_original_field = "AF5E499F38EC2270F329B29BB567CB7C", hash_generated_field = "977197925E2F2B56E95713ADFFCAE82C")
 
     volatile boolean mRun;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.897 -0400", hash_original_field = "9214D8F5470BBAE73BF6D4EFC6F2056C", hash_generated_field = "0DDB3AFD1E93687434C7D033CB3772C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.430 -0400", hash_original_field = "9214D8F5470BBAE73BF6D4EFC6F2056C", hash_generated_field = "0DDB3AFD1E93687434C7D033CB3772C9")
 
     private Printer mLogging = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.898 -0400", hash_original_method = "6D5C1375C6658BE56B40A9307D923CFE", hash_generated_method = "8417B18BC4C5ECFABCBA976EC6312D5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.431 -0400", hash_original_method = "6D5C1375C6658BE56B40A9307D923CFE", hash_generated_method = "8417B18BC4C5ECFABCBA976EC6312D5F")
     private  Looper() {
         mQueue = new MessageQueue();
         mRun = true;
@@ -37,7 +37,7 @@ public class Looper {
     }
 
     
-        public static void prepare() {
+    public static void prepare() {
         if (sThreadLocal.get() != null) {
             throw new RuntimeException("Only one Looper may be created per thread");
         }
@@ -45,24 +45,24 @@ public class Looper {
     }
 
     
-        public static void prepareMainLooper() {
+    public static void prepareMainLooper() {
         prepare();
         setMainLooper(myLooper());
         myLooper().mQueue.mQuitAllowed = false;
     }
 
     
-        private synchronized static void setMainLooper(Looper looper) {
+    private synchronized static void setMainLooper(Looper looper) {
         mMainLooper = looper;
     }
 
     
-        public synchronized static Looper getMainLooper() {
+    public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
 
     
-        public static void loop() {
+    public static void loop() {
         Looper me = myLooper();
         if (me == null) {
             throw new RuntimeException("No Looper; Looper.prepare() wasn't called on this thread.");
@@ -109,12 +109,12 @@ public class Looper {
     }
 
     
-        public static Looper myLooper() {
+    public static Looper myLooper() {
         return sThreadLocal.get();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.907 -0400", hash_original_method = "46140967D8D75055A47353664A71B7EC", hash_generated_method = "3C77C8DE8680E0A60FA1F4CB39038FA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.432 -0400", hash_original_method = "46140967D8D75055A47353664A71B7EC", hash_generated_method = "3C77C8DE8680E0A60FA1F4CB39038FA7")
     public void setMessageLogging(Printer printer) {
         mLogging = printer;
         // ---------- Original Method ----------
@@ -122,15 +122,14 @@ public class Looper {
     }
 
     
-        public static MessageQueue myQueue() {
+    public static MessageQueue myQueue() {
         return myLooper().mQueue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.908 -0400", hash_original_method = "DF45AC1272CB819FC8F99EA49DB70F76", hash_generated_method = "DB51BEE36A603BA5F62762DB6D90DAF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.433 -0400", hash_original_method = "DF45AC1272CB819FC8F99EA49DB70F76", hash_generated_method = "E4A7AC026D5F4335230CC9E2172335E1")
     public void quit() {
-        Message msg;
-        msg = Message.obtain();
+        Message msg = Message.obtain();
         mQueue.enqueueMessage(msg, 0);
         // ---------- Original Method ----------
         //Message msg = Message.obtain();
@@ -138,29 +137,29 @@ public class Looper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.922 -0400", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "90B504002DBEDA62B02E9D409663A65C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.434 -0400", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "C7CA577FCBC8E716D9EECE351A1D18A7")
     public Thread getThread() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_1726528 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1726528 = mThread;
-        varB4EAC82CA7396A68D541C85D26508E83_1726528.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1726528;
+        Thread varB4EAC82CA7396A68D541C85D26508E83_1095803762 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1095803762 = mThread;
+        varB4EAC82CA7396A68D541C85D26508E83_1095803762.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1095803762;
         // ---------- Original Method ----------
         //return mThread;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.924 -0400", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "712B618BB0150EEB8E595BF36B38C34D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.435 -0400", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "084E3268C6E0439336059AFCECB6750E")
     public MessageQueue getQueue() {
-        MessageQueue varB4EAC82CA7396A68D541C85D26508E83_635898228 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_635898228 = mQueue;
-        varB4EAC82CA7396A68D541C85D26508E83_635898228.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_635898228;
+        MessageQueue varB4EAC82CA7396A68D541C85D26508E83_395779020 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_395779020 = mQueue;
+        varB4EAC82CA7396A68D541C85D26508E83_395779020.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_395779020;
         // ---------- Original Method ----------
         //return mQueue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.925 -0400", hash_original_method = "037799F5BAC1C721CA4C8E70E86373B0", hash_generated_method = "8AF72618BA863507BBB8B94E1A1CAB88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.435 -0400", hash_original_method = "037799F5BAC1C721CA4C8E70E86373B0", hash_generated_method = "7BB905D3BC2A9F0BD2F9794B4466BC0E")
     public void dump(Printer pw, String prefix) {
         pw = PrefixPrinter.create(pw, prefix);
         pw.println(this.toString());
@@ -169,12 +168,9 @@ public class Looper {
         pw.println("mQueue=" + ((mQueue != null) ? mQueue : "(null"));
         {
             {
-                long now;
-                now = SystemClock.uptimeMillis();
-                Message msg;
-                msg = mQueue.mMessages;
-                int n;
-                n = 0;
+                long now = SystemClock.uptimeMillis();
+                Message msg = mQueue.mMessages;
+                int n = 0;
                 {
                     pw.println("  Message " + n + ": " + msg.toString(now));
                     msg = msg.next;
@@ -206,12 +202,12 @@ public class Looper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.925 -0400", hash_original_method = "DF5830583BA63D2A34E75134C24AA6CB", hash_generated_method = "2EC4B8E4034DFDDA96680914C96A3F92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.436 -0400", hash_original_method = "DF5830583BA63D2A34E75134C24AA6CB", hash_generated_method = "FCAACC8F22B3F4074B78EC5E5023C2C6")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1110486549 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1110486549 = "Looper{" + Integer.toHexString(System.identityHashCode(this)) + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1110486549.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1110486549;
+        String varB4EAC82CA7396A68D541C85D26508E83_956584462 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_956584462 = "Looper{" + Integer.toHexString(System.identityHashCode(this)) + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_956584462.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_956584462;
         // ---------- Original Method ----------
         //return "Looper{" + Integer.toHexString(System.identityHashCode(this)) + "}";
     }
@@ -222,13 +218,13 @@ public class Looper {
                 long threadStart, long threadTime);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.925 -0400", hash_original_field = "18E18D5EFAF355DEA1C9304CE2C6AC27", hash_generated_field = "EAC7EAE18A81986B92BDDEFD234A8235")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.436 -0400", hash_original_field = "18E18D5EFAF355DEA1C9304CE2C6AC27", hash_generated_field = "0F004D3C789B551E3561D24088906967")
 
-    private static String TAG = "Looper";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.925 -0400", hash_original_field = "9DE48D4D809C0080D8E5A5A0AAC59B74", hash_generated_field = "37B84E67F3EC82AE92A6DDDF76BD9102")
+    private static final String TAG = "Looper";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.436 -0400", hash_original_field = "9DE48D4D809C0080D8E5A5A0AAC59B74", hash_generated_field = "C8930573EE1238D7A0610D567D877F21")
 
-    static ThreadLocal<Looper> sThreadLocal = new ThreadLocal<Looper>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.926 -0400", hash_original_field = "EA8AA52F80B92DA4C5D3CCAB72E5E9FE", hash_generated_field = "6E4C110F69BE8DEA8DF414C174EDD200")
+    static final ThreadLocal<Looper> sThreadLocal = new ThreadLocal<Looper>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.436 -0400", hash_original_field = "EA8AA52F80B92DA4C5D3CCAB72E5E9FE", hash_generated_field = "6E4C110F69BE8DEA8DF414C174EDD200")
 
     private static Looper mMainLooper = null;
 }

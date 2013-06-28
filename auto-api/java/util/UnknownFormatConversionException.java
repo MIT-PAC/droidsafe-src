@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class UnknownFormatConversionException extends IllegalFormatException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.552 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.663 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
 
     private String s;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.553 -0400", hash_original_method = "0FB4C71CADE23BA4642C2B1DAECF427B", hash_generated_method = "C8642D177F78782F09FA75B07B876E59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.664 -0400", hash_original_method = "0FB4C71CADE23BA4642C2B1DAECF427B", hash_generated_method = "C8642D177F78782F09FA75B07B876E59")
     public  UnknownFormatConversionException(String s) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -27,31 +27,31 @@ public class UnknownFormatConversionException extends IllegalFormatException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.554 -0400", hash_original_method = "F42E87FF5499AB643BB7E67C5DADAA6D", hash_generated_method = "B4E190B2BF356940322BBDA7FA7D4B49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.666 -0400", hash_original_method = "F42E87FF5499AB643BB7E67C5DADAA6D", hash_generated_method = "DFC8C5E47BB28861C968946FA33FC778")
     public String getConversion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1747766159 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1747766159 = s;
-        varB4EAC82CA7396A68D541C85D26508E83_1747766159.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1747766159;
+        String varB4EAC82CA7396A68D541C85D26508E83_767545227 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_767545227 = s;
+        varB4EAC82CA7396A68D541C85D26508E83_767545227.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_767545227;
         // ---------- Original Method ----------
         //return s;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.554 -0400", hash_original_method = "E0B7E8AB02E28C66CE17D4B71D9F5BCF", hash_generated_method = "B9E7AB3D9799D545494DF1C215B822C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.667 -0400", hash_original_method = "E0B7E8AB02E28C66CE17D4B71D9F5BCF", hash_generated_method = "ADD311857EC642E8A1D873966DB4EAD6")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1028526301 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1028526301 = "Conversion: " + s;
-        varB4EAC82CA7396A68D541C85D26508E83_1028526301.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1028526301;
+        String varB4EAC82CA7396A68D541C85D26508E83_1251472477 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1251472477 = "Conversion: " + s;
+        varB4EAC82CA7396A68D541C85D26508E83_1251472477.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1251472477;
         // ---------- Original Method ----------
         //return "Conversion: " + s;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.554 -0400", hash_original_field = "08597A3199DE8E22FA177F8DC6A38F35", hash_generated_field = "515564874B09E2C6F0B2BB127492250F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.668 -0400", hash_original_field = "08597A3199DE8E22FA177F8DC6A38F35", hash_generated_field = "3D86292F0E1219DE043B5F4188CBC598")
 
-    private static long serialVersionUID = 19060418L;
+    private static final long serialVersionUID = 19060418L;
 }
 

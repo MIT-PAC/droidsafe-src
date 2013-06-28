@@ -14,7 +14,7 @@ import java.text.ParseException;
 
 public class JoinParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.480 -0400", hash_original_method = "EF4712E80A9A6595AD0A1CEA8AD509AD", hash_generated_method = "EF8DC95B7DED73A2DB702514426B3451")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.000 -0400", hash_original_method = "EF4712E80A9A6595AD0A1CEA8AD509AD", hash_generated_method = "EF8DC95B7DED73A2DB702514426B3451")
     public  JoinParser(String callID) {
         super(callID);
         addTaint(callID.getTaint());
@@ -22,7 +22,7 @@ public class JoinParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.481 -0400", hash_original_method = "C3C0BEC6FC6BFB3701BC82718709C143", hash_generated_method = "90BF5F94E161A6ABC76322A48650D9FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.000 -0400", hash_original_method = "C3C0BEC6FC6BFB3701BC82718709C143", hash_generated_method = "90BF5F94E161A6ABC76322A48650D9FD")
     protected  JoinParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -30,29 +30,27 @@ public class JoinParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.481 -0400", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "BCECFFE8EAB1F9800FD2F2E73E41DBD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.001 -0400", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "47E5A44773A5D5FCFB4AD23B75E2F54E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_19110032 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_182543705 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
             headerName(TokenTypes.JOIN_TO);
-            Join join;
-            join = new Join();
+            Join join = new Join();
             this.lexer.SPorHT();
-            String callId;
-            callId = lexer.byteStringNoSemicolon();
+            String callId = lexer.byteStringNoSemicolon();
             this.lexer.SPorHT();
             super.parse(join);
             join.setCallId(callId);
-            varB4EAC82CA7396A68D541C85D26508E83_19110032 = join;
+            varB4EAC82CA7396A68D541C85D26508E83_182543705 = join;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_19110032.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_19110032;
+        varB4EAC82CA7396A68D541C85D26508E83_182543705.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_182543705;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parse");
@@ -72,7 +70,7 @@ public class JoinParser extends ParametersParser {
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Join: 12345th5z8z\n",
                 "Join: 12345th5z8z;to-tag=tozght6-45;from-tag=fromzght789-337-2\n",

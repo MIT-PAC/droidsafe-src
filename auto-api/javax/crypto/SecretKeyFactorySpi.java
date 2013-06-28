@@ -13,7 +13,7 @@ import java.security.spec.KeySpec;
 
 public abstract class SecretKeyFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.889 -0400", hash_original_method = "37AA0CEAD968FA5AED19221177267C4C", hash_generated_method = "8301FE6EFDEBF0A35884933BA2E82161")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.208 -0400", hash_original_method = "37AA0CEAD968FA5AED19221177267C4C", hash_generated_method = "8301FE6EFDEBF0A35884933BA2E82161")
     public  SecretKeyFactorySpi() {
         // ---------- Original Method ----------
     }
@@ -23,7 +23,7 @@ public abstract class SecretKeyFactorySpi {
             throws InvalidKeySpecException;
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
 protected abstract KeySpec engineGetKeySpec(SecretKey key, Class keySpec)
             throws InvalidKeySpecException;
 

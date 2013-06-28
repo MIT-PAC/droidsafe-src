@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 class Conversion {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.806 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.690 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
     private  Conversion() {
         // ---------- Original Method ----------
     }
 
     
-        static String bigInteger2String(BigInteger val, int radix) {
+    static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -88,7 +88,7 @@ class Conversion {
     }
 
     
-        static String toDecimalScaledString(BigInteger val, int scale) {
+    static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -234,7 +234,7 @@ class Conversion {
     }
 
     
-        static String toDecimalScaledString(long value, int scale) {
+    static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
         char[] result;
@@ -322,7 +322,7 @@ class Conversion {
     }
 
     
-        static long divideLongByBillion(long a) {
+    static long divideLongByBillion(long a) {
         long quot;
         long rem;
         if (a >= 0) {
@@ -340,7 +340,7 @@ class Conversion {
     }
 
     
-        static double bigInteger2Double(BigInteger val) {
+    static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
         if ((val.numberLength < 2)
                 || ((val.numberLength == 2) && (val.digits[1] > 0))) {
@@ -377,14 +377,14 @@ class Conversion {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.847 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "35C22DFD83F1DDC9DAFB6F2BDE3959A9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.692 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
 
-    static int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
+    static final int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
             11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6,
             6, 6, 6, 6, 6, 6, 6, 5 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.848 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "C7543A50EECE51E0A278C984F23AD687")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.692 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
 
-    static int[] bigRadices = { -2147483648, 1162261467,
+    static final int[] bigRadices = { -2147483648, 1162261467,
             1073741824, 1220703125, 362797056, 1977326743, 1073741824,
             387420489, 1000000000, 214358881, 429981696, 815730721, 1475789056,
             170859375, 268435456, 410338673, 612220032, 893871739, 1280000000,

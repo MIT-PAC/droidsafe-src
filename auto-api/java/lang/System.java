@@ -31,57 +31,59 @@ import libcore.util.ZoneInfoDB;
 
 public final class System {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.509 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.085 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
     private  System() {
         // ---------- Original Method ----------
     }
 
     
-        public static void setIn(InputStream newIn) {
+    public static void setIn(InputStream newIn) {
         setFieldImpl("in", "Ljava/io/InputStream;", newIn);
     }
 
     
-        public static void setOut(PrintStream newOut) {
+    public static void setOut(PrintStream newOut) {
         setFieldImpl("out", "Ljava/io/PrintStream;", newOut);
     }
 
     
-        public static void setErr(PrintStream newErr) {
+    public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
 
     
-        public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
+    public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
     }
 
     
-        public static long currentTimeMillis() {
-        return DSUtils.UNKNOWN_LONG;
+    public static long currentTimeMillis() {
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
     }
 
     
-        public static long nanoTime() {
-        return DSUtils.UNKNOWN_LONG;
+    public static long nanoTime() {
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
     }
 
     
-        public static void exit(int code) {
+    public static void exit(int code) {
         Runtime.getRuntime().exit(code);
     }
 
     
-        public static void gc() {
+    public static void gc() {
         Runtime.getRuntime().gc();
     }
 
     
-        public static String getenv(String name) {
+    public static String getenv(String name) {
         return getenv(name, null);
     }
 
     
-        private static String getenv(String name, String defaultValue) {
+    private static String getenv(String name, String defaultValue) {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
@@ -90,12 +92,12 @@ public final class System {
     }
 
     
-        private static String getEnvByName(String name) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static String getEnvByName(String name) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        public static Map<String, String> getenv() {
+    public static Map<String, String> getenv() {
         Map<String, String> map = new HashMap<String, String>();
         for (String entry : Libcore.os.environ()) {
             int index = entry.indexOf('=');
@@ -107,12 +109,12 @@ public final class System {
     }
 
     
-        public static Channel inheritedChannel() throws IOException {
+    public static Channel inheritedChannel() throws IOException {
         return SelectorProvider.provider().inheritedChannel();
     }
 
     
-        public static Properties getProperties() {
+    public static Properties getProperties() {
         if (systemProperties == null) {
             initSystemProperties();
         }
@@ -120,7 +122,7 @@ public final class System {
     }
 
     
-        private static void initSystemProperties() {
+    private static void initSystemProperties() {
         VMRuntime runtime = VMRuntime.getRuntime();
         Properties p = new Properties();
         String projectUrl = "http://www.android.com/";
@@ -168,12 +170,12 @@ public final class System {
     }
 
     
-        private static String[] specialProperties() {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    private static String[] specialProperties() {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        private static void parsePropertyAssignments(Properties p, String[] assignments) {
+    private static void parsePropertyAssignments(Properties p, String[] assignments) {
         for (String assignment : assignments) {
             int split = assignment.indexOf('=');
             String key = assignment.substring(0, split);
@@ -183,12 +185,12 @@ public final class System {
     }
 
     
-        public static String getProperty(String propertyName) {
+    public static String getProperty(String propertyName) {
         return getProperty(propertyName, null);
     }
 
     
-        public static String getProperty(String prop, String defaultValue) {
+    public static String getProperty(String prop, String defaultValue) {
         if (prop.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -196,7 +198,7 @@ public final class System {
     }
 
     
-        public static String setProperty(String prop, String value) {
+    public static String setProperty(String prop, String value) {
         if (prop.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -204,7 +206,7 @@ public final class System {
     }
 
     
-        public static String clearProperty(String key) {
+    public static String clearProperty(String key) {
         if (key == null) {
             throw new NullPointerException();
         }
@@ -215,109 +217,110 @@ public final class System {
     }
 
     
-        public static Console console() {
+    public static Console console() {
         return Console.getConsole();
     }
 
     
-        public static SecurityManager getSecurityManager() {
+    public static SecurityManager getSecurityManager() {
         return null;
     }
 
     
-        public static int identityHashCode(Object anObject) {
-        return DSUtils.UNKNOWN_INT;
+    public static int identityHashCode(Object anObject) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
     }
 
     
-        public static String lineSeparator() {
+    public static String lineSeparator() {
         return lineSeparator;
     }
 
     
-        public static void load(String pathName) {
+    public static void load(String pathName) {
         Runtime.getRuntime().load(pathName, VMStack.getCallingClassLoader());
     }
 
     
-        public static void loadLibrary(String libName) {
+    public static void loadLibrary(String libName) {
         Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
     }
 
     
-        public static void logE(String message) {
+    public static void logE(String message) {
         log('E', message, null);
     }
 
     
-        public static void logE(String message, Throwable th) {
+    public static void logE(String message, Throwable th) {
         log('E', message, th);
     }
 
     
-        public static void logI(String message) {
+    public static void logI(String message) {
         log('I', message, null);
     }
 
     
-        public static void logI(String message, Throwable th) {
+    public static void logI(String message, Throwable th) {
         log('I', message, th);
     }
 
     
-        public static void logW(String message) {
+    public static void logW(String message) {
         log('W', message, null);
     }
 
     
-        public static void logW(String message, Throwable th) {
+    public static void logW(String message, Throwable th) {
         log('W', message, th);
     }
 
     
-        private static void log(char type, String message, Throwable th) {
+    private static void log(char type, String message, Throwable th) {
     }
 
     
-        public static void runFinalization() {
+    public static void runFinalization() {
         Runtime.getRuntime().runFinalization();
     }
 
     
-        @SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
     @Deprecated
     public static void runFinalizersOnExit(boolean flag) {
         Runtime.runFinalizersOnExit(flag);
     }
 
     
-        public static void setProperties(Properties p) {
+    public static void setProperties(Properties p) {
         systemProperties = p;
     }
 
     
-        public static void setSecurityManager(SecurityManager sm) {
+    public static void setSecurityManager(SecurityManager sm) {
         if (sm != null) {
             throw new SecurityException();
         }
     }
 
     
-        public static String mapLibraryName(String userLibName) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    public static String mapLibraryName(String userLibName) {
+                //DSFIXME:  This shouldn't happen!
     }
 
     
-        private static void setFieldImpl(String fieldName, String signature, Object stream) {
+    private static void setFieldImpl(String fieldName, String signature, Object stream) {
     }
 
     
     static class SystemEnvironment extends AbstractMap<String, String> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.549 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "AEDE8D1FD6B9D7350079530BA211AB11")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.091 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "AEDE8D1FD6B9D7350079530BA211AB11")
 
         private Map<String, String> map;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.549 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "47274EE90A9CC35993F9EE134C77826B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.091 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "47274EE90A9CC35993F9EE134C77826B")
         public  SystemEnvironment(Map<String, String> map) {
             this.map = Collections.unmodifiableMap(map);
             // ---------- Original Method ----------
@@ -325,65 +328,65 @@ public final class System {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.550 -0400", hash_original_method = "72D95E6A5E33F4212177AA7AB73DA48C", hash_generated_method = "26E982A4C8EE75D3C331795F2358F8B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.091 -0400", hash_original_method = "72D95E6A5E33F4212177AA7AB73DA48C", hash_generated_method = "05E8DD03BA53FC3C3AC8CA9363E79942")
         @Override
         public Set<Entry<String, String>> entrySet() {
-            Set<Entry<String, String>> varB4EAC82CA7396A68D541C85D26508E83_2021073804 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_2021073804 = map.entrySet();
-            varB4EAC82CA7396A68D541C85D26508E83_2021073804.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2021073804;
+            Set<Entry<String, String>> varB4EAC82CA7396A68D541C85D26508E83_1196900112 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1196900112 = map.entrySet();
+            varB4EAC82CA7396A68D541C85D26508E83_1196900112.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1196900112;
             // ---------- Original Method ----------
             //return map.entrySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.560 -0400", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "29C1435A43D2292AB4E4E72849602012")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.092 -0400", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "2E24CD40EDA81F4C02A9AFB395103317")
         @Override
         public String get(Object key) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1309734051 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1309734051 = map.get(toNonNullString(key));
+            String varB4EAC82CA7396A68D541C85D26508E83_1281742728 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1281742728 = map.get(toNonNullString(key));
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1309734051.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1309734051;
+            varB4EAC82CA7396A68D541C85D26508E83_1281742728.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1281742728;
             // ---------- Original Method ----------
             //return map.get(toNonNullString(key));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.566 -0400", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "C65BCA8497317613A35E42A70F11EB0D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.092 -0400", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "1D42F5F812C1E0437646B9DAA82FCA91")
         @Override
         public boolean containsKey(Object key) {
-            boolean var370902D7D7D89F24E5C316DE8C51F902_239239902 = (map.containsKey(toNonNullString(key)));
+            boolean var370902D7D7D89F24E5C316DE8C51F902_167450462 = (map.containsKey(toNonNullString(key)));
             addTaint(key.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1783536021 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1783536021;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1020786782 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1020786782;
             // ---------- Original Method ----------
             //return map.containsKey(toNonNullString(key));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.566 -0400", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "57844F0C3D674920FC80BD962E9E36C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.092 -0400", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "0D38BE1111944F13487A2D8ABF3AB47F")
         @Override
         public boolean containsValue(Object value) {
-            boolean varF6ED1590D37AED4D2A39B7426648A8D9_764776284 = (map.containsValue(toNonNullString(value)));
+            boolean varF6ED1590D37AED4D2A39B7426648A8D9_1178905212 = (map.containsValue(toNonNullString(value)));
             addTaint(value.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28947675 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_28947675;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655065735 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_655065735;
             // ---------- Original Method ----------
             //return map.containsValue(toNonNullString(value));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.566 -0400", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "F5F235E432C643E961C8F9F7FB3189C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "9FE1566568511C5ED42AEEF60754016D")
         private String toNonNullString(Object o) {
-            String varB4EAC82CA7396A68D541C85D26508E83_703914527 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1190569520 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_703914527 = (String) o;
+            varB4EAC82CA7396A68D541C85D26508E83_1190569520 = (String) o;
             addTaint(o.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_703914527.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_703914527;
+            varB4EAC82CA7396A68D541C85D26508E83_1190569520.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1190569520;
             // ---------- Original Method ----------
             //if (o == null) {
                 //throw new NullPointerException();
@@ -396,19 +399,19 @@ public final class System {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.566 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "38A011E6F7F8C1250D252BD46E263A94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "38A011E6F7F8C1250D252BD46E263A94")
 
     public static final InputStream in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.566 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "EDA52A46216AAC1140B1897CE51020F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "EDA52A46216AAC1140B1897CE51020F5")
 
     public static final PrintStream out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.567 -0400", hash_original_field = "56BD7107802EBE56C6918992F0608EC6", hash_generated_field = "4AF680145FA7144D406FDF3A41509B54")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_field = "56BD7107802EBE56C6918992F0608EC6", hash_generated_field = "4AF680145FA7144D406FDF3A41509B54")
 
     public static final PrintStream err;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.567 -0400", hash_original_field = "2295B6F1520BB4ED9248E07AC41BC7AC", hash_generated_field = "4F120FCF427E27BF79D0B83F7A2E925B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_field = "2295B6F1520BB4ED9248E07AC41BC7AC", hash_generated_field = "4F120FCF427E27BF79D0B83F7A2E925B")
 
     private static String lineSeparator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.567 -0400", hash_original_field = "FF68C967DBCFC921F883320F9AD54F87", hash_generated_field = "1BAE2C7F16338C14042F582AEB6D8AC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.093 -0400", hash_original_field = "FF68C967DBCFC921F883320F9AD54F87", hash_generated_field = "1BAE2C7F16338C14042F582AEB6D8AC2")
 
     private static Properties systemProperties;
     static {

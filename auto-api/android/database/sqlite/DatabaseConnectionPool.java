@@ -15,24 +15,24 @@ import java.util.HashSet;
 import java.util.Random;
 
 class DatabaseConnectionPool {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.424 -0400", hash_original_field = "60CF7A6EA37051AFA5579BFF259593F0", hash_generated_field = "6DB5215553C1840CAEC8065EEA2DFF1E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.089 -0400", hash_original_field = "60CF7A6EA37051AFA5579BFF259593F0", hash_generated_field = "6DB5215553C1840CAEC8065EEA2DFF1E")
 
     private volatile int mMaxPoolSize = Resources.getSystem().getInteger(com.android.internal.R.integer.db_connection_pool_size);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.424 -0400", hash_original_field = "12B157B7C91520FB14A4B196CCE78F51", hash_generated_field = "3E7BDBDB36590D8BC66CF890095C8703")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.090 -0400", hash_original_field = "12B157B7C91520FB14A4B196CCE78F51", hash_generated_field = "18B787FE623D5F75DA1743A19683143E")
 
-    private ArrayList<PoolObj> mPool = new ArrayList<PoolObj>(mMaxPoolSize);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.424 -0400", hash_original_field = "2C90046C1A99E452326AB92D99B81C31", hash_generated_field = "6A70A90B4FFE8ED9A2AB9CBA8BB34AB9")
+    private final ArrayList<PoolObj> mPool = new ArrayList<PoolObj>(mMaxPoolSize);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.090 -0400", hash_original_field = "2C90046C1A99E452326AB92D99B81C31", hash_generated_field = "6A70A90B4FFE8ED9A2AB9CBA8BB34AB9")
 
     private SQLiteDatabase mParentDbObj;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.424 -0400", hash_original_field = "34D1C35063280164066ECC517050DA0B", hash_generated_field = "0246BE72854112F07DA372D7CE27006A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.090 -0400", hash_original_field = "34D1C35063280164066ECC517050DA0B", hash_generated_field = "0246BE72854112F07DA372D7CE27006A")
 
     private Random rand;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.444 -0400", hash_original_method = "642674B3CBAE34C61C10ECDA81AF12DF", hash_generated_method = "EFC54464E934D93855F7784F6EC31AC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.090 -0400", hash_original_method = "642674B3CBAE34C61C10ECDA81AF12DF", hash_generated_method = "1CAC48F6FC7606C2C28B39B6C03F0B43")
       DatabaseConnectionPool(SQLiteDatabase db) {
         this.mParentDbObj = db;
         {
-            boolean var7061DF8A5335B809C796044C2A062407_971692944 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_98462310 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "Max Pool Size: " + mMaxPoolSize);
             } //End block
@@ -45,17 +45,16 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.463 -0400", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "B4E4891896E8084A3C52C49BDC479F9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.091 -0400", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "2C96F6090842E5B42D9C86C272D19E7F")
     synchronized void close() {
         {
-            boolean var7061DF8A5335B809C796044C2A062407_1690038135 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_1560545723 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "Closing the connection pool on " + mParentDbObj.getPath() + toString());
             } //End block
         } //End collapsed parenthetic
         {
-            int i;
-            i = mPool.size() - 1;
+            int i = mPool.size() - 1;
             {
                 mPool.get(i).mDb.close();
             } //End block
@@ -72,23 +71,20 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.519 -0400", hash_original_method = "29479C12BC42199BDE721BCCF404E99A", hash_generated_method = "D346E427BBC1F3B5685792458CC608BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.093 -0400", hash_original_method = "29479C12BC42199BDE721BCCF404E99A", hash_generated_method = "E7F90338B20EA4F9B6D8BD3EAE6AA0D4")
     synchronized SQLiteDatabase get(String sql) {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1281427782 = null; //Variable for return #1
-        SQLiteDatabase db;
-        db = null;
-        PoolObj poolObj;
-        poolObj = null;
-        int poolSize;
-        poolSize = mPool.size();
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_662799551 = null; //Variable for return #1
+        SQLiteDatabase db = null;
+        PoolObj poolObj = null;
+        int poolSize = mPool.size();
         {
-            boolean var7061DF8A5335B809C796044C2A062407_1696950097 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_346300136 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 doAsserts();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var9B1D07D25E4500725BE2762D29331B41_1212443761 = (getFreePoolSize() == 0);
+            boolean var9B1D07D25E4500725BE2762D29331B41_835011691 = (getFreePoolSize() == 0);
             {
                 {
                     {
@@ -96,11 +92,10 @@ class DatabaseConnectionPool {
                     } //End block
                     {
                         {
-                            int i;
-                            i = 0;
+                            int i = 0;
                             {
                                 {
-                                    boolean var319607DB85374E6772E2EF345FC32D08_1790709499 = (mPool.get(i).mDb.isInStatementCache(sql));
+                                    boolean var319607DB85374E6772E2EF345FC32D08_923057484 = (mPool.get(i).mDb.isInStatementCache(sql));
                                     {
                                         poolObj = mPool.get(i);
                                     } //End block
@@ -124,11 +119,10 @@ class DatabaseConnectionPool {
             } //End block
             {
                 {
-                    int i;
-                    i = 0;
+                    int i = 0;
                     {
                         {
-                            boolean varBCF331DAA437C07B9E1DC7F5A9576EA7_838614089 = (mPool.get(i).isFree() && mPool.get(i).mDb.isInStatementCache(sql));
+                            boolean varBCF331DAA437C07B9E1DC7F5A9576EA7_540370485 = (mPool.get(i).isFree() && mPool.get(i).mDb.isInStatementCache(sql));
                             {
                                 poolObj = mPool.get(i);
                             } //End block
@@ -137,11 +131,10 @@ class DatabaseConnectionPool {
                 } //End collapsed parenthetic
                 {
                     {
-                        int i;
-                        i = 0;
+                        int i = 0;
                         {
                             {
-                                boolean var58C433B19A8B81690E11AB44135FE75C_1654056508 = (mPool.get(i).isFree());
+                                boolean var58C433B19A8B81690E11AB44135FE75C_919793289 = (mPool.get(i).isFree());
                                 {
                                     poolObj = mPool.get(i);
                                 } //End block
@@ -154,38 +147,37 @@ class DatabaseConnectionPool {
         } //End collapsed parenthetic
         poolObj.acquire();
         {
-            boolean var7061DF8A5335B809C796044C2A062407_483736153 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_1545411635 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "END get-connection: " + toString() + poolObj.toString());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1281427782 = db;
+        varB4EAC82CA7396A68D541C85D26508E83_662799551 = db;
         addTaint(sql.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1281427782.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1281427782;
+        varB4EAC82CA7396A68D541C85D26508E83_662799551.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_662799551;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.532 -0400", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "BAAA968E25588B93C75CF89FDCAD4B50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.094 -0400", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "4C034D207F4C86A2067F5B516B8302C5")
     synchronized void release(SQLiteDatabase db) {
         {
-            boolean var7061DF8A5335B809C796044C2A062407_1570735300 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_1190566996 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 doAsserts();
             } //End block
         } //End collapsed parenthetic
-        PoolObj poolObj;
-        poolObj = mPool.get(db.mConnectionNum - 1);
+        PoolObj poolObj = mPool.get(db.mConnectionNum - 1);
         {
-            boolean var7061DF8A5335B809C796044C2A062407_1188355391 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_448794401 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "BEGIN release-conn: " + toString() + poolObj.toString());
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD844887BCF703DE90E24EEEBA4E5F37C_2020536989 = (poolObj.isFree());
+            boolean varD844887BCF703DE90E24EEEBA4E5F37C_1327896219 = (poolObj.isFree());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Releasing object already freed: " +
                     db.mConnectionNum);
@@ -193,7 +185,7 @@ class DatabaseConnectionPool {
         } //End collapsed parenthetic
         poolObj.release();
         {
-            boolean var7061DF8A5335B809C796044C2A062407_1472887655 = (Log.isLoggable(TAG, Log.DEBUG));
+            boolean var7061DF8A5335B809C796044C2A062407_524115095 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "END release-conn: " + toString() + poolObj.toString());
             } //End block
@@ -220,21 +212,19 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.536 -0400", hash_original_method = "D267C5BE0AC41A86583B003ED8AE5C35", hash_generated_method = "18479ACFB50118440631EF3DC8FA1494")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.095 -0400", hash_original_method = "D267C5BE0AC41A86583B003ED8AE5C35", hash_generated_method = "FBEB39815C024EF6CB0C8C8D22277CCA")
     synchronized ArrayList<SQLiteDatabase> getConnectionList() {
-        ArrayList<SQLiteDatabase> varB4EAC82CA7396A68D541C85D26508E83_752871728 = null; //Variable for return #1
-        ArrayList<SQLiteDatabase> list;
-        list = new ArrayList<SQLiteDatabase>();
+        ArrayList<SQLiteDatabase> varB4EAC82CA7396A68D541C85D26508E83_1985993242 = null; //Variable for return #1
+        ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
         {
-            int i;
-            i = mPool.size() - 1;
+            int i = mPool.size() - 1;
             {
                 list.add(mPool.get(i).mDb);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_752871728 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_752871728.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_752871728;
+        varB4EAC82CA7396A68D541C85D26508E83_1985993242 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_1985993242.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1985993242;
         // ---------- Original Method ----------
         //ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
         //for (int i = mPool.size() - 1; i >= 0; i--) {
@@ -244,21 +234,19 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.547 -0400", hash_original_method = "FCCC68E0BE173C0DC0076E45C706F445", hash_generated_method = "76D218732FB06556061A6BE6DD8F658B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.095 -0400", hash_original_method = "FCCC68E0BE173C0DC0076E45C706F445", hash_generated_method = "E849EE778F84A858526FB8C13E78A691")
      int getFreePoolSize() {
-        int count;
-        count = 0;
+        int count = 0;
         {
-            int i;
-            i = mPool.size() - 1;
+            int i = mPool.size() - 1;
             {
                 {
-                    boolean var6EFA29D66A5AE03A39596A10625232FD_110500419 = (mPool.get(i).isFree());
+                    boolean var6EFA29D66A5AE03A39596A10625232FD_1893899457 = (mPool.get(i).isFree());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456165131 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456165131;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328331245 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328331245;
         // ---------- Original Method ----------
         //int count = 0;
         //for (int i = mPool.size() - 1; i >= 0; i--) {
@@ -270,23 +258,22 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.548 -0400", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "76827C50AA482F4C7FB4D1664C38F052")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.096 -0400", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "4879D8A2524B4779DAB3E74B623512B3")
      ArrayList<PoolObj> getPool() {
-        ArrayList<PoolObj> varB4EAC82CA7396A68D541C85D26508E83_732983740 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_732983740 = mPool;
-        varB4EAC82CA7396A68D541C85D26508E83_732983740.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_732983740;
+        ArrayList<PoolObj> varB4EAC82CA7396A68D541C85D26508E83_1318284326 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1318284326 = mPool;
+        varB4EAC82CA7396A68D541C85D26508E83_1318284326.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1318284326;
         // ---------- Original Method ----------
         //return mPool;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.653 -0400", hash_original_method = "9BBFDBA2A96C9EEA2C362B37886D3C5D", hash_generated_method = "7C9E33EE17F3351D1499462505FBB6D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.102 -0400", hash_original_method = "9BBFDBA2A96C9EEA2C362B37886D3C5D", hash_generated_method = "C1453FBBAC240626E8FE712502CD3A3F")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_446534216 = null; //Variable for return #1
-        StringBuilder buff;
-        buff = new StringBuilder();
+        String varB4EAC82CA7396A68D541C85D26508E83_2044607846 = null; //Variable for return #1
+        StringBuilder buff = new StringBuilder();
         buff.append("db: ");
         buff.append(mParentDbObj.getPath());
         buff.append(", totalsize = ");
@@ -296,17 +283,17 @@ class DatabaseConnectionPool {
         buff.append(", maxpoolsize = ");
         buff.append(mMaxPoolSize);
         {
-            Iterator<PoolObj> varCCA2E604ADC040E096C584C6F35D4EE4_1618575329 = (mPool).iterator();
-            varCCA2E604ADC040E096C584C6F35D4EE4_1618575329.hasNext();
-            PoolObj p = varCCA2E604ADC040E096C584C6F35D4EE4_1618575329.next();
+            Iterator<PoolObj> varCCA2E604ADC040E096C584C6F35D4EE4_830415151 = (mPool).iterator();
+            varCCA2E604ADC040E096C584C6F35D4EE4_830415151.hasNext();
+            PoolObj p = varCCA2E604ADC040E096C584C6F35D4EE4_830415151.next();
             {
                 buff.append("\n");
                 buff.append(p.toString());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_446534216 = buff.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_446534216.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_446534216;
+        varB4EAC82CA7396A68D541C85D26508E83_2044607846 = buff.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_2044607846.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2044607846;
         // ---------- Original Method ----------
         //StringBuilder buff = new StringBuilder();
         //buff.append("db: ");
@@ -325,12 +312,11 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.654 -0400", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "F48596AE45B450F4CCE11BBD20B0C986")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.103 -0400", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "73B92839C89ADE35EBD39C34A71DEBC0")
     private void doAsserts() {
         {
-            int i;
-            i = 0;
-            boolean var54BC86BAC9CE390930BD89A6719C890C_1657650731 = (i < mPool.size());
+            int i = 0;
+            boolean var54BC86BAC9CE390930BD89A6719C890C_425661240 = (i < mPool.size());
             {
                 mPool.get(i).verify();
             } //End block
@@ -343,7 +329,7 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.655 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.103 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
     synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
         // ---------- Original Method ----------
@@ -351,51 +337,51 @@ class DatabaseConnectionPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.655 -0400", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "9DE7F0F73EFE440F697DB02FD2F10EE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.104 -0400", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "64235ACF38F33318115E0FF2252289E4")
     synchronized int getMaxPoolSize() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525141518 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525141518;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1367700038 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1367700038;
         // ---------- Original Method ----------
         //return mMaxPoolSize;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.656 -0400", hash_original_method = "EE241D81DC808707D5F785FD2863CDE3", hash_generated_method = "81DF7766626FF6C6D3B6E0BFE7AE6754")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.104 -0400", hash_original_method = "EE241D81DC808707D5F785FD2863CDE3", hash_generated_method = "AA75BB72201C4535CDE4D726B1963B06")
      boolean isDatabaseObjFree(SQLiteDatabase db) {
-        boolean varE763731B50FB2D0B9F176636A3724F75_1146135649 = (mPool.get(db.mConnectionNum - 1).isFree());
+        boolean varE763731B50FB2D0B9F176636A3724F75_1434387288 = (mPool.get(db.mConnectionNum - 1).isFree());
         addTaint(db.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7022541 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_7022541;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696941914 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_696941914;
         // ---------- Original Method ----------
         //return mPool.get(db.mConnectionNum - 1).isFree();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.660 -0400", hash_original_method = "CEDD9D91870F2CDCC14A9842125741BE", hash_generated_method = "3FBDF29F0157E06C3450B5FAE4C2B299")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.105 -0400", hash_original_method = "CEDD9D91870F2CDCC14A9842125741BE", hash_generated_method = "6AE9F7E9076E5D9698BD6FED522BBBE6")
      int getSize() {
-        int var592A56EFB728CEDE41CBCA444E33C6A9_605898276 = (mPool.size());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771846082 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771846082;
+        int var592A56EFB728CEDE41CBCA444E33C6A9_1028027431 = (mPool.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330292086 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330292086;
         // ---------- Original Method ----------
         //return mPool.size();
     }
 
     
     static class PoolObj {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.661 -0400", hash_original_field = "2C1EEFAAB431F1A18FBAAB2A87866E85", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.105 -0400", hash_original_field = "2C1EEFAAB431F1A18FBAAB2A87866E85", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
 
         private SQLiteDatabase mDb;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.661 -0400", hash_original_field = "104472608290748D816A6C07B2880048", hash_generated_field = "1F70E86597E6AA266596A89FFFE3A0B1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.105 -0400", hash_original_field = "104472608290748D816A6C07B2880048", hash_generated_field = "1F70E86597E6AA266596A89FFFE3A0B1")
 
         private boolean mFreeBusyFlag = FREE;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.661 -0400", hash_original_field = "4A6A4A2228837A3EFA044106F58FECB5", hash_generated_field = "FF81CB096E95719A97BE9903BC741745")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.106 -0400", hash_original_field = "4A6A4A2228837A3EFA044106F58FECB5", hash_generated_field = "FF81CB096E95719A97BE9903BC741745")
 
         private int mNumHolders = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.661 -0400", hash_original_field = "38B23B32824C5446EA08DC3CB0CE5726", hash_generated_field = "25A1DD62940277CC7CAA21B9DBF3C46E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.106 -0400", hash_original_field = "38B23B32824C5446EA08DC3CB0CE5726", hash_generated_field = "25A1DD62940277CC7CAA21B9DBF3C46E")
 
         private HashSet<Long> mHolderIds = new HashSet<Long>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.662 -0400", hash_original_method = "DC316C09CB4059B013C925E31D9707E2", hash_generated_method = "C727BF994E820394181F7F366C811F68")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.107 -0400", hash_original_method = "DC316C09CB4059B013C925E31D9707E2", hash_generated_method = "C727BF994E820394181F7F366C811F68")
         public  PoolObj(SQLiteDatabase db) {
             mDb = db;
             // ---------- Original Method ----------
@@ -403,13 +389,12 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.681 -0400", hash_original_method = "45198477A389ECAEEDC0006E6891DF34", hash_generated_method = "BBAC94FB16BB92C98CCB86914E57550B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.107 -0400", hash_original_method = "45198477A389ECAEEDC0006E6891DF34", hash_generated_method = "6845A2584A0EF992434BBD2EA175C37B")
         private synchronized void acquire() {
             {
-                boolean varF062350F2983BA11C030C10A71A73C26_1164146798 = (Log.isLoggable(TAG, Log.DEBUG));
+                boolean varF062350F2983BA11C030C10A71A73C26_1038905535 = (Log.isLoggable(TAG, Log.DEBUG));
                 {
-                    long id;
-                    id = Thread.currentThread().getId();
+                    long id = Thread.currentThread().getId();
                     mHolderIds.add(id);
                 } //End block
             } //End collapsed parenthetic
@@ -426,13 +411,12 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.682 -0400", hash_original_method = "AE7C5C4381BC6984ACC18DB5CB72EB59", hash_generated_method = "5A3A749918706C856778CDC27D79B171")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.108 -0400", hash_original_method = "AE7C5C4381BC6984ACC18DB5CB72EB59", hash_generated_method = "2C1EFAAFC11FD4820A2EE4AFC245460C")
         private synchronized void release() {
             {
-                boolean varF062350F2983BA11C030C10A71A73C26_1401051391 = (Log.isLoggable(TAG, Log.DEBUG));
+                boolean varF062350F2983BA11C030C10A71A73C26_682598711 = (Log.isLoggable(TAG, Log.DEBUG));
                 {
-                    long id;
-                    id = Thread.currentThread().getId();
+                    long id = Thread.currentThread().getId();
                     mHolderIds.remove(id);
                 } //End block
             } //End collapsed parenthetic
@@ -453,16 +437,16 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.683 -0400", hash_original_method = "789BC5D306614F739870740EDEE72A08", hash_generated_method = "FED793EEEC4E2440B63D1449F38B58AB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.108 -0400", hash_original_method = "789BC5D306614F739870740EDEE72A08", hash_generated_method = "6C827695EFFB334B0807A50E42CBC21C")
         private synchronized boolean isFree() {
             {
-                boolean varF062350F2983BA11C030C10A71A73C26_1608087032 = (Log.isLoggable(TAG, Log.DEBUG));
+                boolean varF062350F2983BA11C030C10A71A73C26_1778445409 = (Log.isLoggable(TAG, Log.DEBUG));
                 {
                     verify();
                 } //End block
             } //End collapsed parenthetic
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350444174 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1350444174;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_697599345 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_697599345;
             // ---------- Original Method ----------
             //if (Log.isLoggable(TAG, Log.DEBUG)) {
                 //verify();
@@ -471,7 +455,7 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.683 -0400", hash_original_method = "55CDA36173BE763B72AF18BF479F1305", hash_generated_method = "D870C0B48C8F780AB14EAB37DCC5B591")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.108 -0400", hash_original_method = "55CDA36173BE763B72AF18BF479F1305", hash_generated_method = "D870C0B48C8F780AB14EAB37DCC5B591")
         private synchronized void verify() {
             // ---------- Original Method ----------
             //if (mFreeBusyFlag == FREE) {
@@ -482,21 +466,20 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.684 -0400", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "5F5D3F8B209BDF0C9746DFAA2DFC4DFE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.109 -0400", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "7F2E6F8B5960BDE881F1546738CACCA2")
         synchronized int getNumHolders() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_763253470 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_763253470;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643284459 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643284459;
             // ---------- Original Method ----------
             //return mNumHolders;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.885 -0400", hash_original_method = "6B148DC19CAC05BE88274109F5158F0D", hash_generated_method = "7019D4B8B05F1E58AFA45141C7271047")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.117 -0400", hash_original_method = "6B148DC19CAC05BE88274109F5158F0D", hash_generated_method = "CEA3E8A1FD28440BA3FC698748C7C3C7")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1419573705 = null; //Variable for return #1
-            StringBuilder buff;
-            buff = new StringBuilder();
+            String varB4EAC82CA7396A68D541C85D26508E83_848306929 = null; //Variable for return #1
+            StringBuilder buff = new StringBuilder();
             buff.append(", conn # ");
             buff.append(mDb.mConnectionNum);
             buff.append(", mCountHolders = ");
@@ -505,17 +488,17 @@ class DatabaseConnectionPool {
                 buff.append(", freeBusyFlag = ");
                 buff.append(mFreeBusyFlag);
                 {
-                    Iterator<Long> var0E6E6B9552BE314E653CCAB776377B09_506020988 = (mHolderIds).iterator();
-                    var0E6E6B9552BE314E653CCAB776377B09_506020988.hasNext();
-                    Long l = var0E6E6B9552BE314E653CCAB776377B09_506020988.next();
+                    Iterator<Long> var0E6E6B9552BE314E653CCAB776377B09_1485567600 = (mHolderIds).iterator();
+                    var0E6E6B9552BE314E653CCAB776377B09_1485567600.hasNext();
+                    Long l = var0E6E6B9552BE314E653CCAB776377B09_1485567600.next();
                     {
                         buff.append(", id = " + l);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1419573705 = buff.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1419573705.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1419573705;
+            varB4EAC82CA7396A68D541C85D26508E83_848306929 = buff.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_848306929.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_848306929;
             // ---------- Original Method ----------
             //StringBuilder buff = new StringBuilder();
             //buff.append(", conn # ");
@@ -533,18 +516,18 @@ class DatabaseConnectionPool {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.902 -0400", hash_original_field = "5225948491C0BC6C574CDC802AA03B1F", hash_generated_field = "8119A909468DDDAFA61023A87204A1CA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.118 -0400", hash_original_field = "5225948491C0BC6C574CDC802AA03B1F", hash_generated_field = "3E252BD97600562FDA798CEE6D61D62F")
 
-        private static boolean FREE = true;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.902 -0400", hash_original_field = "F6FA0FB62361E0E94DAD7A0B25A19298", hash_generated_field = "CC2BF8BBDFA553BCE0FA85EA75F25787")
+        private static final boolean FREE = true;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.118 -0400", hash_original_field = "F6FA0FB62361E0E94DAD7A0B25A19298", hash_generated_field = "95E2AC55156607626DFBEE0C02F9BE1A")
 
-        private static boolean BUSY = false;
+        private static final boolean BUSY = false;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.902 -0400", hash_original_field = "616D3F6306688F4F772D0E3578FA8FC0", hash_generated_field = "101C809EB19C22667277246CB28BC987")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.118 -0400", hash_original_field = "616D3F6306688F4F772D0E3578FA8FC0", hash_generated_field = "6C058760B23A5C13D7BB739FC64924DB")
 
-    private static String TAG = "DatabaseConnectionPool";
+    private static final String TAG = "DatabaseConnectionPool";
 }
 

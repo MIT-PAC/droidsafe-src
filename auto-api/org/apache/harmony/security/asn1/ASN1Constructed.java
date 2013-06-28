@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public abstract class ASN1Constructed extends ASN1Type {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.238 -0400", hash_original_method = "9FFE4A234D2E2DB42C06DD57E257B3F5", hash_generated_method = "FB8D52ECAFCCCA9AC4D6B778E247FD10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.460 -0400", hash_original_method = "9FFE4A234D2E2DB42C06DD57E257B3F5", hash_generated_method = "FB8D52ECAFCCCA9AC4D6B778E247FD10")
     protected  ASN1Constructed(int tagNumber) {
         super(CLASS_UNIVERSAL, tagNumber);
         addTaint(tagNumber);
@@ -18,7 +18,7 @@ public abstract class ASN1Constructed extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.238 -0400", hash_original_method = "0ED0D05BF14BE7B30955286BAE5204E3", hash_generated_method = "2F50AC05C085BB3D47D7460E71C84EEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.460 -0400", hash_original_method = "0ED0D05BF14BE7B30955286BAE5204E3", hash_generated_method = "2F50AC05C085BB3D47D7460E71C84EEA")
     protected  ASN1Constructed(int tagClass, int tagNumber) {
         super(tagClass, tagNumber);
         addTaint(tagClass);
@@ -27,17 +27,17 @@ public abstract class ASN1Constructed extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.238 -0400", hash_original_method = "B936C5375D6639A303C6027641033901", hash_generated_method = "3CCA67117D08F372091E13B7D6F57C57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.460 -0400", hash_original_method = "B936C5375D6639A303C6027641033901", hash_generated_method = "05F664B4759C57ED8106DBD868890EDF")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1052594117 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1052594117;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361764363 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361764363;
         // ---------- Original Method ----------
         //return this.constrId == identifier;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.239 -0400", hash_original_method = "D76B5AEAE2B5495729712535531D2D80", hash_generated_method = "046D4CD4CC3DB548D742508889386314")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.461 -0400", hash_original_method = "D76B5AEAE2B5495729712535531D2D80", hash_generated_method = "046D4CD4CC3DB548D742508889386314")
     public void encodeASN(BerOutputStream out) {
         out.encodeTag(constrId);
         encodeContent(out);

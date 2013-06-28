@@ -14,13 +14,13 @@ import libcore.io.SizeOf;
 
 public class ModifiedUtf8 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.050 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.030 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
     private  ModifiedUtf8() {
         // ---------- Original Method ----------
     }
 
     
-        public static String decode(byte[] in, char[] out, int offset, int utfSize) throws UTFDataFormatException {
+    public static String decode(byte[] in, char[] out, int offset, int utfSize) throws UTFDataFormatException {
         int count = 0, s = 0, a;
         while (count < utfSize) {
             if ((out[s] = (char) in[offset + count++]) < '\u0080') {
@@ -52,7 +52,7 @@ public class ModifiedUtf8 {
     }
 
     
-        public static long countBytes(String s, boolean shortLength) throws UTFDataFormatException {
+    public static long countBytes(String s, boolean shortLength) throws UTFDataFormatException {
         long result = 0;
         final int length = s.length();
         for (int i = 0; i < length; ++i) {
@@ -72,7 +72,7 @@ public class ModifiedUtf8 {
     }
 
     
-        public static void encode(byte[] dst, int offset, String s) {
+    public static void encode(byte[] dst, int offset, String s) {
         final int length = s.length();
         for (int i = 0; i < length; i++) {
             char ch = s.charAt(i);
@@ -90,7 +90,7 @@ public class ModifiedUtf8 {
     }
 
     
-        public static byte[] encode(String s) throws UTFDataFormatException {
+    public static byte[] encode(String s) throws UTFDataFormatException {
         int utfCount = (int) ModifiedUtf8.countBytes(s, true);
         byte[] result = new byte[SizeOf.SHORT + utfCount];
         Memory.pokeShort(result, 0, (short) utfCount, ByteOrder.BIG_ENDIAN);

@@ -24,11 +24,11 @@ import libcore.util.EmptyArray;
 import libcore.util.Objects;
 
 public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.899 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "9773C6104DBFF8AC92488F3C4AD39164")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.634 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "9773C6104DBFF8AC92488F3C4AD39164")
 
     private transient volatile Object[] elements;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.900 -0400", hash_original_method = "E357703A48348C8EEE9667190E563C6C", hash_generated_method = "B97966364BBED793B94DBEEDDFBF1B8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.634 -0400", hash_original_method = "E357703A48348C8EEE9667190E563C6C", hash_generated_method = "B97966364BBED793B94DBEEDDFBF1B8C")
     public  CopyOnWriteArrayList() {
         elements = EmptyArray.OBJECT;
         // ---------- Original Method ----------
@@ -36,7 +36,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.900 -0400", hash_original_method = "84AACC1E4283EC6F676E4F2CD339FC5B", hash_generated_method = "EA0C15CE1422D9A7119B138FB9DFD0F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.634 -0400", hash_original_method = "84AACC1E4283EC6F676E4F2CD339FC5B", hash_generated_method = "EA0C15CE1422D9A7119B138FB9DFD0F8")
     @SuppressWarnings("unchecked")
     public  CopyOnWriteArrayList(Collection<? extends E> collection) {
         this((E[]) collection.toArray());
@@ -45,7 +45,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.900 -0400", hash_original_method = "51C6AA63C04D903DC2F19EE7270C9A87", hash_generated_method = "5F0DE0F3745CDDE56CD0A00206594245")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.634 -0400", hash_original_method = "51C6AA63C04D903DC2F19EE7270C9A87", hash_generated_method = "5F0DE0F3745CDDE56CD0A00206594245")
     public  CopyOnWriteArrayList(E[] array) {
         this.elements = Arrays.copyOf(array, array.length, Object[].class);
         // ---------- Original Method ----------
@@ -53,23 +53,22 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.901 -0400", hash_original_method = "FF2ED4DF1B70DABD1A45F755E1952592", hash_generated_method = "E994B1DE006C44E787C803E97D66D4BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.635 -0400", hash_original_method = "FF2ED4DF1B70DABD1A45F755E1952592", hash_generated_method = "817BA723545825B4E4B8A2E921677A3A")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_666065639 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_509821681 = null; //Variable for return #1
         try 
         {
-            CopyOnWriteArrayList result;
-            result = (CopyOnWriteArrayList) super.clone();
+            CopyOnWriteArrayList result = (CopyOnWriteArrayList) super.clone();
             result.elements = result.elements.clone();
-            varB4EAC82CA7396A68D541C85D26508E83_666065639 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_509821681 = result;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_666065639.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_666065639;
+        varB4EAC82CA7396A68D541C85D26508E83_509821681.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_509821681;
         // ---------- Original Method ----------
         //try {
             //CopyOnWriteArrayList result = (CopyOnWriteArrayList) super.clone();
@@ -81,54 +80,53 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.901 -0400", hash_original_method = "68DC52534F60D1A5138253A79B12E67C", hash_generated_method = "203243F29D4DFBE9A28D22E482DF8FE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.635 -0400", hash_original_method = "68DC52534F60D1A5138253A79B12E67C", hash_generated_method = "5636B47E316EA73316D63EE8C0B3CE1E")
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348164591 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348164591;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941256154 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941256154;
         // ---------- Original Method ----------
         //return elements.length;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.901 -0400", hash_original_method = "07C72EA93D8BC7AB1EE5326762E05E69", hash_generated_method = "E632ACA53DADE1842C4F8D041E1DB324")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.635 -0400", hash_original_method = "07C72EA93D8BC7AB1EE5326762E05E69", hash_generated_method = "81B1216D891B1B6C101A3C8D608C336B")
     @SuppressWarnings("unchecked")
     public E get(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_2108223601 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2108223601 = (E) elements[index];
+        E varB4EAC82CA7396A68D541C85D26508E83_2136711438 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2136711438 = (E) elements[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2108223601.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2108223601;
+        varB4EAC82CA7396A68D541C85D26508E83_2136711438.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2136711438;
         // ---------- Original Method ----------
         //return (E) elements[index];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.902 -0400", hash_original_method = "1274BF0858E749C3D9852E86C4A99C22", hash_generated_method = "B1A9D8AC3B23985C4FB20427CDEDFA33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.636 -0400", hash_original_method = "1274BF0858E749C3D9852E86C4A99C22", hash_generated_method = "3AA0CF347B1B7325A77829FD6849CABE")
     public boolean contains(Object o) {
-        boolean var2580C065AD3F25FA806E0EC1F5491D61_800037952 = (indexOf(o) != -1);
+        boolean var2580C065AD3F25FA806E0EC1F5491D61_1110950756 = (indexOf(o) != -1);
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1412050726 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1412050726;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_834190768 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_834190768;
         // ---------- Original Method ----------
         //return indexOf(o) != -1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.902 -0400", hash_original_method = "F181183DABCA5209C115C87B0BC63071", hash_generated_method = "0646CEED5AC7FAA9A50F6490A8BCDB41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.636 -0400", hash_original_method = "F181183DABCA5209C115C87B0BC63071", hash_generated_method = "630F33DF7E4C9CAD2F7C97C18B59EA3F")
     public boolean containsAll(Collection<?> collection) {
-        Object[] snapshot;
-        snapshot = elements;
-        boolean varB51CD127B94D30044743FDBEC427798E_1902988707 = (containsAll(collection, snapshot, 0, snapshot.length));
+        Object[] snapshot = elements;
+        boolean varB51CD127B94D30044743FDBEC427798E_1380932296 = (containsAll(collection, snapshot, 0, snapshot.length));
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1482112166 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1482112166;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_601547335 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_601547335;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return containsAll(collection, snapshot, 0, snapshot.length);
     }
 
     
-        static boolean containsAll(Collection<?> collection, Object[] snapshot, int from, int to) {
+    static boolean containsAll(Collection<?> collection, Object[] snapshot, int from, int to) {
         for (Object o : collection) {
             if (indexOf(o, snapshot, from, to) == -1) {
                 return false;
@@ -138,102 +136,95 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.921 -0400", hash_original_method = "8F838DDE7B5E08714D6360ECE6328BF5", hash_generated_method = "9113F843D43E88188DA12E8AA480A2CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.636 -0400", hash_original_method = "8F838DDE7B5E08714D6360ECE6328BF5", hash_generated_method = "65268FDD50E1C59DB6724FEA86B3F95B")
     public int indexOf(E object, int from) {
-        Object[] snapshot;
-        snapshot = elements;
-        int var3F4FFEA1DA0968D7F475C5A4D1C4F62D_952783418 = (indexOf(object, snapshot, from, snapshot.length));
+        Object[] snapshot = elements;
+        int var3F4FFEA1DA0968D7F475C5A4D1C4F62D_100185811 = (indexOf(object, snapshot, from, snapshot.length));
         addTaint(object.getTaint());
         addTaint(from);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668560978 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668560978;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093689848 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093689848;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return indexOf(object, snapshot, from, snapshot.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.922 -0400", hash_original_method = "3333011450759BE4404CA7231EDCF09F", hash_generated_method = "0D935E28D87510289B3B8ECD8DA78B4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.637 -0400", hash_original_method = "3333011450759BE4404CA7231EDCF09F", hash_generated_method = "DB3FD7DE0EDE4EAA2B3F90AEA0B4F093")
     public int indexOf(Object object) {
-        Object[] snapshot;
-        snapshot = elements;
-        int varF95830349FA4633C99755E2E13FD61DA_1747265894 = (indexOf(object, snapshot, 0, snapshot.length));
+        Object[] snapshot = elements;
+        int varF95830349FA4633C99755E2E13FD61DA_1853386421 = (indexOf(object, snapshot, 0, snapshot.length));
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420903777 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420903777;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537741965 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537741965;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return indexOf(object, snapshot, 0, snapshot.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.922 -0400", hash_original_method = "19C8A04DC3A46E49A84DF6B57E1917A9", hash_generated_method = "8DBF8A4121A27757704FF5B6D440C978")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.638 -0400", hash_original_method = "19C8A04DC3A46E49A84DF6B57E1917A9", hash_generated_method = "7DB60CE7DB39F919C200D2928C25C65E")
     public int lastIndexOf(E object, int to) {
-        Object[] snapshot;
-        snapshot = elements;
-        int var044750AB099D388AF4C1D65CC717289C_1762702440 = (lastIndexOf(object, snapshot, 0, to));
+        Object[] snapshot = elements;
+        int var044750AB099D388AF4C1D65CC717289C_1298112635 = (lastIndexOf(object, snapshot, 0, to));
         addTaint(object.getTaint());
         addTaint(to);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771931110 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771931110;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458438649 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458438649;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return lastIndexOf(object, snapshot, 0, to);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.922 -0400", hash_original_method = "D45902A72D19AFDC170F4A4D129ABA97", hash_generated_method = "032B425A4F098F11F832AE99BF08690B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.638 -0400", hash_original_method = "D45902A72D19AFDC170F4A4D129ABA97", hash_generated_method = "2E1AF87BC57C228E5224CC06320F8752")
     public int lastIndexOf(Object object) {
-        Object[] snapshot;
-        snapshot = elements;
-        int var363578769FBDCE20799A418E17F6DBCF_1178164088 = (lastIndexOf(object, snapshot, 0, snapshot.length));
+        Object[] snapshot = elements;
+        int var363578769FBDCE20799A418E17F6DBCF_1440797679 = (lastIndexOf(object, snapshot, 0, snapshot.length));
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1736869730 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1736869730;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_169974342 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_169974342;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return lastIndexOf(object, snapshot, 0, snapshot.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.923 -0400", hash_original_method = "E13DA7C33D486C9539B3B38ADEEDBA9D", hash_generated_method = "36C1DD338A87272B4D1C6D0F6A0308B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.639 -0400", hash_original_method = "E13DA7C33D486C9539B3B38ADEEDBA9D", hash_generated_method = "77FD9CE943FD96319B781CAD38BDFBAC")
     public boolean isEmpty() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_299260668 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_299260668;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397137766 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_397137766;
         // ---------- Original Method ----------
         //return elements.length == 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.923 -0400", hash_original_method = "8AC2A236339BBBFB218E3FC5088D17DA", hash_generated_method = "9FADE9340CAF5FF4D254FD1082D3F846")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.639 -0400", hash_original_method = "8AC2A236339BBBFB218E3FC5088D17DA", hash_generated_method = "1ADA08AAB51C76E70BA87B5E9524169C")
     public Iterator<E> iterator() {
-        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1421618933 = null; //Variable for return #1
-        Object[] snapshot;
-        snapshot = elements;
-        varB4EAC82CA7396A68D541C85D26508E83_1421618933 = new CowIterator<E>(snapshot, 0, snapshot.length);
-        varB4EAC82CA7396A68D541C85D26508E83_1421618933.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1421618933;
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_454440093 = null; //Variable for return #1
+        Object[] snapshot = elements;
+        varB4EAC82CA7396A68D541C85D26508E83_454440093 = new CowIterator<E>(snapshot, 0, snapshot.length);
+        varB4EAC82CA7396A68D541C85D26508E83_454440093.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_454440093;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return new CowIterator<E>(snapshot, 0, snapshot.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.937 -0400", hash_original_method = "6CF42CA16C3188E71052A9A04B3E4D16", hash_generated_method = "58D149B479718D1CB63E490967385F00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.640 -0400", hash_original_method = "6CF42CA16C3188E71052A9A04B3E4D16", hash_generated_method = "9DB54EE0B9F9796497E5DB5B6B012D7D")
     public ListIterator<E> listIterator(int index) {
-        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_67980385 = null; //Variable for return #1
-        Object[] snapshot;
-        snapshot = elements;
+        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1019693240 = null; //Variable for return #1
+        Object[] snapshot = elements;
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + ", length=" + snapshot.length);
         } //End block
-        CowIterator<E> result;
-        result = new CowIterator<E>(snapshot, 0, snapshot.length);
+        CowIterator<E> result = new CowIterator<E>(snapshot, 0, snapshot.length);
         result.index = index;
-        varB4EAC82CA7396A68D541C85D26508E83_67980385 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1019693240 = result;
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_67980385.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_67980385;
+        varB4EAC82CA7396A68D541C85D26508E83_1019693240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1019693240;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //if (index < 0 || index > snapshot.length) {
@@ -245,34 +236,32 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.937 -0400", hash_original_method = "A4A3425D1D4C041DAFB5C093D1247DF1", hash_generated_method = "A7361F8E1F2E3916CABBC5537C2B2DE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.640 -0400", hash_original_method = "A4A3425D1D4C041DAFB5C093D1247DF1", hash_generated_method = "4FF2C989003E1EBEBD7BB41C9862B5A1")
     public ListIterator<E> listIterator() {
-        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_398196267 = null; //Variable for return #1
-        Object[] snapshot;
-        snapshot = elements;
-        varB4EAC82CA7396A68D541C85D26508E83_398196267 = new CowIterator<E>(snapshot, 0, snapshot.length);
-        varB4EAC82CA7396A68D541C85D26508E83_398196267.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_398196267;
+        ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_32436349 = null; //Variable for return #1
+        Object[] snapshot = elements;
+        varB4EAC82CA7396A68D541C85D26508E83_32436349 = new CowIterator<E>(snapshot, 0, snapshot.length);
+        varB4EAC82CA7396A68D541C85D26508E83_32436349.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_32436349;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //return new CowIterator<E>(snapshot, 0, snapshot.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.938 -0400", hash_original_method = "594A2D8CB57DB4B1D13107F70D453706", hash_generated_method = "1B5D6DE2060E8C6034D057618D532D7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.641 -0400", hash_original_method = "594A2D8CB57DB4B1D13107F70D453706", hash_generated_method = "E56D3A2CA894D88BC266D19878650BA3")
     public List<E> subList(int from, int to) {
-        List<E> varB4EAC82CA7396A68D541C85D26508E83_107964112 = null; //Variable for return #1
-        Object[] snapshot;
-        snapshot = elements;
+        List<E> varB4EAC82CA7396A68D541C85D26508E83_284197204 = null; //Variable for return #1
+        Object[] snapshot = elements;
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("from=" + from + ", to=" + to +
                     ", list size=" + snapshot.length);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_107964112 = new CowSubList(snapshot, from, to);
+        varB4EAC82CA7396A68D541C85D26508E83_284197204 = new CowSubList(snapshot, from, to);
         addTaint(from);
         addTaint(to);
-        varB4EAC82CA7396A68D541C85D26508E83_107964112.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_107964112;
+        varB4EAC82CA7396A68D541C85D26508E83_284197204.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_284197204;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //if (from < 0 || from > to || to > snapshot.length) {
@@ -283,44 +272,43 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.938 -0400", hash_original_method = "49659221AAE3F1C0ECCE830D1E5CE8D1", hash_generated_method = "54208B8AF3825521141DD9CF10808DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.641 -0400", hash_original_method = "49659221AAE3F1C0ECCE830D1E5CE8D1", hash_generated_method = "867B64B7428DC1F828B260A3FB15F592")
     public Object[] toArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_239983594 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_239983594 = elements.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_239983594.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_239983594;
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1339937962 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1339937962 = elements.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1339937962.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1339937962;
         // ---------- Original Method ----------
         //return elements.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:55.939 -0400", hash_original_method = "C1E48E79962F836E76F520B2DEE3FDB8", hash_generated_method = "F1AAC9190357E533499C2985D80D0ED8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.642 -0400", hash_original_method = "C1E48E79962F836E76F520B2DEE3FDB8", hash_generated_method = "92AA47A0CA464040F510934786E9E366")
     @SuppressWarnings({"unchecked","SuspiciousSystemArraycopy"})
     public <T> T[] toArray(T[] contents) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1310744121 = null; //Variable for return #1
-        T[] varB4EAC82CA7396A68D541C85D26508E83_948436370 = null; //Variable for return #2
-        Object[] snapshot;
-        snapshot = elements;
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1714328680 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_707244537 = null; //Variable for return #2
+        Object[] snapshot = elements;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1310744121 = (T[]) Arrays.copyOf(snapshot, snapshot.length, contents.getClass());
+            varB4EAC82CA7396A68D541C85D26508E83_1714328680 = (T[]) Arrays.copyOf(snapshot, snapshot.length, contents.getClass());
         } //End block
         System.arraycopy(snapshot, 0, contents, 0, snapshot.length);
         {
             contents[snapshot.length] = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_948436370 = contents;
+        varB4EAC82CA7396A68D541C85D26508E83_707244537 = contents;
         addTaint(contents[0].getTaint());
-        T[] varA7E53CE21691AB073D9660D615818899_449055698; //Final return value
+        T[] varA7E53CE21691AB073D9660D615818899_1836533659; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_449055698 = varB4EAC82CA7396A68D541C85D26508E83_1310744121;
+                varA7E53CE21691AB073D9660D615818899_1836533659 = varB4EAC82CA7396A68D541C85D26508E83_1714328680;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_449055698 = varB4EAC82CA7396A68D541C85D26508E83_948436370;
+                varA7E53CE21691AB073D9660D615818899_1836533659 = varB4EAC82CA7396A68D541C85D26508E83_707244537;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_449055698.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_449055698;
+        varA7E53CE21691AB073D9660D615818899_1836533659.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1836533659;
         // ---------- Original Method ----------
         //Object[] snapshot = elements;
         //if (snapshot.length > contents.length) {
@@ -334,33 +322,29 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.130 -0400", hash_original_method = "6010CBD888F6152118D77E36B5616E02", hash_generated_method = "F5CFAEDDC8FF600C5414972964064A32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.647 -0400", hash_original_method = "6010CBD888F6152118D77E36B5616E02", hash_generated_method = "914844B2BD8D718F83A3E555A9283CE5")
     @Override
     public boolean equals(Object other) {
         {
-            boolean var8E510C77A3CC00EDD5D5105BB9594676_1633974436 = (this == other
+            boolean var8E510C77A3CC00EDD5D5105BB9594676_1589103414 = (this == other
                     || Arrays.equals(elements, ((CopyOnWriteArrayList<?>) other).elements));
         } //End block
         {
-            Object[] snapshot;
-            snapshot = elements;
-            Iterator<?> i;
-            i = ((List<?>) other).iterator();
+            Object[] snapshot = elements;
+            Iterator<?> i = ((List<?>) other).iterator();
             {
-                Iterator<Object> var112728ACB95922B20839C47454ECB6A5_913028840 = (snapshot).iterator();
-                var112728ACB95922B20839C47454ECB6A5_913028840.hasNext();
-                Object o = var112728ACB95922B20839C47454ECB6A5_913028840.next();
+                Object o = snapshot[0];
                 {
                     {
-                        boolean var6D2C6F2C90F31B26BD0BC8B4289F0FA4_803074505 = (!i.hasNext() || !Objects.equal(o, i.next()));
+                        boolean var6D2C6F2C90F31B26BD0BC8B4289F0FA4_1836160 = (!i.hasNext() || !Objects.equal(o, i.next()));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
-            boolean varCC7204A921FEC5763B81E50426A88D00_531280405 = (!i.hasNext());
+            boolean varCC7204A921FEC5763B81E50426A88D00_138417984 = (!i.hasNext());
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213581995 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_213581995;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396233707 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396233707;
         // ---------- Original Method ----------
         //if (other instanceof CopyOnWriteArrayList) {
             //return this == other
@@ -380,38 +364,37 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.131 -0400", hash_original_method = "5CBAD38024C40A34FCDA1A3FF083FDEC", hash_generated_method = "11BCE180300966C9931B4DA8AAF7FE70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.647 -0400", hash_original_method = "5CBAD38024C40A34FCDA1A3FF083FDEC", hash_generated_method = "2FA48B28B3A12F15B11CE492C8DB97C0")
     @Override
     public int hashCode() {
-        int varCAF3CD69EA8DECAF9471B49B185EF8B7_1753613329 = (Arrays.hashCode(elements));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305320552 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305320552;
+        int varCAF3CD69EA8DECAF9471B49B185EF8B7_1960491418 = (Arrays.hashCode(elements));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668309246 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668309246;
         // ---------- Original Method ----------
         //return Arrays.hashCode(elements);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.132 -0400", hash_original_method = "D569C6F4ED8C88274D5F2CC2C9F6FBD2", hash_generated_method = "7CBCB46E6D7C4C2A4C0E752CB0CD500E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.648 -0400", hash_original_method = "D569C6F4ED8C88274D5F2CC2C9F6FBD2", hash_generated_method = "BD95894B2A1A9E59DAD6C6D7814E11FD")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_906425411 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_906425411 = Arrays.toString(elements);
-        varB4EAC82CA7396A68D541C85D26508E83_906425411.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_906425411;
+        String varB4EAC82CA7396A68D541C85D26508E83_229739153 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_229739153 = Arrays.toString(elements);
+        varB4EAC82CA7396A68D541C85D26508E83_229739153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_229739153;
         // ---------- Original Method ----------
         //return Arrays.toString(elements);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.132 -0400", hash_original_method = "4C47893BDB4E93647009AE85D0DD4F0A", hash_generated_method = "7715C84CFE4F3B72D386FC1B10AC157D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.648 -0400", hash_original_method = "4C47893BDB4E93647009AE85D0DD4F0A", hash_generated_method = "6CC8A703530E3899ECDE0991490406C8")
     public synchronized boolean add(E e) {
-        Object[] newElements;
-        newElements = new Object[elements.length + 1];
+        Object[] newElements = new Object[elements.length + 1];
         System.arraycopy(elements, 0, newElements, 0, elements.length);
         newElements[elements.length] = e;
         elements = newElements;
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751641095 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751641095;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_617001782 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_617001782;
         // ---------- Original Method ----------
         //Object[] newElements = new Object[elements.length + 1];
         //System.arraycopy(elements, 0, newElements, 0, elements.length);
@@ -421,10 +404,9 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.133 -0400", hash_original_method = "9DD013FF12CCDC2B9301BB35B7E69B98", hash_generated_method = "851D85ECA0F05B52D852286F75AE7935")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.648 -0400", hash_original_method = "9DD013FF12CCDC2B9301BB35B7E69B98", hash_generated_method = "9693980F86D82110F0F75987F308B893")
     public synchronized void add(int index, E e) {
-        Object[] newElements;
-        newElements = new Object[elements.length + 1];
+        Object[] newElements = new Object[elements.length + 1];
         System.arraycopy(elements, 0, newElements, 0, index);
         newElements[index] = e;
         System.arraycopy(elements, index, newElements, index + 1, elements.length - index);
@@ -440,23 +422,21 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.133 -0400", hash_original_method = "76766E6A3193E0133903AC8237158932", hash_generated_method = "769DF6CA584E641A15DD8B993DADCED5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.649 -0400", hash_original_method = "76766E6A3193E0133903AC8237158932", hash_generated_method = "3B2F0F6A3B35B4F8B47D8B6782FA7653")
     public synchronized boolean addAll(Collection<? extends E> collection) {
-        boolean var0159BD59FAEB520B52C0A163D95FA273_137253449 = (addAll(elements.length, collection));
+        boolean var0159BD59FAEB520B52C0A163D95FA273_801971703 = (addAll(elements.length, collection));
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1830951335 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1830951335;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1477859086 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1477859086;
         // ---------- Original Method ----------
         //return addAll(elements.length, collection);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.148 -0400", hash_original_method = "16622B391256B6F864845FABB18695E4", hash_generated_method = "D752F9CE9AE745F7FE0CE8D7BF0D8BAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.649 -0400", hash_original_method = "16622B391256B6F864845FABB18695E4", hash_generated_method = "99124A66D0581A01CDD9E2615FE10958")
     public synchronized boolean addAll(int index, Collection<? extends E> collection) {
-        Object[] toAdd;
-        toAdd = collection.toArray();
-        Object[] newElements;
-        newElements = new Object[elements.length + toAdd.length];
+        Object[] toAdd = collection.toArray();
+        Object[] newElements = new Object[elements.length + toAdd.length];
         System.arraycopy(elements, 0, newElements, 0, index);
         System.arraycopy(toAdd, 0, newElements, index, toAdd.length);
         System.arraycopy(elements, index,
@@ -464,8 +444,8 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         elements = newElements;
         addTaint(index);
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_285110190 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_285110190;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_378503761 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_378503761;
         // ---------- Original Method ----------
         //Object[] toAdd = collection.toArray();
         //Object[] newElements = new Object[elements.length + toAdd.length];
@@ -478,22 +458,17 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.197 -0400", hash_original_method = "F6411BBDC5A81E1C464E9CEEEB8CCCF0", hash_generated_method = "F958CC39868D9618DDE3BBC01592B603")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.657 -0400", hash_original_method = "F6411BBDC5A81E1C464E9CEEEB8CCCF0", hash_generated_method = "F92534298DCFC7F974CC481BFF7AF9AF")
     public synchronized int addAllAbsent(Collection<? extends E> collection) {
-        Object[] toAdd;
-        toAdd = collection.toArray();
-        Object[] newElements;
-        newElements = new Object[elements.length + toAdd.length];
+        Object[] toAdd = collection.toArray();
+        Object[] newElements = new Object[elements.length + toAdd.length];
         System.arraycopy(elements, 0, newElements, 0, elements.length);
-        int addedCount;
-        addedCount = 0;
+        int addedCount = 0;
         {
-            Iterator<Object> varEBBC03880E205C3D948072471502DA24_236178579 = (toAdd).iterator();
-            varEBBC03880E205C3D948072471502DA24_236178579.hasNext();
-            Object o = varEBBC03880E205C3D948072471502DA24_236178579.next();
+            Object o = toAdd[0];
             {
                 {
-                    boolean var4BB4DD0650713F3AD6499B5BB3CF0F9C_2084405916 = (indexOf(o, newElements, 0, elements.length + addedCount) == -1);
+                    boolean var4BB4DD0650713F3AD6499B5BB3CF0F9C_787187110 = (indexOf(o, newElements, 0, elements.length + addedCount) == -1);
                     {
                         newElements[elements.length + addedCount++] = o;
                     } //End block
@@ -506,8 +481,8 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         } //End block
         elements = newElements;
         addTaint(collection.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977054806 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977054806;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_310055774 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_310055774;
         // ---------- Original Method ----------
         //Object[] toAdd = collection.toArray();
         //Object[] newElements = new Object[elements.length + toAdd.length];
@@ -527,15 +502,15 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.197 -0400", hash_original_method = "17D643777423FC6042E703F36B3EB43F", hash_generated_method = "95AD40B9C36F62D89F77FB12E1E9B1A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.657 -0400", hash_original_method = "17D643777423FC6042E703F36B3EB43F", hash_generated_method = "EB3018D78F43D6BB1F5AD1805F1E372E")
     public synchronized boolean addIfAbsent(E object) {
         {
-            boolean var9432A920D7B842B924EF8D1C9DF16F5D_686783259 = (contains(object));
+            boolean var9432A920D7B842B924EF8D1C9DF16F5D_1042337711 = (contains(object));
         } //End collapsed parenthetic
         add(object);
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296060386 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296060386;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_247464907 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_247464907;
         // ---------- Original Method ----------
         //if (contains(object)) {
             //return false;
@@ -545,7 +520,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.198 -0400", hash_original_method = "343DE0C64B38A0F7CE33FC0930F8B1CE", hash_generated_method = "0DD0CCA634A11D0B8559FCC328E0AB07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.657 -0400", hash_original_method = "343DE0C64B38A0F7CE33FC0930F8B1CE", hash_generated_method = "0DD0CCA634A11D0B8559FCC328E0AB07")
     @Override
     public synchronized void clear() {
         elements = EmptyArray.OBJECT;
@@ -554,16 +529,15 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.198 -0400", hash_original_method = "83ED6C7BC28A1565457859811EDD5A3A", hash_generated_method = "56669EA34DA50BF5F67D4093A640E746")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.658 -0400", hash_original_method = "83ED6C7BC28A1565457859811EDD5A3A", hash_generated_method = "5823800CB9193DAD5E6E15F591B81F10")
     public synchronized E remove(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_112889021 = null; //Variable for return #1
-        @SuppressWarnings("unchecked") E removed;
-        removed = (E) elements[index];
+        E varB4EAC82CA7396A68D541C85D26508E83_621445649 = null; //Variable for return #1
+        @SuppressWarnings("unchecked") E removed = (E) elements[index];
         removeRange(index, index + 1);
-        varB4EAC82CA7396A68D541C85D26508E83_112889021 = removed;
+        varB4EAC82CA7396A68D541C85D26508E83_621445649 = removed;
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_112889021.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_112889021;
+        varB4EAC82CA7396A68D541C85D26508E83_621445649.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_621445649;
         // ---------- Original Method ----------
         //@SuppressWarnings("unchecked")
         //E removed = (E) elements[index];
@@ -572,14 +546,13 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.198 -0400", hash_original_method = "4348B5D441F5A12C585788ED2765C3A4", hash_generated_method = "2D931D49ED9D0D8AA7AB4464A55E752C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.659 -0400", hash_original_method = "4348B5D441F5A12C585788ED2765C3A4", hash_generated_method = "B1F6D06E62B6328DF11A19BF7F5D6C0C")
     public synchronized boolean remove(Object o) {
-        int index;
-        index = indexOf(o);
+        int index = indexOf(o);
         remove(index);
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149559752 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_149559752;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1667327740 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1667327740;
         // ---------- Original Method ----------
         //int index = indexOf(o);
         //if (index == -1) {
@@ -590,48 +563,44 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.199 -0400", hash_original_method = "1C7B7BE5468A5E30603ED6851F28BACD", hash_generated_method = "18FED0DD78A74ABFCDB22E5D168B5182")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.659 -0400", hash_original_method = "1C7B7BE5468A5E30603ED6851F28BACD", hash_generated_method = "C04B5CDABDB7A3A4D141569BBB2A2294")
     public synchronized boolean removeAll(Collection<?> collection) {
-        boolean varB4080136E4414D738D63F3764F6FBFEE_429617520 = (removeOrRetain(collection, false, 0, elements.length) != 0);
+        boolean varB4080136E4414D738D63F3764F6FBFEE_2030735864 = (removeOrRetain(collection, false, 0, elements.length) != 0);
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_465733775 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_465733775;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081076312 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081076312;
         // ---------- Original Method ----------
         //return removeOrRetain(collection, false, 0, elements.length) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.199 -0400", hash_original_method = "6F7BCA7B0FD040BA943A37C2A3FEA10F", hash_generated_method = "56F569205D9856A1A4DDC706C753B813")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.660 -0400", hash_original_method = "6F7BCA7B0FD040BA943A37C2A3FEA10F", hash_generated_method = "00E8BE47CE5ABCEF4E877FBE9ED9B6D5")
     public synchronized boolean retainAll(Collection<?> collection) {
-        boolean var9149E6DF8FB33323D0296E3F070EADBC_1385248800 = (removeOrRetain(collection, true, 0, elements.length) != 0);
+        boolean var9149E6DF8FB33323D0296E3F070EADBC_1252642688 = (removeOrRetain(collection, true, 0, elements.length) != 0);
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1473414327 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1473414327;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139179201 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139179201;
         // ---------- Original Method ----------
         //return removeOrRetain(collection, true, 0, elements.length) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.200 -0400", hash_original_method = "4C6E97480A096674EA078C65954A8FE2", hash_generated_method = "1CFA4A1F6A85DDFB6A8D6C805033DC27")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.661 -0400", hash_original_method = "4C6E97480A096674EA078C65954A8FE2", hash_generated_method = "3FE1C7CB33A224B25350A7EF90FD18CC")
     private int removeOrRetain(Collection<?> collection, boolean retain, int from, int to) {
         {
-            int i;
-            i = from;
+            int i = from;
             {
                 {
-                    boolean varC6BA4CD1BE642A29C15190B0FCD2F50D_444997836 = (collection.contains(elements[i]) == retain);
+                    boolean varC6BA4CD1BE642A29C15190B0FCD2F50D_1485696684 = (collection.contains(elements[i]) == retain);
                 } //End collapsed parenthetic
-                Object[] newElements;
-                newElements = new Object[elements.length - 1];
+                Object[] newElements = new Object[elements.length - 1];
                 System.arraycopy(elements, 0, newElements, 0, i);
-                int newSize;
-                newSize = i;
+                int newSize = i;
                 {
-                    int j;
-                    j = i + 1;
+                    int j = i + 1;
                     {
                         {
-                            boolean varEA71BBF34A922A67A0C66E1F44121158_574308719 = (collection.contains(elements[j]) == retain);
+                            boolean varEA71BBF34A922A67A0C66E1F44121158_564437459 = (collection.contains(elements[j]) == retain);
                             {
                                 newElements[newSize++] = elements[j];
                             } //End block
@@ -643,8 +612,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
                 {
                     newElements = Arrays.copyOfRange(newElements, 0, newSize);
                 } //End block
-                int removed;
-                removed = elements.length - newElements.length;
+                int removed = elements.length - newElements.length;
                 elements = newElements;
             } //End block
         } //End collapsed parenthetic
@@ -652,27 +620,25 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         addTaint(retain);
         addTaint(from);
         addTaint(to);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290288959 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290288959;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328919052 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328919052;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.206 -0400", hash_original_method = "DD4407442CC828B95DFD10F580DA2DDA", hash_generated_method = "EBE1B80F76A71DD31029D4A058AB10D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.661 -0400", hash_original_method = "DD4407442CC828B95DFD10F580DA2DDA", hash_generated_method = "8BB91B7D1FFC0122A5437B5AEB76AD22")
     public synchronized E set(int index, E e) {
-        E varB4EAC82CA7396A68D541C85D26508E83_216991870 = null; //Variable for return #1
-        Object[] newElements;
-        newElements = elements.clone();
-        @SuppressWarnings("unchecked") E result;
-        result = (E) newElements[index];
+        E varB4EAC82CA7396A68D541C85D26508E83_384865564 = null; //Variable for return #1
+        Object[] newElements = elements.clone();
+        @SuppressWarnings("unchecked") E result = (E) newElements[index];
         newElements[index] = e;
         elements = newElements;
-        varB4EAC82CA7396A68D541C85D26508E83_216991870 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_384865564 = result;
         addTaint(index);
         addTaint(e.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_216991870.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_216991870;
+        varB4EAC82CA7396A68D541C85D26508E83_384865564.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_384865564;
         // ---------- Original Method ----------
         //Object[] newElements = elements.clone();
         //@SuppressWarnings("unchecked")
@@ -683,10 +649,9 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.207 -0400", hash_original_method = "3E2723924788C644A99252EDEC8904D6", hash_generated_method = "ADA8CD6F8CF3D138B0105E90132E1C02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.662 -0400", hash_original_method = "3E2723924788C644A99252EDEC8904D6", hash_generated_method = "7D88388DDDE000E8672153D1CD9B633D")
     private void removeRange(int from, int to) {
-        Object[] newElements;
-        newElements = new Object[elements.length - (to - from)];
+        Object[] newElements = new Object[elements.length - (to - from)];
         System.arraycopy(elements, 0, newElements, 0, from);
         System.arraycopy(elements, to, newElements, from, elements.length - to);
         elements = newElements;
@@ -700,7 +665,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-        static int lastIndexOf(Object o, Object[] data, int from, int to) {
+    static int lastIndexOf(Object o, Object[] data, int from, int to) {
         if (o == null) {
             for (int i = to - 1; i >= from; i--) {
                 if (data[i] == null) {
@@ -718,7 +683,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-        static int indexOf(Object o, Object[] data, int from, int to) {
+    static int indexOf(Object o, Object[] data, int from, int to) {
         if (o == null) {
             for (int i = from; i < to; i++) {
                 if (data[i] == null) {
@@ -736,21 +701,20 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.227 -0400", hash_original_method = "223CD20A6350F975434ED49A9EB8E646", hash_generated_method = "8DD1806B2DD9C738B5BFBE21FA29FCCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.663 -0400", hash_original_method = "223CD20A6350F975434ED49A9EB8E646", hash_generated_method = "1A347443303A48CAD4499890F9A2E81A")
     final Object[] getArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1649728209 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1649728209 = elements;
-        varB4EAC82CA7396A68D541C85D26508E83_1649728209.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1649728209;
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_2110049968 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2110049968 = elements;
+        varB4EAC82CA7396A68D541C85D26508E83_2110049968.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2110049968;
         // ---------- Original Method ----------
         //return elements;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.267 -0400", hash_original_method = "53FDF52EC3502469838FF7FC9C3722C1", hash_generated_method = "2DB9C4261DF427881AF090A0A18EE89E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.672 -0400", hash_original_method = "53FDF52EC3502469838FF7FC9C3722C1", hash_generated_method = "8B9FCD375D99390D334ACF3D8BA7C03F")
     private void writeObject(ObjectOutputStream out) throws IOException {
-        Object[] snapshot;
-        snapshot = elements;
+        Object[] snapshot = elements;
         out.defaultWriteObject();
         out.writeInt(snapshot.length);
         {
@@ -770,14 +734,12 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.288 -0400", hash_original_method = "5D8878D7111BA02D76F457F9A02251F1", hash_generated_method = "1620B925895B5FB7B7EB70AE54F066A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.672 -0400", hash_original_method = "5D8878D7111BA02D76F457F9A02251F1", hash_generated_method = "A6A7C1FE28CC279AB67B5C81BE3DE897")
     private synchronized void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        Object[] snapshot;
-        snapshot = new Object[in.readInt()];
+        Object[] snapshot = new Object[in.readInt()];
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 snapshot[i] = in.readObject();
             } //End block
@@ -795,11 +757,11 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
 
     
     class CowSubList extends AbstractList<E> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.289 -0400", hash_original_field = "6D52012DCA4FC77AA554F25430AEF501", hash_generated_field = "8800B1EC4033F6ED9C1D3C210D1DF359")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.673 -0400", hash_original_field = "6D52012DCA4FC77AA554F25430AEF501", hash_generated_field = "8800B1EC4033F6ED9C1D3C210D1DF359")
 
         private volatile Slice slice;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.289 -0400", hash_original_method = "19F9B6A2C098797122B64953C4557260", hash_generated_method = "5B199B3E4B2B392A5F281C0027899513")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.673 -0400", hash_original_method = "19F9B6A2C098797122B64953C4557260", hash_generated_method = "5B199B3E4B2B392A5F281C0027899513")
         public  CowSubList(Object[] expectedElements, int from, int to) {
             this.slice = new Slice(expectedElements, from, to);
             // ---------- Original Method ----------
@@ -807,47 +769,43 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.289 -0400", hash_original_method = "50828BB5D9839792ECEF31A7338C6C2F", hash_generated_method = "1315692974ABBF009C95DCC6FAA8DB2B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.674 -0400", hash_original_method = "50828BB5D9839792ECEF31A7338C6C2F", hash_generated_method = "DFDB2532E9C623C094759EE5A854A8F4")
         @Override
         public int size() {
-            Slice slice;
-            slice = this.slice;
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799530162 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799530162;
+            Slice slice = this.slice;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337321782 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337321782;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //return slice.to - slice.from;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.290 -0400", hash_original_method = "9FA55EF0B71DE676ACDFCDE8D001E08C", hash_generated_method = "27EDFA531F07899A2B3B69D249A1F600")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.675 -0400", hash_original_method = "9FA55EF0B71DE676ACDFCDE8D001E08C", hash_generated_method = "309F8ECD15485BCB229569E5311ED988")
         @Override
         public boolean isEmpty() {
-            Slice slice;
-            slice = this.slice;
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802298195 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802298195;
+            Slice slice = this.slice;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111153458 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_111153458;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //return slice.from == slice.to;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.291 -0400", hash_original_method = "E9398BCB1605EBC5A566CA332DEC078B", hash_generated_method = "353C4B6432676A7615830D8BD57D291B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.676 -0400", hash_original_method = "E9398BCB1605EBC5A566CA332DEC078B", hash_generated_method = "5E554B03BD0161963DE3BB62C9A2EEB7")
         @SuppressWarnings("unchecked")
         @Override
         public E get(int index) {
-            E varB4EAC82CA7396A68D541C85D26508E83_2054266920 = null; //Variable for return #1
-            Slice slice;
-            slice = this.slice;
-            Object[] snapshot;
-            snapshot = elements;
+            E varB4EAC82CA7396A68D541C85D26508E83_2052161894 = null; //Variable for return #1
+            Slice slice = this.slice;
+            Object[] snapshot = elements;
             slice.checkElementIndex(index);
             slice.checkConcurrentModification(snapshot);
-            varB4EAC82CA7396A68D541C85D26508E83_2054266920 = (E) snapshot[index + slice.from];
+            varB4EAC82CA7396A68D541C85D26508E83_2052161894 = (E) snapshot[index + slice.from];
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2054266920.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2054266920;
+            varB4EAC82CA7396A68D541C85D26508E83_2052161894.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2052161894;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //Object[] snapshot = elements;
@@ -857,47 +815,44 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.292 -0400", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "F0235824A604FABE796F1993758923BB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.677 -0400", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "8AA786C9D84FEB9D7E4FAC30CFC374B9")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_364389323 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_364389323 = listIterator(0);
-            varB4EAC82CA7396A68D541C85D26508E83_364389323.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_364389323;
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_454991409 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_454991409 = listIterator(0);
+            varB4EAC82CA7396A68D541C85D26508E83_454991409.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_454991409;
             // ---------- Original Method ----------
             //return listIterator(0);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.313 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "B0D355D239E82923F4767B7243276835")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.677 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "D240345CE3CD5FABF322D77534B8ACA8")
         @Override
         public ListIterator<E> listIterator() {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1811116302 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1811116302 = listIterator(0);
-            varB4EAC82CA7396A68D541C85D26508E83_1811116302.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1811116302;
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1224397302 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1224397302 = listIterator(0);
+            varB4EAC82CA7396A68D541C85D26508E83_1224397302.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1224397302;
             // ---------- Original Method ----------
             //return listIterator(0);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.315 -0400", hash_original_method = "2453E5226E92CA007A5F28D50241AFEC", hash_generated_method = "71E4BF1EF605E2041BF81C5948905571")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.678 -0400", hash_original_method = "2453E5226E92CA007A5F28D50241AFEC", hash_generated_method = "65E924EC8A2C5740633F0454CDB2F92D")
         @Override
         public ListIterator<E> listIterator(int index) {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_766889486 = null; //Variable for return #1
-            Slice slice;
-            slice = this.slice;
-            Object[] snapshot;
-            snapshot = elements;
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_51812762 = null; //Variable for return #1
+            Slice slice = this.slice;
+            Object[] snapshot = elements;
             slice.checkPositionIndex(index);
             slice.checkConcurrentModification(snapshot);
-            CowIterator<E> result;
-            result = new CowIterator<E>(snapshot, slice.from, slice.to);
+            CowIterator<E> result = new CowIterator<E>(snapshot, slice.from, slice.to);
             result.index = slice.from + index;
-            varB4EAC82CA7396A68D541C85D26508E83_766889486 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_51812762 = result;
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_766889486.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_766889486;
+            varB4EAC82CA7396A68D541C85D26508E83_51812762.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_51812762;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //Object[] snapshot = elements;
@@ -909,19 +864,16 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.315 -0400", hash_original_method = "3CF9433C05AE07A5EB66F121888070F6", hash_generated_method = "5EF2DD4565A5C5FC9DA15747D2976E95")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.678 -0400", hash_original_method = "3CF9433C05AE07A5EB66F121888070F6", hash_generated_method = "A426F09B626F28E9FD90C123C036F147")
         @Override
         public int indexOf(Object object) {
-            Slice slice;
-            slice = this.slice;
-            Object[] snapshot;
-            snapshot = elements;
+            Slice slice = this.slice;
+            Object[] snapshot = elements;
             slice.checkConcurrentModification(snapshot);
-            int result;
-            result = CopyOnWriteArrayList.indexOf(object, snapshot, slice.from, slice.to);
+            int result = CopyOnWriteArrayList.indexOf(object, snapshot, slice.from, slice.to);
             addTaint(object.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1444195223 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1444195223;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674999524 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674999524;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //Object[] snapshot = elements;
@@ -931,19 +883,16 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.318 -0400", hash_original_method = "1CFCD041D8AD8CF1B36536A28BABB7D9", hash_generated_method = "0B2B418274B5751C445F910727BC6EF8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.678 -0400", hash_original_method = "1CFCD041D8AD8CF1B36536A28BABB7D9", hash_generated_method = "DD62CAD83C4F2C45CC367DEAB49B8840")
         @Override
         public int lastIndexOf(Object object) {
-            Slice slice;
-            slice = this.slice;
-            Object[] snapshot;
-            snapshot = elements;
+            Slice slice = this.slice;
+            Object[] snapshot = elements;
             slice.checkConcurrentModification(snapshot);
-            int result;
-            result = CopyOnWriteArrayList.lastIndexOf(object, snapshot, slice.from, slice.to);
+            int result = CopyOnWriteArrayList.lastIndexOf(object, snapshot, slice.from, slice.to);
             addTaint(object.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925843872 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925843872;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435123349 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435123349;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //Object[] snapshot = elements;
@@ -953,30 +902,28 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.318 -0400", hash_original_method = "3D9C8519C0BA49AAEEEEE7D259DD1898", hash_generated_method = "52EE071AF39BA29D2B590033518960D2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.679 -0400", hash_original_method = "3D9C8519C0BA49AAEEEEE7D259DD1898", hash_generated_method = "40A6C78DC4E45C7948E409665490F5BC")
         @Override
         public boolean contains(Object object) {
-            boolean var1CBE8A280A6EF98EBEBE6D4C530DF78D_402795660 = (indexOf(object) != -1);
+            boolean var1CBE8A280A6EF98EBEBE6D4C530DF78D_202525803 = (indexOf(object) != -1);
             addTaint(object.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1284738567 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1284738567;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154863389 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154863389;
             // ---------- Original Method ----------
             //return indexOf(object) != -1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.318 -0400", hash_original_method = "1CE1F4665E7580AB233B83935273A194", hash_generated_method = "CFE3BB50D155113FDFC2341E4FC4F8C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.679 -0400", hash_original_method = "1CE1F4665E7580AB233B83935273A194", hash_generated_method = "28F89C4EE3203F59F92D83387743906E")
         @Override
         public boolean containsAll(Collection<?> collection) {
-            Slice slice;
-            slice = this.slice;
-            Object[] snapshot;
-            snapshot = elements;
+            Slice slice = this.slice;
+            Object[] snapshot = elements;
             slice.checkConcurrentModification(snapshot);
-            boolean var34F8E2D032BDFD9A299807B37CDBBDC9_541057672 = (CopyOnWriteArrayList.containsAll(collection, snapshot, slice.from, slice.to));
+            boolean var34F8E2D032BDFD9A299807B37CDBBDC9_1069851889 = (CopyOnWriteArrayList.containsAll(collection, snapshot, slice.from, slice.to));
             addTaint(collection.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789352035 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789352035;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1852462301 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1852462301;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //Object[] snapshot = elements;
@@ -985,24 +932,23 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.319 -0400", hash_original_method = "023D8E294D6742BA836A68C5ADAAB497", hash_generated_method = "D401CBBD5452CF37F544E2F633F212F0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.680 -0400", hash_original_method = "023D8E294D6742BA836A68C5ADAAB497", hash_generated_method = "C86AD0144D7924E50A22FDBCCD52A4E9")
         @Override
         public List<E> subList(int from, int to) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_1274905030 = null; //Variable for return #1
-            Slice slice;
-            slice = this.slice;
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_577587876 = null; //Variable for return #1
+            Slice slice = this.slice;
             {
-                boolean var8B44CCFE67682F7E890DAC0190AAF2EF_895001564 = (from < 0 || from > to || to > size());
+                boolean var8B44CCFE67682F7E890DAC0190AAF2EF_414723625 = (from < 0 || from > to || to > size());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("from=" + from + ", to=" + to +
                         ", list size=" + size());
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1274905030 = new CowSubList(slice.expectedElements, slice.from + from, slice.from + to);
+            varB4EAC82CA7396A68D541C85D26508E83_577587876 = new CowSubList(slice.expectedElements, slice.from + from, slice.from + to);
             addTaint(from);
             addTaint(to);
-            varB4EAC82CA7396A68D541C85D26508E83_1274905030.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1274905030;
+            varB4EAC82CA7396A68D541C85D26508E83_577587876.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_577587876;
             // ---------- Original Method ----------
             //Slice slice = this.slice;
             //if (from < 0 || from > to || to > size()) {
@@ -1013,24 +959,23 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.320 -0400", hash_original_method = "F47D7AB044AE200CBA9EE898533B8FEC", hash_generated_method = "EFCE3A0285723AD5CDE11827110DE1A3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.680 -0400", hash_original_method = "F47D7AB044AE200CBA9EE898533B8FEC", hash_generated_method = "8F229703B42BB1E432DC1A127F83551A")
         @Override
         public E remove(int index) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1129738901 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1911211876 = null; //Variable for return #1
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1775115871 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_1842103183 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkElementIndex(index);
                     slice.checkConcurrentModification(elements);
-                    E removed;
-                    removed = CopyOnWriteArrayList.this.remove(slice.from + index);
+                    E removed = CopyOnWriteArrayList.this.remove(slice.from + index);
                     slice = new Slice(elements, slice.from, slice.to - 1);
-                    varB4EAC82CA7396A68D541C85D26508E83_1129738901 = removed;
+                    varB4EAC82CA7396A68D541C85D26508E83_1911211876 = removed;
                 } //End block
             } //End collapsed parenthetic
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1129738901.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1129738901;
+            varB4EAC82CA7396A68D541C85D26508E83_1911211876.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1911211876;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //slice.checkElementIndex(index);
@@ -1042,11 +987,11 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.333 -0400", hash_original_method = "E7748E0E6765940072A4C93526FE4787", hash_generated_method = "BE9682510DC3033CA6442EFA77A6F239")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.681 -0400", hash_original_method = "E7748E0E6765940072A4C93526FE4787", hash_generated_method = "E60F1BCEBFDC189335DE3F9B5E47B885")
         @Override
         public void clear() {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1001572794 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_195249742 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkConcurrentModification(elements);
                     CopyOnWriteArrayList.this.removeRange(slice.from, slice.to);
@@ -1062,11 +1007,11 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.334 -0400", hash_original_method = "7558F5D9173C65FEAD4E275F1C1E5A80", hash_generated_method = "C19B74B1A37DC1C176DAD2A0925F5E2E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.681 -0400", hash_original_method = "7558F5D9173C65FEAD4E275F1C1E5A80", hash_generated_method = "A0DEA0764F2079D686A3713D9E6F8A05")
         @Override
         public void add(int index, E object) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1343200198 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_170511702 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkPositionIndex(index);
                     slice.checkConcurrentModification(elements);
@@ -1086,18 +1031,18 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.334 -0400", hash_original_method = "E905080D7BBE0BD2F3F279BF8EF6D6A8", hash_generated_method = "27B6AAF5D768B3C6D49F99528A04709C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.682 -0400", hash_original_method = "E905080D7BBE0BD2F3F279BF8EF6D6A8", hash_generated_method = "33B95C0EA409958E86C50F12FD539249")
         @Override
         public boolean add(E object) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1271803018 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_1826203342 = (CopyOnWriteArrayList.this);
                 {
                     add(slice.to - slice.from, object);
                 } //End block
             } //End collapsed parenthetic
             addTaint(object.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644319076 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_644319076;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309460847 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309460847;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //add(slice.to - slice.from, object);
@@ -1106,25 +1051,23 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.335 -0400", hash_original_method = "1293804DB9B63143F37D5D821EA6A87E", hash_generated_method = "F253EB5F8DBADCC162FE509D3F742945")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.682 -0400", hash_original_method = "1293804DB9B63143F37D5D821EA6A87E", hash_generated_method = "85CE15276FD0A42E9C1E1611C8B27EB5")
         @Override
         public boolean addAll(int index, Collection<? extends E> collection) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1007014437 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_724692369 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkPositionIndex(index);
                     slice.checkConcurrentModification(elements);
-                    int oldSize;
-                    oldSize = elements.length;
-                    boolean result;
-                    result = CopyOnWriteArrayList.this.addAll(index + slice.from, collection);
+                    int oldSize = elements.length;
+                    boolean result = CopyOnWriteArrayList.this.addAll(index + slice.from, collection);
                     slice = new Slice(elements, slice.from, slice.to + (elements.length - oldSize));
                 } //End block
             } //End collapsed parenthetic
             addTaint(index);
             addTaint(collection.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327346371 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_327346371;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628873518 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628873518;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //slice.checkPositionIndex(index);
@@ -1137,18 +1080,18 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.354 -0400", hash_original_method = "2FF5E8554EDDACF9F2F627214E3BC10D", hash_generated_method = "C47263E03FE2941126E0E5B1B2179724")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.683 -0400", hash_original_method = "2FF5E8554EDDACF9F2F627214E3BC10D", hash_generated_method = "CECA81701C242B37B121AACDB49956C2")
         @Override
         public boolean addAll(Collection<? extends E> collection) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1963158611 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_666772345 = (CopyOnWriteArrayList.this);
                 {
-                    boolean var74E51E10D11DF48379CEFE0A325D5F6E_2109066810 = (addAll(size(), collection));
+                    boolean var74E51E10D11DF48379CEFE0A325D5F6E_24710650 = (addAll(size(), collection));
                 } //End block
             } //End collapsed parenthetic
             addTaint(collection.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493675467 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_493675467;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114735602 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_114735602;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //return addAll(size(), collection);
@@ -1156,25 +1099,24 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.354 -0400", hash_original_method = "E52798445FC11575DB685349896EB8F6", hash_generated_method = "DED53FFAA09F61406F14BDECBEECF382")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.685 -0400", hash_original_method = "E52798445FC11575DB685349896EB8F6", hash_generated_method = "7D7D5EBDDE2A1ADFDD923D05F9BCCFDB")
         @Override
         public E set(int index, E object) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1468057681 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_509860840 = null; //Variable for return #1
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1576747505 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_75141142 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkElementIndex(index);
                     slice.checkConcurrentModification(elements);
-                    E result;
-                    result = CopyOnWriteArrayList.this.set(index + slice.from, object);
+                    E result = CopyOnWriteArrayList.this.set(index + slice.from, object);
                     slice = new Slice(elements, slice.from, slice.to);
-                    varB4EAC82CA7396A68D541C85D26508E83_1468057681 = result;
+                    varB4EAC82CA7396A68D541C85D26508E83_509860840 = result;
                 } //End block
             } //End collapsed parenthetic
             addTaint(index);
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1468057681.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1468057681;
+            varB4EAC82CA7396A68D541C85D26508E83_509860840.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_509860840;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //slice.checkElementIndex(index);
@@ -1186,20 +1128,19 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.355 -0400", hash_original_method = "924C9E5471F08F30B8E12AD962D48DF2", hash_generated_method = "56CC33CDD1DB631C6B487F43BB21D8C0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.686 -0400", hash_original_method = "924C9E5471F08F30B8E12AD962D48DF2", hash_generated_method = "C1672DBD4093C3C3E9767360417FFF14")
         @Override
         public boolean remove(Object object) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1027203820 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_969051960 = (CopyOnWriteArrayList.this);
                 {
-                    int index;
-                    index = indexOf(object);
+                    int index = indexOf(object);
                     remove(index);
                 } //End block
             } //End collapsed parenthetic
             addTaint(object.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939410578 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_939410578;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236154317 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_236154317;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //int index = indexOf(object);
@@ -1212,21 +1153,20 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.355 -0400", hash_original_method = "6ECA6BCBA1861C546E018F40208C7C7C", hash_generated_method = "18C667BA6B717130E61697B53DB08548")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.686 -0400", hash_original_method = "6ECA6BCBA1861C546E018F40208C7C7C", hash_generated_method = "F8B08BB4F00BC4D90F560A9095BB2CCC")
         @Override
         public boolean removeAll(Collection<?> collection) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1992862847 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_93101997 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkConcurrentModification(elements);
-                    int removed;
-                    removed = removeOrRetain(collection, false, slice.from, slice.to);
+                    int removed = removeOrRetain(collection, false, slice.from, slice.to);
                     slice = new Slice(elements, slice.from, slice.to - removed);
                 } //End block
             } //End collapsed parenthetic
             addTaint(collection.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_263232324 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_263232324;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_992407138 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_992407138;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //slice.checkConcurrentModification(elements);
@@ -1237,21 +1177,20 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.356 -0400", hash_original_method = "055B3FCFE954B48BD2D5F95BFF90FFFE", hash_generated_method = "8D1EAA7B9680A733CF0AC6BDCB9BA770")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.687 -0400", hash_original_method = "055B3FCFE954B48BD2D5F95BFF90FFFE", hash_generated_method = "F9D93CF8CA0C5EC8F3ACDFCF9F765206")
         @Override
         public boolean retainAll(Collection<?> collection) {
             {
-                Object var0414760F989879E00EA455A9A86D73CF_1976735880 = (CopyOnWriteArrayList.this);
+                Object var0414760F989879E00EA455A9A86D73CF_617796947 = (CopyOnWriteArrayList.this);
                 {
                     slice.checkConcurrentModification(elements);
-                    int removed;
-                    removed = removeOrRetain(collection, true, slice.from, slice.to);
+                    int removed = removeOrRetain(collection, true, slice.from, slice.to);
                     slice = new Slice(elements, slice.from, slice.to - removed);
                 } //End block
             } //End collapsed parenthetic
             addTaint(collection.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_41942656 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_41942656;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327632883 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_327632883;
             // ---------- Original Method ----------
             //synchronized (CopyOnWriteArrayList.this) {
                 //slice.checkConcurrentModification(elements);
@@ -1267,17 +1206,17 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
 
     
     static class Slice {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.364 -0400", hash_original_field = "5DBBBEFC516616C59322E114837C83FB", hash_generated_field = "578E1B95CBBB0F53A72648DE31016F3A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.687 -0400", hash_original_field = "5DBBBEFC516616C59322E114837C83FB", hash_generated_field = "578E1B95CBBB0F53A72648DE31016F3A")
 
         private Object[] expectedElements;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.364 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "98A0E6E2AB8AB9E19CC3F35C494E6A79")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.687 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "98A0E6E2AB8AB9E19CC3F35C494E6A79")
 
         private int from;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.364 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "BDB6664DDCCB6D4D52DFAB8483E3BBDE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.687 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "BDB6664DDCCB6D4D52DFAB8483E3BBDE")
 
         private int to;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.365 -0400", hash_original_method = "83A1C0AAD9B8B03E61B8B75E1CD914D7", hash_generated_method = "6056AD1FF5F186156B93AC86A3F90BBC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.688 -0400", hash_original_method = "83A1C0AAD9B8B03E61B8B75E1CD914D7", hash_generated_method = "6056AD1FF5F186156B93AC86A3F90BBC")
           Slice(Object[] expectedElements, int from, int to) {
             this.expectedElements = expectedElements;
             this.from = from;
@@ -1289,7 +1228,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.365 -0400", hash_original_method = "C41DDBF64E4B04157ED5EDFC21AF561C", hash_generated_method = "CD2CA17E534A100BB92056382E13D4CA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.688 -0400", hash_original_method = "C41DDBF64E4B04157ED5EDFC21AF561C", hash_generated_method = "CD2CA17E534A100BB92056382E13D4CA")
          void checkElementIndex(int index) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
@@ -1302,7 +1241,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_method = "D022C90E4388D47B06DB5C9D4119BF1C", hash_generated_method = "3064D546FBACD8749E7130231FBB73C7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.688 -0400", hash_original_method = "D022C90E4388D47B06DB5C9D4119BF1C", hash_generated_method = "3064D546FBACD8749E7130231FBB73C7")
          void checkPositionIndex(int index) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
@@ -1315,7 +1254,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_method = "7DF1E46EED7497F4680296245E77E1DC", hash_generated_method = "F9C340591E59B66F4BFBA6ED2CDFB0F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_method = "7DF1E46EED7497F4680296245E77E1DC", hash_generated_method = "F9C340591E59B66F4BFBA6ED2CDFB0F3")
          void checkConcurrentModification(Object[] snapshot) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
@@ -1333,20 +1272,20 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
 
     
     static class CowIterator<E> implements ListIterator<E> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_field = "C322D3DE29D2B0C5E2E011DAD5E77DF2", hash_generated_field = "FEC1DD40EAC9BB9175BC6E1CF39F3785")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_field = "C322D3DE29D2B0C5E2E011DAD5E77DF2", hash_generated_field = "FEC1DD40EAC9BB9175BC6E1CF39F3785")
 
         private Object[] snapshot;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "98A0E6E2AB8AB9E19CC3F35C494E6A79")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "98A0E6E2AB8AB9E19CC3F35C494E6A79")
 
         private int from;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "BDB6664DDCCB6D4D52DFAB8483E3BBDE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "BDB6664DDCCB6D4D52DFAB8483E3BBDE")
 
         private int to;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.366 -0400", hash_original_field = "CB241078244A9AA790B0FC45841BA024", hash_generated_field = "AE5C9711C7D27D5EECF32B3638DBE7E5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_field = "CB241078244A9AA790B0FC45841BA024", hash_generated_field = "AE5C9711C7D27D5EECF32B3638DBE7E5")
 
         private int index = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.381 -0400", hash_original_method = "E0987AFDD42E4364FE4BB0FD3F1A0501", hash_generated_method = "761C1CBB0EA0B2EE4578133FB46FB797")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.689 -0400", hash_original_method = "E0987AFDD42E4364FE4BB0FD3F1A0501", hash_generated_method = "761C1CBB0EA0B2EE4578133FB46FB797")
           CowIterator(Object[] snapshot, int from, int to) {
             this.snapshot = snapshot;
             this.from = from;
@@ -1360,7 +1299,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.381 -0400", hash_original_method = "960DAE05B3D69FE5F79E9628DB5B33E6", hash_generated_method = "7078F39A7BE4B1A66C0E863B971864AD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.690 -0400", hash_original_method = "960DAE05B3D69FE5F79E9628DB5B33E6", hash_generated_method = "7078F39A7BE4B1A66C0E863B971864AD")
         public void add(E object) {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(object.getTaint());
@@ -1369,36 +1308,36 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.381 -0400", hash_original_method = "D639D4E7D9CD50DE4105991F3953FD80", hash_generated_method = "C1F7879EF42C54AF17F001CDB4EF71C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.690 -0400", hash_original_method = "D639D4E7D9CD50DE4105991F3953FD80", hash_generated_method = "F1E31BD6E904F181FC6A68E7A450D149")
         public boolean hasNext() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1996735663 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1996735663;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_179636994 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_179636994;
             // ---------- Original Method ----------
             //return index < to;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.382 -0400", hash_original_method = "EC30B2CF9A7B23E69047D11D06EFA3CA", hash_generated_method = "67926289AF46B038AD4DE6F7C869EDE4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.690 -0400", hash_original_method = "EC30B2CF9A7B23E69047D11D06EFA3CA", hash_generated_method = "EEE6BF4CE20253EB430F0578409D98A4")
         public boolean hasPrevious() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1902106251 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1902106251;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599968437 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_599968437;
             // ---------- Original Method ----------
             //return index > from;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.382 -0400", hash_original_method = "32D582641092A62093AF5BD2A9D350AD", hash_generated_method = "CF3656482EEB8D0CB30E263656BAAFF4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.691 -0400", hash_original_method = "32D582641092A62093AF5BD2A9D350AD", hash_generated_method = "75E146A8F9EDCF8394C842D46D7F9AF7")
         @SuppressWarnings("unchecked")
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1788131874 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_2126101248 = null; //Variable for return #1
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1788131874 = (E) snapshot[index++];
+                varB4EAC82CA7396A68D541C85D26508E83_2126101248 = (E) snapshot[index++];
             } //End block
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1788131874.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1788131874;
+            varB4EAC82CA7396A68D541C85D26508E83_2126101248.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2126101248;
             // ---------- Original Method ----------
             //if (index < to) {
                 //return (E) snapshot[index++];
@@ -1408,27 +1347,27 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.388 -0400", hash_original_method = "B3E96A2468FAF72FDE35394237D3EDCC", hash_generated_method = "40DB851CA71112F6D0A8608A00BC8415")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.692 -0400", hash_original_method = "B3E96A2468FAF72FDE35394237D3EDCC", hash_generated_method = "F79AA19A8D54D1E1D17BCC80FAF594D0")
         public int nextIndex() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1840696968 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1840696968;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417337105 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417337105;
             // ---------- Original Method ----------
             //return index;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.397 -0400", hash_original_method = "7AA7D7DC0436E32BBB89C3C957160D69", hash_generated_method = "BBEDEA2B012D0920BD3D09C364212248")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.693 -0400", hash_original_method = "7AA7D7DC0436E32BBB89C3C957160D69", hash_generated_method = "842C6C4CB580DA7DF912A8D7BA4F3601")
         @SuppressWarnings("unchecked")
         public E previous() {
-            E varB4EAC82CA7396A68D541C85D26508E83_407515031 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_459168843 = null; //Variable for return #1
             {
-                varB4EAC82CA7396A68D541C85D26508E83_407515031 = (E) snapshot[--index];
+                varB4EAC82CA7396A68D541C85D26508E83_459168843 = (E) snapshot[--index];
             } //End block
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_407515031.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_407515031;
+            varB4EAC82CA7396A68D541C85D26508E83_459168843.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_459168843;
             // ---------- Original Method ----------
             //if (index > from) {
                 //return (E) snapshot[--index];
@@ -1438,16 +1377,16 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.397 -0400", hash_original_method = "30EF9C1C05880C206BCB89722B1108E9", hash_generated_method = "D149D1A86C9D52D4F1E4DB21382B9038")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.694 -0400", hash_original_method = "30EF9C1C05880C206BCB89722B1108E9", hash_generated_method = "BDF0A77A8D7208EF13AB1532CB2BD292")
         public int previousIndex() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_823839137 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_823839137;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2005176286 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2005176286;
             // ---------- Original Method ----------
             //return index - 1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.398 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "BD0416D7797F4CCA5C01710103DCE99D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.694 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "BD0416D7797F4CCA5C01710103DCE99D")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             // ---------- Original Method ----------
@@ -1455,7 +1394,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.398 -0400", hash_original_method = "1001E1C2B2FD09C7DE97126421AC0A91", hash_generated_method = "F7AE59885F055C425C0440CAC4D1CE97")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.695 -0400", hash_original_method = "1001E1C2B2FD09C7DE97126421AC0A91", hash_generated_method = "F7AE59885F055C425C0440CAC4D1CE97")
         public void set(E object) {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(object.getTaint());
@@ -1468,8 +1407,8 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:56.398 -0400", hash_original_field = "CB0A5E07D474346F2427954305CE9572", hash_generated_field = "7D8A16739AEFE5D33A952E311F270AA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.695 -0400", hash_original_field = "CB0A5E07D474346F2427954305CE9572", hash_generated_field = "392EFB541281482E947C8FEFEB5A2F62")
 
-    private static long serialVersionUID = 8673264195747942595L;
+    private static final long serialVersionUID = 8673264195747942595L;
 }
 

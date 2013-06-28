@@ -11,11 +11,11 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public class TaggedIOException extends IOExceptionWithCause {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.296 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "46DF86FF17DD00E0280EE95BAD31EE1B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.446 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "46DF86FF17DD00E0280EE95BAD31EE1B")
 
     private Serializable tag;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.297 -0400", hash_original_method = "AC74491EC46A5F4D5E2635850D49BE12", hash_generated_method = "E506C86846D9ADA25322BCDFFD1D8851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.447 -0400", hash_original_method = "AC74491EC46A5F4D5E2635850D49BE12", hash_generated_method = "E506C86846D9ADA25322BCDFFD1D8851")
     public  TaggedIOException(IOException original, Serializable tag) {
         super(original.getMessage(), original);
         this.tag = tag;
@@ -25,45 +25,45 @@ public class TaggedIOException extends IOExceptionWithCause {
     }
 
     
-        public static boolean isTaggedWith(Throwable throwable, Object tag) {
+    public static boolean isTaggedWith(Throwable throwable, Object tag) {
         return tag != null
             && throwable instanceof TaggedIOException
             && tag.equals(((TaggedIOException) throwable).tag);
     }
 
     
-        public static void throwCauseIfTaggedWith(Throwable throwable, Object tag) throws IOException {
+    public static void throwCauseIfTaggedWith(Throwable throwable, Object tag) throws IOException {
         if (isTaggedWith(throwable, tag)) {
             throw ((TaggedIOException) throwable).getCause();
         }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.298 -0400", hash_original_method = "4F4B9B983AF73239615D861FCC97BC71", hash_generated_method = "4174412931AB973E038C993566F4C0EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.448 -0400", hash_original_method = "4F4B9B983AF73239615D861FCC97BC71", hash_generated_method = "FB0340E1F3C10E00B6C046206D5DB1B4")
     public Serializable getTag() {
-        Serializable varB4EAC82CA7396A68D541C85D26508E83_1210347574 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1210347574 = tag;
-        varB4EAC82CA7396A68D541C85D26508E83_1210347574.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1210347574;
+        Serializable varB4EAC82CA7396A68D541C85D26508E83_1912098909 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1912098909 = tag;
+        varB4EAC82CA7396A68D541C85D26508E83_1912098909.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1912098909;
         // ---------- Original Method ----------
         //return tag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.299 -0400", hash_original_method = "5CB5049271906C3DE2CF2601187D937A", hash_generated_method = "0390F415A802A6B69D777BE8A687B704")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.449 -0400", hash_original_method = "5CB5049271906C3DE2CF2601187D937A", hash_generated_method = "92D6AED3EDF04FA74C980305C573C495")
     @Override
     public IOException getCause() {
-        IOException varB4EAC82CA7396A68D541C85D26508E83_1112534101 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1112534101 = (IOException) super.getCause();
-        varB4EAC82CA7396A68D541C85D26508E83_1112534101.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1112534101;
+        IOException varB4EAC82CA7396A68D541C85D26508E83_418461883 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_418461883 = (IOException) super.getCause();
+        varB4EAC82CA7396A68D541C85D26508E83_418461883.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_418461883;
         // ---------- Original Method ----------
         //return (IOException) super.getCause();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.299 -0400", hash_original_field = "3CC20DF5D8A84A797FC8D0E0A5093EC1", hash_generated_field = "1E112E82DB5FC4DAB6E3F4DF6508F4B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.449 -0400", hash_original_field = "3CC20DF5D8A84A797FC8D0E0A5093EC1", hash_generated_field = "F26F0168B6E12A1D6C601DA33E32D966")
 
-    private static long serialVersionUID = -6994123481142850163L;
+    private static final long serialVersionUID = -6994123481142850163L;
 }
 

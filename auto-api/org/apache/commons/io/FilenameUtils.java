@@ -15,46 +15,46 @@ import java.util.Stack;
 
 public class FilenameUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.156 -0400", hash_original_method = "461960E755FB4E28A3B792846EE26E3A", hash_generated_method = "D1DDAB26E96BB650AFF4B4AA3C6F7EF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.320 -0400", hash_original_method = "461960E755FB4E28A3B792846EE26E3A", hash_generated_method = "D1DDAB26E96BB650AFF4B4AA3C6F7EF3")
     public  FilenameUtils() {
         super();
         // ---------- Original Method ----------
     }
 
     
-        static boolean isSystemWindows() {
+    static boolean isSystemWindows() {
         return SYSTEM_SEPARATOR == WINDOWS_SEPARATOR;
     }
 
     
-        private static boolean isSeparator(char ch) {
+    private static boolean isSeparator(char ch) {
         return ch == UNIX_SEPARATOR || ch == WINDOWS_SEPARATOR;
     }
 
     
-        public static String normalize(String filename) {
+    public static String normalize(String filename) {
         return doNormalize(filename, SYSTEM_SEPARATOR, true);
     }
 
     
-        public static String normalize(String filename, boolean unixSeparator) {
+    public static String normalize(String filename, boolean unixSeparator) {
         char separator = unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;
         return doNormalize(filename, separator, true);
     }
 
     
-        public static String normalizeNoEndSeparator(String filename) {
+    public static String normalizeNoEndSeparator(String filename) {
         return doNormalize(filename, SYSTEM_SEPARATOR, false);
     }
 
     
-        public static String normalizeNoEndSeparator(String filename, boolean unixSeparator) {
+    public static String normalizeNoEndSeparator(String filename, boolean unixSeparator) {
         char separator = unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;
         return doNormalize(filename, separator, false);
     }
 
     
-        private static String doNormalize(String filename, char separator, boolean keepSeparator) {
+    private static String doNormalize(String filename, char separator, boolean keepSeparator) {
         if (filename == null) {
             return null;
         }
@@ -134,7 +134,7 @@ public class FilenameUtils {
     }
 
     
-        public static String concat(String basePath, String fullFilenameToAdd) {
+    public static String concat(String basePath, String fullFilenameToAdd) {
         int prefix = getPrefixLength(fullFilenameToAdd);
         if (prefix < 0) {
             return null;
@@ -158,7 +158,7 @@ public class FilenameUtils {
     }
 
     
-        public static boolean directoryContains(final String canonicalParent, final String canonicalChild) throws IOException {
+    public static boolean directoryContains(final String canonicalParent, final String canonicalChild) throws IOException {
         if (canonicalParent == null) {
             throw new IllegalArgumentException("Directory must not be null");
         }
@@ -172,7 +172,7 @@ public class FilenameUtils {
     }
 
     
-        public static String separatorsToUnix(String path) {
+    public static String separatorsToUnix(String path) {
         if (path == null || path.indexOf(WINDOWS_SEPARATOR) == -1) {
             return path;
         }
@@ -180,7 +180,7 @@ public class FilenameUtils {
     }
 
     
-        public static String separatorsToWindows(String path) {
+    public static String separatorsToWindows(String path) {
         if (path == null || path.indexOf(UNIX_SEPARATOR) == -1) {
             return path;
         }
@@ -188,7 +188,7 @@ public class FilenameUtils {
     }
 
     
-        public static String separatorsToSystem(String path) {
+    public static String separatorsToSystem(String path) {
         if (path == null) {
             return null;
         }
@@ -200,7 +200,7 @@ public class FilenameUtils {
     }
 
     
-        public static int getPrefixLength(String filename) {
+    public static int getPrefixLength(String filename) {
         if (filename == null) {
             return -1;
         }
@@ -254,7 +254,7 @@ public class FilenameUtils {
     }
 
     
-        public static int indexOfLastSeparator(String filename) {
+    public static int indexOfLastSeparator(String filename) {
         if (filename == null) {
             return -1;
         }
@@ -264,7 +264,7 @@ public class FilenameUtils {
     }
 
     
-        public static int indexOfExtension(String filename) {
+    public static int indexOfExtension(String filename) {
         if (filename == null) {
             return -1;
         }
@@ -274,7 +274,7 @@ public class FilenameUtils {
     }
 
     
-        public static String getPrefix(String filename) {
+    public static String getPrefix(String filename) {
         if (filename == null) {
             return null;
         }
@@ -289,17 +289,17 @@ public class FilenameUtils {
     }
 
     
-        public static String getPath(String filename) {
+    public static String getPath(String filename) {
         return doGetPath(filename, 1);
     }
 
     
-        public static String getPathNoEndSeparator(String filename) {
+    public static String getPathNoEndSeparator(String filename) {
         return doGetPath(filename, 0);
     }
 
     
-        private static String doGetPath(String filename, int separatorAdd) {
+    private static String doGetPath(String filename, int separatorAdd) {
         if (filename == null) {
             return null;
         }
@@ -316,17 +316,17 @@ public class FilenameUtils {
     }
 
     
-        public static String getFullPath(String filename) {
+    public static String getFullPath(String filename) {
         return doGetFullPath(filename, true);
     }
 
     
-        public static String getFullPathNoEndSeparator(String filename) {
+    public static String getFullPathNoEndSeparator(String filename) {
         return doGetFullPath(filename, false);
     }
 
     
-        private static String doGetFullPath(String filename, boolean includeSeparator) {
+    private static String doGetFullPath(String filename, boolean includeSeparator) {
         if (filename == null) {
             return null;
         }
@@ -353,7 +353,7 @@ public class FilenameUtils {
     }
 
     
-        public static String getName(String filename) {
+    public static String getName(String filename) {
         if (filename == null) {
             return null;
         }
@@ -362,12 +362,12 @@ public class FilenameUtils {
     }
 
     
-        public static String getBaseName(String filename) {
+    public static String getBaseName(String filename) {
         return removeExtension(getName(filename));
     }
 
     
-        public static String getExtension(String filename) {
+    public static String getExtension(String filename) {
         if (filename == null) {
             return null;
         }
@@ -380,7 +380,7 @@ public class FilenameUtils {
     }
 
     
-        public static String removeExtension(String filename) {
+    public static String removeExtension(String filename) {
         if (filename == null) {
             return null;
         }
@@ -393,27 +393,27 @@ public class FilenameUtils {
     }
 
     
-        public static boolean equals(String filename1, String filename2) {
+    public static boolean equals(String filename1, String filename2) {
         return equals(filename1, filename2, false, IOCase.SENSITIVE);
     }
 
     
-        public static boolean equalsOnSystem(String filename1, String filename2) {
+    public static boolean equalsOnSystem(String filename1, String filename2) {
         return equals(filename1, filename2, false, IOCase.SYSTEM);
     }
 
     
-        public static boolean equalsNormalized(String filename1, String filename2) {
+    public static boolean equalsNormalized(String filename1, String filename2) {
         return equals(filename1, filename2, true, IOCase.SENSITIVE);
     }
 
     
-        public static boolean equalsNormalizedOnSystem(String filename1, String filename2) {
+    public static boolean equalsNormalizedOnSystem(String filename1, String filename2) {
         return equals(filename1, filename2, true, IOCase.SYSTEM);
     }
 
     
-        public static boolean equals(
+    public static boolean equals(
             String filename1, String filename2,
             boolean normalized, IOCase caseSensitivity) {
         if (filename1 == null || filename2 == null) {
@@ -434,7 +434,7 @@ public class FilenameUtils {
     }
 
     
-        public static boolean isExtension(String filename, String extension) {
+    public static boolean isExtension(String filename, String extension) {
         if (filename == null) {
             return false;
         }
@@ -446,7 +446,7 @@ public class FilenameUtils {
     }
 
     
-        public static boolean isExtension(String filename, String[] extensions) {
+    public static boolean isExtension(String filename, String[] extensions) {
         if (filename == null) {
             return false;
         }
@@ -463,7 +463,7 @@ public class FilenameUtils {
     }
 
     
-        public static boolean isExtension(String filename, Collection<String> extensions) {
+    public static boolean isExtension(String filename, Collection<String> extensions) {
         if (filename == null) {
             return false;
         }
@@ -480,17 +480,17 @@ public class FilenameUtils {
     }
 
     
-        public static boolean wildcardMatch(String filename, String wildcardMatcher) {
+    public static boolean wildcardMatch(String filename, String wildcardMatcher) {
         return wildcardMatch(filename, wildcardMatcher, IOCase.SENSITIVE);
     }
 
     
-        public static boolean wildcardMatchOnSystem(String filename, String wildcardMatcher) {
+    public static boolean wildcardMatchOnSystem(String filename, String wildcardMatcher) {
         return wildcardMatch(filename, wildcardMatcher, IOCase.SYSTEM);
     }
 
     
-        public static boolean wildcardMatch(String filename, String wildcardMatcher, IOCase caseSensitivity) {
+    public static boolean wildcardMatch(String filename, String wildcardMatcher, IOCase caseSensitivity) {
         if (filename == null && wildcardMatcher == null) {
             return true;
         }
@@ -552,7 +552,7 @@ public class FilenameUtils {
     }
 
     
-        static String[] splitOnTokens(String text) {
+    static String[] splitOnTokens(String text) {
         if (text.indexOf('?') == -1 && text.indexOf('*') == -1) {
             return new String[] { text };
         }
@@ -582,22 +582,22 @@ public class FilenameUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "ACEA14CE04E80F46629146BDE5025DB2", hash_generated_field = "7234F8134ACF380A30401FD4610B5AC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "ACEA14CE04E80F46629146BDE5025DB2", hash_generated_field = "7234F8134ACF380A30401FD4610B5AC2")
 
     public static final char EXTENSION_SEPARATOR = '.';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "487180F1EA4987E2C7E3A3BF4C2B5A7F", hash_generated_field = "EF31746C1B4AC2F2D7C4F25968201A61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "487180F1EA4987E2C7E3A3BF4C2B5A7F", hash_generated_field = "EF31746C1B4AC2F2D7C4F25968201A61")
 
     public static final String EXTENSION_SEPARATOR_STR = Character.toString(EXTENSION_SEPARATOR);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "C507995E7602DD44CF1C076EDB9FA686", hash_generated_field = "5374B0E53025F52FA697AFA22B0382B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "C507995E7602DD44CF1C076EDB9FA686", hash_generated_field = "3D1EB4A0B431780032DC653AF4E6A368")
 
-    private static char UNIX_SEPARATOR = '/';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "8EF861A48F62F61A703CED3EE2D957D1", hash_generated_field = "09FA03438579468EE88B4F0C590D8941")
+    private static final char UNIX_SEPARATOR = '/';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "8EF861A48F62F61A703CED3EE2D957D1", hash_generated_field = "1A39720048679B502A22C45424FE3204")
 
-    private static char WINDOWS_SEPARATOR = '\\';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "0681588BF6278A2F8B42EAB1BC990CE9", hash_generated_field = "044BBCB029DE1AB2192BD28302F1B37C")
+    private static final char WINDOWS_SEPARATOR = '\\';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "0681588BF6278A2F8B42EAB1BC990CE9", hash_generated_field = "1D6F15E4B37C5BF54EE27A1BD7A3B46B")
 
-    private static char SYSTEM_SEPARATOR = File.separatorChar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "7FEEE63CC08C20A93843AB94CB08500C", hash_generated_field = "2A28DC30883BB462B6189EBE9A942A14")
+    private static final char SYSTEM_SEPARATOR = File.separatorChar;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.327 -0400", hash_original_field = "7FEEE63CC08C20A93843AB94CB08500C", hash_generated_field = "2A28DC30883BB462B6189EBE9A942A14")
 
     private static char OTHER_SEPARATOR;
     static {

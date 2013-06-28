@@ -16,66 +16,65 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimationSet extends Animation {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "B921E44548BA55022C2E5E2542E4E6A6", hash_generated_field = "F8991A4D76FA7127497F697B241FE789")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.364 -0400", hash_original_field = "B921E44548BA55022C2E5E2542E4E6A6", hash_generated_field = "F8991A4D76FA7127497F697B241FE789")
 
     private int mFlags = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "76D7D73778AD0C3E9D57E6A56AEDF738", hash_generated_field = "8EC03BE3CD289D6F418E2CF7DC6F95E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "76D7D73778AD0C3E9D57E6A56AEDF738", hash_generated_field = "8EC03BE3CD289D6F418E2CF7DC6F95E4")
 
     private boolean mDirty;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "888EF7A5D7544FB5951B99C74B40D228", hash_generated_field = "5E007DCC0C9F570E21A91D79E9C13C9C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "888EF7A5D7544FB5951B99C74B40D228", hash_generated_field = "5E007DCC0C9F570E21A91D79E9C13C9C")
 
     private boolean mHasAlpha;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "4335C63647F4C9C587C209D1307D6600", hash_generated_field = "73E0F51E2ECCC5C0D56C337BEBD9E384")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "4335C63647F4C9C587C209D1307D6600", hash_generated_field = "73E0F51E2ECCC5C0D56C337BEBD9E384")
 
     private ArrayList<Animation> mAnimations = new ArrayList<Animation>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "6BE9D6A097D689D6BDC5549D28D482AD", hash_generated_field = "7C9616BD413863FD9A0B9027C75DAE9A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "6BE9D6A097D689D6BDC5549D28D482AD", hash_generated_field = "7C9616BD413863FD9A0B9027C75DAE9A")
 
     private Transformation mTempTransformation = new Transformation();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "BA958BD29B7212ACE2528C4CBEE64AE8", hash_generated_field = "AF3B01ACE4EBE7EDEF6A14863051F362")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "BA958BD29B7212ACE2528C4CBEE64AE8", hash_generated_field = "AF3B01ACE4EBE7EDEF6A14863051F362")
 
     private long mLastEnd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.351 -0400", hash_original_field = "441A36BE7709FD352A5D7E4E42DE8658", hash_generated_field = "4D3BA52AA4D41C4D38A585BCDB7160A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_field = "441A36BE7709FD352A5D7E4E42DE8658", hash_generated_field = "4D3BA52AA4D41C4D38A585BCDB7160A1")
 
     private long[] mStoredOffsets;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.371 -0400", hash_original_method = "E48F61BFB7E750EB9CE1872A6E59F583", hash_generated_method = "30879E72D20200127E7D71C510195AB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.365 -0400", hash_original_method = "E48F61BFB7E750EB9CE1872A6E59F583", hash_generated_method = "A8DD7551B9CBE50A2C5A4868DDA3A875")
     public  AnimationSet(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray a;
-        a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AnimationSet);
+        TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AnimationSet);
         setFlag(PROPERTY_SHARE_INTERPOLATOR_MASK,
                 a.getBoolean(com.android.internal.R.styleable.AnimationSet_shareInterpolator, true));
         init();
         {
-            boolean var2026BAD09B30E00531380AA0AD5347B0_1382915067 = (context.getApplicationInfo().targetSdkVersion >=
+            boolean var2026BAD09B30E00531380AA0AD5347B0_605455086 = (context.getApplicationInfo().targetSdkVersion >=
                 Build.VERSION_CODES.ICE_CREAM_SANDWICH);
             {
                 {
-                    boolean varAB9E1DA2B763B3C2704210D390F5B692_1426787178 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_duration));
+                    boolean varAB9E1DA2B763B3C2704210D390F5B692_1685461476 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_duration));
                     {
                         mFlags |= PROPERTY_DURATION_MASK;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var7BF613E6FCAED02536A8D4C74FF9C55D_1226059552 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_fillBefore));
+                    boolean var7BF613E6FCAED02536A8D4C74FF9C55D_317844697 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_fillBefore));
                     {
                         mFlags |= PROPERTY_FILL_BEFORE_MASK;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varD72A102A08FCBE04AFEA1289372E1DDD_10576632 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_fillAfter));
+                    boolean varD72A102A08FCBE04AFEA1289372E1DDD_1897983390 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_fillAfter));
                     {
                         mFlags |= PROPERTY_FILL_AFTER_MASK;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var2957C54AD2EA755A7DF1B0292AD3945E_569288299 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_repeatMode));
+                    boolean var2957C54AD2EA755A7DF1B0292AD3945E_2061382280 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_repeatMode));
                     {
                         mFlags |= PROPERTY_REPEAT_MODE_MASK;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var2A787A7DA9E50B2DF1528034DA0EA71F_81780917 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_startOffset));
+                    boolean var2A787A7DA9E50B2DF1528034DA0EA71F_794709446 = (a.hasValue(com.android.internal.R.styleable.AnimationSet_startOffset));
                     {
                         mFlags |= PROPERTY_START_OFFSET_MASK;
                     } //End block
@@ -90,7 +89,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.371 -0400", hash_original_method = "40E1DAC9F5FF86741AE2A2FFD7F09052", hash_generated_method = "535ABCCFFDA33430AE3A8EDF119CFA90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.366 -0400", hash_original_method = "40E1DAC9F5FF86741AE2A2FFD7F09052", hash_generated_method = "535ABCCFFDA33430AE3A8EDF119CFA90")
     public  AnimationSet(boolean shareInterpolator) {
         setFlag(PROPERTY_SHARE_INTERPOLATOR_MASK, shareInterpolator);
         init();
@@ -101,28 +100,24 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.372 -0400", hash_original_method = "17885947D34B4C6D63222266DEE6E0A5", hash_generated_method = "8D6CBEC053FC2B872D81E5BCCD059B03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.367 -0400", hash_original_method = "17885947D34B4C6D63222266DEE6E0A5", hash_generated_method = "109657E7D7DD50146D12B04A191B2A2D")
     @Override
     protected AnimationSet clone() throws CloneNotSupportedException {
-        AnimationSet varB4EAC82CA7396A68D541C85D26508E83_517340654 = null; //Variable for return #1
-        AnimationSet animation;
-        animation = (AnimationSet) super.clone();
+        AnimationSet varB4EAC82CA7396A68D541C85D26508E83_1961780847 = null; //Variable for return #1
+        final AnimationSet animation = (AnimationSet) super.clone();
         animation.mTempTransformation = new Transformation();
         animation.mAnimations = new ArrayList<Animation>();
-        int count;
-        count = mAnimations.size();
-        ArrayList<Animation> animations;
-        animations = mAnimations;
+        final int count = mAnimations.size();
+        final ArrayList<Animation> animations = mAnimations;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 animation.mAnimations.add(animations.get(i).clone());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_517340654 = animation;
-        varB4EAC82CA7396A68D541C85D26508E83_517340654.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_517340654;
+        varB4EAC82CA7396A68D541C85D26508E83_1961780847 = animation;
+        varB4EAC82CA7396A68D541C85D26508E83_1961780847.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1961780847;
         // ---------- Original Method ----------
         //final AnimationSet animation = (AnimationSet) super.clone();
         //animation.mTempTransformation = new Transformation();
@@ -136,7 +131,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.383 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "5931F6904132B4A25B60E9C33D9C37BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.367 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "5931F6904132B4A25B60E9C33D9C37BA")
     private void setFlag(int mask, boolean value) {
         {
             mFlags |= mask;
@@ -154,7 +149,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.383 -0400", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "C0944DDBBB8FF4378AF642CA83ECA72A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.368 -0400", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "C0944DDBBB8FF4378AF642CA83ECA72A")
     private void init() {
         mStartTime = 0;
         // ---------- Original Method ----------
@@ -162,7 +157,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.384 -0400", hash_original_method = "346D63116043912E4EE20FDCAED3D0BD", hash_generated_method = "D774C7CE898B1835FB75E215DDE23AB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.369 -0400", hash_original_method = "346D63116043912E4EE20FDCAED3D0BD", hash_generated_method = "D774C7CE898B1835FB75E215DDE23AB1")
     @Override
     public void setFillAfter(boolean fillAfter) {
         mFlags |= PROPERTY_FILL_AFTER_MASK;
@@ -174,7 +169,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.388 -0400", hash_original_method = "08C3166F3D09017C7ECB4F829DA334D1", hash_generated_method = "F455DB42EC12A016BD93423B093C4EF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.369 -0400", hash_original_method = "08C3166F3D09017C7ECB4F829DA334D1", hash_generated_method = "F455DB42EC12A016BD93423B093C4EF2")
     @Override
     public void setFillBefore(boolean fillBefore) {
         mFlags |= PROPERTY_FILL_BEFORE_MASK;
@@ -186,7 +181,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.388 -0400", hash_original_method = "777D14C93CE8BFF50BC39E2E3CDE2663", hash_generated_method = "D8D85C3F9BAED8A15F72614D00ECE642")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.369 -0400", hash_original_method = "777D14C93CE8BFF50BC39E2E3CDE2663", hash_generated_method = "D8D85C3F9BAED8A15F72614D00ECE642")
     @Override
     public void setRepeatMode(int repeatMode) {
         mFlags |= PROPERTY_REPEAT_MODE_MASK;
@@ -198,7 +193,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.389 -0400", hash_original_method = "3C61E6DAB3DDF346757DEBEA1DAB7005", hash_generated_method = "F5D906F1B773C51F47E204ED6CBBD1A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.370 -0400", hash_original_method = "3C61E6DAB3DDF346757DEBEA1DAB7005", hash_generated_method = "F5D906F1B773C51F47E204ED6CBBD1A6")
     @Override
     public void setStartOffset(long startOffset) {
         mFlags |= PROPERTY_START_OFFSET_MASK;
@@ -210,21 +205,18 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.389 -0400", hash_original_method = "32142259597E010D1F73DE9F53078982", hash_generated_method = "544BC9D6E8966FB07A2541A15B78205A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.371 -0400", hash_original_method = "32142259597E010D1F73DE9F53078982", hash_generated_method = "458B0859D1AA88CCA23E2D8BCCF548B1")
     @Override
     public boolean hasAlpha() {
         {
             mDirty = mHasAlpha = false;
-            int count;
-            count = mAnimations.size();
-            ArrayList<Animation> animations;
-            animations = mAnimations;
+            final int count = mAnimations.size();
+            final ArrayList<Animation> animations = mAnimations;
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     {
-                        boolean var318ECFBA18F61FF993BA76974A857338_999872927 = (animations.get(i).hasAlpha());
+                        boolean var318ECFBA18F61FF993BA76974A857338_1829014778 = (animations.get(i).hasAlpha());
                         {
                             mHasAlpha = true;
                         } //End block
@@ -232,8 +224,8 @@ public class AnimationSet extends Animation {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1998245751 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1998245751;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110040435 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110040435;
         // ---------- Original Method ----------
         //if (mDirty) {
             //mDirty = mHasAlpha = false;
@@ -250,7 +242,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.399 -0400", hash_original_method = "638E0400F0B782F58F566825CD0FEEA0", hash_generated_method = "7C956B9BDCA422BA10EF6C2F8EA55212")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.371 -0400", hash_original_method = "638E0400F0B782F58F566825CD0FEEA0", hash_generated_method = "7C956B9BDCA422BA10EF6C2F8EA55212")
     @Override
     public void setDuration(long durationMillis) {
         mFlags |= PROPERTY_DURATION_MASK;
@@ -264,21 +256,19 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.405 -0400", hash_original_method = "F96436C1C98CEDEFC582978CFED41496", hash_generated_method = "A37B722ADC5ED93D2F4E7B22F0488089")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.372 -0400", hash_original_method = "F96436C1C98CEDEFC582978CFED41496", hash_generated_method = "C3BA093446983FF1F6159A3BAECBF6D7")
     public void addAnimation(Animation a) {
         mAnimations.add(a);
-        boolean noMatrix;
-        noMatrix = (mFlags & PROPERTY_MORPH_MATRIX_MASK) == 0;
+        boolean noMatrix = (mFlags & PROPERTY_MORPH_MATRIX_MASK) == 0;
         {
-            boolean var3AFC8C1F9BD79C2924F0D44D1D866132_1692160680 = (noMatrix && a.willChangeTransformationMatrix());
+            boolean var3AFC8C1F9BD79C2924F0D44D1D866132_1863304549 = (noMatrix && a.willChangeTransformationMatrix());
             {
                 mFlags |= PROPERTY_MORPH_MATRIX_MASK;
             } //End block
         } //End collapsed parenthetic
-        boolean changeBounds;
-        changeBounds = (mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == 0;
+        boolean changeBounds = (mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == 0;
         {
-            boolean var8CD50B8AD5A50CFC0010E75A020FCCF0_1078852182 = (changeBounds && a.willChangeTransformationMatrix());
+            boolean var8CD50B8AD5A50CFC0010E75A020FCCF0_657135499 = (changeBounds && a.willChangeTransformationMatrix());
             {
                 mFlags |= PROPERTY_CHANGE_BOUNDS_MASK;
             } //End block
@@ -288,7 +278,7 @@ public class AnimationSet extends Animation {
         } //End block
         {
             {
-                boolean var6D0AA57EF2650F3165F6492B79B1F2BD_1222624288 = (mAnimations.size() == 1);
+                boolean var6D0AA57EF2650F3165F6492B79B1F2BD_2131474533 = (mAnimations.size() == 1);
                 {
                     mDuration = a.getStartOffset() + a.getDuration();
                     mLastEnd = mStartOffset + mDuration;
@@ -305,20 +295,16 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.405 -0400", hash_original_method = "ED7478CCB671993C959207E062C9FA4F", hash_generated_method = "5F0AA123E1B36BA0F296AC7822A50E20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.372 -0400", hash_original_method = "ED7478CCB671993C959207E062C9FA4F", hash_generated_method = "3BC931A7011E7E3663A099E3C8AA1C2B")
     @Override
     public void setStartTime(long startTimeMillis) {
         super.setStartTime(startTimeMillis);
-        int count;
-        count = mAnimations.size();
-        ArrayList<Animation> animations;
-        animations = mAnimations;
+        final int count = mAnimations.size();
+        final ArrayList<Animation> animations = mAnimations;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                Animation a;
-                a = animations.get(i);
+                Animation a = animations.get(i);
                 a.setStartTime(startTimeMillis);
             } //End block
         } //End collapsed parenthetic
@@ -334,26 +320,21 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.410 -0400", hash_original_method = "1DB17F128BC07A7BFF2B0ED14844511C", hash_generated_method = "865E092499A392538F77FC5D38F294BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.373 -0400", hash_original_method = "1DB17F128BC07A7BFF2B0ED14844511C", hash_generated_method = "8455C35F68B47CC136302EDEF5CA024E")
     @Override
     public long getStartTime() {
-        long startTime;
-        startTime = Long.MAX_VALUE;
-        int count;
-        count = mAnimations.size();
-        ArrayList<Animation> animations;
-        animations = mAnimations;
+        long startTime = Long.MAX_VALUE;
+        final int count = mAnimations.size();
+        final ArrayList<Animation> animations = mAnimations;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                Animation a;
-                a = animations.get(i);
+                Animation a = animations.get(i);
                 startTime = Math.min(startTime, a.getStartTime());
             } //End block
         } //End collapsed parenthetic
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1268745614 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1268745614;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_989801379 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_989801379;
         // ---------- Original Method ----------
         //long startTime = Long.MAX_VALUE;
         //final int count = mAnimations.size();
@@ -366,17 +347,14 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.411 -0400", hash_original_method = "8BDDB0E57A894DBD22BE4F412303E6AB", hash_generated_method = "57178574F38D7677D5BE2C08B9F1B2A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.373 -0400", hash_original_method = "8BDDB0E57A894DBD22BE4F412303E6AB", hash_generated_method = "8659C6A3369FC11F1BD7F4CA842781EE")
     @Override
     public void restrictDuration(long durationMillis) {
         super.restrictDuration(durationMillis);
-        ArrayList<Animation> animations;
-        animations = mAnimations;
-        int count;
-        count = animations.size();
+        final ArrayList<Animation> animations = mAnimations;
+        int count = animations.size();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 animations.get(i).restrictDuration(durationMillis);
             } //End block
@@ -392,31 +370,26 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.417 -0400", hash_original_method = "0C51A5B794999BCAB9F83D60602DBD5A", hash_generated_method = "404F6422D4CA78AB1963C7F7384172F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.374 -0400", hash_original_method = "0C51A5B794999BCAB9F83D60602DBD5A", hash_generated_method = "CFEB9F884904523099C41E8C45860573")
     @Override
     public long getDuration() {
-        ArrayList<Animation> animations;
-        animations = mAnimations;
-        int count;
-        count = animations.size();
-        long duration;
-        duration = 0;
-        boolean durationSet;
-        durationSet = (mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK;
+        final ArrayList<Animation> animations = mAnimations;
+        final int count = animations.size();
+        long duration = 0;
+        boolean durationSet = (mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK;
         {
             duration = mDuration;
         } //End block
         {
             {
-                int i;
-                i = 0;
+                int i = 0;
                 {
                     duration = Math.max(duration, animations.get(i).getDuration());
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_701956135 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_701956135;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_2025053701 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_2025053701;
         // ---------- Original Method ----------
         //final ArrayList<Animation> animations = mAnimations;
         //final int count = animations.size();
@@ -433,25 +406,20 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.421 -0400", hash_original_method = "979F8D0FD623C4002C8BD37290EA10AA", hash_generated_method = "EC3FD043CA568C9052C533ABB5D627E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.374 -0400", hash_original_method = "979F8D0FD623C4002C8BD37290EA10AA", hash_generated_method = "49D080A1DD7EDD799CC090E84622851D")
     public long computeDurationHint() {
-        long duration;
-        duration = 0;
-        int count;
-        count = mAnimations.size();
-        ArrayList<Animation> animations;
-        animations = mAnimations;
+        long duration = 0;
+        final int count = mAnimations.size();
+        final ArrayList<Animation> animations = mAnimations;
         {
-            int i;
-            i = count - 1;
+            int i = count - 1;
             {
-                long d;
-                d = animations.get(i).computeDurationHint();
+                final long d = animations.get(i).computeDurationHint();
                 duration = d;
             } //End block
         } //End collapsed parenthetic
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1512885090 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1512885090;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_554438785 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_554438785;
         // ---------- Original Method ----------
         //long duration = 0;
         //final int count = mAnimations.size();
@@ -464,30 +432,22 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.421 -0400", hash_original_method = "357CAB1AB4D965ADF6EAF9B7256F84EE", hash_generated_method = "B98CDCA56FC6BFF11FA26F8429AE5246")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.375 -0400", hash_original_method = "357CAB1AB4D965ADF6EAF9B7256F84EE", hash_generated_method = "A31FD5F47540A33F4BFE49D3F2C6F0EA")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
-        RectF region;
-        region = mPreviousRegion;
+        final RectF region = mPreviousRegion;
         region.set(left, top, right, bottom);
         region.inset(-1.0f, -1.0f);
         {
-            int count;
-            count = mAnimations.size();
-            ArrayList<Animation> animations;
-            animations = mAnimations;
-            Transformation temp;
-            temp = mTempTransformation;
-            Transformation previousTransformation;
-            previousTransformation = mPreviousTransformation;
+            final int count = mAnimations.size();
+            final ArrayList<Animation> animations = mAnimations;
+            final Transformation temp = mTempTransformation;
+            final Transformation previousTransformation = mPreviousTransformation;
             {
-                int i;
-                i = count - 1;
+                int i = count - 1;
                 {
-                    Animation a;
-                    a = animations.get(i);
+                    final Animation a = animations.get(i);
                     temp.clear();
-                    Interpolator interpolator;
-                    interpolator = a.mInterpolator;
+                    final Interpolator interpolator = a.mInterpolator;
                     a.applyTransformation(interpolator != null ? interpolator.getInterpolation(0.0f)
                         : 0.0f, temp);
                     previousTransformation.compose(temp);
@@ -503,28 +463,20 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.428 -0400", hash_original_method = "3F803CA56592D1A8F5A2DABD815E935C", hash_generated_method = "9C18C01063F53D1319F8CF81E1E71A63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.375 -0400", hash_original_method = "3F803CA56592D1A8F5A2DABD815E935C", hash_generated_method = "6E7F53346DF39FCD8BF7BB6C8C7A6BB0")
     @Override
     public boolean getTransformation(long currentTime, Transformation t) {
-        int count;
-        count = mAnimations.size();
-        ArrayList<Animation> animations;
-        animations = mAnimations;
-        Transformation temp;
-        temp = mTempTransformation;
-        boolean more;
-        more = false;
-        boolean started;
-        started = false;
-        boolean ended;
-        ended = true;
+        final int count = mAnimations.size();
+        final ArrayList<Animation> animations = mAnimations;
+        final Transformation temp = mTempTransformation;
+        boolean more = false;
+        boolean started = false;
+        boolean ended = true;
         t.clear();
         {
-            int i;
-            i = count - 1;
+            int i = count - 1;
             {
-                Animation a;
-                a = animations.get(i);
+                final Animation a = animations.get(i);
                 temp.clear();
                 more = a.getTransformation(currentTime, temp, getScaleFactor()) || more;
                 t.compose(temp);
@@ -546,23 +498,20 @@ public class AnimationSet extends Animation {
         } //End block
         addTaint(currentTime);
         addTaint(t.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780698080 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780698080;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666771507 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_666771507;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.438 -0400", hash_original_method = "2134BF7993F0D641B52B56C7C0A9A6E5", hash_generated_method = "A092112153A1670E9B3A6CF11A438696")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.376 -0400", hash_original_method = "2134BF7993F0D641B52B56C7C0A9A6E5", hash_generated_method = "957F6625FCF64C32826C05A28022CA1C")
     @Override
     public void scaleCurrentDuration(float scale) {
-        ArrayList<Animation> animations;
-        animations = mAnimations;
-        int count;
-        count = animations.size();
+        final ArrayList<Animation> animations = mAnimations;
+        int count = animations.size();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 animations.get(i).scaleCurrentDuration(scale);
             } //End block
@@ -577,45 +526,30 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.442 -0400", hash_original_method = "CAD543A8149EEDE67DD6611F7E4BF120", hash_generated_method = "4AF115C82FD3C309855ABCAB46CD8E6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.377 -0400", hash_original_method = "CAD543A8149EEDE67DD6611F7E4BF120", hash_generated_method = "42472DB26E40B3740A7FF93E06D27AB5")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
         super.initialize(width, height, parentWidth, parentHeight);
-        boolean durationSet;
-        durationSet = (mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK;
-        boolean fillAfterSet;
-        fillAfterSet = (mFlags & PROPERTY_FILL_AFTER_MASK) == PROPERTY_FILL_AFTER_MASK;
-        boolean fillBeforeSet;
-        fillBeforeSet = (mFlags & PROPERTY_FILL_BEFORE_MASK) == PROPERTY_FILL_BEFORE_MASK;
-        boolean repeatModeSet;
-        repeatModeSet = (mFlags & PROPERTY_REPEAT_MODE_MASK) == PROPERTY_REPEAT_MODE_MASK;
-        boolean shareInterpolator;
-        shareInterpolator = (mFlags & PROPERTY_SHARE_INTERPOLATOR_MASK)
+        boolean durationSet = (mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK;
+        boolean fillAfterSet = (mFlags & PROPERTY_FILL_AFTER_MASK) == PROPERTY_FILL_AFTER_MASK;
+        boolean fillBeforeSet = (mFlags & PROPERTY_FILL_BEFORE_MASK) == PROPERTY_FILL_BEFORE_MASK;
+        boolean repeatModeSet = (mFlags & PROPERTY_REPEAT_MODE_MASK) == PROPERTY_REPEAT_MODE_MASK;
+        boolean shareInterpolator = (mFlags & PROPERTY_SHARE_INTERPOLATOR_MASK)
                 == PROPERTY_SHARE_INTERPOLATOR_MASK;
-        boolean startOffsetSet;
-        startOffsetSet = (mFlags & PROPERTY_START_OFFSET_MASK)
+        boolean startOffsetSet = (mFlags & PROPERTY_START_OFFSET_MASK)
                 == PROPERTY_START_OFFSET_MASK;
         {
             ensureInterpolator();
         } //End block
-        ArrayList<Animation> children;
-        children = mAnimations;
-        int count;
-        count = children.size();
-        long duration;
-        duration = mDuration;
-        boolean fillAfter;
-        fillAfter = mFillAfter;
-        boolean fillBefore;
-        fillBefore = mFillBefore;
-        int repeatMode;
-        repeatMode = mRepeatMode;
-        Interpolator interpolator;
-        interpolator = mInterpolator;
-        long startOffset;
-        startOffset = mStartOffset;
-        long[] storedOffsets;
-        storedOffsets = mStoredOffsets;
+        final ArrayList<Animation> children = mAnimations;
+        final int count = children.size();
+        final long duration = mDuration;
+        final boolean fillAfter = mFillAfter;
+        final boolean fillBefore = mFillBefore;
+        final int repeatMode = mRepeatMode;
+        final Interpolator interpolator = mInterpolator;
+        final long startOffset = mStartOffset;
+        long[] storedOffsets = mStoredOffsets;
         {
             {
                 storedOffsets = mStoredOffsets = new long[count];
@@ -625,11 +559,9 @@ public class AnimationSet extends Animation {
             storedOffsets = mStoredOffsets = null;
         } //End block
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                Animation a;
-                a = children.get(i);
+                Animation a = children.get(i);
                 {
                     a.setDuration(duration);
                 } //End block
@@ -646,8 +578,7 @@ public class AnimationSet extends Animation {
                     a.setInterpolator(interpolator);
                 } //End block
                 {
-                    long offset;
-                    offset = a.getStartOffset();
+                    long offset = a.getStartOffset();
                     a.setStartOffset(offset + startOffset);
                     storedOffsets[i] = offset;
                 } //End block
@@ -663,7 +594,7 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.443 -0400", hash_original_method = "2E3A361BE20A8D002834672DDB7CD636", hash_generated_method = "F50B3D17E3EAD3AC5C651A4E6CE1B416")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.377 -0400", hash_original_method = "2E3A361BE20A8D002834672DDB7CD636", hash_generated_method = "F50B3D17E3EAD3AC5C651A4E6CE1B416")
     @Override
     public void reset() {
         super.reset();
@@ -674,17 +605,13 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.443 -0400", hash_original_method = "1FA58C163A7DB9A5169EF699805FA3C9", hash_generated_method = "9D2BDB09AAD4A9793EC3838EBE23F6D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.378 -0400", hash_original_method = "1FA58C163A7DB9A5169EF699805FA3C9", hash_generated_method = "E76A4630C188DB0B484D7C17F4FB0E05")
      void restoreChildrenStartOffset() {
-        long[] offsets;
-        offsets = mStoredOffsets;
-        ArrayList<Animation> children;
-        children = mAnimations;
-        int count;
-        count = children.size();
+        final long[] offsets = mStoredOffsets;
+        final ArrayList<Animation> children = mAnimations;
+        final int count = children.size();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 children.get(i).setStartOffset(offsets[i]);
             } //End block
@@ -700,60 +627,60 @@ public class AnimationSet extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.444 -0400", hash_original_method = "EC73055689DC3CDB2DE15C42C77CE8EF", hash_generated_method = "BA788038E9F4ADB9AE032F00BC678530")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.378 -0400", hash_original_method = "EC73055689DC3CDB2DE15C42C77CE8EF", hash_generated_method = "F3C87E71F35D2A828DCFDB10398B26C0")
     public List<Animation> getAnimations() {
-        List<Animation> varB4EAC82CA7396A68D541C85D26508E83_983950865 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_983950865 = mAnimations;
-        varB4EAC82CA7396A68D541C85D26508E83_983950865.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_983950865;
+        List<Animation> varB4EAC82CA7396A68D541C85D26508E83_967679873 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_967679873 = mAnimations;
+        varB4EAC82CA7396A68D541C85D26508E83_967679873.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_967679873;
         // ---------- Original Method ----------
         //return mAnimations;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.454 -0400", hash_original_method = "007230E9C632DD7C25BB9E67DB11C3C3", hash_generated_method = "A87454EDA36158542DECF8C9978303F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.379 -0400", hash_original_method = "007230E9C632DD7C25BB9E67DB11C3C3", hash_generated_method = "6F0A30D9364D1D47031497420C8C07BE")
     @Override
     public boolean willChangeTransformationMatrix() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135097382 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_135097382;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696991394 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_696991394;
         // ---------- Original Method ----------
         //return (mFlags & PROPERTY_MORPH_MATRIX_MASK) == PROPERTY_MORPH_MATRIX_MASK;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.454 -0400", hash_original_method = "A538326162AE4CED46022318A3520B17", hash_generated_method = "A709107091B01B262A1A8D347424A6A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.379 -0400", hash_original_method = "A538326162AE4CED46022318A3520B17", hash_generated_method = "75AADF83FDCC002BFEAAFABFFDCD62F1")
     @Override
     public boolean willChangeBounds() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_900326404 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_900326404;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579886858 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579886858;
         // ---------- Original Method ----------
         //return (mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == PROPERTY_CHANGE_BOUNDS_MASK;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "05C61D34F2D6FA49720C368787295F7C", hash_generated_field = "27C0C40052344E2A47B2FD0541B4A331")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "05C61D34F2D6FA49720C368787295F7C", hash_generated_field = "4E6A2393E3A41FF00CBD8150E755D9D3")
 
-    private static int PROPERTY_FILL_AFTER_MASK = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "777BB302827C2D122E450457A10D3BA7", hash_generated_field = "FECE67DD456347504C783898C48E1CB3")
+    private static final int PROPERTY_FILL_AFTER_MASK = 0x1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "777BB302827C2D122E450457A10D3BA7", hash_generated_field = "AF3B072AF41D6260060EBDA66CF66385")
 
-    private static int PROPERTY_FILL_BEFORE_MASK = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "B81B9161EB151AE3DEAEE42B58F544B9", hash_generated_field = "BB1A1F02568FA6AB70F87EC75D116B19")
+    private static final int PROPERTY_FILL_BEFORE_MASK = 0x2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "B81B9161EB151AE3DEAEE42B58F544B9", hash_generated_field = "1FD86F067E7DF1209C97B9951E5A2D68")
 
-    private static int PROPERTY_REPEAT_MODE_MASK = 0x4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "441E05DBA26742E52C72A452E9B86340", hash_generated_field = "6DA7786D78FBC79E8E1DAFC79DD4C75D")
+    private static final int PROPERTY_REPEAT_MODE_MASK = 0x4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "441E05DBA26742E52C72A452E9B86340", hash_generated_field = "D59291534504149726C15D5B8C4B78EF")
 
-    private static int PROPERTY_START_OFFSET_MASK = 0x8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "A72EEEC20A966DB75D61B5074375CCA1", hash_generated_field = "AB7E75008C635F5E5D1DB1A6644036DC")
+    private static final int PROPERTY_START_OFFSET_MASK = 0x8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "A72EEEC20A966DB75D61B5074375CCA1", hash_generated_field = "16B7CB13D692AA5D34D2FE4D9F825737")
 
-    private static int PROPERTY_SHARE_INTERPOLATOR_MASK = 0x10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "B44854A667D88A05C8430A29896B5F4F", hash_generated_field = "13501FFEA87067BAFC7EC89290FCBE70")
+    private static final int PROPERTY_SHARE_INTERPOLATOR_MASK = 0x10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "B44854A667D88A05C8430A29896B5F4F", hash_generated_field = "4649CE1597E4F6226E08DA4CD678394F")
 
-    private static int PROPERTY_DURATION_MASK = 0x20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "F76845D17AEC36F4A6EB6848D6A60DCB", hash_generated_field = "6316D07F8363AE1394C0D94872B84193")
+    private static final int PROPERTY_DURATION_MASK = 0x20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "F76845D17AEC36F4A6EB6848D6A60DCB", hash_generated_field = "58E407F6C09F775B2C3112E974909A4B")
 
-    private static int PROPERTY_MORPH_MATRIX_MASK = 0x40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.455 -0400", hash_original_field = "3FAD3D66D5C579A786F540732A33C45E", hash_generated_field = "9A73656B2CC67728B25D69CE4E209573")
+    private static final int PROPERTY_MORPH_MATRIX_MASK = 0x40;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.380 -0400", hash_original_field = "3FAD3D66D5C579A786F540732A33C45E", hash_generated_field = "DD8036C86532BF82965105099123C6F4")
 
-    private static int PROPERTY_CHANGE_BOUNDS_MASK = 0x80;
+    private static final int PROPERTY_CHANGE_BOUNDS_MASK = 0x80;
 }
 

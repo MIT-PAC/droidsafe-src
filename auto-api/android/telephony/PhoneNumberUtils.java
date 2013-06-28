@@ -33,60 +33,60 @@ import java.util.regex.Pattern;
 
 public class PhoneNumberUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.641 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.654 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
     public PhoneNumberUtils ()
     {
         //Synthesized constructor
     }
 
 
-        public static boolean isISODigit(char c) {
+    public static boolean isISODigit(char c) {
         return c >= '0' && c <= '9';
     }
 
     
-        public final static boolean is12Key(char c) {
+    public final static boolean is12Key(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#';
     }
 
     
-        public final static boolean isDialable(char c) {
+    public final static boolean isDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+' || c == WILD;
     }
 
     
-        public final static boolean isReallyDialable(char c) {
+    public final static boolean isReallyDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+';
     }
 
     
-        public final static boolean isNonSeparator(char c) {
+    public final static boolean isNonSeparator(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+'
                 || c == WILD || c == WAIT || c == PAUSE;
     }
 
     
-        public final static boolean isStartsPostDial(char c) {
+    public final static boolean isStartsPostDial(char c) {
         return c == PAUSE || c == WAIT;
     }
 
     
-        private static boolean isPause(char c) {
+    private static boolean isPause(char c) {
         return c == 'p'||c == 'P';
     }
 
     
-        private static boolean isToneWait(char c) {
+    private static boolean isToneWait(char c) {
         return c == 'w'||c == 'W';
     }
 
     
-        private static boolean isSeparator(char ch) {
+    private static boolean isSeparator(char ch) {
         return !isDialable(ch) && !(('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z'));
     }
 
     
-        public static String getNumberFromIntent(Intent intent, Context context) {
+    public static String getNumberFromIntent(Intent intent, Context context) {
         String number = null;
         Uri uri = intent.getData();
         String scheme = uri.getScheme();
@@ -123,7 +123,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String extractNetworkPortion(String phoneNumber) {
+    public static String extractNetworkPortion(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
         }
@@ -147,7 +147,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String extractNetworkPortionAlt(String phoneNumber) {
+    public static String extractNetworkPortionAlt(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
         }
@@ -172,7 +172,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String stripSeparators(String phoneNumber) {
+    public static String stripSeparators(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
         }
@@ -188,7 +188,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String convertPreDial(String phoneNumber) {
+    public static String convertPreDial(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
         }
@@ -207,7 +207,7 @@ public class PhoneNumberUtils {
     }
 
     
-        static private int minPositive(int a, int b) {
+    static private int minPositive(int a, int b) {
         if (a >= 0 && b >= 0) {
             return (a < b) ? a : b;
         } else if (a >= 0) { 
@@ -220,12 +220,12 @@ public class PhoneNumberUtils {
     }
 
     
-        private static void log(String msg) {
+    private static void log(String msg) {
         Log.d(LOG_TAG, msg);
     }
 
     
-        static private int indexOfLastNetworkChar(String a) {
+    static private int indexOfLastNetworkChar(String a) {
         int pIndex, wIndex;
         int origLength;
         int trimIndex;
@@ -241,7 +241,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static int addPlusChar(String number) {
+    private static int addPlusChar(String number) {
         int pos = -1;
         if (number.startsWith(CLIR_OFF)) {
             pos = CLIR_OFF.length() - 1;
@@ -253,7 +253,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String extractPostDialPortion(String phoneNumber) {
+    public static String extractPostDialPortion(String phoneNumber) {
         if (phoneNumber == null) return null;
         int trimIndex;
         StringBuilder ret = new StringBuilder();
@@ -270,24 +270,24 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean compare(String a, String b) {
+    public static boolean compare(String a, String b) {
         return compare(a, b, false);
     }
 
     
-        public static boolean compare(Context context, String a, String b) {
+    public static boolean compare(Context context, String a, String b) {
         boolean useStrict = context.getResources().getBoolean(
                com.android.internal.R.bool.config_use_strict_phone_number_comparation);
         return compare(a, b, useStrict);
     }
 
     
-        public static boolean compare(String a, String b, boolean useStrictComparation) {
+    public static boolean compare(String a, String b, boolean useStrictComparation) {
         return (useStrictComparation ? compareStrictly(a, b) : compareLoosely(a, b));
     }
 
     
-        public static boolean compareLoosely(String a, String b) {
+    public static boolean compareLoosely(String a, String b) {
         int ia, ib;
         int matched;
         int numNonDialableCharsInA = 0;
@@ -351,12 +351,12 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean compareStrictly(String a, String b) {
+    public static boolean compareStrictly(String a, String b) {
         return compareStrictly(a, b, true);
     }
 
     
-        public static boolean compareStrictly(String a, String b, boolean acceptInvalidCCCPrefix) {
+    public static boolean compareStrictly(String a, String b, boolean acceptInvalidCCCPrefix) {
         if (a == null || b == null) {
             return a == b;
         } else if (a.length() == 0 && b.length() == 0) {
@@ -470,20 +470,20 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String toCallerIDMinMatch(String phoneNumber) {
+    public static String toCallerIDMinMatch(String phoneNumber) {
         String np = extractNetworkPortionAlt(phoneNumber);
         return internalGetStrippedReversed(np, MIN_MATCH);
     }
 
     
-        public static String getStrippedReversed(String phoneNumber) {
+    public static String getStrippedReversed(String phoneNumber) {
         String np = extractNetworkPortionAlt(phoneNumber);
         if (np == null) return null;
         return internalGetStrippedReversed(np, np.length());
     }
 
     
-        private static String internalGetStrippedReversed(String np, int numDigits) {
+    private static String internalGetStrippedReversed(String np, int numDigits) {
         if (np == null) return null;
         StringBuilder ret = new StringBuilder(numDigits);
         int length = np.length();
@@ -497,7 +497,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String stringFromStringAndTOA(String s, int TOA) {
+    public static String stringFromStringAndTOA(String s, int TOA) {
         if (s == null) return null;
         if (TOA == TOA_International && s.length() > 0 && s.charAt(0) != '+') {
             return "+" + s;
@@ -506,7 +506,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static int toaFromString(String s) {
+    public static int toaFromString(String s) {
         if (s != null && s.length() > 0 && s.charAt(0) == '+') {
             return TOA_International;
         }
@@ -514,7 +514,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String calledPartyBCDToString(byte[] bytes, int offset, int length) {
+    public static String calledPartyBCDToString(byte[] bytes, int offset, int length) {
         boolean prependPlus = false;
         StringBuilder ret = new StringBuilder(1 + length * 2);
         if (length < 2) {
@@ -570,7 +570,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static void internalCalledPartyBCDFragmentToString(
+    private static void internalCalledPartyBCDFragmentToString(
         StringBuilder sb, byte [] bytes, int offset, int length) {
         for (int i = offset ; i < length + offset ; i++) {
             byte b;
@@ -593,14 +593,14 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String calledPartyBCDFragmentToString(byte [] bytes, int offset, int length) {
+    public static String calledPartyBCDFragmentToString(byte [] bytes, int offset, int length) {
         StringBuilder ret = new StringBuilder(length * 2);
         internalCalledPartyBCDFragmentToString(ret, bytes, offset, length);
         return ret.toString();
     }
 
     
-        private static char bcdToChar(byte b) {
+    private static char bcdToChar(byte b) {
         if (b < 0xa) {
             return (char)('0' + b);
         } else switch (b) {
@@ -613,7 +613,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static int charToBCD(char c) {
+    private static int charToBCD(char c) {
         if (c >= '0' && c <= '9') {
             return c - '0';
         } else if (c == '*') {
@@ -630,7 +630,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isWellFormedSmsAddress(String address) {
+    public static boolean isWellFormedSmsAddress(String address) {
         String networkPortion =
                 PhoneNumberUtils.extractNetworkPortion(address);
         return (!(networkPortion.equals("+")
@@ -639,7 +639,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isGlobalPhoneNumber(String phoneNumber) {
+    public static boolean isGlobalPhoneNumber(String phoneNumber) {
         if (TextUtils.isEmpty(phoneNumber)) {
             return false;
         }
@@ -648,7 +648,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isDialable(String address) {
+    private static boolean isDialable(String address) {
         for (int i = 0, count = address.length(); i < count; i++) {
             if (!isDialable(address.charAt(i))) {
                 return false;
@@ -658,7 +658,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isNonSeparator(String address) {
+    private static boolean isNonSeparator(String address) {
         for (int i = 0, count = address.length(); i < count; i++) {
             if (!isNonSeparator(address.charAt(i))) {
                 return false;
@@ -668,24 +668,24 @@ public class PhoneNumberUtils {
     }
 
     
-        public static byte[] networkPortionToCalledPartyBCD(String s) {
+    public static byte[] networkPortionToCalledPartyBCD(String s) {
         String networkPortion = extractNetworkPortion(s);
         return numberToCalledPartyBCDHelper(networkPortion, false);
     }
 
     
-        public static byte[] networkPortionToCalledPartyBCDWithLength(String s) {
+    public static byte[] networkPortionToCalledPartyBCDWithLength(String s) {
         String networkPortion = extractNetworkPortion(s);
         return numberToCalledPartyBCDHelper(networkPortion, true);
     }
 
     
-        public static byte[] numberToCalledPartyBCD(String number) {
+    public static byte[] numberToCalledPartyBCD(String number) {
         return numberToCalledPartyBCDHelper(number, false);
     }
 
     
-        private static byte[] numberToCalledPartyBCDHelper(String number, boolean includeLength) {
+    private static byte[] numberToCalledPartyBCDHelper(String number, boolean includeLength) {
         int numberLenReal = number.length();
         int numberLenEffective = numberLenReal;
         boolean hasPlus = number.indexOf('+') != -1;
@@ -712,27 +712,27 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String formatNumber(String source) {
+    public static String formatNumber(String source) {
         SpannableStringBuilder text = new SpannableStringBuilder(source);
         formatNumber(text, getFormatTypeForLocale(Locale.getDefault()));
         return text.toString();
     }
 
     
-        public static String formatNumber(String source, int defaultFormattingType) {
+    public static String formatNumber(String source, int defaultFormattingType) {
         SpannableStringBuilder text = new SpannableStringBuilder(source);
         formatNumber(text, defaultFormattingType);
         return text.toString();
     }
 
     
-        public static int getFormatTypeForLocale(Locale locale) {
+    public static int getFormatTypeForLocale(Locale locale) {
         String country = locale.getCountry();
         return getFormatTypeFromCountryCode(country);
     }
 
     
-        public static void formatNumber(Editable text, int defaultFormattingType) {
+    public static void formatNumber(Editable text, int defaultFormattingType) {
         int formatType = defaultFormattingType;
         if (text.length() > 2 && text.charAt(0) == '+') {
             if (text.charAt(1) == '1') {
@@ -758,7 +758,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static void formatNanpNumber(Editable text) {
+    public static void formatNanpNumber(Editable text) {
         int length = text.length();
         if (length > "+1-nnn-nnn-nnnn".length()) {
             return;
@@ -832,12 +832,12 @@ public class PhoneNumberUtils {
     }
 
     
-        public static void formatJapaneseNumber(Editable text) {
+    public static void formatJapaneseNumber(Editable text) {
         JapanesePhoneNumberFormatter.format(text);
     }
 
     
-        private static void removeDashes(Editable text) {
+    private static void removeDashes(Editable text) {
         int p = 0;
         while (p < text.length()) {
             if (text.charAt(p) == '-') {
@@ -849,7 +849,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String formatNumberToE164(String phoneNumber, String defaultCountryIso) {
+    public static String formatNumberToE164(String phoneNumber, String defaultCountryIso) {
         PhoneNumberUtil util = PhoneNumberUtil.getInstance();
         String result = null;
         try {
@@ -863,7 +863,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String formatNumber(String phoneNumber, String defaultCountryIso) {
+    public static String formatNumber(String phoneNumber, String defaultCountryIso) {
         if (phoneNumber.startsWith("#") || phoneNumber.startsWith("*")) {
             return phoneNumber;
         }
@@ -878,7 +878,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String formatNumber(
+    public static String formatNumber(
             String phoneNumber, String phoneNumberE164, String defaultCountryIso) {
         int len = phoneNumber.length();
         for (int i = 0; i < len; i++) {
@@ -903,7 +903,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String normalizeNumber(String phoneNumber) {
+    public static String normalizeNumber(String phoneNumber) {
         StringBuilder sb = new StringBuilder();
         int len = phoneNumber.length();
         for (int i = 0; i < len; i++) {
@@ -918,17 +918,17 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isEmergencyNumber(String number) {
+    public static boolean isEmergencyNumber(String number) {
         return isEmergencyNumberInternal(number, true );
     }
 
     
-        public static boolean isPotentialEmergencyNumber(String number) {
+    public static boolean isPotentialEmergencyNumber(String number) {
         return isEmergencyNumberInternal(number, false );
     }
 
     
-        private static boolean isEmergencyNumberInternal(String number, boolean useExactMatch) {
+    private static boolean isEmergencyNumberInternal(String number, boolean useExactMatch) {
         if (number == null) return false;
         if (isUriNumber(number)) {
             return false;
@@ -960,21 +960,21 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isEmergencyNumber(String number, String defaultCountryIso) {
+    public static boolean isEmergencyNumber(String number, String defaultCountryIso) {
         return isEmergencyNumberInternal(number,
                                          defaultCountryIso,
                                          true );
     }
 
     
-        public static boolean isPotentialEmergencyNumber(String number, String defaultCountryIso) {
+    public static boolean isPotentialEmergencyNumber(String number, String defaultCountryIso) {
         return isEmergencyNumberInternal(number,
                                          defaultCountryIso,
                                          false );
     }
 
     
-        private static boolean isEmergencyNumberInternal(String number,
+    private static boolean isEmergencyNumberInternal(String number,
                                                      String defaultCountryIso,
                                                      boolean useExactMatch) {
         PhoneNumberUtil util = PhoneNumberUtil.getInstance();
@@ -991,21 +991,21 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isLocalEmergencyNumber(String number, Context context) {
+    public static boolean isLocalEmergencyNumber(String number, Context context) {
         return isLocalEmergencyNumberInternal(number,
                                               context,
                                               true );
     }
 
     
-        public static boolean isPotentialLocalEmergencyNumber(String number, Context context) {
+    public static boolean isPotentialLocalEmergencyNumber(String number, Context context) {
         return isLocalEmergencyNumberInternal(number,
                                               context,
                                               false );
     }
 
     
-        private static boolean isLocalEmergencyNumberInternal(String number,
+    private static boolean isLocalEmergencyNumberInternal(String number,
                                                           Context context,
                                                           boolean useExactMatch) {
         String countryIso;
@@ -1023,7 +1023,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isVoiceMailNumber(String number) {
+    public static boolean isVoiceMailNumber(String number) {
         String vmNumber;
         try {
             vmNumber = TelephonyManager.getDefault().getVoiceMailNumber();
@@ -1035,7 +1035,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String convertKeypadLettersToDigits(String input) {
+    public static String convertKeypadLettersToDigits(String input) {
         if (input == null) {
             return input;
         }
@@ -1052,7 +1052,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String cdmaCheckAndProcessPlusCode(String dialStr) {
+    public static String cdmaCheckAndProcessPlusCode(String dialStr) {
         if (!TextUtils.isEmpty(dialStr)) {
             if (isReallyDialable(dialStr.charAt(0)) &&
                 isNonSeparator(dialStr)) {
@@ -1069,7 +1069,7 @@ public class PhoneNumberUtils {
     }
 
     
-        public static String cdmaCheckAndProcessPlusCodeByNumberFormat(String dialStr,int currFormat,int defaultFormat) {
+    public static String cdmaCheckAndProcessPlusCodeByNumberFormat(String dialStr,int currFormat,int defaultFormat) {
         String retStr = dialStr;
         if (dialStr != null &&
             dialStr.lastIndexOf(PLUS_SIGN_STRING) != -1) {
@@ -1116,7 +1116,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static String getDefaultIdp( ) {
+    private static String getDefaultIdp( ) {
         String ps = null;
         SystemProperties.get(PROPERTY_IDP_STRING, ps);
         if (TextUtils.isEmpty(ps)) {
@@ -1126,7 +1126,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isTwoToNine(char c) {
+    private static boolean isTwoToNine(char c) {
         if (c >= '2' && c <= '9') {
             return true;
         } else {
@@ -1135,7 +1135,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static int getFormatTypeFromCountryCode(String country) {
+    private static int getFormatTypeFromCountryCode(String country) {
         int length = NANP_COUNTRIES.length;
         for (int i = 0; i < length; i++) {
             if (NANP_COUNTRIES[i].compareToIgnoreCase(country) == 0) {
@@ -1149,7 +1149,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isNanp(String dialStr) {
+    private static boolean isNanp(String dialStr) {
         boolean retVal = false;
         if (dialStr != null) {
             if (dialStr.length() == NANP_LENGTH) {
@@ -1172,7 +1172,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isOneNanp(String dialStr) {
+    private static boolean isOneNanp(String dialStr) {
         boolean retVal = false;
         if (dialStr != null) {
             String newDialStr = dialStr.substring(1);
@@ -1186,12 +1186,12 @@ public class PhoneNumberUtils {
     }
 
     
-        public static boolean isUriNumber(String number) {
+    public static boolean isUriNumber(String number) {
         return number != null && (number.contains("@") || number.contains("%40"));
     }
 
     
-        public static String getUsernameFromUriNumber(String number) {
+    public static String getUsernameFromUriNumber(String number) {
         int delimiterIndex = number.indexOf('@');
         if (delimiterIndex < 0) {
             delimiterIndex = number.indexOf("%40");
@@ -1205,7 +1205,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static String processPlusCodeWithinNanp(String networkDialStr) {
+    private static String processPlusCodeWithinNanp(String networkDialStr) {
         String retStr = networkDialStr;
         if (DBG) log("processPlusCodeWithinNanp,networkDialStr=" + networkDialStr);
         if (networkDialStr != null &&
@@ -1224,7 +1224,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static int findDialableIndexFromPostDialStr(String postDialStr) {
+    private static int findDialableIndexFromPostDialStr(String postDialStr) {
         for (int index = 0;index < postDialStr.length();index++) {
              char c = postDialStr.charAt(index);
              if (isReallyDialable(c)) {
@@ -1235,7 +1235,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static String appendPwCharBackToOrigDialStr(int dialableIndex,String origStr, String dialStr) {
+    private static String appendPwCharBackToOrigDialStr(int dialableIndex,String origStr, String dialStr) {
         String retStr;
         if (dialableIndex == 1) {
             StringBuilder ret = new StringBuilder(origStr);
@@ -1249,7 +1249,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean matchIntlPrefix(String a, int len) {
+    private static boolean matchIntlPrefix(String a, int len) {
         int state = 0;
         for (int i = 0 ; i < len ; i++) {
             char c = a.charAt(i);
@@ -1277,7 +1277,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean matchIntlPrefixAndCC(String a, int len) {
+    private static boolean matchIntlPrefixAndCC(String a, int len) {
         int state = 0;
         for (int i = 0 ; i < len ; i++ ) {
             char c = a.charAt(i);
@@ -1315,7 +1315,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean matchTrunkPrefix(String a, int len) {
+    private static boolean matchTrunkPrefix(String a, int len) {
         boolean found;
         found = false;
         for (int i = 0 ; i < len ; i++) {
@@ -1330,13 +1330,13 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean isCountryCallingCode(int countryCallingCodeCandidate) {
+    private static boolean isCountryCallingCode(int countryCallingCodeCandidate) {
         return countryCallingCodeCandidate > 0 && countryCallingCodeCandidate < CCC_LENGTH &&
                 COUNTRY_CALLING_CALL[countryCallingCodeCandidate];
     }
 
     
-        private static int tryGetISODigit(char ch) {
+    private static int tryGetISODigit(char ch) {
         if ('0' <= ch && ch <= '9') {
             return ch - '0';
         } else {
@@ -1345,7 +1345,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static CountryCallingCodeAndNewIndex tryGetCountryCallingCodeAndNewIndex(
+    private static CountryCallingCodeAndNewIndex tryGetCountryCallingCodeAndNewIndex(
         String str, boolean acceptThailandCase) {
         int state = 0;
         int ccc = 0;
@@ -1421,7 +1421,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static int tryGetTrunkPrefixOmittedIndex(String str, int currentIndex) {
+    private static int tryGetTrunkPrefixOmittedIndex(String str, int currentIndex) {
         int length = str.length();
         for (int i = currentIndex ; i < length ; i++) {
             final char ch = str.charAt(i);
@@ -1435,7 +1435,7 @@ public class PhoneNumberUtils {
     }
 
     
-        private static boolean checkPrefixIsIgnorable(final String str,
+    private static boolean checkPrefixIsIgnorable(final String str,
             int forwardIndex, int backwardIndex) {
         boolean trunk_prefix_was_read = false;
         while (backwardIndex >= forwardIndex) {
@@ -1455,14 +1455,14 @@ public class PhoneNumberUtils {
 
     
     private static class CountryCallingCodeAndNewIndex {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.828 -0400", hash_original_field = "43BF1148832D608DC0C7BD7DF33B664F", hash_generated_field = "3AFE52867FA7D6A4E2F06FCBB6E2D3AB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "43BF1148832D608DC0C7BD7DF33B664F", hash_generated_field = "3AFE52867FA7D6A4E2F06FCBB6E2D3AB")
 
         public int countryCallingCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.828 -0400", hash_original_field = "9E166AF7CD3E938FA57C7E5B5A2B953C", hash_generated_field = "E475F8F2EFBA505C94E4C7ABFF34FE12")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "9E166AF7CD3E938FA57C7E5B5A2B953C", hash_generated_field = "E475F8F2EFBA505C94E4C7ABFF34FE12")
 
         public int newIndex;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_method = "5DCA5F364592872E4B4A5AF571961FBD", hash_generated_method = "C5121B987002F477CF37F9AE2853890C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_method = "5DCA5F364592872E4B4A5AF571961FBD", hash_generated_method = "C5121B987002F477CF37F9AE2853890C")
         public  CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
             this.countryCallingCode = countryCode;
             this.newIndex = newIndex;
@@ -1476,48 +1476,48 @@ public class PhoneNumberUtils {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "7DB04456DC558F9D1EF26AF27C35B491", hash_generated_field = "9592BDC3C222BAB87D6921536B386F02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "7DB04456DC558F9D1EF26AF27C35B491", hash_generated_field = "9592BDC3C222BAB87D6921536B386F02")
 
     public static final char PAUSE = ',';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "474D126EA486D1CDCC622B4A024282C1", hash_generated_field = "B5DAD0C77E5093BF168B416C17DBD0D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "474D126EA486D1CDCC622B4A024282C1", hash_generated_field = "B5DAD0C77E5093BF168B416C17DBD0D4")
 
     public static final char WAIT = ';';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "3D735435566ADA3C409E75A7C68785E5", hash_generated_field = "4508CC8F7BCD4D71006CDE5EE7139083")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "3D735435566ADA3C409E75A7C68785E5", hash_generated_field = "4508CC8F7BCD4D71006CDE5EE7139083")
 
     public static final char WILD = 'N';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "33205071EE604584A2440E73634762B3", hash_generated_field = "ECEB28BD95B98A50C589B3074C326EB7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "33205071EE604584A2440E73634762B3", hash_generated_field = "41733512B7356A6F1169DE28E49240D0")
 
-    private static String CLIR_ON = "*31#+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "B4BFA33F98162A39EF401B11708A7C72", hash_generated_field = "2F05D6D04F52B52501EDC88FF2755D0F")
+    private static final String CLIR_ON = "*31#+";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "B4BFA33F98162A39EF401B11708A7C72", hash_generated_field = "21107701FB725EBBB1A8151BF10DD146")
 
-    private static String CLIR_OFF = "#31#+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "4DAE6EF8C00F94A69F7EE702C1885707", hash_generated_field = "06787C0184484B4BFBBF1E2A65382041")
+    private static final String CLIR_OFF = "#31#+";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "4DAE6EF8C00F94A69F7EE702C1885707", hash_generated_field = "06787C0184484B4BFBBF1E2A65382041")
 
     public static final int TOA_International = 0x91;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "644D33B27ECB0CAD646025B8F066D355", hash_generated_field = "243A93021F2325560EC4F5DCB5A791CB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "644D33B27ECB0CAD646025B8F066D355", hash_generated_field = "243A93021F2325560EC4F5DCB5A791CB")
 
     public static final int TOA_Unknown = 0x81;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "25F1F31F6A2594641E65DD4C14C3663D", hash_generated_field = "D253E44721AD118F28735E9D49B351A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "25F1F31F6A2594641E65DD4C14C3663D", hash_generated_field = "66F1D08002084ED372C413B449756379")
 
-    static String LOG_TAG = "PhoneNumberUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "B7C4E93D97D072890A37A56076D870F8")
+    static final String LOG_TAG = "PhoneNumberUtils";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
-    private static boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "91DC196511083EE55D6965976F8665FC", hash_generated_field = "D7BA433DEF6DCA65EFDC918E7DD806C7")
+    private static final boolean DBG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "91DC196511083EE55D6965976F8665FC", hash_generated_field = "9026E5CF572994614C2F0E9A1C451C00")
 
-    private static Pattern GLOBAL_PHONE_NUMBER_PATTERN = Pattern.compile("[\\+]?[0-9.-]+");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "309F4FB1064720338CC6175ECF536E60", hash_generated_field = "71D5121A36746180AA00D4A7523E1441")
+    private static final Pattern GLOBAL_PHONE_NUMBER_PATTERN = Pattern.compile("[\\+]?[0-9.-]+");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "309F4FB1064720338CC6175ECF536E60", hash_generated_field = "71D5121A36746180AA00D4A7523E1441")
 
     public static final int FORMAT_UNKNOWN = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "B180D7EA177E8179235BE30812C15164", hash_generated_field = "46986CCD2F846A62FECAEC81C1FCD118")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "B180D7EA177E8179235BE30812C15164", hash_generated_field = "46986CCD2F846A62FECAEC81C1FCD118")
 
     public static final int FORMAT_NANP = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "F23B34460FE8168120B15898C914CD0A", hash_generated_field = "4BC9003279A4C6063E53C49E257506ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.670 -0400", hash_original_field = "F23B34460FE8168120B15898C914CD0A", hash_generated_field = "4BC9003279A4C6063E53C49E257506ED")
 
     public static final int FORMAT_JAPAN = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "8D1053844F92EDCE48195FE9CFD3B6F3", hash_generated_field = "B2B470C2BF76F3A42C175E0B81233960")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "8D1053844F92EDCE48195FE9CFD3B6F3", hash_generated_field = "C474179E135F0EE88948907C91621742")
 
-    private static String[] NANP_COUNTRIES = new String[] {
+    private static final String[] NANP_COUNTRIES = new String[] {
         "US", 
         "CA", 
         "AS", 
@@ -1543,24 +1543,24 @@ public class PhoneNumberUtils {
         "TC", 
         "VI", 
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "C8DF256B4C3DF9810E7E26112D5E7888", hash_generated_field = "9B70FBEF23302F77B0B69187CD822808")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "C8DF256B4C3DF9810E7E26112D5E7888", hash_generated_field = "97E60B6F9174D822AC0B50ACF1DFAB18")
 
-    private static int NANP_STATE_DIGIT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "CC51AF088685A8E9465989895376E3DC", hash_generated_field = "7401B540D777D7025E5209456DD92A91")
+    private static final int NANP_STATE_DIGIT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "CC51AF088685A8E9465989895376E3DC", hash_generated_field = "D8B6E15CB39EE1B396190326022E5992")
 
-    private static int NANP_STATE_PLUS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "433514C9F70F4AA19F44CA3C3F364C6B", hash_generated_field = "153548CF225A891B990F5DCB915F76D3")
+    private static final int NANP_STATE_PLUS = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "433514C9F70F4AA19F44CA3C3F364C6B", hash_generated_field = "6912B97017383BE61F75EF2B91107E34")
 
-    private static int NANP_STATE_ONE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "6908950F77459CF993C327A7090CEA4B", hash_generated_field = "EA6A36D7FFBB9E68993797396B22CDAE")
+    private static final int NANP_STATE_ONE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "6908950F77459CF993C327A7090CEA4B", hash_generated_field = "CCB97240D79A883AF68A6A38F3462C75")
 
-    private static int NANP_STATE_DASH = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "7C7B822C34A911315387BDE23FD9279C", hash_generated_field = "4D79FA8B3EE3F90D677D0403EB29EF66")
+    private static final int NANP_STATE_DASH = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "7C7B822C34A911315387BDE23FD9279C", hash_generated_field = "57E8BFEBAD374258AB9E4EB3539BBFB4")
 
-    static int MIN_MATCH = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "39467E7841771D874C62D8784BE12395", hash_generated_field = "AC41E132A0E52CD45C78512DB1F3E43D")
+    static final int MIN_MATCH = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "39467E7841771D874C62D8784BE12395", hash_generated_field = "7C8D51C46A0626FE47244FF96E4E521F")
 
-    private static SparseIntArray KEYPAD_MAP = new SparseIntArray();
+    private static final SparseIntArray KEYPAD_MAP = new SparseIntArray();
     static {
         KEYPAD_MAP.put('a', '2'); KEYPAD_MAP.put('b', '2'); KEYPAD_MAP.put('c', '2');
         KEYPAD_MAP.put('A', '2'); KEYPAD_MAP.put('B', '2'); KEYPAD_MAP.put('C', '2');
@@ -1580,21 +1580,21 @@ public class PhoneNumberUtils {
         KEYPAD_MAP.put('W', '9'); KEYPAD_MAP.put('X', '9'); KEYPAD_MAP.put('Y', '9'); KEYPAD_MAP.put('Z', '9');
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "A13276936F3EBAF96DAFC2AC50AE71A1", hash_generated_field = "22D7ACAF2443EE67B43926AC3E99BBA6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "A13276936F3EBAF96DAFC2AC50AE71A1", hash_generated_field = "2A181750D519F673E8388310FF30197F")
 
-    private static char PLUS_SIGN_CHAR = '+';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "BA460873C37F1DD423A5EBFF99CB4FEB", hash_generated_field = "812FBDE287D33B84E8FEA607351D99E6")
+    private static final char PLUS_SIGN_CHAR = '+';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "BA460873C37F1DD423A5EBFF99CB4FEB", hash_generated_field = "E5F293939EB869982108989CED040CCD")
 
-    private static String PLUS_SIGN_STRING = "+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "07DADDFD7E268EDFC76BEAFDF194E91D", hash_generated_field = "B5FE8B403B83432747E0DBD4F760E98A")
+    private static final String PLUS_SIGN_STRING = "+";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "07DADDFD7E268EDFC76BEAFDF194E91D", hash_generated_field = "65419F0E81B4FB3437C262BDF238DE93")
 
-    private static String NANP_IDP_STRING = "011";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "881D4246E29131E276ABAF25E9FAC22F", hash_generated_field = "ED6B7BDF339C1F26E00F50ACA0D34F84")
+    private static final String NANP_IDP_STRING = "011";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "881D4246E29131E276ABAF25E9FAC22F", hash_generated_field = "0EAB7D348935210D0FF303321B37482A")
 
-    private static int NANP_LENGTH = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "EF892F5AB80D121C72BE2859973A6879", hash_generated_field = "F2A49BCB2F9CC18C307C32507ED8C31D")
+    private static final int NANP_LENGTH = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "EF892F5AB80D121C72BE2859973A6879", hash_generated_field = "DFE3200CE42ADCACF42E5F77CB04E4DF")
 
-    private static boolean COUNTRY_CALLING_CALL[] = {
+    private static final boolean COUNTRY_CALLING_CALL[] = {
         true, true, false, false, false, false, false, true, false, false,
         false, false, false, false, false, false, false, false, false, false,
         true, false, false, false, false, false, false, true, true, false,
@@ -1606,8 +1606,8 @@ public class PhoneNumberUtils {
         false, true, true, true, true, false, true, false, false, true,
         true, true, true, true, true, true, false, false, true, false,
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "BC5611BD9394B68933031A07412F7C21", hash_generated_field = "B7BE5758F9D9BB6C5ED6D1B2C7C81965")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.671 -0400", hash_original_field = "BC5611BD9394B68933031A07412F7C21", hash_generated_field = "D5735316F828A4C0760841299861CAB7")
 
-    private static int CCC_LENGTH = COUNTRY_CALLING_CALL.length;
+    private static final int CCC_LENGTH = COUNTRY_CALLING_CALL.length;
 }
 

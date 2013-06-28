@@ -47,38 +47,38 @@ import javax.sip.header.TimeStampHeader;
 import javax.sip.message.Request;
 
 public class SIPClientTransaction extends SIPTransaction implements ServerResponseInterface, javax.sip.ClientTransaction, gov.nist.javax.sip.ClientTransactionExt {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "9D1B3F5D17ED1B162A9028E26EB002CF", hash_generated_field = "4FD467E2912A8CCA6B0DF0BC8D0D1212")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.842 -0400", hash_original_field = "9D1B3F5D17ED1B162A9028E26EB002CF", hash_generated_field = "4FD467E2912A8CCA6B0DF0BC8D0D1212")
 
     private ConcurrentHashMap<String,SIPDialog> sipDialogs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "F4C9163F3B67F1BAF07814D81D1A5BFF", hash_generated_field = "609F87DF574B03997F5F114A0B9D153C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.842 -0400", hash_original_field = "F4C9163F3B67F1BAF07814D81D1A5BFF", hash_generated_field = "609F87DF574B03997F5F114A0B9D153C")
 
     private SIPRequest lastRequest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "9FF65E805E77272D5E272AE178834E8E", hash_generated_field = "EBCE51BBA382AA4A4CBC72431B4DD4F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "9FF65E805E77272D5E272AE178834E8E", hash_generated_field = "EBCE51BBA382AA4A4CBC72431B4DD4F6")
 
     private int viaPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "08E65A0B18A72698816D81C11CBA7C86", hash_generated_field = "638E6682C500E41733363C20AADC9C2B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "08E65A0B18A72698816D81C11CBA7C86", hash_generated_field = "638E6682C500E41733363C20AADC9C2B")
 
     private String viaHost;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "C2F5B0984A31E2BF00C102C547210A78", hash_generated_field = "D5BADECCFB140300052474F1FF053995")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "C2F5B0984A31E2BF00C102C547210A78", hash_generated_field = "D5BADECCFB140300052474F1FF053995")
 
     private transient ServerResponseInterface respondTo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "F86AD9818A501BA0007B6D4CB23A57E7", hash_generated_field = "9DA006915F9968E7F19F133BB3970E72")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "F86AD9818A501BA0007B6D4CB23A57E7", hash_generated_field = "9DA006915F9968E7F19F133BB3970E72")
 
     private SIPDialog defaultDialog;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "75129D9368F303477B6712550E089B5E", hash_generated_field = "B633077E034AF130A4E0928C373CBB0D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "75129D9368F303477B6712550E089B5E", hash_generated_field = "B633077E034AF130A4E0928C373CBB0D")
 
     private Hop nextHop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "A6A57E5FB85DB2354843F5CFC0F10126", hash_generated_field = "F8A9EE3383846FA140533EA0DC849D5A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "A6A57E5FB85DB2354843F5CFC0F10126", hash_generated_field = "F8A9EE3383846FA140533EA0DC849D5A")
 
     private boolean notifyOnRetransmit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "3375F1DE75A740A2863FD66BD8AF168D", hash_generated_field = "3AFD3FC295AA4B6D90EAF77E52351862")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "3375F1DE75A740A2863FD66BD8AF168D", hash_generated_field = "3AFD3FC295AA4B6D90EAF77E52351862")
 
     private boolean timeoutIfStillInCallingState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.966 -0400", hash_original_field = "E6FA2A24AC6D7E8AC19BEC7E11CB1C83", hash_generated_field = "5D7F837D171773BD9460FE3577E94E41")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.843 -0400", hash_original_field = "E6FA2A24AC6D7E8AC19BEC7E11CB1C83", hash_generated_field = "5D7F837D171773BD9460FE3577E94E41")
 
     private int callingStateTimeoutCount;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.972 -0400", hash_original_method = "7433B8F0086E8DE587CA3684570FA4BD", hash_generated_method = "067FB17B6F6AE11389ED6511F33C90F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.844 -0400", hash_original_method = "7433B8F0086E8DE587CA3684570FA4BD", hash_generated_method = "F446C8378D46C4C591943F6C4453D6BE")
     protected  SIPClientTransaction(SIPTransactionStack newSIPStack, MessageChannel newChannelToUse) {
         super(newSIPStack, newChannelToUse);
         setBranch(Utils.getInstance().generateBranchId());
@@ -87,7 +87,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         this.notifyOnRetransmit = false;
         this.timeoutIfStillInCallingState = false;
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_722027964 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1842544249 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug("Creating clientTransaction " + this);
                 sipStack.getStackLogger().logStackTrace();
@@ -110,10 +110,10 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.976 -0400", hash_original_method = "A499701B9B92E6B9F8BD35BBCEA7DB79", hash_generated_method = "DA3FAEF140CECEF6317D007D18B62175")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.844 -0400", hash_original_method = "A499701B9B92E6B9F8BD35BBCEA7DB79", hash_generated_method = "E8641FFD5DB306D377A8EE6DEF3BC1FC")
     public void setResponseInterface(ServerResponseInterface newRespondTo) {
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_54286169 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1575599783 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(
                     "Setting response interface for " + this + " to " + newRespondTo);
@@ -137,26 +137,23 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.982 -0400", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "FE115D7B1442C290F632CFF795F891AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.845 -0400", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "D69DCCD30D92186EAEE5FFE761A8AECE")
     public MessageChannel getRequestChannel() {
-        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_220775114 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_220775114 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_220775114.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_220775114;
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_348289229 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_348289229 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_348289229.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_348289229;
         // ---------- Original Method ----------
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.983 -0400", hash_original_method = "C99C4952C168074F3FBA7AB2C1372665", hash_generated_method = "9E9B51ACBB95FCE67BC4F06C5A2D08C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.846 -0400", hash_original_method = "C99C4952C168074F3FBA7AB2C1372665", hash_generated_method = "BB32765329D0C34389A1BB5FD9FAC807")
     public boolean isMessagePartOfTransaction(SIPMessage messageToTest) {
-        ViaList viaHeaders;
-        viaHeaders = messageToTest.getViaHeaders();
+        ViaList viaHeaders = messageToTest.getViaHeaders();
         boolean transactionMatches;
-        String messageBranch;
-        messageBranch = ((Via) viaHeaders.getFirst()).getBranch();
-        boolean rfc3261Compliant;
-        rfc3261Compliant = getBranch() != null
+        String messageBranch = ((Via) viaHeaders.getFirst()).getBranch();
+        boolean rfc3261Compliant = getBranch() != null
                 && messageBranch != null
                 && getBranch().toLowerCase().startsWith(
                         SIPConstants.BRANCH_MAGIC_COOKIE_LOWER_CASE)
@@ -164,7 +161,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                         SIPConstants.BRANCH_MAGIC_COOKIE_LOWER_CASE);
         transactionMatches = false;
         {
-            boolean var2F79CB4BCABBD5F3A433F945127DDBD2_76945958 = (TransactionState.COMPLETED == this.getState());
+            boolean var2F79CB4BCABBD5F3A433F945127DDBD2_256928596 = (TransactionState.COMPLETED == this.getState());
             {
                 {
                     transactionMatches = getBranch().equalsIgnoreCase(
@@ -176,12 +173,12 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End block
             } //End block
             {
-                boolean var4F6CD6D8A31BF3B11E9F83A356F12FC6_1507677644 = (!isTerminated());
+                boolean var4F6CD6D8A31BF3B11E9F83A356F12FC6_1054347131 = (!isTerminated());
                 {
                     {
                         {
                             {
-                                boolean var5CEA4B7C3D6656CEEE85E8A7100BD5A9_1819431648 = (getBranch().equalsIgnoreCase(((Via) viaHeaders.getFirst()).getBranch()));
+                                boolean var5CEA4B7C3D6656CEEE85E8A7100BD5A9_151084922 = (getBranch().equalsIgnoreCase(((Via) viaHeaders.getFirst()).getBranch()));
                                 {
                                     transactionMatches = getOriginalRequest().getCSeq().getMethod().equals(
                                 messageToTest.getCSeq().getMethod());
@@ -191,7 +188,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End block
                     {
                         {
-                            boolean var96AF238F72E19E08C6B3BF39DB7BF3FD_1957426583 = (getBranch() != null);
+                            boolean var96AF238F72E19E08C6B3BF39DB7BF3FD_675446482 = (getBranch() != null);
                             {
                                 transactionMatches = getBranch().equalsIgnoreCase(
                             messageToTest.getTransactionId());
@@ -206,21 +203,20 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             } //End collapsed parenthetic
         } //End collapsed parenthetic
         addTaint(messageToTest.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_902113944 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_902113944;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_580865364 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_580865364;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.989 -0400", hash_original_method = "1DFD8968C3CA232EAF5E448E3048EE02", hash_generated_method = "9002711D91B98B42FC4E622EEF788467")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.848 -0400", hash_original_method = "1DFD8968C3CA232EAF5E448E3048EE02", hash_generated_method = "3A5EBD8897E07D41E94C88C8DFB4AF86")
     public void sendMessage(SIPMessage messageToSend) throws IOException {
         try 
         {
             SIPRequest transactionRequest;
             transactionRequest = (SIPRequest) messageToSend;
-            Via topVia;
-            topVia = (Via) transactionRequest.getViaHeaders().getFirst();
+            Via topVia = (Via) transactionRequest.getViaHeaders().getFirst();
             try 
             {
                 topVia.setBranch(getBranch());
@@ -228,21 +224,21 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             catch (java.text.ParseException ex)
             { }
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_792452087 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1765670466 = (sipStack.isLoggingEnabled());
                 {
                     sipStack.getStackLogger().logDebug("Sending Message " + messageToSend);
                     sipStack.getStackLogger().logDebug("TransactionState " + this.getState());
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var219D65251EB1FDB59693C07BE2A172E8_1786246861 = (TransactionState.PROCEEDING == getState()
+                boolean var219D65251EB1FDB59693C07BE2A172E8_1046523431 = (TransactionState.PROCEEDING == getState()
                     || TransactionState.CALLING == getState());
                 {
                     {
-                        boolean var8D053AB4B3CFB63570DCA353E515296A_280892347 = (transactionRequest.getMethod().equals(Request.ACK));
+                        boolean var8D053AB4B3CFB63570DCA353E515296A_499813063 = (transactionRequest.getMethod().equals(Request.ACK));
                         {
                             {
-                                boolean varAA2EB0E74B91BC9EF1AAA23EA709EFB9_686191664 = (isReliable());
+                                boolean varAA2EB0E74B91BC9EF1AAA23EA709EFB9_7724632 = (isReliable());
                                 {
                                     this.setState(TransactionState.TERMINATED);
                                 } //End block
@@ -259,16 +255,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             {
                 lastRequest = transactionRequest;
                 {
-                    boolean varC69030881E0CB32D3F6B7D9BAF47F033_1997857403 = (getState() == null);
+                    boolean varC69030881E0CB32D3F6B7D9BAF47F033_1846400794 = (getState() == null);
                     {
                         setOriginalRequest(transactionRequest);
                         {
-                            boolean varF62BD1B6240A1DE079CC44210FB08681_1360841314 = (transactionRequest.getMethod().equals(Request.INVITE));
+                            boolean varF62BD1B6240A1DE079CC44210FB08681_84114852 = (transactionRequest.getMethod().equals(Request.INVITE));
                             {
                                 this.setState(TransactionState.CALLING);
                             } //End block
                             {
-                                boolean var9E22013ED427D36FC8A42917F8A06467_1465126692 = (transactionRequest.getMethod().equals(Request.ACK));
+                                boolean var9E22013ED427D36FC8A42917F8A06467_674238166 = (transactionRequest.getMethod().equals(Request.ACK));
                                 {
                                     this.setState(TransactionState.TERMINATED);
                                 } //End block
@@ -278,13 +274,13 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                             } //End collapsed parenthetic
                         } //End collapsed parenthetic
                         {
-                            boolean var6400A483252621139629FC45C6113F96_107818601 = (!isReliable());
+                            boolean var6400A483252621139629FC45C6113F96_364783528 = (!isReliable());
                             {
                                 enableRetransmissionTimer();
                             } //End block
                         } //End collapsed parenthetic
                         {
-                            boolean var90CDBC638C52197AEFD58A39118A4F7B_1217179005 = (isInviteTransaction());
+                            boolean var90CDBC638C52197AEFD58A39118A4F7B_2050071033 = (isInviteTransaction());
                             {
                                 enableTimeoutTimer(TIMER_B);
                             } //End block
@@ -313,19 +309,19 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.995 -0400", hash_original_method = "27FC8E987828EB63A48AA2B14048F41C", hash_generated_method = "C0003FA98412EC17D049767B9E48263F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.848 -0400", hash_original_method = "27FC8E987828EB63A48AA2B14048F41C", hash_generated_method = "3D1096A3D4A282E096D7DA9D75B42BEF")
     public synchronized void processResponse(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) {
         {
-            boolean varE76D73BC71B270FCC7DC9D3198957423_28443480 = (getState() == null);
+            boolean varE76D73BC71B270FCC7DC9D3198957423_2002543046 = (getState() == null);
         } //End collapsed parenthetic
         {
-            boolean varA2852360A07253ACD3CD7CE5D8204CAB_1297599937 = ((TransactionState.COMPLETED == this.getState() || TransactionState.TERMINATED == this
+            boolean varA2852360A07253ACD3CD7CE5D8204CAB_1687348799 = ((TransactionState.COMPLETED == this.getState() || TransactionState.TERMINATED == this
                 .getState())
                 && transactionResponse.getStatusCode() / 100 == 1);
         } //End collapsed parenthetic
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1168512215 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1423688598 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(
                     "processing " + transactionResponse.getFirstLine() + "current state = "
@@ -337,7 +333,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         try 
         {
             {
-                boolean varF126D802AC06D34E85E28E6209C2BC97_336957565 = (isInviteTransaction());
+                boolean varF126D802AC06D34E85E28E6209C2BC97_1586648462 = (isInviteTransaction());
                 inviteClientTransaction(transactionResponse, sourceChannel, dialog);
                 nonInviteClientTransaction(transactionResponse, sourceChannel, dialog);
             } //End collapsed parenthetic
@@ -345,7 +341,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         catch (IOException ex)
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_770672867 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_187077538 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logException(ex);
             } //End collapsed parenthetic
             this.setState(TransactionState.TERMINATED);
@@ -359,13 +355,12 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.996 -0400", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "0968D5DB831B1E02C9DE06E3C5E573CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.849 -0400", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "651404ED2F0910E528C2497A0A312777")
     private void nonInviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog sipDialog) throws IOException {
-        int statusCode;
-        statusCode = transactionResponse.getStatusCode();
+        int statusCode = transactionResponse.getStatusCode();
         {
-            boolean varC968CD9C1FC4F438A611F7A7272EB280_1326519496 = (TransactionState.TRYING == this.getState());
+            boolean varC968CD9C1FC4F438A611F7A7272EB280_33901212 = (TransactionState.TRYING == this.getState());
             {
                 {
                     this.setState(TransactionState.PROCEEDING);
@@ -386,7 +381,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                         this.semRelease();
                     } //End block
                     {
-                        boolean varE50099A69BBB2F1277A12DA84DAC7141_1911555477 = (!isReliable());
+                        boolean varE50099A69BBB2F1277A12DA84DAC7141_905691852 = (!isReliable());
                         {
                             this.setState(TransactionState.COMPLETED);
                             enableTimeoutTimer(TIMER_K);
@@ -398,7 +393,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End block
             } //End block
             {
-                boolean varDE96CE40FAB1EC19FEE71BD4FF3FF6A4_816578236 = (TransactionState.PROCEEDING == this.getState());
+                boolean varDE96CE40FAB1EC19FEE71BD4FF3FF6A4_1470872836 = (TransactionState.PROCEEDING == this.getState());
                 {
                     {
                         {
@@ -418,7 +413,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                         disableRetransmissionTimer();
                         disableTimeoutTimer();
                         {
-                            boolean var6400A483252621139629FC45C6113F96_589981707 = (!isReliable());
+                            boolean var6400A483252621139629FC45C6113F96_1517077882 = (!isReliable());
                             {
                                 this.setState(TransactionState.COMPLETED);
                                 enableTimeoutTimer(TIMER_K);
@@ -431,7 +426,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End block
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1201432909 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1293562285 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug(
                         " Not sending response to TU! " + getState());
@@ -449,21 +444,19 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.005 -0400", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "74446D59EB3CAA7A74F992665D367DD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.851 -0400", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "48B14FB587173ADBC0E7297941C080EA")
     private void inviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) throws IOException {
-        int statusCode;
-        statusCode = transactionResponse.getStatusCode();
+        int statusCode = transactionResponse.getStatusCode();
         {
-            boolean var3E1810922DAA236CCE1F0B7509376A43_2124252942 = (TransactionState.TERMINATED == this.getState());
+            boolean var3E1810922DAA236CCE1F0B7509376A43_1298411574 = (TransactionState.TERMINATED == this.getState());
             {
-                boolean ackAlreadySent;
-                ackAlreadySent = false;
+                boolean ackAlreadySent = false;
                 {
-                    boolean var19306E120BE9D264E51B259436F37B29_935189390 = (dialog != null && dialog.isAckSeen() && dialog.getLastAckSent() != null);
+                    boolean var19306E120BE9D264E51B259436F37B29_1284546219 = (dialog != null && dialog.isAckSeen() && dialog.getLastAckSent() != null);
                     {
                         {
-                            boolean varBF822AAB6CF61DD6130DC2E8CF7B1D87_1616374780 = (dialog.getLastAckSent().getCSeq().getSeqNumber() == transactionResponse.getCSeq()
+                            boolean varBF822AAB6CF61DD6130DC2E8CF7B1D87_1236414419 = (dialog.getLastAckSent().getCSeq().getSeqNumber() == transactionResponse.getCSeq()
                         .getSeqNumber()
                         && transactionResponse.getFromTag().equals(
                                 dialog.getLastAckSent().getFromTag()));
@@ -474,13 +467,13 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varEC1CFF0A2A82B6BD98A9B67A0D47F0E0_361069325 = (dialog!= null && ackAlreadySent
+                    boolean varEC1CFF0A2A82B6BD98A9B67A0D47F0E0_1021017169 = (dialog!= null && ackAlreadySent
                     && transactionResponse.getCSeq().getMethod().equals(dialog.getMethod()));
                     {
                         try 
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_761486893 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1462398066 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logDebug("resending ACK");
                             } //End collapsed parenthetic
                             dialog.resendAck();
@@ -492,7 +485,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 this.semRelease();
             } //End block
             {
-                boolean var6AABC11187F015DBC15DBF91F29746C6_996080511 = (TransactionState.CALLING == this.getState());
+                boolean var6AABC11187F015DBC15DBF91F29746C6_439038760 = (TransactionState.CALLING == this.getState());
                 {
                     {
                         disableRetransmissionTimer();
@@ -529,13 +522,13 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                             this.semRelease();
                         } //End block
                         {
-                            boolean varEE55C49A27AE3B7CBFE2F02F6CDDC5E9_2012828250 = (this.getDialog() != null &&  ((SIPDialog)this.getDialog()).isBackToBackUserAgent());
+                            boolean varEE55C49A27AE3B7CBFE2F02F6CDDC5E9_149296173 = (this.getDialog() != null &&  ((SIPDialog)this.getDialog()).isBackToBackUserAgent());
                             {
                                 ((SIPDialog) this.getDialog()).releaseAckSem();
                             } //End block
                         } //End collapsed parenthetic
                         {
-                            boolean var6400A483252621139629FC45C6113F96_268937539 = (!isReliable());
+                            boolean var6400A483252621139629FC45C6113F96_1268000651 = (!isReliable());
                             {
                                 this.setState(TransactionState.COMPLETED);
                                 enableTimeoutTimer(TIMER_D);
@@ -547,7 +540,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End block
                 } //End block
                 {
-                    boolean varD4C99897269968D7787452ACF03B2454_315757244 = (TransactionState.PROCEEDING == this.getState());
+                    boolean varD4C99897269968D7787452ACF03B2454_1093265368 = (TransactionState.PROCEEDING == this.getState());
                     {
                         {
                             {
@@ -576,13 +569,13 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                                 InternalErrorHandler.handleException(ex);
                             } //End block
                             {
-                                boolean var21341DE354DBCBD7F5D753D406CC2DD6_1303319279 = (this.getDialog() != null);
+                                boolean var21341DE354DBCBD7F5D753D406CC2DD6_1519963627 = (this.getDialog() != null);
                                 {
                                     ((SIPDialog) this.getDialog()).releaseAckSem();
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                boolean var22210305B3706CCEBD8C0B502050721F_1828522099 = (!isReliable());
+                                boolean var22210305B3706CCEBD8C0B502050721F_1038007628 = (!isReliable());
                                 {
                                     this.setState(TransactionState.COMPLETED);
                                     this.enableTimeoutTimer(TIMER_D);
@@ -598,7 +591,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                         } //End block
                     } //End block
                     {
-                        boolean var8C1A7878C3537DB42D996A959ACB223D_148290182 = (TransactionState.COMPLETED == this.getState());
+                        boolean var8C1A7878C3537DB42D996A959ACB223D_1529548908 = (TransactionState.COMPLETED == this.getState());
                         {
                             {
                                 try 
@@ -627,16 +620,15 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.017 -0400", hash_original_method = "9C1F15FBE6A7795E5EE0D6BE4F94BCBE", hash_generated_method = "A0B7558664C526F3934AB2759C849A53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.852 -0400", hash_original_method = "9C1F15FBE6A7795E5EE0D6BE4F94BCBE", hash_generated_method = "C7AE6160A0BDDFE2AC116513040C9556")
     public void sendRequest() throws SipException {
-        SIPRequest sipRequest;
-        sipRequest = this.getOriginalRequest();
+        SIPRequest sipRequest = this.getOriginalRequest();
         {
-            boolean var5F3B63336C4433C300EDF029038A6C22_335440690 = (this.getState() != null);
+            boolean var5F3B63336C4433C300EDF029038A6C22_1999617907 = (this.getState() != null);
             if (DroidSafeAndroidRuntime.control) throw new SipException("Request already sent");
         } //End collapsed parenthetic
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_73228227 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1835181098 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug("sendRequest() " + sipRequest);
             } //End block
@@ -648,17 +640,17 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         catch (ParseException ex)
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_16090657 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1755021939 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logError("missing required header");
             } //End collapsed parenthetic
             if (DroidSafeAndroidRuntime.control) throw new SipException(ex.getMessage());
         } //End block
         {
-            boolean var820257507A310D8AF36355A9AD2BA48D_2037682141 = (getMethod().equals(Request.SUBSCRIBE)
+            boolean var820257507A310D8AF36355A9AD2BA48D_179899700 = (getMethod().equals(Request.SUBSCRIBE)
                 && sipRequest.getHeader(ExpiresHeader.NAME) == null);
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_40236260 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_754870698 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logWarning(
                     "Expires header missing in outgoing subscribe --"
                             + " Notifier will assume implied value on event package");
@@ -668,23 +660,22 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         try 
         {
             {
-                boolean var318B68FE13188E5CF00AFCF6916271A5_1686634546 = (this.getOriginalRequest().getMethod().equals(Request.CANCEL)
+                boolean var318B68FE13188E5CF00AFCF6916271A5_1387827013 = (this.getOriginalRequest().getMethod().equals(Request.CANCEL)
                     && sipStack.isCancelClientTransactionChecked());
                 {
-                    SIPClientTransaction ct;
-                    ct = (SIPClientTransaction) sipStack.findCancelTransaction(
+                    SIPClientTransaction ct = (SIPClientTransaction) sipStack.findCancelTransaction(
                         this.getOriginalRequest(), false);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new SipException("Could not find original tx to cancel. RFC 3261 9.1");
                     } //End block
                     {
-                        boolean varEA0B50AF0098703E4B38DDE85F0C6921_392108569 = (ct.getState() == null);
+                        boolean varEA0B50AF0098703E4B38DDE85F0C6921_1321353767 = (ct.getState() == null);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new SipException(
                             "State is null no provisional response yet -- cannot cancel RFC 3261 9.1");
                         } //End block
                         {
-                            boolean varA13443824E4796F0FD53BAC050780DAB_1687542196 = (!ct.getMethod().equals(Request.INVITE));
+                            boolean varA13443824E4796F0FD53BAC050780DAB_2042315791 = (!ct.getMethod().equals(Request.INVITE));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot cancel non-invite requests RFC 3261 9.1");
                             } //End block
@@ -692,14 +683,13 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varD4977AF0B5B23F4157209F1FCE74E90F_823030850 = (this.getOriginalRequest().getMethod().equals(Request.BYE)
+                    boolean varD4977AF0B5B23F4157209F1FCE74E90F_571176772 = (this.getOriginalRequest().getMethod().equals(Request.BYE)
                     || this.getOriginalRequest().getMethod().equals(Request.NOTIFY));
                     {
-                        SIPDialog dialog;
-                        dialog = sipStack.getDialog(this.getOriginalRequest()
+                        SIPDialog dialog = sipStack.getDialog(this.getOriginalRequest()
                         .getDialogId(false));
                         {
-                            boolean var8ABAC142ED80BB89B4590C8EA00C5515_1447809944 = (this.getSipProvider().isAutomaticDialogSupportEnabled() && dialog != null);
+                            boolean var8ABAC142ED80BB89B4590C8EA00C5515_99729284 = (this.getSipProvider().isAutomaticDialogSupportEnabled() && dialog != null);
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new SipException(
                             "Dialog is present and AutomaticDialogSupport is enabled for "
@@ -710,15 +700,14 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
             {
-                boolean var812EAB2B90D4924E111DE9ACDFD47D2D_1577568624 = (this.getMethod().equals(Request.INVITE));
+                boolean var812EAB2B90D4924E111DE9ACDFD47D2D_1335581572 = (this.getMethod().equals(Request.INVITE));
                 {
-                    SIPDialog dialog;
-                    dialog = this.getDefaultDialog();
+                    SIPDialog dialog = this.getDefaultDialog();
                     {
-                        boolean varC7B62845BBFBCF228194AFDC8EE17A0F_683812510 = (dialog != null && dialog.isBackToBackUserAgent());
+                        boolean varC7B62845BBFBCF228194AFDC8EE17A0F_1032760168 = (dialog != null && dialog.isBackToBackUserAgent());
                         {
                             {
-                                boolean var0AAD1CBCC17317BC020B7366C0E43AD5_529417772 = (! dialog.takeAckSem());
+                                boolean var0AAD1CBCC17317BC020B7366C0E43AD5_1245357346 = (! dialog.takeAckSem());
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new SipException ("Failed to take ACK semaphore");
                                 } //End block
@@ -740,27 +729,23 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.019 -0400", hash_original_method = "328DA368C3B0C5FF79EC2B4ACE66A1A9", hash_generated_method = "45125CCC3FAC4700B5E7E3EEF9561ED1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.853 -0400", hash_original_method = "328DA368C3B0C5FF79EC2B4ACE66A1A9", hash_generated_method = "4D36646588B7DF0BA30205F525E06B2A")
     protected void fireRetransmissionTimer() {
         try 
         {
             {
-                boolean varF34F8E24C31250F5E4052AC1FB7D63CE_1881334353 = (this.getState() == null || !this.isMapped);
+                boolean varF34F8E24C31250F5E4052AC1FB7D63CE_1777611433 = (this.getState() == null || !this.isMapped);
             } //End collapsed parenthetic
-            boolean inv;
-            inv = isInviteTransaction();
-            TransactionState s;
-            s = this.getState();
+            boolean inv = isInviteTransaction();
+            TransactionState s = this.getState();
             {
                 {
                     {
-                        boolean var362664B439C1234CDC3CE46AD8B5EC7F_390031520 = (sipStack.generateTimeStampHeader
+                        boolean var362664B439C1234CDC3CE46AD8B5EC7F_864979444 = (sipStack.generateTimeStampHeader
                             && lastRequest.getHeader(TimeStampHeader.NAME) != null);
                         {
-                            long milisec;
-                            milisec = System.currentTimeMillis();
-                            TimeStamp timeStamp;
-                            timeStamp = new TimeStamp();
+                            long milisec = System.currentTimeMillis();
+                            TimeStamp timeStamp = new TimeStamp();
                             try 
                             {
                                 timeStamp.setTimeStamp(milisec);
@@ -774,18 +759,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End collapsed parenthetic
                     super.sendMessage(lastRequest);
                     {
-                        TimeoutEvent txTimeout;
-                        txTimeout = new TimeoutEvent(this.getSipProvider(), this,
+                        TimeoutEvent txTimeout = new TimeoutEvent(this.getSipProvider(), this,
                                 Timeout.RETRANSMIT);
                         this.getSipProvider().handleEvent(txTimeout, this);
                     } //End block
                     {
-                        boolean var55B500A3FDF003CB88EA4E921DECAEA2_1582033325 = (this.timeoutIfStillInCallingState
+                        boolean var55B500A3FDF003CB88EA4E921DECAEA2_2057216452 = (this.timeoutIfStillInCallingState
                             && this.getState() == TransactionState.CALLING);
                         {
                             {
-                                TimeoutEvent timeoutEvent;
-                                timeoutEvent = new TimeoutEvent(this.getSipProvider(),
+                                TimeoutEvent timeoutEvent = new TimeoutEvent(this.getSipProvider(),
                                     this, Timeout.RETRANSMIT);
                                 this.getSipProvider().handleEvent(timeoutEvent, this);
                                 this.timeoutIfStillInCallingState = false;
@@ -805,25 +788,24 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.029 -0400", hash_original_method = "F0DB4D0E841E14FF88BA6095928288BF", hash_generated_method = "B881640B7C27387023DCAB13877E4E3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.854 -0400", hash_original_method = "F0DB4D0E841E14FF88BA6095928288BF", hash_generated_method = "17445719A176F04EA0B67C9E19CA5AFC")
     protected void fireTimeoutTimer() {
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_595358183 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_160594403 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("fireTimeoutTimer " + this);
         } //End collapsed parenthetic
-        SIPDialog dialog;
-        dialog = (SIPDialog) this.getDialog();
+        SIPDialog dialog = (SIPDialog) this.getDialog();
         {
-            boolean varC9F46915C5C0D473164D5D23DADB13DA_1884641028 = (TransactionState.CALLING == this.getState()
+            boolean varC9F46915C5C0D473164D5D23DADB13DA_806829303 = (TransactionState.CALLING == this.getState()
                 || TransactionState.TRYING == this.getState()
                 || TransactionState.PROCEEDING == this.getState());
             {
                 {
-                    boolean var55AB3B53A0926BE91060C867235A4DEA_488595108 = (dialog != null
+                    boolean var55AB3B53A0926BE91060C867235A4DEA_1335956097 = (dialog != null
                     && (dialog.getState() == null || dialog.getState() == DialogState.EARLY));
                     {
                         {
-                            boolean var242BDFFA40347198F760BB7493B3A654_465390481 = (((SIPTransactionStack) getSIPStack()).isDialogCreated(this
+                            boolean var242BDFFA40347198F760BB7493B3A654_416819508 = (((SIPTransactionStack) getSIPStack()).isDialogCreated(this
                         .getOriginalRequest().getMethod()));
                             {
                                 dialog.delete();
@@ -832,7 +814,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     } //End block
                     {
                         {
-                            boolean varC79FCB4848976BFC5400B5E95B3F8ACB_1043097097 = (getOriginalRequest().getMethod().equalsIgnoreCase(Request.BYE)
+                            boolean varC79FCB4848976BFC5400B5E95B3F8ACB_1907856795 = (getOriginalRequest().getMethod().equalsIgnoreCase(Request.BYE)
                         && dialog.isTerminatedOnBye());
                             {
                                 dialog.delete();
@@ -843,17 +825,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var58BB9C9C8854A0CE328AD570113B87D4_443292811 = (TransactionState.COMPLETED != this.getState());
+            boolean var58BB9C9C8854A0CE328AD570113B87D4_25094033 = (TransactionState.COMPLETED != this.getState());
             {
                 raiseErrorEvent(SIPTransactionErrorEvent.TIMEOUT_ERROR);
                 {
-                    boolean var70A6005E7B48E353B69F5438AD3CE0FC_1294409963 = (this.getOriginalRequest().getMethod().equalsIgnoreCase(Request.CANCEL));
+                    boolean var70A6005E7B48E353B69F5438AD3CE0FC_1513809806 = (this.getOriginalRequest().getMethod().equalsIgnoreCase(Request.CANCEL));
                     {
-                        SIPClientTransaction inviteTx;
-                        inviteTx = (SIPClientTransaction) this.getOriginalRequest()
+                        SIPClientTransaction inviteTx = (SIPClientTransaction) this.getOriginalRequest()
                         .getInviteTransaction();
                         {
-                            boolean varC3A7C39326E116DEB20C0C14912483B7_410797387 = (inviteTx != null
+                            boolean varC3A7C39326E116DEB20C0C14912483B7_264081271 = (inviteTx != null
                         && ((inviteTx.getState() == TransactionState.CALLING || inviteTx
                                 .getState() == TransactionState.PROCEEDING))
                         && inviteTx.getDialog() != null);
@@ -873,28 +854,26 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.031 -0400", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "CCC42F915A3D0EDFC877077572F671B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.855 -0400", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "A75C791D348328209BDF890BB0626AFB")
     public Request createCancel() throws SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1856665329 = null; //Variable for return #1
-        SIPRequest originalRequest;
-        originalRequest = this.getOriginalRequest();
+        Request varB4EAC82CA7396A68D541C85D26508E83_1237645086 = null; //Variable for return #1
+        SIPRequest originalRequest = this.getOriginalRequest();
         if (DroidSafeAndroidRuntime.control) throw new SipException("Bad state " + getState());
         {
-            boolean var360DD8E773A2E8A5ED1271BA39E980C5_1389590749 = (!originalRequest.getMethod().equals(Request.INVITE));
+            boolean var360DD8E773A2E8A5ED1271BA39E980C5_142073595 = (!originalRequest.getMethod().equals(Request.INVITE));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Only INIVTE may be cancelled");
         } //End collapsed parenthetic
         {
-            boolean var324A2F774D9632F9564E3561EDEA142B_172568615 = (originalRequest.getMethod().equalsIgnoreCase(Request.ACK));
+            boolean var324A2F774D9632F9564E3561EDEA142B_2056330753 = (originalRequest.getMethod().equalsIgnoreCase(Request.ACK));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot Cancel ACK!");
             {
-                SIPRequest cancelRequest;
-                cancelRequest = originalRequest.createCancelRequest();
+                SIPRequest cancelRequest = originalRequest.createCancelRequest();
                 cancelRequest.setInviteTransaction(this);
-                varB4EAC82CA7396A68D541C85D26508E83_1856665329 = cancelRequest;
+                varB4EAC82CA7396A68D541C85D26508E83_1237645086 = cancelRequest;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1856665329.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1856665329;
+        varB4EAC82CA7396A68D541C85D26508E83_1237645086.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1237645086;
         // ---------- Original Method ----------
         //SIPRequest originalRequest = this.getOriginalRequest();
         //if (originalRequest == null)
@@ -911,15 +890,14 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.037 -0400", hash_original_method = "59092618FB848453FA0559AC58047778", hash_generated_method = "575356BAAAE15AEB466AFCDA4B26D51A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.856 -0400", hash_original_method = "59092618FB848453FA0559AC58047778", hash_generated_method = "04B1CAEAD29F36EC6CD52FB89ED09F59")
     public Request createAck() throws SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_15859694 = null; //Variable for return #1
-        Request varB4EAC82CA7396A68D541C85D26508E83_1533806419 = null; //Variable for return #2
-        SIPRequest originalRequest;
-        originalRequest = this.getOriginalRequest();
+        Request varB4EAC82CA7396A68D541C85D26508E83_895711128 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1867027082 = null; //Variable for return #2
+        SIPRequest originalRequest = this.getOriginalRequest();
         if (DroidSafeAndroidRuntime.control) throw new SipException("bad state " + getState());
         {
-            boolean var23CDF0CAAEDB841CA67299E2DE2D191F_262467617 = (getMethod().equalsIgnoreCase(Request.ACK));
+            boolean var23CDF0CAAEDB841CA67299E2DE2D191F_2030671781 = (getMethod().equalsIgnoreCase(Request.ACK));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot ACK an ACK!");
             } //End block
@@ -927,10 +905,10 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 if (DroidSafeAndroidRuntime.control) throw new SipException("bad Transaction state");
             } //End block
             {
-                boolean var012D721CAF7801CBBD1DCFB98FA22683_200382493 = (lastResponse.getStatusCode() < 200);
+                boolean var012D721CAF7801CBBD1DCFB98FA22683_701587943 = (lastResponse.getStatusCode() < 200);
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1106899919 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_123673236 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
                         } //End block
@@ -939,103 +917,89 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        SIPRequest ackRequest;
-        ackRequest = originalRequest.createAckRequest((To) lastResponse.getTo());
-        RecordRouteList recordRouteList;
-        recordRouteList = lastResponse.getRecordRouteHeaders();
+        SIPRequest ackRequest = originalRequest.createAckRequest((To) lastResponse.getTo());
+        RecordRouteList recordRouteList = lastResponse.getRecordRouteHeaders();
         {
             {
-                boolean var7DAFF59FCF080B5E5F9653EE735BA443_1220228339 = (lastResponse.getContactHeaders() != null
+                boolean var7DAFF59FCF080B5E5F9653EE735BA443_1315934044 = (lastResponse.getContactHeaders() != null
                     && lastResponse.getStatusCode() / 100 != 3);
                 {
-                    Contact contact;
-                    contact = (Contact) lastResponse.getContactHeaders().getFirst();
-                    javax.sip.address.URI uri;
-                    uri = (javax.sip.address.URI) contact.getAddress().getURI()
+                    Contact contact = (Contact) lastResponse.getContactHeaders().getFirst();
+                    javax.sip.address.URI uri = (javax.sip.address.URI) contact.getAddress().getURI()
                         .clone();
                     ackRequest.setRequestURI(uri);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_15859694 = ackRequest;
+            varB4EAC82CA7396A68D541C85D26508E83_895711128 = ackRequest;
         } //End block
         ackRequest.removeHeader(RouteHeader.NAME);
-        RouteList routeList;
-        routeList = new RouteList();
-        ListIterator<RecordRoute> li;
-        li = recordRouteList.listIterator(recordRouteList.size());
+        RouteList routeList = new RouteList();
+        ListIterator<RecordRoute> li = recordRouteList.listIterator(recordRouteList.size());
         {
-            boolean var34E820506DA7A52D1D64148C53A15353_1049129566 = (li.hasPrevious());
+            boolean var34E820506DA7A52D1D64148C53A15353_1681592694 = (li.hasPrevious());
             {
-                RecordRoute rr;
-                rr = (RecordRoute) li.previous();
-                Route route;
-                route = new Route();
+                RecordRoute rr = (RecordRoute) li.previous();
+                Route route = new Route();
                 route.setAddress((AddressImpl) ((AddressImpl) rr.getAddress()).clone());
                 route.setParameters((NameValueList) rr.getParameters().clone());
                 routeList.add(route);
             } //End block
         } //End collapsed parenthetic
-        Contact contact;
-        contact = null;
+        Contact contact = null;
         {
-            boolean var782AA6724CEB5153F134EFA15DEC0D09_794880381 = (lastResponse.getContactHeaders() != null);
+            boolean var782AA6724CEB5153F134EFA15DEC0D09_256624262 = (lastResponse.getContactHeaders() != null);
             {
                 contact = (Contact) lastResponse.getContactHeaders().getFirst();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var70FEFC8E2B4A4EA64B93BD56266D6258_1027323195 = (!((SipURI) ((Route) routeList.getFirst()).getAddress().getURI()).hasLrParam());
+            boolean var70FEFC8E2B4A4EA64B93BD56266D6258_71530969 = (!((SipURI) ((Route) routeList.getFirst()).getAddress().getURI()).hasLrParam());
             {
-                Route route;
-                route = null;
+                Route route = null;
                 {
                     route = new Route();
                     route.setAddress((AddressImpl) ((AddressImpl) (contact.getAddress())).clone());
                 } //End block
-                Route firstRoute;
-                firstRoute = (Route) routeList.getFirst();
+                Route firstRoute = (Route) routeList.getFirst();
                 routeList.removeFirst();
-                javax.sip.address.URI uri;
-                uri = firstRoute.getAddress().getURI();
+                javax.sip.address.URI uri = firstRoute.getAddress().getURI();
                 ackRequest.setRequestURI(uri);
                 routeList.add(route);
                 ackRequest.addHeader(routeList);
             } //End block
             {
                 {
-                    javax.sip.address.URI uri;
-                    uri = (javax.sip.address.URI) contact.getAddress().getURI()
+                    javax.sip.address.URI uri = (javax.sip.address.URI) contact.getAddress().getURI()
                         .clone();
                     ackRequest.setRequestURI(uri);
                     ackRequest.addHeader(routeList);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1533806419 = ackRequest;
-        Request varA7E53CE21691AB073D9660D615818899_950668720; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1867027082 = ackRequest;
+        Request varA7E53CE21691AB073D9660D615818899_1312207272; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_950668720 = varB4EAC82CA7396A68D541C85D26508E83_15859694;
+                varA7E53CE21691AB073D9660D615818899_1312207272 = varB4EAC82CA7396A68D541C85D26508E83_895711128;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_950668720 = varB4EAC82CA7396A68D541C85D26508E83_1533806419;
+                varA7E53CE21691AB073D9660D615818899_1312207272 = varB4EAC82CA7396A68D541C85D26508E83_1867027082;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_950668720.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_950668720;
+        varA7E53CE21691AB073D9660D615818899_1312207272.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1312207272;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.043 -0400", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "10EB4B2E607C3C473F1ACC7406402CAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.858 -0400", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "BC37F83AC36252D869488BEB315EBD34")
     private final Request createErrorAck() throws SipException, ParseException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_426483583 = null; //Variable for return #1
-        SIPRequest originalRequest;
-        originalRequest = this.getOriginalRequest();
+        Request varB4EAC82CA7396A68D541C85D26508E83_1452087137 = null; //Variable for return #1
+        SIPRequest originalRequest = this.getOriginalRequest();
         if (DroidSafeAndroidRuntime.control) throw new SipException("bad state " + getState());
         {
-            boolean var023D4CF241B205BA58114F71AFE92AC0_1140285391 = (!getMethod().equals(Request.INVITE));
+            boolean var023D4CF241B205BA58114F71AFE92AC0_962924174 = (!getMethod().equals(Request.INVITE));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Can only ACK an INVITE!");
             } //End block
@@ -1043,10 +1007,10 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 if (DroidSafeAndroidRuntime.control) throw new SipException("bad Transaction state");
             } //End block
             {
-                boolean var012D721CAF7801CBBD1DCFB98FA22683_263796026 = (lastResponse.getStatusCode() < 200);
+                boolean var012D721CAF7801CBBD1DCFB98FA22683_197687384 = (lastResponse.getStatusCode() < 200);
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1133875395 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1766808607 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
                         } //End block
@@ -1055,9 +1019,9 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_426483583 = originalRequest.createErrorAck((To) lastResponse.getTo());
-        varB4EAC82CA7396A68D541C85D26508E83_426483583.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_426483583;
+        varB4EAC82CA7396A68D541C85D26508E83_1452087137 = originalRequest.createErrorAck((To) lastResponse.getTo());
+        varB4EAC82CA7396A68D541C85D26508E83_1452087137.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1452087137;
         // ---------- Original Method ----------
         //SIPRequest originalRequest = this.getOriginalRequest();
         //if (originalRequest == null)
@@ -1076,7 +1040,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.043 -0400", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "F178A79F5020E3C9AEE90D08526F030A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.858 -0400", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "F178A79F5020E3C9AEE90D08526F030A")
     protected void setViaPort(int port) {
         this.viaPort = port;
         // ---------- Original Method ----------
@@ -1084,7 +1048,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.047 -0400", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "49F7B6C2EB4C3BA81CAAD6672E78455A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.859 -0400", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "49F7B6C2EB4C3BA81CAAD6672E78455A")
     protected void setViaHost(String host) {
         this.viaHost = host;
         // ---------- Original Method ----------
@@ -1092,54 +1056,54 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.052 -0400", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "838C88CCE8042C3B3F8BABD37146FFBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.860 -0400", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "8C77084F83DA956A35960506093E182B")
     public int getViaPort() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869537885 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869537885;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352251860 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352251860;
         // ---------- Original Method ----------
         //return this.viaPort;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.052 -0400", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "66A99AA256D58D044D65710CD2377F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.861 -0400", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "D1F80CE8A4F06E1593140477F8FF4212")
     public String getViaHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2142187974 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2142187974 = this.viaHost;
-        varB4EAC82CA7396A68D541C85D26508E83_2142187974.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2142187974;
+        String varB4EAC82CA7396A68D541C85D26508E83_1180059923 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1180059923 = this.viaHost;
+        varB4EAC82CA7396A68D541C85D26508E83_1180059923.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1180059923;
         // ---------- Original Method ----------
         //return this.viaHost;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.053 -0400", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "E4407913BCA525CB720AFC29131CC200")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.862 -0400", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "8B7B430C1E555C5C659815C463E99DE8")
     public Via getOutgoingViaHeader() {
-        Via varB4EAC82CA7396A68D541C85D26508E83_2095698928 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2095698928 = this.getMessageProcessor().getViaHeader();
-        varB4EAC82CA7396A68D541C85D26508E83_2095698928.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2095698928;
+        Via varB4EAC82CA7396A68D541C85D26508E83_1463720794 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1463720794 = this.getMessageProcessor().getViaHeader();
+        varB4EAC82CA7396A68D541C85D26508E83_1463720794.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1463720794;
         // ---------- Original Method ----------
         //return this.getMessageProcessor().getViaHeader();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.053 -0400", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "6CCA103991603EF3F3C26F3C09E7F13D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.862 -0400", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "6CCA103991603EF3F3C26F3C09E7F13D")
     public void clearState() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.053 -0400", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "DA7EE79BF1A2D31D17F053E570830B4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.863 -0400", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "C8772C8140D34BF7D58E5CDDA47C0806")
     public void setState(TransactionState newState) {
         {
-            boolean var91759660CDF9DD647AB086394E273AE8_369033144 = (newState == TransactionState.TERMINATED && this.isReliable()
+            boolean var91759660CDF9DD647AB086394E273AE8_1348855061 = (newState == TransactionState.TERMINATED && this.isReliable()
                 && (!getSIPStack().cacheClientConnections));
             {
                 this.collectionTime = TIMER_J;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var11BA604ADA2BF23D3E29AB36D807FF0A_409047828 = (super.getState() != TransactionState.COMPLETED
+            boolean var11BA604ADA2BF23D3E29AB36D807FF0A_696116030 = (super.getState() != TransactionState.COMPLETED
                 && (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED));
             {
                 sipStack.decrementActiveClientTransactionCount();
@@ -1160,15 +1124,14 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.054 -0400", hash_original_method = "8AD9FEC5ADB8A6F1DFBB290459716C8C", hash_generated_method = "6F60AD79E13C48A61C751039521CAEAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.863 -0400", hash_original_method = "8AD9FEC5ADB8A6F1DFBB290459716C8C", hash_generated_method = "56FA4BF6844E9394FB9599F5741A706F")
     protected void startTransactionTimer() {
         {
-            boolean var388A148DB1BAAE2BABBFD1571EA90BBF_1065436229 = (this.transactionTimerStarted.compareAndSet(false, true));
+            boolean var388A148DB1BAAE2BABBFD1571EA90BBF_1245703764 = (this.transactionTimerStarted.compareAndSet(false, true));
             {
-                TimerTask myTimer;
-                myTimer = new TransactionTimer();
+                TimerTask myTimer = new TransactionTimer();
                 {
-                    boolean var7F2874EE26E943E6FA8451457423E55A_2067385227 = (sipStack.getTimer() != null);
+                    boolean var7F2874EE26E943E6FA8451457423E55A_461204763 = (sipStack.getTimer() != null);
                     {
                         sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
                     } //End block
@@ -1185,7 +1148,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.054 -0400", hash_original_method = "ACD8113ABC5B192A943EAFBD5656CA38", hash_generated_method = "9600A5B5EE9B39E2643E3ED4DD70BFBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.863 -0400", hash_original_method = "ACD8113ABC5B192A943EAFBD5656CA38", hash_generated_method = "9600A5B5EE9B39E2643E3ED4DD70BFBE")
     public void terminate() throws ObjectInUseException {
         this.setState(TransactionState.TERMINATED);
         // ---------- Original Method ----------
@@ -1193,34 +1156,33 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.055 -0400", hash_original_method = "8BA63F6111F6111C9CE6504A86A67BA3", hash_generated_method = "FC0F4B1353F9C59C16150A3BB8213810")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.864 -0400", hash_original_method = "8BA63F6111F6111C9CE6504A86A67BA3", hash_generated_method = "D42D32F61180476985CA663F977A74BB")
     public boolean checkFromTag(SIPResponse sipResponse) {
-        String originalFromTag;
-        originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
+        String originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
         {
             {
-                boolean var99721F8958DA05D67BDFDECFF1356658_1175865086 = (originalFromTag == null ^ sipResponse.getFrom().getTag() == null);
+                boolean var99721F8958DA05D67BDFDECFF1356658_1929502404 = (originalFromTag == null ^ sipResponse.getFrom().getTag() == null);
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1649497516 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1177927698 = (sipStack.isLoggingEnabled());
                         sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var711AEDA4725A65E5F56D20EAEDEFABA8_53810068 = (originalFromTag != null
+                boolean var711AEDA4725A65E5F56D20EAEDEFABA8_1383471510 = (originalFromTag != null
                     && !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag()));
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_240598371 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_9543370 = (sipStack.isLoggingEnabled());
                         sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(sipResponse.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801423286 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801423286;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533488416 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_533488416;
         // ---------- Original Method ----------
         //String originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
         //if (this.defaultDialog != null) {
@@ -1240,19 +1202,15 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.062 -0400", hash_original_method = "38065D3AA78F19CFA0459E8A308EC067", hash_generated_method = "BCB7DE868E1B05CF5DCB751BBB215B7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.865 -0400", hash_original_method = "38065D3AA78F19CFA0459E8A308EC067", hash_generated_method = "21B193EB0A917E60B9D8F049F1715C34")
     public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
-        SIPDialog dialog;
-        dialog = null;
-        String method;
-        method = sipResponse.getCSeq().getMethod();
-        String dialogId;
-        dialogId = sipResponse.getDialogId(false);
+        SIPDialog dialog = null;
+        String method = sipResponse.getCSeq().getMethod();
+        String dialogId = sipResponse.getDialogId(false);
         {
-            boolean varF84B7A52F01098BB8D5530B7462524E7_919437735 = (method.equals(Request.CANCEL) && lastRequest != null);
+            boolean varF84B7A52F01098BB8D5530B7462524E7_401770345 = (method.equals(Request.CANCEL) && lastRequest != null);
             {
-                SIPClientTransaction ict;
-                ict = (SIPClientTransaction) lastRequest.getInviteTransaction();
+                SIPClientTransaction ict = (SIPClientTransaction) lastRequest.getInviteTransaction();
                 {
                     dialog = ict.defaultDialog;
                 } //End block
@@ -1262,24 +1220,21 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             } //End block
         } //End collapsed parenthetic
         {
-            int code;
-            code = sipResponse.getStatusCode();
+            int code = sipResponse.getStatusCode();
             {
-                boolean var67A22D552074C073387137665D71377F_506743067 = ((code > 100 && code < 300)
+                boolean var67A22D552074C073387137665D71377F_1294521064 = ((code > 100 && code < 300)
             && (sipResponse.getToTag() != null || sipStack.isRfc2543Supported())
                     && sipStack.isDialogCreated(method));
                 {
                     {
                         {
                             {
-                                boolean varDFA55FC60A34539A3B46D425D6F76E02_2000905769 = (sipResponse.getFromTag() != null);
+                                boolean varDFA55FC60A34539A3B46D425D6F76E02_485834914 = (sipResponse.getFromTag() != null);
                                 {
-                                    SIPResponse dialogResponse;
-                                    dialogResponse = defaultDialog.getLastResponse();
-                                    String defaultDialogId;
-                                    defaultDialogId = defaultDialog.getDialogId();
+                                    SIPResponse dialogResponse = defaultDialog.getLastResponse();
+                                    String defaultDialogId = defaultDialog.getDialogId();
                                     {
-                                        boolean varB75661995D0822CE25D549C01EA47284_954097535 = (dialogResponse == null
+                                        boolean varB75661995D0822CE25D549C01EA47284_360774002 = (dialogResponse == null
                                     || (method.equals(Request.SUBSCRIBE)
                                             && dialogResponse.getCSeq().getMethod().equals(
                                                     Request.NOTIFY) && defaultDialogId
@@ -1292,7 +1247,7 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                                             dialog = sipStack.getDialog(dialogId);
                                             {
                                                 {
-                                                    boolean var5EE64698204564FF6C92AF522DB71698_987050879 = (defaultDialog.isAssigned());
+                                                    boolean var5EE64698204564FF6C92AF522DB71698_251840601 = (defaultDialog.isAssigned());
                                                     {
                                                         dialog = sipStack.createDialog(this, sipResponse);
                                                     } //End block
@@ -1336,18 +1291,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.064 -0400", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "2CD3FDC125980DF6BCD12AC1608FE88E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.866 -0400", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "5F73A26A6308399094A4C1C93C20FED2")
     public Dialog getDialog() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_1696372237 = null; //Variable for return #1
-        Dialog retval;
-        retval = null;
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_536246645 = null; //Variable for return #1
+        Dialog retval = null;
         {
-            boolean var2BC280353718DAEB81C02AFB0812A34C_199171536 = (this.lastResponse != null && this.lastResponse.getFromTag() != null
+            boolean var2BC280353718DAEB81C02AFB0812A34C_660957359 = (this.lastResponse != null && this.lastResponse.getFromTag() != null
                 && this.lastResponse.getToTag() != null
                 && this.lastResponse.getStatusCode() != 100);
             {
-                String dialogId;
-                dialogId = this.lastResponse.getDialogId(false);
+                String dialogId = this.lastResponse.getDialogId(false);
                 retval = (Dialog) getDialog(dialogId);
             } //End block
         } //End collapsed parenthetic
@@ -1355,16 +1308,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             retval = (Dialog) this.defaultDialog;
         } //End block
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_8861425 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_604497788 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(
                     " sipDialogs =  " + sipDialogs + " default dialog " + this.defaultDialog
                             + " retval " + retval);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1696372237 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1696372237.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1696372237;
+        varB4EAC82CA7396A68D541C85D26508E83_536246645 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_536246645.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_536246645;
         // ---------- Original Method ----------
         //Dialog retval = null;
         //if (this.lastResponse != null && this.lastResponse.getFromTag() != null
@@ -1385,31 +1338,30 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.066 -0400", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "81C0AEB3A42FED87D0C27FC2A1028938")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.866 -0400", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "E9867FC55CF23B5B494CF60420FE0443")
     public SIPDialog getDialog(String dialogId) {
-        SIPDialog varB4EAC82CA7396A68D541C85D26508E83_206884786 = null; //Variable for return #1
-        SIPDialog retval;
-        retval = (SIPDialog) this.sipDialogs.get(dialogId);
-        varB4EAC82CA7396A68D541C85D26508E83_206884786 = retval;
+        SIPDialog varB4EAC82CA7396A68D541C85D26508E83_1573724677 = null; //Variable for return #1
+        SIPDialog retval = (SIPDialog) this.sipDialogs.get(dialogId);
+        varB4EAC82CA7396A68D541C85D26508E83_1573724677 = retval;
         addTaint(dialogId.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_206884786.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_206884786;
+        varB4EAC82CA7396A68D541C85D26508E83_1573724677.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1573724677;
         // ---------- Original Method ----------
         //SIPDialog retval = (SIPDialog) this.sipDialogs.get(dialogId);
         //return retval;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.066 -0400", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "F6BF15DA70B94DF3E9E431D7D36D70BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.867 -0400", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "0BB01056B4A7B998D3B93A46966A75E3")
     public void setDialog(SIPDialog sipDialog, String dialogId) {
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_645053543 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1363463741 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug(
                     "setDialog: " + dialogId + "sipDialog = " + sipDialog);
         } //End collapsed parenthetic
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_971957431 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_82394585 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logError("NULL DIALOG!!");
             } //End collapsed parenthetic
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bad dialog null");
@@ -1417,14 +1369,14 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         {
             this.defaultDialog = sipDialog;
             {
-                boolean varED64600D3E444F188F7A3A5A4ABEAEFC_68406031 = (this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0);
+                boolean varED64600D3E444F188F7A3A5A4ABEAEFC_253416233 = (this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0);
                 {
                     this.getSIPStack().addForkedClientTransaction(this);
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
-            boolean varDFE46D77BD33F7C2E2FA045C1E3DB93A_605435595 = (dialogId != null && sipDialog.getDialogId() != null);
+            boolean varDFE46D77BD33F7C2E2FA045C1E3DB93A_250017046 = (dialogId != null && sipDialog.getDialogId() != null);
             {
                 this.sipDialogs.put(dialogId, sipDialog);
             } //End block
@@ -1451,18 +1403,18 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.067 -0400", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "DB1FBB7BBE51228D12678F875A3423E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.868 -0400", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "EE151DE6D324A4457E6B3A186C2225BA")
     public SIPDialog getDefaultDialog() {
-        SIPDialog varB4EAC82CA7396A68D541C85D26508E83_1232321349 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1232321349 = this.defaultDialog;
-        varB4EAC82CA7396A68D541C85D26508E83_1232321349.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1232321349;
+        SIPDialog varB4EAC82CA7396A68D541C85D26508E83_720144889 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_720144889 = this.defaultDialog;
+        varB4EAC82CA7396A68D541C85D26508E83_720144889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_720144889;
         // ---------- Original Method ----------
         //return this.defaultDialog;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.073 -0400", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "92C54DFEBE82A33476818E16370481AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.868 -0400", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "92C54DFEBE82A33476818E16370481AA")
     public void setNextHop(Hop hop) {
         this.nextHop = hop;
         // ---------- Original Method ----------
@@ -1470,18 +1422,18 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.073 -0400", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "7DA3BB5688493CD3A6C7D7887B808A0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.869 -0400", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "3CC82D22DD0301AF2188B1BF69AFA1C5")
     public Hop getNextHop() {
-        Hop varB4EAC82CA7396A68D541C85D26508E83_2116453374 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2116453374 = nextHop;
-        varB4EAC82CA7396A68D541C85D26508E83_2116453374.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2116453374;
+        Hop varB4EAC82CA7396A68D541C85D26508E83_1724255273 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1724255273 = nextHop;
+        varB4EAC82CA7396A68D541C85D26508E83_1724255273.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1724255273;
         // ---------- Original Method ----------
         //return nextHop;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.073 -0400", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "77796E2667351045720A96FACE4561A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.870 -0400", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "77796E2667351045720A96FACE4561A1")
     public void setNotifyOnRetransmit(boolean notifyOnRetransmit) {
         this.notifyOnRetransmit = notifyOnRetransmit;
         // ---------- Original Method ----------
@@ -1489,16 +1441,16 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.074 -0400", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "EE4B111EDDF979C3A96ECCD7E6750E41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.871 -0400", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "239AE61043A588344AC71DE585340D5E")
     public boolean isNotifyOnRetransmit() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_426570276 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_426570276;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355440538 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_355440538;
         // ---------- Original Method ----------
         //return notifyOnRetransmit;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.076 -0400", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "A815816922C53FB5571D66EB4D353EEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.871 -0400", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "A815816922C53FB5571D66EB4D353EEE")
     public void alertIfStillInCallingStateBy(int count) {
         this.timeoutIfStillInCallingState = true;
         this.callingStateTimeoutCount = count;
@@ -1510,23 +1462,23 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     
     public class TransactionTimer extends SIPStackTimerTask {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.076 -0400", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "33DB74724AFAD3CA3F59EFA77CA701E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.871 -0400", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "33DB74724AFAD3CA3F59EFA77CA701E3")
         public  TransactionTimer() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:36.078 -0400", hash_original_method = "0968D865D1ED49C59C7D505E50E4DC62", hash_generated_method = "58CFC08C45CB24C1141AB3042C3198BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.872 -0400", hash_original_method = "0968D865D1ED49C59C7D505E50E4DC62", hash_generated_method = "836956424E1B777B31F09CAD4358D70B")
         protected void runTask() {
             SIPClientTransaction clientTransaction;
             SIPTransactionStack sipStack;
             clientTransaction = SIPClientTransaction.this;
             sipStack = clientTransaction.sipStack;
             {
-                boolean var9F4C96123B1B2399496D6DB2BFC9D362_1849256694 = (clientTransaction.isTerminated());
+                boolean var9F4C96123B1B2399496D6DB2BFC9D362_1803987616 = (clientTransaction.isTerminated());
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1683246165 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_2027936106 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug(
                             "removing  = " + clientTransaction + " isReliable "
@@ -1541,29 +1493,26 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
                     catch (IllegalStateException ex)
                     {
                         {
-                            boolean var5D283AADF1997C78E711029DD9E27848_1965476036 = (!sipStack.isAlive());
+                            boolean var5D283AADF1997C78E711029DD9E27848_77344600 = (!sipStack.isAlive());
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean var5EAB7D490A2004CB739C2EE1D432A355_696776001 = ((!sipStack.cacheClientConnections) && clientTransaction.isReliable());
+                        boolean var5EAB7D490A2004CB739C2EE1D432A355_174925954 = ((!sipStack.cacheClientConnections) && clientTransaction.isReliable());
                         {
-                            int newUseCount;
-                            newUseCount = --clientTransaction.getMessageChannel().useCount;
+                            int newUseCount = --clientTransaction.getMessageChannel().useCount;
                             {
-                                TimerTask myTimer;
-                                myTimer = new LingerTimer();
+                                TimerTask myTimer = new LingerTimer();
                                 sipStack.getTimer().schedule(myTimer,
                                 SIPTransactionStack.CONNECTION_LINGER_TIME * 1000);
                             } //End block
                         } //End block
                         {
                             {
-                                boolean var019DA47345C39D3ADBD663314E9F0EF1_973659278 = (sipStack.isLoggingEnabled() && clientTransaction.isReliable());
+                                boolean var019DA47345C39D3ADBD663314E9F0EF1_130021181 = (sipStack.isLoggingEnabled() && clientTransaction.isReliable());
                                 {
-                                    int useCount;
-                                    useCount = clientTransaction.getMessageChannel().useCount;
+                                    int useCount = clientTransaction.getMessageChannel().useCount;
                                     {
-                                        boolean var6FE8ACC5352DCA3449210F8EDED912B3_1645603576 = (sipStack.isLoggingEnabled());
+                                        boolean var6FE8ACC5352DCA3449210F8EDED912B3_1526467814 = (sipStack.isLoggingEnabled());
                                         sipStack.getStackLogger().logDebug("Client Use Count = " + useCount);
                                     } //End collapsed parenthetic
                                 } //End block

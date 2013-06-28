@@ -10,17 +10,17 @@ import java.util.Iterator;
 import java.security.cert.X509Certificate;
 
 public class SslError {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.994 -0400", hash_original_field = "D750EAC634DEAED12CF378E4BA272A33", hash_generated_field = "A1A4B77C81BB0C0C3F4262BD3992D7FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.444 -0400", hash_original_field = "D750EAC634DEAED12CF378E4BA272A33", hash_generated_field = "A1A4B77C81BB0C0C3F4262BD3992D7FD")
 
     int mErrors;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.994 -0400", hash_original_field = "1229A917B4D1D7ED185029644D045D14", hash_generated_field = "8722B9770017213537D317FB65A9919D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.444 -0400", hash_original_field = "1229A917B4D1D7ED185029644D045D14", hash_generated_field = "8722B9770017213537D317FB65A9919D")
 
     SslCertificate mCertificate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.995 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "CA88DB4A75B79130313A74537195706C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.444 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "CA88DB4A75B79130313A74537195706C")
 
     String mUrl;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.006 -0400", hash_original_method = "E54E1790034E06C2564EA8F8D322C604", hash_generated_method = "3AF4F51B3608A5BAC87B70469C9D4244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.444 -0400", hash_original_method = "E54E1790034E06C2564EA8F8D322C604", hash_generated_method = "3AF4F51B3608A5BAC87B70469C9D4244")
     @Deprecated
     public  SslError(int error, SslCertificate certificate) {
         this(error, certificate, "");
@@ -30,7 +30,7 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.007 -0400", hash_original_method = "D4D6A5236E4F49764789FE2E4242FD0D", hash_generated_method = "0C4F0C38208B33D6CC308F972D612214")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.444 -0400", hash_original_method = "D4D6A5236E4F49764789FE2E4242FD0D", hash_generated_method = "0C4F0C38208B33D6CC308F972D612214")
     @Deprecated
     public  SslError(int error, X509Certificate certificate) {
         this(error, certificate, "");
@@ -40,7 +40,7 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.008 -0400", hash_original_method = "85B2ECB0DBC9283B8022F29E2B26DB48", hash_generated_method = "C4AE8A8089B57EA926B313F33B463792")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.445 -0400", hash_original_method = "85B2ECB0DBC9283B8022F29E2B26DB48", hash_generated_method = "C4AE8A8089B57EA926B313F33B463792")
     public  SslError(int error, SslCertificate certificate, String url) {
         addError(error);
         mCertificate = certificate;
@@ -55,7 +55,7 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.009 -0400", hash_original_method = "3533EE541F404B8ADD4D4E5426E464A7", hash_generated_method = "D5E56FAAE17BD91A9C23EBA16B9A51AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.445 -0400", hash_original_method = "3533EE541F404B8ADD4D4E5426E464A7", hash_generated_method = "D5E56FAAE17BD91A9C23EBA16B9A51AA")
     public  SslError(int error, X509Certificate certificate, String url) {
         this(error, new SslCertificate(certificate), url);
         addTaint(error);
@@ -65,7 +65,7 @@ public class SslError {
     }
 
     
-        public static SslError SslErrorFromChromiumErrorCode(
+    public static SslError SslErrorFromChromiumErrorCode(
             int error, SslCertificate cert, String url) {
         assert (error >= -299 && error <= -200);
         if (error == -200)
@@ -78,37 +78,36 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.034 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "E0727746EB810D9C62401349A7B341A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.446 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "4F5C7F5C930D4AADDEC9EFA13D0625BB")
     public SslCertificate getCertificate() {
-        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1726208563 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1726208563 = mCertificate;
-        varB4EAC82CA7396A68D541C85D26508E83_1726208563.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1726208563;
+        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1943418116 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1943418116 = mCertificate;
+        varB4EAC82CA7396A68D541C85D26508E83_1943418116.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1943418116;
         // ---------- Original Method ----------
         //return mCertificate;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.035 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "26A308D169CA400D5FCEAFECFFB22717")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.447 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "E6A0F7ABADC1164363DA2B29FB8C4A07")
     public String getUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1894105736 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1894105736 = mUrl;
-        varB4EAC82CA7396A68D541C85D26508E83_1894105736.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1894105736;
+        String varB4EAC82CA7396A68D541C85D26508E83_576852814 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_576852814 = mUrl;
+        varB4EAC82CA7396A68D541C85D26508E83_576852814.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_576852814;
         // ---------- Original Method ----------
         //return mUrl;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.036 -0400", hash_original_method = "AE664F52BD7226DBAA3D1D1034C9653E", hash_generated_method = "FCA959C1D71852F022540DF16AE9A694")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.447 -0400", hash_original_method = "AE664F52BD7226DBAA3D1D1034C9653E", hash_generated_method = "E226A0F136F324C46CB6F2562BC84688")
     public boolean addError(int error) {
-        boolean rval;
-        rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
+        boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         {
             mErrors |= (0x1 << error);
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1216130590 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1216130590;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351280628 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_351280628;
         // ---------- Original Method ----------
         //boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         //if (rval) {
@@ -118,16 +117,15 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.037 -0400", hash_original_method = "B3A224AA064D57107491E8991A407E79", hash_generated_method = "4748EEA1010A8EC5F2219B13A403B30A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.448 -0400", hash_original_method = "B3A224AA064D57107491E8991A407E79", hash_generated_method = "C01617BAF399197C8B0C79ED1200EA4E")
     public boolean hasError(int error) {
-        boolean rval;
-        rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
+        boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         {
             rval = ((mErrors & (0x1 << error)) != 0);
         } //End block
         addTaint(error);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1799220680 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1799220680;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654916283 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_654916283;
         // ---------- Original Method ----------
         //boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         //if (rval) {
@@ -137,16 +135,15 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.060 -0400", hash_original_method = "3A5499989FF366B2E4D135ECA3891E4C", hash_generated_method = "4B65451C7F09F24B7B3898B92B0534B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.448 -0400", hash_original_method = "3A5499989FF366B2E4D135ECA3891E4C", hash_generated_method = "17646D1FF167FF1302BC3A32C8DF7545")
     public int getPrimaryError() {
         {
             {
-                int error;
-                error = SslError.SSL_MAX_ERROR - 1;
+                int error = SslError.SSL_MAX_ERROR - 1;
             } //End collapsed parenthetic
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809286680 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809286680;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534199481 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534199481;
         // ---------- Original Method ----------
         //if (mErrors != 0) {
             //for (int error = SslError.SSL_MAX_ERROR - 1; error >= 0; --error) {
@@ -160,14 +157,14 @@ public class SslError {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_method = "18A0C6CD1FD66E60B7FF0A9F205CF54C", hash_generated_method = "16CEB10B95400FE6E4503F0F18818B14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_method = "18A0C6CD1FD66E60B7FF0A9F205CF54C", hash_generated_method = "FACB556B82317A46A836650C641E9DC1")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_403478662 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_403478662 = "primary error: " + getPrimaryError() +
+        String varB4EAC82CA7396A68D541C85D26508E83_2011230471 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2011230471 = "primary error: " + getPrimaryError() +
                 " certificate: " + getCertificate() +
                 " on URL: " + getUrl();
-        varB4EAC82CA7396A68D541C85D26508E83_403478662.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_403478662;
+        varB4EAC82CA7396A68D541C85D26508E83_2011230471.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2011230471;
         // ---------- Original Method ----------
         //return "primary error: " + getPrimaryError() +
                 //" certificate: " + getCertificate() +
@@ -175,25 +172,25 @@ public class SslError {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "D2EA2C10F5328BED16ECA1B1C3232857", hash_generated_field = "41D8CEB3ECE7A9944FA4156476889EAF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "D2EA2C10F5328BED16ECA1B1C3232857", hash_generated_field = "41D8CEB3ECE7A9944FA4156476889EAF")
 
     public static final int SSL_NOTYETVALID = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "E3090C974939AF365323AF4AB9F65BB8", hash_generated_field = "BAAD9CBD08CD0D2093B10402B8464A98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "E3090C974939AF365323AF4AB9F65BB8", hash_generated_field = "BAAD9CBD08CD0D2093B10402B8464A98")
 
     public static final int SSL_EXPIRED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "9B753F19A5B24F8D81CE7F53EB7231DB", hash_generated_field = "13B7485113DA8A602D91A2F53C58C15F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "9B753F19A5B24F8D81CE7F53EB7231DB", hash_generated_field = "13B7485113DA8A602D91A2F53C58C15F")
 
     public static final int SSL_IDMISMATCH = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "A972E47F33ED55CA475DE44DDF17D784", hash_generated_field = "0E952E7AEE36B79768B89A0EECDF70AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "A972E47F33ED55CA475DE44DDF17D784", hash_generated_field = "0E952E7AEE36B79768B89A0EECDF70AB")
 
     public static final int SSL_UNTRUSTED = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "E39EE78A32105F7C1CEDD9EFE4B572F8", hash_generated_field = "7A71850528D1C5A05BCC2F8DAA5B23B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "E39EE78A32105F7C1CEDD9EFE4B572F8", hash_generated_field = "7A71850528D1C5A05BCC2F8DAA5B23B9")
 
     public static final int SSL_DATE_INVALID = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "5BB142B47414CD2F616DDAF6DC30267F", hash_generated_field = "37C2C751255A73F019D90F63D8AA6D24")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "5BB142B47414CD2F616DDAF6DC30267F", hash_generated_field = "37C2C751255A73F019D90F63D8AA6D24")
 
     public static final int SSL_INVALID = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.062 -0400", hash_original_field = "088EEB373D581113C76F39764FE6E168", hash_generated_field = "751C3F66A9B17BB4E0BF7C23C8DBFC0A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_field = "088EEB373D581113C76F39764FE6E168", hash_generated_field = "751C3F66A9B17BB4E0BF7C23C8DBFC0A")
 
     @Deprecated
     public static final int SSL_MAX_ERROR = 6;

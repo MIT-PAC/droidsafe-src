@@ -13,7 +13,7 @@ import android.widget.SearchView;
 
 class SearchViewCompatIcs {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.952 -0400", hash_original_method = "829770254765AD904A52B224D6B8E92F", hash_generated_method = "829770254765AD904A52B224D6B8E92F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.364 -0400", hash_original_method = "829770254765AD904A52B224D6B8E92F", hash_generated_method = "829770254765AD904A52B224D6B8E92F")
     public SearchViewCompatIcs ()
     {
         //Synthesized constructor
@@ -37,7 +37,7 @@ class SearchViewCompatIcs {
     
     public static class MySearchView extends SearchView {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.963 -0400", hash_original_method = "58DCF89988C851B95306F376E575AD93", hash_generated_method = "1B46275644FF1532A5143B3D69C7546C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.365 -0400", hash_original_method = "58DCF89988C851B95306F376E575AD93", hash_generated_method = "1B46275644FF1532A5143B3D69C7546C")
         public  MySearchView(Context context) {
             super(context);
             addTaint(context.getTaint());
@@ -45,7 +45,7 @@ class SearchViewCompatIcs {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:35.973 -0400", hash_original_method = "E5687251D1F88E61D23992BF3CD9FD01", hash_generated_method = "707A7D2086ABF458189A6D11CFF71E0A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.365 -0400", hash_original_method = "E5687251D1F88E61D23992BF3CD9FD01", hash_generated_method = "707A7D2086ABF458189A6D11CFF71E0A")
         @Override
         public void onActionViewCollapsed() {
             //DSFIXME:  CODE0009: Possible callback target function detected

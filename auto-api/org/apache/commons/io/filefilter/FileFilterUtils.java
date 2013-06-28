@@ -21,13 +21,13 @@ import org.apache.commons.io.IOCase;
 
 public class FileFilterUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.672 -0400", hash_original_method = "258D2A85E3ECF820EDC9682F6EE3C0F9", hash_generated_method = "CA9F53CC4FA02CAE301E64D9C1DC0F50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.793 -0400", hash_original_method = "258D2A85E3ECF820EDC9682F6EE3C0F9", hash_generated_method = "CA9F53CC4FA02CAE301E64D9C1DC0F50")
     public  FileFilterUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static File[] filter(IOFileFilter filter, File... files) {
+    public static File[] filter(IOFileFilter filter, File... files) {
         if (filter == null) {
             throw new IllegalArgumentException("file filter is null");
         }
@@ -47,35 +47,35 @@ public class FileFilterUtils {
     }
 
     
-        public static File[] filter(IOFileFilter filter, Iterable<File> files) {
+    public static File[] filter(IOFileFilter filter, Iterable<File> files) {
         List<File> acceptedFiles = filterList(filter, files);
         return acceptedFiles.toArray(new File[acceptedFiles.size()]);
     }
 
     
-        public static List<File> filterList(IOFileFilter filter, Iterable<File> files) {
+    public static List<File> filterList(IOFileFilter filter, Iterable<File> files) {
         return filter(filter, files, new ArrayList<File>());
     }
 
     
-        public static List<File> filterList(IOFileFilter filter, File... files) {
+    public static List<File> filterList(IOFileFilter filter, File... files) {
         File[] acceptedFiles = filter(filter, files);
         return Arrays.asList(acceptedFiles);
     }
 
     
-        public static Set<File> filterSet(IOFileFilter filter, File... files) {
+    public static Set<File> filterSet(IOFileFilter filter, File... files) {
         File[] acceptedFiles = filter(filter, files);
         return new HashSet<File>(Arrays.asList(acceptedFiles));
     }
 
     
-        public static Set<File> filterSet(IOFileFilter filter, Iterable<File> files) {
+    public static Set<File> filterSet(IOFileFilter filter, Iterable<File> files) {
         return filter(filter, files, new HashSet<File>());
     }
 
     
-        private static <T extends Collection<File>> T filter(IOFileFilter filter,
+    private static <T extends Collection<File>> T filter(IOFileFilter filter,
             Iterable<File> files, T acceptedFiles) {
         if (filter == null) {
             throw new IllegalArgumentException("file filter is null");
@@ -94,69 +94,69 @@ public class FileFilterUtils {
     }
 
     
-        public static IOFileFilter prefixFileFilter(String prefix) {
+    public static IOFileFilter prefixFileFilter(String prefix) {
         return new PrefixFileFilter(prefix);
     }
 
     
-        public static IOFileFilter prefixFileFilter(String prefix, IOCase caseSensitivity) {
+    public static IOFileFilter prefixFileFilter(String prefix, IOCase caseSensitivity) {
         return new PrefixFileFilter(prefix, caseSensitivity);
     }
 
     
-        public static IOFileFilter suffixFileFilter(String suffix) {
+    public static IOFileFilter suffixFileFilter(String suffix) {
         return new SuffixFileFilter(suffix);
     }
 
     
-        public static IOFileFilter suffixFileFilter(String suffix, IOCase caseSensitivity) {
+    public static IOFileFilter suffixFileFilter(String suffix, IOCase caseSensitivity) {
         return new SuffixFileFilter(suffix, caseSensitivity);
     }
 
     
-        public static IOFileFilter nameFileFilter(String name) {
+    public static IOFileFilter nameFileFilter(String name) {
         return new NameFileFilter(name);
     }
 
     
-        public static IOFileFilter nameFileFilter(String name, IOCase caseSensitivity) {
+    public static IOFileFilter nameFileFilter(String name, IOCase caseSensitivity) {
         return new NameFileFilter(name, caseSensitivity);
     }
 
     
-        public static IOFileFilter directoryFileFilter() {
+    public static IOFileFilter directoryFileFilter() {
         return DirectoryFileFilter.DIRECTORY;
     }
 
     
-        public static IOFileFilter fileFileFilter() {
+    public static IOFileFilter fileFileFilter() {
         return FileFileFilter.FILE;
     }
 
     
-        @Deprecated
+    @Deprecated
     public static IOFileFilter andFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
         return new AndFileFilter(filter1, filter2);
     }
 
     
-        @Deprecated
+    @Deprecated
     public static IOFileFilter orFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
         return new OrFileFilter(filter1, filter2);
     }
 
     
-        public static IOFileFilter and(IOFileFilter... filters) {
+    public static IOFileFilter and(IOFileFilter... filters) {
         return new AndFileFilter(toList(filters));
     }
 
     
-        public static IOFileFilter or(IOFileFilter... filters) {
+    public static IOFileFilter or(IOFileFilter... filters) {
         return new OrFileFilter(toList(filters));
     }
 
     
-        public static List<IOFileFilter> toList(IOFileFilter... filters) {
+    public static List<IOFileFilter> toList(IOFileFilter... filters) {
         if (filters == null) {
             throw new IllegalArgumentException("The filters must not be null");
         }
@@ -171,99 +171,99 @@ public class FileFilterUtils {
     }
 
     
-        public static IOFileFilter notFileFilter(IOFileFilter filter) {
+    public static IOFileFilter notFileFilter(IOFileFilter filter) {
         return new NotFileFilter(filter);
     }
 
     
-        public static IOFileFilter trueFileFilter() {
+    public static IOFileFilter trueFileFilter() {
         return TrueFileFilter.TRUE;
     }
 
     
-        public static IOFileFilter falseFileFilter() {
+    public static IOFileFilter falseFileFilter() {
         return FalseFileFilter.FALSE;
     }
 
     
-        public static IOFileFilter asFileFilter(FileFilter filter) {
+    public static IOFileFilter asFileFilter(FileFilter filter) {
         return new DelegateFileFilter(filter);
     }
 
     
-        public static IOFileFilter asFileFilter(FilenameFilter filter) {
+    public static IOFileFilter asFileFilter(FilenameFilter filter) {
         return new DelegateFileFilter(filter);
     }
 
     
-        public static IOFileFilter ageFileFilter(long cutoff) {
+    public static IOFileFilter ageFileFilter(long cutoff) {
         return new AgeFileFilter(cutoff);
     }
 
     
-        public static IOFileFilter ageFileFilter(long cutoff, boolean acceptOlder) {
+    public static IOFileFilter ageFileFilter(long cutoff, boolean acceptOlder) {
         return new AgeFileFilter(cutoff, acceptOlder);
     }
 
     
-        public static IOFileFilter ageFileFilter(Date cutoffDate) {
+    public static IOFileFilter ageFileFilter(Date cutoffDate) {
         return new AgeFileFilter(cutoffDate);
     }
 
     
-        public static IOFileFilter ageFileFilter(Date cutoffDate, boolean acceptOlder) {
+    public static IOFileFilter ageFileFilter(Date cutoffDate, boolean acceptOlder) {
         return new AgeFileFilter(cutoffDate, acceptOlder);
     }
 
     
-        public static IOFileFilter ageFileFilter(File cutoffReference) {
+    public static IOFileFilter ageFileFilter(File cutoffReference) {
         return new AgeFileFilter(cutoffReference);
     }
 
     
-        public static IOFileFilter ageFileFilter(File cutoffReference, boolean acceptOlder) {
+    public static IOFileFilter ageFileFilter(File cutoffReference, boolean acceptOlder) {
         return new AgeFileFilter(cutoffReference, acceptOlder);
     }
 
     
-        public static IOFileFilter sizeFileFilter(long threshold) {
+    public static IOFileFilter sizeFileFilter(long threshold) {
         return new SizeFileFilter(threshold);
     }
 
     
-        public static IOFileFilter sizeFileFilter(long threshold, boolean acceptLarger) {
+    public static IOFileFilter sizeFileFilter(long threshold, boolean acceptLarger) {
         return new SizeFileFilter(threshold, acceptLarger);
     }
 
     
-        public static IOFileFilter sizeRangeFileFilter(long minSizeInclusive, long maxSizeInclusive ) {
+    public static IOFileFilter sizeRangeFileFilter(long minSizeInclusive, long maxSizeInclusive ) {
         IOFileFilter minimumFilter = new SizeFileFilter(minSizeInclusive, true);
         IOFileFilter maximumFilter = new SizeFileFilter(maxSizeInclusive + 1L, false);
         return new AndFileFilter(minimumFilter, maximumFilter);
     }
 
     
-        public static IOFileFilter magicNumberFileFilter(String magicNumber) {
+    public static IOFileFilter magicNumberFileFilter(String magicNumber) {
         return new MagicNumberFileFilter(magicNumber);
     }
 
     
-        public static IOFileFilter magicNumberFileFilter(String magicNumber, long offset) {
+    public static IOFileFilter magicNumberFileFilter(String magicNumber, long offset) {
         return new MagicNumberFileFilter(magicNumber, offset);
     }
 
     
-        public static IOFileFilter magicNumberFileFilter(byte[] magicNumber) {
+    public static IOFileFilter magicNumberFileFilter(byte[] magicNumber) {
         return new MagicNumberFileFilter(magicNumber);
     }
 
     
-        public static IOFileFilter magicNumberFileFilter(byte[] magicNumber, long offset) {
+    public static IOFileFilter magicNumberFileFilter(byte[] magicNumber, long offset) {
         return new MagicNumberFileFilter(magicNumber, offset);
     }
 
     
-        public static IOFileFilter makeCVSAware(IOFileFilter filter) {
+    public static IOFileFilter makeCVSAware(IOFileFilter filter) {
         if (filter == null) {
             return cvsFilter;
         } else {
@@ -272,7 +272,7 @@ public class FileFilterUtils {
     }
 
     
-        public static IOFileFilter makeSVNAware(IOFileFilter filter) {
+    public static IOFileFilter makeSVNAware(IOFileFilter filter) {
         if (filter == null) {
             return svnFilter;
         } else {
@@ -281,7 +281,7 @@ public class FileFilterUtils {
     }
 
     
-        public static IOFileFilter makeDirectoryOnly(IOFileFilter filter) {
+    public static IOFileFilter makeDirectoryOnly(IOFileFilter filter) {
         if (filter == null) {
             return DirectoryFileFilter.DIRECTORY;
         }
@@ -289,7 +289,7 @@ public class FileFilterUtils {
     }
 
     
-        public static IOFileFilter makeFileOnly(IOFileFilter filter) {
+    public static IOFileFilter makeFileOnly(IOFileFilter filter) {
         if (filter == null) {
             return FileFileFilter.FILE;
         }
@@ -297,13 +297,13 @@ public class FileFilterUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.720 -0400", hash_original_field = "35F1508C0FD3636D3837A9E1B3DD7AEC", hash_generated_field = "A2D7C5E49F9F81FFC05A966F0F941D1D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.799 -0400", hash_original_field = "35F1508C0FD3636D3837A9E1B3DD7AEC", hash_generated_field = "9CA3BCF7641131B48124CF381AF25265")
 
-    private static IOFileFilter cvsFilter = notFileFilter(
+    private static final IOFileFilter cvsFilter = notFileFilter(
             and(directoryFileFilter(), nameFileFilter("CVS")));
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.720 -0400", hash_original_field = "6A23038387ACAE6FED24CDD901D90206", hash_generated_field = "44FC9FABF8404BB83E56F5D7D5F3A409")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.799 -0400", hash_original_field = "6A23038387ACAE6FED24CDD901D90206", hash_generated_field = "A15BB13988DB098518B43E8CDD23955C")
 
-    private static IOFileFilter svnFilter = notFileFilter(
+    private static final IOFileFilter svnFilter = notFileFilter(
             and(directoryFileFilter(), nameFileFilter(".svn")));
 }
 

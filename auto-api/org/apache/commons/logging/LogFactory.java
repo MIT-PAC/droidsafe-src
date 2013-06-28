@@ -24,7 +24,7 @@ import java.util.Properties;
 
 public abstract class LogFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.066 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.962 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
     protected  LogFactory() {
         // ---------- Original Method ----------
     }
@@ -53,7 +53,7 @@ public abstract class LogFactory {
     public abstract void setAttribute(String name, Object value);
 
     
-        private static final Hashtable createFactoryStore() {
+    private static final Hashtable createFactoryStore() {
         Hashtable result = null;
         String storeImplementationClass 
             = System.getProperty(HASHTABLE_IMPLEMENTATION_PROPERTY);
@@ -79,7 +79,7 @@ public abstract class LogFactory {
     }
 
     
-        public static LogFactory getFactory() throws LogConfigurationException {
+    public static LogFactory getFactory() throws LogConfigurationException {
         ClassLoader contextClassLoader = getContextClassLoader();
         if (contextClassLoader == null) {
             if (isDiagnosticsEnabled()) {
@@ -247,17 +247,17 @@ public abstract class LogFactory {
     }
 
     
-        public static Log getLog(Class clazz) throws LogConfigurationException {
+    public static Log getLog(Class clazz) throws LogConfigurationException {
         return getLog(clazz.getName());
     }
 
     
-        public static Log getLog(String name) throws LogConfigurationException {
+    public static Log getLog(String name) throws LogConfigurationException {
         return new org.apache.commons.logging.impl.Jdk14Logger(name);
     }
 
     
-        public static void release(ClassLoader classLoader) {
+    public static void release(ClassLoader classLoader) {
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for classloader " + objectId(classLoader));
         }
@@ -278,7 +278,7 @@ public abstract class LogFactory {
     }
 
     
-        public static void releaseAll() {
+    public static void releaseAll() {
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for all classloaders.");
         }
@@ -297,7 +297,7 @@ public abstract class LogFactory {
     }
 
     
-        protected static ClassLoader getClassLoader(Class clazz) {
+    protected static ClassLoader getClassLoader(Class clazz) {
         try {
             return clazz.getClassLoader();
         } catch(SecurityException ex) {
@@ -311,7 +311,7 @@ public abstract class LogFactory {
     }
 
     
-        protected static ClassLoader getContextClassLoader() throws LogConfigurationException {
+    protected static ClassLoader getContextClassLoader() throws LogConfigurationException {
         return (ClassLoader)AccessController.doPrivileged(
             new PrivilegedAction() {
                 public Object run() {
@@ -321,7 +321,7 @@ public abstract class LogFactory {
     }
 
     
-        protected static ClassLoader directGetContextClassLoader() throws LogConfigurationException {
+    protected static ClassLoader directGetContextClassLoader() throws LogConfigurationException {
         ClassLoader classLoader = null;
         try {
             Method method = Thread.class.getMethod("getContextClassLoader", 
@@ -347,7 +347,7 @@ public abstract class LogFactory {
     }
 
     
-        private static LogFactory getCachedFactory(ClassLoader contextClassLoader) {
+    private static LogFactory getCachedFactory(ClassLoader contextClassLoader) {
         LogFactory factory = null;
         if (contextClassLoader == null) {
             factory = nullClassLoaderFactory;
@@ -358,7 +358,7 @@ public abstract class LogFactory {
     }
 
     
-        private static void cacheFactory(ClassLoader classLoader, LogFactory factory) {
+    private static void cacheFactory(ClassLoader classLoader, LogFactory factory) {
         if (factory != null) {
             if (classLoader == null) {
                 nullClassLoaderFactory = factory;
@@ -369,7 +369,7 @@ public abstract class LogFactory {
     }
 
     
-        protected static LogFactory newFactory(final String factoryClass,
+    protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader,
                                            final ClassLoader contextClassLoader) throws LogConfigurationException {
         Object result = AccessController.doPrivileged(
@@ -396,13 +396,13 @@ public abstract class LogFactory {
     }
 
     
-        protected static LogFactory newFactory(final String factoryClass,
+    protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader) {
         return newFactory(factoryClass, classLoader, null);
     }
 
     
-        protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
+    protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
         Class logFactoryClass = null;
         try {
             if (classLoader != null) {
@@ -495,7 +495,7 @@ public abstract class LogFactory {
     }
 
     
-        private static boolean implementsLogFactory(Class logFactoryClass) {
+    private static boolean implementsLogFactory(Class logFactoryClass) {
         boolean implementsLogFactory = false;
         if (logFactoryClass != null) {
             try {
@@ -532,7 +532,7 @@ public abstract class LogFactory {
     }
 
     
-        private static InputStream getResourceAsStream(final ClassLoader loader,
+    private static InputStream getResourceAsStream(final ClassLoader loader,
                                                    final String name) {
         return (InputStream)AccessController.doPrivileged(
             new PrivilegedAction() {
@@ -547,7 +547,7 @@ public abstract class LogFactory {
     }
 
     
-        private static Enumeration getResources(final ClassLoader loader,
+    private static Enumeration getResources(final ClassLoader loader,
             final String name) {
         PrivilegedAction action = 
             new PrivilegedAction() {
@@ -575,7 +575,7 @@ public abstract class LogFactory {
     }
 
     
-        private static Properties getProperties(final URL url) {
+    private static Properties getProperties(final URL url) {
         PrivilegedAction action = 
             new PrivilegedAction() {
                 public Object run() {
@@ -599,7 +599,7 @@ public abstract class LogFactory {
     }
 
     
-        private static final Properties getConfigurationFile(
+    private static final Properties getConfigurationFile(
             ClassLoader classLoader, String fileName) {
         Properties props = null;
         double priority = 0.0;
@@ -675,7 +675,7 @@ public abstract class LogFactory {
     }
 
     
-        private static void initDiagnostics() {
+    private static void initDiagnostics() {
         String dest;
         try {
     	    dest = System.getProperty(DIAGNOSTICS_DEST_PROPERTY);
@@ -712,12 +712,12 @@ public abstract class LogFactory {
     }
 
     
-        protected static boolean isDiagnosticsEnabled() {
+    protected static boolean isDiagnosticsEnabled() {
         return diagnosticsStream != null;
     }
 
     
-        private static final void logDiagnostic(String msg) {
+    private static final void logDiagnostic(String msg) {
         if (diagnosticsStream != null) {
             diagnosticsStream.print(diagnosticPrefix);
             diagnosticsStream.println(msg);
@@ -726,7 +726,7 @@ public abstract class LogFactory {
     }
 
     
-        protected static final void logRawDiagnostic(String msg) {
+    protected static final void logRawDiagnostic(String msg) {
         if (diagnosticsStream != null) {
             diagnosticsStream.println(msg);
             diagnosticsStream.flush();
@@ -734,7 +734,7 @@ public abstract class LogFactory {
     }
 
     
-        private static void logClassLoaderEnvironment(Class clazz) {
+    private static void logClassLoaderEnvironment(Class clazz) {
         if (!isDiagnosticsEnabled()) {
             return;
         }
@@ -760,7 +760,7 @@ public abstract class LogFactory {
     }
 
     
-        private static void logHierarchy(String prefix, ClassLoader classLoader) {
+    private static void logHierarchy(String prefix, ClassLoader classLoader) {
         if (!isDiagnosticsEnabled()) {
             return;
         }
@@ -800,7 +800,7 @@ public abstract class LogFactory {
     }
 
     
-        public static String objectId(Object o) {
+    public static String objectId(Object o) {
         if (o == null) {
             return "null";
         } else {
@@ -809,51 +809,51 @@ public abstract class LogFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "C204A9B59300974326208E4CDAAE19D1", hash_generated_field = "1E5E53EF4DC914F529A3609C0F88BF62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "C204A9B59300974326208E4CDAAE19D1", hash_generated_field = "1E5E53EF4DC914F529A3609C0F88BF62")
 
     public static final String PRIORITY_KEY = "priority";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "300F4DBFFA7891677949497F9E506653", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "300F4DBFFA7891677949497F9E506653", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
 
     public static final String TCCL_KEY = "use_tccl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "0BDD01E9DB208B8382588D96385B1AF5", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "0BDD01E9DB208B8382588D96385B1AF5", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
 
     public static final String FACTORY_PROPERTY =
         "org.apache.commons.logging.LogFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "F525BACEEBDBBBDE83858C7AC7E5C6BD", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "F525BACEEBDBBBDE83858C7AC7E5C6BD", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
 
     public static final String FACTORY_DEFAULT =
         "org.apache.commons.logging.impl.LogFactoryImpl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "A408860A600424928531920305A936A6", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "A408860A600424928531920305A936A6", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
 
     public static final String FACTORY_PROPERTIES =
         "commons-logging.properties";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "90B4E58079F1D9D0D9DAC17B54272960", hash_generated_field = "9F88D5F443D9266F39FDD3A5ADA26221")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "90B4E58079F1D9D0D9DAC17B54272960", hash_generated_field = "097B030A4686AB60D9E88B759DEB8807")
 
-    protected static String SERVICE_ID = "META-INF/services/org.apache.commons.logging.LogFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "9A9D1BC218D6C73F887406CEC02601FD", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
+    protected static final String SERVICE_ID = "META-INF/services/org.apache.commons.logging.LogFactory";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "9A9D1BC218D6C73F887406CEC02601FD", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
 
     public static final String DIAGNOSTICS_DEST_PROPERTY =
         "org.apache.commons.logging.diagnostics.dest";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "3889CA185E89F644935C6B6A0BE1B6A8", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "3889CA185E89F644935C6B6A0BE1B6A8", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
 
     private static PrintStream diagnosticsStream = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "12E9A3CB39556B526310F08DE8C2A838", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "12E9A3CB39556B526310F08DE8C2A838", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
 
     private static String diagnosticPrefix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "6315DD8A75BE0327DA3A155FD6357E12", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "6315DD8A75BE0327DA3A155FD6357E12", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
 
     public static final String HASHTABLE_IMPLEMENTATION_PROPERTY =
         "org.apache.commons.logging.LogFactory.HashtableImpl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "10A47EEBECB467F525A615F207CF8490", hash_generated_field = "AD019B377D1F17B58B875A5F4438C13B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "10A47EEBECB467F525A615F207CF8490", hash_generated_field = "3F8062920D2835FF30BF3946833B7D74")
 
-    private static String WEAK_HASHTABLE_CLASSNAME = "org.apache.commons.logging.impl.WeakHashtable";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "8CBE7E518BFACE3BBC6F8B5E38467F8F", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
+    private static final String WEAK_HASHTABLE_CLASSNAME = "org.apache.commons.logging.impl.WeakHashtable";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "8CBE7E518BFACE3BBC6F8B5E38467F8F", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
 
     private static ClassLoader thisClassLoader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "C9ACB1071BA9E80750C401CC668D1337", hash_generated_field = "E19D6CB1141429FE2CFD096492E04245")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "C9ACB1071BA9E80750C401CC668D1337", hash_generated_field = "E19D6CB1141429FE2CFD096492E04245")
 
     protected static Hashtable factories = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.117 -0400", hash_original_field = "483E32A11E7D7FDDE0FD1E8601D0C5AC", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.979 -0400", hash_original_field = "483E32A11E7D7FDDE0FD1E8601D0C5AC", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
 
     protected static LogFactory nullClassLoaderFactory = null;
     static {
@@ -865,6 +865,24 @@ public abstract class LogFactory {
             logDiagnostic("BOOTSTRAP COMPLETED");
         }
     }
+    
+    // orphaned legacy method
+    public Object run() {
+                    try {
+                        InputStream stream = url.openStream();
+                        if (stream != null) {
+                            Properties props = new Properties();
+                            props.load(stream);
+                            stream.close();
+                            return props;
+                        }
+                    } catch(IOException e) {
+                        if (isDiagnosticsEnabled()) {
+                            logDiagnostic("Unable to read URL " + url);
+                        }
+                    }
+                    return null;
+                }
     
 }
 

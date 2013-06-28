@@ -18,26 +18,25 @@ import org.apache.http.protocol.HttpContext;
 
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.972 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.846 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
     public  RequestDefaultHeaders() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.007 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "6B89DF32A2E0375D4400428AEC400A4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.861 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "1E2EC1C7AF1CACB89F6DDAD0957FFBE8")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
-        Collection<?> defHeaders;
-        defHeaders = (Collection<?>) request.getParams().getParameter(
+        Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HEADERS);
         {
             {
-                Iterator<Object> var6DB89BCBACB10D0D7F512BB6B9D9D2DC_46495002 = (defHeaders).iterator();
-                var6DB89BCBACB10D0D7F512BB6B9D9D2DC_46495002.hasNext();
-                Object defHeader = var6DB89BCBACB10D0D7F512BB6B9D9D2DC_46495002.next();
+                Iterator<Object> var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429 = (defHeaders).iterator();
+                var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.hasNext();
+                Object defHeader = var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.next();
                 {
                     request.addHeader((Header) defHeader);
                 } //End block

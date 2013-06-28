@@ -18,41 +18,40 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.OnBackStackChangedListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.196 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "3895D7E6DB5042DA7856DC78E391C7B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.984 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "3895D7E6DB5042DA7856DC78E391C7B9")
 
     Activity mActivity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.196 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.984 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
 
     LayoutInflater mInflater;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.197 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "9E6D10A453EA70FEA679FD6996EC6EE2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.984 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "9E6D10A453EA70FEA679FD6996EC6EE2")
 
     LinearLayout mContainer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.198 -0400", hash_original_field = "91929C6194D497D84E6667724127E5D3", hash_generated_field = "45982CE6F3A74DA323DCD9D702CE99E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.985 -0400", hash_original_field = "91929C6194D497D84E6667724127E5D3", hash_generated_field = "45982CE6F3A74DA323DCD9D702CE99E4")
 
     int mMaxVisible = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.198 -0400", hash_original_field = "A72D59443563A208033827C369D05D4F", hash_generated_field = "44C6893263D81EE27E690ADD5B8AF5EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.985 -0400", hash_original_field = "A72D59443563A208033827C369D05D4F", hash_generated_field = "44C6893263D81EE27E690ADD5B8AF5EF")
 
     BackStackRecord mTopEntry;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.198 -0400", hash_original_field = "6817DD89083E64429112988EA2C9E6B3", hash_generated_field = "6D2F27A15AB0AAD879B33D53F5B6B069")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.985 -0400", hash_original_field = "6817DD89083E64429112988EA2C9E6B3", hash_generated_field = "6D2F27A15AB0AAD879B33D53F5B6B069")
 
     BackStackRecord mParentEntry;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.199 -0400", hash_original_field = "253E7D4088B52C7B8584FD46ECD8C10A", hash_generated_field = "2A3C7A75AFBDB618C725B73099DDF099")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.985 -0400", hash_original_field = "253E7D4088B52C7B8584FD46ECD8C10A", hash_generated_field = "2A3C7A75AFBDB618C725B73099DDF099")
 
     private OnClickListener mParentClickListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.221 -0400", hash_original_field = "32D1DAA8DAC787DA037631576879A663", hash_generated_field = "69C03C2ED2E1B77C192E66A442A610B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.985 -0400", hash_original_field = "32D1DAA8DAC787DA037631576879A663", hash_generated_field = "69C03C2ED2E1B77C192E66A442A610B9")
 
     private OnBreadCrumbClickListener mOnBreadCrumbClickListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.235 -0400", hash_original_field = "1E4D37A0330A3E780D6C7BEB4952864B", hash_generated_field = "F46B1BD4771947BAD77ED3C1893C8363")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.986 -0400", hash_original_field = "1E4D37A0330A3E780D6C7BEB4952864B", hash_generated_field = "C59C939796FFBE860C29378B7F2D7224")
 
     private OnClickListener mOnClickListener = new OnClickListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.235 -0400", hash_original_method = "EAECB23237EE3153081334DE62E2D4D2", hash_generated_method = "450CE5FB671F6A3C70A5EE59BB05C3DE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.986 -0400", hash_original_method = "EAECB23237EE3153081334DE62E2D4D2", hash_generated_method = "75778D2D640CE701F917A01DC35D30EC")
         public void onClick(View v) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                boolean varE4A1F40585B065B640BAA48725C67E73_465386856 = (v.getTag() instanceof BackStackEntry);
+                boolean varE4A1F40585B065B640BAA48725C67E73_185977171 = (v.getTag() instanceof BackStackEntry);
                 {
-                    BackStackEntry bse;
-                    bse = (BackStackEntry) v.getTag();
+                    BackStackEntry bse = (BackStackEntry) v.getTag();
                     {
                         {
                             mParentClickListener.onClick(v);
@@ -61,7 +60,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                     {
                         {
                             {
-                                boolean varDC9EADFAD769EB2BF5EC7B29105E5747_840902487 = (mOnBreadCrumbClickListener.onBreadCrumbClick(
+                                boolean varDC9EADFAD769EB2BF5EC7B29105E5747_1506299499 = (mOnBreadCrumbClickListener.onBreadCrumbClick(
                                 bse == mTopEntry ? null : bse, 0)); //DSFIXME:  CODE0008: Nested ternary operator in expression
                             } //End collapsed parenthetic
                         } //End block
@@ -82,7 +81,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         
 };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.237 -0400", hash_original_method = "F31D6C14970B45E299330BA4917FEA6F", hash_generated_method = "08B5F6D3421163D074374BE3AE9960C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.987 -0400", hash_original_method = "F31D6C14970B45E299330BA4917FEA6F", hash_generated_method = "08B5F6D3421163D074374BE3AE9960C8")
     public  FragmentBreadCrumbs(Context context) {
         this(context, null);
         addTaint(context.getTaint());
@@ -90,7 +89,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.256 -0400", hash_original_method = "5C34FBFF77B455DC003E3973298C6C2F", hash_generated_method = "059F78E593E2B03A13DA76F2B82C04F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.988 -0400", hash_original_method = "5C34FBFF77B455DC003E3973298C6C2F", hash_generated_method = "059F78E593E2B03A13DA76F2B82C04F2")
     public  FragmentBreadCrumbs(Context context, AttributeSet attrs) {
         this(context, attrs, android.R.style.Widget_FragmentBreadCrumbs);
         addTaint(context.getTaint());
@@ -99,7 +98,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.258 -0400", hash_original_method = "882101D40DFCD492AAC18C6E55A9C587", hash_generated_method = "39BAF9DDD384E08B19F9C260AA69C89D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.989 -0400", hash_original_method = "882101D40DFCD492AAC18C6E55A9C587", hash_generated_method = "39BAF9DDD384E08B19F9C260AA69C89D")
     public  FragmentBreadCrumbs(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         addTaint(context.getTaint());
@@ -109,7 +108,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.278 -0400", hash_original_method = "D116B18FCF7DD3335EB7CD9778309038", hash_generated_method = "5E184C3FB51B89C3778AA6CB0F4831AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.990 -0400", hash_original_method = "D116B18FCF7DD3335EB7CD9778309038", hash_generated_method = "5E184C3FB51B89C3778AA6CB0F4831AE")
     public void setActivity(Activity a) {
         mActivity = a;
         mInflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -133,7 +132,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.279 -0400", hash_original_method = "4BFEBF6B94C32F37C904F94529D790EA", hash_generated_method = "70F518C50A7AA33A727B22C7D6465C0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.991 -0400", hash_original_method = "4BFEBF6B94C32F37C904F94529D790EA", hash_generated_method = "70F518C50A7AA33A727B22C7D6465C0F")
     public void setMaxVisible(int visibleCrumbs) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("visibleCrumbs must be greater than zero");
@@ -147,7 +146,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.296 -0400", hash_original_method = "8B9B076BA783F3864F7766638C88B28A", hash_generated_method = "A3D6B60C7B8CF8FEA6AD13B21BBCBB94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.992 -0400", hash_original_method = "8B9B076BA783F3864F7766638C88B28A", hash_generated_method = "A3D6B60C7B8CF8FEA6AD13B21BBCBB94")
     public void setParentTitle(CharSequence title, CharSequence shortTitle,
             OnClickListener listener) {
         mParentEntry = createBackStackEntry(title, shortTitle);
@@ -160,7 +159,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.324 -0400", hash_original_method = "2512D126AA76678C0FD3EA5EF92C167A", hash_generated_method = "86CEEB80EAE109905A6293EE27933D7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.993 -0400", hash_original_method = "2512D126AA76678C0FD3EA5EF92C167A", hash_generated_method = "86CEEB80EAE109905A6293EE27933D7C")
     public void setOnBreadCrumbClickListener(OnBreadCrumbClickListener listener) {
         mOnBreadCrumbClickListener = listener;
         // ---------- Original Method ----------
@@ -168,30 +167,29 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.333 -0400", hash_original_method = "2DFBE29D707A4E78CDFA68237F5B82AC", hash_generated_method = "EB570F9D0626810EA53A80C140AD9204")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.995 -0400", hash_original_method = "2DFBE29D707A4E78CDFA68237F5B82AC", hash_generated_method = "7E1C1804D3408A29CD691CE40A31BA0D")
     private BackStackRecord createBackStackEntry(CharSequence title, CharSequence shortTitle) {
-        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1540234199 = null; //Variable for return #1
-        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1793040820 = null; //Variable for return #2
-        varB4EAC82CA7396A68D541C85D26508E83_1540234199 = null;
-        BackStackRecord entry;
-        entry = new BackStackRecord(
+        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1962419028 = null; //Variable for return #1
+        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1428045192 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1962419028 = null;
+        final BackStackRecord entry = new BackStackRecord(
                 (FragmentManagerImpl) mActivity.getFragmentManager());
         entry.setBreadCrumbTitle(title);
         entry.setBreadCrumbShortTitle(shortTitle);
-        varB4EAC82CA7396A68D541C85D26508E83_1793040820 = entry;
+        varB4EAC82CA7396A68D541C85D26508E83_1428045192 = entry;
         addTaint(title.getTaint());
         addTaint(shortTitle.getTaint());
-        BackStackRecord varA7E53CE21691AB073D9660D615818899_1916841375; //Final return value
+        BackStackRecord varA7E53CE21691AB073D9660D615818899_327056909; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1916841375 = varB4EAC82CA7396A68D541C85D26508E83_1540234199;
+                varA7E53CE21691AB073D9660D615818899_327056909 = varB4EAC82CA7396A68D541C85D26508E83_1962419028;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1916841375 = varB4EAC82CA7396A68D541C85D26508E83_1793040820;
+                varA7E53CE21691AB073D9660D615818899_327056909 = varB4EAC82CA7396A68D541C85D26508E83_1428045192;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1916841375.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1916841375;
+        varA7E53CE21691AB073D9660D615818899_327056909.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_327056909;
         // ---------- Original Method ----------
         //if (title == null) return null;
         //final BackStackRecord entry = new BackStackRecord(
@@ -202,7 +200,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.339 -0400", hash_original_method = "1306B82E4142284FF7749CACC8A21251", hash_generated_method = "ACC6FC3FEDF3D51C4466086B1F47D5EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.996 -0400", hash_original_method = "1306B82E4142284FF7749CACC8A21251", hash_generated_method = "ACC6FC3FEDF3D51C4466086B1F47D5EE")
     public void setTitle(CharSequence title, CharSequence shortTitle) {
         mTopEntry = createBackStackEntry(title, shortTitle);
         updateCrumbs();
@@ -212,22 +210,17 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.353 -0400", hash_original_method = "0BB4F9B64E73CA7A8C38A4967E9CC22C", hash_generated_method = "10FE82D32032EA6336B2D856DAF8FC91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.997 -0400", hash_original_method = "0BB4F9B64E73CA7A8C38A4967E9CC22C", hash_generated_method = "7C8B5127DF66EEFA737BEEE37C4AACC9")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        int childCount;
-        childCount = getChildCount();
+        final int childCount = getChildCount();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                View child;
-                child = getChildAt(i);
-                int childRight;
-                childRight = mPaddingLeft + child.getMeasuredWidth() - mPaddingRight;
-                int childBottom;
-                childBottom = mPaddingTop + child.getMeasuredHeight() - mPaddingBottom;
+                final View child = getChildAt(i);
+                int childRight = mPaddingLeft + child.getMeasuredWidth() - mPaddingRight;
+                int childBottom = mPaddingTop + child.getMeasuredHeight() - mPaddingBottom;
                 child.layout(mPaddingLeft, mPaddingTop, childRight, childBottom);
             } //End block
         } //End collapsed parenthetic
@@ -247,26 +240,20 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.366 -0400", hash_original_method = "6660D304081A4852C20DD013035B63D1", hash_generated_method = "798EE637613495A7AE454312E4FB3EF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.998 -0400", hash_original_method = "6660D304081A4852C20DD013035B63D1", hash_generated_method = "D1C18631B72D97E947239EE8CC0F76A7")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        int count;
-        count = getChildCount();
-        int maxHeight;
-        maxHeight = 0;
-        int maxWidth;
-        maxWidth = 0;
-        int measuredChildState;
-        measuredChildState = 0;
+        final int count = getChildCount();
+        int maxHeight = 0;
+        int maxWidth = 0;
+        int measuredChildState = 0;
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                View child;
-                child = getChildAt(i);
+                final View child = getChildAt(i);
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_1837836004 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_345991299 = (child.getVisibility() != GONE);
                     {
                         measureChild(child, widthMeasureSpec, heightMeasureSpec);
                         maxWidth = Math.max(maxWidth, child.getMeasuredWidth());
@@ -291,7 +278,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.367 -0400", hash_original_method = "2DCC9D501B82BF951374A63720FD5438", hash_generated_method = "5C65DFD1D77C80E48E1238CADCC22076")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.999 -0400", hash_original_method = "2DCC9D501B82BF951374A63720FD5438", hash_generated_method = "5C65DFD1D77C80E48E1238CADCC22076")
     @Override
     public void onBackStackChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -301,37 +288,37 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.387 -0400", hash_original_method = "2B539BE1FB77B26F9FE87488F97A1875", hash_generated_method = "7E58B3DCE6B993D6DACD4BC13F374957")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.000 -0400", hash_original_method = "2B539BE1FB77B26F9FE87488F97A1875", hash_generated_method = "7A9CADB930F1640CB79D2D0F0727A848")
     private int getPreEntryCount() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365402604 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1365402604;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788823463 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788823463;
         // ---------- Original Method ----------
         //return (mTopEntry != null ? 1 : 0) + (mParentEntry != null ? 1 : 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.395 -0400", hash_original_method = "A88BBDCBE11FD6391FA665272F0534CD", hash_generated_method = "C0B3BA280C4AF22FCD8B3579E901FF47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.003 -0400", hash_original_method = "A88BBDCBE11FD6391FA665272F0534CD", hash_generated_method = "3C49FBA8F4724E8671B011916CBE544F")
     private BackStackEntry getPreEntry(int index) {
-        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_1418984331 = null; //Variable for return #1
-        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_1061225542 = null; //Variable for return #2
+        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_163789121 = null; //Variable for return #1
+        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_1554974191 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1418984331 = index == 0 ? mParentEntry : mTopEntry;
+            varB4EAC82CA7396A68D541C85D26508E83_163789121 = index == 0 ? mParentEntry : mTopEntry;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1061225542 = mTopEntry;
+            varB4EAC82CA7396A68D541C85D26508E83_1554974191 = mTopEntry;
         } //End block
         addTaint(index);
-        BackStackEntry varA7E53CE21691AB073D9660D615818899_1133362735; //Final return value
+        BackStackEntry varA7E53CE21691AB073D9660D615818899_1271544220; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1133362735 = varB4EAC82CA7396A68D541C85D26508E83_1418984331;
+                varA7E53CE21691AB073D9660D615818899_1271544220 = varB4EAC82CA7396A68D541C85D26508E83_163789121;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1133362735 = varB4EAC82CA7396A68D541C85D26508E83_1061225542;
+                varA7E53CE21691AB073D9660D615818899_1271544220 = varB4EAC82CA7396A68D541C85D26508E83_1554974191;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1133362735.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1133362735;
+        varA7E53CE21691AB073D9660D615818899_1271544220.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1271544220;
         // ---------- Original Method ----------
         //if (mParentEntry != null) {
             //return index == 0 ? mParentEntry : mTopEntry;
@@ -341,32 +328,24 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:50.409 -0400", hash_original_method = "A14DB46BECCE064DBECB4292853B7E2A", hash_generated_method = "998E493E94B929AE048C1B37D339221F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.025 -0400", hash_original_method = "A14DB46BECCE064DBECB4292853B7E2A", hash_generated_method = "43A1ED81CAF1CD13F30F56237BCA8330")
      void updateCrumbs() {
-        FragmentManager fm;
-        fm = mActivity.getFragmentManager();
-        int numEntries;
-        numEntries = fm.getBackStackEntryCount();
-        int numPreEntries;
-        numPreEntries = getPreEntryCount();
-        int numViews;
-        numViews = mContainer.getChildCount();
+        FragmentManager fm = mActivity.getFragmentManager();
+        int numEntries = fm.getBackStackEntryCount();
+        int numPreEntries = getPreEntryCount();
+        int numViews = mContainer.getChildCount();
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
                 BackStackEntry bse;
                 bse = getPreEntry(i);
                 bse = fm.getBackStackEntryAt(i - numPreEntries);
                 {
-                    View v;
-                    v = mContainer.getChildAt(i);
-                    Object tag;
-                    tag = v.getTag();
+                    View v = mContainer.getChildAt(i);
+                    Object tag = v.getTag();
                     {
                         {
-                            int j;
-                            j = i;
+                            int j = i;
                             {
                                 mContainer.removeViewAt(i);
                             } //End block
@@ -375,12 +354,10 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                     } //End block
                 } //End block
                 {
-                    View item;
-                    item = mInflater.inflate(
+                    final View item = mInflater.inflate(
                         com.android.internal.R.layout.fragment_bread_crumb_item,
                         this, false);
-                    TextView text;
-                    text = (TextView) item.findViewById(com.android.internal.R.id.title);
+                    final TextView text = (TextView) item.findViewById(com.android.internal.R.id.title);
                     text.setText(bse.getBreadCrumbTitle());
                     text.setTag(bse);
                     {
@@ -391,23 +368,19 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        int viewI;
-        viewI = numEntries + numPreEntries;
+        int viewI = numEntries + numPreEntries;
         numViews = mContainer.getChildCount();
         {
             mContainer.removeViewAt(numViews - 1);
         } //End block
         {
-            int i;
-            i = 0;
+            int i = 0;
             {
-                View child;
-                child = mContainer.getChildAt(i);
+                final View child = mContainer.getChildAt(i);
                 child.findViewById(com.android.internal.R.id.title).setEnabled(i < numViews - 1);
                 {
                     child.setVisibility(i < numViews - mMaxVisible ? View.GONE : View.VISIBLE);
-                    View leftIcon;
-                    leftIcon = child.findViewById(com.android.internal.R.id.left_icon);
+                    final View leftIcon = child.findViewById(com.android.internal.R.id.left_icon);
                     leftIcon.setVisibility(i > numViews - mMaxVisible && i != 0 ? View.VISIBLE
                         : View.GONE);
                 } //End block

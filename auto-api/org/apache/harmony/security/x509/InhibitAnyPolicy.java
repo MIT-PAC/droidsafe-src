@@ -12,11 +12,11 @@ import java.math.BigInteger;
 import org.apache.harmony.security.asn1.ASN1Integer;
 
 public final class InhibitAnyPolicy extends ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.893 -0400", hash_original_field = "0CD883677A360FE36D329FE6AA5778AB", hash_generated_field = "34CEC7EBF0D69FDD5ECCA6C7F25F7FAF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.136 -0400", hash_original_field = "0CD883677A360FE36D329FE6AA5778AB", hash_generated_field = "34CEC7EBF0D69FDD5ECCA6C7F25F7FAF")
 
     private int skipCerts;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.893 -0400", hash_original_method = "1933FA0EC9823F8DA6E27E5F5995EEC8", hash_generated_method = "467922954530EACCB586AEDF82EDDCC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.136 -0400", hash_original_method = "1933FA0EC9823F8DA6E27E5F5995EEC8", hash_generated_method = "467922954530EACCB586AEDF82EDDCC3")
     public  InhibitAnyPolicy(byte[] encoding) throws IOException {
         super(encoding);
         this.skipCerts = new BigInteger((byte[])
@@ -27,15 +27,15 @@ public final class InhibitAnyPolicy extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.904 -0400", hash_original_method = "3EBD51C43A05A1E4C8002DD6E78AE310", hash_generated_method = "74942C4BE6BDA6A6B1AA27C3443F0D6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.137 -0400", hash_original_method = "3EBD51C43A05A1E4C8002DD6E78AE310", hash_generated_method = "A803893AA4DBF6705968F45A328CC9C6")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1Integer.getInstance()
                 .encode(ASN1Integer.fromIntValue(skipCerts));
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1367070864 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1367070864;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1924519991 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1924519991;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1Integer.getInstance()
@@ -45,7 +45,7 @@ public final class InhibitAnyPolicy extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.904 -0400", hash_original_method = "25B8E258E2717A4BB370159BACC96911", hash_generated_method = "AF858BEAF003225EBF3AECEAC9C6DC5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.137 -0400", hash_original_method = "25B8E258E2717A4BB370159BACC96911", hash_generated_method = "AF858BEAF003225EBF3AECEAC9C6DC5E")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Inhibit Any-Policy: ").append(skipCerts).append('\n');

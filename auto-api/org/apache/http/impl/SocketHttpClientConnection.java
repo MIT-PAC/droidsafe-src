@@ -20,21 +20,21 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
 public class SocketHttpClientConnection extends AbstractHttpClientConnection implements HttpInetConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.010 -0400", hash_original_field = "7CEF8A734855777C2A9D0CAF42666E69", hash_generated_field = "F8642D5396CC441E503E603D20259781")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.737 -0400", hash_original_field = "7CEF8A734855777C2A9D0CAF42666E69", hash_generated_field = "F8642D5396CC441E503E603D20259781")
 
     private volatile boolean open;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.010 -0400", hash_original_field = "E728D69D332AE7988C6FE7869D66573E", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.737 -0400", hash_original_field = "E728D69D332AE7988C6FE7869D66573E", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
 
     private Socket socket = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.012 -0400", hash_original_method = "8247D33E6B1FB68E086BB1CE85A17BB9", hash_generated_method = "155CA621912EC7DBC4E2832397471812")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.737 -0400", hash_original_method = "8247D33E6B1FB68E086BB1CE85A17BB9", hash_generated_method = "155CA621912EC7DBC4E2832397471812")
     public  SocketHttpClientConnection() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.012 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "070974C83D3BFC31590AD3244AD87067")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.738 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "070974C83D3BFC31590AD3244AD87067")
     protected void assertNotOpen() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection is already open");
@@ -46,7 +46,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.012 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "3F1BDE3953311EAA59897DCCF7449F3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.738 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "3F1BDE3953311EAA59897DCCF7449F3F")
     protected void assertOpen() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection is not open");
@@ -58,41 +58,41 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.015 -0400", hash_original_method = "AA92EF53C1C7E5C18A171AB9C4BA46D7", hash_generated_method = "045CBCA4205249FD8A4BDE6F395D5A75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.739 -0400", hash_original_method = "AA92EF53C1C7E5C18A171AB9C4BA46D7", hash_generated_method = "CD35DA5183CBA38FA6B7963383B14647")
     protected SessionInputBuffer createSessionInputBuffer(
             final Socket socket, 
             int buffersize,
             final HttpParams params) throws IOException {
-        SessionInputBuffer varB4EAC82CA7396A68D541C85D26508E83_1162096430 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1162096430 = new SocketInputBuffer(socket, buffersize, params);
+        SessionInputBuffer varB4EAC82CA7396A68D541C85D26508E83_555364116 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_555364116 = new SocketInputBuffer(socket, buffersize, params);
         addTaint(socket.getTaint());
         addTaint(buffersize);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1162096430.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1162096430;
+        varB4EAC82CA7396A68D541C85D26508E83_555364116.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_555364116;
         // ---------- Original Method ----------
         //return new SocketInputBuffer(socket, buffersize, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.016 -0400", hash_original_method = "188D8B42816E97B142A63887C343A4D5", hash_generated_method = "704515E37CB8D3968358451AC7E78E10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.739 -0400", hash_original_method = "188D8B42816E97B142A63887C343A4D5", hash_generated_method = "E849F7D6B59E065F0F7E2859B11A8376")
     protected SessionOutputBuffer createSessionOutputBuffer(
             final Socket socket, 
             int buffersize,
             final HttpParams params) throws IOException {
-        SessionOutputBuffer varB4EAC82CA7396A68D541C85D26508E83_292430911 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_292430911 = new SocketOutputBuffer(socket, buffersize, params);
+        SessionOutputBuffer varB4EAC82CA7396A68D541C85D26508E83_681488489 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_681488489 = new SocketOutputBuffer(socket, buffersize, params);
         addTaint(socket.getTaint());
         addTaint(buffersize);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_292430911.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_292430911;
+        varB4EAC82CA7396A68D541C85D26508E83_681488489.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_681488489;
         // ---------- Original Method ----------
         //return new SocketOutputBuffer(socket, buffersize, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.044 -0400", hash_original_method = "05B6F703A6A9BCF9CC38B84399416D78", hash_generated_method = "9953958CB9A36A6F4B855F812787FADC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.740 -0400", hash_original_method = "05B6F703A6A9BCF9CC38B84399416D78", hash_generated_method = "2395678C66BA08B8AC17BE35478853A2")
     protected void bind(
             final Socket socket, 
             final HttpParams params) throws IOException {
@@ -103,8 +103,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP parameters may not be null");
         } //End block
         this.socket = socket;
-        int buffersize;
-        buffersize = HttpConnectionParams.getSocketBufferSize(params);
+        int buffersize = HttpConnectionParams.getSocketBufferSize(params);
         init(
                 createSessionInputBuffer(socket, buffersize, params), 
                 createSessionOutputBuffer(socket, buffersize, params),
@@ -128,47 +127,47 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.044 -0400", hash_original_method = "38867CD3C8042DC0E4B0EAE08D88273F", hash_generated_method = "E93FDE714EB151550FD56D484A85EEB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.741 -0400", hash_original_method = "38867CD3C8042DC0E4B0EAE08D88273F", hash_generated_method = "1BDF3AD6A5DAAAA17F5D3F49176FBEEE")
     public boolean isOpen() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448359977 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1448359977;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517000668 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517000668;
         // ---------- Original Method ----------
         //return this.open;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.045 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "687507740290AAEB18D27D5377ECF965")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.742 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "63259D95CC39229DFA0489306BE28644")
     protected Socket getSocket() {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_580902882 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_580902882 = this.socket;
-        varB4EAC82CA7396A68D541C85D26508E83_580902882.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_580902882;
+        Socket varB4EAC82CA7396A68D541C85D26508E83_129504617 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_129504617 = this.socket;
+        varB4EAC82CA7396A68D541C85D26508E83_129504617.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_129504617;
         // ---------- Original Method ----------
         //return this.socket;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.046 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "29B213F613E37B6B4545EC1F75D02437")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.746 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "82206D7081D4490D702FC6BABAA31867")
     public InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2117745294 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_965722572 = null; //Variable for return #2
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1889898680 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1815710920 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2117745294 = this.socket.getLocalAddress();
+            varB4EAC82CA7396A68D541C85D26508E83_1889898680 = this.socket.getLocalAddress();
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_965722572 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1815710920 = null;
         } //End block
-        InetAddress varA7E53CE21691AB073D9660D615818899_246226103; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_1174709370; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_246226103 = varB4EAC82CA7396A68D541C85D26508E83_2117745294;
+                varA7E53CE21691AB073D9660D615818899_1174709370 = varB4EAC82CA7396A68D541C85D26508E83_1889898680;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_246226103 = varB4EAC82CA7396A68D541C85D26508E83_965722572;
+                varA7E53CE21691AB073D9660D615818899_1174709370 = varB4EAC82CA7396A68D541C85D26508E83_1815710920;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_246226103.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_246226103;
+        varA7E53CE21691AB073D9660D615818899_1174709370.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1174709370;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getLocalAddress();
@@ -178,13 +177,13 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.046 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "6598F384B83F026CA4B8B65A54351C96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.747 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "8A924A8B0AC4F9095FB40502F9A370ED")
     public int getLocalPort() {
         {
-            int varCCD0594420CD0D8D452225AADE7A07D2_493855375 = (this.socket.getLocalPort());
+            int varCCD0594420CD0D8D452225AADE7A07D2_1973984019 = (this.socket.getLocalPort());
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358735307 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358735307;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174931060 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174931060;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getLocalPort();
@@ -194,27 +193,27 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.046 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "C7123278F48567884D45F72FDFEF43D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.749 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "CD169838BBD7E89425C9C21174E170FF")
     public InetAddress getRemoteAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1481522970 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_399179342 = null; //Variable for return #2
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1349309735 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2144512057 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1481522970 = this.socket.getInetAddress();
+            varB4EAC82CA7396A68D541C85D26508E83_1349309735 = this.socket.getInetAddress();
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_399179342 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_2144512057 = null;
         } //End block
-        InetAddress varA7E53CE21691AB073D9660D615818899_1267966535; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_3518316; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1267966535 = varB4EAC82CA7396A68D541C85D26508E83_1481522970;
+                varA7E53CE21691AB073D9660D615818899_3518316 = varB4EAC82CA7396A68D541C85D26508E83_1349309735;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1267966535 = varB4EAC82CA7396A68D541C85D26508E83_399179342;
+                varA7E53CE21691AB073D9660D615818899_3518316 = varB4EAC82CA7396A68D541C85D26508E83_2144512057;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1267966535.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1267966535;
+        varA7E53CE21691AB073D9660D615818899_3518316.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_3518316;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getInetAddress();
@@ -224,13 +223,13 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.047 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "4CF4E4B415782ABC5CF9FBFAE3A8E47A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.749 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "95B8388E4CD5E98DE6E357AB932BECF6")
     public int getRemotePort() {
         {
-            int var3EE29869B1F636B5DAA1F70FA7C6400E_309425312 = (this.socket.getPort());
+            int var3EE29869B1F636B5DAA1F70FA7C6400E_1223450162 = (this.socket.getPort());
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512529033 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512529033;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002078699 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002078699;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getPort();
@@ -240,7 +239,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.047 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "676D254DEDC8A8C19857A94AF50E3C3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.750 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "676D254DEDC8A8C19857A94AF50E3C3B")
     public void setSocketTimeout(int timeout) {
         assertOpen();
         {
@@ -263,18 +262,18 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.047 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "1160DC9DDB90CF83301AB2548769760D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.750 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "46DCC50BEEE88A3653DA8690868B9798")
     public int getSocketTimeout() {
         {
             try 
             {
-                int var1CFD970C58DCF71C94F6332F13F0CD73_1200171974 = (this.socket.getSoTimeout());
+                int var1CFD970C58DCF71C94F6332F13F0CD73_1489352447 = (this.socket.getSoTimeout());
             } //End block
             catch (SocketException ignore)
             { }
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960090803 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960090803;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522865599 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522865599;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //try {
@@ -288,11 +287,10 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.060 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "CF620A7315D3C1C1AD4D9BAC734BF982")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.751 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "7E2B6040690192B3CAFE5C000979438D")
     public void shutdown() throws IOException {
         this.open = false;
-        Socket tmpsocket;
-        tmpsocket = this.socket;
+        Socket tmpsocket = this.socket;
         {
             tmpsocket.close();
         } //End block
@@ -305,7 +303,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.066 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "C67C9038C6A0874A962E604367169DAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.752 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "C67C9038C6A0874A962E604367169DAC")
     public void close() throws IOException {
         this.open = false;
         doFlush();

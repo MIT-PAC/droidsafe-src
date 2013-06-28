@@ -15,23 +15,22 @@ import org.apache.http.params.HttpProtocolParams;
 
 public class RequestUserAgent implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.514 -0400", hash_original_method = "C4ABF37EB88E79840E3C3C778B3D3723", hash_generated_method = "6AC3C7B8C84D6604FDB3259D42FE25C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.655 -0400", hash_original_method = "C4ABF37EB88E79840E3C3C778B3D3723", hash_generated_method = "6AC3C7B8C84D6604FDB3259D42FE25C2")
     public  RequestUserAgent() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.514 -0400", hash_original_method = "97A5868326343AB54CF8EB07ADAC3DCF", hash_generated_method = "93948506159F7CEBBDE84CDBB23C7414")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.656 -0400", hash_original_method = "97A5868326343AB54CF8EB07ADAC3DCF", hash_generated_method = "322F0DB7A7559851B6F59E5DE36C2073")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
         {
-            boolean var49D75A39221CB5928F53FD09F81E4344_1114768619 = (!request.containsHeader(HTTP.USER_AGENT));
+            boolean var49D75A39221CB5928F53FD09F81E4344_443050808 = (!request.containsHeader(HTTP.USER_AGENT));
             {
-                String useragent;
-                useragent = HttpProtocolParams.getUserAgent(request.getParams());
+                String useragent = HttpProtocolParams.getUserAgent(request.getParams());
                 {
                     request.addHeader(HTTP.USER_AGENT, useragent);
                 } //End block

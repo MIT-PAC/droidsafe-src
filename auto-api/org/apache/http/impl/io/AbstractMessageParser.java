@@ -23,20 +23,20 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
 public abstract class AbstractMessageParser implements HttpMessageParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.891 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
     private SessionInputBuffer sessionBuffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.891 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
 
     private int maxHeaderCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.891 -0400", hash_original_field = "3609DB2A96EDAA41922B8FF957E1AC22", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "3609DB2A96EDAA41922B8FF957E1AC22", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
 
     private int maxLineLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.891 -0400", hash_original_field = "3BFFA82D6F37731C10E9CEDA46F669D0", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.602 -0400", hash_original_field = "3BFFA82D6F37731C10E9CEDA46F669D0", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
 
     protected LineParser lineParser;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.905 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "B22B339261149112C549BDE5C5259B15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.603 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "B22B339261149112C549BDE5C5259B15")
     public  AbstractMessageParser(
             final SessionInputBuffer buffer,
             final LineParser parser,
@@ -70,7 +70,7 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
     }
 
     
-        public static Header[] parseHeaders(
+    public static Header[] parseHeaders(
             final SessionInputBuffer inbuffer,
             int maxHeaderCount,
             int maxLineLen,
@@ -134,11 +134,10 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         throws IOException, HttpException, ParseException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.906 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "21B19F05B51D13EE8D8096B88FCBC5E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.604 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "666FF5980578B5E7CB05AE683BF7853A")
     public HttpMessage parse() throws IOException, HttpException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_1969230552 = null; //Variable for return #1
-        HttpMessage message;
-        message = null;
+        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_107823284 = null; //Variable for return #1
+        HttpMessage message = null;
         try 
         {
             message = parseHead(this.sessionBuffer);
@@ -147,16 +146,15 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException(px.getMessage(), px);
         } //End block
-        Header[] headers;
-        headers = AbstractMessageParser.parseHeaders(
+        Header[] headers = AbstractMessageParser.parseHeaders(
                 this.sessionBuffer, 
                 this.maxHeaderCount,
                 this.maxLineLen,
                 this.lineParser);
         message.setHeaders(headers);
-        varB4EAC82CA7396A68D541C85D26508E83_1969230552 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_1969230552.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1969230552;
+        varB4EAC82CA7396A68D541C85D26508E83_107823284 = message;
+        varB4EAC82CA7396A68D541C85D26508E83_107823284.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_107823284;
         // ---------- Original Method ----------
         //HttpMessage message = null;
         //try {

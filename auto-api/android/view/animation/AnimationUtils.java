@@ -19,19 +19,19 @@ import java.io.IOException;
 
 public class AnimationUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.479 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.420 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
     public AnimationUtils ()
     {
         //Synthesized constructor
     }
 
 
-        public static long currentAnimationTimeMillis() {
+    public static long currentAnimationTimeMillis() {
         return SystemClock.uptimeMillis();
     }
 
     
-        public static Animation loadAnimation(Context context, int id) throws NotFoundException {
+    public static Animation loadAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -52,12 +52,12 @@ public class AnimationUtils {
     }
 
     
-        private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
-        private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
+    private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
         int type;
@@ -90,7 +90,7 @@ public class AnimationUtils {
     }
 
     
-        public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
+    public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -111,13 +111,13 @@ public class AnimationUtils {
     }
 
     
-        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
     
-        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         LayoutAnimationController controller = null;
         int type;
@@ -140,7 +140,7 @@ public class AnimationUtils {
     }
 
     
-        public static Animation makeInAnimation(Context c, boolean fromLeft) {
+    public static Animation makeInAnimation(Context c, boolean fromLeft) {
         Animation a;
         if (fromLeft) {
             a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_left);
@@ -153,7 +153,7 @@ public class AnimationUtils {
     }
 
     
-        public static Animation makeOutAnimation(Context c, boolean toRight) {
+    public static Animation makeOutAnimation(Context c, boolean toRight) {
         Animation a;
         if (toRight) {
             a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_out_right);
@@ -166,7 +166,7 @@ public class AnimationUtils {
     }
 
     
-        public static Animation makeInChildBottomAnimation(Context c) {
+    public static Animation makeInChildBottomAnimation(Context c) {
         Animation a;
         a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_child_bottom);
         a.setInterpolator(new AccelerateInterpolator());
@@ -175,7 +175,7 @@ public class AnimationUtils {
     }
 
     
-        public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
+    public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -196,7 +196,7 @@ public class AnimationUtils {
     }
 
     
-        private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;
         int depth = parser.getDepth();
@@ -233,11 +233,11 @@ public class AnimationUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.496 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "A8307AF47BADB45021E58F8C7112B399")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.422 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
 
-    private static int TOGETHER = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.496 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "35738883661080F24E81978BBD7CE0F6")
+    private static final int TOGETHER = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.422 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
 
-    private static int SEQUENTIALLY = 1;
+    private static final int SEQUENTIALLY = 1;
 }
 

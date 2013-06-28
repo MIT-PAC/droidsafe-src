@@ -23,14 +23,14 @@ import java.util.ArrayList;
 
 public class AnimatorInflater {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.112 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.954 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
     public AnimatorInflater ()
     {
         //Synthesized constructor
     }
 
 
-        public static Animator loadAnimator(Context context, int id) throws NotFoundException {
+    public static Animator loadAnimator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -53,12 +53,12 @@ public class AnimatorInflater {
     }
 
     
-        private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
     
-        private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
+    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
             AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
         Animator anim = null;
         ArrayList<Animator> childAnims = null;
@@ -108,7 +108,7 @@ public class AnimatorInflater {
     }
 
     
-        private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
+    private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
         ObjectAnimator anim = new ObjectAnimator();
         loadAnimator(context, attrs, anim);
         TypedArray a =
@@ -120,7 +120,7 @@ public class AnimatorInflater {
     }
 
     
-        private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
+    private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);
         long duration = a.getInt(com.android.internal.R.styleable.Animator_duration, 0);
@@ -237,23 +237,23 @@ public class AnimatorInflater {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.321 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "A8307AF47BADB45021E58F8C7112B399")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.958 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
 
-    private static int TOGETHER = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.335 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "35738883661080F24E81978BBD7CE0F6")
+    private static final int TOGETHER = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.958 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
 
-    private static int SEQUENTIALLY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.347 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "6E72B2C57F750656DEEA1CF23A004D42")
+    private static final int SEQUENTIALLY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "A27617DD31601E2EB156A76530E8379C")
 
-    private static int VALUE_TYPE_FLOAT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.348 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "AF934C3F2F1450BF19EA06587B26F994")
+    private static final int VALUE_TYPE_FLOAT = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "6D21C1ED6B4C00EAB281850A3EBEE6B8")
 
-    private static int VALUE_TYPE_INT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.360 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "A7DFEEE2F26B07CF5C63B55CC180BCEC")
+    private static final int VALUE_TYPE_INT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.959 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "238B1727D7604A09A087EB88A85EC858")
 
-    private static int VALUE_TYPE_COLOR = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:35:48.364 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1E901D905428E37C5E96BE8B10995A36")
+    private static final int VALUE_TYPE_COLOR = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.960 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1D53AE501AADB1CB9CB4D59D5FF93934")
 
-    private static int VALUE_TYPE_CUSTOM = 5;
+    private static final int VALUE_TYPE_CUSTOM = 5;
 }
 

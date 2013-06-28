@@ -11,11 +11,11 @@ import com.android.internal.telephony.RILConstants;
 import android.util.Log;
 
 public class CommandException extends RuntimeException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.877 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "237634D9088F176545E1DA209B5F69AC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.539 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "237634D9088F176545E1DA209B5F69AC")
 
     private Error e;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.890 -0400", hash_original_method = "AE462A80EC1EE4B5A1CC7ED5CD5F752D", hash_generated_method = "CCCCBFED75AB3988A8F88F5CA73BC6A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.540 -0400", hash_original_method = "AE462A80EC1EE4B5A1CC7ED5CD5F752D", hash_generated_method = "CCCCBFED75AB3988A8F88F5CA73BC6A4")
     public  CommandException(Error e) {
         super(e.toString());
         this.e = e;
@@ -24,7 +24,7 @@ public class CommandException extends RuntimeException {
     }
 
     
-        public static CommandException fromRilErrno(int ril_errno) {
+    public static CommandException fromRilErrno(int ril_errno) {
         switch(ril_errno) {
             case RILConstants.SUCCESS:                       return null;
             case RILConstants.RIL_ERRNO_INVALID_RESPONSE:
@@ -64,12 +64,12 @@ public class CommandException extends RuntimeException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.901 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "EFABC05D4D0765F905A6E7FDB9D1268E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.541 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "E08AEC23E676E3217F63D62272FAA7B6")
     public Error getCommandError() {
-        Error varB4EAC82CA7396A68D541C85D26508E83_390389245 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_390389245 = e;
-        varB4EAC82CA7396A68D541C85D26508E83_390389245.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_390389245;
+        Error varB4EAC82CA7396A68D541C85D26508E83_1756006709 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1756006709 = e;
+        varB4EAC82CA7396A68D541C85D26508E83_1756006709.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1756006709;
         // ---------- Original Method ----------
         //return e;
     }

@@ -17,7 +17,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class HttpRequestWriter extends AbstractMessageWriter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.005 -0400", hash_original_method = "4AD2311BD1B24C9EE9C1B85C315E33B2", hash_generated_method = "FC427F59564FEE3D99F3EAF0C0641802")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.821 -0400", hash_original_method = "4AD2311BD1B24C9EE9C1B85C315E33B2", hash_generated_method = "FC427F59564FEE3D99F3EAF0C0641802")
     public  HttpRequestWriter(final SessionOutputBuffer buffer,
                              final LineFormatter formatter,
                              final HttpParams params) {
@@ -29,10 +29,9 @@ public class HttpRequestWriter extends AbstractMessageWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.006 -0400", hash_original_method = "649D146D64C47E17693DC42ABE1DC1B6", hash_generated_method = "FF02A8015F9D5701804018987EA04264")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.821 -0400", hash_original_method = "649D146D64C47E17693DC42ABE1DC1B6", hash_generated_method = "D88EECC95755FB75C32241DFD5C63ED8")
     protected void writeHeadLine(final HttpMessage message) throws IOException {
-        CharArrayBuffer buffer;
-        buffer = lineFormatter.formatRequestLine
+        final CharArrayBuffer buffer = lineFormatter.formatRequestLine
             (this.lineBuf, ((HttpRequest) message).getRequestLine());
         this.sessionBuffer.writeLine(buffer);
         addTaint(message.getTaint());

@@ -14,18 +14,18 @@ import libcore.io.Memory;
 import static libcore.io.OsConstants.*;
 
 public abstract class MappedByteBuffer extends ByteBuffer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.751 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.702 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")
 
     DirectByteBuffer wrapped;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.752 -0400", hash_original_field = "54E7387E52E874C96887778FCFC7FAC0", hash_generated_field = "2A1F112DD9317D05E828544B748EF0B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.702 -0400", hash_original_field = "54E7387E52E874C96887778FCFC7FAC0", hash_generated_field = "2A1F112DD9317D05E828544B748EF0B7")
 
     private MapMode mapMode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.761 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "592F47ECEE49D493C4D649EB670BB79D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.702 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "02D8726EEA215BE950E8139BFA998E3B")
       MappedByteBuffer(ByteBuffer directBuffer) {
         super(directBuffer.capacity, directBuffer.block);
         {
-            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_455574979 = (!directBuffer.isDirect());
+            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_1312516253 = (!directBuffer.isDirect());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
@@ -41,7 +41,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.762 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "3696F6B779A20513AF0D49CF8B1A093E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.703 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "3696F6B779A20513AF0D49CF8B1A093E")
       MappedByteBuffer(MemoryBlock block, int capacity, int offset, MapMode mapMode) {
         super(capacity, block);
         this.mapMode = mapMode;
@@ -61,34 +61,27 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.763 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "F3F77E4C7E2A018CF7C7F69531EE334F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.704 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "C160DE86CBAC2205AC96B2FCD215527E")
     public final boolean isLoaded() {
-        long address;
-        address = block.toInt();
-        long size;
-        size = block.getSize();
+        long address = block.toInt();
+        long size = block.getSize();
         try 
         {
-            int pageSize;
-            pageSize = (int) Libcore.os.sysconf(_SC_PAGE_SIZE);
-            int pageOffset;
-            pageOffset = (int) (address % pageSize);
+            int pageSize = (int) Libcore.os.sysconf(_SC_PAGE_SIZE);
+            int pageOffset = (int) (address % pageSize);
             address -= pageOffset;
             size += pageOffset;
-            int pageCount;
-            pageCount = (int) ((size + pageSize - 1) / pageSize);
-            byte[] vector;
-            vector = new byte[pageCount];
+            int pageCount = (int) ((size + pageSize - 1) / pageSize);
+            byte[] vector = new byte[pageCount];
             Libcore.os.mincore(address, size, vector);
             {
-                int i;
-                i = 0;
+                int i = 0;
             } //End collapsed parenthetic
         } //End block
         catch (ErrnoException errnoException)
         { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815586654 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815586654;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1015466321 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1015466321;
         // ---------- Original Method ----------
         //long address = block.toInt();
         //long size = block.getSize();
@@ -115,9 +108,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.763 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "0CD1EBEB9619F3C4C49AE8C451FF612F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.706 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "9C3F7BC174DE050BDB912A82BED06C51")
     public final MappedByteBuffer load() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1344410676 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_115587893 = null; //Variable for return #1
         try 
         {
             Libcore.os.mlock(block.toInt(), block.getSize());
@@ -125,9 +118,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
         } //End block
         catch (ErrnoException ignored)
         { }
-        varB4EAC82CA7396A68D541C85D26508E83_1344410676 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1344410676.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1344410676;
+        varB4EAC82CA7396A68D541C85D26508E83_115587893 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_115587893.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_115587893;
         // ---------- Original Method ----------
         //try {
             //Libcore.os.mlock(block.toInt(), block.getSize());
@@ -138,9 +131,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.782 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "CC27EB38C094FEA4DCA878ACDAFA2BA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.708 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "014D2F200EA65990B5E076C23E331FCA")
     public final MappedByteBuffer force() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1468475517 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_790670949 = null; //Variable for return #1
         {
             try 
             {
@@ -151,9 +144,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(errnoException);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1468475517 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1468475517.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1468475517;
+        varB4EAC82CA7396A68D541C85D26508E83_790670949 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_790670949.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_790670949;
         // ---------- Original Method ----------
         //if (mapMode == MapMode.READ_WRITE) {
             //try {

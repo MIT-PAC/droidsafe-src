@@ -19,13 +19,13 @@ import libcore.io.IoUtils;
 
 final class FactoryFinder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.968 -0400", hash_original_method = "7B7719B12A7C6C3FB4A57C9E537309B5", hash_generated_method = "70C8AB5057BD93D35BF5340AED7D1084")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.459 -0400", hash_original_method = "7B7719B12A7C6C3FB4A57C9E537309B5", hash_generated_method = "70C8AB5057BD93D35BF5340AED7D1084")
     private  FactoryFinder() {
         // ---------- Original Method ----------
     }
 
     
-        private static void debugPrintln(String msg) {
+    private static void debugPrintln(String msg) {
         if (debug) {
             System.err.println(
                 CLASS_NAME
@@ -35,7 +35,7 @@ final class FactoryFinder {
     }
 
     
-        private static ClassLoader findClassLoader() throws ConfigurationError {
+    private static ClassLoader findClassLoader() throws ConfigurationError {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         if (debug) debugPrintln(
             "Using context class loader: "
@@ -50,7 +50,7 @@ final class FactoryFinder {
     }
 
     
-        static Object newInstance(
+    static Object newInstance(
         String className,
         ClassLoader classLoader) throws ConfigurationError {
         try {
@@ -74,7 +74,7 @@ final class FactoryFinder {
     }
 
     
-        static Object find(String factoryId, String fallbackClassName) throws ConfigurationError {
+    static Object find(String factoryId, String fallbackClassName) throws ConfigurationError {
         ClassLoader classLoader = findClassLoader();
         String systemProp = System.getProperty(factoryId);
         if (systemProp != null && systemProp.length() > 0) {
@@ -120,7 +120,7 @@ final class FactoryFinder {
     }
 
     
-        private static Object findJarServiceProvider(String factoryId) throws ConfigurationError {
+    private static Object findJarServiceProvider(String factoryId) throws ConfigurationError {
         String serviceId = "META-INF/services/" + factoryId;
         InputStream is = null;
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
@@ -159,7 +159,7 @@ final class FactoryFinder {
     }
 
     
-        private static String which(Class clazz) {
+    private static String which(Class clazz) {
         try {
             String classnameAsResource = clazz.getName().replace('.', '/') + ".class";
             ClassLoader loader = clazz.getClassLoader();
@@ -189,11 +189,11 @@ final class FactoryFinder {
 
     
     static class ConfigurationError extends Error {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.970 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.460 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
 
         private Exception exception;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.980 -0400", hash_original_method = "7384B234A714BB22DC7261536CC3F908", hash_generated_method = "301B0F070193DBE1E3BF73ECEDB48381")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_method = "7384B234A714BB22DC7261536CC3F908", hash_generated_method = "301B0F070193DBE1E3BF73ECEDB48381")
           ConfigurationError(String msg, Exception x) {
             super(msg);
             this.exception = x;
@@ -203,39 +203,39 @@ final class FactoryFinder {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.981 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "91B60BECEF5DA7EB6B5A85B9CDA98D9D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "F82A39E40DA1CC7D9DFB9F3220989874")
          Exception getException() {
-            Exception varB4EAC82CA7396A68D541C85D26508E83_751601278 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_751601278 = exception;
-            varB4EAC82CA7396A68D541C85D26508E83_751601278.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_751601278;
+            Exception varB4EAC82CA7396A68D541C85D26508E83_689508038 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_689508038 = exception;
+            varB4EAC82CA7396A68D541C85D26508E83_689508038.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_689508038;
             // ---------- Original Method ----------
             //return exception;
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.981 -0400", hash_original_field = "3968FBA132ACBD465B09E199D411A859", hash_generated_field = "0226E6FCE5665C65620E92912B4B45E7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "3968FBA132ACBD465B09E199D411A859", hash_generated_field = "F8222E9B0B6C0CF5ED69A500318A4223")
 
-        private static long serialVersionUID = -3644413026244211347L;
+        private static final long serialVersionUID = -3644413026244211347L;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.981 -0400", hash_original_field = "9BBF649F31FC36A0CC4592961633E64F", hash_generated_field = "86D248153C9F6782F0709DD47FDA1719")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "9BBF649F31FC36A0CC4592961633E64F", hash_generated_field = "0A5FDC909C600BF1870C0D6CAB4BE2B6")
 
-    private static String CLASS_NAME = "javax.xml.datatype.FactoryFinder";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.981 -0400", hash_original_field = "3E160F8191A128BF71278081784675C8", hash_generated_field = "A32CF2309396233D2A1E4D89C9258CB7")
+    private static final String CLASS_NAME = "javax.xml.datatype.FactoryFinder";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "3E160F8191A128BF71278081784675C8", hash_generated_field = "A32CF2309396233D2A1E4D89C9258CB7")
 
     private static boolean debug = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.982 -0400", hash_original_field = "52A4BA4FC2AFEF64548D9B073D8EB3FB", hash_generated_field = "EE2E2F9952B07BED0E6A6FFE9E5E0C17")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "52A4BA4FC2AFEF64548D9B073D8EB3FB", hash_generated_field = "EE2E2F9952B07BED0E6A6FFE9E5E0C17")
 
     private static Properties cacheProps = new Properties();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.982 -0400", hash_original_field = "A7893FAED7826B5857859A98202AF417", hash_generated_field = "F95055A903FED9629579B0455BF06A85")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "A7893FAED7826B5857859A98202AF417", hash_generated_field = "F95055A903FED9629579B0455BF06A85")
 
     private static boolean firstTime = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.982 -0400", hash_original_field = "3AA22EFBCA2B88350AC8EC73F7CB96D8", hash_generated_field = "4CB5A01BA4A0DC64FF3BD80B55720DB6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_field = "3AA22EFBCA2B88350AC8EC73F7CB96D8", hash_generated_field = "09DCCD316B3E885E246889B10781D5FA")
 
-    private static int DEFAULT_LINE_LENGTH = 80;
+    private static final int DEFAULT_LINE_LENGTH = 80;
     static {
         String val = System.getProperty("jaxp.debug");
         debug = val != null && (! "false".equals(val));

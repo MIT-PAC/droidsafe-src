@@ -13,11 +13,11 @@ import org.apache.http.auth.Credentials;
 import org.apache.http.client.CredentialsProvider;
 
 public class BasicCredentialsProvider implements CredentialsProvider {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.233 -0400", hash_original_field = "74CEE513FFFAA74DACEC65FAB85A3105", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.999 -0400", hash_original_field = "74CEE513FFFAA74DACEC65FAB85A3105", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")
 
     private HashMap<AuthScope, Credentials> credMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.234 -0400", hash_original_method = "5972EEB8CE88F96A462831B5B8532572", hash_generated_method = "BABD4A71FDA2BEC7C45B048FBE26AE3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.999 -0400", hash_original_method = "5972EEB8CE88F96A462831B5B8532572", hash_generated_method = "BABD4A71FDA2BEC7C45B048FBE26AE3C")
     public  BasicCredentialsProvider() {
         super();
         this.credMap = new HashMap<AuthScope, Credentials>();
@@ -26,7 +26,7 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.234 -0400", hash_original_method = "7BEE1753C2713BAF18AAEA2B93F376C4", hash_generated_method = "6279FC114B659733CFA85BCB29C63EC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.000 -0400", hash_original_method = "7BEE1753C2713BAF18AAEA2B93F376C4", hash_generated_method = "6279FC114B659733CFA85BCB29C63EC8")
     public synchronized void setCredentials(
             final AuthScope authscope, 
             final Credentials credentials) {
@@ -44,7 +44,7 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-        private static Credentials matchCredentials(
+    private static Credentials matchCredentials(
             final HashMap<AuthScope, Credentials> map, 
             final AuthScope authscope) {
         Credentials creds = map.get(authscope);
@@ -66,16 +66,16 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.242 -0400", hash_original_method = "AB70A2CF4AFF279D0378510F4C86443E", hash_generated_method = "CFD577BD8B22511BE125E6E5C88FB7B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.001 -0400", hash_original_method = "AB70A2CF4AFF279D0378510F4C86443E", hash_generated_method = "AD28F71197AA08860B7C5671895EFF89")
     public synchronized Credentials getCredentials(final AuthScope authscope) {
-        Credentials varB4EAC82CA7396A68D541C85D26508E83_1168348821 = null; //Variable for return #1
+        Credentials varB4EAC82CA7396A68D541C85D26508E83_2022547307 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Authentication scope may not be null");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1168348821 = matchCredentials(this.credMap, authscope);
+        varB4EAC82CA7396A68D541C85D26508E83_2022547307 = matchCredentials(this.credMap, authscope);
         addTaint(authscope.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1168348821.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1168348821;
+        varB4EAC82CA7396A68D541C85D26508E83_2022547307.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2022547307;
         // ---------- Original Method ----------
         //if (authscope == null) {
             //throw new IllegalArgumentException("Authentication scope may not be null");
@@ -84,19 +84,19 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.242 -0400", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "C1D3D1DC3CF85E37B0D218419F73D8C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.002 -0400", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "1DE2679323112DFDB9B5DE64979BF895")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_493655280 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_493655280 = credMap.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_493655280.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_493655280;
+        String varB4EAC82CA7396A68D541C85D26508E83_1989501020 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1989501020 = credMap.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1989501020.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1989501020;
         // ---------- Original Method ----------
         //return credMap.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.265 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.002 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
     public synchronized void clear() {
         this.credMap.clear();
         // ---------- Original Method ----------

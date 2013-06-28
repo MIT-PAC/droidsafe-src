@@ -28,25 +28,25 @@ import libcore.io.OsConstants;
 import libcore.io.StructStat;
 
 public abstract class BackupAgent extends ContextWrapper {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.650 -0400", hash_original_field = "6812121D3014FEFEE7A1118C07DF58B2", hash_generated_field = "FFE318407338ED0797C07BC38E75B617")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.373 -0400", hash_original_field = "6812121D3014FEFEE7A1118C07DF58B2", hash_generated_field = "7FA1510B7C47FB23A1BC45219C359763")
 
-    private IBinder mBinder = new BackupServiceBinder().asBinder();
+    private final IBinder mBinder = new BackupServiceBinder().asBinder();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.661 -0400", hash_original_method = "B5A8D7758CDB468D197C4191C97B62B7", hash_generated_method = "10BCF02BE8187F1DDF7130F69F515B81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.374 -0400", hash_original_method = "B5A8D7758CDB468D197C4191C97B62B7", hash_generated_method = "10BCF02BE8187F1DDF7130F69F515B81")
     public  BackupAgent() {
         super(null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.663 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.375 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.665 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.376 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
@@ -62,28 +62,20 @@ public abstract class BackupAgent extends ContextWrapper {
             throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.701 -0400", hash_original_method = "9C0AD80B0DC65359576BE56D304BF72D", hash_generated_method = "8B277AC94D2A321B07D826A4309FC481")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.378 -0400", hash_original_method = "9C0AD80B0DC65359576BE56D304BF72D", hash_generated_method = "21421B0C047B779F30D07ADBEF9740B5")
     public void onFullBackup(FullBackupDataOutput data) throws IOException {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        ApplicationInfo appInfo;
-        appInfo = getApplicationInfo();
-        String rootDir;
-        rootDir = new File(appInfo.dataDir).getCanonicalPath();
-        String filesDir;
-        filesDir = getFilesDir().getCanonicalPath();
-        String databaseDir;
-        databaseDir = getDatabasePath("foo").getParentFile().getCanonicalPath();
-        String sharedPrefsDir;
-        sharedPrefsDir = getSharedPrefsFile("foo").getParentFile().getCanonicalPath();
-        String cacheDir;
-        cacheDir = getCacheDir().getCanonicalPath();
+        ApplicationInfo appInfo = getApplicationInfo();
+        String rootDir = new File(appInfo.dataDir).getCanonicalPath();
+        String filesDir = getFilesDir().getCanonicalPath();
+        String databaseDir = getDatabasePath("foo").getParentFile().getCanonicalPath();
+        String sharedPrefsDir = getSharedPrefsFile("foo").getParentFile().getCanonicalPath();
+        String cacheDir = getCacheDir().getCanonicalPath();
         String libDir;
         libDir = new File(appInfo.nativeLibraryDir).getCanonicalPath();
         libDir = null;
-        HashSet<String> filterSet;
-        filterSet = new HashSet<String>();
-        String packageName;
-        packageName = getPackageName();
+        HashSet<String> filterSet = new HashSet<String>();
+        String packageName = getPackageName();
         {
             filterSet.add(libDir);
         } //End block
@@ -109,13 +101,13 @@ public abstract class BackupAgent extends ContextWrapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.725 -0400", hash_original_method = "824AF36171DE5120222691B25F755417", hash_generated_method = "8947A379E1D96C39617FFFBCB230E34C")
     public final void fullBackupFile(File file, FullBackupDataOutput output) {
-        String mainDir;
-        String filesDir;
-        String dbDir;
-        String spDir;
-        String cacheDir;
-        String libDir;
-        String filePath;
+        String mainDir = null;
+        String filesDir = null;
+        String dbDir = null;
+        String spDir = null;
+        String cacheDir = null;
+        String libDir = null;
+        String filePath = null;
         ApplicationInfo appInfo;
         appInfo = getApplicationInfo();
         try 
@@ -191,7 +183,7 @@ public abstract class BackupAgent extends ContextWrapper {
                     {
                         File file;
                         file = scanQueue.remove(0);
-                        String filePath;
+                        String filePath = null;
                         try 
                         {
                             filePath = file.getCanonicalPath();
@@ -209,9 +201,7 @@ public abstract class BackupAgent extends ContextWrapper {
                                         contents = file.listFiles();
                                         {
                                             {
-                                                Iterator<File> var2684A10691FAB97CA0E690092E000AFC_1465054559 = (contents).iterator();
-                                                var2684A10691FAB97CA0E690092E000AFC_1465054559.hasNext();
-                                                File entry = var2684A10691FAB97CA0E690092E000AFC_1465054559.next();
+                                                File entry = contents[0];
                                                 {
                                                     scanQueue.add(0, entry);
                                                 } //End block
@@ -241,7 +231,7 @@ public abstract class BackupAgent extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.990 -0400", hash_original_method = "20621F323ECDCB060A13554E50206415", hash_generated_method = "D5D6ACE741202B3511DADB0490CAF103")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.379 -0400", hash_original_method = "20621F323ECDCB060A13554E50206415", hash_generated_method = "D5D6ACE741202B3511DADB0490CAF103")
     public void onRestoreFile(ParcelFileDescriptor data, long size,
             File destination, int type, long mode, long mtime) throws IOException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -257,37 +247,36 @@ public abstract class BackupAgent extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.019 -0400", hash_original_method = "588B4C1C50D0665AE90099672BE15A28", hash_generated_method = "A61742A0CF03125D536EDB16EAF0ED43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.381 -0400", hash_original_method = "588B4C1C50D0665AE90099672BE15A28", hash_generated_method = "04AD828CF657D8CFDE8873423E073835")
     protected void onRestoreFile(ParcelFileDescriptor data, long size,
             int type, String domain, String path, long mode, long mtime) throws IOException {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        String basePath;
-        basePath = null;
+        String basePath = null;
         Log.d(TAG, "onRestoreFile() size=" + size + " type=" + type
                 + " domain=" + domain + " relpath=" + path + " mode=" + mode
                 + " mtime=" + mtime);
         {
-            boolean varD7197C93E997EEB150AD23286621871F_761182132 = (domain.equals(FullBackup.DATA_TREE_TOKEN));
+            boolean varD7197C93E997EEB150AD23286621871F_1206413783 = (domain.equals(FullBackup.DATA_TREE_TOKEN));
             {
                 basePath = getFilesDir().getCanonicalPath();
             } //End block
             {
-                boolean var1AD61ECB8D54CA38554F0AAB79619C63_1845892130 = (domain.equals(FullBackup.DATABASE_TREE_TOKEN));
+                boolean var1AD61ECB8D54CA38554F0AAB79619C63_90210064 = (domain.equals(FullBackup.DATABASE_TREE_TOKEN));
                 {
                     basePath = getDatabasePath("foo").getParentFile().getCanonicalPath();
                 } //End block
                 {
-                    boolean var2EF4ECA397FB561BFA1F5074C6EB7D8C_2132194212 = (domain.equals(FullBackup.ROOT_TREE_TOKEN));
+                    boolean var2EF4ECA397FB561BFA1F5074C6EB7D8C_158137673 = (domain.equals(FullBackup.ROOT_TREE_TOKEN));
                     {
                         basePath = new File(getApplicationInfo().dataDir).getCanonicalPath();
                     } //End block
                     {
-                        boolean varB2998DC520701FB7BB32EF948C988D7D_331403754 = (domain.equals(FullBackup.SHAREDPREFS_TREE_TOKEN));
+                        boolean varB2998DC520701FB7BB32EF948C988D7D_667422686 = (domain.equals(FullBackup.SHAREDPREFS_TREE_TOKEN));
                         {
                             basePath = getSharedPrefsFile("foo").getParentFile().getCanonicalPath();
                         } //End block
                         {
-                            boolean var52B9EBBE19DC1BB5B33A8CFB0A7E4D2E_196555426 = (domain.equals(FullBackup.CACHE_TREE_TOKEN));
+                            boolean var52B9EBBE19DC1BB5B33A8CFB0A7E4D2E_2079602288 = (domain.equals(FullBackup.CACHE_TREE_TOKEN));
                             {
                                 basePath = getCacheDir().getCanonicalPath();
                             } //End block
@@ -297,8 +286,7 @@ public abstract class BackupAgent extends ContextWrapper {
             } //End collapsed parenthetic
         } //End collapsed parenthetic
         {
-            File outFile;
-            outFile = new File(basePath, path);
+            File outFile = new File(basePath, path);
             onRestoreFile(data, size, outFile, type, mode, mtime);
         } //End block
         {
@@ -316,19 +304,19 @@ public abstract class BackupAgent extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.024 -0400", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "80DDD13993945E47638FB27A6C13932B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.382 -0400", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "0CA0EF9343CA3754278107422723D876")
     public final IBinder onBind() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_2108080508 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2108080508 = mBinder;
-        varB4EAC82CA7396A68D541C85D26508E83_2108080508.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2108080508;
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1137276722 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1137276722 = mBinder;
+        varB4EAC82CA7396A68D541C85D26508E83_1137276722.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1137276722;
         // ---------- Original Method ----------
         //return mBinder;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.044 -0400", hash_original_method = "20906B0697539AB9D636DC69F7DBB057", hash_generated_method = "4A717DF2B2372B2D8E2471BB6D393064")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.382 -0400", hash_original_method = "20906B0697539AB9D636DC69F7DBB057", hash_generated_method = "4A717DF2B2372B2D8E2471BB6D393064")
     public void attach(Context context) {
         attachBaseContext(context);
         addTaint(context.getTaint());
@@ -339,23 +327,21 @@ public abstract class BackupAgent extends ContextWrapper {
     
     private class BackupServiceBinder extends IBackupAgent.Stub {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.045 -0400", hash_original_method = "981BC5161F50D30EEB7E3364AFC1A4E5", hash_generated_method = "981BC5161F50D30EEB7E3364AFC1A4E5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.383 -0400", hash_original_method = "981BC5161F50D30EEB7E3364AFC1A4E5", hash_generated_method = "981BC5161F50D30EEB7E3364AFC1A4E5")
         public BackupServiceBinder ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.059 -0400", hash_original_method = "8358D1CE671AA075D592B0F9339AC6D7", hash_generated_method = "475C1B4A55229581D705CC48535669D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.384 -0400", hash_original_method = "8358D1CE671AA075D592B0F9339AC6D7", hash_generated_method = "6D10D99B20C19EDDD0B18795097E28DD")
         @Override
         public void doBackup(ParcelFileDescriptor oldState,
                 ParcelFileDescriptor data,
                 ParcelFileDescriptor newState,
                 int token, IBackupManager callbackBinder) throws RemoteException {
-            long ident;
-            ident = Binder.clearCallingIdentity();
-            BackupDataOutput output;
-            output = new BackupDataOutput(data.getFileDescriptor());
+            long ident = Binder.clearCallingIdentity();
+            BackupDataOutput output = new BackupDataOutput(data.getFileDescriptor());
             try 
             {
                 BackupAgent.this.onBackup(oldState, output, newState);
@@ -390,15 +376,13 @@ public abstract class BackupAgent extends ContextWrapper {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.072 -0400", hash_original_method = "7939DBF706CB3F6F728A24EEBE8A617D", hash_generated_method = "30025CABA4FC5C779D794B7BE28F41ED")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.385 -0400", hash_original_method = "7939DBF706CB3F6F728A24EEBE8A617D", hash_generated_method = "9B09D70E522A5F7D52C405E1CB9101E7")
         @Override
         public void doRestore(ParcelFileDescriptor data, int appVersionCode,
                 ParcelFileDescriptor newState,
                 int token, IBackupManager callbackBinder) throws RemoteException {
-            long ident;
-            ident = Binder.clearCallingIdentity();
-            BackupDataInput input;
-            input = new BackupDataInput(data.getFileDescriptor());
+            long ident = Binder.clearCallingIdentity();
+            BackupDataInput input = new BackupDataInput(data.getFileDescriptor());
             try 
             {
                 BackupAgent.this.onRestore(input, appVersionCode, newState);
@@ -433,12 +417,11 @@ public abstract class BackupAgent extends ContextWrapper {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.079 -0400", hash_original_method = "D1AF436E8077A77141AB12CE24B7EAC7", hash_generated_method = "40764DEC3A47C2C6B348321378D538D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.386 -0400", hash_original_method = "D1AF436E8077A77141AB12CE24B7EAC7", hash_generated_method = "4E8CEEF865435C029DBBE62FA0AACCE9")
         @Override
         public void doFullBackup(ParcelFileDescriptor data,
                 int token, IBackupManager callbackBinder) {
-            long ident;
-            ident = Binder.clearCallingIdentity();
+            long ident = Binder.clearCallingIdentity();
             try 
             {
                 BackupAgent.this.onFullBackup(new FullBackupDataOutput(data));
@@ -457,10 +440,8 @@ public abstract class BackupAgent extends ContextWrapper {
             {
                 try 
                 {
-                    FileOutputStream out;
-                    out = new FileOutputStream(data.getFileDescriptor());
-                    byte[] buf;
-                    buf = new byte[4];
+                    FileOutputStream out = new FileOutputStream(data.getFileDescriptor());
+                    byte[] buf = new byte[4];
                     out.write(buf);
                 } //End block
                 catch (IOException e)
@@ -481,13 +462,12 @@ public abstract class BackupAgent extends ContextWrapper {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.090 -0400", hash_original_method = "4CE4E3F6BFE9C329E5A1E18658253486", hash_generated_method = "563FDE3C0AE43A20B6B4246A7F4F9DA1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.386 -0400", hash_original_method = "4CE4E3F6BFE9C329E5A1E18658253486", hash_generated_method = "944BFF3C1137487C65BEBB8D1B68DDB6")
         @Override
         public void doRestoreFile(ParcelFileDescriptor data, long size,
                 int type, String domain, String path, long mode, long mtime,
                 int token, IBackupManager callbackBinder) throws RemoteException {
-            long ident;
-            ident = Binder.clearCallingIdentity();
+            long ident = Binder.clearCallingIdentity();
             try 
             {
                 BackupAgent.this.onRestoreFile(data, size, type, domain, path, mode, mtime);
@@ -533,27 +513,27 @@ public abstract class BackupAgent extends ContextWrapper {
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.107 -0400", hash_original_field = "4ADF9F269EDB752D9DAF2619A642F40E", hash_generated_field = "435867AAB7879E1905C087AA981414A1")
 
-        private static String TAG = "BackupServiceBinder";
+        private static final String TAG = "BackupServiceBinder";
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.108 -0400", hash_original_field = "6D9EC25AF8582467BD59C12585E6F30B", hash_generated_field = "EA42DA52E85F51B51C74DBA5DD98F8AC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "6D9EC25AF8582467BD59C12585E6F30B", hash_generated_field = "CC20CEBA20D1053D2133B7442D01B53F")
 
-    private static String TAG = "BackupAgent";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.108 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "14C18EBA74F36E4DA6BB1F58245F971E")
+    private static final String TAG = "BackupAgent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "0DA17BC1AEF6DBF011A4A750F5A71D57")
 
-    private static boolean DEBUG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.109 -0400", hash_original_field = "3666587197EBF77320BA02340DBC75CC", hash_generated_field = "F411480428FF7BC88B285D624F0C1A18")
+    private static final boolean DEBUG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "3666587197EBF77320BA02340DBC75CC", hash_generated_field = "F411480428FF7BC88B285D624F0C1A18")
 
     public static final int TYPE_EOF = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.109 -0400", hash_original_field = "55C152A29A415C810B769C5A83FC118A", hash_generated_field = "151A491EED5B718681A96914789F4FA2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "55C152A29A415C810B769C5A83FC118A", hash_generated_field = "151A491EED5B718681A96914789F4FA2")
 
     public static final int TYPE_FILE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.117 -0400", hash_original_field = "9B2351E51FCF0A36CABA15A71892E592", hash_generated_field = "91BB5D30A9ED5809D5F8123C625B8485")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "9B2351E51FCF0A36CABA15A71892E592", hash_generated_field = "91BB5D30A9ED5809D5F8123C625B8485")
 
     public static final int TYPE_DIRECTORY = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.118 -0400", hash_original_field = "40F859C22CEBA02A95CC3738DDF03481", hash_generated_field = "5EF3A28FA8E5E382E3C6BB7DC99660C3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.387 -0400", hash_original_field = "40F859C22CEBA02A95CC3738DDF03481", hash_generated_field = "5EF3A28FA8E5E382E3C6BB7DC99660C3")
 
     public static final int TYPE_SYMLINK = 3;
 }

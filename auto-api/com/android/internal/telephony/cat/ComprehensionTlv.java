@@ -11,23 +11,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ComprehensionTlv {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.838 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "BFBA40DE531B5000F1981B7BBF1ED026")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "BFBA40DE531B5000F1981B7BBF1ED026")
 
     private int mTag;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.838 -0400", hash_original_field = "0F17E746BE153E70A72E97F8AE4B0967", hash_generated_field = "615830BA9729410C3098ECFE977B653E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_field = "0F17E746BE153E70A72E97F8AE4B0967", hash_generated_field = "615830BA9729410C3098ECFE977B653E")
 
     private boolean mCr;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.838 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "E9E17726F18BEC3E5C2C142D209555FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "E9E17726F18BEC3E5C2C142D209555FD")
 
     private int mLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.838 -0400", hash_original_field = "23B7A8A7152E7007B08DAF983B584CA9", hash_generated_field = "8FECB3720B086D527CFAD02FEE0B0CCC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_field = "23B7A8A7152E7007B08DAF983B584CA9", hash_generated_field = "8FECB3720B086D527CFAD02FEE0B0CCC")
 
     private int mValueIndex;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.838 -0400", hash_original_field = "68EFE75FA9F684BF74FD95FB591C4772", hash_generated_field = "5744D2EFAB71BD258B36C43D2ECBE57E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_field = "68EFE75FA9F684BF74FD95FB591C4772", hash_generated_field = "5744D2EFAB71BD258B36C43D2ECBE57E")
 
     private byte[] mRawValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.839 -0400", hash_original_method = "F083BF2976A39A70E87A329F21B5205D", hash_generated_method = "020782AEA4213AFDFBB86D391AADBE72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.518 -0400", hash_original_method = "F083BF2976A39A70E87A329F21B5205D", hash_generated_method = "020782AEA4213AFDFBB86D391AADBE72")
     protected  ComprehensionTlv(int tag, boolean cr, int length, byte[] data,
             int valueIndex) {
         mTag = tag;
@@ -44,52 +44,52 @@ class ComprehensionTlv {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.839 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "C78064EB4B1E70FC621ED58E157D5A35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "20643E4B28FFE359DDD5ADCB3B500668")
     public int getTag() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147971255 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147971255;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25727994 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25727994;
         // ---------- Original Method ----------
         //return mTag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.839 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "B1148BB9AC7CF7575FD6FA7954B4A8AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "63D2BEF68862FA6578B92403FAE652ED")
     public boolean isComprehensionRequired() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432436581 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432436581;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316570368 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316570368;
         // ---------- Original Method ----------
         //return mCr;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.840 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "398B15006D65B75F1862A2F6A8F44177")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "08D6A75A69E42EFC91A81A547F0E726E")
     public int getLength() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134866076 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134866076;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586041862 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586041862;
         // ---------- Original Method ----------
         //return mLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.840 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "456966BD33FCB1B85B2DD3CD0DB7DC46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.519 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "0692B5A6D0CD00404DA72EB87F90C0FF")
     public int getValueIndex() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494252889 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494252889;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382481416 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382481416;
         // ---------- Original Method ----------
         //return mValueIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.840 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "1C90324E8FB16890A122C9929C0B03AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.520 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "043D95350E397ACA179B519EC1477106")
     public byte[] getRawValue() {
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_935535812 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_935535812;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_468862714 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_468862714;
         // ---------- Original Method ----------
         //return mRawValue;
     }
 
     
-        public static List<ComprehensionTlv> decodeMany(byte[] data, int startIndex) throws ResultException {
+    public static List<ComprehensionTlv> decodeMany(byte[] data, int startIndex) throws ResultException {
         ArrayList<ComprehensionTlv> items = new ArrayList<ComprehensionTlv>();
         int endIndex = data.length;
         while (startIndex < endIndex) {
@@ -107,7 +107,7 @@ class ComprehensionTlv {
     }
 
     
-        public static ComprehensionTlv decode(byte[] data, int startIndex) throws ResultException {
+    public static ComprehensionTlv decode(byte[] data, int startIndex) throws ResultException {
         try {
             int curIndex = startIndex;
             int endIndex = data.length;
@@ -169,8 +169,8 @@ class ComprehensionTlv {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:18.850 -0400", hash_original_field = "528B030C1EBA87EE28DC417B1C2A985B", hash_generated_field = "C7C7AEF626CD1287982A9A4D12823F8E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.520 -0400", hash_original_field = "528B030C1EBA87EE28DC417B1C2A985B", hash_generated_field = "0B14812E52CC10D1258CE11D062EA057")
 
-    private static String LOG_TAG = "ComprehensionTlv";
+    private static final String LOG_TAG = "ComprehensionTlv";
 }
 

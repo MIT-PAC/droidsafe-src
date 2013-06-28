@@ -13,14 +13,14 @@ import java.security.NoSuchAlgorithmException;
 
 public class MessageDigestAlgorithm {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.262 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.754 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
     public MessageDigestAlgorithm ()
     {
         //Synthesized constructor
     }
 
 
-        static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
+    static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
             String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
             StackLogger stackLogger) {
@@ -59,7 +59,7 @@ public class MessageDigestAlgorithm {
     }
 
     
-        static String calculateResponse(String algorithm, String username_value, String realm_value,
+    static String calculateResponse(String algorithm, String username_value, String realm_value,
             String passwd, String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
             StackLogger stackLogger) {
@@ -107,7 +107,7 @@ public class MessageDigestAlgorithm {
     }
 
     
-        private static String H(String data) {
+    private static String H(String data) {
         try {
             MessageDigest digest = MessageDigest.getInstance("MD5");
             return toHexString(digest.digest(data.getBytes()));
@@ -117,12 +117,12 @@ public class MessageDigestAlgorithm {
     }
 
     
-        private static String KD(String secret, String data) {
+    private static String KD(String secret, String data) {
         return H(secret + ":" + data);
     }
 
     
-        private static String toHexString(byte b[]) {
+    private static String toHexString(byte b[]) {
         int pos = 0;
         char[] c = new char[b.length * 2];
         for (int i = 0; i < b.length; i++) {
@@ -133,9 +133,9 @@ public class MessageDigestAlgorithm {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.273 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "67C5C1E83455E082BF44ED8638A4380D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.756 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "D08ABC333720B6C25B9902ED84803CDE")
 
-    private static char[] toHex = {
+    private static final char[] toHex = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
     };
 }

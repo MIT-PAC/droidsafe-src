@@ -32,23 +32,23 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class SipPhone extends SipPhoneBase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.177 -0400", hash_original_field = "43C9EE3B0858C8409700F8BE9A7CDE24", hash_generated_field = "06E85CBF753C72DF06700CA0D6B37C3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.209 -0400", hash_original_field = "43C9EE3B0858C8409700F8BE9A7CDE24", hash_generated_field = "06E85CBF753C72DF06700CA0D6B37C3F")
 
     private SipCall ringingCall = new SipCall();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.177 -0400", hash_original_field = "924189678017C6A548527B5A9F52A27F", hash_generated_field = "320FA68B59E86E885480BDC328D988A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.209 -0400", hash_original_field = "924189678017C6A548527B5A9F52A27F", hash_generated_field = "320FA68B59E86E885480BDC328D988A1")
 
     private SipCall foregroundCall = new SipCall();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.177 -0400", hash_original_field = "ACF2C40F82F49E1E79919E82F6B27E7B", hash_generated_field = "E67497BDFFD17E2A0DB124112854785A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.209 -0400", hash_original_field = "ACF2C40F82F49E1E79919E82F6B27E7B", hash_generated_field = "E67497BDFFD17E2A0DB124112854785A")
 
     private SipCall backgroundCall = new SipCall();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.177 -0400", hash_original_field = "80F32E3FB2E35C029C679D5FD2362781", hash_generated_field = "E80E46E58FFD30634B7E3BE2973B3395")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.209 -0400", hash_original_field = "80F32E3FB2E35C029C679D5FD2362781", hash_generated_field = "E80E46E58FFD30634B7E3BE2973B3395")
 
     private SipManager mSipManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.177 -0400", hash_original_field = "7DEA788680409024329A69AD3554F7DD", hash_generated_field = "7EAF540B0EC7BBB66B1BAC42709185BB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.209 -0400", hash_original_field = "7DEA788680409024329A69AD3554F7DD", hash_generated_field = "7EAF540B0EC7BBB66B1BAC42709185BB")
 
     private SipProfile mProfile;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.178 -0400", hash_original_method = "6A0F0B835E49D28418FC90D67BF66C10", hash_generated_method = "169BB17A1C22728C771E38A1BFCFAA31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.210 -0400", hash_original_method = "6A0F0B835E49D28418FC90D67BF66C10", hash_generated_method = "169BB17A1C22728C771E38A1BFCFAA31")
       SipPhone(Context context, PhoneNotifier notifier, SipProfile profile) {
         super(context, notifier);
         Log.d(LOG_TAG, "new SipPhone: " + profile.getUriString());
@@ -68,18 +68,17 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.179 -0400", hash_original_method = "0022E344F588A86EC51D8DF12CB4CABD", hash_generated_method = "546F3F61C155CE0F75FC377DD67B81EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.211 -0400", hash_original_method = "0022E344F588A86EC51D8DF12CB4CABD", hash_generated_method = "2AC364358522569C086215B1D349618D")
     @Override
     public boolean equals(Object o) {
         {
-            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1522978513 = (o == this);
+            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1405545804 = (o == this);
         } //End collapsed parenthetic
-        SipPhone that;
-        that = (SipPhone) o;
-        boolean var45CE97710469451C578ABB40487B4EE8_1495535740 = (mProfile.getUriString().equals(that.mProfile.getUriString()));
+        SipPhone that = (SipPhone) o;
+        boolean var45CE97710469451C578ABB40487B4EE8_946291380 = (mProfile.getUriString().equals(that.mProfile.getUriString()));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292274874 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_292274874;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1487086972 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1487086972;
         // ---------- Original Method ----------
         //if (o == this) return true;
         //if (!(o instanceof SipPhone)) return false;
@@ -88,65 +87,62 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.180 -0400", hash_original_method = "87B6F28FD5B3DEC2F08CA48119477808", hash_generated_method = "D6F0FA55282B49536DFC25CDA9B8221E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.211 -0400", hash_original_method = "87B6F28FD5B3DEC2F08CA48119477808", hash_generated_method = "3646189848BD58942A7CB6EC52DA2B71")
     public String getPhoneName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1591713916 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1591713916 = "SIP:" + getUriString(mProfile);
-        varB4EAC82CA7396A68D541C85D26508E83_1591713916.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1591713916;
+        String varB4EAC82CA7396A68D541C85D26508E83_1079928340 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1079928340 = "SIP:" + getUriString(mProfile);
+        varB4EAC82CA7396A68D541C85D26508E83_1079928340.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1079928340;
         // ---------- Original Method ----------
         //return "SIP:" + getUriString(mProfile);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.180 -0400", hash_original_method = "AD1E8A0332F840602A7373ACA5D5D1A0", hash_generated_method = "058DDCD31936A1B6482FE76D0447ECA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.211 -0400", hash_original_method = "AD1E8A0332F840602A7373ACA5D5D1A0", hash_generated_method = "6530782783D81164D9632B25CC39AA6E")
     public String getSipUri() {
-        String varB4EAC82CA7396A68D541C85D26508E83_188548557 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_188548557 = mProfile.getUriString();
-        varB4EAC82CA7396A68D541C85D26508E83_188548557.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_188548557;
+        String varB4EAC82CA7396A68D541C85D26508E83_1957236090 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1957236090 = mProfile.getUriString();
+        varB4EAC82CA7396A68D541C85D26508E83_1957236090.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1957236090;
         // ---------- Original Method ----------
         //return mProfile.getUriString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.190 -0400", hash_original_method = "D3C5F9763476A8D0E8037A369F8C496C", hash_generated_method = "12DC883EAB552E4E0AFB246B21EA777B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.212 -0400", hash_original_method = "D3C5F9763476A8D0E8037A369F8C496C", hash_generated_method = "39F36FC937DE5A778724AC1FE45FCC66")
     public boolean equals(SipPhone phone) {
-        boolean varB170C7409F6B913400034BFCA292A56F_1583215841 = (getSipUri().equals(phone.getSipUri()));
+        boolean varB170C7409F6B913400034BFCA292A56F_1147398218 = (getSipUri().equals(phone.getSipUri()));
         addTaint(phone.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1818047790 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1818047790;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2061230704 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2061230704;
         // ---------- Original Method ----------
         //return getSipUri().equals(phone.getSipUri());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.191 -0400", hash_original_method = "520B082FC4D55C78B63B25D36AD6E406", hash_generated_method = "D00105AC92EAC014F48BD046E9784030")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.212 -0400", hash_original_method = "520B082FC4D55C78B63B25D36AD6E406", hash_generated_method = "517C2497C88011310F78F92C09B1E378")
     public boolean canTake(Object incomingCall) {
         {
             {
-                boolean varE01C4545931A62F4FC941738A7A28D5F_1372753832 = (ringingCall.getState().isAlive());
+                boolean varE01C4545931A62F4FC941738A7A28D5F_1832446883 = (ringingCall.getState().isAlive());
             } //End collapsed parenthetic
             {
-                boolean var5F3F3054BBF953B9D43A6A67CF0D2F18_694694680 = (foregroundCall.getState().isAlive()
+                boolean var5F3F3054BBF953B9D43A6A67CF0D2F18_156381260 = (foregroundCall.getState().isAlive()
                     && backgroundCall.getState().isAlive());
             } //End collapsed parenthetic
             try 
             {
-                SipAudioCall sipAudioCall;
-                sipAudioCall = (SipAudioCall) incomingCall;
+                SipAudioCall sipAudioCall = (SipAudioCall) incomingCall;
                 Log.d(LOG_TAG, "+++ taking call from: "
                         + sipAudioCall.getPeerProfile().getUriString());
-                String localUri;
-                localUri = sipAudioCall.getLocalProfile().getUriString();
+                String localUri = sipAudioCall.getLocalProfile().getUriString();
                 {
-                    boolean varAFFEC3E610279996536BBDBBD3DBA5A6_1249344347 = (localUri.equals(mProfile.getUriString()));
+                    boolean varAFFEC3E610279996536BBDBBD3DBA5A6_1447619726 = (localUri.equals(mProfile.getUriString()));
                     {
-                        boolean makeCallWait;
-                        makeCallWait = foregroundCall.getState().isAlive();
+                        boolean makeCallWait = foregroundCall.getState().isAlive();
                         ringingCall.initIncomingCall(sipAudioCall, makeCallWait);
                         {
-                            boolean var83E8B86F2BE04FBC6538BB9432DC8A6D_1904171559 = (sipAudioCall.getState()
+                            boolean var83E8B86F2BE04FBC6538BB9432DC8A6D_951348645 = (sipAudioCall.getState()
                             != SipSession.State.INCOMING_CALL);
                             {
                                 Log.d(LOG_TAG, "    call cancelled !!");
@@ -162,18 +158,18 @@ public class SipPhone extends SipPhoneBase {
             } //End block
         } //End block
         addTaint(incomingCall.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113173811 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113173811;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270637416 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_270637416;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.192 -0400", hash_original_method = "4D3FC14BD1B17CB217053014BC4D74B6", hash_generated_method = "3B288A9F94BA49BA20D61E9146DFBCD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.213 -0400", hash_original_method = "4D3FC14BD1B17CB217053014BC4D74B6", hash_generated_method = "CFE8AD9944C949BDB5720AA2C2AA916A")
     public void acceptCall() throws CallStateException {
         {
             {
-                boolean varE0C61107F4B1A5D76C43D42CFA8103F3_1022552344 = ((ringingCall.getState() == Call.State.INCOMING) ||
+                boolean varE0C61107F4B1A5D76C43D42CFA8103F3_1456145798 = ((ringingCall.getState() == Call.State.INCOMING) ||
                     (ringingCall.getState() == Call.State.WAITING));
                 {
                     Log.d(LOG_TAG, "acceptCall");
@@ -199,11 +195,11 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.192 -0400", hash_original_method = "F60D4B1A0C339762A597DB11EC122CEA", hash_generated_method = "D1EF979FDD7FC97E5EF665BE732B63DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.214 -0400", hash_original_method = "F60D4B1A0C339762A597DB11EC122CEA", hash_generated_method = "1177A4BB05916C97B3A9A0714EAE737F")
     public void rejectCall() throws CallStateException {
         {
             {
-                boolean var442D0F0D7EEA6963AE66B13292492B00_277500885 = (ringingCall.getState().isRinging());
+                boolean var442D0F0D7EEA6963AE66B13292492B00_1648314713 = (ringingCall.getState().isRinging());
                 {
                     Log.d(LOG_TAG, "rejectCall");
                     ringingCall.rejectCall();
@@ -225,15 +221,15 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.192 -0400", hash_original_method = "01C657A55270F6B259EE4CA2295CF206", hash_generated_method = "9583B0D7568DA52ECE17835FF1AA85EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.215 -0400", hash_original_method = "01C657A55270F6B259EE4CA2295CF206", hash_generated_method = "8446171054658FAB1039698C934CBDF7")
     public Connection dial(String dialString) throws CallStateException {
-        Connection varB4EAC82CA7396A68D541C85D26508E83_1765450805 = null; //Variable for return #1
+        Connection varB4EAC82CA7396A68D541C85D26508E83_1425466349 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1765450805 = dialInternal(dialString);
+            varB4EAC82CA7396A68D541C85D26508E83_1425466349 = dialInternal(dialString);
         } //End block
         addTaint(dialString.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1765450805.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1765450805;
+        varB4EAC82CA7396A68D541C85D26508E83_1425466349.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1425466349;
         // ---------- Original Method ----------
         //synchronized (SipPhone.class) {
             //return dialInternal(dialString);
@@ -241,24 +237,24 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.228 -0400", hash_original_method = "E69019A31CF45F3F0FFB8952555ADD38", hash_generated_method = "CB4B93D3A187E139762BAB6CF811F10C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.215 -0400", hash_original_method = "E69019A31CF45F3F0FFB8952555ADD38", hash_generated_method = "B6D81A2F54177562E3403F791317D824")
     private Connection dialInternal(String dialString) throws CallStateException {
-        Connection varB4EAC82CA7396A68D541C85D26508E83_221560066 = null; //Variable for return #1
+        Connection varB4EAC82CA7396A68D541C85D26508E83_136432238 = null; //Variable for return #1
         clearDisconnected();
         {
-            boolean var37336DD64F87D8D8C5FEC219FB8725E9_209831122 = (!canDial());
+            boolean var37336DD64F87D8D8C5FEC219FB8725E9_361166479 = (!canDial());
             {
                 if (DroidSafeAndroidRuntime.control) throw new CallStateException("cannot dial in current state");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varC33489E5DEA37065C5D9027B98F53E39_1090494730 = (foregroundCall.getState() == SipCall.State.ACTIVE);
+            boolean varC33489E5DEA37065C5D9027B98F53E39_1076657344 = (foregroundCall.getState() == SipCall.State.ACTIVE);
             {
                 switchHoldingAndActive();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varAA5B136BDA3FB7DD22D11F146CB8E62A_1754490623 = (foregroundCall.getState() != SipCall.State.IDLE);
+            boolean varAA5B136BDA3FB7DD22D11F146CB8E62A_648184605 = (foregroundCall.getState() != SipCall.State.IDLE);
             {
                 if (DroidSafeAndroidRuntime.control) throw new CallStateException("cannot dial in current state");
             } //End block
@@ -266,17 +262,16 @@ public class SipPhone extends SipPhoneBase {
         foregroundCall.setMute(false);
         try 
         {
-            Connection c;
-            c = foregroundCall.dial(dialString);
-            varB4EAC82CA7396A68D541C85D26508E83_221560066 = c;
+            Connection c = foregroundCall.dial(dialString);
+            varB4EAC82CA7396A68D541C85D26508E83_136432238 = c;
         } //End block
         catch (SipException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new CallStateException("dial error: " + e);
         } //End block
         addTaint(dialString.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_221560066.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_221560066;
+        varB4EAC82CA7396A68D541C85D26508E83_136432238.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_136432238;
         // ---------- Original Method ----------
         //clearDisconnected();
         //if (!canDial()) {
@@ -299,17 +294,17 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.229 -0400", hash_original_method = "04453A8FBCEE87A03C8D7EC224934C23", hash_generated_method = "540E076F6774D195762021374EEE46E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.216 -0400", hash_original_method = "04453A8FBCEE87A03C8D7EC224934C23", hash_generated_method = "2E3F6CF88F80D43A66B2D05B1C86184A")
     public void switchHoldingAndActive() throws CallStateException {
         Log.d(LOG_TAG, " ~~~~~~  switch fg and bg");
         {
             foregroundCall.switchWith(backgroundCall);
             {
-                boolean varA0AFA2B7E4A73D22BA12DB013063960D_2027118415 = (backgroundCall.getState().isAlive());
+                boolean varA0AFA2B7E4A73D22BA12DB013063960D_1881059549 = (backgroundCall.getState().isAlive());
                 backgroundCall.hold();
             } //End collapsed parenthetic
             {
-                boolean var63B388EA3D8161389B434AC6220A05EB_1253016136 = (foregroundCall.getState().isAlive());
+                boolean var63B388EA3D8161389B434AC6220A05EB_313892665 = (foregroundCall.getState().isAlive());
                 foregroundCall.unhold();
             } //End collapsed parenthetic
         } //End block
@@ -323,20 +318,20 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.229 -0400", hash_original_method = "EF99002349D3FD6EFA7BC51A1FE3E619", hash_generated_method = "BE11E289DF21FE0E0FD756FFA515D2B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.217 -0400", hash_original_method = "EF99002349D3FD6EFA7BC51A1FE3E619", hash_generated_method = "17D71EBFFA33201E231325284ED57E58")
     public boolean canConference() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_707836398 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_707836398;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316712262 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_316712262;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.230 -0400", hash_original_method = "5DC11CA56E4A18B2CAABC2999FA181D0", hash_generated_method = "31EAE79114E4E08888FDFC18C0B7137C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.217 -0400", hash_original_method = "5DC11CA56E4A18B2CAABC2999FA181D0", hash_generated_method = "9D5AB93B90BF1C2F121A92DF5807CFB3")
     public void conference() throws CallStateException {
         {
             {
-                boolean varA1285B741C70BDCFD1DA6690E8723FC5_501226298 = ((foregroundCall.getState() != SipCall.State.ACTIVE)
+                boolean varA1285B741C70BDCFD1DA6690E8723FC5_2032409026 = ((foregroundCall.getState() != SipCall.State.ACTIVE)
                     || (foregroundCall.getState() != SipCall.State.ACTIVE));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new CallStateException("wrong state to merge calls: fg="
@@ -359,7 +354,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.230 -0400", hash_original_method = "0BA61BE71F93F0627212F9F9B5CF61C9", hash_generated_method = "A57E181C80CE334156A9B0F6BCE8F2D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "0BA61BE71F93F0627212F9F9B5CF61C9", hash_generated_method = "A57E181C80CE334156A9B0F6BCE8F2D0")
     public void conference(Call that) throws CallStateException {
         {
             {
@@ -380,22 +375,22 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.231 -0400", hash_original_method = "FB85D9DE1C816CCA93C5FDAD3D9D0A31", hash_generated_method = "B523CCC800DFFD9036E365DA9B758703")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "FB85D9DE1C816CCA93C5FDAD3D9D0A31", hash_generated_method = "4DFB3570894F546712C58BC236029158")
     public boolean canTransfer() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037381914 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1037381914;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_529589030 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_529589030;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.232 -0400", hash_original_method = "6F3E620B44779BFD9D290EDD6A721C13", hash_generated_method = "1802EA65B8D1F27F1F2A77F464C12952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "6F3E620B44779BFD9D290EDD6A721C13", hash_generated_method = "1802EA65B8D1F27F1F2A77F464C12952")
     public void explicitCallTransfer() throws CallStateException {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.232 -0400", hash_original_method = "D9CD8A34486E399CFA818246637B2970", hash_generated_method = "10069112F50F91D6CB32445A67763FB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.218 -0400", hash_original_method = "D9CD8A34486E399CFA818246637B2970", hash_generated_method = "10069112F50F91D6CB32445A67763FB6")
     public void clearDisconnected() {
         {
             ringingCall.clearDisconnected();
@@ -415,12 +410,12 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.233 -0400", hash_original_method = "D682F8DE86633D8037AE8DB7A99E0997", hash_generated_method = "6D2E3C50B022BFC96C16A0942CB81F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.219 -0400", hash_original_method = "D682F8DE86633D8037AE8DB7A99E0997", hash_generated_method = "5D76E319F0629904D5C920E404DE11E2")
     public void sendDtmf(char c) {
         {
-            boolean varD5E376D61876D980336EC59E5D202EEE_927276291 = (!PhoneNumberUtils.is12Key(c));
+            boolean varD5E376D61876D980336EC59E5D202EEE_956286958 = (!PhoneNumberUtils.is12Key(c));
             {
-                boolean var63B388EA3D8161389B434AC6220A05EB_1473946571 = (foregroundCall.getState().isAlive());
+                boolean var63B388EA3D8161389B434AC6220A05EB_630857450 = (foregroundCall.getState().isAlive());
                 {
                     {
                         foregroundCall.sendDtmf(c);
@@ -441,10 +436,10 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.236 -0400", hash_original_method = "C805BAC519448AC91DEA3466C2A972EF", hash_generated_method = "B0730A36B4482F54F75A080F0C3A3B42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.219 -0400", hash_original_method = "C805BAC519448AC91DEA3466C2A972EF", hash_generated_method = "43DBF00E381D00AA5294782798554E49")
     public void startDtmf(char c) {
         {
-            boolean varD5E376D61876D980336EC59E5D202EEE_805877692 = (!PhoneNumberUtils.is12Key(c));
+            boolean varD5E376D61876D980336EC59E5D202EEE_1104314473 = (!PhoneNumberUtils.is12Key(c));
             {
                 sendDtmf(c);
             } //End block
@@ -460,13 +455,13 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.236 -0400", hash_original_method = "1D5D5FD426DB2358E4E86A174C44532E", hash_generated_method = "28A2AD6EB5F0534AB0CED744A3051E3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.219 -0400", hash_original_method = "1D5D5FD426DB2358E4E86A174C44532E", hash_generated_method = "28A2AD6EB5F0534AB0CED744A3051E3F")
     public void stopDtmf() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.236 -0400", hash_original_method = "9189F1384120EC6E17589215617F3507", hash_generated_method = "FC98764535C47C26D37CAD332C70ED81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.220 -0400", hash_original_method = "9189F1384120EC6E17589215617F3507", hash_generated_method = "FC98764535C47C26D37CAD332C70ED81")
     public void sendBurstDtmf(String dtmfString) {
         addTaint(dtmfString.getTaint());
         // ---------- Original Method ----------
@@ -474,7 +469,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.242 -0400", hash_original_method = "0D09CB6308056457AD1772B2CC5B82FC", hash_generated_method = "C77A6C0124D697FB86089997222C4675")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.220 -0400", hash_original_method = "0D09CB6308056457AD1772B2CC5B82FC", hash_generated_method = "C77A6C0124D697FB86089997222C4675")
     public void getOutgoingCallerIdDisplay(Message onComplete) {
         AsyncResult.forMessage(onComplete, null, null);
         onComplete.sendToTarget();
@@ -485,7 +480,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.243 -0400", hash_original_method = "56612EF91DCB9A3808F62E57BF0F81E1", hash_generated_method = "2C0642AA3E03137941721F3C03DDB4F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.220 -0400", hash_original_method = "56612EF91DCB9A3808F62E57BF0F81E1", hash_generated_method = "2C0642AA3E03137941721F3C03DDB4F0")
     public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
                                            Message onComplete) {
         AsyncResult.forMessage(onComplete, null, null);
@@ -498,7 +493,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.243 -0400", hash_original_method = "14E36FB03F40D4635F36E46C38B086BD", hash_generated_method = "70097558DD3E9A395DC3205B46BB4114")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.220 -0400", hash_original_method = "14E36FB03F40D4635F36E46C38B086BD", hash_generated_method = "70097558DD3E9A395DC3205B46BB4114")
     public void getCallWaiting(Message onComplete) {
         AsyncResult.forMessage(onComplete, null, null);
         onComplete.sendToTarget();
@@ -509,7 +504,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.243 -0400", hash_original_method = "80F9B6F2C3F4CA6200C97C4377273E17", hash_generated_method = "09886D350A4FBA76C7FD0C69B3160FBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.221 -0400", hash_original_method = "80F9B6F2C3F4CA6200C97C4377273E17", hash_generated_method = "09886D350A4FBA76C7FD0C69B3160FBC")
     public void setCallWaiting(boolean enable, Message onComplete) {
         addTaint(enable);
         addTaint(onComplete.getTaint());
@@ -518,7 +513,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.246 -0400", hash_original_method = "6F81D9304F797B487FC34D43FAF41E44", hash_generated_method = "6460E809D25C2872BE4C9D5E90D54D8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.221 -0400", hash_original_method = "6F81D9304F797B487FC34D43FAF41E44", hash_generated_method = "6460E809D25C2872BE4C9D5E90D54D8F")
     @Override
     public void setEchoSuppressionEnabled(boolean enabled) {
         {
@@ -532,7 +527,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.257 -0400", hash_original_method = "79AC444E8066EFF34D5F76D19E8CCACC", hash_generated_method = "FA0D62EBB9B3488AEB271C49BB96D62F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.221 -0400", hash_original_method = "79AC444E8066EFF34D5F76D19E8CCACC", hash_generated_method = "FA0D62EBB9B3488AEB271C49BB96D62F")
     public void setMute(boolean muted) {
         {
             foregroundCall.setMute(muted);
@@ -545,13 +540,13 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.258 -0400", hash_original_method = "8292EC8FC0222DDB10381F21089BC299", hash_generated_method = "3B495751C0ADC2920558F65C0D55DE7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.221 -0400", hash_original_method = "8292EC8FC0222DDB10381F21089BC299", hash_generated_method = "CBE1F5A0118792C81ED4F6279BEFF541")
     public boolean getMute() {
-        boolean var0736EE6D751830E03BA1FD8749498A0A_474844335 = ((foregroundCall.getState().isAlive()
+        boolean var0736EE6D751830E03BA1FD8749498A0A_2140707248 = ((foregroundCall.getState().isAlive()
                 ? foregroundCall.getMute()
                 : backgroundCall.getMute())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706343286 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706343286;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174348410 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_174348410;
         // ---------- Original Method ----------
         //return (foregroundCall.getState().isAlive()
                 //? foregroundCall.getMute()
@@ -559,89 +554,88 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.259 -0400", hash_original_method = "9DE1B547D23B96DA44E5E5850535D15C", hash_generated_method = "CD715E3E105EE5CA2625BE4DD4EF1A31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.222 -0400", hash_original_method = "9DE1B547D23B96DA44E5E5850535D15C", hash_generated_method = "45030E18E21F26D17D7DF3D9CA712DF9")
     public Call getForegroundCall() {
-        Call varB4EAC82CA7396A68D541C85D26508E83_1061748315 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1061748315 = foregroundCall;
-        varB4EAC82CA7396A68D541C85D26508E83_1061748315.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1061748315;
+        Call varB4EAC82CA7396A68D541C85D26508E83_1040871099 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1040871099 = foregroundCall;
+        varB4EAC82CA7396A68D541C85D26508E83_1040871099.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1040871099;
         // ---------- Original Method ----------
         //return foregroundCall;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.259 -0400", hash_original_method = "EADE59B65D242AA2A5BCB126522780FD", hash_generated_method = "10FBB0EE3B76CAE6266CBAD20453FABC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.222 -0400", hash_original_method = "EADE59B65D242AA2A5BCB126522780FD", hash_generated_method = "F58D84E90C21836FF206B727ED4BFA10")
     public Call getBackgroundCall() {
-        Call varB4EAC82CA7396A68D541C85D26508E83_1182163547 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1182163547 = backgroundCall;
-        varB4EAC82CA7396A68D541C85D26508E83_1182163547.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1182163547;
+        Call varB4EAC82CA7396A68D541C85D26508E83_2053132370 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2053132370 = backgroundCall;
+        varB4EAC82CA7396A68D541C85D26508E83_2053132370.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2053132370;
         // ---------- Original Method ----------
         //return backgroundCall;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.263 -0400", hash_original_method = "3A1E9C8D795C10065E3EA9FCAA0EB60D", hash_generated_method = "84B613A2B1AC16A11060456B9822C01D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.223 -0400", hash_original_method = "3A1E9C8D795C10065E3EA9FCAA0EB60D", hash_generated_method = "CD498EBB48D248E1EDB01530C3C36E01")
     public Call getRingingCall() {
-        Call varB4EAC82CA7396A68D541C85D26508E83_882069145 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_882069145 = ringingCall;
-        varB4EAC82CA7396A68D541C85D26508E83_882069145.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_882069145;
+        Call varB4EAC82CA7396A68D541C85D26508E83_1213290136 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1213290136 = ringingCall;
+        varB4EAC82CA7396A68D541C85D26508E83_1213290136.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1213290136;
         // ---------- Original Method ----------
         //return ringingCall;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.271 -0400", hash_original_method = "88DBA8231EA7F3BE9C495A0C37514173", hash_generated_method = "3456A2EBC58B77CB801847CF467D4A61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.223 -0400", hash_original_method = "88DBA8231EA7F3BE9C495A0C37514173", hash_generated_method = "F33397BF525E38383E1035A85FEF45E3")
     public ServiceState getServiceState() {
-        ServiceState varB4EAC82CA7396A68D541C85D26508E83_1263549632 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1263549632 = super.getServiceState();
-        varB4EAC82CA7396A68D541C85D26508E83_1263549632.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1263549632;
+        ServiceState varB4EAC82CA7396A68D541C85D26508E83_223966881 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_223966881 = super.getServiceState();
+        varB4EAC82CA7396A68D541C85D26508E83_223966881.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_223966881;
         // ---------- Original Method ----------
         //return super.getServiceState();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.272 -0400", hash_original_method = "AE09BA0335289F025B1DDE67D4558A7A", hash_generated_method = "696D381A95484C35B29FA45F123F25CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.224 -0400", hash_original_method = "AE09BA0335289F025B1DDE67D4558A7A", hash_generated_method = "2490BD9DD24B3C0E272AD73A122D45C5")
     private String getUriString(SipProfile p) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2012256496 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2012256496 = p.getUserName() + "@" + getSipDomain(p);
+        String varB4EAC82CA7396A68D541C85D26508E83_733958391 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_733958391 = p.getUserName() + "@" + getSipDomain(p);
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2012256496.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2012256496;
+        varB4EAC82CA7396A68D541C85D26508E83_733958391.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_733958391;
         // ---------- Original Method ----------
         //return p.getUserName() + "@" + getSipDomain(p);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.273 -0400", hash_original_method = "CF1C8708B65050BDE73A571BB1592129", hash_generated_method = "4E07E987D5633C9FCB3204765F6739BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.224 -0400", hash_original_method = "CF1C8708B65050BDE73A571BB1592129", hash_generated_method = "0CBCC61986A89F1CF9FA69AAC111A5FF")
     private String getSipDomain(SipProfile p) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1342592951 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1015763911 = null; //Variable for return #2
-        String domain;
-        domain = p.getSipDomain();
+        String varB4EAC82CA7396A68D541C85D26508E83_1627276670 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1717069323 = null; //Variable for return #2
+        String domain = p.getSipDomain();
         {
-            boolean var58ED1E8F1C86F4A4907BDF2FED167062_2071335122 = (domain.endsWith(":5060"));
+            boolean var58ED1E8F1C86F4A4907BDF2FED167062_869602762 = (domain.endsWith(":5060"));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1342592951 = domain.substring(0, domain.length() - 5);
+                varB4EAC82CA7396A68D541C85D26508E83_1627276670 = domain.substring(0, domain.length() - 5);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1015763911 = domain;
+                varB4EAC82CA7396A68D541C85D26508E83_1717069323 = domain;
             } //End block
         } //End collapsed parenthetic
         addTaint(p.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_2060684259; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_32991623; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2060684259 = varB4EAC82CA7396A68D541C85D26508E83_1342592951;
+                varA7E53CE21691AB073D9660D615818899_32991623 = varB4EAC82CA7396A68D541C85D26508E83_1627276670;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2060684259 = varB4EAC82CA7396A68D541C85D26508E83_1015763911;
+                varA7E53CE21691AB073D9660D615818899_32991623 = varB4EAC82CA7396A68D541C85D26508E83_1717069323;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2060684259.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2060684259;
+        varA7E53CE21691AB073D9660D615818899_32991623.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_32991623;
         // ---------- Original Method ----------
         //String domain = p.getSipDomain();
         //if (domain.endsWith(":5060")) {
@@ -652,7 +646,7 @@ public class SipPhone extends SipPhoneBase {
     }
 
     
-        private static Call.State getCallStateFrom(SipAudioCall sipAudioCall) {
+    private static Call.State getCallStateFrom(SipAudioCall sipAudioCall) {
         if (sipAudioCall.isOnHold()) return Call.State.HOLDING;
         int sessionState = sipAudioCall.getState();
         switch (sessionState) {
@@ -672,14 +666,14 @@ public class SipPhone extends SipPhoneBase {
     
     private class SipCall extends SipCallBase {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.274 -0400", hash_original_method = "00F055312A0CF21C4F0B5574B16ECF8F", hash_generated_method = "00F055312A0CF21C4F0B5574B16ECF8F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.225 -0400", hash_original_method = "00F055312A0CF21C4F0B5574B16ECF8F", hash_generated_method = "00F055312A0CF21C4F0B5574B16ECF8F")
         public SipCall ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.284 -0400", hash_original_method = "077C3D2ABFDDE04A697972D273B811AD", hash_generated_method = "AFC116FB336DFDAE16FA5C7A5CE7B964")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.225 -0400", hash_original_method = "077C3D2ABFDDE04A697972D273B811AD", hash_generated_method = "AFC116FB336DFDAE16FA5C7A5CE7B964")
          void reset() {
             connections.clear();
             setState(Call.State.IDLE);
@@ -689,11 +683,10 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.284 -0400", hash_original_method = "375D19E8671ADDF3312252661F52306D", hash_generated_method = "5AF6FE1AFA7E6D8A76884E046E0A4732")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.226 -0400", hash_original_method = "375D19E8671ADDF3312252661F52306D", hash_generated_method = "79013DFB2C9530684A67D2A95700D59C")
          void switchWith(SipCall that) {
             {
-                SipCall tmp;
-                tmp = new SipCall();
+                SipCall tmp = new SipCall();
                 tmp.takeOver(this);
                 this.takeOver(that);
                 that.takeOver(tmp);
@@ -709,14 +702,14 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.311 -0400", hash_original_method = "1E912254ED378DFE25D6B6FABA0CA461", hash_generated_method = "FA24B4345B8F5AA285BB5F76E6ABB4FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.232 -0400", hash_original_method = "1E912254ED378DFE25D6B6FABA0CA461", hash_generated_method = "BB8591B7E12CB23A7909E92204EF996C")
         private void takeOver(SipCall that) {
             connections = that.connections;
             state = that.state;
             {
-                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_77184594 = (connections).iterator();
-                varE43AC770406DBA1185F3DAFDE696E6A3_77184594.hasNext();
-                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_77184594.next();
+                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_334977901 = (connections).iterator();
+                varE43AC770406DBA1185F3DAFDE696E6A3_334977901.hasNext();
+                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_334977901.next();
                 {
                     ((SipConnection) c).changeOwner(this);
                 } //End block
@@ -731,27 +724,27 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.322 -0400", hash_original_method = "BB25C6B7E2DC41EA59445495652EDD92", hash_generated_method = "331F4B67765EE65E27F1AC2AD4AF598A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.233 -0400", hash_original_method = "BB25C6B7E2DC41EA59445495652EDD92", hash_generated_method = "CBBC317FDBA03F956F421879B28200FA")
         @Override
         public Phone getPhone() {
-            Phone varB4EAC82CA7396A68D541C85D26508E83_1310611810 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1310611810 = SipPhone.this;
-            varB4EAC82CA7396A68D541C85D26508E83_1310611810.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1310611810;
+            Phone varB4EAC82CA7396A68D541C85D26508E83_411429980 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_411429980 = SipPhone.this;
+            varB4EAC82CA7396A68D541C85D26508E83_411429980.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_411429980;
             // ---------- Original Method ----------
             //return SipPhone.this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.324 -0400", hash_original_method = "B38C364E01AF490301B03DAE11EB1509", hash_generated_method = "D357F114B1F5231253FECE579B2539C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.234 -0400", hash_original_method = "B38C364E01AF490301B03DAE11EB1509", hash_generated_method = "DCBFE06FA40498FCAB1036522EA29DAE")
         @Override
         public List<Connection> getConnections() {
-            List<Connection> varB4EAC82CA7396A68D541C85D26508E83_595150512 = null; //Variable for return #1
+            List<Connection> varB4EAC82CA7396A68D541C85D26508E83_774567054 = null; //Variable for return #1
             {
-                varB4EAC82CA7396A68D541C85D26508E83_595150512 = connections;
+                varB4EAC82CA7396A68D541C85D26508E83_774567054 = connections;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_595150512.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_595150512;
+            varB4EAC82CA7396A68D541C85D26508E83_774567054.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_774567054;
             // ---------- Original Method ----------
             //synchronized (SipPhone.class) {
                 //return connections;
@@ -759,39 +752,35 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.324 -0400", hash_original_method = "B9E3A4EF80D99D71D1AE567F3438F945", hash_generated_method = "0F61B854F6D35B0E7CCE00B0D0ADB6C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.235 -0400", hash_original_method = "B9E3A4EF80D99D71D1AE567F3438F945", hash_generated_method = "9890756D138E1644089906028AA4D8F5")
          Connection dial(String originalNumber) throws SipException {
-            Connection varB4EAC82CA7396A68D541C85D26508E83_412054993 = null; //Variable for return #1
-            String calleeSipUri;
-            calleeSipUri = originalNumber;
+            Connection varB4EAC82CA7396A68D541C85D26508E83_967808568 = null; //Variable for return #1
+            String calleeSipUri = originalNumber;
             {
-                boolean var48F7791BB77ABFAC0D24C5A43EB83BC0_1861292882 = (!calleeSipUri.contains("@"));
+                boolean var48F7791BB77ABFAC0D24C5A43EB83BC0_97620235 = (!calleeSipUri.contains("@"));
                 {
-                    String replaceStr;
-                    replaceStr = Pattern.quote(mProfile.getUserName() + "@");
+                    String replaceStr = Pattern.quote(mProfile.getUserName() + "@");
                     calleeSipUri = mProfile.getUriString().replaceFirst(replaceStr,
                         calleeSipUri + "@");
                 } //End block
             } //End collapsed parenthetic
             try 
             {
-                SipProfile callee;
-                callee = new SipProfile.Builder(calleeSipUri).build();
-                SipConnection c;
-                c = new SipConnection(this, callee,
+                SipProfile callee = new SipProfile.Builder(calleeSipUri).build();
+                SipConnection c = new SipConnection(this, callee,
                         originalNumber);
                 c.dial();
                 connections.add(c);
                 setState(Call.State.DIALING);
-                varB4EAC82CA7396A68D541C85D26508E83_412054993 = c;
+                varB4EAC82CA7396A68D541C85D26508E83_967808568 = c;
             } //End block
             catch (ParseException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("dial", e);
             } //End block
             addTaint(originalNumber.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_412054993.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_412054993;
+            varB4EAC82CA7396A68D541C85D26508E83_967808568.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_967808568;
             // ---------- Original Method ----------
             //String calleeSipUri = originalNumber;
             //if (!calleeSipUri.contains("@")) {
@@ -814,22 +803,21 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.465 -0400", hash_original_method = "F3785C840BD99E8D755659453D00493E", hash_generated_method = "90F8B05F81506A6F4985FEEF4682EE6E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.253 -0400", hash_original_method = "F3785C840BD99E8D755659453D00493E", hash_generated_method = "56A7AC44F2A3378DE80D8366140BD179")
         @Override
         public void hangup() throws CallStateException {
             {
                 {
-                    boolean var8998223C0389365AC10BB9EB481CFC6F_353014395 = (state.isAlive());
+                    boolean var8998223C0389365AC10BB9EB481CFC6F_1084206378 = (state.isAlive());
                     {
                         Log.d(LOG_TAG, "hang up call: " + getState()
                             + ": " + this + " on phone " + getPhone());
                         setState(State.DISCONNECTING);
-                        CallStateException excp;
-                        excp = null;
+                        CallStateException excp = null;
                         {
-                            Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_576091983 = (connections).iterator();
-                            varE43AC770406DBA1185F3DAFDE696E6A3_576091983.hasNext();
-                            Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_576091983.next();
+                            Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_185506046 = (connections).iterator();
+                            varE43AC770406DBA1185F3DAFDE696E6A3_185506046.hasNext();
+                            Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_185506046.next();
                             {
                                 try 
                                 {
@@ -854,12 +842,10 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.469 -0400", hash_original_method = "03E5A9484BF2B2B8056B6450938A40D7", hash_generated_method = "2CB8B7D1E8802DC18665BAAF1367214C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.253 -0400", hash_original_method = "03E5A9484BF2B2B8056B6450938A40D7", hash_generated_method = "C787867A0CBB820334ADBA5BDE40D2A0")
          void initIncomingCall(SipAudioCall sipAudioCall, boolean makeCallWait) {
-            SipProfile callee;
-            callee = sipAudioCall.getPeerProfile();
-            SipConnection c;
-            c = new SipConnection(this, callee);
+            SipProfile callee = sipAudioCall.getPeerProfile();
+            SipConnection c = new SipConnection(this, callee);
             connections.add(c);
             Call.State newState;
             newState = State.WAITING;
@@ -880,7 +866,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.474 -0400", hash_original_method = "F8072C3AD3C86AEC184FDD0C13B73AA0", hash_generated_method = "D7F0174B5C634AAAD4965899108AA01C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.253 -0400", hash_original_method = "F8072C3AD3C86AEC184FDD0C13B73AA0", hash_generated_method = "D7F0174B5C634AAAD4965899108AA01C")
          void rejectCall() throws CallStateException {
             hangup();
             // ---------- Original Method ----------
@@ -888,13 +874,13 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.475 -0400", hash_original_method = "B2C3B5FE3154049893EC854E60F79D8F", hash_generated_method = "F907E56975C2C7F428B1BA47BC5C892D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.254 -0400", hash_original_method = "B2C3B5FE3154049893EC854E60F79D8F", hash_generated_method = "D18932923E014CE8F2FEA722DA401194")
          void acceptCall() throws CallStateException {
             {
                 if (DroidSafeAndroidRuntime.control) throw new CallStateException("acceptCall() in a non-ringing call");
             } //End block
             {
-                boolean var9C09519F85FF3FA6D687EF8338B33839_2050842318 = (connections.size() != 1);
+                boolean var9C09519F85FF3FA6D687EF8338B33839_1943066546 = (connections.size() != 1);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new CallStateException("acceptCall() in a conf call");
                 } //End block
@@ -911,34 +897,32 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.475 -0400", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "BD8A79E08641E4197975B9480073F7CF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.254 -0400", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "E5DAC700025BD5D5018E5E6B22461D2D")
         private boolean isSpeakerOn() {
-            boolean var65FC9098A8240679D54D31921AD18341_1358242757 = (((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
+            boolean var65FC9098A8240679D54D31921AD18341_1640855130 = (((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
                     .isSpeakerphoneOn());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_651546116 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_651546116;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965979997 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965979997;
             // ---------- Original Method ----------
             //return ((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
                     //.isSpeakerphoneOn();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.477 -0400", hash_original_method = "AEEC2C5B8263135991756BF729F3B501", hash_generated_method = "A5E0813C7680E8EC071912A313FE4E3C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.255 -0400", hash_original_method = "AEEC2C5B8263135991756BF729F3B501", hash_generated_method = "4EF197BEA7953E9D286C36568D5D7261")
          void setAudioGroupMode() {
-            AudioGroup audioGroup;
-            audioGroup = getAudioGroup();
-            int mode;
-            mode = audioGroup.getMode();
+            AudioGroup audioGroup = getAudioGroup();
+            int mode = audioGroup.getMode();
             {
                 audioGroup.setMode(AudioGroup.MODE_ON_HOLD);
             } //End block
             {
-                boolean varF8A7F4F0125E77611C619BF6F6178B3E_1432074007 = (getMute());
+                boolean varF8A7F4F0125E77611C619BF6F6178B3E_246089276 = (getMute());
                 {
                     audioGroup.setMode(AudioGroup.MODE_MUTED);
                 } //End block
                 {
-                    boolean var43978F0EAC26602D234D59271C57818C_1555662496 = (isSpeakerOn());
+                    boolean var43978F0EAC26602D234D59271C57818C_168673310 = (isSpeakerOn());
                     {
                         audioGroup.setMode(AudioGroup.MODE_ECHO_SUPPRESSION);
                     } //End block
@@ -969,13 +953,13 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.505 -0400", hash_original_method = "A3EB25D5FFDA71466ECC0EEF32C97EE3", hash_generated_method = "37EBAD8DFB88771DCC1C83B153F6D50A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.259 -0400", hash_original_method = "A3EB25D5FFDA71466ECC0EEF32C97EE3", hash_generated_method = "8DA26198FD37A4BD008A53D43E60A395")
          void hold() throws CallStateException {
             setState(State.HOLDING);
             {
-                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_1095935611 = (connections).iterator();
-                varE43AC770406DBA1185F3DAFDE696E6A3_1095935611.hasNext();
-                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_1095935611.next();
+                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_1600001035 = (connections).iterator();
+                varE43AC770406DBA1185F3DAFDE696E6A3_1600001035.hasNext();
+                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_1600001035.next();
                 ((SipConnection) c).hold();
             } //End collapsed parenthetic
             setAudioGroupMode();
@@ -986,15 +970,14 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.530 -0400", hash_original_method = "9A7CCBA25036980309C5282A2982C0B2", hash_generated_method = "46B9F43EFBEBDA34D7D53F1BD51FBDEB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.264 -0400", hash_original_method = "9A7CCBA25036980309C5282A2982C0B2", hash_generated_method = "E709E82AA0E6000293B5716CF178C496")
          void unhold() throws CallStateException {
             setState(State.ACTIVE);
-            AudioGroup audioGroup;
-            audioGroup = new AudioGroup();
+            AudioGroup audioGroup = new AudioGroup();
             {
-                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_1401951734 = (connections).iterator();
-                varE43AC770406DBA1185F3DAFDE696E6A3_1401951734.hasNext();
-                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_1401951734.next();
+                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_1074425009 = (connections).iterator();
+                varE43AC770406DBA1185F3DAFDE696E6A3_1074425009.hasNext();
+                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_1074425009.next();
                 {
                     ((SipConnection) c).unhold(audioGroup);
                 } //End block
@@ -1010,12 +993,12 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.565 -0400", hash_original_method = "7DDE83D6F9C645A60E86EBEFB92BE589", hash_generated_method = "39825D5A7CA1103D35A883A096385028")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.272 -0400", hash_original_method = "7DDE83D6F9C645A60E86EBEFB92BE589", hash_generated_method = "826263FF16E183379165A473C8B06DC5")
          void setMute(boolean muted) {
             {
-                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_2029474308 = (connections).iterator();
-                varE43AC770406DBA1185F3DAFDE696E6A3_2029474308.hasNext();
-                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_2029474308.next();
+                Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_1312274887 = (connections).iterator();
+                varE43AC770406DBA1185F3DAFDE696E6A3_1312274887.hasNext();
+                Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_1312274887.next();
                 {
                     ((SipConnection) c).setMute(muted);
                 } //End block
@@ -1028,14 +1011,14 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.566 -0400", hash_original_method = "B414CA4B3846B73054EF059A06E7BBBE", hash_generated_method = "65FDBFD53D4195C14AE9C2C65844FF99")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.273 -0400", hash_original_method = "B414CA4B3846B73054EF059A06E7BBBE", hash_generated_method = "85A93B3C100A153D11E160A8C0174833")
          boolean getMute() {
             {
-                boolean var9D37F75EA12D86F1A0D608B063CA8508_1138579652 = (connections.isEmpty());
-                Object var30144DAD28DB69F770D2D62A9F08E471_1792024180 = (((SipConnection) connections.get(0)).getMute());
+                boolean var9D37F75EA12D86F1A0D608B063CA8508_311027683 = (connections.isEmpty());
+                Object var30144DAD28DB69F770D2D62A9F08E471_1888850838 = (((SipConnection) connections.get(0)).getMute());
             } //End flattened ternary
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_61521563 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_61521563;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_618662107 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_618662107;
             // ---------- Original Method ----------
             //return connections.isEmpty()
                     //? false
@@ -1043,23 +1026,18 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.604 -0400", hash_original_method = "C6685F4BB929C317D55EF29FDD744317", hash_generated_method = "63316935E52092D4E57A5DCAAB9D9F5C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.280 -0400", hash_original_method = "C6685F4BB929C317D55EF29FDD744317", hash_generated_method = "427711B5DA917864AFF575BCBC4E8B31")
          void merge(SipCall that) throws CallStateException {
-            AudioGroup audioGroup;
-            audioGroup = getAudioGroup();
-            Connection[] cc;
-            cc = that.connections.toArray(
+            AudioGroup audioGroup = getAudioGroup();
+            Connection[] cc = that.connections.toArray(
                     new Connection[that.connections.size()]);
             {
-                Iterator<Connection> var16A6B749ACBB853D545509F9EB1B6960_118005510 = (cc).iterator();
-                var16A6B749ACBB853D545509F9EB1B6960_118005510.hasNext();
-                Connection c = var16A6B749ACBB853D545509F9EB1B6960_118005510.next();
+                Connection c = cc[0];
                 {
-                    SipConnection conn;
-                    conn = (SipConnection) c;
+                    SipConnection conn = (SipConnection) c;
                     add(conn);
                     {
-                        boolean var0F3E8D2D4CC8A5C0357E07264342DA94_313799071 = (conn.getState() == Call.State.HOLDING);
+                        boolean var0F3E8D2D4CC8A5C0357E07264342DA94_570010847 = (conn.getState() == Call.State.HOLDING);
                         {
                             conn.unhold(audioGroup);
                         } //End block
@@ -1083,12 +1061,11 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.607 -0400", hash_original_method = "C804E92B54898C48FBC0803D66022DE0", hash_generated_method = "12EA54E0D632107809067D4B7A471CCD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.280 -0400", hash_original_method = "C804E92B54898C48FBC0803D66022DE0", hash_generated_method = "5D86A55C8B4BEA3C0DEF857CEFAFD26F")
         private void add(SipConnection conn) {
-            SipCall call;
-            call = conn.getCall();
+            SipCall call = conn.getCall();
             {
-                boolean varB8F4F262BFDCEFC335F4E56671E9F1DA_214375547 = (call == this);
+                boolean varB8F4F262BFDCEFC335F4E56671E9F1DA_3095157 = (call == this);
             } //End collapsed parenthetic
             call.connections.remove(conn);
             connections.add(conn);
@@ -1103,10 +1080,9 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.608 -0400", hash_original_method = "994C45B8BD8978A705E69F1BE351A00B", hash_generated_method = "1FD2B146910BB84D3518A07B86A7D37E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.281 -0400", hash_original_method = "994C45B8BD8978A705E69F1BE351A00B", hash_generated_method = "BC66848070E19266A361AFF219A3D3E0")
          void sendDtmf(char c) {
-            AudioGroup audioGroup;
-            audioGroup = getAudioGroup();
+            AudioGroup audioGroup = getAudioGroup();
             audioGroup.sendDtmf(convertDtmf(c));
             addTaint(c);
             // ---------- Original Method ----------
@@ -1116,10 +1092,9 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.608 -0400", hash_original_method = "C4229E0DAB0B84D6720429F368FEF1C3", hash_generated_method = "33EC10E30F10CAEFBCF14524572BA0EF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.281 -0400", hash_original_method = "C4229E0DAB0B84D6720429F368FEF1C3", hash_generated_method = "49F7C203EC243C2979C54F9C0BD12AEB")
         private int convertDtmf(char c) {
-            int code;
-            code = c - '0';
+            int code = c - '0';
             {
                 //Begin case default 
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -1127,8 +1102,8 @@ public class SipPhone extends SipPhoneBase {
                 //End case default 
             } //End block
             addTaint(c);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986555684 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986555684;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254469064 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254469064;
             // ---------- Original Method ----------
             //int code = c - '0';
             //if ((code < 0) || (code > 9)) {
@@ -1148,7 +1123,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.617 -0400", hash_original_method = "A20E6ED570A38BE2669CFE3ED9219E0D", hash_generated_method = "FCDE0DF59BA2F85CBAA4E2866169FE95")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.282 -0400", hash_original_method = "A20E6ED570A38BE2669CFE3ED9219E0D", hash_generated_method = "FCDE0DF59BA2F85CBAA4E2866169FE95")
         @Override
         protected void setState(State newState) {
             {
@@ -1182,7 +1157,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.617 -0400", hash_original_method = "9B48819375B09AF6C57EC0D05234CB41", hash_generated_method = "990CC098C4D7C3DE6BBB9AAC0FCC900A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.282 -0400", hash_original_method = "9B48819375B09AF6C57EC0D05234CB41", hash_generated_method = "990CC098C4D7C3DE6BBB9AAC0FCC900A")
          void onConnectionStateChanged(SipConnection conn) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
@@ -1196,23 +1171,22 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.674 -0400", hash_original_method = "67A791C264A58046C696AC400E0B1106", hash_generated_method = "4142F6377B1BDFC80A77C48CC50662CD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.290 -0400", hash_original_method = "67A791C264A58046C696AC400E0B1106", hash_generated_method = "0E8DC5F1DD7923F808ED800912E47FF5")
          void onConnectionEnded(SipConnection conn) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                boolean allConnectionsDisconnected;
-                allConnectionsDisconnected = true;
+                boolean allConnectionsDisconnected = true;
                 Log.d(LOG_TAG, "---check connections: "
                         + connections.size());
                 {
-                    Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_824469841 = (connections).iterator();
-                    varE43AC770406DBA1185F3DAFDE696E6A3_824469841.hasNext();
-                    Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_824469841.next();
+                    Iterator<Connection> varE43AC770406DBA1185F3DAFDE696E6A3_407628002 = (connections).iterator();
+                    varE43AC770406DBA1185F3DAFDE696E6A3_407628002.hasNext();
+                    Connection c = varE43AC770406DBA1185F3DAFDE696E6A3_407628002.next();
                     {
                         Log.d(LOG_TAG, "   state=" + c.getState() + ": "
                             + c);
                         {
-                            boolean varCAA7A57C3F38B59482436E96FBF861E4_2104133096 = (c.getState() != State.DISCONNECTED);
+                            boolean varCAA7A57C3F38B59482436E96FBF861E4_1704249100 = (c.getState() != State.DISCONNECTED);
                             {
                                 allConnectionsDisconnected = false;
                             } //End block
@@ -1242,26 +1216,26 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.680 -0400", hash_original_method = "3BDED5D4E6618481393AD33B1F728E6A", hash_generated_method = "724EC38B855E373C16B585AFC25DD09C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.292 -0400", hash_original_method = "3BDED5D4E6618481393AD33B1F728E6A", hash_generated_method = "CC76872DABA9C96F9B261FC647C87641")
         private AudioGroup getAudioGroup() {
-            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_1561430334 = null; //Variable for return #1
-            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_549247563 = null; //Variable for return #2
+            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_349237310 = null; //Variable for return #1
+            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_139049719 = null; //Variable for return #2
             {
-                boolean var9D37F75EA12D86F1A0D608B063CA8508_499316288 = (connections.isEmpty());
-                varB4EAC82CA7396A68D541C85D26508E83_1561430334 = null;
+                boolean var9D37F75EA12D86F1A0D608B063CA8508_1643561772 = (connections.isEmpty());
+                varB4EAC82CA7396A68D541C85D26508E83_349237310 = null;
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_549247563 = ((SipConnection) connections.get(0)).getAudioGroup();
-            AudioGroup varA7E53CE21691AB073D9660D615818899_1761109433; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_139049719 = ((SipConnection) connections.get(0)).getAudioGroup();
+            AudioGroup varA7E53CE21691AB073D9660D615818899_982476935; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1761109433 = varB4EAC82CA7396A68D541C85D26508E83_1561430334;
+                    varA7E53CE21691AB073D9660D615818899_982476935 = varB4EAC82CA7396A68D541C85D26508E83_349237310;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1761109433 = varB4EAC82CA7396A68D541C85D26508E83_549247563;
+                    varA7E53CE21691AB073D9660D615818899_982476935 = varB4EAC82CA7396A68D541C85D26508E83_139049719;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1761109433.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1761109433;
+            varA7E53CE21691AB073D9660D615818899_982476935.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_982476935;
             // ---------- Original Method ----------
             //if (connections.isEmpty()) return null;
             //return ((SipConnection) connections.get(0)).getAudioGroup();
@@ -1273,41 +1247,40 @@ public class SipPhone extends SipPhoneBase {
 
     
     private class SipConnection extends SipConnectionBase {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "4AA3D5C224CE197897B9C6F17BF367CD", hash_generated_field = "D7165953848BB574FCA583AB16464D4F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "4AA3D5C224CE197897B9C6F17BF367CD", hash_generated_field = "D7165953848BB574FCA583AB16464D4F")
 
         private SipCall mOwner;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "DF701BED26C9A6E82B434D3ADA19F19A", hash_generated_field = "D1359B5A0587476130FC171DA764AC68")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "DF701BED26C9A6E82B434D3ADA19F19A", hash_generated_field = "D1359B5A0587476130FC171DA764AC68")
 
         private SipAudioCall mSipAudioCall;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "9E8FCF5D95B61569BEBFA55673940468", hash_generated_field = "DFC050C51766232BD82C770760A2DF3D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "9E8FCF5D95B61569BEBFA55673940468", hash_generated_field = "DFC050C51766232BD82C770760A2DF3D")
 
         private Call.State mState = Call.State.IDLE;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "6F401FEEE3A56ED571384DFAB76AA449", hash_generated_field = "06F960DE9AD1B3C2161E1D3DDDEEE930")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "6F401FEEE3A56ED571384DFAB76AA449", hash_generated_field = "06F960DE9AD1B3C2161E1D3DDDEEE930")
 
         private SipProfile mPeer;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "44366EF9F63882F1E47C480ECB6765BD", hash_generated_field = "EC5248A9D1818320AA647E3B388AFC57")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "44366EF9F63882F1E47C480ECB6765BD", hash_generated_field = "EC5248A9D1818320AA647E3B388AFC57")
 
         private String mOriginalNumber;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.682 -0400", hash_original_field = "08E4E08A45FD9BD63A8B432D59B0CB98", hash_generated_field = "CEABB36F0D8DD49AB2FFAD188EF64025")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.293 -0400", hash_original_field = "08E4E08A45FD9BD63A8B432D59B0CB98", hash_generated_field = "CEABB36F0D8DD49AB2FFAD188EF64025")
 
         private boolean mIncoming = false;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.696 -0400", hash_original_field = "AC67C5E32EF946C45E856E56B7F86834", hash_generated_field = "21DD7635064A7B44D35C5D5770F685A6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_field = "AC67C5E32EF946C45E856E56B7F86834", hash_generated_field = "244547A11EB2D0F43D69ADE82125A7FA")
 
         private SipAudioCallAdapter mAdapter = new SipAudioCallAdapter() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.684 -0400", hash_original_method = "B8BAADEA0DE266294E2369B45E53A7F4", hash_generated_method = "F842BBDDFD950AC1AAF8B1ED6A31C24A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "B8BAADEA0DE266294E2369B45E53A7F4", hash_generated_method = "44D1590CD550569A3F447EA35B336364")
             @Override
             protected void onCallEnded(DisconnectCause cause) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
                 {
-                    boolean var3317223ED0C152EA0F03D574707E1DAC_1063074218 = (getDisconnectCause() != DisconnectCause.LOCAL);
+                    boolean var3317223ED0C152EA0F03D574707E1DAC_1172811185 = (getDisconnectCause() != DisconnectCause.LOCAL);
                     {
                         setDisconnectCause(cause);
                     } //End block
                 } //End collapsed parenthetic
                 {
                     setState(Call.State.DISCONNECTED);
-                    SipAudioCall sipAudioCall;
-                    sipAudioCall = mSipAudioCall;
+                    SipAudioCall sipAudioCall = mSipAudioCall;
                     mSipAudioCall = null;
                     String sessionState;
                     sessionState = "";
@@ -1328,7 +1301,7 @@ public class SipPhone extends SipPhoneBase {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.687 -0400", hash_original_method = "52733E1CC76DBF11A64B0250C617E7AC", hash_generated_method = "F34A5EF95CCC3389960527B60C4F7AE9")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "52733E1CC76DBF11A64B0250C617E7AC", hash_generated_method = "F34A5EF95CCC3389960527B60C4F7AE9")
             @Override
             public void onCallEstablished(SipAudioCall call) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1341,7 +1314,7 @@ public class SipPhone extends SipPhoneBase {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.688 -0400", hash_original_method = "AC053A33592EEF445C9BE357836B4C16", hash_generated_method = "A5F097A8319E3CB02B505B72B427FB45")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.296 -0400", hash_original_method = "AC053A33592EEF445C9BE357836B4C16", hash_generated_method = "A5F097A8319E3CB02B505B72B427FB45")
             @Override
             public void onCallHeld(SipAudioCall call) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1354,20 +1327,19 @@ public class SipPhone extends SipPhoneBase {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.692 -0400", hash_original_method = "9E9163C05D7336A6FE9DFAB379443860", hash_generated_method = "384B9F93A14788B7E77D7EEF68D593DD")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.298 -0400", hash_original_method = "9E9163C05D7336A6FE9DFAB379443860", hash_generated_method = "819342FBC5A8298A2BD476438672EE18")
             @Override
             public void onChanged(SipAudioCall call) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
                 {
-                    Call.State newState;
-                    newState = getCallStateFrom(call);
+                    Call.State newState = getCallStateFrom(call);
                     {
                         setState(mOwner.getState());
                     } //End block
                     {
                         {
                             {
-                                boolean varD8866BE17E7C5DE27AE1021BF41F371D_221814970 = (ringingCall.getState() == Call.State.WAITING);
+                                boolean varD8866BE17E7C5DE27AE1021BF41F371D_921518053 = (ringingCall.getState() == Call.State.WAITING);
                                 {
                                     try 
                                     {
@@ -1391,7 +1363,7 @@ public class SipPhone extends SipPhoneBase {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.696 -0400", hash_original_method = "C52D3E5DC20D7F0420DDF7517152D94F", hash_generated_method = "22119F567079DA28DBBFC4AA0120E473")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_method = "C52D3E5DC20D7F0420DDF7517152D94F", hash_generated_method = "22119F567079DA28DBBFC4AA0120E473")
             @Override
             protected void onError(DisconnectCause cause) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1406,7 +1378,7 @@ public class SipPhone extends SipPhoneBase {
             
 };
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.697 -0400", hash_original_method = "EB041B636E30FA2F3190616100DC4B14", hash_generated_method = "D02AEE3D5DDE08332E361E5B938B30A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.300 -0400", hash_original_method = "EB041B636E30FA2F3190616100DC4B14", hash_generated_method = "D02AEE3D5DDE08332E361E5B938B30A9")
         public  SipConnection(SipCall owner, SipProfile callee,
                 String originalNumber) {
             super(originalNumber);
@@ -1420,7 +1392,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.706 -0400", hash_original_method = "0957F2328B233DD414C835AB48AD0504", hash_generated_method = "F22895157E71840C75F8BC0F1E6A9DB8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.301 -0400", hash_original_method = "0957F2328B233DD414C835AB48AD0504", hash_generated_method = "F22895157E71840C75F8BC0F1E6A9DB8")
         public  SipConnection(SipCall owner, SipProfile callee) {
             this(owner, callee, getUriString(callee));
             addTaint(owner.getTaint());
@@ -1429,16 +1401,15 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.706 -0400", hash_original_method = "57E4C10F499E8E36FDDCF5DF3794947E", hash_generated_method = "1CC968E06C3B073B2F4114861295FFBA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.301 -0400", hash_original_method = "57E4C10F499E8E36FDDCF5DF3794947E", hash_generated_method = "83A3D9228CE7439028CB891F63ADE5D9")
         @Override
         public String getCnapName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1162422752 = null; //Variable for return #1
-            String displayName;
-            displayName = mPeer.getDisplayName();
-            varB4EAC82CA7396A68D541C85D26508E83_1162422752 = TextUtils.isEmpty(displayName) ? null
+            String varB4EAC82CA7396A68D541C85D26508E83_1750809282 = null; //Variable for return #1
+            String displayName = mPeer.getDisplayName();
+            varB4EAC82CA7396A68D541C85D26508E83_1750809282 = TextUtils.isEmpty(displayName) ? null
                                                   : displayName;
-            varB4EAC82CA7396A68D541C85D26508E83_1162422752.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1162422752;
+            varB4EAC82CA7396A68D541C85D26508E83_1750809282.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1750809282;
             // ---------- Original Method ----------
             //String displayName = mPeer.getDisplayName();
             //return TextUtils.isEmpty(displayName) ? null
@@ -1446,17 +1417,17 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.707 -0400", hash_original_method = "6B6F8D6F29C0FEAF9C52CC30010D6FE2", hash_generated_method = "E89AB0C1D056C8FCB8D358E2B1475678")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.302 -0400", hash_original_method = "6B6F8D6F29C0FEAF9C52CC30010D6FE2", hash_generated_method = "9763E81FEF907D2882196F9CF7442E4D")
         @Override
         public int getNumberPresentation() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_840376579 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_840376579;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890425203 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890425203;
             // ---------- Original Method ----------
             //return Connection.PRESENTATION_ALLOWED;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.707 -0400", hash_original_method = "14BDBA500BD81C7014F8447F04B9333E", hash_generated_method = "C343C83C3F139AA3E8AD1000032FDE5F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.302 -0400", hash_original_method = "14BDBA500BD81C7014F8447F04B9333E", hash_generated_method = "C343C83C3F139AA3E8AD1000032FDE5F")
          void initIncomingCall(SipAudioCall sipAudioCall, Call.State newState) {
             setState(newState);
             mSipAudioCall = sipAudioCall;
@@ -1471,7 +1442,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.707 -0400", hash_original_method = "62A265BABD2EF644B89898FE1DF3E037", hash_generated_method = "E88D0586F9497F58EC7DB8C51FD62A85")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.302 -0400", hash_original_method = "62A265BABD2EF644B89898FE1DF3E037", hash_generated_method = "E88D0586F9497F58EC7DB8C51FD62A85")
          void acceptCall() throws CallStateException {
             try 
             {
@@ -1490,7 +1461,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.708 -0400", hash_original_method = "5D5AACCF3178F43A37FA6476F3FA2309", hash_generated_method = "F4F212B9E8EECDAFB8ECD3B21BCA89BD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.303 -0400", hash_original_method = "5D5AACCF3178F43A37FA6476F3FA2309", hash_generated_method = "F4F212B9E8EECDAFB8ECD3B21BCA89BD")
          void changeOwner(SipCall owner) {
             mOwner = owner;
             // ---------- Original Method ----------
@@ -1498,30 +1469,30 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.712 -0400", hash_original_method = "81195A6CBC9B38EAFBB5618CD4E171CB", hash_generated_method = "D2957CC81A9FF3ADEC276CA4DFFC6D20")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.303 -0400", hash_original_method = "81195A6CBC9B38EAFBB5618CD4E171CB", hash_generated_method = "4F7A77AEE8A65260AEFBF9D071AD6C5C")
          AudioGroup getAudioGroup() {
-            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_269122555 = null; //Variable for return #1
-            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_970624957 = null; //Variable for return #2
-            varB4EAC82CA7396A68D541C85D26508E83_269122555 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_970624957 = mSipAudioCall.getAudioGroup();
-            AudioGroup varA7E53CE21691AB073D9660D615818899_412638024; //Final return value
+            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_1954661185 = null; //Variable for return #1
+            AudioGroup varB4EAC82CA7396A68D541C85D26508E83_1194637538 = null; //Variable for return #2
+            varB4EAC82CA7396A68D541C85D26508E83_1954661185 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1194637538 = mSipAudioCall.getAudioGroup();
+            AudioGroup varA7E53CE21691AB073D9660D615818899_735497723; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_412638024 = varB4EAC82CA7396A68D541C85D26508E83_269122555;
+                    varA7E53CE21691AB073D9660D615818899_735497723 = varB4EAC82CA7396A68D541C85D26508E83_1954661185;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_412638024 = varB4EAC82CA7396A68D541C85D26508E83_970624957;
+                    varA7E53CE21691AB073D9660D615818899_735497723 = varB4EAC82CA7396A68D541C85D26508E83_1194637538;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_412638024.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_412638024;
+            varA7E53CE21691AB073D9660D615818899_735497723.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_735497723;
             // ---------- Original Method ----------
             //if (mSipAudioCall == null) return null;
             //return mSipAudioCall.getAudioGroup();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.712 -0400", hash_original_method = "766A0FDDBD2B3A4E947C7E8FBAB0F165", hash_generated_method = "93C009E595843D9B5B39352F3D675F51")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.304 -0400", hash_original_method = "766A0FDDBD2B3A4E947C7E8FBAB0F165", hash_generated_method = "93C009E595843D9B5B39352F3D675F51")
          void dial() throws SipException {
             setState(Call.State.DIALING);
             mSipAudioCall = mSipManager.makeAudioCall(mProfile, mPeer, null,
@@ -1535,7 +1506,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.713 -0400", hash_original_method = "DDAA74ADB7976F32813665FE128238CD", hash_generated_method = "BD6ABA7F7127C0C77F83B3BF0D8D517A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.304 -0400", hash_original_method = "DDAA74ADB7976F32813665FE128238CD", hash_generated_method = "BD6ABA7F7127C0C77F83B3BF0D8D517A")
          void hold() throws CallStateException {
             setState(Call.State.HOLDING);
             try 
@@ -1556,7 +1527,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.713 -0400", hash_original_method = "F77273A2CD584255814B6B238AF1477E", hash_generated_method = "3DE8BD0BBE2A340A0377B97A1F53C91E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.305 -0400", hash_original_method = "F77273A2CD584255814B6B238AF1477E", hash_generated_method = "3DE8BD0BBE2A340A0377B97A1F53C91E")
          void unhold(AudioGroup audioGroup) throws CallStateException {
             mSipAudioCall.setAudioGroup(audioGroup);
             setState(Call.State.ACTIVE);
@@ -1580,10 +1551,10 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.717 -0400", hash_original_method = "91B9A79444A0C09E86ABE6F5C7C89706", hash_generated_method = "7D53E50AB890180848D729F10E64D3BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.306 -0400", hash_original_method = "91B9A79444A0C09E86ABE6F5C7C89706", hash_generated_method = "4D1AD2A714D5A0A03613A134D8F03272")
          void setMute(boolean muted) {
             {
-                boolean var6B5DA206A9FAB2FBF22E68E89DEB93FC_1762149959 = ((mSipAudioCall != null) && (muted != mSipAudioCall.isMuted()));
+                boolean var6B5DA206A9FAB2FBF22E68E89DEB93FC_1787383570 = ((mSipAudioCall != null) && (muted != mSipAudioCall.isMuted()));
                 {
                     mSipAudioCall.toggleMute();
                 } //End block
@@ -1596,20 +1567,20 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.717 -0400", hash_original_method = "E20C6A660C2E35A5253ACCD901B5D855", hash_generated_method = "5D1D4827FEE05D442E0E1F2E385D5717")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.307 -0400", hash_original_method = "E20C6A660C2E35A5253ACCD901B5D855", hash_generated_method = "1AC316493A3F2A9D42771F69C06D3454")
          boolean getMute() {
             {
-                Object var6F96A3C795A4C1621DD07938C9161660_1000205618 = (mSipAudioCall.isMuted());
+                Object var6F96A3C795A4C1621DD07938C9161660_1237059123 = (mSipAudioCall.isMuted());
             } //End flattened ternary
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_935796023 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_935796023;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154827805 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154827805;
             // ---------- Original Method ----------
             //return (mSipAudioCall == null) ? false
                                            //: mSipAudioCall.isMuted();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.721 -0400", hash_original_method = "1833AE90ADB0C663418065E2EE17BAF0", hash_generated_method = "F7BF78C03975EEB51BBB5EBAECE9F1D9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.307 -0400", hash_original_method = "1833AE90ADB0C663418065E2EE17BAF0", hash_generated_method = "F7BF78C03975EEB51BBB5EBAECE9F1D9")
         @Override
         protected void setState(Call.State state) {
             super.setState(state);
@@ -1621,65 +1592,65 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.721 -0400", hash_original_method = "0D6E90F055C537B49BE3263741E0D2AC", hash_generated_method = "178854231B924C58886BE09436573DFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.308 -0400", hash_original_method = "0D6E90F055C537B49BE3263741E0D2AC", hash_generated_method = "E08D358002590618A2A7062EAFE89B3A")
         @Override
         public Call.State getState() {
-            Call.State varB4EAC82CA7396A68D541C85D26508E83_887846829 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_887846829 = mState;
-            varB4EAC82CA7396A68D541C85D26508E83_887846829.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_887846829;
+            Call.State varB4EAC82CA7396A68D541C85D26508E83_1586786406 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1586786406 = mState;
+            varB4EAC82CA7396A68D541C85D26508E83_1586786406.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1586786406;
             // ---------- Original Method ----------
             //return mState;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.722 -0400", hash_original_method = "0C9900F417D1D38623450F6C44261C8A", hash_generated_method = "D2D1F4A5142F53ECABEF583A0D98712C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.309 -0400", hash_original_method = "0C9900F417D1D38623450F6C44261C8A", hash_generated_method = "90D8A6E511AFDA25A3CE44B3C36AA6A0")
         @Override
         public boolean isIncoming() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_505106761 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_505106761;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170741332 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_170741332;
             // ---------- Original Method ----------
             //return mIncoming;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.722 -0400", hash_original_method = "FE0C81270397910192F7BF8C9CDDDAB6", hash_generated_method = "83CFF069527180AAE46E3C026C5AA9D0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.309 -0400", hash_original_method = "FE0C81270397910192F7BF8C9CDDDAB6", hash_generated_method = "F04FF5B807B1256AD0287DAE12A79103")
         @Override
         public String getAddress() {
-            String varB4EAC82CA7396A68D541C85D26508E83_628535398 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_628535398 = mOriginalNumber;
-            varB4EAC82CA7396A68D541C85D26508E83_628535398.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_628535398;
+            String varB4EAC82CA7396A68D541C85D26508E83_1178257707 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1178257707 = mOriginalNumber;
+            varB4EAC82CA7396A68D541C85D26508E83_1178257707.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1178257707;
             // ---------- Original Method ----------
             //return mOriginalNumber;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.722 -0400", hash_original_method = "710C86DFEBE06A4514867B4563DB846F", hash_generated_method = "C1B73CD4F64B30823405174DC36519D8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.310 -0400", hash_original_method = "710C86DFEBE06A4514867B4563DB846F", hash_generated_method = "48795D2FEA8E180E4C4AE2C9A21C52BA")
         @Override
         public SipCall getCall() {
-            SipCall varB4EAC82CA7396A68D541C85D26508E83_251227273 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_251227273 = mOwner;
-            varB4EAC82CA7396A68D541C85D26508E83_251227273.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_251227273;
+            SipCall varB4EAC82CA7396A68D541C85D26508E83_298249362 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_298249362 = mOwner;
+            varB4EAC82CA7396A68D541C85D26508E83_298249362.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_298249362;
             // ---------- Original Method ----------
             //return mOwner;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.729 -0400", hash_original_method = "925322092199D63FE2A7CC7A8AD6AC9C", hash_generated_method = "3CD36B26C5D39050C8B996D0F4A39879")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.310 -0400", hash_original_method = "925322092199D63FE2A7CC7A8AD6AC9C", hash_generated_method = "8B41FD40B9C33391292E1FA9A354CBD7")
         @Override
         protected Phone getPhone() {
-            Phone varB4EAC82CA7396A68D541C85D26508E83_1537406138 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1537406138 = mOwner.getPhone();
-            varB4EAC82CA7396A68D541C85D26508E83_1537406138.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1537406138;
+            Phone varB4EAC82CA7396A68D541C85D26508E83_1069591192 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1069591192 = mOwner.getPhone();
+            varB4EAC82CA7396A68D541C85D26508E83_1069591192.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1069591192;
             // ---------- Original Method ----------
             //return mOwner.getPhone();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.735 -0400", hash_original_method = "B35A599F4014F0A4981FF871F70F4B98", hash_generated_method = "39BD6AA2D786041AC09E3C3FF846D304")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.311 -0400", hash_original_method = "B35A599F4014F0A4981FF871F70F4B98", hash_generated_method = "64F328835B67BF354DBA34FC1933A790")
         @Override
         public void hangup() throws CallStateException {
             {
@@ -1687,12 +1658,11 @@ public class SipPhone extends SipPhoneBase {
                         + ": " + mState + ": on phone "
                         + getPhone().getPhoneName());
                 {
-                    boolean var7A71802BC1B1F87328893952D19337CA_1387110570 = (!mState.isAlive());
+                    boolean var7A71802BC1B1F87328893952D19337CA_817276588 = (!mState.isAlive());
                 } //End collapsed parenthetic
                 try 
                 {
-                    SipAudioCall sipAudioCall;
-                    sipAudioCall = mSipAudioCall;
+                    SipAudioCall sipAudioCall = mSipAudioCall;
                     {
                         sipAudioCall.setListener(null);
                         sipAudioCall.endCall();
@@ -1715,16 +1685,16 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.749 -0400", hash_original_method = "7B400982296D21B9968B9808849E5473", hash_generated_method = "9BF188E56B5A25A625754CD0B3EB7868")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.311 -0400", hash_original_method = "7B400982296D21B9968B9808849E5473", hash_generated_method = "D3452833312B206A61C774C6D92FAD16")
         @Override
         public void separate() throws CallStateException {
             {
                 SipCall call;
-                boolean var9F2100AEF9AB3C51A66873B7B7B06C45_440688990 = ((getPhone() == SipPhone.this));
+                boolean var9F2100AEF9AB3C51A66873B7B7B06C45_1772655402 = ((getPhone() == SipPhone.this));
                 call = (SipCall) SipPhone.this.getBackgroundCall();
                 call = (SipCall) SipPhone.this.getForegroundCall();
                 {
-                    boolean var06B2F1D0FB9C9B434F76B9D96A375019_355625879 = (call.getState() != Call.State.IDLE);
+                    boolean var06B2F1D0FB9C9B434F76B9D96A375019_2111198991 = (call.getState() != Call.State.IDLE);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new CallStateException(
                             "cannot put conn back to a call in non-idle state: "
@@ -1734,10 +1704,8 @@ public class SipPhone extends SipPhoneBase {
                 Log.d(LOG_TAG, "separate conn: "
                         + mPeer.getUriString() + " from " + mOwner + " back to "
                         + call);
-                Phone originalPhone;
-                originalPhone = getPhone();
-                AudioGroup audioGroup;
-                audioGroup = call.getAudioGroup();
+                Phone originalPhone = getPhone();
+                AudioGroup audioGroup = call.getAudioGroup();
                 call.add(this);
                 mSipAudioCall.setAudioGroup(audioGroup);
                 originalPhone.switchHoldingAndActive();
@@ -1756,7 +1724,7 @@ public class SipPhone extends SipPhoneBase {
     
     private abstract class SipAudioCallAdapter extends SipAudioCall.Listener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.750 -0400", hash_original_method = "3AB54838416D4A721CFBD2C180A6FF7A", hash_generated_method = "3AB54838416D4A721CFBD2C180A6FF7A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.311 -0400", hash_original_method = "3AB54838416D4A721CFBD2C180A6FF7A", hash_generated_method = "3AB54838416D4A721CFBD2C180A6FF7A")
         public SipAudioCallAdapter ()
         {
             //Synthesized constructor
@@ -1769,7 +1737,7 @@ public class SipPhone extends SipPhoneBase {
         protected abstract void onError(Connection.DisconnectCause cause);
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.752 -0400", hash_original_method = "FAC45A8F53047AFBBF88628CAD98E6D5", hash_generated_method = "A5848E407AAF0106D276C2FB2ED18D01")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.312 -0400", hash_original_method = "FAC45A8F53047AFBBF88628CAD98E6D5", hash_generated_method = "A5848E407AAF0106D276C2FB2ED18D01")
         @Override
         public void onCallEnded(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1784,7 +1752,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.752 -0400", hash_original_method = "5FEE35421FE68DCB9D837EF94FC0CC79", hash_generated_method = "1BB9F92D03E2291554F0BCFEE0A95811")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.312 -0400", hash_original_method = "5FEE35421FE68DCB9D837EF94FC0CC79", hash_generated_method = "1BB9F92D03E2291554F0BCFEE0A95811")
         @Override
         public void onCallBusy(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1795,7 +1763,7 @@ public class SipPhone extends SipPhoneBase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_method = "7EFF641046EACBCFF45AD18624210100", hash_generated_method = "42C4EE7DD422BC289DAC47A015928959")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_method = "7EFF641046EACBCFF45AD18624210100", hash_generated_method = "42C4EE7DD422BC289DAC47A015928959")
         @Override
         public void onError(SipAudioCall call, int errorCode,
                 String errorMessage) {
@@ -1839,20 +1807,20 @@ public class SipPhone extends SipPhoneBase {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_field = "976523C589B0B5F84D4530AFB1044D93", hash_generated_field = "71F7148CFC829A5A8E1F7DF4C5808550")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_field = "976523C589B0B5F84D4530AFB1044D93", hash_generated_field = "7A17420CA7320CD6991D9BB201E6C8AD")
 
-    private static String LOG_TAG = "SipPhone";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "14C18EBA74F36E4DA6BB1F58245F971E")
+    private static final String LOG_TAG = "SipPhone";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "0DA17BC1AEF6DBF011A4A750F5A71D57")
 
-    private static boolean DEBUG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_field = "E41B978FAF3B339183EF17F3067BF0E9", hash_generated_field = "8E2E945F2215660B81C3D903A858D97E")
+    private static final boolean DEBUG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_field = "E41B978FAF3B339183EF17F3067BF0E9", hash_generated_field = "EB405364424B606CEA103C767EA0ADA3")
 
-    private static int TIMEOUT_MAKE_CALL = 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_field = "F955123D19BAEE32317A2241EE79907C", hash_generated_field = "FB63AC1959935C00B04E063E14E95990")
+    private static final int TIMEOUT_MAKE_CALL = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_field = "F955123D19BAEE32317A2241EE79907C", hash_generated_field = "973EB4EC28EADF6B6F1C1FDB9D5440C9")
 
-    private static int TIMEOUT_ANSWER_CALL = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.753 -0400", hash_original_field = "B3BD5D4BD687697B138A2662DACEECFF", hash_generated_field = "6F2DF632573CBF96B27EF0923A1C7A95")
+    private static final int TIMEOUT_ANSWER_CALL = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.313 -0400", hash_original_field = "B3BD5D4BD687697B138A2662DACEECFF", hash_generated_field = "2FA826CBF5F1C3318478B665E6C65585")
 
-    private static int TIMEOUT_HOLD_CALL = 15;
+    private static final int TIMEOUT_HOLD_CALL = 15;
 }
 

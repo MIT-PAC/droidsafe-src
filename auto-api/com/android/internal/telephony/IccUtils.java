@@ -19,14 +19,14 @@ import java.nio.charset.Charset;
 
 public class IccUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.953 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.175 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
     public IccUtils ()
     {
         //Synthesized constructor
     }
 
 
-        public static String bcdToString(byte[] data, int offset, int length) {
+    public static String bcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length*2);
         for (int i = offset ; i < offset + length ; i++) {
             byte b;
@@ -43,7 +43,7 @@ public class IccUtils {
     }
 
     
-        public static String cdmaBcdToString(byte[] data, int offset, int length) {
+    public static String cdmaBcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length);
         int count = 0;
         for (int i = offset; count < length; i++) {
@@ -61,7 +61,7 @@ public class IccUtils {
     }
 
     
-        public static int gsmBcdByteToInt(byte b) {
+    public static int gsmBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
             ret = (b >> 4) & 0xf;
@@ -73,7 +73,7 @@ public class IccUtils {
     }
 
     
-        public static int cdmaBcdByteToInt(byte b) {
+    public static int cdmaBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
             ret = ((b >> 4) & 0xf) * 10;
@@ -85,7 +85,7 @@ public class IccUtils {
     }
 
     
-        public static String adnStringFieldToString(byte[] data, int offset, int length) {
+    public static String adnStringFieldToString(byte[] data, int offset, int length) {
         if (length == 0) {
             return "";
         }
@@ -155,7 +155,7 @@ public class IccUtils {
     }
 
     
-        static int hexCharToInt(char c) {
+    static int hexCharToInt(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
         if (c >= 'a' && c <= 'f') return (c - 'a' + 10);
@@ -163,7 +163,7 @@ public class IccUtils {
     }
 
     
-        public static byte[] hexStringToBytes(String s) {
+    public static byte[] hexStringToBytes(String s) {
         byte[] ret;
         if (s == null) return null;
         int sz = s.length();
@@ -176,7 +176,7 @@ public class IccUtils {
     }
 
     
-        public static String bytesToHexString(byte[] bytes) {
+    public static String bytesToHexString(byte[] bytes) {
         if (bytes == null) return null;
         StringBuilder ret = new StringBuilder(2*bytes.length);
         for (int i = 0 ; i < bytes.length ; i++) {
@@ -190,7 +190,7 @@ public class IccUtils {
     }
 
     
-        public static String networkNameToString(byte[] data, int offset, int length) {
+    public static String networkNameToString(byte[] data, int offset, int length) {
         String ret;
         if ((data[offset] & 0x80) != 0x80 || length < 1) {
             return "";
@@ -221,7 +221,7 @@ public class IccUtils {
     }
 
     
-        public static Bitmap parseToBnW(byte[] data, int length) {
+    public static Bitmap parseToBnW(byte[] data, int length) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
         int height = data[valueIndex++] & 0xFF;
@@ -245,7 +245,7 @@ public class IccUtils {
     }
 
     
-        private static int bitToRGB(int bit) {
+    private static int bitToRGB(int bit) {
         if(bit == 1){
             return Color.WHITE;
         } else {
@@ -254,7 +254,7 @@ public class IccUtils {
     }
 
     
-        public static Bitmap parseToRGB(byte[] data, int length,
+    public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -280,7 +280,7 @@ public class IccUtils {
     }
 
     
-        private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
+    private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 != (8 % bits)) {
             Log.e(LOG_TAG, "not event number of color");
@@ -317,7 +317,7 @@ public class IccUtils {
     }
 
     
-        private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
+    private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 == (8 % bits)) {
             Log.e(LOG_TAG, "not odd number of color");
@@ -329,7 +329,7 @@ public class IccUtils {
     }
 
     
-        private static int[] getCLUT(byte[] rawData, int offset, int number) {
+    private static int[] getCLUT(byte[] rawData, int offset, int number) {
         if (null == rawData) {
             return null;
         }
@@ -348,8 +348,8 @@ public class IccUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:16.970 -0400", hash_original_field = "657F5D0ADB30FEB439FAC6CC6AEF7E0C", hash_generated_field = "816E7881F1D30E19B189B71935B36195")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.179 -0400", hash_original_field = "657F5D0ADB30FEB439FAC6CC6AEF7E0C", hash_generated_field = "853E0573FD2EF23B87C9F780C40EC2A4")
 
-    static String LOG_TAG = "IccUtils";
+    static final String LOG_TAG = "IccUtils";
 }
 

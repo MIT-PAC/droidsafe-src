@@ -10,14 +10,14 @@ import java.util.Iterator;
 
 public final class HttpConnectionParams implements CoreConnectionPNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.356 -0400", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "C92261D75273D144D335B520B6DC917E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.461 -0400", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "C92261D75273D144D335B520B6DC917E")
     private  HttpConnectionParams() {
         super();
         // ---------- Original Method ----------
     }
 
     
-        public static int getSoTimeout(final HttpParams params) {
+    public static int getSoTimeout(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -25,7 +25,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setSoTimeout(final HttpParams params, int timeout) {
+    public static void setSoTimeout(final HttpParams params, int timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -33,7 +33,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static boolean getTcpNoDelay(final HttpParams params) {
+    public static boolean getTcpNoDelay(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -42,7 +42,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setTcpNoDelay(final HttpParams params, boolean value) {
+    public static void setTcpNoDelay(final HttpParams params, boolean value) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -50,7 +50,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static int getSocketBufferSize(final HttpParams params) {
+    public static int getSocketBufferSize(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -59,7 +59,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setSocketBufferSize(final HttpParams params, int size) {
+    public static void setSocketBufferSize(final HttpParams params, int size) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -67,7 +67,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static int getLinger(final HttpParams params) {
+    public static int getLinger(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -75,7 +75,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setLinger(final HttpParams params, int value) {
+    public static void setLinger(final HttpParams params, int value) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -83,7 +83,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static int getConnectionTimeout(final HttpParams params) {
+    public static int getConnectionTimeout(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -92,7 +92,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setConnectionTimeout(final HttpParams params, int timeout) {
+    public static void setConnectionTimeout(final HttpParams params, int timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -101,7 +101,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static boolean isStaleCheckingEnabled(final HttpParams params) {
+    public static boolean isStaleCheckingEnabled(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -110,7 +110,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
-        public static void setStaleCheckingEnabled(final HttpParams params, boolean value) {
+    public static void setStaleCheckingEnabled(final HttpParams params, boolean value) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
