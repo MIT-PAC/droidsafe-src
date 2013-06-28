@@ -138,7 +138,7 @@ public class ValueAnalysis {
     private Set<SootMethod> simulatedMethods;
 
     /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult"));
+    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", "onActivityResult"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -311,7 +311,8 @@ public class ValueAnalysis {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                   StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
+                    //am.logError("analyzing " + meth);
+                    StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
                     Chain units = stmtBody.getUnits();
@@ -338,6 +339,7 @@ public class ValueAnalysis {
                             continue;
                         }
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
+                        //am.logError("on invokeExpr " + invokeExpr);
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -478,8 +480,6 @@ public class ValueAnalysis {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
-                // The method isn't modeled, so we must invalidate every argument that we modeled
-                this.invalidateParamObjects(paramObjectCartesianProduct);
 
                 // If this is an InstanceInvoke, also invalidate the receiver object
                 if (modeledReceiverObject != null){
@@ -487,6 +487,9 @@ public class ValueAnalysis {
                     error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
                 }
                 this.logError(error);
+               // The method isn't modeled, so we must invalidate every argument that we modeled
+               this.invalidateParamObjects(paramObjectCartesianProduct);
+
             }
         }
         return objectsToReturn;
