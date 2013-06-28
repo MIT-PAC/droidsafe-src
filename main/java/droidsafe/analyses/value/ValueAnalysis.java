@@ -138,7 +138,14 @@ public class ValueAnalysis {
     private Set<SootMethod> simulatedMethods;
 
     /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", "onActivityResult"));
+    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", 
+        "onActivityResult",
+        "query",
+        "translateIntent",
+        "toString",
+        "<init>",
+        "_init_",
+        "parse"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
