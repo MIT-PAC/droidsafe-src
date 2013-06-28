@@ -63,12 +63,6 @@ public class DSTaintObject {
         return (char)taintDouble;
     }
 
-    /* For backward-compatibility. */
-    @DSModeled(DSC.BAN)
-    public Object getTaint() {
-        return taintObject;
-    }
-
     @DSModeled(DSC.BAN)
     public Object getTaintObject() {
         return taintObject;

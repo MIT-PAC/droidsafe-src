@@ -13,6 +13,8 @@ public class DSUtils {
 	public final static long UNKNOWN_LONG = 0;
 	public final static float UNKNOWN_FLOAT = 0;
 	public final static double UNKNOWN_DOUBLE = 0;
+	public static final boolean UNKNOWN_BOOLEAN = false;
+	public static final char UNKNOWN_CHAR = 0;
 	
 	/**
 	 * Use this method to translate one intent to another in a way that is
