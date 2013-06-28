@@ -224,6 +224,25 @@ public class ValueAnalysis {
     public ValueAnalysisModeledObject getResult(AllocNode node) {
         return this.objectToModelMap.get(node);
     }
+    
+    /**
+     * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
+     *
+     * @throws ClassNotFoundException if the correct class isn't modeled 
+     */
+    public Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
+        SootClass sootClass = refType.getSootClass();
+        return this.getDroidsafeClass(sootClass);
+    }
+
+    /** wrapper around toAttrModelingModelClass */
+    public Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
+        String className = sootClass.getName();
+        if(isActivity(sootClass)){
+            className = "android.app.Activity";
+        }
+        return Class.forName(ValueAnalysisUtils.toAttrModelingModelClass(className));
+    }
 
     //==================================================================================================================
     // Static Methods
@@ -538,25 +557,6 @@ public class ValueAnalysis {
             model = objectToModelMap.get(allocNode);
         }
         return model;
-    }
-
-    /**
-     * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
-     *
-     * @throws ClassNotFoundException if the correct class isn't modeled 
-     */
-    private Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
-        SootClass sootClass = refType.getSootClass();
-        return this.getDroidsafeClass(sootClass);
-    }
-
-    /** wrapper around toAttrModelingModelClass */
-    private Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
-        String className = sootClass.getName();
-        if(isActivity(sootClass)){
-            className = "android.app.Activity";
-        }
-        return Class.forName(ValueAnalysisUtils.toAttrModelingModelClass(className));
     }
 
     /** Check if a sootClass is an instance of Activity or one of its subclasses */
