@@ -1,6 +1,7 @@
 package droidsafe.analyses.rcfg;
 
 import java.util.Formatter;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.PTAMethodInformation;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
@@ -31,7 +33,7 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class OutputEvent {
+public class OutputEvent implements PTAMethodInformation {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
     /** the cg edge from caller to API */
@@ -80,20 +82,22 @@ public class OutputEvent {
                 logger.debug("Found invoke in output event {} matches {}?", ie, this.getTarget());
                 //old check that does not work for threads since start calls run...
                 //if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) 
-                if (invokeExpr != null)
-                    Utils.logErrorAndExit(logger, "Found multiple matches for calling context in context statement {}.",
+                if (invokeExpr != null) {
+                    logger.error("Found multiple matches for calling context in context statement {}.",
                         context);
+                    droidsafe.main.Main.exit(1);
+                }
                 invokeExpr = ie;
             }
         }
 
         if (invokeExpr == null) {
             logger.error("Cannot find context invoke expr in context: {}.", context);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         if (invokeExpr instanceof SpecialInvokeExpr && !hasReceiver()) {
             logger.error("Found special invoke expr without a receiver {}", invokeExpr);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         //ever instance invoke should have a receiver, unless something wrong with user code or with modeling or with
@@ -105,7 +109,8 @@ public class OutputEvent {
 
         //do some checks for things we might not fully understand yet.
         if (invokeExpr instanceof DynamicInvokeExpr) {
-            Utils.logErrorAndExit(logger, "Do not understand type of invoke expr: {}", invokeExpr.getClass());
+            logger.error("Do not understand type of invoke expr: {}", invokeExpr.getClass());
+            droidsafe.main.Main.exit(1);
         }
     }
 
@@ -131,7 +136,7 @@ public class OutputEvent {
     public Value getReceiver() {
         if (!hasReceiver()) {
             logger.error("Trying to get receiver for output event without one: {}.", this.toString());
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         return ((InstanceInvokeExpr)invokeExpr).getBase();
@@ -155,12 +160,21 @@ public class OutputEvent {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public AllocNode getReceiverAlloc() {
+    public Set<AllocNode> getReceiverPTSet() {
         getReceiver();
 
-        return receiverNode; 
+        LinkedHashSet<AllocNode> node = new LinkedHashSet<AllocNode>();
+        node.add(receiverNode);
+        return node; 
     }
 
+    /**
+     * Return true if the receiver is a pointer.
+     */
+    public boolean isReceiverPointer() {
+        return GeoPTA.v().isPointer(getReceiver());
+    }
+    
     /**
      * Return the type in the points to set of the receiver.
      */
@@ -210,8 +224,10 @@ public class OutputEvent {
      * Return the argument expression for the call to the API method.
      */
     public Value getArgValue(int i) {
-        if (i > getNumArgs()) 
-            Utils.logErrorAndExit(logger, "Trying to invalid argument {} for output event {}.", i, getTarget());
+        if (i > getNumArgs()) { 
+            logger.error("Trying to invalid argument {} for output event {}.", i, getTarget());
+            droidsafe.main.Main.exit(1);
+        }
 
         return invokeExpr.getArg(i);
     }
@@ -222,7 +238,7 @@ public class OutputEvent {
     public boolean isArgPointer(int i) {
         return GeoPTA.v().isPointer(getArgValue(i));
     }
-
+    
     /**
      * Return the enclosing RCFGNode.
      */

@@ -1,8 +1,6 @@
 package droidsafe.eclipse.plugin.core.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import droidsafe.eclipse.plugin.core.Activator;
@@ -10,12 +8,11 @@ import droidsafe.eclipse.plugin.core.Activator;
 /**
  * Class used to initialize default preference values.
  */
-@SuppressWarnings("restriction")
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 
-  @Preference(nodePath = "droidsafe.eclipse.plugin.core")
-  IEclipsePreferences prefs;
+  //@Preference(nodePath = "droidsafe.eclipse.plugin.core")
+  //IEclipsePreferences prefs;
 
   /*
    * (non-Javadoc)

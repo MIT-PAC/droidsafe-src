@@ -25,7 +25,7 @@ public class DumpManifest {
       logger.error ("One argument (application directory) is required\n" + 
     		  "usage: DumpManifest <kapp-dir>\n" +
     		  "DumpManifest dumps information from the manifest file\n");
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     // Initialize information about the application

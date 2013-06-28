@@ -93,7 +93,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		}
 		catch (IOException e) {
 			logger.error("Cannot create pta need to model file");
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 	}
 
@@ -293,7 +293,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 			return ((StaticInvokeExpr)expr).getMethod();
 		} else {
 			logger.error("Unknown invoke expr {}", expr);
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		return null;
 	}

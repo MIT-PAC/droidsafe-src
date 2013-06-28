@@ -73,7 +73,7 @@ public class APICallSpecialization extends BodyTransformer {
 							if (!method.hasActiveBody() || at.getNumElems() != 1 ||
 									!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
 									logger.error("Modeled api method has no active body or other problem: {}", method);
-									System.exit(1);
+									droidsafe.main.Main.exit(1);
 							}
 							AnnotationArrayElem templateArray = (AnnotationArrayElem)at.getElemAt(0);
 							for (int i = 0; i < templateArray.getNumValues(); i++) {
@@ -96,7 +96,7 @@ public class APICallSpecialization extends BodyTransformer {
 												arg, value);
 								} else {
 									logger.error("Unsupported argument type for specialization {} in method {}.", argType, method);
-									System.exit(1);
+									droidsafe.main.Main.exit(1);
 								}
 								
 								//TODO: Check annotation on specialized method

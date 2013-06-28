@@ -316,7 +316,7 @@ public class RCFG {
 
         if (src.isNative()) {
             logger.error("Found a native method during analysis: {}. It could do anything!\n\n", src);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         if (!src.isConcrete())
@@ -351,7 +351,7 @@ public class RCFG {
                     if ( t instanceof AnySubType ||
                             t instanceof ArrayType ) {
                         logger.error("Weird type in call to object retrieved from API {}", stmt);
-                        System.exit(1);
+                        droidsafe.main.Main.exit(1);
                     }
                     SootClass allocType = ((RefType)t).getSootClass();
 
@@ -393,7 +393,7 @@ public class RCFG {
             return ((StaticInvokeExpr)expr).getMethod().getDeclaringClass();
         } else {
             logger.error("Unknown type of invoke expr found when trying to get receiver's static type: {}", expr);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         return null;
     }
@@ -424,10 +424,6 @@ public class RCFG {
                 continue;
             }
 
-            //if always obsoleted, then continue
-            if (cgEdge.is_obsoleted)
-                continue;
-
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
             if (iie != null) {    
                 try {
@@ -441,7 +437,7 @@ public class RCFG {
                     }
                 } catch (CannotFindMethodException e) {
                     logger.error("Cannot resolve method during RCFG creation: {}", iie);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }   
             } else {
                 processEdge(rCFGNode, curEdge, context, null, appEdgesOut, allEdges, 5);

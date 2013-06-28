@@ -25,25 +25,50 @@ import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
 
+/**
+ * 
+ * 
+ * @author mgordon
+ *
+ */
 public class SecuritySpecification  {
+    /** Logger class */
 	private static final Logger logger = LoggerFactory.getLogger(SecuritySpecification.class);
-	
+	/** Set of api calls in the whitelist for a conformance check */
 	private Set<Method> whitelist;
+	/** event blocks of the spec, for each method input event, the output events that are associated. */
 	private Map<Method, List<Method>> eventBlocks;
-    private static int popupId = 0;
-    private boolean jquery = true;
-    private boolean jqueryMobile = false;
+	/** don't know? */
+	private static int popupId = 0;
+	/** Use jquery? */
+	private boolean jquery = true;
+	/** Use jquery mobile */
+	private boolean jqueryMobile = false;
+	/** Base url of the android api documentation */
     private final String ANDROID_API_BASE = "http://developer.android.com/reference";
+    /** Base url of the java api documentation */
     private final String JAVA_API_BASE = "http://docs.oracle.com/javase/6/docs/api";
+    /** target for html spec*/
     private final String TARGET = "iframe_content";
-	
-	public SecuritySpecification() {
+    /** if true, then we are generating a spec used for conformance checking and output events
+     *  of the same method in an input event are grouped.  Otherwise, no methods are grouped. 
+     */
+	private boolean conformanceSpec;
+    
+	/** 
+	 * Create a blank security specification.  
+	 * 
+	 * @param conformanceSpec If true, then we are generating this security spec to be used for 
+	 *                         conformance checking, we will be grouping methods.
+	 */
+	public SecuritySpecification(boolean conformanceSpec) {
 		whitelist = new LinkedHashSet<Method>();
 		eventBlocks = new LinkedHashMap<Method, List<Method>>();
+		this.conformanceSpec = conformanceSpec;
 	}
 	
 	
-	/*
+	/**
 	 * Method to allow other classes to process the spec elements.
 	 * 
 	 * Returns the set of white listed methods in the application. 
@@ -52,7 +77,7 @@ public class SecuritySpecification  {
 		return this.whitelist;
 	}
 	
-	/*
+	/**
 	 * Method to allow other classes to process the spec elements.
 	 * 
 	 * Returns the map from methods to list of methods in the spec.  
@@ -74,11 +99,25 @@ public class SecuritySpecification  {
 	}
 	
 	/**
+	 * Add the list of output events to the input event according to the type
+	 * of specification we want to generate (conformance or diagnosis).  
+	 * 
+	 * Never add a output event if it already appears in the event block. 
+	 */
+	public void addOutputEventToInputEvent(Method inputEvent, List<Method> oes) {
+	    
+	    if (conformanceSpec)
+	        addToInputEventCombine(inputEvent, oes);
+	    else
+	        addToInputEvent(inputEvent, oes);
+	}
+	
+	/**
 	 * Add the outputevent's conformance information to the input event, but if one of the 
 	 * output event already exists in the spec, then combine the current output event 
 	 * with the stored output event by widening. 
 	 */
-	public void addToInputEventCombine(Method inputEvent, List<Method> oes) {
+	private void addToInputEventCombine(Method inputEvent, List<Method> oes) {
 	  if (inputEvent != null && oes != null) {
 	    for (Method oe : oes) {
 	      addToInputEventCombine(inputEvent, oe);
@@ -91,13 +130,17 @@ public class SecuritySpecification  {
 	 * output event already exists in the spec, then combine the current output event 
 	 * with the stored output event by widening. 
 	 */
-	public void addToInputEventCombine(Method inputEvent, Method outputEvent) {
+	private void addToInputEventCombine(Method inputEvent, Method outputEvent) {
 		
 		if (inputEvent == null || outputEvent == null)
 			return;
 		
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
+		
+		//Don't add output event it the equals test says it is already there.
+		if (eventBlocks.get(inputEvent).contains(outputEvent))
+		    return;
 		
 		//see if we already have this method (signature) in the input event block
 		//it may be the same method but with different concrete allowed args
@@ -117,10 +160,11 @@ public class SecuritySpecification  {
 	}
 	
 	/**
-	 * Add the outputevent to the input event's api call list.  Error if the outputevent is
-	 * already there.
+	 * Add the outputevent to the input event's api call list.  Don't group methods.
+	 * 
+	 * Don't add if the output event is already in the list as determined by .equals().
 	 */
-	public void addToInputEvent(Method inputEvent, Method outputEvent) {
+	private void addToInputEvent(Method inputEvent, Method outputEvent) {
 		
 		if (inputEvent == null || outputEvent == null)
 			return;
@@ -128,17 +172,14 @@ public class SecuritySpecification  {
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
 		
-		//should not see multiple output events in same input event in the spec
-		for (Method m : eventBlocks.get(inputEvent)) {
-			if (m.isSameMethod(outputEvent)) {
-			    logger.error("More than one appearance of a method (output event) in event block: {}", inputEvent);
-			}
-		}
-
+		//Don't add output event it the equals test says it is already there.
+        if (eventBlocks.get(inputEvent).contains(outputEvent))
+            return;
+		
 		eventBlocks.get(inputEvent).add(outputEvent);
 	}
 	
-	public void addToInputEvent(Method inputEvent, List<Method> outputEvents) {
+	private void addToInputEvent(Method inputEvent, List<Method> outputEvents) {
 		if (inputEvent != null && outputEvents != null){								
 		  for (Method m : outputEvents){
 		    addToInputEvent(inputEvent, m);
@@ -164,19 +205,6 @@ public class SecuritySpecification  {
 		}		
 		return false;
 	}
-	/*
-	private HashSet<Method> allMatchingBlocks(Method inputEvent) {
-		HashSet<Method> matching = new HashSet<Method>();
-		for (Method m : eventBlocks.keySet()) {
-			if (m.isOverridingMethod(inputEvent))
-				matching.add(m);
-			
-		}
-		
-		return matching;
-	
-	}
-	*/
 
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
@@ -753,7 +781,7 @@ public class SecuritySpecification  {
 			return specCreator.api_call();
 		} catch (Exception e) {
 			logger.error("Error while parsing spec method from Action: " + meth);
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		return null;
 	}

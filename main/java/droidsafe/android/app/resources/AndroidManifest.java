@@ -189,7 +189,7 @@ public class AndroidManifest {
 				  throw new Exception();
 		  } catch (Exception e) {
 			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}", name);
-			  System.exit(1);
+			  droidsafe.main.Main.exit(1);
 		  }
 		  
 	  }

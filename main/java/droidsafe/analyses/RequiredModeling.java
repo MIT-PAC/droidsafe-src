@@ -95,7 +95,7 @@ public class RequiredModeling {
             fw.close();
         } catch (Exception e) {
             logger.error("Cannot write required modeling file", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
     }
 

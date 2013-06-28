@@ -312,7 +312,7 @@ public class DroidsafeAnalysisRunner {
     }
 
     if (Config.v().target.equals("specdump")) {
-      RCFGToSSL.run();
+      RCFGToSSL.run(false);
       SecuritySpecification spec = RCFGToSSL.v().getSpec();
 
       if (spec != null) {
@@ -491,7 +491,7 @@ public class DroidsafeAnalysisRunner {
             marker.setAttribute("methodName", inputMethod.getName());
             marker.setAttribute("methodClass", inputMethod.getCname());
             if (inputMethod.getReceiver() != null) {
-              marker.setAttribute("methodReceiver", inputMethod.getReceiver());
+              marker.setAttribute("methodReceiver", inputMethod.getReceiver().toString());
             }
           } catch (CoreException ex) {
             ex.printStackTrace();
