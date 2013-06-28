@@ -325,7 +325,7 @@ public class Intent extends ValueAnalysisModeledObject {
      * @see #putExtra(String, String)
      */
     public Set<String> getStringExtra(Set<String> names) {
-        Set<String> results = new ValueAnalysisModelingSet<String>(new HashSet<String>());
+        Set<String> results = new HashSet<String>();
         for(String name : names) {
             results.addAll(this.mExtras.getString(name));
         }

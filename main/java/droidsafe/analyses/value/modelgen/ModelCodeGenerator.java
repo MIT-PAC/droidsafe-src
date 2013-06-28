@@ -43,6 +43,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,6 +56,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
+import soot.Hierarchy;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -69,42 +71,28 @@ public class ModelCodeGenerator {
     public static final String MODEL_PACKAGE = "droidsafe.analyses.value.models";
     public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
     
-    public static final ReferenceType SET_OF_STRING_TYPE = makeGenericReferenceType("Set", "String");
+    public static final List<String> PRIMITIVE_WRAPPER_CLASS_NAMES = Arrays.asList(new String[]{"Boolean",
+                                                                                                "Character",
+                                                                                                "Byte",
+                                                                                                "Short",
+                                                                                                "Integer",
+                                                                                                "Long",
+                                                                                                "Float",
+                                                                                                "Double"});
+    public static final List<String> COLLECTION_CLASS_NAMES =
+            Arrays.asList(new String[]{"BlockingDeque", "BlockingQueue", "Collection", "Deque", "List",
+                                       "NavigableSet", "Queue", "Set", "SortedSet", "AbstractCollection",
+                                       "AbstractList", "AbstractQueue", "AbstractSequentialList", "AbstractSet",
+                                       "ArrayBlockingQueue", "ArrayDeque", "ArrayList", "AttributeList",
+                                       "ConcurrentLinkedQueue", "ConcurrentSkipListSet", "CopyOnWriteArrayList",
+                                       "CopyOnWriteArraySet", "DelayQueue", "EnumSet", "HashSet", "LinkedBlockingDeque",
+                                       "LinkedBlockingQueue", "LinkedHashSet", "LinkedList", "PriorityBlockingQueue",
+                                       "PriorityQueue", "Stack", "SynchronousQueue", "TreeSet", "Vector"});
     
-    public static final ReferenceType SET_OF_BOOLEAN_TYPE = makeGenericReferenceType("Set", "ValueAnalysisBoolean");
+    private Map<PrimitiveType.Primitive, Type> primitiveTypeConversionMap = new HashMap<PrimitiveType.Primitive, Type>();
     
-    public static final ReferenceType SET_OF_CHARACTER_TYPE = makeGenericReferenceType("Set", "ValueAnalysisChar");
-    
-    public static final ReferenceType SET_OF_BYTE_TYPE = makeGenericReferenceType("Set", "ValueAnalysisByte");
-    
-    public static final ReferenceType SET_OF_SHORT_TYPE = makeGenericReferenceType("Set", "ValueAnalysisShort");
-    
-    public static final ReferenceType SET_OF_INTEGER_TYPE = makeGenericReferenceType("Set", "ValueAnalysisInt");
-    
-    public static final ReferenceType SET_OF_LONG_TYPE = makeGenericReferenceType("Set", "ValueAnalysisLong");
-    
-    public static final ReferenceType SET_OF_DOUBLE_TYPE = makeGenericReferenceType("Set", "ValueAnalysisDouble");
-    
-    public static final ReferenceType SET_OF_FLOAT_TYPE = makeGenericReferenceType("Set", "ValueAnalysisFloat");
-    
-    public static final Expression SET_OF_STRING_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "String");
-    
-    public static final Expression SET_OF_BOOLEAN_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisBoolean");
-    
-    public static final Expression SET_OF_CHARACTER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisChar");
-    
-    public static final Expression SET_OF_BYTE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisByte");
-    
-    public static final Expression SET_OF_SHORT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisShort");
-    
-    public static final Expression SET_OF_INTEGER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisInt");
-    
-    public static final Expression SET_OF_LONG_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisLong");
-    
-    public static final Expression SET_OF_DOUBLE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisDouble");
-    
-    public static final Expression SET_OF_FLOAT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisFloat");
-    
+    private Map<String, Type> classTypeConversionMap = new HashMap<String, Type>();
+
     private static final Logger logger = LoggerFactory.getLogger(ModelCodeGenerator.class);
 
     private static final Expression NULL = new NullLiteralExpr();
@@ -136,6 +124,7 @@ public class ModelCodeGenerator {
     private Set<String> importsProcessed = new HashSet<String>();
     private Map<BodyDeclaration, String> methodCodeMap = new HashMap<BodyDeclaration, String>();
     private int nextLine;
+    //private Hierarchy hierarchy;
 
     public ModelCodeGenerator(String sourcePath, String className, Set<String> fieldNames) {
         this.className = className;
@@ -151,7 +140,7 @@ public class ModelCodeGenerator {
         logger.debug("APAC_HOME = {}", apacHome);
         if (this.apacHome == null) {
           logger.error("Environment variable $APAC_HOME not set!");
-          System.exit(1);
+          droidsafe.main.Main.exit(1);
         }
         androidImplJar = new File(constructPath(this.apacHome, Config.ANDROID_LIB_DIR_REL, "android-impl.jar"));
    }
@@ -162,7 +151,7 @@ public class ModelCodeGenerator {
     public static void main(String[] args) {
         if (args.length < 2) {
             logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } else {
             Reflections reflections = new Reflections(MODEL_PACKAGE);
             Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
@@ -200,7 +189,7 @@ public class ModelCodeGenerator {
         // set soot classpath to android-impl.jar
         if (!androidImplJar.exists()) {
             logger.error("android-impl.jar does not exist");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         String cp = androidImplJar.getPath();
         soot.options.Options.v().set_soot_classpath(cp);
@@ -210,13 +199,13 @@ public class ModelCodeGenerator {
         // If no field is specified in the command arguments, model all the non-constant fields.
         if (fieldNames.isEmpty()) {
             for (SootField field: sootClass.getFields()) {
-                if (!field.isPublic() || !field.isStatic() || !field.isFinal())
+                if (!field.isStatic() || !field.isFinal())
                 fieldNames.add(field.getName());
             }
         }
-//        for (SootMethod meth: sootClass.getMethods()) {
-//            System.out.println(meth.getSignature());
-//        }
+        // TODO: set up soot so we can deduce subtypes of java.util.Collection
+        // Scene.v().loadClass("java.util.Collection", SootClass.SIGNATURES);
+        // hierarchy = new Hierarchy();
     }
 
     private CompilationUnit parseJavaSource() {
@@ -231,14 +220,14 @@ public class ModelCodeGenerator {
             computeMethodCodeMap(cu, javaFileName);
         } catch (Exception e) {
             logger.error("parseClass() failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (in != null)  
                 try {
                     in.close();
                 } catch (IOException e) {
                     logger.error("Failed to close the Java source file", e);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
         }
         return cu;
@@ -269,14 +258,14 @@ public class ModelCodeGenerator {
             }
         } catch (Exception e) {
             logger.error("parseClass() failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (reader != null) 
                 try {
                     reader.close();
                 } catch (IOException e) {
                     logger.error("Failed to close the Java source file", e);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
         }
     }
@@ -309,8 +298,8 @@ public class ModelCodeGenerator {
                 buf.append(' ');
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("Failed to get method code", e);
+            droidsafe.main.Main.exit(1);
         }
         return buf.toString();
     }
@@ -391,67 +380,49 @@ public class ModelCodeGenerator {
             Type type = field.getType();
             soot.Type sootType = sootField.getType();
             Type modelType = convertType(type, sootType, true);
-            convertInit(modelVars, modelType);
+            if (modelType != type)
+                convertInit(modelVars, (ReferenceType) modelType);
             FieldDeclaration modelField = new FieldDeclaration(modifiers, modelType, modelVars);
             modelField.setJavaDoc(field.getJavaDoc());
             ASTHelper.addMember(modelCoi, modelField);
         }
     }
 
-    private void convertInit(List<VariableDeclarator> modelVars, Type modelType) {
+    private void convertInit(List<VariableDeclarator> modelVars, ReferenceType modelType) {
         Expression init = initForSetOfValues(modelType);
-        if (init != null)
-            for (VariableDeclarator modelVar: modelVars)
-                modelVar.setInit(init);
+        for (VariableDeclarator modelVar: modelVars)
+            modelVar.setInit(init);
     }
 
-    private Expression initForSetOfValues(Type modelType) {
-        if (modelType == SET_OF_STRING_TYPE)
-            return SET_OF_STRING_INIT;
-        if (modelType == SET_OF_BOOLEAN_TYPE)
-            return SET_OF_BOOLEAN_INIT;
-        if (modelType == SET_OF_CHARACTER_TYPE)
-            return SET_OF_CHARACTER_INIT;
-        if (modelType == SET_OF_BYTE_TYPE)
-            return SET_OF_BYTE_INIT;
-        if (modelType == SET_OF_SHORT_TYPE)
-            return SET_OF_SHORT_INIT;
-        if (modelType == SET_OF_INTEGER_TYPE)
-            return SET_OF_INTEGER_INIT;
-        if (modelType == SET_OF_LONG_TYPE)
-            return SET_OF_LONG_INIT;
-        if (modelType == SET_OF_FLOAT_TYPE)
-            return SET_OF_FLOAT_INIT;
-        if (modelType == SET_OF_DOUBLE_TYPE)
-            return SET_OF_DOUBLE_INIT;
+    private Expression initForSetOfValues(ReferenceType modelType) {
+        ClassOrInterfaceType coi = (ClassOrInterfaceType) modelType.getType();
+        Type argType = coi.getTypeArgs().get(0);
+        return makeModelingSetCreationExpr(argType);
+    }
+
+    private Type getSetArgumentType(Type setType) {
+        
         return null;
     }
 
     private Type convertType(Type type, soot.Type sootType, boolean isFieldType) {
+        if (type.toString().startsWith("List"))
+            System.out.print("");
         if (type instanceof ReferenceType) {
             ReferenceType refType = (ReferenceType) type;
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
-                String name = ((RefType) sootType).getClassName();
-                if (name.equals("java.lang.String")) {
-                    imports.add("java.util.Set");
-                    return SET_OF_STRING_TYPE;
+                ClassOrInterfaceType coi = (ClassOrInterfaceType)refType.getType();
+                String coiName = coi.getName();
+                if (coiName.equals("String") || PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
+                    return convertStringOrPrimitiveWrapperType(coiName);
+                } else if (COLLECTION_CLASS_NAMES.contains(coiName)){
+                    // SootClass sootClass = ((RefType)sootType).getSootClass();
+                    // if (isSubtypeOf(sootClass, Scene.v().getSootClass("java.util.Collection"))) {
+                    Type argType = coi.getTypeArgs().get(0);
+                    if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(argType.toString()))
+                        imports.add(((RefType)sootType).getClassName());
+                        return makeSetOfType(type);
                 }
-                if (name.equals("java.lang.Boolean"))
-                    return convertPrimitive(Primitive.Boolean);
-                if (name.equals("java.lang.Character"))
-                    return convertPrimitive(Primitive.Char);
-                if (name.equals("java.lang.Byte"))
-                    return convertPrimitive(Primitive.Byte);
-                if (name.equals("java.lang.Short"))
-                    return convertPrimitive(Primitive.Short);
-                if (name.equals("java.lang.Integer"))
-                    return convertPrimitive(Primitive.Int);
-                if (name.equals("java.lang.Long"))
-                    return convertPrimitive(Primitive.Long);
-                if (name.equals("java.lang.Float"))
-                    return convertPrimitive(Primitive.Float);
-                if (name.equals("java.lang.Double"))
-                    return convertPrimitive(Primitive.Double);
                 collectImports(sootType, isFieldType);
             }
         } else if (type instanceof PrimitiveType) {
@@ -460,32 +431,25 @@ public class ModelCodeGenerator {
         }
         return type;
     }
+    
+    
+    private Type convertStringOrPrimitiveWrapperType(String clsName) {
+        Type type = classTypeConversionMap.get(clsName);
+        if (type == null) {
+            type = makeSetOfType(clsName);
+            classTypeConversionMap.put(clsName, type);
+        }
+        return type;
+    }
 
     private Type convertPrimitive(Primitive prim) {
-        imports.add("java.util.Set");
-        imports.add("droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysis" + prim);
-        switch (prim) {
-            case Boolean:
-                return SET_OF_BOOLEAN_TYPE;
-            case Char:
-                return SET_OF_CHARACTER_TYPE;
-            case Byte:
-                return SET_OF_BYTE_TYPE;
-            case Short:
-                return SET_OF_SHORT_TYPE;
-            case Int:
-                return SET_OF_INTEGER_TYPE;
-            case Long:
-                return SET_OF_LONG_TYPE;
-            case Float:
-                return SET_OF_FLOAT_TYPE;
-            case Double:
-                return SET_OF_DOUBLE_TYPE;
-            default:
-                logger.error("Unknown primitive: " + prim);
-                System.exit(1);
+        Type type = primitiveTypeConversionMap.get(prim);
+        if (type == null) {
+            imports.add("droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysis" + prim);
+            type = makeSetOfType("ValueAnalysis" + prim);
+            primitiveTypeConversionMap.put(prim, type);
         }
-        return null;
+        return type;
     }
 
     private void collectImports(List<SootClass> sootClasses) {
@@ -570,7 +534,7 @@ public class ModelCodeGenerator {
                 }
                 buf.append(')');
                 logger.error("Failed to find soot method " + buf);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
        }
         return sootMethod;
@@ -657,11 +621,20 @@ public class ModelCodeGenerator {
             out.print(cu.toString());
         } catch (FileNotFoundException e) {
             logger.error("generateCodeForModeledClass failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (out != null)
                 out.close();
         }
+    }
+
+    private ReferenceType makeSetOfType(String className) {
+        return makeSetOfType(new ClassOrInterfaceType(className));
+    }
+
+    private ReferenceType makeSetOfType(Type type) {
+        imports.add("java.util.Set");
+        return makeGenericReferenceType("Set", type);
     }
 
     private static ReferenceType makeReferenceType(String className) {
@@ -673,18 +646,31 @@ public class ModelCodeGenerator {
         return new ReferenceType(genericType);
     }
     
+    private static ReferenceType makeGenericReferenceType(String genericClassName, Type ... typeArgs) {
+        ClassOrInterfaceType genericType = makeGenericType(genericClassName, typeArgs);
+        return new ReferenceType(genericType);
+    }
+    
     private static ClassOrInterfaceType makeGenericType(String genericClassName, String ... typeArgClassNames) {
-        ClassOrInterfaceType genericType = new ClassOrInterfaceType(genericClassName);
-        List<Type> typeArgs = new ArrayList<Type>();
-        for (String typeArgClassName: typeArgClassNames) {
-            typeArgs.add(new ClassOrInterfaceType(typeArgClassName));
+        Type[] typeArgs = new Type[typeArgClassNames.length];
+        for (int i = 0; i < typeArgClassNames.length; i++) {
+            typeArgs[i] = new ClassOrInterfaceType(typeArgClassNames[i]);
         }
-        genericType.setTypeArgs(typeArgs);
+        return makeGenericType(genericClassName, typeArgs);
+    }
+    
+    private static ClassOrInterfaceType makeGenericType(String genericClassName, Type ... typeArgs) {
+        ClassOrInterfaceType genericType = new ClassOrInterfaceType(genericClassName);
+        genericType.setTypeArgs(Arrays.asList(typeArgs));
         return genericType;
     }
     
-    private static Expression makeGenericObjectCreationExpr(String genericClassName, String ... typeArgClassNames) {
-        ClassOrInterfaceType genericType = makeGenericType(genericClassName, typeArgClassNames);
+    private static Expression makeModelingSetCreationExpr(Type typeArg) {
+        return makeGenericObjectCreationExpr("ValueAnalysisModelingSet", typeArg);
+    }
+
+    private static Expression makeGenericObjectCreationExpr(String genericClassName, Type ... typeArgs) {
+        ClassOrInterfaceType genericType = makeGenericType(genericClassName, typeArgs);
         return new ObjectCreationExpr(null, genericType, null);
     }
 
@@ -722,7 +708,7 @@ public class ModelCodeGenerator {
 
     private String getQualifier(String name) {
         int index = name.lastIndexOf('.');
-        return name.substring(0, index);
+        return (index < 0) ? "" : name.substring(0, index);
     }
 
     private String constructPath(String ...comps) {
@@ -735,4 +721,19 @@ public class ModelCodeGenerator {
         return buf.toString();        
     }
 
+    /*
+    public boolean isSubtypeOf(SootClass a, SootClass b) {
+        if (a.equals(b))
+            return true;
+        if (b.getType().equals(RefType.v("java.lang.Object")))
+            return true;
+        if (a.isInterface()) {
+            return b.isInterface() && hierarchy.isInterfaceSubinterfaceOf(a, b);
+        }
+        if (b.isInterface()) {
+            return hierarchy.getImplementersOf(b).contains(a);
+        }
+        return hierarchy.isClassSubclassOf(a, b);
+    }
+    */
 }

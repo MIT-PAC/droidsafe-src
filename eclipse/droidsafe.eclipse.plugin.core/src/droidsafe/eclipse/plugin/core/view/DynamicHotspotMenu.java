@@ -78,8 +78,8 @@ public class DynamicHotspotMenu extends ContributionItem {
                 // create the menu item
                 MenuItem menuItem = new MenuItem(menu, SWT.PUSH, index);
                 addSelectionListener(method, i, menuItem, spec);
-                i++;
               }
+              i++;
             }
           }
         }

@@ -19,7 +19,9 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
+//import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 
+import droidsafe.speclang.SecuritySpecification;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
@@ -121,12 +123,14 @@ public class Main {
         if (Config.v().writeJimpleAppClasses) {
             writeAllAppClasses();
         }
-
-        RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
         ValueAnalysis.run();
         logger.info("Finished Attribute Modeling");
+        
+        logger.info("Starting Generate RCFG...");
+        RCFG.generate();
+        logger.info("Finished Generating RCFG.");
 
         // print out what modeling is required for this application
         RequiredModeling.run();
@@ -156,9 +160,20 @@ public class Main {
         }
 
         if (Config.v().target.equals("specdump")) {
-            RCFGToSSL.run();
+            logger.info("Converting RCFG to SSL and dumping...");
+            RCFGToSSL.run(false);
+            SecuritySpecification spec = RCFGToSSL.v().getSpec();
+/*
+            if (spec != null) {
+              SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+              SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+            }
+            */
+
 
         } else if (Config.v().target.equals("confcheck")) {
+            logger.info("Converting RCFG to SSL ...");
+            RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
 
@@ -198,4 +213,7 @@ public class Main {
         }
     }
 
+    public static void exit(int status) {
+        System.exit(1);
+    }
 }

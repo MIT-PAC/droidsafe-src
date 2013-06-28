@@ -138,7 +138,7 @@ public class ValueAnalysis {
     private Set<SootMethod> simulatedMethods;
 
     /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult"));
+    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", "onActivityResult"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -192,8 +192,56 @@ public class ValueAnalysis {
         jsa = JSAStrings.v();
         if(!jsa.hasRun()){
             logger.error("JSA's results are not available. Attribute analysis requires them.");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
+    }
+
+
+    //==================================================================================================================
+    // Public Methods
+    //==================================================================================================================
+
+    
+    /**
+     * Getter for analysis result
+     */
+    public Map<AllocNode, ValueAnalysisModeledObject> getResults() {
+        return this.objectToModelMap;
+    }
+
+    
+    /**
+     * Return true if this alloc node has an analysis result (and is not invalidated)
+     */
+    public boolean hasResult(AllocNode node) {
+        return this.objectToModelMap.containsKey(node) &&
+                !this.objectToModelMap.get(node).invalidated();
+    }
+    
+    /**
+     * Return the ModeledObject result for a given alloc node.
+     */
+    public ValueAnalysisModeledObject getResult(AllocNode node) {
+        return this.objectToModelMap.get(node);
+    }
+    
+    /**
+     * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
+     *
+     * @throws ClassNotFoundException if the correct class isn't modeled 
+     */
+    public Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
+        SootClass sootClass = refType.getSootClass();
+        return this.getDroidsafeClass(sootClass);
+    }
+
+    /** wrapper around toAttrModelingModelClass */
+    public Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
+        String className = sootClass.getName();
+        if(isActivity(sootClass)){
+            className = "android.app.Activity";
+        }
+        return Class.forName(ValueAnalysisUtils.toAttrModelingModelClass(className));
     }
 
     //==================================================================================================================
@@ -241,10 +289,9 @@ public class ValueAnalysis {
     public static void runOnce() {
         if (GeoPTA.v() == null) {
             logger.error("The GeoPTA pass has not been run. Attribute modeling / requires it.");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }      if (am == null)
         am = new ValueAnalysis();
-
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
@@ -264,8 +311,8 @@ public class ValueAnalysis {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                   am.logError("analyzing meth " + meth);
-                   StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
+                    //am.logError("analyzing " + meth);
+                    StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
                     Chain units = stmtBody.getUnits();
@@ -292,8 +339,7 @@ public class ValueAnalysis {
                             continue;
                         }
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-                        am.logError("InvokeExpr " + invokeExpr);
-
+                        //am.logError("on invokeExpr " + invokeExpr);
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -379,14 +425,6 @@ public class ValueAnalysis {
     //=================================================================================================================
 
     /**
-     * Getter for analysis result
-     */
-    public Map<AllocNode, ValueAnalysisModeledObject> getResults() {
-        return this.objectToModelMap;
-    }
-
-
-    /**
      *  Invalidate any param that we modeled and log each invalidation.
      */
     public void invalidateParamObjects(Set<ArrayList<Object>> paramObjectCartesianProduct){  
@@ -442,8 +480,6 @@ public class ValueAnalysis {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
-                // The method isn't modeled, so we must invalidate every argument that we modeled
-                this.invalidateParamObjects(paramObjectCartesianProduct);
 
                 // If this is an InstanceInvoke, also invalidate the receiver object
                 if (modeledReceiverObject != null){
@@ -451,6 +487,9 @@ public class ValueAnalysis {
                     error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
                 }
                 this.logError(error);
+               // The method isn't modeled, so we must invalidate every argument that we modeled
+               this.invalidateParamObjects(paramObjectCartesianProduct);
+
             }
         }
         return objectsToReturn;
@@ -521,25 +560,6 @@ public class ValueAnalysis {
             model = objectToModelMap.get(allocNode);
         }
         return model;
-    }
-
-    /**
-     * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
-     *
-     * @throws ClassNotFoundException if the correct class isn't modeled 
-     */
-    private Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
-        SootClass sootClass = refType.getSootClass();
-        return this.getDroidsafeClass(sootClass);
-    }
-
-    /** wrapper around toAttrModelingModelClass */
-    private Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
-        String className = sootClass.getName();
-        if(isActivity(sootClass)){
-            className = "android.app.Activity";
-        }
-        return Class.forName(ValueAnalysisUtils.toAttrModelingModelClass(className));
     }
 
     /** Check if a sootClass is an instance of Activity or one of its subclasses */
@@ -700,40 +720,44 @@ public class ValueAnalysis {
                         paramObjectSets.get(i).add(null);
                     } else {
                         Object obj;
-                        try {
-                            if(arg instanceof NullConstant) {
-                                obj = null;
-                            } else if (arg instanceof IntConstant) {
-                                obj = new ValueAnalysisInt(((IntConstant)arg).value);
-                            } else if (arg instanceof StringConstant) {
-                                obj = new String(((StringConstant)arg).value);
-                            } else if (arg instanceof LongConstant) {
-                                obj = new ValueAnalysisLong(((LongConstant)arg).value);
-                            } else if (arg instanceof DoubleConstant) {
-                                obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
-                            } else if (arg instanceof FloatConstant) {
-                                obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
-                            } else if (arg instanceof ClassConstant) {
-                                String className = ((ClassConstant)arg).value.replace("/", ".");
-                                obj = Project.v().getAppJavaClass(className);
-                            } else {
-                                throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                        if(valueToModelAttrMap.containsKey(arg)){
+                            obj = valueToModelAttrMap.get(arg);
+                        } else {
+                            try {
+                                if(arg instanceof NullConstant) {
+                                    obj = null;
+                                } else if (arg instanceof IntConstant) {
+                                    obj = new ValueAnalysisInt(((IntConstant)arg).value);
+                                } else if (arg instanceof StringConstant) {
+                                    obj = new String(((StringConstant)arg).value);
+                                } else if (arg instanceof LongConstant) {
+                                    obj = new ValueAnalysisLong(((LongConstant)arg).value);
+                                } else if (arg instanceof DoubleConstant) {
+                                    obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
+                                } else if (arg instanceof FloatConstant) {
+                                    obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
+                                } else if (arg instanceof ClassConstant) {
+                                    String className = ((ClassConstant)arg).value.replace("/", ".");
+                                    obj = Project.v().getAppJavaClass(className);
+                                } else {
+                                    throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                                }
+                                valueToModelAttrMap.put(arg, obj);
+                            } catch (ClassNotFoundException cnfe){
+                                ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
+                                        + cnfe + "\n");
+                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                    modeledObject.invalidate();
+                                }
+                                return;
                             }
-                            obj = Sets.newHashSet(obj);
-                        } catch (ClassNotFoundException cnfe){
-                            ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
-                                    + cnfe + "\n");
-                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                modeledObject.invalidate();
-                            }
-                            return;
                         }
                         try {
                             paramClasses.get(i);
                         } catch(IndexOutOfBoundsException e) {
                             paramClasses.add(i, Set.class);
                         }
-                        paramObjectSets.get(i).add(obj);
+                        paramObjectSets.get(i).add(Sets.newHashSet(obj));
                     }
                 } else if(type instanceof RefType) {
 
@@ -801,37 +825,42 @@ public class ValueAnalysis {
                         }
                     }
                 } else if(arg.getType() instanceof PrimType) {
-                    ValueAnalysisModeledObject valueAnalysisPrimitiveObject = null;
-                    if(type instanceof BooleanType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisBoolean();
-                    } else if (type instanceof ByteType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisByte();
-                    } else if (type instanceof CharType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisChar();
-                    } else if (type instanceof DoubleType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisDouble();
-                    } else if(type instanceof FloatType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisFloat();
-                    } else if(type instanceof Integer127Type) {
-                        logger.error("unhandled Integer127Type: {}", type);
-                        System.exit(1);
-                    } else if(type instanceof Integer1Type) {
-                        logger.error("unhandled Integer1Type: {}", type);
-                        System.exit(1);
-                    } else if (type instanceof Integer32767Type) {
-                        logger.error("unhandled Integer32676Type: {}", type);
-                        System.exit(1);
-                    } else if (type instanceof IntType) {
-                        valueAnalysisPrimitiveObject =  new ValueAnalysisInt();
-                    } else if (type instanceof LongType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisLong();
-                    } else if (type instanceof ShortType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisShort();
+                    Object obj = null;
+                    if(valueToModelAttrMap.containsKey(arg)) {
+                        obj = valueToModelAttrMap.get(arg);
                     } else {
-                        logger.error("unhandled PrimType: {}", type);
-                        System.exit(1);
+                        if(type instanceof BooleanType) {
+                            obj = new ValueAnalysisBoolean();
+                        } else if (type instanceof ByteType) {
+                            obj = new ValueAnalysisByte();
+                        } else if (type instanceof CharType) {
+                            obj = new ValueAnalysisChar();
+                        } else if (type instanceof DoubleType) {
+                            obj = new ValueAnalysisDouble();
+                        } else if(type instanceof FloatType) {
+                            obj = new ValueAnalysisFloat();
+                        } else if(type instanceof Integer127Type) {
+                            logger.error("unhandled Integer127Type: {}", type);
+                            droidsafe.main.Main.exit(1);
+                        } else if(type instanceof Integer1Type) {
+                            logger.error("unhandled Integer1Type: {}", type);
+                            droidsafe.main.Main.exit(1);
+                        } else if (type instanceof Integer32767Type) {
+                            logger.error("unhandled Integer32676Type: {}", type);
+                            droidsafe.main.Main.exit(1);
+                        } else if (type instanceof IntType) {
+                            obj =  new ValueAnalysisInt();
+                        } else if (type instanceof LongType) {
+                            obj = new ValueAnalysisLong();
+                        } else if (type instanceof ShortType) {
+                            obj = new ValueAnalysisShort();
+                        } else {
+                            logger.error("unhandled PrimType: {}", type);
+                            droidsafe.main.Main.exit(1);
+                        }
+                        valueToModelAttrMap.put(arg, obj);
                     }
-                    paramObjectSets.get(i).add(Sets.newHashSet(valueAnalysisPrimitiveObject));
+                    paramObjectSets.get(i).add(Sets.newHashSet(obj));
                     paramClasses.add(i, Set.class);
                 } else {
                     ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 

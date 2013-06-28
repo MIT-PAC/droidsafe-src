@@ -99,7 +99,7 @@ public class Project {
         logger.info("Setting application class directory to {}.", appClassesDir.toString());
         if (!this.appClassesDir.exists()) {
             logger.error("Project not configured properly. Directory does not exist: " + this.appClassesDir);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         this.appLibDir = new File(Config.v().APP_ROOT_DIR + File.separator + LIBS_DIR);
@@ -112,7 +112,7 @@ public class Project {
                 outputDir.mkdirs();
             } catch (Exception e) {
                 logger.error("Cannot create output directory", e);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
         }
 
@@ -145,7 +145,7 @@ public class Project {
             }
         } catch(MalformedURLException e) {
             logger.error("Encountered a malformed url when creating java class laoder for application: {}", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         javaAppClassLoader = new URLClassLoader(urls.toArray(new URL[0]));
     }
@@ -196,7 +196,7 @@ public class Project {
                 jarFile = new JarFile(f);
             } catch (IOException e1) {
                 logger.error("Error opening jar file", e1);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             for (Enumeration<JarEntry> e = jarFile.entries() ; e.hasMoreElements() ;) {

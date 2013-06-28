@@ -505,7 +505,7 @@ public class Resources {
 		if (!Scene.v().containsClass(className) || cn == null) {
 			logger.error ("No class file found for manifest activity '{}' "
 					+ "(package {})", activity.name, package_name);
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		
 		//NOTE: do we want to read in all methods????????
@@ -650,7 +650,7 @@ public class Resources {
 
 			if (!(expr.getArgs().get(0) instanceof IntConstant)) {
 				logger.error("Found call to setContentView(int) with non-constant argument: {}", expr.getArgs().get(0));
-				System.exit(1);
+				droidsafe.main.Main.exit(1);
 				return;
 			}
 

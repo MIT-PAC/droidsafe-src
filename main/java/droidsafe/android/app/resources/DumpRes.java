@@ -33,7 +33,7 @@ public class DumpRes {
       logger.error ("One argument (application directory) is required\n" + 
     		  "usage: DumpRes <app-dir>\n" +
     		  "DumpRes dumps all of the resource ids for the app\n");
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
      
     }
 
