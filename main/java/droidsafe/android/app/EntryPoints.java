@@ -33,16 +33,47 @@ import droidsafe.android.app.resources.AndroidManifest.Activity;
  *
  */
 public class EntryPoints {
+    /** Logger object */
 	private final static Logger logger = LoggerFactory.getLogger(EntryPoints.class);
-	
+	/** Entry points in component classes */
 	private Set<SootMethod> appEntryPoints;
-	
+	/** Have we calculated the entrypoints? */
 	private boolean calculated = false; 
-	
+	/** Singleton object */
 	private static EntryPoints V;
+	
+	/** Set of application classes (from the src/ directory, both components and non) that have entry point
+	 * meaning they have methods that override system methods.
+	 */
+    private Set<SootClass> srcClzWithEntryPoints;
 	
 	private EntryPoints() {
 		appEntryPoints = new LinkedHashSet<SootMethod>();
+		srcClzWithEntryPoints = new LinkedHashSet<SootClass>();
+		//build the set of source classes that have possible entry points
+		for (SootClass clz : Scene.v().getClasses()) {
+		    if (!Project.v().isSrcClass(clz) || clz.isInterface() || clz.isAbstract() )
+                continue;
+		    boolean hasEP = false;
+		    
+		    for (SootMethod m : clz.getMethods()) {
+		        if (Hierarchy.v().isImplementedSystemMethod(m)) {
+		            hasEP = true;
+		            break;
+		        }
+		    }
+		    
+		    if (hasEP)
+		        srcClzWithEntryPoints.add(clz);
+		}
+	}
+	
+	/**
+	 * Return true if this class is a src/ class and has a method that could be an entry point (an overriden
+	 * system method).
+	 */
+	public boolean hasPossibleEntryPoint(SootClass sc) {
+	    return srcClzWithEntryPoints.contains(sc);
 	}
 	
 	/**
