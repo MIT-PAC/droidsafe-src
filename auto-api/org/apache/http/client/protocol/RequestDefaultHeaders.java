@@ -34,7 +34,7 @@ public class RequestDefaultHeaders implements HttpRequestInterceptor {
                 ClientPNames.DEFAULT_HEADERS);
         {
             {
-                Iterator<Object> var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429 = (defHeaders).iterator();
+                Iterator<?> var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429 = (defHeaders).iterator();
                 var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.hasNext();
                 Object defHeader = var6DB89BCBACB10D0D7F512BB6B9D9D2DC_1687130429.next();
                 {

@@ -35,7 +35,7 @@ public class BasicMaxAgeHandler extends AbstractCookieAttributeHandler {
         } //End block
         catch (NumberFormatException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException ("Invalid max-age attribute: " 
+        	throw new MalformedCookieException ("Invalid max-age attribute: " 
                     + value);
         } //End block
         {

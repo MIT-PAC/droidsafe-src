@@ -94,7 +94,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
         } //End block
         catch (URISyntaxException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Invalid redirect URI: " + location, ex);
+        	throw new ProtocolException("Invalid redirect URI: " + location, ex);
         } //End block
         HttpParams params = response.getParams();
         {

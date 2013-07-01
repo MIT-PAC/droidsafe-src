@@ -944,7 +944,7 @@ public abstract class AbstractHttpClient implements HttpClient {
             {
                 if (DroidSafeAndroidRuntime.control) throw (IOException) t;
             } //End block
-            if (DroidSafeAndroidRuntime.control) throw new UndeclaredThrowableException(t);
+            throw new UndeclaredThrowableException(t);
         } //End block
         HttpEntity entity = response.getEntity();
         {

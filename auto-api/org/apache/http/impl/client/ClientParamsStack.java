@@ -173,10 +173,8 @@ public class ClientParamsStack extends AbstractHttpParams {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.035 -0400", hash_original_method = "2A511DFE1F081488F4D79D3E78FD00A2", hash_generated_method = "865784DEEEDA2A7E59E8F48C7351A9CE")
     public HttpParams setParameter(String name, Object value) throws UnsupportedOperationException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException
+    	throw new UnsupportedOperationException
             ("Setting parameters in a stack is not supported.");
-        addTaint(name.getTaint());
-        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException
             //("Setting parameters in a stack is not supported.");

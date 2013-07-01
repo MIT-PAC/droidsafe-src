@@ -112,9 +112,7 @@ public class RFC2965Spec extends RFC2109Spec {
         HeaderElement[] elems = header.getElements();
         List<Cookie> cookies = new ArrayList<Cookie>(elems.length);
         {
-            Iterator<HeaderElement> var64E4248F3E9583EF9C3B3FA1CE66BA8F_678914486 = (elems).iterator();
-            var64E4248F3E9583EF9C3B3FA1CE66BA8F_678914486.hasNext();
-            HeaderElement headerelement = var64E4248F3E9583EF9C3B3FA1CE66BA8F_678914486.next();
+            HeaderElement headerelement = elems[0];
             {
                 String name = headerelement.getName();
                 String value = headerelement.getValue();
