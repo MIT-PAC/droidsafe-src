@@ -86,18 +86,18 @@ public class InjectedSourceFlows {
     public static InjectedSourceFlows v() {
         return v;
     }
-    
+
     /**
      * Return the set of injected flows for this allocation site.
      */
-    public Set<MyKind> getInjectflows(AllocNode node) {
+    public Set<MyKind> getInjectedFlows(AllocNode node) {
         if (injectedFlows.containsKey(node)) {
             return injectedFlows.get(node);
         } else {
             return new LinkedHashSet<MyKind>();
         }
     }
-    
+
     /**
      * Build the internal map of allocnode to injected flows.  First, cache the classes we are interested in
      * inspecting, and build up some maps that will help the search.

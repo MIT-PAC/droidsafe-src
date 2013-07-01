@@ -29,7 +29,6 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import soot.G;
 import soot.Immediate;
 import soot.Kind;
 import soot.Local;
@@ -73,6 +72,7 @@ import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.toolkits.graph.Block;
 import soot.toolkits.graph.PseudoTopologicalOrderer;
@@ -90,7 +90,7 @@ public class InformationFlowAnalysis {
     }
 
     public static void run() {
-        DSTaintObjectUtil.run();
+        ObjectUtil.run();
         MemoryAccessAnalysis.run();
         v = new InformationFlowAnalysis(InterproceduralControlFlowGraph.v());
     }
@@ -663,7 +663,7 @@ public class InformationFlowAnalysis {
 
                 boolean isGetTaint = false;
                 for (Block succ : succs) {
-                    if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+                    if (ObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
                         isGetTaint = true;
                         break;
                     }
@@ -675,17 +675,10 @@ public class InformationFlowAnalysis {
                     for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
                         Context context = contextFrameHeapStatics.getKey();
                         FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatics.getValue();
-                        ImmutableList<MyValue> receiver = receiver(caller, stmt, invokeExpr, inFrameHeapStatics.frame);
+                        ImmutableList<MyValue> receivers = receiver(caller, stmt, invokeExpr, inFrameHeapStatics.frame);
                         Set<MyValue> values = new HashSet<MyValue>();
-                        for (MyValue value : receiver) {
-                            if (value instanceof Address) {
-                                Address address = (Address)value;
-                                for (SootField taint : DSTaintObjectUtil.v().taints) {
-                                    values.addAll(inFrameHeapStatics.heap.instances.get(address, taint));
-                                }
-                            } else {
-                                values.add(value);
-                            }
+                        for (MyValue receiver : receivers) {
+                            values.addAll(inFrameHeapStatics.heap.instances.get((Address)receiver, ObjectUtil.v().taint));
                         }
                         Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
                         frame.putS(MethodLocal.v(caller, local), values);
@@ -865,9 +858,7 @@ public class InformationFlowAnalysis {
                         Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
                         frame.putS(MethodLocal.v(method, local), values);
                         Heap heap = new Heap(inFrameHeapStatics.heap, inFrameHeapStatics.heap.arrays);
-                        for (Map.Entry<SootField, Set<MyKind>> fieldKinds : InjectedSourceFlows.v().getInjectedFlows(allocNode, context.entryEdge).entrySet()) {
-                            heap.instances.putW(address, fieldKinds.getKey(), ImmutableList.<MyValue>copyOf(fieldKinds.getValue()));
-                        }
+                        heap.instances.putW(address, ObjectUtil.v().taint, ImmutableList.<MyValue>copyOf(InjectedSourceFlows.v().getInjectedFlows(allocNode)));
                         outStates.put(context, new FrameHeapStatics(frame, heap, inFrameHeapStatics.statics));
                     }
                 });
@@ -1411,14 +1402,41 @@ public class InformationFlowAnalysis {
             return;
         }
 
+        boolean isAddTaint = false;
         boolean isGetTaint = false;
         for (Block succ : succs) {
-            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+            SootMethod method = succ.getBody().getMethod();
+            if (ObjectUtil.v().isAddTaint(method)) {
+                isAddTaint = true;
+                break;
+            }
+            else if (ObjectUtil.v().isGetTaint(method)) {
                 isGetTaint = true;
                 break;
             }
         }
-        if (isGetTaint) {
+        if (isAddTaint) {
+            assert succs.size() == 2;
+            States outStates = new States();
+            SootMethod caller = curr.getBody().getMethod();
+            for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
+                Context context = contextFrameHeapStatics.getKey();
+                FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatics.getValue();
+                ImmutableList<MyValue> receivers = receiver(caller, stmt, invokeExpr, inFrameHeapStatics.frame);
+                ImmutableList<MyValue> arg = evaluate(caller, invokeExpr.getArgs(), inFrameHeapStatics.frame).get(0);
+                Instances instances = new Instances(inFrameHeapStatics.heap.instances);
+                for (MyValue receiver : receivers) {
+                    instances.putW((Address)receiver, ObjectUtil.v().taint, arg);
+                }
+                outStates.put(context, new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
+            }
+            Block fallThrough = controlFlowGraph.getFallThrough(curr);
+            if (!outStates.equals(fromToStates.get(curr).get(fallThrough))) {
+                fromToStates.get(curr).put(fallThrough, outStates);
+                worklist.add(fallThrough);
+            }
+            return;
+        } else if (isGetTaint) {
             assert succs.size() == 2;
             States outStates = inStates;
             Block fallThrough = controlFlowGraph.getFallThrough(curr);
@@ -1715,33 +1733,39 @@ public class InformationFlowAnalysis {
 
 }
 
-class DSTaintObjectUtil {
-    private static DSTaintObjectUtil v;
+class ObjectUtil {
+    private static ObjectUtil v;
 
     public static void run() {
-        v = new DSTaintObjectUtil();
+        v = new ObjectUtil();
     }
 
-    public static DSTaintObjectUtil v() {
+    public static ObjectUtil v() {
         return v;
     }
 
-    Set<SootField> taints;
+    SootField taint;
+    Set<SootMethod> addTaints;
     Set<SootMethod> getTaints;
 
-    private DSTaintObjectUtil() {
-        SootClass klass = Scene.v().getSootClass("droidsafe.helpers.DSTaintObject");
+    private ObjectUtil() {
+        SootClass klass = Scene.v().getSootClass("java.lang.Object");
         assert klass != null;
-        taints = new HashSet<SootField>();
-        taints.add(klass.getFieldByName("taintDouble"));
-        taints.add(klass.getFieldByName("taintBoolean"));
-        taints.add(klass.getFieldByName("taintObject"));
+        taint = klass.getFieldByName("taint");
+        assert taint != null;
+        addTaints = new HashSet<SootMethod>();
         getTaints = new HashSet<SootMethod>();
         for (SootMethod method : klass.getMethods()) {
-            if (method.getName().startsWith("getTaint")) {
+            if (method.getName().startsWith("addTaint")) {
+                addTaints.add(method);
+            } else if (method.getName().startsWith("getTaint")) {
                 getTaints.add(method);
             }
         }
+    }
+
+    boolean isAddTaint(SootMethod method) {
+        return addTaints.contains(method);
     }
 
     boolean isGetTaint(SootMethod method) {
@@ -1791,7 +1815,8 @@ class MemoryAccessAnalysis {
         do {
             oldFrameHeapStatics = new FrameHeapStatics(frameHeapStatics);
             for (Block block : topologicalOrder) {
-                if (!DSTaintObjectUtil.v().isGetTaint(block.getBody().getMethod())) {
+                SootMethod method = block.getBody().getMethod();
+                if (!ObjectUtil.v().isAddTaint(method) && !ObjectUtil.v().isGetTaint(method)) {
                     frameHeapStatics = execute(block, frameHeapStatics);
                 }
             }
@@ -1831,12 +1856,15 @@ class MemoryAccessAnalysis {
         for (Block block : blocks) {
             Iterator<Unit> it = block.iterator();
             while (it.hasNext()) {
+                Set<AddressField> addrflds = null;
                 Unit unit = it.next();
                 if (unit instanceof AssignStmt) {
-                    Set<AddressField> addrflds = accessi((AssignStmt)unit, frameHeapStatics);
-                    if (addrflds != null) {
-                        addressFields.addAll(addrflds);
-                    }
+                    addrflds = accessi((AssignStmt)unit, frameHeapStatics);
+                } else if (unit instanceof InvokeStmt) {
+                    addrflds = accessi((InvokeStmt)unit, frameHeapStatics);
+                }
+                if (addrflds != null) {
+                    addressFields.addAll(addrflds);
                 }
             }
         }
@@ -1849,6 +1877,30 @@ class MemoryAccessAnalysis {
         if (rValue instanceof InstanceFieldRef) {
             addressFields = new HashSet<AddressField>();
             addressFields.addAll(accessi(stmt, (InstanceFieldRef)rValue, frameHeapStatics));
+        } else if (rValue instanceof NewExpr) {
+            AllocNode allocNode = GeoPTA.v().getAllocNode(rValue);
+            if (allocNode != null) {
+                if (!InjectedSourceFlows.v().getInjectedFlows(allocNode).isEmpty()) {
+                    addressFields = new HashSet<AddressField>();
+                    addressFields.add(AddressField.v(Address.v(allocNode), ObjectUtil.v().taint));
+                }
+            }
+        } else if (rValue instanceof InvokeExpr) {
+            boolean isGetTaint = false;
+            @SuppressWarnings("rawtypes")
+            Iterator targets = new Targets(callGraph.edgesOutOf(stmt));
+            while (targets.hasNext()) {
+                if (ObjectUtil.v().isGetTaint((SootMethod)targets.next())) {
+                    isGetTaint = true;
+                    break;
+                }
+            }
+            if (isGetTaint) {
+                addressFields = new HashSet<AddressField>();
+                for (MyValue value : receiver(stmt, (InvokeExpr)rValue, frameHeapStatics.frame)) {
+                    addressFields.add(AddressField.v((Address)value, ObjectUtil.v().taint));
+                }
+            }
         }
         Value variable = stmt.getLeftOp();
         if (variable instanceof InstanceFieldRef) {
@@ -1867,6 +1919,26 @@ class MemoryAccessAnalysis {
         for (MyValue value : frameHeapStatics.frame.get(MethodLocal.v(method, (Local)instanceFieldRef.getBase()))) {
             if (value instanceof Address) {
                 addressFields.add(AddressField.v((Address)value, field));
+            }
+        }
+        return addressFields;
+    }
+
+    private Set<AddressField> accessi(InvokeStmt stmt, final FrameHeapStatics frameHeapStatics) {
+        Set<AddressField> addressFields = null;
+        boolean isAddTaint = false;
+        @SuppressWarnings("rawtypes")
+        Iterator targets = new Targets(callGraph.edgesOutOf(stmt));
+        while (targets.hasNext()) {
+            if (ObjectUtil.v().isAddTaint((SootMethod)targets.next())) {
+                isAddTaint = true;
+                break;
+            }
+        }
+        if (isAddTaint) {
+            addressFields = new HashSet<AddressField>();
+            for (MyValue value : receiver(stmt, stmt.getInvokeExpr(), frameHeapStatics.frame)) {
+                addressFields.add(AddressField.v((Address)value, ObjectUtil.v().taint));
             }
         }
         return addressFields;
@@ -2237,7 +2309,7 @@ class MemoryAccessAnalysis {
 
         boolean isGetTaint = false;
         for (Block succ : succs) {
-            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+            if (ObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
                 isGetTaint = true;
                 break;
             }
@@ -2245,13 +2317,10 @@ class MemoryAccessAnalysis {
         if (isGetTaint) {
             assert succs.size() == 2;
             SootMethod caller = curr.getBody().getMethod();
-            ImmutableList<MyValue> receiver = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
+            ImmutableList<MyValue> receivers = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
             Set<MyValue> values = new HashSet<MyValue>();
-            for (MyValue value : receiver) {
-                Address address = (Address)value;
-                for (SootField taint : DSTaintObjectUtil.v().taints) {
-                    values.addAll(inFrameHeapStatics.heap.instances.get(address, taint));
-                }
+            for (MyValue receiver : receivers) {
+                values.addAll(inFrameHeapStatics.heap.instances.get((Address)receiver, ObjectUtil.v().taint));
             }
             Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
             frame.putS(MethodLocal.v(caller, (Local)variable), values);
@@ -2593,14 +2662,20 @@ class MemoryAccessAnalysis {
             return inFrameHeapStatics;
         }
 
+        boolean isAddTaint = false;
         boolean isGetTaint = false;
         for (Block succ : succs) {
-            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+            SootMethod method = succ.getBody().getMethod();
+            if (ObjectUtil.v().isAddTaint(method)) {
+                isAddTaint = true;
+                break;
+            }
+            if (ObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
                 isGetTaint = true;
                 break;
             }
         }
-        if (isGetTaint) {
+        if (isAddTaint || isGetTaint) {
             assert succs.size() == 2;
             return inFrameHeapStatics;
         }
