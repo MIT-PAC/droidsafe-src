@@ -87,7 +87,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
                 this.log.debug("Redirect requested to location '" + location + "'");
             } //End block
         } //End collapsed parenthetic
-        URI uri;
+        URI uri = null;
         try 
         {
             uri = new URI(location);

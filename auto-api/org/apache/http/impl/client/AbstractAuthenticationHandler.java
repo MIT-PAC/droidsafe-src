@@ -45,9 +45,7 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
         Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_1351921193 = null; //Variable for return #1
         Map<String, Header> map = new HashMap<String, Header>(headers.length);
         {
-            Iterator<Header> varEB4B2371BC0CCACE92E0AF8B1282EFFC_1018987709 = (headers).iterator();
-            varEB4B2371BC0CCACE92E0AF8B1282EFFC_1018987709.hasNext();
-            Header header = varEB4B2371BC0CCACE92E0AF8B1282EFFC_1018987709.next();
+            Header header = headers[0];
             {
                 CharArrayBuffer buffer;
                 int pos;
