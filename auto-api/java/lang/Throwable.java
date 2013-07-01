@@ -458,11 +458,15 @@ public class Throwable implements java.io.Serializable {
     
     private static Object nativeFillInStackTrace() {
                 //DSFIXME:  This shouldn't happen!
+    	return new Object();
     }
 
     
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
                 //DSFIXME:  This shouldn't happen!
+    	StackTraceElement[] ret = new StackTraceElement[0];
+    	ret[0].addTaint(stackState.taint);
+    	return ret;
     }
 
     

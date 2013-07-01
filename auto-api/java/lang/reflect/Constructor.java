@@ -41,7 +41,7 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
     int slot;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.713 -0400", hash_original_method = "F22CB981733D75C2BC34BDB791B93657", hash_generated_method = "5981B35754AB4E8CEEDEF9BB5EC55BCB")
-    private  Constructor() {
+    public  Constructor() {
         // ---------- Original Method ----------
     }
 
@@ -435,6 +435,14 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
             boolean noAccessCheck) throws InstantiationException, IllegalAccessException,
             InvocationTargetException {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	
+    	addTaint(args[0].taint);
+    	addTaint(declaringClass.taint);
+    	addTaint(parameterTypes[0].taint);
+    	addTaint(slot);
+    	addTaint(noAccessCheck);
+    	return (T)new Object();
+    	
     }
 
     

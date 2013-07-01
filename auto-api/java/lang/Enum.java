@@ -88,7 +88,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.970 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "7CFDAA36D607D56DCBB441FFA1E83CF5")
     @Override
     protected final Object clone() throws CloneNotSupportedException {
-        if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("Enums may not be cloned");
+    	throw new CloneNotSupportedException("Enums may not be cloned");
         // ---------- Original Method ----------
         //throw new CloneNotSupportedException("Enums may not be cloned");
     }

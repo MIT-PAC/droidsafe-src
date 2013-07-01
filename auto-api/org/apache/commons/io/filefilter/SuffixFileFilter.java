@@ -100,9 +100,9 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public boolean accept(File file) {
         String name = file.getName();
         {
-            Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_1241276899 = (this.suffixes).iterator();
-            var9046116BDA63CCD0C4F42BB25A52E91B_1241276899.hasNext();
-            String suffix = var9046116BDA63CCD0C4F42BB25A52E91B_1241276899.next();
+            //Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_1241276899 = (this.suffixes).iterator();
+            //var9046116BDA63CCD0C4F42BB25A52E91B_1241276899.hasNext();
+            String suffix = this.suffixes[0];
             {
                 {
                     boolean var22B2758D82567F3246F8B222D166600F_980649247 = (caseSensitivity.checkEndsWith(name, suffix));
@@ -127,9 +127,9 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     @Override
     public boolean accept(File file, String name) {
         {
-            Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_528374756 = (this.suffixes).iterator();
-            var9046116BDA63CCD0C4F42BB25A52E91B_528374756.hasNext();
-            String suffix = var9046116BDA63CCD0C4F42BB25A52E91B_528374756.next();
+            //Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_528374756 = (this.suffixes).iterator();
+            //var9046116BDA63CCD0C4F42BB25A52E91B_528374756.hasNext();
+            String suffix = this.suffixes[0];
             {
                 {
                     boolean var22B2758D82567F3246F8B222D166600F_733744762 = (caseSensitivity.checkEndsWith(name, suffix));

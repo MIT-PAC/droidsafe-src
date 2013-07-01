@@ -244,7 +244,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             } //End collapsed parenthetic
             //End case Node.ELEMENT_NODE 
             //Begin case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
-            Node next;
+            Node next = null;
             //End case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
             //Begin case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
             {
@@ -555,10 +555,12 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                 config.wellFormed = (Boolean) value;
             }
     
+    /*
     // orphaned legacy method
     public String item(int index) {
                 return index < result.length ? result[index] : null;
             }
+    */
     
     // orphaned legacy method
     public Object get(DOMConfigurationImpl config) {
@@ -570,11 +572,12 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                 return PARAMETERS.containsKey(str); 
             }
     
+    /*
     // orphaned legacy method
     public int getLength() {
                 return result.length;
             }
-    
+    */
     // orphaned legacy method
     public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;

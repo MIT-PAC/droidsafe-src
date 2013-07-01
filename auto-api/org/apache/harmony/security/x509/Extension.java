@@ -728,6 +728,7 @@ public final class Extension {
             values[2] = ext.extnValue;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             Extension ext = (Extension) object;
@@ -756,5 +757,6 @@ public final class Extension {
                     extnValue, rawExtnValue, in.getEncoded(), decodedExtValue);
         }
     
+    */
 }
 

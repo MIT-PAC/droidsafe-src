@@ -188,6 +188,7 @@ public final class GeneralNames {
             return gns.generalNames;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection getValues(Object object) {
             GeneralNames gns = (GeneralNames) object;
@@ -199,5 +200,6 @@ public final class GeneralNames {
             return new GeneralNames((List<GeneralName>) in.content, in.getEncoded());
         }
     
+    */
 }
 

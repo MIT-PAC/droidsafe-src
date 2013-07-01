@@ -42,7 +42,7 @@ public abstract class InputStream extends Object implements Closeable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.057 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "DF861A576A6C1FA2F008B978224588D4")
     public boolean markSupported() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1820103271 = getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1820103271 = getTaintBoolean();// DSFIXME: This shouldn't happen!Boolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1820103271;
         // ---------- Original Method ----------
         //return false;
@@ -69,7 +69,7 @@ public abstract class InputStream extends Object implements Closeable {
         {
             int i = 0;
             {
-                int c;
+                int c = 'a';
                 try 
                 {
                     {

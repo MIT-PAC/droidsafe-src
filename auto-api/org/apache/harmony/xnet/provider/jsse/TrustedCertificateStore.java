@@ -450,9 +450,9 @@ public final class TrustedCertificateStore {
             varB4EAC82CA7396A68D541C85D26508E83_865338912 = result;
         } //End block
         {
-            Iterator<String> var6C704332F65E4272E03A632BAF044C7C_469819772 = (files).iterator();
-            var6C704332F65E4272E03A632BAF044C7C_469819772.hasNext();
-            String filename = var6C704332F65E4272E03A632BAF044C7C_469819772.next();
+            //Iterator<String> var6C704332F65E4272E03A632BAF044C7C_469819772 = (files).iterator();
+            //var6C704332F65E4272E03A632BAF044C7C_469819772.hasNext();
+            String filename = files[0];
             {
                 String alias = PREFIX_SYSTEM + filename;
                 {
@@ -1017,6 +1017,7 @@ public final class TrustedCertificateStore {
         }
     }
     
+    /*
     // orphaned legacy method
     @Override public boolean match(X509Certificate cert) {
                 return cert.equals(x);
@@ -1032,5 +1033,6 @@ public final class TrustedCertificateStore {
                 }
             }
     
+    */
 }
 

@@ -315,7 +315,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.635 -0400", hash_original_method = "1E41AE98ED32B14C0D86483ED6D0EE22", hash_generated_method = "2CDB2951334AE17D34680AA8677EF8D0")
     public final int skipBytes(int count) throws IOException {
         int skipped = 0;
-        long skip;
+        long skip = 0;
         {
             boolean var2A4115B73034251059ADD8819B331806_347997368 = (skipped < count && (skip = in.skip(count - skipped)) != 0);
             {

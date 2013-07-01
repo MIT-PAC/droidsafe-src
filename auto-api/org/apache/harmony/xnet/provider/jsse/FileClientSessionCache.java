@@ -118,7 +118,7 @@ public class FileClientSessionCache {
                 file = new File(directory, name);
                 accessOrder.put(name, file);
             } //End block
-            FileInputStream in;
+            FileInputStream in = null;
             try 
             {
                 in = new FileInputStream(file);
@@ -165,7 +165,7 @@ public class FileClientSessionCache {
             String name = fileName(host, session.getPeerPort());
             File file = new File(directory, name);
             boolean existedBefore = file.exists();
-            FileOutputStream out;
+            FileOutputStream out = null;
             try 
             {
                 out = new FileOutputStream(file);

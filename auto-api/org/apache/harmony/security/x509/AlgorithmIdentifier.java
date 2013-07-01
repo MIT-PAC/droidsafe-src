@@ -197,6 +197,7 @@ public final class AlgorithmIdentifier {
             values[1] = aID.getParameters();
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
 
@@ -213,5 +214,6 @@ public final class AlgorithmIdentifier {
                     .toString((int[]) values[0]), (byte[]) values[1]);
         }
     
+    */
 }
 

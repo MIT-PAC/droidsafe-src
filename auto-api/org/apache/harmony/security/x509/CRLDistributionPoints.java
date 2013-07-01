@@ -102,6 +102,7 @@ public final class CRLDistributionPoints extends ExtensionValue {
             return dps.distributionPoints;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection<?> getValues(Object object) {
             CRLDistributionPoints dps = (CRLDistributionPoints) object;
@@ -113,5 +114,6 @@ public final class CRLDistributionPoints extends ExtensionValue {
             return new CRLDistributionPoints((List<DistributionPoint>) in.content, in.getEncoded());
         }
     
+    */
 }
 

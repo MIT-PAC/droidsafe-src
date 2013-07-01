@@ -30,6 +30,7 @@ class VMThread {
     
     static Thread currentThread() {
                 //DSFIXME:  This shouldn't happen!
+    	return new Thread();
     }
 
     

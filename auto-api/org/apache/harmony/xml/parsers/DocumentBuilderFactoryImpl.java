@@ -23,8 +23,8 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.461 -0400", hash_original_method = "ACE2451F013C7800286FF5717C2987CD", hash_generated_method = "5386FAD9F60DABB7DEF7B98E81E55317")
     @Override
     public Object getAttribute(String name) throws IllegalArgumentException {
-        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(name);
         addTaint(name.getTaint());
+        throw new IllegalArgumentException(name);
         // ---------- Original Method ----------
         //throw new IllegalArgumentException(name);
     }

@@ -86,6 +86,7 @@ public final class Validity {
             values[1] = validity.notAfter;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             Validity validity = (Validity) object;
@@ -99,5 +100,6 @@ public final class Validity {
             return new Validity((Date) values[0], (Date) values[1]);
         }
     
+    */
 }
 

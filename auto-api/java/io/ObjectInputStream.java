@@ -430,8 +430,10 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.241 -0400", hash_original_method = "D1B003D7ABBBCEF0B15D64544C91AEEF", hash_generated_method = "BCE352FED1EFC0F54DEBCF205CFACE1A")
     private StreamCorruptedException corruptStream(byte tc) throws StreamCorruptedException {
-        if (DroidSafeAndroidRuntime.control) throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
-        addTaint(tc);
+    	addTaint(tc);
+    	throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
+        
+        
         // ---------- Original Method ----------
         //throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
     }
@@ -1761,7 +1763,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.329 -0400", hash_original_method = "C5243F456C3574095BC1BB7FC2411373", hash_generated_method = "E13724007C99633DF056E9A1FCB41842")
     private InvalidClassException missingClassDescriptor() throws InvalidClassException {
-        if (DroidSafeAndroidRuntime.control) throw new InvalidClassException("Read null attempting to read class descriptor for object");
+        throw new InvalidClassException("Read null attempting to read class descriptor for object");
         // ---------- Original Method ----------
         //throw new InvalidClassException("Read null attempting to read class descriptor for object");
     }

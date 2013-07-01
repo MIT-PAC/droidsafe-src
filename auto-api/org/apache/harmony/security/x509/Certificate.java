@@ -148,6 +148,7 @@ public final class Certificate {
             values[2] = new BitString(cert.signatureValue, 0);
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             Certificate cert = (Certificate) object;
@@ -166,5 +167,6 @@ public final class Certificate {
                     in.getEncoded());
         }
     
+    */
 }
 

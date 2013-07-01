@@ -104,7 +104,7 @@ final class SelectorImpl extends AbstractSelector {
                     IoUtils.close(wakeupOut);
                     doCancel();
                     {
-                        Iterator<SelectionKey> var94A27C4332B145E8CBFC3F6CC7B07713_1429462490 = (mutableKeys).iterator();
+                        Iterator<SelectionKeyImpl> var94A27C4332B145E8CBFC3F6CC7B07713_1429462490 = (mutableKeys).iterator();
                         var94A27C4332B145E8CBFC3F6CC7B07713_1429462490.hasNext();
                         SelectionKey sk = var94A27C4332B145E8CBFC3F6CC7B07713_1429462490.next();
                         {

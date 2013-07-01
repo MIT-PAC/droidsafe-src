@@ -187,6 +187,7 @@ public final class SignedData {
                     );
         }
     };
+    /*
     // orphaned legacy method
     @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
@@ -211,5 +212,6 @@ public final class SignedData {
             values[5] = sd.signerInfos;
         }
     
+    */
 }
 

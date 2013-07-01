@@ -137,6 +137,7 @@ public final class CertificatePolicies extends ExtensionValue {
             return cps.policyInformations;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection getValues(Object object) {
             CertificatePolicies cps = (CertificatePolicies) object;
@@ -148,5 +149,6 @@ public final class CertificatePolicies extends ExtensionValue {
             return new CertificatePolicies((List<PolicyInformation>) in.content, in.getEncoded());
         }
     
+    */
 }
 

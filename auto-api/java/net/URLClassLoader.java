@@ -915,7 +915,7 @@ public class URLClassLoader extends SecureClassLoader {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1902810149 = null;
             } //End block
-            byte[] clBuf;
+            byte[] clBuf = null;
             try 
             {
                 clBuf = Streams.readFully(is);
@@ -1277,7 +1277,7 @@ public class URLClassLoader extends SecureClassLoader {
         private Class<?> createClass(JarEntry entry, Manifest manifest, String packageName, String origName) {
             Class<?> varB4EAC82CA7396A68D541C85D26508E83_1630366679 = null; //Variable for return #1
             Class<?> varB4EAC82CA7396A68D541C85D26508E83_1117475615 = null; //Variable for return #2
-            byte[] clBuf;
+            byte[] clBuf = null;
             try 
             {
                 InputStream is = jf.getInputStream(entry);

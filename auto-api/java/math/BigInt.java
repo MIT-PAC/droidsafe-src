@@ -178,8 +178,7 @@ final class BigInt {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.483 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "F37D2EFDD9099236B0A0A50FAC43A037")
     private NumberFormatException invalidBigInteger(String s) {
-        if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("Invalid BigInteger: " + s);
-        addTaint(s.getTaint());
+        throw new NumberFormatException("Invalid BigInteger: " + s);
         // ---------- Original Method ----------
         //throw new NumberFormatException("Invalid BigInteger: " + s);
     }

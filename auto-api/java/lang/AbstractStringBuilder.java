@@ -296,8 +296,9 @@ abstract class AbstractStringBuilder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.256 -0400", hash_original_method = "FC4FB8D4DBB369ED29C378FB60B58B5D", hash_generated_method = "3BAA7497F0414B8D9D56510DDB119646")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
-        if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(count, index);
         addTaint(index);
+    	throw new StringIndexOutOfBoundsException(count, index);
+
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(count, index);
     }
@@ -305,9 +306,10 @@ abstract class AbstractStringBuilder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.256 -0400", hash_original_method = "ABFB3D9F0C982EE0B945F30A8DA651B2", hash_generated_method = "36B0B40AF5F4C672627A26D7C22A8FA1")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
-        if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(count, start, end - start);
         addTaint(start);
         addTaint(end);
+    	throw new StringIndexOutOfBoundsException(count, start, end - start);
+
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(count, start, end - start);
     }

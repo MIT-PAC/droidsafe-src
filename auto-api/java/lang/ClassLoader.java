@@ -152,8 +152,8 @@ public abstract class ClassLoader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.828 -0400", hash_original_method = "FDF53ED54BA8389D30C48D1E15C39772", hash_generated_method = "604BCE4B6C38EF47CE78A32F69F193EE")
     protected Class<?> findClass(String className) throws ClassNotFoundException {
-        if (DroidSafeAndroidRuntime.control) throw new ClassNotFoundException(className);
-        addTaint(className.getTaint());
+        throw new ClassNotFoundException(className);
+      
         // ---------- Original Method ----------
         //throw new ClassNotFoundException(className);
     }

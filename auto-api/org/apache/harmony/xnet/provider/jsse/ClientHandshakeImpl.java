@@ -480,7 +480,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
             send(clientCert);
         } //End block
         {
-            Cipher c;
+            Cipher c = null;
             try 
             {
                 c = Cipher.getInstance("RSA/ECB/PKCS1Padding");

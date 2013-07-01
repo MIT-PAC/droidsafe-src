@@ -447,6 +447,9 @@ public final class NativeCrypto {
     
     public static String SSL_get_servername(int sslNativePointer) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.taint.addTaint(sslNativePointer);
+    	return ret;
     }
 
     
@@ -520,17 +523,28 @@ public final class NativeCrypto {
     
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.taint.addTaint(sslSessionNativePointer);
+    	return ret;
+    	
     }
 
     
     public static String SSL_SESSION_cipher(int sslSessionNativePointer) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.taint.addTaint(sslSessionNativePointer);
+    	return ret;
     }
 
     
     public static String SSL_SESSION_compress_meth(int sslCtxNativePointer,
                                                           int sslSessionNativePointer) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.taint.addTaint(sslCtxNativePointer);
+    	ret.taint.addTaint(sslSessionNativePointer);
+    	return ret;
     }
 
     

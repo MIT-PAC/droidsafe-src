@@ -179,7 +179,7 @@ public final class NameConstraints extends ExtensionValue {
             prepareNames();
         } //End block
         byte[] bytes = getExtensionValue(cert, "2.5.29.17");
-        List<GeneralName> names;
+        List<GeneralName> names = null;
         try 
         {
             names = (bytes == null)
@@ -355,6 +355,7 @@ public final class NameConstraints extends ExtensionValue {
             values[1] = nc.excludedSubtrees;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             NameConstraints nc = (NameConstraints) object;
@@ -371,5 +372,6 @@ public final class NameConstraints extends ExtensionValue {
                     in.getEncoded());
         }
     
+    */
 }
 

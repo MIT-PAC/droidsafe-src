@@ -97,10 +97,9 @@ public class Engine {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.922 -0400", hash_original_method = "30EA070B5875ADB1FAA05CA3F6CF14E2", hash_generated_method = "7422BC79848CB708CA056224AB168949")
     private NoSuchAlgorithmException notFound(String serviceName, String algorithm) throws NoSuchAlgorithmException {
-        if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(serviceName + " " + algorithm
-                                           + " implementation not found");
         addTaint(serviceName.getTaint());
         addTaint(algorithm.getTaint());
+        throw new NoSuchAlgorithmException(serviceName + " " + algorithm + " implementation not found");
         // ---------- Original Method ----------
         //throw new NoSuchAlgorithmException(serviceName + " " + algorithm
                                            //+ " implementation not found");

@@ -144,7 +144,7 @@ public class AndFileFilter extends AbstractFileFilter implements ConditionalFile
             boolean var0F1814634DF0E889B3B852FD645DFD0F_2015135251 = (this.fileFilters.isEmpty());
         } //End collapsed parenthetic
         {
-            IOFileFilter fileFilter = fileFilters[0];
+            IOFileFilter fileFilter = fileFilters.get(0);
             {
                 {
                     boolean varAC95C767A281C040EA6170F478ED5974_1397743470 = (!fileFilter.accept(file, name));

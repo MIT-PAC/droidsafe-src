@@ -48,9 +48,9 @@ public final class FileAlterationMonitor implements Runnable {
         this(interval);
         {
             {
-                Iterator<FileAlterationObserver> var4BDBA0172E5E49F358D9F86D41707395_46854678 = (observers).iterator();
-                var4BDBA0172E5E49F358D9F86D41707395_46854678.hasNext();
-                FileAlterationObserver observer = var4BDBA0172E5E49F358D9F86D41707395_46854678.next();
+                //Iterator<FileAlterationObserver> var4BDBA0172E5E49F358D9F86D41707395_46854678 = (observers).iterator();
+                //var4BDBA0172E5E49F358D9F86D41707395_46854678.hasNext();
+                FileAlterationObserver observer = observers[0];
                 {
                     addObserver(observer);
                 } //End block

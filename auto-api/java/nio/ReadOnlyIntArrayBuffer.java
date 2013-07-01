@@ -45,7 +45,7 @@ final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.961 -0400", hash_original_method = "95709EC066A435B9AA3687E160003D5F", hash_generated_method = "2E07CDDA83623EEEC20C06CAAB20BF24")
     @Override
     public IntBuffer compact() {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
+throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -108,8 +108,7 @@ final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.963 -0400", hash_original_method = "09ED0F57CBC06365DA988C0313F02515", hash_generated_method = "892777327ACCB9CDC5B78355F374F2E1")
     @Override
     public IntBuffer put(int c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -118,9 +117,7 @@ final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.964 -0400", hash_original_method = "72974DF4DE68C45A0CAEDB3056BAFC34", hash_generated_method = "6226D1A0AF1AED0C3E3ACC43EB47CAC3")
     @Override
     public IntBuffer put(int index, int c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -129,8 +126,7 @@ final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.964 -0400", hash_original_method = "0AE015769B07B9A1C6447FCD87483B4D", hash_generated_method = "69A05A33F2A6F78FD706A717405F48E9")
     @Override
     public IntBuffer put(IntBuffer buf) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(buf.getTaint());
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -139,10 +135,7 @@ final class ReadOnlyIntArrayBuffer extends IntArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.965 -0400", hash_original_method = "4CDCCEB43894118BDB0755D2BC3EFD49", hash_generated_method = "36764FD3BF28FC916C4540CFF482A5FD")
     @Override
     public final IntBuffer put(int[] src, int srcOffset, int intCount) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src[0]);
-        addTaint(srcOffset);
-        addTaint(intCount);
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }

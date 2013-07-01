@@ -100,9 +100,9 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public boolean accept(File file) {
         String name = file.getName();
         {
-            Iterator<String> var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717 = (this.names).iterator();
-            var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717.hasNext();
-            String name2 = var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717.next();
+            //Iterator<String> var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717 = (this.names).iterator();
+            //var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717.hasNext();
+            String name2 = this.names[0];
             {
                 {
                     boolean varC3DF969BB52F0D3A0B24B0EAC1A92D53_672560223 = (caseSensitivity.checkEquals(name, name2));
@@ -127,9 +127,9 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     @Override
     public boolean accept(File dir, String name) {
         {
-            Iterator<String> var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717 = (names).iterator();
-            var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717.hasNext();
-            String name2 = var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717.next();
+            //Iterator<String> var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717 = (names).iterator();
+            //var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717.hasNext();
+            String name2 = names[0];
             {
                 {
                     boolean varC3DF969BB52F0D3A0B24B0EAC1A92D53_299781609 = (caseSensitivity.checkEquals(name, name2));

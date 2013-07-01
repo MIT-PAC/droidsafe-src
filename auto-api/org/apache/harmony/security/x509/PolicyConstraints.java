@@ -135,6 +135,7 @@ public final class PolicyConstraints extends ExtensionValue {
             values[1] = pc.inhibitPolicyMapping.toByteArray();
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             PolicyConstraints pc = (PolicyConstraints) object;
@@ -158,5 +159,6 @@ public final class PolicyConstraints extends ExtensionValue {
                     in.getEncoded());
         }
     
+    */
 }
 

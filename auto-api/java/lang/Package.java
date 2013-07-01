@@ -67,9 +67,7 @@ public class Package implements AnnotatedElement {
         A varB4EAC82CA7396A68D541C85D26508E83_232825850 = null; //Variable for return #1
         A varB4EAC82CA7396A68D541C85D26508E83_112426670 = null; //Variable for return #2
         {
-            Iterator<Annotation> var60115E277671C11EC1A8C18FCA7059DE_812068697 = (getAnnotations()).iterator();
-            var60115E277671C11EC1A8C18FCA7059DE_812068697.hasNext();
-            Annotation annotation = var60115E277671C11EC1A8C18FCA7059DE_812068697.next();
+            Annotation annotation = getAnnotations()[0];
             {
                 {
                     boolean var7B7B6346786911875D9C711693128818_236406201 = (annotationType.isInstance(annotation));

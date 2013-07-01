@@ -328,6 +328,7 @@ public final class TBSCertificate {
             values[9] = tbs.extensions;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             TBSCertificate tbs = (TBSCertificate) object;
@@ -370,5 +371,6 @@ public final class TBSCertificate {
                     );
         }
     
+    */
 }
 

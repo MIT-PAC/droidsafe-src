@@ -44,7 +44,7 @@ public final class StackTraceElement implements Serializable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.725 -0400", hash_original_method = "DC3E276578F22895683C0979CF7614B3", hash_generated_method = "069C2D8BCA6C8CA3D907F0C7C60A9CFB")
-    private  StackTraceElement() {
+    public  StackTraceElement() {
         // ---------- Original Method ----------
     }
 

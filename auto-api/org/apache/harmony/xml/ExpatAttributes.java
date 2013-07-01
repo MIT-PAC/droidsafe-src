@@ -287,21 +287,40 @@ abstract class ExpatAttributes implements Attributes {
     
     private static String getURI(int pointer, int attributePointer, int index) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(pointer);
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(index);
+    	return ret;
     }
 
     
     private static String getLocalName(int pointer, int attributePointer, int index) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(pointer);
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(index);
+    	return ret;
     }
 
     
     private static String getQName(int pointer, int attributePointer, int index) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(pointer);
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(index);
+    	return ret;
     }
 
     
     private static String getValueByIndex(int attributePointer, int index) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(index);
+    	return ret;
     }
 
     
@@ -319,11 +338,20 @@ abstract class ExpatAttributes implements Attributes {
     
     private static String getValue(int attributePointer, String uri, String localName) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(uri.taint);
+    	ret.addTaint(localName.taint);
+    	return ret;
     }
 
     
     private static String getValueForQName(int attributePointer, String qName) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(attributePointer);
+    	ret.addTaint(qName.taint);
+    	return ret;
     }
 
     

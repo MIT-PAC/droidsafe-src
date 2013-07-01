@@ -196,7 +196,7 @@ public final class URL implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.246 -0400", hash_original_method = "0200B051ED19728512FC68E42BCAEC0F", hash_generated_method = "E57909AFC42D580D9294EFC16AF346A1")
      void fixURL(boolean fixHost) {
-        int index;
+        int index = 0;
         {
             boolean var6988708993DD24B87D8382C4CEDB2255_417686632 = (host != null && host.length() > 0);
             {

@@ -33,6 +33,10 @@ public final class Field extends AccessibleObject implements Member {
 
     private int slot;
     
+    public Field() {
+    	
+    }
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.757 -0400", hash_original_method = "18020B40E6468EB970BF7E1035466368", hash_generated_method = "6011D4149198435BF913A3023A4F29C3")
       Field(Field orig) {
         this(orig.declaringClass, orig.type, orig.name, orig.slot);
@@ -122,6 +126,9 @@ public final class Field extends AccessibleObject implements Member {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	addTaint(declaringClass.taint);
+    	addTaint(slot);
+    	return new Object[0];
     }
 
     
@@ -201,6 +208,10 @@ public final class Field extends AccessibleObject implements Member {
     
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
                 //DSFIXME:  This shouldn't happen!
+    	Annotation[] ret = new Annotation[0];
+    	ret[0].addTaint(declaringClass.taint);
+    	ret[0].addTaint(slot);
+    	return ret;
     }
 
     
@@ -226,6 +237,11 @@ public final class Field extends AccessibleObject implements Member {
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
                 //DSFIXME:  This shouldn't happen!
+    	A ret = (A)new Object();
+    	ret.addTaint(declaringClass.taint);
+    	ret.addTaint(slot);
+    	ret.addTaint(annotationType.taint);
+    	return ret;
     }
 
     
@@ -576,6 +592,12 @@ public final class Field extends AccessibleObject implements Member {
     private Object getField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck) throws IllegalAccessException {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	addTaint(o.taint);
+    	addTaint(declaringClass.taint);
+    	addTaint(type.taint);
+    	addTaint(slot);
+    	addTaint(noAccessCheck);
+    	return new Object();
     }
 
     
@@ -734,15 +756,6 @@ public final class Field extends AccessibleObject implements Member {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.780 -0400", hash_original_field = "4C504F7A87B64968003D68D095C746E2", hash_generated_field = "1C723C993774EE671598C52201355866")
 
     private static final char TYPE_DOUBLE = 'D';
-    // orphaned legacy method
-    @Override public int compare(Field a, Field b) {
-            int comparison = a.name.compareTo(b.name);
-            if (comparison != 0) {
-                return comparison;
-            }
-
-            return a.getDeclaringClass().getName().compareTo(b.getDeclaringClass().getName());
-        }
     
 }
 

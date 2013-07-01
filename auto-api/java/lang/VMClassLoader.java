@@ -56,26 +56,53 @@ class VMClassLoader {
     
     static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+    	ret.addTaint(name.taint);
+    	ret.addTaint(resolve);
+    	return ret;
     }
 
     
     static Class getPrimitiveClass(char type) {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+
+    	ret.addTaint(type);
+    	return ret;
+    	
     }
 
     
     static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+    	ret.addTaint(cl.taint);
+    	ret.addTaint(data[0]);
+    	ret.addTaint(offset);
+    	ret.addTaint(len);
+    	return ret;
+
     }
 
     
     static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+    	ret.addTaint(cl.taint);
+    	ret.addTaint(data[0]);
+    	ret.addTaint(offset);
+    	ret.addTaint(len);
+    	return ret;
+
     }
 
     
     static Class findLoadedClass(ClassLoader cl, String name) {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+    	ret.addTaint(name.taint);
+    	ret.addTaint(cl.taint);
+    	return ret;
     }
 
     
@@ -87,6 +114,10 @@ class VMClassLoader {
     
     private static String getBootClassPathResource(String name, int index) {
                 //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(name.taint);
+    	ret.addTaint(index);
+    	return ret;
     }
 
     

@@ -285,7 +285,7 @@ public abstract class CharsetDecoder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.881 -0400", hash_original_method = "FA8F0AC80549BCE47D29C328C4E0F049", hash_generated_method = "6B666B5F7C2908E4533B52A660EE9DEF")
     public Charset detectedCharset() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
