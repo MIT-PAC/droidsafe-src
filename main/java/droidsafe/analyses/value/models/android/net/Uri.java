@@ -25,8 +25,6 @@ public class Uri extends ValueAnalysisModeledObject {
     }
 
     public void _init_(Set<String> uriStringParam){
-        for (String s : uriStringParam)
-            System.out.println(" ****** " + s);
         this.uriString.addAll(uriStringParam);
     }
     

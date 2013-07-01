@@ -69,6 +69,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -139,13 +140,13 @@ public class ValueAnalysis {
 
     /** Set of methods to not invalidate */
     private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", 
-        "onActivityResult",
-        "query",
-        "translateIntent",
-        "toString",
-        "<init>",
-        "_init_",
-        "parse"));
+                "onActivityResult",
+                "query",
+                "translateIntent",
+                "toString",
+                "<init>",
+                "_init_",
+                "parse"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -208,7 +209,7 @@ public class ValueAnalysis {
     // Public Methods
     //==================================================================================================================
 
-    
+
     /**
      * Getter for analysis result
      */
@@ -216,22 +217,22 @@ public class ValueAnalysis {
         return this.objectToModelMap;
     }
 
-    
+
     /**
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
         return this.objectToModelMap.containsKey(node) &&
-                !this.objectToModelMap.get(node).invalidated();
+            !this.objectToModelMap.get(node).invalidated();
     }
-    
+
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public ValueAnalysisModeledObject getResult(AllocNode node) {
         return this.objectToModelMap.get(node);
     }
-    
+
     /**
      * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
      *
@@ -319,7 +320,6 @@ public class ValueAnalysis {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                    System.out.println("will step through " + meth);
                     //am.logError("analyzing " + meth);
                     StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
@@ -413,8 +413,6 @@ public class ValueAnalysis {
                         }
                         // Store the returned object if there is one for later use
                         if (returnedObjects.size() > 0 && stmt instanceof AssignStmt) {
-                            System.out.println(returnedObjects);
-                            System.out.println("left " + ((AssignStmt)stmt).getLeftOp());
                             for (Object returnedObject : returnedObjects) {
                                 am.valueToModelAttrMap.put(((AssignStmt)stmt).getLeftOp(), returnedObject);
                             }
@@ -470,8 +468,6 @@ public class ValueAnalysis {
         if(methodName.equals("<init>")){
             methodName = "_init_";
         }
-        System.out.println("methodName " + methodName);
-        System.out.println("paramCartesian " + paramObjectCartesianProduct);
         try {
             // get the method we are going to simulate
             Class[] paramObjectClassArray = paramObjectClasses.toArray(new Class[paramObjectClasses.size()]);
@@ -499,12 +495,11 @@ public class ValueAnalysis {
                     error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
                 }
                 this.logError(error);
-               // The method isn't modeled, so we must invalidate every argument that we modeled
-               this.invalidateParamObjects(paramObjectCartesianProduct);
+                // The method isn't modeled, so we must invalidate every argument that we modeled
+                this.invalidateParamObjects(paramObjectCartesianProduct);
 
             }
         }
-        System.out.println("returning " + objectsToReturn);
         return objectsToReturn;
     }
 
@@ -777,18 +772,34 @@ public class ValueAnalysis {
                             paramObjectSets.get(i).add(Sets.newHashSet(obj));
                         }
                     } else if(type instanceof RefType) {
-
-                        // If the argument is a reference to a java.lang.String, look up its value in JSA's results
+                        Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
+                        // If the arg is a ref to a java.lang.String, check to see if the nodes found by pta are all
+                        // StringConstantNodes and if so, use their values. Otherwise, fall back to JSA's results. 
                         RefType refType = (RefType)type;
                         String className = refType.getClassName();
                         if(className.equals("java.lang.String")){
-                            String strVal = new String(jsa.getRegex(arg));
-                            Set<String> strVals = Sets.newHashSet(strVal);
+                            Set<String> constantStrVals = new HashSet<String>();
+                            boolean allStringConstants = true;
+                            for(AllocNode allocNode : allocNodeSet) {
+                                if(allocNode instanceof StringConstantNode) {
+                                    constantStrVals.add(((StringConstantNode)allocNode).getString());
+                                } else {
+                                    allStringConstants = false;
+                                    break;
+                                }
+                            }
+                            // if all allocnodes were StringConstantNodes, use their values. Otherwise fall back to JSA.
+                            if(allStringConstants) {
+                                paramObjectSets.get(i).add(constantStrVals); 
+                            } else {
+                                String strVal = new String(jsa.getRegex(arg));
+                                Set<String> strVals = Sets.newHashSet(strVal);
+                                paramObjectSets.get(i).add(strVals);
+                            }
+                            // String -> Set<String> always
                             paramClasses.add(i, Set.class);
-                            paramObjectSets.get(i).add(strVals);
                         } else {
                             // use PTA to find all possible AllocNodes and their corresponding models
-                            Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
                             if(valueToModelAttrMap.containsKey(arg)){
                                 Object modelAttr = valueToModelAttrMap.get(arg);
                                 try {
@@ -835,8 +846,8 @@ public class ValueAnalysis {
                                             + " of instanceInvokeExpr " + invokeExpr);
                                     // invalidate any param models we've already created
                                     for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                       ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
-                                       modeledObject.invalidate();
+                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
+                                        modeledObject.invalidate();
                                     }
                                     return;
                                 }
@@ -894,7 +905,7 @@ public class ValueAnalysis {
                     }
                 }
             }
-            
+
             // What are all the possible ways in which the method can be called now that we know all possible params
             this.paramCartesianProduct = cartesianProduct(0, paramObjectSets);
         }
