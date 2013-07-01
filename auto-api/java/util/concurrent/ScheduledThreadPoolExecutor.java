@@ -1392,7 +1392,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 RunnableScheduledFuture first;
                 int n = 0;
                 {
-                    boolean var907F87A983490314E2E468AEABFC930D_1249760925 = (n < maxElements && (first = pollExpired()) != null);
+                	if (n < maxElements && (first = pollExpired()) != null)
                     {
                         c.add(first);
                     } //End block

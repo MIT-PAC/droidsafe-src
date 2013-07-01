@@ -839,7 +839,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         Thread varB4EAC82CA7396A68D541C85D26508E83_297603398 = null; //Variable for return #2
         Node h;
         Node s;
-        Thread st;
+        Thread st = null;
         {
             boolean varAB96948AFE2AAAF3BBF624BD73ABA985_914055970 = (((h = head) != null && (s = h.next) != null &&
              s.prev == head && (st = s.thread) != null) ||

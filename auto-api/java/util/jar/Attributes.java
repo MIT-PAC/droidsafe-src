@@ -191,7 +191,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
         } //End block
         catch (CloneNotSupportedException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
+        	throw new AssertionError(e);
         } //End block
         clone.map = (Map<Object, Object>) ((HashMap) map).clone();
         varB4EAC82CA7396A68D541C85D26508E83_625050353 = clone;

@@ -470,14 +470,6 @@ public class Executors {
                 //}
             //});
         }
-
-        
-        // orphaned legacy method
-        public Void run() {
-                            Thread.currentThread().setContextClassLoader(ccl);
-                            r.run();
-                            return null;
-                        }
         
     }
 
@@ -748,9 +740,5 @@ public class Executors {
     }
 
 
-    
-    // orphaned legacy method
-    public Object call() throws Exception { return action.run(); }
-    
 }
 

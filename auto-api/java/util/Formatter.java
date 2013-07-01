@@ -643,7 +643,7 @@ public final class Formatter implements Closeable, Flushable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.468 -0400", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "124E61E1871259646BE10006ACCFBD1F")
     private IllegalFormatConversionException badArgumentType() {
-        if (DroidSafeAndroidRuntime.control) throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
+    	throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
         // ---------- Original Method ----------
         //throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
     }
@@ -2328,7 +2328,7 @@ public final class Formatter implements Closeable, Flushable {
                 if (DroidSafeAndroidRuntime.control) throw new UnknownFormatConversionException(String.format("%c%c",
                         conversionType, dateSuffix));
             } //End block
-            if (DroidSafeAndroidRuntime.control) throw new UnknownFormatConversionException(String.valueOf(conversionType));
+            throw new UnknownFormatConversionException(String.valueOf(conversionType));
             // ---------- Original Method ----------
             //if (conversionType == 't' || conversionType == 'T') {
                 //throw new UnknownFormatConversionException(String.format("%c%c",
@@ -2437,7 +2437,7 @@ public final class Formatter implements Closeable, Flushable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.525 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "30FA7929508460104EF53B75E4099319")
         private UnknownFormatConversionException unknownFormatConversionException() {
-            if (DroidSafeAndroidRuntime.control) throw new UnknownFormatConversionException(getFormatSpecifierText());
+        	throw new UnknownFormatConversionException(getFormatSpecifierText());
             // ---------- Original Method ----------
             //throw new UnknownFormatConversionException(getFormatSpecifierText());
         }

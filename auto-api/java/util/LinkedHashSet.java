@@ -40,7 +40,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
         super(new LinkedHashMap<E, HashSet<E>>(collection.size() < 6 ? 11
                 : collection.size() * 2));
         {
-            Iterator<E> var6348CF19B474F5ACF72F267EFA7F4363_1174631741 = (collection).iterator();
+            Iterator<? extends E> var6348CF19B474F5ACF72F267EFA7F4363_1174631741 = (collection).iterator();
             var6348CF19B474F5ACF72F267EFA7F4363_1174631741.hasNext();
             E e = var6348CF19B474F5ACF72F267EFA7F4363_1174631741.next();
             {
