@@ -118,6 +118,7 @@ public final class GeneralSubtree {
             }
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             GeneralSubtree gs = (GeneralSubtree) object;
@@ -140,5 +141,6 @@ public final class GeneralSubtree {
                     maximum);
         }
     
+    */
 }
 

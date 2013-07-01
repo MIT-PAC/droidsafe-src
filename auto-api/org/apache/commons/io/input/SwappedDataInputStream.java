@@ -123,8 +123,7 @@ public class SwappedDataInputStream extends ProxyInputStream implements DataInpu
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.251 -0400", hash_original_method = "6DEA886173F95E4A3BBF989737ED1DB7", hash_generated_method = "A5A8230175403CA21B4629620A3774EA")
     public String readLine() throws IOException, EOFException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException( 
-                "Operation not supported: readLine()" );
+        throw new UnsupportedOperationException("Operation not supported: readLine()" );
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException( 
                 //"Operation not supported: readLine()" );
@@ -173,8 +172,7 @@ public class SwappedDataInputStream extends ProxyInputStream implements DataInpu
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.254 -0400", hash_original_method = "DF617DE965D7ED4B9960FC14A4BE0BB9", hash_generated_method = "FB723ABED2E5C65C87E259FD96FC5F29")
     public String readUTF() throws IOException, EOFException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException( 
-                "Operation not supported: readUTF()" );
+        throw new UnsupportedOperationException("Operation not supported: readUTF()" );
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException( 
                 //"Operation not supported: readUTF()" );

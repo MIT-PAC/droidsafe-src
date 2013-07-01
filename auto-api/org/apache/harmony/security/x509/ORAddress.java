@@ -55,6 +55,7 @@ public final class ORAddress {
             values[0] = foo;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected Object getDecodedObject(BerInputStream in) {
             return new ORAddress();
@@ -64,6 +65,7 @@ public final class ORAddress {
     @Override protected void getValues(Object object, Object[] values) {
             values[0] = foo;
         }
+        */
     
     // orphaned legacy field
     private final Object foo = new Object();

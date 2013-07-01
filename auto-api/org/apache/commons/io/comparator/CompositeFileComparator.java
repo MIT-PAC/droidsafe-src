@@ -73,9 +73,9 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
     public int compare(File file1, File file2) {
         int result = 0;
         {
-            Iterator<Comparator<File>> var053A98ADA93ECE30378E86685FF3C740_1816776347 = (delegates).iterator();
-            var053A98ADA93ECE30378E86685FF3C740_1816776347.hasNext();
-            Comparator<File> delegate = var053A98ADA93ECE30378E86685FF3C740_1816776347.next();
+            //Iterator<Comparator<File>> var053A98ADA93ECE30378E86685FF3C740_1816776347 = (delegates).iterator();
+            //var053A98ADA93ECE30378E86685FF3C740_1816776347.hasNext();
+            Comparator<File> delegate = delegates[0];
             {
                 result = delegate.compare(file1, file2);
             } //End block

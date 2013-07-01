@@ -216,6 +216,7 @@ public final class ContentInfo {
         }
    };
     // orphaned legacy method
+   /*
     @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             int[] oid = (int[]) values[0];
@@ -254,6 +255,7 @@ public final class ContentInfo {
                 }
             }
         }
+    */
     
 }
 

@@ -70,6 +70,7 @@ public final class GeneralSubtrees {
                     : gss.generalSubtrees;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection getValues(Object object) {
             GeneralSubtrees gss = (GeneralSubtrees) object;
@@ -83,5 +84,6 @@ public final class GeneralSubtrees {
             return new GeneralSubtrees((List<GeneralSubtree>) in.content);
         }
     
+    */
 }
 

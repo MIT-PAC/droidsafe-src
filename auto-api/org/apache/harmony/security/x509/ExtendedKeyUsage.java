@@ -122,11 +122,13 @@ public final class ExtendedKeyUsage extends ExtensionValue {
             return ObjectIdentifier.toString(oid);
         }
     });
+    /*
     // orphaned legacy method
     public Object getDecodedObject(BerInputStream in) throws IOException {
             int[] oid = (int[]) super.getDecodedObject(in);
             return ObjectIdentifier.toString(oid);
         }
     
+    */
 }
 

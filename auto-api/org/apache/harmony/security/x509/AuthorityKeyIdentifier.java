@@ -140,6 +140,7 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
             }
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             AuthorityKeyIdentifier akid = (AuthorityKeyIdentifier) object;
@@ -164,5 +165,6 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
                     (GeneralNames) values[1], authorityCertSerialNumber);
         }
     
+    */
 }
 

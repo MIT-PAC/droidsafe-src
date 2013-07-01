@@ -269,10 +269,10 @@ public class NullCipherSpi extends CipherSpi {
     public Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException,
             NoSuchAlgorithmException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(wrappedKey[0]);
         addTaint(wrappedKeyAlgorithm.getTaint());
         addTaint(wrappedKeyType);
+        throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

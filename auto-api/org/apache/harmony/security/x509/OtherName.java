@@ -89,6 +89,7 @@ public final class OtherName {
             values[1] = on.value;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             OtherName on = (OtherName) object;
@@ -103,5 +104,6 @@ public final class OtherName {
                     (byte[]) values[1], in.getEncoded());
         }
     
+    */
 }
 

@@ -174,6 +174,7 @@ public final class SubjectPublicKeyInfo {
             values[1] = new BitString(spki.subjectPublicKey, spki.unusedBits);
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             SubjectPublicKeyInfo spki = (SubjectPublicKeyInfo) object;
@@ -191,5 +192,6 @@ public final class SubjectPublicKeyInfo {
                     in.getEncoded());
         }
     
+    */
 }
 

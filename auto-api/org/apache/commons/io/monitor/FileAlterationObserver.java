@@ -282,9 +282,9 @@ public class FileAlterationObserver implements Serializable {
         current = new FileEntry[files.length];
         current = FileEntry.EMPTY_ENTRIES;
         {
-            Iterator<FileEntry> var32EAF1A205A6B67AE57CE0126E90A48C_1823607417 = (previous).iterator();
-            var32EAF1A205A6B67AE57CE0126E90A48C_1823607417.hasNext();
-            FileEntry entry = var32EAF1A205A6B67AE57CE0126E90A48C_1823607417.next();
+            //Iterator<FileEntry> var32EAF1A205A6B67AE57CE0126E90A48C_1823607417 = (previous).iterator();
+            //var32EAF1A205A6B67AE57CE0126E90A48C_1823607417.hasNext();
+            FileEntry entry = previous[0];
             {
                 {
                     boolean varE9BD51A50E572F7B05CDD34D98F98C4D_1286497990 = (c < files.length && comparator.compare(entry.getFile(), files[c]) > 0);
@@ -374,9 +374,9 @@ public class FileAlterationObserver implements Serializable {
         } //End collapsed parenthetic
         FileEntry[] children = entry.getChildren();
         {
-            Iterator<FileEntry> varC6D88E1ACDE979EF8C38B0DDE799528E_940966673 = (children).iterator();
-            varC6D88E1ACDE979EF8C38B0DDE799528E_940966673.hasNext();
-            FileEntry aChildren = varC6D88E1ACDE979EF8C38B0DDE799528E_940966673.next();
+            //Iterator<FileEntry> varC6D88E1ACDE979EF8C38B0DDE799528E_940966673 = (children).iterator();
+            //varC6D88E1ACDE979EF8C38B0DDE799528E_940966673.hasNext();
+            FileEntry aChildren = children[0];
             {
                 doCreate(aChildren);
             } //End block

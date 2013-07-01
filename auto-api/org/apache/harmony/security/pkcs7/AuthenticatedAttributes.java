@@ -67,10 +67,13 @@ final class AuthenticatedAttributes {
         }
     };
     // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) {
+    /*
+    @Override 
+    public Object getDecodedObject(BerInputStream in) {
             return new AuthenticatedAttributes(in.getEncoded(),
                     (List<AttributeTypeAndValue>) in.content);
         }
+    */
     
 }
 

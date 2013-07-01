@@ -487,7 +487,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                     X509TrustManager trustManager = sslParameters.getTrustManager();
                     X509Certificate[] issuers = trustManager.getAcceptedIssuers();
                     {
-                        byte[][] issuersBytes;
+                        byte[][] issuersBytes = null;
                         try 
                         {
                             issuersBytes = NativeCrypto.encodeIssuerX509Principals(issuers);
@@ -508,7 +508,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             {
                 setSoTimeout(handshakeTimeoutMilliseconds);
             } //End block
-            int sslSessionNativePointer;
+            int sslSessionNativePointer = 0;
             try 
             {
                 sslSessionNativePointer = NativeCrypto.SSL_do_handshake(sslNativePointer,

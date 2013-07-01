@@ -88,6 +88,7 @@ public final class CertificateIssuer extends ExtensionValue {
             values[0] = object;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             values[0] = object;
@@ -98,6 +99,7 @@ public final class CertificateIssuer extends ExtensionValue {
             return ((Name) ((GeneralName) ((Object[]) in.content)[0])
                     .getName()).getX500Principal();
         }
+    */
     
 }
 

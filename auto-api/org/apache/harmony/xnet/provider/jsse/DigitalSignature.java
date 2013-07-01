@@ -262,7 +262,7 @@ public class DigitalSignature {
             { }
         } //End block
         {
-            byte[] decrypt;
+            byte[] decrypt = null;
             try 
             {
                 decrypt = cipher.doFinal(data);

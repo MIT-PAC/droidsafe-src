@@ -31,9 +31,9 @@ public final class ListOfTypes {
       ListOfTypes(Type[] types) {
         this.types = new ArrayList<Type>(types.length);
         {
-            Iterator<Type> varFD80A5A4793194060697DC80455E19F0_1718444563 = (types).iterator();
-            varFD80A5A4793194060697DC80455E19F0_1718444563.hasNext();
-            Type type = varFD80A5A4793194060697DC80455E19F0_1718444563.next();
+            //Iterator<Type> varFD80A5A4793194060697DC80455E19F0_1718444563 = (types).iterator();
+            //varFD80A5A4793194060697DC80455E19F0_1718444563.hasNext();
+            Type type = types[0];
             {
                 this.types.add(type);
             } //End block

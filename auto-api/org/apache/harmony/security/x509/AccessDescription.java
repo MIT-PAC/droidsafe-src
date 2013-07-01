@@ -96,6 +96,7 @@ public final class AccessDescription {
             values[1] = ad.accessLocation;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             AccessDescription ad = (AccessDescription) object;
@@ -110,6 +111,7 @@ public final class AccessDescription {
                     ObjectIdentifier.toString((int[]) values[0]),
                     (GeneralName) values[1], in.getEncoded());
         }
+    */
     
 }
 

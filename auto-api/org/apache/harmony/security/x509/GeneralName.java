@@ -655,6 +655,7 @@ public final class GeneralName {
             return result;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             GeneralName result;
@@ -696,6 +697,7 @@ public final class GeneralName {
             return result;
         }
     
+    */
     // orphaned legacy method
     public int getIndex(java.lang.Object object) {
             return  ((GeneralName) object).tag;

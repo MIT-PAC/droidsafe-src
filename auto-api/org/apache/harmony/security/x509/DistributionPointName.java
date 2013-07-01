@@ -106,6 +106,7 @@ public final class DistributionPointName {
             }
         }
     };
+    /*
     // orphaned legacy method
     @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             DistributionPointName result = null;
@@ -118,6 +119,7 @@ public final class DistributionPointName {
             }
             return result;
         }
+    */
     
     // orphaned legacy method
     public int getIndex(java.lang.Object object) {

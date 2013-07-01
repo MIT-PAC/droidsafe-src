@@ -455,8 +455,8 @@ public class BerInputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.768 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "082B79E9E0722FEA27368C5126D094F6")
     private ASN1Exception expected(String what) throws ASN1Exception {
-        if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
         addTaint(what.getTaint());
+        throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
         // ---------- Original Method ----------
         //throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
     }

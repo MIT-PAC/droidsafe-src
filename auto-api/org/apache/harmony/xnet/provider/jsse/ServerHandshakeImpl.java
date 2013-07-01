@@ -615,7 +615,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
             boolean var494316DEEDFDBEC0083E4AD7C074E8F6_1944520683 = (parameters.getWantClientAuth()
                 || parameters.getNeedClientAuth());
             {
-                X509Certificate[] accepted;
+                X509Certificate[] accepted = null;
                 try 
                 {
                     X509TrustManager tm = parameters.getTrustManager();

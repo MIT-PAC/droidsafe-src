@@ -35,7 +35,7 @@ public class CertificateMessage extends Message {
             encoded_certs = new byte[0][0];
             this.length = 3;
         } //End block
-        CertificateFactory cf;
+        CertificateFactory cf = null;
         try 
         {
             cf = CertificateFactory.getInstance("X509");
