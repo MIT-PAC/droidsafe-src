@@ -194,6 +194,10 @@ public abstract class CipherSpi {
         addTaint(wrappedKey[0]);
         addTaint(wrappedKeyAlgorithm.getTaint());
         addTaint(wrappedKeyType);
+        
+        Key key = (Key) new Object();
+        key.addTaint(getTaint());
+        return key;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

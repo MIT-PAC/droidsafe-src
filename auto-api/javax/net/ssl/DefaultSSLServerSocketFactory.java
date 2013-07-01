@@ -57,6 +57,7 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
         addTaint(port);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
+        return new ServerSocket(port);
     }
 
     
@@ -68,6 +69,7 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
         addTaint(backlog);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
+        return new ServerSocket(port, backlog);
     }
 
     
