@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public abstract class ContentResolver {
+public class ContentResolver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.871 -0400", hash_original_field = "536255EED7E3D46DD70E09FDE814B7C1", hash_generated_field = "E26D41E197237C24B0E74C0394AEDF83")
 
     private final Random mRandom = new Random();
@@ -57,7 +57,9 @@ public abstract class ContentResolver {
     }
 
     
-    protected abstract IContentProvider acquireProvider(Context c, String name);
+    protected IContentProvider acquireProvider(Context c, String name) {
+    	return null;
+    }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.873 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "D9520228B624E1C4B2E50287BF4E12CB")
@@ -73,7 +75,9 @@ public abstract class ContentResolver {
     }
 
     
-    public abstract boolean releaseProvider(IContentProvider icp);
+    public boolean releaseProvider(IContentProvider icp) {
+    	return false;
+    }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.875 -0400", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "EAE7FC2F7F84818D202CEA4580D6E2A8")
