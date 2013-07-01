@@ -45,7 +45,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.987 -0400", hash_original_method = "1358DD6DB518D15E9F2A390375DC21ED", hash_generated_method = "8D0E7500E2D35F547F51C4E71BEB149D")
     @Override
     public ShortBuffer compact() {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -108,8 +108,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.989 -0400", hash_original_method = "5592BDB3AAC352212C254B47F1811E27", hash_generated_method = "F82A9C50CFDA54831EB0DF140921035E")
     @Override
     public ShortBuffer put(ShortBuffer buf) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(buf.getTaint());
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -118,8 +117,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.990 -0400", hash_original_method = "499D2BB8AE90111A3249031C62268D84", hash_generated_method = "51B9CA180C6AF81C985217BAD95CFFFF")
     @Override
     public ShortBuffer put(short c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -128,9 +126,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.990 -0400", hash_original_method = "617A2BE3714A70A7C820CD4B75072087", hash_generated_method = "1E52073E7F4D4E6FE16A8BA407381D4D")
     @Override
     public ShortBuffer put(int index, short c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -139,10 +135,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.991 -0400", hash_original_method = "1E52CD3CC46ECF6ADC15EFA5E594FA46", hash_generated_method = "C809EB7A141BFD58278CB8300166F96E")
     @Override
     public final ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src[0]);
-        addTaint(srcOffset);
-        addTaint(shortCount);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }

@@ -45,7 +45,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.973 -0400", hash_original_method = "0AF2CD05C541DF81A768714F9C7047F3", hash_generated_method = "0261403F38597F486CC0FE43BF14B03D")
     @Override
     public LongBuffer compact() {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -108,8 +108,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.975 -0400", hash_original_method = "7393DFCF52569FCC2605F08F020574B2", hash_generated_method = "07375FFB098B6397D97C45485E4069D9")
     @Override
     public LongBuffer put(long c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -118,9 +117,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.975 -0400", hash_original_method = "E5FA3278A640CB37396E7D9BDEEA6C53", hash_generated_method = "304BEC084591573323972DB4A9B4E108")
     @Override
     public LongBuffer put(int index, long c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(c);
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -129,8 +126,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.976 -0400", hash_original_method = "30B5D6EAC290C108C17070B0EA497381", hash_generated_method = "81C3342B3DE08F9D9C3266938728ABE0")
     @Override
     public LongBuffer put(LongBuffer buf) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(buf.getTaint());
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -139,10 +135,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.976 -0400", hash_original_method = "216FEF8EB820A47DE670615020EB98B3", hash_generated_method = "4C920EA1F4A6C569999747418AF487C8")
     @Override
     public final LongBuffer put(long[] src, int srcOffset, int longCount) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src[0]);
-        addTaint(srcOffset);
-        addTaint(longCount);
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }

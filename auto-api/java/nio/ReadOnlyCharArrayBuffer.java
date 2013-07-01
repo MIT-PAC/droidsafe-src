@@ -45,7 +45,7 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.868 -0400", hash_original_method = "B36182A594E1794791B93E3BECF5B149", hash_generated_method = "FDB048D4EFBE0B834B0B887336BCFF0E")
     @Override
     public CharBuffer compact() {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -108,8 +108,8 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.869 -0400", hash_original_method = "AA890865E828C97A020097D7CDA5EE73", hash_generated_method = "3A85A20458CD46C3155C147F6F048806")
     @Override
     public CharBuffer put(char c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(c);
+         throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -118,9 +118,7 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.870 -0400", hash_original_method = "4BB5828CEE96E76B6DAC9C0855ABDDFD", hash_generated_method = "E150AA8DCB8978B57C618C5428A755CD")
     @Override
     public CharBuffer put(int index, char c) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(c);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -129,10 +127,7 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.870 -0400", hash_original_method = "456A915B3249AF3B6DBAB08ACEE5755D", hash_generated_method = "18EBBD5FFFA53649B304121971BF9CEA")
     @Override
     public final CharBuffer put(char[] src, int srcOffset, int charCount) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src[0]);
-        addTaint(srcOffset);
-        addTaint(charCount);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -141,8 +136,8 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.870 -0400", hash_original_method = "FB6FEA0A32E7A03D5D90CE6B495DAC9B", hash_generated_method = "41BBA8D35D08A1CA6355F037B035805D")
     @Override
     public final CharBuffer put(CharBuffer src) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src.getTaint());
+        throw new ReadOnlyBufferException();
+
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -151,10 +146,7 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.871 -0400", hash_original_method = "4A99CE8F005D81D8D8D69EFF935B4E86", hash_generated_method = "29F4042A72DFAB1AB12EB8C658A3318C")
     @Override
     public CharBuffer put(String src, int start, int end) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src.getTaint());
-        addTaint(start);
-        addTaint(end);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }

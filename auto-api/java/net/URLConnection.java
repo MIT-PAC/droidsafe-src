@@ -502,7 +502,7 @@ public abstract class URLConnection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.591 -0400", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "B4DD25B948592E76441D8932C4949434")
     public InputStream getInputStream() throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new UnknownServiceException("Does not support writing to the input stream");
+        throw new UnknownServiceException("Does not support writing to the input stream");
         // ---------- Original Method ----------
         //throw new UnknownServiceException("Does not support writing to the input stream");
     }
@@ -523,7 +523,7 @@ public abstract class URLConnection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.592 -0400", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "0556F9662A48DD9832C3443105C49744")
     public OutputStream getOutputStream() throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new UnknownServiceException("Does not support writing to the output stream");
+        throw new UnknownServiceException("Does not support writing to the output stream");
         // ---------- Original Method ----------
         //throw new UnknownServiceException("Does not support writing to the output stream");
     }

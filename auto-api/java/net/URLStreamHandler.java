@@ -25,9 +25,7 @@ public abstract class URLStreamHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.669 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "235086DD597D7F1149FEF0E40FBBBF03")
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(u.getTaint());
-        addTaint(proxy.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
