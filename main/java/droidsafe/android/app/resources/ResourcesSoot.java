@@ -676,6 +676,15 @@ public class ResourcesSoot {
         return true;
     }
     
+    
+    
+    private boolean addFragment_ID(Integer intId) {
+    	return false;
+    }
+    
+    
+    
+    
 
 
     /*****************************************************************************
@@ -711,40 +720,51 @@ public class ResourcesSoot {
         if (tokens.length > 1)
             return className;
 
-        String name = className;
-
-        if (name.equals("View")) {
+        if (className.equals("View")) {
             return "android.view.View";
         }
 
-        StringBuilder builder = new StringBuilder("android.widget.");
-
-        builder.append(name.charAt(0));
-
-        if (name.length() > 1)
-            builder.append(name.substring(1));
-
-        String fullName = builder.toString();
-
-        logger.info("Trying to locatate {} class ", fullName);
-        if (Scene.v().containsClass(fullName))
-        {
-            logger.info("Found class {} ", fullName);
-            return fullName;
-        }
-
-        logger.info("class {} NOT Found ", fullName);
-        logger.info("Trying to match class {} NOT Found ", className);
-
-        // Now we are trying to match
-        List<SootClass> classes = SootUtils.matchShortName(name);
-
-        for (SootClass sootClass: classes) {
-            logger.info("matching {} ", sootClass);
-            if (SootUtils.checkAncestor(sootClass, mViewClass)) {
-                logger.info("soot class {} is a view ", sootClass);
-                return sootClass.toString();
-            }
+        className = String.format("%s%s", className.substring(0, 1).toUpperCase(), 
+        					className.substring(1));
+        
+        String[] basePackages = new String[] {
+        		"android.widget",
+        		"android.app",
+        		"android.view"
+        };
+        
+        for (String packageName: basePackages) {
+	        StringBuilder builder = new StringBuilder(packageName);
+	        builder.append(".");
+	
+	        builder.append(className.charAt(0));
+	
+	        if (className.length() > 1)
+	            builder.append(className.substring(1));
+	
+	        String fullName = builder.toString();
+	
+	        logger.info("Trying to locatate {} class ", fullName);
+	        
+	        if (Scene.v().containsClass(fullName))
+	        {
+	            logger.info("Found class {} ", fullName);
+	            return fullName;
+	        }
+	
+	        logger.info("class {} NOT Found ", fullName);
+	        logger.info("Trying to match class {} NOT Found ", className);
+	
+	        // Now we are trying to match
+	        List<SootClass> classes = SootUtils.matchShortName(className);
+	
+	        for (SootClass sootClass: classes) {
+	            logger.info("matching {} ", sootClass);
+	            if (SootUtils.checkAncestor(sootClass, mViewClass)) {
+	                logger.info("soot class {} is a view ", sootClass);
+	                return sootClass.toString();
+	            }
+	        }
         }
         return null;
     }

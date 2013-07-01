@@ -64,6 +64,30 @@ public class Layout {
 
   }
 
+  /**
+   * normalize an android Id name
+   * @param id
+   * @return
+   */
+  public static String normalizeAndroidId(String id){
+
+	  if (id == null)
+		  return id;
+	  
+	  id = id.replace("@+android:", "");
+	  id = id.replace("@android:", "");
+	  id = id.replace("@+id:", "");
+	  id = id.replace("@id:", "");
+	  
+	  if (id.contains("/")) 
+		  id = id.substring(id.indexOf("/") + 1);
+
+	  if (!id.startsWith("id."))
+		  id = String.format("id.%s", id);
+
+	  return id;
+  }
+  
   /** get full Id that matches with resource parsing of R.java */
   private String getFullName() {
       return "layout." + name;
