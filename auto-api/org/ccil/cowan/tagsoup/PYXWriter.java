@@ -81,7 +81,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.933 -0400", hash_original_method = "1B347B27BFF7BB03486A9C3953014010", hash_generated_method = "71099CF07497C2AC7764D1678D32BDA0")
     public void cmnt(char [] buff, int offset, int length) throws SAXException {
-        addTaint(buff[0].getTaint());
+        addTaint(buff[0]);
         addTaint(offset);
         addTaint(length);
         // ---------- Original Method ----------

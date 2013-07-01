@@ -163,6 +163,10 @@ public final class Unsafe {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.175 -0400", hash_original_method = "7F65AB78F7829D174777BA98D685A0A2", hash_generated_method = "8389F48CA8228ADA469FDA17F26377FB")
     public Object getObjectVolatile(Object obj, long offset) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Object ret = new Object();
+    	ret.addTaint(obj.taint);
+    	ret.addTaint(offset);
+    	return ret;
     }
 
     
@@ -209,6 +213,11 @@ public final class Unsafe {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.178 -0400", hash_original_method = "F008619F8920F7BD7FA02EADD68A4977", hash_generated_method = "67D30353ADFDF0D1EFF7C8039039B89C")
     public Object getObject(Object obj, long offset) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Object ret = new Object();
+    	ret.addTaint(obj.taint);
+    	ret.addTaint(offset);
+    	return ret;
+
     }
 
     
