@@ -678,7 +678,7 @@ public abstract class ECFieldElement implements ECConstants {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.515 -0400", hash_original_method = "3F2FB8B8358C44CE763B294C61568C61", hash_generated_method = "15DBA8E346D1FAAE2D6C8F5AC1BB1150")
         public ECFieldElement sqrt() {
-            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Not implemented");
+            throw new RuntimeException("Not implemented");
             // ---------- Original Method ----------
             //throw new RuntimeException("Not implemented");
         }

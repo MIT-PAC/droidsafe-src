@@ -1267,7 +1267,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             unresolved = false;
             out.append(defaultEntity);
         } //End block
-        char[] resolved;
+        char[] resolved = null;
         {
             boolean var29EC81D908DBE184458A11C03BDBC90E_701732516 = (documentEntities != null && (resolved = documentEntities.get(code)) != null);
             {
