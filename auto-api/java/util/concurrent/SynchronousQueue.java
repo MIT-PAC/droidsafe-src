@@ -323,10 +323,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         int n = 0;
         E e;
         {
-            boolean var39506E481D804C0DC669E48A616AD818_743939570 = (n < maxElements && (e = poll()) != null);
-            {
-                c.add(e);
-            } //End block
+        	c.add(poll());
         } //End collapsed parenthetic
         addTaint(c.getTaint());
         addTaint(maxElements);

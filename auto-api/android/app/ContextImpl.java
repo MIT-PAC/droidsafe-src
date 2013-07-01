@@ -144,7 +144,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     
 }
 
-class ContextImpl extends Context {
+public class ContextImpl extends Context {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.187 -0400", hash_original_field = "F26EF77FADF5A57881907E560F2D0D42", hash_generated_field = "EDE05288DA1A1347727FFDBB84784438")
 
     LoadedApk mPackageInfo;
@@ -210,7 +210,7 @@ class ContextImpl extends Context {
     final ArrayList<Object> mServiceCache = new ArrayList<Object>();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.190 -0400", hash_original_method = "D626E4F654DE4449ACE9581A8359F0B3", hash_generated_method = "EE67F93CB8AD578637611B4EAAB10CB4")
-      ContextImpl() {
+    public ContextImpl() {
         mOuterContext = this;
         // ---------- Original Method ----------
         //mOuterContext = this;

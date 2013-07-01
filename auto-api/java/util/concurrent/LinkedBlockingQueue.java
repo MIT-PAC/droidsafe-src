@@ -69,7 +69,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         {
             int n = 0;
             {
-                Iterator<E> var334ED49EB23041C8D120547C1BB713D2_111169439 = (c).iterator();
+                Iterator<? extends E> var334ED49EB23041C8D120547C1BB713D2_111169439 = (c).iterator();
                 var334ED49EB23041C8D120547C1BB713D2_111169439.hasNext();
                 E e = var334ED49EB23041C8D120547C1BB713D2_111169439.next();
                 {
@@ -864,11 +864,12 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
             {
                 Node<E> p;
                 Node<E> h = head;
-                h = p;
+                p = h.next;
                 {
                     h.next = h;
                     p.item = null;
                 } //End block
+                h = p;
             } //End collapsed parenthetic
             head = last;
             {

@@ -863,7 +863,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             int n = 0;
             E e;
             {
-                boolean var96F054DB41F6958DDD9A74B3CA794CE9_1826341434 = (n < maxElements && (e = extract()) != null);
+            	if (n < maxElements && (e = extract()) != null)
                 {
                     c.add(e);
                 } //End block

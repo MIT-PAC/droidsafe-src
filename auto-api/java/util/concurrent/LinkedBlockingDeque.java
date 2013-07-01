@@ -62,7 +62,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         try 
         {
             {
-                Iterator<E> var334ED49EB23041C8D120547C1BB713D2_342007629 = (c).iterator();
+                Iterator<? extends E> var334ED49EB23041C8D120547C1BB713D2_342007629 = (c).iterator();
                 var334ED49EB23041C8D120547C1BB713D2_342007629.hasNext();
                 E e = var334ED49EB23041C8D120547C1BB713D2_342007629.next();
                 {

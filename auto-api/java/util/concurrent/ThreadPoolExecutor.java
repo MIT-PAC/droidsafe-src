@@ -463,9 +463,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             boolean var24D3CA3473EF320EA6AF15C01960EBAE_706255328 = (!q.isEmpty());
             {
                 {
-                    Iterator<Runnable> var9EF8E3C34F168ACADC01921A433EFEF9_2103689570 = (q.toArray(new Runnable[0])).iterator();
-                    var9EF8E3C34F168ACADC01921A433EFEF9_2103689570.hasNext();
-                    Runnable r = var9EF8E3C34F168ACADC01921A433EFEF9_2103689570.next();
+                    Runnable r = q.toArray(new Runnable[0])[0];
                     {
                         {
                             boolean var8576918424BDAE7AC11C88E260CF968E_1697624208 = (q.remove(r));

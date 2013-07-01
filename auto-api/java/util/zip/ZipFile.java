@@ -516,17 +516,5 @@ public class ZipFile implements ZipConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.943 -0400", hash_original_field = "E60E95A92B8D974A47D037335C4C9DC7", hash_generated_field = "9B4DAE08FD98D6BD64EFD48A6CA5D374")
 
     public static final int OPEN_DELETE = 4;
-    // orphaned legacy method
-    public ZipEntry nextElement() {
-                checkNotClosed();
-                return iterator.next();
-            }
-    
-    // orphaned legacy method
-    public boolean hasMoreElements() {
-                checkNotClosed();
-                return iterator.hasNext();
-            }
-    
 }
 

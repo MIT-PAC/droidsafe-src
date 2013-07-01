@@ -338,9 +338,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.515 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "32D770B6587B989453B110A6DB3F9E94")
     public V put(K key, V value) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(key.getTaint());
-        addTaint(value.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -650,8 +648,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.537 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "353FCD816437638683D9FB782CBD2AF6")
         public V setValue(V object) {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            addTaint(object.getTaint());
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }

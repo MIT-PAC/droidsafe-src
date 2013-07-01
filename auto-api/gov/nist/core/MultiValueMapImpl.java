@@ -290,7 +290,7 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.715 -0400", hash_original_method = "FD6B4077E86FCBA56C835917C4A62A14", hash_generated_method = "126ED89B9E623405C2AE3244B3BCEA6B")
     public void putAll(Map< ? extends String, ? extends List<V>> mapToPut) {
         {
-            Iterator<String> varF1CB148D7070D789DA3D044F6B603FDC_1640892939 = (mapToPut.keySet()).iterator();
+            Iterator<String> varF1CB148D7070D789DA3D044F6B603FDC_1640892939 = (Iterator<String>) (mapToPut.keySet()).iterator();
             varF1CB148D7070D789DA3D044F6B603FDC_1640892939.hasNext();
             String k = varF1CB148D7070D789DA3D044F6B603FDC_1640892939.next();
             {

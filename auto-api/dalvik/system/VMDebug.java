@@ -37,7 +37,8 @@ public final class VMDebug {
 
     
     public static String[] getVmFeatureList() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] ret = new String[0];
+    	return ret;
     }
 
     

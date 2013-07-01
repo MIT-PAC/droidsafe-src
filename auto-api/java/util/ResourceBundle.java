@@ -844,7 +844,7 @@ public abstract class ResourceBundle {
                         } //End block
                         catch (IOException e)
                         {
-                            varB4EAC82CA7396A68D541C85D26508E83_32822887 = null;
+                            return null;
                         } //End block
                         varB4EAC82CA7396A68D541C85D26508E83_592096044 = ret;
                     } //End block

@@ -79,7 +79,7 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
         } //End block
         catch (Exception e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new CertificateParsingException(e.getMessage());
+        	throw new CertificateParsingException(e.getMessage());
         } //End block
         holder = new Holder(new IssuerSerial(generateGeneralNames(name),
             new DERInteger(cert.getSerialNumber())));

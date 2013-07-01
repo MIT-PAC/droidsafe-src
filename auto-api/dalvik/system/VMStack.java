@@ -19,21 +19,25 @@ public final class VMStack {
 
     public static ClassLoader getCallingClassLoader() {
                 //DSFIXME:  This shouldn't happen!
+    	return (ClassLoader) new Object();
     }
 
     
     public static Class<?> getStackClass2() {
                 //DSFIXME:  This shouldn't happen!
+    	return Object.class;
     }
 
     
     public static Class<?>[] getClasses(int maxDepth) {
                 //DSFIXME:  This shouldn't happen!
+    	return new Class[]{Object.class};
     }
 
     
     public static StackTraceElement[] getThreadStackTrace(Thread t) {
                 //DSFIXME:  This shouldn't happen!
+    	return new StackTraceElement[0];
     }
 
     

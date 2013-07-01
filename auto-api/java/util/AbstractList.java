@@ -287,8 +287,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.383 -0400", hash_original_method = "5388D372D048D053ADD084F02A9C1484", hash_generated_method = "467405881433197CE5DD774457F69E99")
     public E remove(int location) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(location);
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -317,9 +316,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.383 -0400", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "282B9E14ACD7627F1D52891BD8544587")
     public E set(int location, E object) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(location);
-        addTaint(object.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

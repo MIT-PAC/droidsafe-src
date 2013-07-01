@@ -382,6 +382,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
                     catch (Throwable ex)
                     {
                         setException(ex);
+                        return;
                     } //End block
                     set(result);
                 } //End block

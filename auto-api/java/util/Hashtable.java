@@ -154,7 +154,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         } //End block
         catch (CloneNotSupportedException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
+        	throw new AssertionError(e);
         } //End block
         result.makeTable(table.length);
         result.size = 0;

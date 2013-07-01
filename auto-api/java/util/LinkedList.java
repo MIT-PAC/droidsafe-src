@@ -160,7 +160,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         } //End block
         Link<E> next = previous.next;
         {
-            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_885552474 = (elements).iterator();
+            Iterator<? extends E> var561DB81069E26BF25CD542D342D4C6DE_885552474 = (elements).iterator();
             var561DB81069E26BF25CD542D342D4C6DE_885552474.hasNext();
             E e = var561DB81069E26BF25CD542D342D4C6DE_885552474.next();
             {
@@ -191,7 +191,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         elements = collection;
         Link<E> previous = voidLink.previous;
         {
-            Iterator<E> var561DB81069E26BF25CD542D342D4C6DE_18717397 = (elements).iterator();
+            Iterator<? extends E> var561DB81069E26BF25CD542D342D4C6DE_18717397 = (elements).iterator();
             var561DB81069E26BF25CD542D342D4C6DE_18717397.hasNext();
             E e = var561DB81069E26BF25CD542D342D4C6DE_18717397.next();
             {

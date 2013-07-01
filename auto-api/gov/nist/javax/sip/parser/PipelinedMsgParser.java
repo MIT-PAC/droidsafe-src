@@ -170,7 +170,7 @@ public final class PipelinedMsgParser implements Runnable {
                 this.sizeCounter = this.maxMessageSize;
                 StringBuffer inputBuffer = new StringBuffer();
                 Debug.println("Starting parse!");
-                String line1;
+                String line1 = null;
                 String line2 = null;
                 {
                     try 

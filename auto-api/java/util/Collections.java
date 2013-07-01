@@ -823,8 +823,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.225 -0400", hash_original_method = "F59F44D1664BC2EE59D5A9B30D144285", hash_generated_method = "A8C1E569381DF357B1DAF3DEDBCE876B")
         @Override
         public Object get(int location) {
-            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            addTaint(location);
+        	throw new IndexOutOfBoundsException();
             // ---------- Original Method ----------
             //throw new IndexOutOfBoundsException();
         }
@@ -1192,28 +1191,6 @@ public class Collections {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.242 -0400", hash_original_field = "C80162DD8B57D34236F77D8F8A87A897", hash_generated_field = "35AF14D3D33C59E58AFC233BD942F616")
 
         private static final long serialVersionUID = 3193687207550431679L;
-        // orphaned legacy method
-        @Override public void remove() {
-                    throw new UnsupportedOperationException();
-                }
-        
-        // orphaned legacy method
-        @Override public boolean hasNext() {
-                    return hasNext;
-                }
-        
-        // orphaned legacy method
-        @Override public E next() {
-                    if (hasNext) {
-                        hasNext = false;
-                        return element;
-                    }
-                    throw new NoSuchElementException();
-                }
-        
-        // orphaned legacy field
-        boolean hasNext = true;
-        
     }
 
 
@@ -1412,72 +1389,7 @@ public class Collections {
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.248 -0400", hash_original_field = "9848B8101686634CF12341A29DB1F062", hash_generated_field = "0B15CF1CC7A3921AD66781626704DE4C")
 
-        private static final long serialVersionUID = -6979724477215052911L;
-        // orphaned legacy method
-        @Override public void remove() {
-                            throw new UnsupportedOperationException();
-                        }
-        
-        // orphaned legacy method
-        @Override public V setValue(V value) {
-                                    throw new UnsupportedOperationException();
-                                }
-        
-        // orphaned legacy method
-        @Override public boolean hasNext() {
-                            return hasNext;
-                        }
-        
-        // orphaned legacy method
-        @Override public boolean contains(Object object) {
-                    if (object instanceof Map.Entry) {
-                        Map.Entry<?, ?> entry = (Map.Entry<?, ?>) object;
-                        return containsKey(entry.getKey())
-                                && containsValue(entry.getValue());
-                    }
-                    return false;
-                }
-        
-        // orphaned legacy method
-        @Override public Iterator<Map.Entry<K, V>> iterator() {
-                    return new Iterator<Map.Entry<K, V>>() {
-                        boolean hasNext = true;
-                        @Override public boolean hasNext() {
-                            return hasNext;
-                        }
-                        @Override public Map.Entry<K, V> next() {
-                            if (!hasNext) {
-                                throw new NoSuchElementException();
-                            }
-                            hasNext = false;
-                            return new MapEntry<K, V>(k, v) {
-                                @Override public V setValue(V value) {
-                                    throw new UnsupportedOperationException();
-                                }
-                            };
-                        }
-                        @Override public void remove() {
-                            throw new UnsupportedOperationException();
-                        }
-                    };
-                }
-        
-        // orphaned legacy method
-        @Override public Map.Entry<K, V> next() {
-                            if (!hasNext) {
-                                throw new NoSuchElementException();
-                            }
-                            hasNext = false;
-                            return new MapEntry<K, V>(k, v) {
-                                @Override public V setValue(V value) {
-                                    throw new UnsupportedOperationException();
-                                }
-                            };
-                        }
-        
-        // orphaned legacy field
-        boolean hasNext = true;
-        
+        private static final long serialVersionUID = -6979724477215052911L;        
     }
 
 
@@ -3000,24 +2912,6 @@ public class Collections {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.308 -0400", hash_original_field = "BF3B1BE107A3BC6EF3F11D547E97ECD3", hash_generated_field = "ED589FB504EC70A2532C4CA52BA9C8D0")
 
         private static final long serialVersionUID = 1820017752578914078L;
-        // orphaned legacy method
-        @Override public void remove() {
-                    throw new UnsupportedOperationException();
-                }
-        
-        // orphaned legacy method
-        @Override public boolean hasNext() {
-                    return iterator.hasNext();
-                }
-        
-        // orphaned legacy method
-        @Override public E next() {
-                    return iterator.next();
-                }
-        
-        // orphaned legacy field
-        Iterator<E> iterator = c.iterator();
-        
     }
 
 
@@ -3219,8 +3113,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.320 -0400", hash_original_method = "5388D372D048D053ADD084F02A9C1484", hash_generated_method = "ACA80C53B37816218B9855BF5E9A7790")
         @Override
         public E remove(int location) {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            addTaint(location);
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
@@ -3229,9 +3122,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.321 -0400", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "FC1CD5B83BE519CD37A91D24C6B9D9F3")
         @Override
         public E set(int location, E object) {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            addTaint(location);
-            addTaint(object.getTaint());
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
@@ -3281,53 +3172,6 @@ public class Collections {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.322 -0400", hash_original_field = "69FDA83BF467A43A3D5BCAA929D897B3", hash_generated_field = "F0F0F0942F5CE1242FD2AB85FF483C32")
 
         private static final long serialVersionUID = -283967356065247728L;
-        // orphaned legacy method
-        @Override public void remove() {
-                    throw new UnsupportedOperationException();
-                }
-        
-        // orphaned legacy method
-        @Override public void set(E object) {
-                    throw new UnsupportedOperationException();
-                }
-        
-        // orphaned legacy method
-        @Override public boolean hasNext() {
-                    return iterator.hasNext();
-                }
-        
-        // orphaned legacy method
-        @Override public int previousIndex() {
-                    return iterator.previousIndex();
-                }
-        
-        // orphaned legacy method
-        @Override public boolean hasPrevious() {
-                    return iterator.hasPrevious();
-                }
-        
-        // orphaned legacy method
-        @Override public E previous() {
-                    return iterator.previous();
-                }
-        
-        // orphaned legacy method
-        @Override public int nextIndex() {
-                    return iterator.nextIndex();
-                }
-        
-        // orphaned legacy method
-        @Override public void add(E object) {
-                    throw new UnsupportedOperationException();
-                }
-        
-        // orphaned legacy method
-        @Override public E next() {
-                    return iterator.next();
-                }
-        
-        // orphaned legacy field
-        ListIterator<E> iterator = list.listIterator(location);
         
     }
 
@@ -3453,9 +3297,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.327 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "D7819781C010BECFFB3BC37EE093E818")
         @Override
         public V put(K key, V value) {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            addTaint(key.getTaint());
-            addTaint(value.getTaint());
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
@@ -3474,8 +3316,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.328 -0400", hash_original_method = "1F8D4C123F3DDBF68E61E38EDB13F5FB", hash_generated_method = "CAC84F3EBC2CB52F20821DF2278AA8A5")
         @Override
         public V remove(Object key) {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            addTaint(key.getTaint());
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
@@ -3689,8 +3530,7 @@ public class Collections {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.337 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "1A2319FA1552949A1378D6A672B3348D")
                 @Override
                 public V setValue(V object) {
-                    if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-                    addTaint(object.getTaint());
+                	throw new UnsupportedOperationException();
                     // ---------- Original Method ----------
                     //throw new UnsupportedOperationException();
                 }
@@ -3715,24 +3555,6 @@ public class Collections {
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.340 -0400", hash_original_field = "B44292591B716EDD855C6E185A9AC989", hash_generated_field = "12B2F4473571AB0F630FC68FA4B581F0")
 
             private static final long serialVersionUID = 7854390611657943733L;
-            // orphaned legacy method
-            @Override public void remove() {
-                        throw new UnsupportedOperationException();
-                    }
-            
-            // orphaned legacy method
-            @Override public boolean hasNext() {
-                        return iterator.hasNext();
-                    }
-            
-            // orphaned legacy method
-            @Override public Map.Entry<K, V> next() {
-                        return new UnmodifiableMapEntry<K, V>(iterator.next());
-                    }
-            
-            // orphaned legacy field
-            Iterator<Map.Entry<K, V>> iterator = c.iterator();
-            
         }
 
 
@@ -5832,7 +5654,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "243C3D15209D9BF28572CB29FC9F3DF7", hash_generated_method = "3613EA17897DB540D203CDF04CC84004")
         @Override
         public Object next() {
-            if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
+        	throw new NoSuchElementException();
             // ---------- Original Method ----------
             //throw new NoSuchElementException();
         }
@@ -5841,7 +5663,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "45CE80048748F3BC523226127E4746F5", hash_generated_method = "FC031BE6A6E094CAC267938D912798A0")
         @Override
         public void remove() {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
+        	throw new IllegalStateException();
             // ---------- Original Method ----------
             //throw new IllegalStateException();
         }
@@ -5864,7 +5686,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_method = "82381D9C34AF9F2E88B673FB4A4E6DDE", hash_generated_method = "C451DB608AE3B7FAE82365C2FA63C59D")
         @Override
         public Object nextElement() {
-            if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
+        	throw new NoSuchElementException();
             // ---------- Original Method ----------
             //throw new NoSuchElementException();
         }

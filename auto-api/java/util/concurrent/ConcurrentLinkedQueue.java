@@ -35,7 +35,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         Node<E> h = null;
         Node<E> t = null;
         {
-            Iterator<E> var334ED49EB23041C8D120547C1BB713D2_1425204680 = (c).iterator();
+            Iterator<? extends E> var334ED49EB23041C8D120547C1BB713D2_1425204680 = (c).iterator();
             var334ED49EB23041C8D120547C1BB713D2_1425204680.hasNext();
             E e = var334ED49EB23041C8D120547C1BB713D2_1425204680.next();
             {
@@ -224,11 +224,11 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
             {
                 Node<E> h = head;
                 Node<E> p = h;
-                Node<E> q;
+                Node<E> q = null;
                 {
                     E item = p.item;
                     {
-                        boolean varAD2BE2138A3B6098AAD73179D8035E96_1464712407 = (item != null || (q = p.next) == null);
+                    	q = p.next;
                         {
                             updateHead(h, p);
                             varB4EAC82CA7396A68D541C85D26508E83_1717833708 = item;
@@ -265,7 +265,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
             {
                 Node<E> h = head;
                 Node<E> p = h;
-                Node<E> q;
+                Node<E> q = null;
                 {
                     boolean hasItem = (p.item != null);
                     {
@@ -405,7 +405,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         Node<E> beginningOfTheEnd = null;
         Node<E> last = null;
         {
-            Iterator<E> var334ED49EB23041C8D120547C1BB713D2_1863892954 = (c).iterator();
+            Iterator<? extends E> var334ED49EB23041C8D120547C1BB713D2_1863892954 = (c).iterator();
             var334ED49EB23041C8D120547C1BB713D2_1863892954.hasNext();
             E e = var334ED49EB23041C8D120547C1BB713D2_1863892954.next();
             {

@@ -1046,7 +1046,7 @@ public final class Scanner implements Iterator<String> {
         {
             matchSuccessful = false;
             recoverPreviousStatus();
-            if (DroidSafeAndroidRuntime.control) throw new InputMismatchException();
+            throw new InputMismatchException();
         } //End block
         varB4EAC82CA7396A68D541C85D26508E83_33132480 = bigDecimalValue;
         BigDecimal varA7E53CE21691AB073D9660D615818899_1960210069; //Final return value
@@ -1117,7 +1117,7 @@ public final class Scanner implements Iterator<String> {
         {
             matchSuccessful = false;
             recoverPreviousStatus();
-            if (DroidSafeAndroidRuntime.control) throw new InputMismatchException();
+            throw new InputMismatchException();
         } //End block
         varB4EAC82CA7396A68D541C85D26508E83_1383033418 = bigIntegerValue;
         addTaint(radix);
