@@ -260,9 +260,9 @@ final class DexPathList {
         Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_215516057 = null; //Variable for return #1
         ArrayList<URL> result = new ArrayList<URL>();
         {
-            Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1393723383 = (dexElements).iterator();
-            varF1D603C6DC3EACB73DA0406834E64496_1393723383.hasNext();
-            Element element = varF1D603C6DC3EACB73DA0406834E64496_1393723383.next();
+            //Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1393723383 = (dexElements).iterator();
+            //varF1D603C6DC3EACB73DA0406834E64496_1393723383.hasNext();
+            Element element = dexElements[0];
             {
                 URL url = element.findResource(name);
                 {
