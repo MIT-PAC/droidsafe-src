@@ -189,48 +189,5 @@ public abstract class X509Certificate extends Certificate {
         } catch (Throwable e) {
         }
     }
-    
-    // orphaned legacy method
-    public void verify(PublicKey key) throws CertificateException,
-                                NoSuchAlgorithmException, InvalidKeyException,
-                                NoSuchProviderException, SignatureException {
-                try {
-                    cert.verify(key);
-                } catch (java.security.cert.CertificateException e) {
-                    throw new CertificateException(e.getMessage());
-                }
-            }
-    
-    // orphaned legacy method
-    public void verify(PublicKey key, String sigProvider)
-                            throws CertificateException,
-                                NoSuchAlgorithmException, InvalidKeyException,
-                                NoSuchProviderException, SignatureException {
-                try {
-                    cert.verify(key, sigProvider);
-                } catch (java.security.cert.CertificateException e) {
-                    throw new CertificateException(e.getMessage());
-                }
-            }
-    
-    // orphaned legacy method
-    public String toString() {
-                return cert.toString();
-            }
-    
-    // orphaned legacy method
-    public PublicKey getPublicKey() {
-                return cert.getPublicKey();
-            }
-    
-    // orphaned legacy method
-    public byte[] getEncoded() throws CertificateEncodingException {
-                try {
-                    return cert.getEncoded();
-                } catch (java.security.cert.CertificateEncodingException e) {
-                    throw new CertificateEncodingException(e.getMessage());
-                }
-            }
-    
 }
 
