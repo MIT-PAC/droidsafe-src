@@ -31,7 +31,7 @@ public final class Float extends Number implements Comparable<Float> {
 	
 	@DSModeled(DSC.SAFE)
 	public Float(float value){
-		dsTaint.addTaint(value);
+		addTaint(value);
 		this.value = value;
 		
 		/*
@@ -40,7 +40,7 @@ public final class Float extends Number implements Comparable<Float> {
 	}
 	
 	public Float(double value){
-		dsTaint.addTaint((float)value);
+		addTaint((float)value);
 		this.value = (float)value;
 		/*
 		this.value = (float) value;
@@ -74,7 +74,7 @@ public final class Float extends Number implements Comparable<Float> {
 	}
 	
 	@Override public double doubleValue(){
-		return (double)dsTaint.getTaintFloat();
+		return (double)getTaintFloat();
 		
 		// Original method
 		/*
@@ -109,7 +109,7 @@ public final class Float extends Number implements Comparable<Float> {
 	}
 	
 	@Override public float floatValue(){
-		return dsTaint.getTaintFloat();
+		return getTaintFloat();
 		
 		// Original method
 		/*
@@ -121,7 +121,7 @@ public final class Float extends Number implements Comparable<Float> {
 	
 	@DSModeled(DSC.SAFE)
 	@Override public int hashCode(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{

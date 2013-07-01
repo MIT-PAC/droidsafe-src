@@ -48,7 +48,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
 	@Override
 	public Object getItem(int position) {
-		return dsTaint.getTaint();
+		return getTaint();
 	    //return mObjects.get(position);
 	}
 

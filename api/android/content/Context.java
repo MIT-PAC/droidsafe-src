@@ -42,7 +42,9 @@ public abstract class Context {
     }
 	
 	public final CharSequence getText(int resId) {
-		return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(resId);
+        return str;
 		/*
 		 * No need to model the Resources class at this time.  The underlying
 		 * implementation calls down into AssetManager and simply supplies a

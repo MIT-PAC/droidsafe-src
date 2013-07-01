@@ -36,7 +36,7 @@ public class Sensor {
     // requested by the application (via SensorManager.java)
     @DSModeled(DSC.BAN)
     public Sensor(int type) {
-    	dsTaint.addTaint(type);
+    	addTaint(type);
     }
 
     // GITI DSModeled
@@ -47,75 +47,79 @@ public class Sensor {
     // GITI DSModeled - just returning a string
     @DSModeled(DSC.SAFE)
     public String getName() {
-    	return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return mName;
     }
 
     // GITI DSModeled - just returning a string 
     @DSModeled(DSC.SAFE)
     public String getVendor() {
-    	return dsTaint.getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return mVendor;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getType() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mType;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getVersion() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mVersion;
     }
 
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getMaximumRange() {
-    	return dsTaint.getTaintFloat();
+    	return getTaintFloat();
         //return mMaxRange;
     }
 
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getResolution() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mResolution;
     }
 
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getPower() {
-    	return dsTaint.getTaintFloat();
+    	return getTaintFloat();
         //return mPower;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getMinDelay() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mMinDelay;
     }
 
     int getHandle() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mHandle;
     }
 
     void setRange(float max, float res) {
-    	dsTaint.addTaint(max);
-    	dsTaint.addTaint(res);
+    	addTaint(max);
+    	addTaint(res);
     }
 
     void setLegacyType(int legacyType) {
-    	dsTaint.addTaint(legacyType);
+    	addTaint(legacyType);
     }
 
     int getLegacyType() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
         //return mLegacyType;
     }
 }

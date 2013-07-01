@@ -35,13 +35,13 @@ public final class Bitmap implements Parcelable {
 
 	@DSModeled(value = DSC.SAFE)
 	public void setDensity(int density) {
-		dsTaint.addTaint(density);
+		addTaint(density);
         //mDensity = density;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public int getDensity() {
-		return dsTaint.getTaintInt();
+		return getTaintInt();
         //return mDensity;
     }
 	
@@ -120,37 +120,37 @@ public final class Bitmap implements Parcelable {
 	@DSModeled(DSC.SAFE)
 	private void setHeight(int height) {
 		//Synthetic method in order to track height taints, which are managed in native code
-		dsTaint.addTaint(height);
+		addTaint(height);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	private int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	@DSModeled(DSC.SAFE)
 	private void setWidth(int width) {
 		//Synthetic method in order to track width taints, which are managed in native code
-		dsTaint.addTaint(width);
+		addTaint(width);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	private int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	@DSModeled(DSC.SAFE)
 	private void setHasAlpha(boolean hasAlpha) {
 		//Synthetic method in order to track hasAlpha taints, which are managed in native code
-		dsTaint.addTaint(hasAlpha);
+		addTaint(hasAlpha);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	private boolean hasAlpha() {
 		//Previous called into native code.  Since we are tracking the taint in, we can track it out
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 	}
 	
 	@DSModeled(DSC.SAFE)

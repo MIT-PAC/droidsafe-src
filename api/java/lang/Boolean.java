@@ -16,7 +16,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
 	
 	@DSModeled(DSC.SAFE)
 	public Boolean(boolean value) {
-		dsTaint.addTaint(value);
+		addTaint(value);
         this.value = value;
     }
 	
@@ -36,14 +36,14 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 	
 	public boolean booleanValue() {
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
         //return value;
     }
 	
 	@DSModeled(DSC.SAFE)
 	@Override
     public int hashCode() {
-		return dsTaint.getTaintInt();  //Technically the hash code is derived from the value
+		return getTaintInt();  //Technically the hash code is derived from the value
         //return value ? 1231 : 1237;
     }
 }

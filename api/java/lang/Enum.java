@@ -15,8 +15,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 	
     @DSModeled(DSC.SAFE)
 	protected Enum(String name, int ordinal) {
-		dsTaint.addTaint(name);
-		dsTaint.addTaint(ordinal);
+		addTaint(name.getTaint());
+		addTaint(ordinal);
     }
 	
 	public final int compareTo(E o) {
@@ -78,7 +78,9 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 	@DSModeled(DSC.SAFE)
 	@Override
 	public String toString() {
-		return dsTaint.getTaintString();
+                String str = new String();
+                str.addTaint(getTaint());
+		return str;
 	}
 	
 }

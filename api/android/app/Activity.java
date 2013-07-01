@@ -192,7 +192,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final boolean isChild(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		// Original method
 		/*
 		{
@@ -612,7 +612,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public int getChangingConfigurations(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -936,7 +936,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 	
 	public final void setDefaultKeyMode(int mode){
-		dsTaint.addTaint(mode);
+		addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
 		Selection.setSelection(mDefaultKeySsb,0);
 		// Original method
@@ -2104,7 +2104,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode){
-		dsTaint.addTaint(resultCode);
+		addTaint(resultCode);
 		// Original method
 		/*
 		{
@@ -2118,7 +2118,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode, Intent data){
-		dsTaint.addTaint(resultCode);
+		addTaint(resultCode);
 		mResultData = data;
 		// Original method
 		/*
@@ -2169,7 +2169,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setVisible(boolean visible){
-		dsTaint.addTaint(visible);
+		addTaint(visible);
 		makeVisible();
 		mDecor.setVisibility(View.INVISIBLE);
 		// Original method
@@ -2206,7 +2206,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public boolean isFinishing(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -2217,7 +2217,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public boolean isChangingConfigurations(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*
@@ -2612,7 +2612,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setTitleColor(int textColor){
-		dsTaint.addTaint(textColor);
+		addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
 		
 		// Original method
@@ -2637,7 +2637,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final int getTitleColor(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -2920,13 +2920,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mMainThread = aThread;  //Preserved
 		mInstrumentation = instr;  //Preserved
 		mToken = token;  //Preserved
-		dsTaint.addTaint(ident);
+		addTaint(ident);
 		mApplication = application;  //Preserved
 		mIntent = intent;  //Preserved
 		mActivityInfo = info;  //Preserved
 		mTitle = title;  //Preserved
 		mParent = parent;  //Preserved
-		dsTaint.addTaint(id);
+		addTaint(id.getTaint());
 		mLastNonConfigurationInstances = lastNonConfigurationInstances;  //Preserved
 		mCurrentConfig = config;  //Preserved
 		
@@ -3120,7 +3120,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final boolean isResumed(){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		
 		// Original method
 		/*

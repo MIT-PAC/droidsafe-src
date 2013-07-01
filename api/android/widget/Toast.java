@@ -162,8 +162,8 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public void setMargin(float horizontalMargin, float verticalMargin) {
-    	dsTaint.addTaint(horizontalMargin);
-    	dsTaint.addTaint(verticalMargin);
+    	addTaint(horizontalMargin);
+    	addTaint(verticalMargin);
     	//DSModel nothing
         //mTN.mHorizontalMargin = horizontalMargin;
         //mTN.mVerticalMargin = verticalMargin;
@@ -174,7 +174,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public float getHorizontalMargin() {
-        return dsTaint.getTaintFloat();
+        return getTaintFloat();
     }
 
     /**
@@ -182,7 +182,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public float getVerticalMargin() {
-    	 return dsTaint.getTaintFloat();
+    	 return getTaintFloat();
     }
 
     /**
@@ -191,11 +191,11 @@ public class Toast {
      * @see #getGravity
      */
     @DSModeled(DSC.SAFE)
-    //just spread around dsTaint
+    //just spread around 
     public void setGravity(int gravity, int xOffset, int yOffset) {
-    	dsTaint.addTaint(gravity);
-    	dsTaint.addTaint(xOffset);
-    	dsTaint.addTaint(yOffset);
+    	addTaint(gravity);
+    	addTaint(xOffset);
+    	addTaint(yOffset);
     }
 
      /**
@@ -205,7 +205,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public int getGravity() {
-        return dsTaint.getTaintInt();
+        return getTaintInt();
     }
 
     /**
@@ -213,7 +213,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public int getXOffset() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
     }
     
     /**
@@ -221,7 +221,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public int getYOffset() {
-    	return dsTaint.getTaintInt();
+    	return getTaintInt();
     }
     
     /**
@@ -237,8 +237,8 @@ public class Toast {
     @DSModeled()
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
-        result.dsTaint.addTaint(text.toString());
-        result.dsTaint.addTaint(duration);
+        result.addTaint(text.toString().getTaint());
+        result.addTaint(duration);
 
         /*  DSModel: Not needed for ds modeling
         LayoutInflater inflate = (LayoutInflater)
@@ -276,7 +276,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public void setText(int resId) {
-        dsTaint.addTaint(resId);
+        addTaint(resId);
     }
     
     /**
@@ -285,7 +285,7 @@ public class Toast {
      */
     @DSModeled(DSC.SAFE)
     public void setText(CharSequence s) {
-    	dsTaint.addTaint(s.toString());
+    	addTaint(s.toString().getTaint());
     	/*
         if (mNextView == null) {
             throw new RuntimeException("This Toast was not created with Toast.makeText()");
