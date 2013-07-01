@@ -4072,6 +4072,45 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         
     }
 
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnDestroy() {
+    	onDestroy();
+    }
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnResume() {
+    	//This method is called by droidsafe itself, and should NEVER be called by an app
+    	onResume();
+    }
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
+    public final void performCreate(Bundle icicle, Context context){
+    	this.attachBaseContext(context);
+    	onCreate(icicle);
+    	mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
+    	com.android.internal.R.styleable.Window_windowNoDisplay, false);
+    	mFragments.dispatchActivityCreated();
+    	// Original method
+    	/*
+    	{
+    	onCreate(icicle);
+    	mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
+    	com.android.internal.R.styleable.Window_windowNoDisplay, false);
+    	mFragments.dispatchActivityCreated();
+    	}
+    	*/
+    	//Return nothing
+    }
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnStop() {
+    	//This method is called by droidsafe itself, and should NEVER be called by an app
+    	onStop();
+    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.819 -0400", hash_original_field = "9C29F19CBB2417EFCC04569A35A2C147", hash_generated_field = "8CACF19DA21B737E3F7EB34688FF057C")
