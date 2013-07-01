@@ -1,12 +1,11 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Calendar;
 
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 // needed for enhanced for control translations
-import java.util.Iterator;
 
 class Grego {
     

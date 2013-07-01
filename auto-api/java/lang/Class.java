@@ -1,13 +1,6 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-
-// needed for enhanced for control translations
-import java.util.Iterator;
-import dalvik.system.VMStack;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
@@ -28,11 +21,20 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+
 import libcore.util.CollectionUtils;
 import libcore.util.EmptyArray;
+
 import org.apache.harmony.kernel.vm.StringUtils;
 import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.Types;
+
+import dalvik.system.VMStack;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// needed for enhanced for control translations
 
 public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.691 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
@@ -76,6 +78,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
+    	Object[] foo = new Object[0];
+    	foo.addTaint(this.taint);
+    	return foo;
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
@@ -108,6 +113,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
                 //DSFIXME:  This shouldn't happen!
+    	Class<?> cl = Object.class;
+    	return cl;
     }
 
     
@@ -350,12 +357,15 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
 
     
     private static ClassLoader getClassLoader(Class<?> clazz) {
-                //DSFIXME:  This shouldn't happen!
+    	return clazz.getClassLoader();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.699 -0400", hash_original_method = "A6D69727DF0CDE095BD59CFD60FF06ED", hash_generated_method = "CDEED6F065A507A7FECB927A85CD4D66")
     public Class<?> getComponentType() {
+    	Class<?> cl = (Class)new Object();
+    	cl.addTaint(this.taint);
+    	return cl;
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
@@ -387,8 +397,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
             parameterTypes = EmptyArray.CLASS;
         } //End block
         {
-            parameterTypes.iterator().hasNext();
-            Class<?> c = parameterTypes.iterator().next();
+            Class<?> c = parameterTypes[0];
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchMethodException("parameter type is null");
@@ -439,8 +448,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
             c = c.getSuperclass();
             {
                 {
-                    c.getInterfaces().iterator().hasNext();
-                    Class<?> ifc = c.getInterfaces().iterator().next();
+                    Class<?> ifc = c.getInterfaces()[0];
                     {
                         Member result = ifc.getPublicConstructorOrMethodRecursive(name, parameterTypes);
                         {
@@ -481,7 +489,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
             //for (Class<?> ifc : c.getInterfaces()) {
                 //Member result = ifc.getPublicConstructorOrMethodRecursive(name, parameterTypes);
                 //if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                    //return result;
+                    //return result;taint
                 //}
             //}
         //}
@@ -502,6 +510,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "2A0D770C788AFD3292AC02E319E3DDE7", hash_generated_method = "DB9C61E181111C55768DF3409E22B2FA")
     public Annotation[] getDeclaredAnnotations() {
+    	Annotation[] ret = new Annotation[0];
+    	return ret;
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
@@ -509,6 +519,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "097083D90BBF2FCC58AC81DB8664E54F", hash_generated_method = "33C06C0DC63918D788913C928E9A0C55")
     private <A extends Annotation> A getDeclaredAnnotation(Class<A> annotationClass) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	A ret = (A)new Object();
+       	addTaint(annotationClass.taint);
+    	return ret;
     }
 
     
@@ -562,6 +575,11 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
                 //DSFIXME:  This shouldn't happen!
+    	Class[] ret = new Class[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	
+    	return ret;
     }
 
     
@@ -592,6 +610,10 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
                 //DSFIXME:  This shouldn't happen!
+    	Constructor[] ret = new Constructor[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	return ret;
     }
 
     
@@ -634,11 +656,19 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
                 //DSFIXME:  This shouldn't happen!
+    	Field[] ret = new Field[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	return ret;
     }
 
     
     static Field getDeclaredField(Class<?> clazz, String name) {
                 //DSFIXME:  This shouldn't happen!
+    	Field ret = new Field();
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(name.taint);
+    	return ret;
     }
 
     
@@ -676,35 +706,52 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
                 //DSFIXME:  This shouldn't happen!
+    	Method[] ret = new Method[0];
+    	ret[0].addTaint(clazz.taint);
+    	ret[0].addTaint(publicOnly);
+    	return ret;
     }
 
     
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
                 //DSFIXME:  This shouldn't happen!
+    	Method ret = new Method();
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(name.taint);
+    	ret.addTaint(args[0].taint);
+    	return ret;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.716 -0400", hash_original_method = "67DCCE022B38EF56E621E9F7C3410002", hash_generated_method = "A08735CEB9F08341039B8C54A1BD5E61")
     public Class<?> getDeclaringClass() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Class  ret = (Class)new Object();
+    	return ret;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "B183618DCECD1DBBC6B77A8041AAB5FF", hash_generated_method = "E19B04C40918C59F801E144F365A783E")
     public Class<?> getEnclosingClass() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Class  ret = (Class)new Object();
+    	return ret;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Constructor  ret = new Constructor();
+    	return ret;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Method  ret = new Method();
+    	return ret;
     }
 
     
@@ -927,6 +974,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.741 -0400", hash_original_method = "CF68E335012F7245AD886A1F59EC18C3", hash_generated_method = "2692A665379A2F86FF3326F5F5EB1B7B")
     public Class<?>[] getInterfaces() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Class[] ret = new Class[0];
+    	return ret;
     }
 
     
@@ -1041,6 +1090,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String ret = new String();
+    	return ret;
     }
 
     
@@ -1117,6 +1168,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.757 -0400", hash_original_method = "0DFF052FEDA74158169D3F5C3A6A31A3", hash_generated_method = "E15F8A7CFFBAA6A8E91B4004366ED98B")
     private String getInnerClassName() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String ret = new String();
+    	return ret;
     }
 
     
@@ -1269,6 +1322,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.762 -0400", hash_original_method = "D842DF476A1BD7D94C0F81A98F8160A2", hash_generated_method = "6D7E91A123530C9789871A175E332FE3")
     public Class<? super T> getSuperclass() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Class ret = (Class)new Object();
+    	return ret;
     }
 
     
@@ -1451,6 +1506,8 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.766 -0400", hash_original_method = "15EE5A43120338A96CD2B5DEA980891C", hash_generated_method = "53D1094C8103497B4EEB5236AC886608")
     private T newInstanceImpl() throws IllegalAccessException, InstantiationException {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	T ret = (T)new Object();
+    	return ret;
     }
 
     

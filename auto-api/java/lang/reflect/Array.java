@@ -158,6 +158,10 @@ public final class Array {
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
                 //DSFIXME:  This shouldn't happen!
+    	Object ret = new Object();
+    	ret.addTaint(componentType.taint);
+    	ret.addTaint(dimensions[0]);
+    	return ret;
     }
 
     
@@ -199,6 +203,10 @@ public final class Array {
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
                 //DSFIXME:  This shouldn't happen!
+    	Object ret = new Object();
+    	ret.addTaint(componentType.taint);
+    	ret.addTaint(length);
+    	return ret;
     }
 
     

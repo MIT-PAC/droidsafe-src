@@ -245,7 +245,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
 
     
     private static Object getFieldL(Object instance, Class<?> declaringClass, String fieldName, String fieldTypeName) {
-                //DSFIXME:  This shouldn't happen!
+    	return new Object();
     }
 
     

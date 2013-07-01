@@ -521,8 +521,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.850 -0400", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "7AB291E3C15F71928CD72C5D3C710C9E")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
-        if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(this, index);
+        
         addTaint(index);
+        throw new StringIndexOutOfBoundsException(this, index);
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(this, index);
     }
@@ -530,9 +531,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.851 -0400", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "06ACD7700CBBB17F93B3C1C6892432FD")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
-        if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(this, start, end - start);
+
         addTaint(start);
         addTaint(end);
+        throw new StringIndexOutOfBoundsException(this, start, end - start);
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(this, start, end - start);
     }
@@ -540,10 +542,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.851 -0400", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "E5EBE079CC06EC87E395099037376628")
     private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
-        if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
+        
         addTaint(arrayLength);
         addTaint(offset);
         addTaint(count);
+        throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
     }
@@ -1011,6 +1014,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "8D834ED1699A050AD62397187973DE2A", hash_generated_method = "D27768EE08A87AC5AC201AAF7BA53F8D")
     public String intern() {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new String();
     }
 
     

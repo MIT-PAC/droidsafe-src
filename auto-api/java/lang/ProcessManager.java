@@ -228,7 +228,7 @@ final class ProcessManager {
         workingPath = null;
         workingPath = workingDirectory.getPath();
         {
-            int pid;
+            int pid = 0;
             try 
             {
                 pid = exec(command, environment, workingPath, in, out, err, redirectErrorStream);
@@ -241,7 +241,8 @@ final class ProcessManager {
                         + " Environment: " + Arrays.toString(environment));
                 wrapper.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw wrapper;
-            } //End block
+            } //End block            
+
             ProcessImpl process = new ProcessImpl(pid, in, out, err);
             ProcessReference processReference = new ProcessReference(process, referenceQueue);
             processReferences.put(pid, processReference);
@@ -581,10 +582,6 @@ final class ProcessManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.513 -0400", hash_original_field = "0F376D985AD312053503F275800742B8", hash_generated_field = "8D658FE2E05A9E4B2403457EE1E50872")
 
     private static final ProcessManager instance = new ProcessManager();
-    // orphaned legacy method
-    @Override public void run() {
-                watchChildren();
-            }
-    
+   
 }
 

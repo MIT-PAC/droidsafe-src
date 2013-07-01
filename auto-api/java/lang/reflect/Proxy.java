@@ -168,6 +168,12 @@ public class Proxy implements Serializable {
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
                 //DSFIXME:  This shouldn't happen!
+    	Class ret = (Class)new Object();
+    	ret.addTaint(name.taint);
+    	ret.addTaint(interfaces[0].taint);
+    	ret.addTaint(loader.taint);
+    	
+    	return ret;
     }
 
     

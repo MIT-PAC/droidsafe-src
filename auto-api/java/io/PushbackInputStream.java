@@ -140,7 +140,7 @@ public class PushbackInputStream extends FilterInputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.902 -0400", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "FAE066DB8A7BB73956AD5304292735D2")
     private IOException streamClosed() throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new IOException("PushbackInputStream is closed");
+        throw new IOException("PushbackInputStream is closed");
         // ---------- Original Method ----------
         //throw new IOException("PushbackInputStream is closed");
     }

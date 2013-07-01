@@ -71,7 +71,7 @@ public class BufferedInputStream extends FilterInputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.405 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "41453DD9F47E59238E8E8C396C3D3ECC")
     private IOException streamClosed() throws IOException {
-        if (DroidSafeAndroidRuntime.control) throw new IOException("BufferedInputStream is closed");
+        throw new IOException("BufferedInputStream is closed");
         // ---------- Original Method ----------
         //throw new IOException("BufferedInputStream is closed");
     }

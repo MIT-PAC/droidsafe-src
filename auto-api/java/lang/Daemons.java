@@ -162,7 +162,7 @@ public final class Daemons {
             {
                 boolean varC4B3EF749887CF146FD60924F3630457_971481185 = (isRunning());
                 {
-                    Reference<?> list;
+                    Reference<?> list = null;
                     try 
                     {
                         {
