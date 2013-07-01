@@ -187,7 +187,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
             } //End block
         } //End collapsed parenthetic
         final LayeredSocketFactory lsf = (LayeredSocketFactory) schm.getSocketFactory();
-        Socket sock;
+        Socket sock = null;
         try 
         {
             sock = lsf.createSocket

@@ -917,7 +917,7 @@ public abstract class AbstractHttpClient implements HttpClient {
                 ("Response handler must not be null.");
         } //End block
         HttpResponse response = execute(target, request, context);
-        T result;
+        T result = null;
         try 
         {
             result = responseHandler.handleResponse(response);
