@@ -66,7 +66,7 @@ public final class ErrnoException extends Exception {
     public IOException rethrowAsIOException() throws IOException {
         IOException newException = new IOException(getMessage());
         newException.initCause(this);
-        if (DroidSafeAndroidRuntime.control) throw newException;
+        throw newException;
         // ---------- Original Method ----------
         //IOException newException = new IOException(getMessage());
         //newException.initCause(this);
@@ -76,7 +76,7 @@ public final class ErrnoException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.035 -0400", hash_original_method = "8BB4A81BC702A752206578FEF42C6BB1", hash_generated_method = "F2A1B5679AAF5B8FAA1C2D7F4EED028D")
     public SocketException rethrowAsSocketException() throws SocketException {
-        if (DroidSafeAndroidRuntime.control) throw new SocketException(getMessage(), this);
+    	throw new SocketException(getMessage(), this);
         // ---------- Original Method ----------
         //throw new SocketException(getMessage(), this);
     }

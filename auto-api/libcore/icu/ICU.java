@@ -101,67 +101,83 @@ public final class ICU {
 
     
     public static String getIcuVersion() {
-                //DSFIXME:  This shouldn't happen!
+    	return new String();
     }
 
     
     public static String getUnicodeVersion() {
-                //DSFIXME:  This shouldn't happen!
+    	return new String();
     }
 
     
     public static String toLowerCase(String s, String localeName) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String(s);
+    	ret.addTaint(localeName.getTaint());
+    	return ret;
     }
 
     
     public static String toUpperCase(String s, String localeName) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String(s);
+    	ret.addTaint(localeName.getTaint());
+    	return ret;
     }
 
     
     private static String[] getAvailableBreakIteratorLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getAvailableCalendarLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getAvailableCollatorLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getAvailableDateFormatLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getAvailableLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getAvailableNumberFormatLocalesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     public static String[] getAvailableCurrencyCodes() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     public static String getCurrencyCode(String countryCode) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(countryCode.getTaint());
+    	return ret;
     }
 
     
     public static String getCurrencyDisplayName(String locale, String currencyCode) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	ret.addTaint(currencyCode.getTaint());
+    	return ret;
     }
 
     
@@ -172,52 +188,74 @@ public final class ICU {
 
     
     public static String getCurrencySymbol(String locale, String currencyCode) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	ret.addTaint(currencyCode.getTaint());
+    	return ret;
     }
 
     
     public static String getDisplayCountryNative(String countryCode, String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	ret.addTaint(countryCode.getTaint());
+    	return ret;
     }
 
     
     public static String getDisplayLanguageNative(String languageCode, String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	ret.addTaint(languageCode.getTaint());
+    	return ret;
     }
 
     
     public static String getDisplayVariantNative(String variantCode, String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	ret.addTaint(variantCode.getTaint());
+    	return ret;
     }
 
     
     public static String getISO3CountryNative(String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	return ret;
     }
 
     
     public static String getISO3LanguageNative(String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	return ret;
     }
 
     
     public static String addLikelySubtags(String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	return ret;
     }
 
     
     public static String getScript(String locale) {
-                //DSFIXME:  This shouldn't happen!
+    	String ret = new String();
+    	ret.addTaint(locale.getTaint());
+    	return ret;
     }
 
     
     private static String[] getISOLanguagesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     
     private static String[] getISOCountriesNative() {
-                //DSFIXME:  This shouldn't happen!
+    	String[] arr = {new String()};
+    	return arr;
     }
 
     

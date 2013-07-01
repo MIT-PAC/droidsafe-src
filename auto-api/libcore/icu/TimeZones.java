@@ -51,12 +51,14 @@ public final class TimeZones {
 
     
     private static String[] forCountryCode(String countryCode) {
-                //DSFIXME:  This shouldn't happen!
+    	String [] ret = {new String()};
+    	return ret;
     }
 
     
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
-                //DSFIXME:  This shouldn't happen!
+    	String [][] ret = {{new String()}};
+    	return ret;
     }
 
     

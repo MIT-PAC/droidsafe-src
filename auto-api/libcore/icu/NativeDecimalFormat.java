@@ -901,7 +901,9 @@ public final class NativeDecimalFormat {
 
     
     private static String getTextAttribute(int addr, int symbol) {
-                //DSFIXME:  This shouldn't happen!
+    	String s = new String();
+    	s.addTaint(symbol);
+    	return s;
     }
 
     
@@ -916,7 +918,21 @@ public final class NativeDecimalFormat {
 
     
     private static Number parse(int addr, String string, ParsePosition position, boolean parseBigDecimal) {
-                //DSFIXME:  This shouldn't happen!
+    	Number ret;
+    	if (parseBigDecimal) {
+    		ret = new BigDecimal(1.0);
+    		ret.addTaint(parseBigDecimal);
+    		ret.addTaint(addr);
+    		ret.addTaint(position.getTaint());
+    		ret.addTaint(string.getTaint());
+    	} else {
+    		ret = new BigInteger("");
+    		ret.addTaint(parseBigDecimal);
+    		ret.addTaint(addr);
+    		ret.addTaint(position.getTaint());
+    		ret.addTaint(string.getTaint());
+    	}
+    	return ret;
     }
 
     
@@ -945,7 +961,9 @@ public final class NativeDecimalFormat {
 
     
     private static String toPatternImpl(int addr, boolean localized) {
-                //DSFIXME:  This shouldn't happen!
+    	String s = new String();
+    	s.addTaint(localized);
+    	return s;
     }
 
     

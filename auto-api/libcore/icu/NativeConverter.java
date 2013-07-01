@@ -7,9 +7,12 @@ import droidsafe.runtime.*;
 
 // needed for enhanced for control translations
 import java.util.Iterator;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
+import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 
 public final class NativeConverter {
@@ -96,12 +99,86 @@ public final class NativeConverter {
 
     
     public static String[] getAvailableCharsetNames() {
-                //DSFIXME:  This shouldn't happen!
+    	String [] ret = new String[1];
+    	ret[0] = new String();
+    	return ret;
     }
 
     
     public static Charset charsetForName(String charsetName) {
-                //DSFIXME:  This shouldn't happen!
+    	return new Charset(charsetName, null) {
+			
+			@Override
+			public CharsetEncoder newEncoder() {
+				return new CharsetEncoder(this, 0, 0) {
+					@Override
+					protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
+						out.addTaint(in.getTaint());
+						CoderResult res;
+						switch (DroidSafeAndroidRuntime.switchControl) {
+						case 0:
+							res = CoderResult.OVERFLOW;
+							break;
+						case 1:
+							res = CoderResult.UNDERFLOW;
+							break;
+						case 2:
+							res = CoderResult.malformedForLength(in.length() + out.capacity());
+							break;
+						default:
+							res = CoderResult.unmappableForLength(in.length() + out.capacity());
+							break;
+						}
+						if(DroidSafeAndroidRuntime.control) {
+							res.addTaint(in.getTaint());
+							res.addTaint(out.getTaint());
+							return res;
+						} else {
+							return null;
+						}
+					}
+				};
+			}
+			
+			@Override
+			public CharsetDecoder newDecoder() {
+				return new CharsetDecoder(this, 0, 0) {
+					
+					@Override
+					protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
+						out.addTaint(in.getTaint());
+						CoderResult res;
+						switch (DroidSafeAndroidRuntime.switchControl) {
+						case 0:
+							res = CoderResult.OVERFLOW;
+							break;
+						case 1:
+							res = CoderResult.UNDERFLOW;
+							break;
+						case 2:
+							res = CoderResult.malformedForLength(out.length() + in.capacity());
+							break;
+						default:
+							res = CoderResult.unmappableForLength(out.length() + in.capacity());
+							break;
+						}
+						if(DroidSafeAndroidRuntime.control) {
+							res.addTaint(in.getTaint());
+							res.addTaint(out.getTaint());
+							return res;
+						} else {
+							return null;
+						}
+					}
+				};
+			}
+			
+			@Override
+			public boolean contains(Charset charset) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+		};
     }
 
     
