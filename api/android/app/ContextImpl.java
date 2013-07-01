@@ -49,6 +49,7 @@ import android.os.Looper;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 import droidsafe.concrete.DroidSafeContentResolver;
+import android.telephony.TelephonyManager;
 
 /**
  * A mock {@link android.content.Context} class.  All methods are non-functional and throw 
@@ -73,7 +74,10 @@ public class ContextImpl extends Context {
     		return sensorManager;
     	} else if ("Service".equals(name)) {
     		return new LocationManager(null);
-    	} else 
+    	} else if (Context.TELEPHONY_SERVICE.equals(name)) {
+            return new TelephonyManager(this);
+        }
+        else 
     		return new Object();
 	}
     

@@ -37,7 +37,9 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 	@DSModeled(DSC.SAFE)
 	@Override
 	public V get(Object arg0) {
-		return (V)getTaint();
+            return value;
+
+            //return (V)dsTaint.getTaint();
 		/*
 		if (key == null) {
             HashMapEntry<K, V> e = entryForNullKey;
