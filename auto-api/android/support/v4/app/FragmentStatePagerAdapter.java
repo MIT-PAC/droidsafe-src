@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import droidsafe.annotations.DSGeneratedField;
@@ -276,7 +277,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
             } //End block
             Iterable<String> keys = bundle.keySet();
             {
-                String key = keys[0];
+                String key = keys.iterator().next();
                 {
                     {
                         boolean var438EA0C07332A92EACC3F9E3A9BA678E_57809883 = (key.startsWith("f"));
