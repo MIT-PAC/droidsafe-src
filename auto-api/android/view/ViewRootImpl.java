@@ -705,7 +705,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mInputChannel = null;
                     mFallbackEventHandler.setView(null);
                     unscheduleTraversals();
-                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Adding window failed", e);
+                    throw new RuntimeException("Adding window failed", e);
                 } //End block
                 finally 
                 {
@@ -2282,7 +2282,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             boolean varAC62E7C7590DB61B5214E434C55175F8_1533662364 = (!dirty.isEmpty() || mIsAnimating);
             {
-                Canvas canvas;
+                Canvas canvas = null;
                 try 
                 {
                     int left = dirty.left;

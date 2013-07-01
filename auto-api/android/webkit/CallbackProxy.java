@@ -1886,13 +1886,13 @@ class CallbackProxy extends Handler {
         //return result.getResult();
     }
 
-    
+    @DSOverride
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.097 -0400", hash_original_method = "F9E2141EE9507A71AC258BF46DA1BEA9", hash_generated_method = "E85FD2F384A5CB02D8CB7AA0B8CD37B4")
     public void getVisitedHistory(ValueCallback<String[]> callback) {
         Message msg = obtainMessage(GET_VISITED_HISTORY);
         msg.obj = callback;
         sendMessage(msg);
-        addTaint(callback[0].getTaint());
+        addTaint(callback.getTaint());
         // ---------- Original Method ----------
         //if (mWebChromeClient == null) {
             //return;

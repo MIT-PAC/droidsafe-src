@@ -244,7 +244,7 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.826 -0400", hash_original_method = "187F763AA53C0F8EE9F854FE8C7B0DA2", hash_generated_method = "0FF923E44844D20FE339E44DC3CFAC90")
     private Canvas lockCanvasNative(Rect dirty) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new Canvas();
     }
 
     
@@ -266,12 +266,14 @@ public class Surface implements Parcelable {
 
     
     public static Bitmap screenshot(int width, int height) {
-                //DSFIXME:  This shouldn't happen!
+    	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
+    	// DSFIXME: source
     }
 
     
     public static Bitmap screenshot(int width, int height, int minLayer, int maxLayer) {
-                //DSFIXME:  This shouldn't happen!
+    	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
+    	// DSFIXME: source
     }
 
     

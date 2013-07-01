@@ -854,30 +854,6 @@ public final class CacheManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.931 -0400", hash_original_field = "9482EE7290FD75B68702A7612F864D33", hash_generated_field = "485E2AE6AF65AD3F25A212E1A5B60B89")
 
     private static boolean mClearCacheOnInit = false;
-    // orphaned legacy method
-    public void run() {
-                try {
-                    String[] files = mBaseDir.list();
-                    if (files != null) {
-                        for (int i = 0; i < files.length; i++) {
-                            File f = new File(mBaseDir, files[i]);
-                            if (!f.delete()) {
-                                Log.e(LOGTAG, f.getPath() + " delete failed.");
-                            }
-                        }
-                    }
-                } catch (SecurityException e) {
-                }
-            }
-    
-    // orphaned legacy method
-    public boolean accept(File dir, String filename) {
-                    if (fileList.contains(filename)) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                }
     
 }
 

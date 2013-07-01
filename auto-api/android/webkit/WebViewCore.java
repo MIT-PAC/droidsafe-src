@@ -556,7 +556,7 @@ public final class WebViewCore {
 
     
         static String nativeFindAddress(String addr, boolean caseInsensitive) {
-                //DSFIXME:  This shouldn't happen!
+        	return new String(addr);
     }
 
     
@@ -686,19 +686,25 @@ public final class WebViewCore {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "241A051A4ABC8D2C1F54A842088CB439", hash_generated_method = "ADDFF51CB4191E5A33B19E9FFF8D0598")
     private String nativeRetrieveHref(int x, int y) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String ();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "FBE4886E30C0F15C8EE972672B86778C", hash_generated_method = "00676F9B8F3E27C703CEC42462520F49")
     private String nativeRetrieveAnchorText(int x, int y) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String ();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.677 -0400", hash_original_method = "7F214D01044FDB7C0A6FFA5743028C76", hash_generated_method = "DF1E348C7A15B8A70CB12B2540802419")
     private String nativeRetrieveImageSource(int x, int y) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String ();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -789,7 +795,9 @@ public final class WebViewCore {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "7F9DDA20412A0AF9D5E94CA5D5B0BEAA", hash_generated_method = "AA720C4F9758D8D1846FA8601154CB6F")
     private String nativeModifySelection(int direction, int granularity) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String ();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -1860,7 +1868,9 @@ public final class WebViewCore {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.711 -0400", hash_original_method = "D72E3E2D187EE0995228637414D15F8B", hash_generated_method = "77A50DA793DDA2062D397DD558B3E833")
     private String nativeRequestLabel(int framePtr, int nodePtr) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String ();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -2387,7 +2397,10 @@ public final class WebViewCore {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.725 -0400", hash_original_method = "7FB813C3814F61AA4E8EC557BEB4DCCC", hash_generated_method = "6B922F36DFF8369A6FE3889E21482C11")
     private ArrayList<Rect> nativeGetTouchHighlightRects(int x, int y,
             int slop) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	// DSFIXME: will be a source
+    	ArrayList<Rect> ret = new ArrayList<>();
+    	ret.addTaint(taint);
+    	return ret;
     }
 
     

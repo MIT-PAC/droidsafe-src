@@ -116,9 +116,9 @@ class ZygoteConnection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.780 -0400", hash_original_method = "D76E963329652A6F2BCB5FE055E042D1", hash_generated_method = "99CCC71A757AF76F98305A4738065984")
      boolean runOnce() throws ZygoteInit.MethodAndArgsCaller {
-        String args[];
+        String args[] = null;
         Arguments parsedArgs = null;
-        FileDescriptor[] descriptors;
+        FileDescriptor[] descriptors = null;
         try 
         {
             args = readArgumentList();
@@ -225,7 +225,7 @@ class ZygoteConnection {
     private String[] readArgumentList() throws IOException {
         String[] varB4EAC82CA7396A68D541C85D26508E83_541729181 = null; //Variable for return #1
         String[] varB4EAC82CA7396A68D541C85D26508E83_1294554178 = null; //Variable for return #2
-        int argc;
+        int argc = 0;
         try 
         {
             String s = mSocketReader.readLine();
@@ -235,8 +235,8 @@ class ZygoteConnection {
             argc = Integer.parseInt(s);
         } //End block
         catch (NumberFormatException ex)
-        {
-            if (DroidSafeAndroidRuntime.control) throw new IOException("invalid wire format");
+        { 
+        	throw new IOException("invalid wire format");
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("max arg count exceeded");
@@ -449,6 +449,7 @@ class ZygoteConnection {
             {
                 logAndPrintError(newStderr,
                         "Missing required class name argument", null);
+                return;
             } //End block
             String[] mainArgs = new String[parsedArgs.remainingArgs.length - 1];
             System.arraycopy(parsedArgs.remainingArgs, 1,

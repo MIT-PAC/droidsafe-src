@@ -54,6 +54,7 @@ public final class ClientCertRequestHandler {
         catch (CertificateEncodingException e)
         {
             mBrowserFrame.nativeSslClientCert(mHandle, null, null);
+            return;
         } //End block
         mTable.Allow(mHostAndPort, privateKeyBytes, chainBytes);
         mBrowserFrame.nativeSslClientCert(mHandle, privateKeyBytes, chainBytes);

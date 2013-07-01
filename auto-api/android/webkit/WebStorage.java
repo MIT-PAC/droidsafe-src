@@ -464,7 +464,8 @@ public final class WebStorage {
 
     
         private static Set nativeGetOrigins() {
-                //DSFIXME:  This shouldn't happen!
+        	return new HashSet();
+        	
     }
 
     

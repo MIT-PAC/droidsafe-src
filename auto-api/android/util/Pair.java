@@ -31,7 +31,7 @@ public class Pair<F, S> {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1713083783 = (o == this);
         } //End collapsed parenthetic
-        Pair<F, S> other;
+        Pair<F, S> other = null;
         try 
         {
             other = (Pair<F, S>) o;

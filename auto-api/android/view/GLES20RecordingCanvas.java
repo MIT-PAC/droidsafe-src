@@ -682,20 +682,5 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
                 public void onReleased(GLES20RecordingCanvas element) {
                 }
             }, POOL_LIMIT));
-    // orphaned legacy method
-    @Override
-                public void onAcquired(GLES20RecordingCanvas element) {
-                }
-    
-    // orphaned legacy method
-    @Override
-                public void onReleased(GLES20RecordingCanvas element) {
-                }
-    
-    // orphaned legacy method
-    public GLES20RecordingCanvas newInstance() {
-                    return new GLES20RecordingCanvas();
-                }
-    
 }
 

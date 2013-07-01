@@ -1468,7 +1468,9 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             int maxDistNonRequested = 0;
             int maxDistIndexNonRequested = -1;
             {
-                int i = mIndexRemoteViews.keySet()[0];
+                Iterator<Integer> iter = mIndexRemoteViews.keySet().iterator();
+                iter.hasNext();
+                int i = iter.next();
                 {
                     int dist = Math.abs(i-pos);
                     {

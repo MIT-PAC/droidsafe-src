@@ -16,22 +16,11 @@ public abstract class UtteranceProgressListener {
         //Synthesized constructor
     }
 
+            public abstract void onStart(String utteranceId);
 
-    @Override
-            public void onStart(String utteranceId) {
-            }
+            public abstract void onDone(String utteranceId);
 
-    
-    @Override
-            public synchronized void onDone(String utteranceId) {
-                listener.onUtteranceCompleted(utteranceId);
-            }
-
-    
-    @Override
-            public void onError(String utteranceId) {
-                listener.onUtteranceCompleted(utteranceId);
-            }
+            public abstract void onError(String utteranceId);
 
     
     static UtteranceProgressListener from(

@@ -81,7 +81,7 @@ public class PluginManager {
                 ResolveInfo info = var8A2D23B813CDF90B9AB363F41DBCEF8F_2067923416.next();
                 {
                     ServiceInfo serviceInfo = info.serviceInfo;
-                    PackageInfo pkgInfo;
+                    PackageInfo pkgInfo = null;
                     try 
                     {
                         pkgInfo = pm.getPackageInfo(serviceInfo.packageName,

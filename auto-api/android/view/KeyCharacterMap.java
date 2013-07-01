@@ -80,7 +80,8 @@ public class KeyCharacterMap {
 
     
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
-                //DSFIXME:  This shouldn't happen!
+    	KeyEvent[] k = new KeyEvent[1];
+    	return  k;
     }
 
     

@@ -269,17 +269,6 @@ public final class SpellCheckerSubtype implements Parcelable {
             return new SpellCheckerSubtype[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public SpellCheckerSubtype createFromParcel(Parcel source) {
-            return new SpellCheckerSubtype(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public SpellCheckerSubtype[] newArray(int size) {
-            return new SpellCheckerSubtype[size];
-        }
     
 }
 

@@ -110,7 +110,12 @@ public class EGLImpl implements EGL10 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "7F0F6E22A72F3EFD03B53C72B8A334B5", hash_generated_method = "FD75A226178BC0A876B19864D0D93C7A")
     public String eglQueryString(EGLDisplay display, int name) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	addTaint(display.getTaint());
+    	addTaint(name);
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
+    	//DSFIXME: source
     }
 
     

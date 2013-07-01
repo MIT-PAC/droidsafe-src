@@ -10,6 +10,7 @@ import java.util.Iterator;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Browser;
@@ -184,7 +185,8 @@ public final class WebIconDatabase {
 
     
     private static Bitmap nativeIconForPageUrl(String url) {
-                //DSFIXME:  This shouldn't happen!
+    	Bitmap bm = BitmapFactory.decodeByteArray(new byte[1], 0, 0);
+    	return bm; // DSFIXME: definitely a source
     }
 
     

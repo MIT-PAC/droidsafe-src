@@ -544,7 +544,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                     parseTag(recTlv, recNum);
                 } //End block
             } //End collapsed parenthetic
-            addTaint(records[0].getTaint());
+            addTaint(records.getTaint());
             // ---------- Original Method ----------
             //mFileIds = new HashMap<Integer, Map<Integer, Integer>>();
             //SimTlv recTlv;

@@ -144,7 +144,7 @@ public class DataCallState {
                                 {
                                     addrPrefixLen = 0;
                                 } //End block
-                                InetAddress ia;
+                                InetAddress ia = null;
                                 try 
                                 {
                                     ia = NetworkUtils.numericToInetAddress(addr);
@@ -185,7 +185,7 @@ public class DataCallState {
                                 } //End block
                                 catch (IllegalArgumentException e)
                                 {
-                                    if (DroidSafeAndroidRuntime.control) throw new UnknownHostException("Non-numeric dns addr=" + addr);
+                                	throw new UnknownHostException("Non-numeric dns addr=" + addr);
                                 } //End block
                                 {
                                     boolean var4018297529DD3FE6783E85542C17AE62_2004702865 = (! ia.isAnyLocalAddress());
@@ -214,7 +214,7 @@ public class DataCallState {
                                 } //End block
                                 catch (IllegalArgumentException e)
                                 {
-                                    if (DroidSafeAndroidRuntime.control) throw new UnknownHostException("Non-numeric dns addr=" + dnsAddr);
+                                	throw new UnknownHostException("Non-numeric dns addr=" + dnsAddr);
                                 } //End block
                                 {
                                     boolean var4018297529DD3FE6783E85542C17AE62_1825970350 = (! ia.isAnyLocalAddress());
@@ -251,7 +251,7 @@ public class DataCallState {
                             } //End block
                             catch (IllegalArgumentException e)
                             {
-                                if (DroidSafeAndroidRuntime.control) throw new UnknownHostException("Non-numeric gateway addr=" + addr);
+                            	throw new UnknownHostException("Non-numeric gateway addr=" + addr);
                             } //End block
                             {
                                 boolean varBB1F85E17F84871B2D79DF63B70EB29F_51714425 = (! ia.isAnyLocalAddress());

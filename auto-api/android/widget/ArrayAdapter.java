@@ -412,7 +412,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         } //End block
         catch (ClassCastException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
+        	throw new IllegalStateException(
                     "ArrayAdapter requires the resource ID to be a TextView", e);
         } //End block
         T item = getItem(position);

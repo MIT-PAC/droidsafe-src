@@ -958,7 +958,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
         Drawable varB4EAC82CA7396A68D541C85D26508E83_1431439062 = null; //Variable for return #3
         Drawable varB4EAC82CA7396A68D541C85D26508E83_635193383 = null; //Variable for return #4
         PackageManager pm = mContext.getPackageManager();
-        ActivityInfo activityInfo;
+        ActivityInfo activityInfo = null;
         try 
         {
             activityInfo = pm.getActivityInfo(component, PackageManager.GET_META_DATA);

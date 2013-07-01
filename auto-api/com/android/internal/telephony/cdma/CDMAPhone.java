@@ -527,9 +527,7 @@ public class CDMAPhone extends PhoneBase {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.010 -0400", hash_original_method = "C4CAEF0C07F27C620A5D9B835D3227D9", hash_generated_method = "BA3B5AAEB841E7D511F645CA14FFC0EE")
     public Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
-        if (DroidSafeAndroidRuntime.control) throw new CallStateException("Sending UUS information NOT supported in CDMA!");
-        addTaint(dialString.getTaint());
-        addTaint(uusInfo.getTaint());
+    	throw new CallStateException("Sending UUS information NOT supported in CDMA!");
         // ---------- Original Method ----------
         //throw new CallStateException("Sending UUS information NOT supported in CDMA!");
     }

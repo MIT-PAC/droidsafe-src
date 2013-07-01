@@ -238,7 +238,7 @@ public class StaticLayout extends Layout {
         Spanned spanned = null;
         spanned = (Spanned) source;
         int DEFAULT_DIR = DIR_LEFT_TO_RIGHT;
-        int paraEnd;
+        int paraEnd = 0;
         {
             int paraStart = bufStart;
             paraStart = paraEnd;
@@ -312,7 +312,7 @@ public class StaticLayout extends Layout {
                 {
                     int spanStart = paraStart;
                     int spanEnd = spanStart;
-                    int nextSpanStart;
+                    int nextSpanStart = spanEnd;
                     spanStart = nextSpanStart;
                     {
                         {

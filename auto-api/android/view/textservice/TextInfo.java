@@ -131,17 +131,5 @@ public final class TextInfo implements Parcelable {
             return new TextInfo[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public TextInfo createFromParcel(Parcel source) {
-            return new TextInfo(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public TextInfo[] newArray(int size) {
-            return new TextInfo[size];
-        }
-    
 }
 

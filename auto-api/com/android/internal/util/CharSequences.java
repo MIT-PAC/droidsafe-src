@@ -92,35 +92,5 @@ public class CharSequences {
         }
         return myLen - anotherLen;
     }
-
-    
-    // orphaned legacy method
-    public int length() {
-                return end - start;
-            }
-    
-    // orphaned legacy method
-    public char charAt(int index) {
-                return (char) bytes[index + start];
-            }
-    
-    // orphaned legacy method
-    public CharSequence subSequence(int newStart, int newEnd) {
-                newStart -= start;
-                newEnd -= start;
-                validate(newStart, newEnd, length());
-                return forAsciiBytes(bytes, newStart, newEnd);
-            }
-    
-    // orphaned legacy method
-    public CharSequence subSequence(int start, int end) {
-                return forAsciiBytes(bytes, start, end);
-            }
-    
-    // orphaned legacy method
-    public String toString() {
-                return new String(bytes, start, length());
-            }
-    
 }
 

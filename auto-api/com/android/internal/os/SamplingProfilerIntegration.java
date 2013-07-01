@@ -188,19 +188,5 @@ public class SamplingProfilerIntegration {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.708 -0400", hash_original_field = "B9A6573709935C9B3FECAA4DEC3B7269", hash_generated_field = "3B0F262BDAD418B2BF1C2FBAE7548781")
 
     private static long startMillis;
-    // orphaned legacy method
-    public void run() {
-                    try {
-                        writeSnapshotFile(processName, packageInfo);
-                    } finally {
-                        pending.set(false);
-                    }
-                }
-    
-    // orphaned legacy method
-    public Thread newThread(Runnable r) {
-                            return new Thread(r, TAG);
-                        }
-    
 }
 

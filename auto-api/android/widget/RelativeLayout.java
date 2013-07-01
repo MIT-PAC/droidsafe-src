@@ -247,18 +247,14 @@ public class RelativeLayout extends ViewGroup {
         {
             d(LOG_TAG, "=== Ordered list of vertical children");
             {
-                Iterator<View> varC55AB14B8416106CB8012AA1776957AF_1512460395 = (mSortedVerticalChildren).iterator();
-                varC55AB14B8416106CB8012AA1776957AF_1512460395.hasNext();
-                View view = varC55AB14B8416106CB8012AA1776957AF_1512460395.next();
+                View view = mSortedVerticalChildren[0];
                 {
                     DependencyGraph.printViewId(getResources(), view);
                 } //End block
             } //End collapsed parenthetic
             d(LOG_TAG, "=== Ordered list of horizontal children");
             {
-                Iterator<View> varDABE4B4241CB29641506235DE1A67B7A_1973264680 = (mSortedHorizontalChildren).iterator();
-                varDABE4B4241CB29641506235DE1A67B7A_1973264680.hasNext();
-                View view = varDABE4B4241CB29641506235DE1A67B7A_1973264680.next();
+                View view = mSortedVerticalChildren[0];
                 {
                     DependencyGraph.printViewId(getResources(), view);
                 } //End block

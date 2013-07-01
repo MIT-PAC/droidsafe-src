@@ -60,7 +60,7 @@ abstract class WebSyncManager implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.051 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "485516C5E5A309F67F3624B095CDFF25")
     protected Object clone() throws CloneNotSupportedException {
-        if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("doesn't implement Cloneable");
+    	throw new CloneNotSupportedException("doesn't implement Cloneable");
         // ---------- Original Method ----------
         //throw new CloneNotSupportedException("doesn't implement Cloneable");
     }

@@ -364,8 +364,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.586 -0400", hash_original_method = "763B49CF567916F2535D5913B399980B", hash_generated_method = "C5721A9908C237CA78BF248DD1772C1C")
     @Override
     public MenuView getMenuView(ViewGroup root) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("MenuPopupHelpers manage their own views");
-        addTaint(root.getTaint());
+    	throw new UnsupportedOperationException("MenuPopupHelpers manage their own views");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("MenuPopupHelpers manage their own views");
     }

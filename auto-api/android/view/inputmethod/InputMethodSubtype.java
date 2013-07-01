@@ -453,17 +453,6 @@ public final class InputMethodSubtype implements Parcelable {
             return new InputMethodSubtype[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public InputMethodSubtype createFromParcel(Parcel source) {
-            return new InputMethodSubtype(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public InputMethodSubtype[] newArray(int size) {
-            return new InputMethodSubtype[size];
-        }
     
 }
 

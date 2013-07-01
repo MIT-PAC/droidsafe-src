@@ -410,17 +410,5 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
             return new SuggestionSpan[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public SuggestionSpan createFromParcel(Parcel source) {
-            return new SuggestionSpan(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public SuggestionSpan[] newArray(int size) {
-            return new SuggestionSpan[size];
-        }
-    
 }
 

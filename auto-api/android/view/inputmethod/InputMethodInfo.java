@@ -492,17 +492,6 @@ public final class InputMethodInfo implements Parcelable {
             return new InputMethodInfo[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public InputMethodInfo createFromParcel(Parcel source) {
-            return new InputMethodInfo(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public InputMethodInfo[] newArray(int size) {
-            return new InputMethodInfo[size];
-        }
     
 }
 

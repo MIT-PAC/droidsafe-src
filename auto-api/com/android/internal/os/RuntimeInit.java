@@ -322,12 +322,5 @@ public class RuntimeInit {
     static {
         android.ddm.DdmRegister.registerHandlers();
     }
-    
-    // orphaned legacy method
-    @Override
-            public String getId() {
-                return SystemProperties.get("persist.sys.timezone");
-            }
-    
 }
 
