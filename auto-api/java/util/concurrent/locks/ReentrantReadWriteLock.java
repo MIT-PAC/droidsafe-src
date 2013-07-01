@@ -907,7 +907,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.912 -0400", hash_original_method = "9996D083DB29CA9E935A73F01FAD8A4F", hash_generated_method = "AA6177806CFC2176E106167AD695F2AC")
         public Condition newCondition() {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }

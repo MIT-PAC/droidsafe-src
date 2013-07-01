@@ -226,7 +226,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
         try 
         {
             {
-                Iterator<Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027 = (tasks).iterator();
+                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027 = (tasks).iterator();
                 var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027.hasNext();
                 Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_900522027.next();
                 {
@@ -289,7 +289,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
         try 
         {
             {
-                Iterator<Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440 = (tasks).iterator();
+                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440 = (tasks).iterator();
                 var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440.hasNext();
                 Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1563764440.next();
                 futures.add(newTaskFor(t));

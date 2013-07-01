@@ -46,7 +46,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         this(new HashMap<E, HashSet<E>>(collection.size() < 6 ? 11 : collection
                 .size() * 2));
         {
-            Iterator<E> var6348CF19B474F5ACF72F267EFA7F4363_1383199953 = (collection).iterator();
+            Iterator<? extends E> var6348CF19B474F5ACF72F267EFA7F4363_1383199953 = (collection).iterator();
             var6348CF19B474F5ACF72F267EFA7F4363_1383199953.hasNext();
             E e = var6348CF19B474F5ACF72F267EFA7F4363_1383199953.next();
             {

@@ -60,12 +60,8 @@ class JarVerifier {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.165 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "0AE4DE462D27C99BF7511E5F32568FA9")
-    private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
-        if (DroidSafeAndroidRuntime.control) throw new SecurityException(signatureFile + " has invalid digest for " + name +
+    private SecurityException invalidDigest(String signatureFile, String name, String jarName) {throw new SecurityException(signatureFile + " has invalid digest for " + name +
                 " in " + jarName);
-        addTaint(signatureFile.getTaint());
-        addTaint(name.getTaint());
-        addTaint(jarName.getTaint());
         // ---------- Original Method ----------
         //throw new SecurityException(signatureFile + " has invalid digest for " + name +
                 //" in " + jarName);
@@ -74,9 +70,7 @@ class JarVerifier {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.166 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "AAA875AEE235418D0232F225DF87CC81")
     private SecurityException failedVerification(String jarName, String signatureFile) {
-        if (DroidSafeAndroidRuntime.control) throw new SecurityException(jarName + " failed verification of " + signatureFile);
-        addTaint(jarName.getTaint());
-        addTaint(signatureFile.getTaint());
+    	throw new SecurityException(jarName + " failed verification of " + signatureFile);
         // ---------- Original Method ----------
         //throw new SecurityException(jarName + " failed verification of " + signatureFile);
     }
@@ -331,7 +325,7 @@ class JarVerifier {
                     md = MessageDigest.getInstance(algorithm);
                 } //End block
                 catch (NoSuchAlgorithmException e)
-                { }
+                { return false; }
                 {
                     md.update(data, start, end - 1 - start);
                 } //End block

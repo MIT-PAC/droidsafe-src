@@ -198,7 +198,8 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.832 -0400", hash_original_method = "E6B31C0538AF64C15CAF5AB43FC9524E", hash_generated_method = "A636F3E139EB80DA222248E8ED9B4C28")
     protected Object clone() throws java.lang.CloneNotSupportedException {
-        if (DroidSafeAndroidRuntime.control) throw new java.lang.CloneNotSupportedException();
+        throw new java.lang.CloneNotSupportedException();
+        //if (DroidSafeAndroidRuntime.control) throw new java.lang.CloneNotSupportedException();
         // ---------- Original Method ----------
         //throw new java.lang.CloneNotSupportedException();
     }

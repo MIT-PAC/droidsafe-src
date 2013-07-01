@@ -3270,7 +3270,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.540 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "3CAF377124FBFCFBABACDE8606964B0B")
         @Override
         public Set<Entry<K, V>> entrySet() {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
@@ -3374,7 +3374,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.546 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "3CAF377124FBFCFBABACDE8606964B0B")
         @Override
         public Set<Entry<K, V>> entrySet() {
-            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        	throw new UnsupportedOperationException();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }

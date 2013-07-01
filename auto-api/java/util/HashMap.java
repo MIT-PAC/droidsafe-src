@@ -158,7 +158,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         } //End block
         catch (CloneNotSupportedException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
+        	throw new AssertionError(e);
         } //End block
         result.makeTable(table.length);
         result.entryForNullKey = null;

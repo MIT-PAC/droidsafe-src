@@ -254,6 +254,7 @@ public class Logger {
                     catch (Exception invalidHandlerName)
                     {
                         invalidHandlerName.printStackTrace();
+                        return;
                     } //End block
                     try 
                     {
