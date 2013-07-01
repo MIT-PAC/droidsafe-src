@@ -305,6 +305,7 @@ public abstract class SAXParser {
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
+        return (Schema)new Object();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException(
             //"This parser does not support specification \""

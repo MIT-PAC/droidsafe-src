@@ -580,7 +580,9 @@ public final class CacheManager {
 
     
     private static CacheResult nativeGetCacheResult(String url) {
-                //DSFIXME:  This shouldn't happen!
+    	CacheResult ret = new CacheResult();
+    	ret.taint.addTaint(url.taint);
+    	return ret;
     }
 
     

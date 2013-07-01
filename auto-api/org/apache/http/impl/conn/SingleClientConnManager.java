@@ -464,8 +464,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
     // orphaned legacy method
     public ManagedClientConnection getConnection(
                     long timeout, TimeUnit tunit) {
-                return SingleClientConnManager.this.getConnection(
-                        route, state);
+    			return SingleClientConnManager.this.getConnection(timeout, tunit);
             }
     
     // orphaned legacy method

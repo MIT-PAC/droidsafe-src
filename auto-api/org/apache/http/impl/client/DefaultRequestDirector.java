@@ -577,7 +577,7 @@ public class DefaultRequestDirector implements RequestDirector {
             String scheme = null;
             String host = null;
             String path = null;
-            URI uri;
+            URI uri = null;
             {
                 boolean var6E2EF0BAC6262EB08DC0911589D41BDF_498979171 = (request instanceof HttpUriRequest
                     && (uri = ((HttpUriRequest) request).getURI()) != null);

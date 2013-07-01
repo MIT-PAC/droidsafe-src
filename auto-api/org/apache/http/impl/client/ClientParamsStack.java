@@ -177,6 +177,10 @@ public class ClientParamsStack extends AbstractHttpParams {
             ("Setting parameters in a stack is not supported.");
         addTaint(name.getTaint());
         addTaint(value.getTaint());
+        
+        HttpParams params = (HttpParams) new Object();
+        params.addTaint(getTaint());
+        return params;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException
             //("Setting parameters in a stack is not supported.");
