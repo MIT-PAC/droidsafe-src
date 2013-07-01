@@ -565,7 +565,7 @@ public class SIPDate implements Cloneable, Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.261 -0400", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "D4DC2576D7F7C96B45BE0D330213C8FA")
     public Object clone() {
         Object varB4EAC82CA7396A68D541C85D26508E83_1888916688 = null; //Variable for return #1
-        SIPDate retval;
+        SIPDate retval = null;
         try 
         {
             retval = (SIPDate) super.clone();

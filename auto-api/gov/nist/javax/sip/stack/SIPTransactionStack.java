@@ -1013,7 +1013,7 @@ public abstract class SIPTransactionStack implements SIPTransactionEventListener
             } //End block
             {
                 {
-                    Iterator<Dialog> var13FA49F9AC884432F840638793CBDD7F_1729385353 = (this.dialogTable.values()).iterator();
+                    Iterator<SIPDialog> var13FA49F9AC884432F840638793CBDD7F_1729385353 = (this.dialogTable.values()).iterator();
                     var13FA49F9AC884432F840638793CBDD7F_1729385353.hasNext();
                     Dialog dialog = var13FA49F9AC884432F840638793CBDD7F_1729385353.next();
                     {
