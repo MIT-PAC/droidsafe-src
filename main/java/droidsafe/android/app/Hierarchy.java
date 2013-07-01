@@ -25,8 +25,11 @@ import soot.SootMethodRef;
 public class Hierarchy {
 	
 	private static Hierarchy v;
+	/** Set of classes that implement an Android component class */
 	private List<SootClass> appComponents;
+	/** Set of activities in the application */
 	private Set<SootClass> activities;
+	
 	
 	/**
 	 * Return the singleton hierarchy object for this application.
@@ -109,7 +112,8 @@ public class Hierarchy {
 	
 	/**
 	 * Returns true if this class extends or implements from a class / interface
-	 * defined in the android.jar.
+	 * defined in the android.jar.  Note, this will return true if the class
+	 * inherits from java.lang.Object.
 	 */
 	public boolean inheritsFromAndroid(SootClass clz) {
 		return systemParents(clz).size() > 0;

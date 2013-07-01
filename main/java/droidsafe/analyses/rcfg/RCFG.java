@@ -1,5 +1,8 @@
 package droidsafe.analyses.rcfg;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -72,6 +75,8 @@ public class RCFG {
     private static RCFG v;
     /** methods we have visiting while building the rCFG */
     private Set<SootMethod> visitedMethods;
+    /** File name for output of unreachable user methods */
+    private static final String UNREACHABLES_FILE_NAME = "unreachable-user-methods.txt"; 
 
     /** list of names of methods to ignore when creating the RCFG output events */
     private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = 
@@ -146,8 +151,9 @@ public class RCFG {
                 startAtEntry(e);
             }
         }
+        
         //print unreachable methods to the debug log
-        checkForUnreachableMethods();
+        printUnreachableSrcMethods();
     }
 
     /**
@@ -198,7 +204,9 @@ public class RCFG {
         //next add calls that can happen in the runtime for any
         //api objects that are created, process each edge
         edgesFromAPIAllocs(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
-
+        
+        apiEdgesFromNullReceivers(rCFGNode, context, method, appEdgesOut, allEdges);
+        
         //recurse into all calls of app methods
         for (Edge edge : appEdgesOut) {
             logger.debug("Visiting edge: {}", edge);
@@ -209,6 +217,50 @@ public class RCFG {
         //maybe cache methods at a certain depth if there are other edges into it
     }
 
+    /**
+     * Find possible api edges that we missed because the call had no allocs for the receiver.
+     */
+    private void apiEdgesFromNullReceivers(RCFGNode rCFGNode, Edge context, SootMethod method, 
+                                        Set<Edge> appEdgesOut, Set<Edge> allEdges) {
+        
+        //loop over statements, find instance invokes, see if they have a alloc set, etc.
+        if (!method.isConcrete())
+            return;
+     
+        StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+
+        // get body's unit as a chain
+        Chain<Unit> units = stmtBody.getUnits();
+        // get a snapshot iterator of the unit since we are going to
+        // mutate the chain when iterating over it.
+        Iterator<Unit> stmtIt = units.snapshotIterator();
+
+        while (stmtIt.hasNext()) {
+            Stmt stmt = (Stmt)stmtIt.next();
+            InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
+            
+            if (iie == null)
+                continue;
+            
+            Set<AllocNode> allocs = GeoPTA.v().getPTSet(iie.getBase(), context);
+            if (allocs.isEmpty()) {
+
+                //somehow fake the call
+                Set<SootMethod> allMethods = 
+                        SootUtils.getOverridingMethodsIncluding(iie.getMethod().getDeclaringClass(), 
+                            iie.getMethodRef().getSubSignature().getString());
+
+                for (SootMethod m : allMethods) {
+                    if (API.v().isSystemMethod(m)) {
+                        Edge newEdge = new Edge(method, stmt, m);
+                        processEdge(rCFGNode, newEdge, context, null, appEdgesOut, allEdges, 1);
+                    }
+                }
+            }
+        }
+    }
+    
+    
     /** 
      * Found an edge that could be an output event or an app edge, 
      * 
@@ -220,7 +272,7 @@ public class RCFG {
                              AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges, int debug) {
 
         allEdges.add(edge);
-        //logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
+        logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
         if (API.v().isSystemMethod(edge.tgt())) {
             //add output events for interesting methods only
             if (API.v().isInterestingMethod(edge.tgt()) &&
@@ -238,23 +290,17 @@ public class RCFG {
     }
 
     /**
-     * Check that we have considered all invoke statements in the code of the method.
+     * Find and return a string of all invoke statements that could invoke an API call.
      */
-    private void checkForCompleteness(Set<Edge> edges, SootMethod src) {
+    private String checkForCompleteness(SootMethod src) {
 
         if (!src.isConcrete())
-            return;
+            return "";
 
         if (Project.v().isLibClass(src.getDeclaringClass().toString()))
-            return;
+            return "";
 
-        //first build a set with all invokes we in the edges list
-        Set<Stmt> invokes = new LinkedHashSet<Stmt>();
-        for (Edge edge : edges) {
-            invokes.add(edge.srcStmt());
-        }
-
-
+        StringBuilder strBuilder = new StringBuilder();
         StmtBody stmtBody = (StmtBody)src.retrieveActiveBody();
 
         // get body's unit as a chain
@@ -270,28 +316,49 @@ public class RCFG {
                 continue;
             InvokeExpr invokeExpr = stmt.getInvokeExpr();
 
-            if (!invokes.contains(stmt))
-                logger.info("Found invoke statement that was not in the callgraph edge list when build rCFG:" +
-                        " {} in {} (might be dead code)", stmt, src);
-
+            SootMethod method = invokeExpr.getMethod();
+            
+            if (API.v().isInterestingMethod(method))
+                strBuilder.append("\t" + method + "\n");
         }
+        
+        return strBuilder.toString();
     }
 
     /**
      * Loop over methods in the application we did not hit, because the analysis thinks they
-     * are unreachable, and inform the user of any calls in unreachable methods.
+     * are unreachable, and inform the user of any api calls in unreachable methods.
      */
-    private void checkForUnreachableMethods() {
-        for (SootClass clz : Scene.v().getClasses()) {
-            if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString()) &&
-                    !Project.v().isGenClass(clz.toString())) {
-                for (SootMethod method : clz.getMethods()) {
-                    if (!visitedMethods.contains(method) && method.isDeclared()) {
-                        checkForCompleteness(new LinkedHashSet<Edge>(), method);
+    private void printUnreachableSrcMethods() {
+
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + UNREACHABLES_FILE_NAME);
+            
+            fw.write("# Unreachable Methods and the api calls they Invoke \n");
+            fw.write("# DroidSafe determined that these methods are unreachable, but that may be unsound\n");
+            fw.write("# due to Android api errors or omissions.\n\n");
+            
+            
+            for (SootClass clz : Scene.v().getClasses()) {
+                if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString()) &&
+                        !Project.v().isGenClass(clz.toString())) {
+                    for (SootMethod method : clz.getMethods()) {
+                        if (!visitedMethods.contains(method)) {
+                            String apiCalls = checkForCompleteness(method);
+                            
+                            if (!apiCalls.isEmpty()) {
+                                fw.write(method + ":\n" + apiCalls + "\n\n");
+                            }
+                        }
                     }
                 }
             }
-        }
+            
+            fw.close();
+        } catch (IOException e) {
+            logger.error("Error writing unreachable user methods summary files.");
+            droidsafe.main.Main.exit(1);
+        } 
     }
 
     /***
@@ -368,7 +435,7 @@ public class RCFG {
 
                         for (SootMethod m : allMethods) {
                             Edge newEdge = new Edge(src, stmt, m);
-                            System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
+                            //System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
                             processEdge(rCFGNode, newEdge, context, alloc, appEdgesOut, allEdges, 1);
                         }
                     }
@@ -412,8 +479,8 @@ public class RCFG {
         //iterate over all the ci edges from soot, and check to see
         //if they are valid given the context
         while (ciEdges.hasNext()) {
-
             Edge curEdge = ciEdges.next();
+            
             //System.out.printf("inspecting edge: %s %s %s\n", curEdge, curEdge.hashCode(), curEdge.srcStmt());
             SootMethod target = curEdge.tgt();
             //get the internal edge from the CS analysis
@@ -427,14 +494,15 @@ public class RCFG {
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
             if (iie != null) {    
                 try {
+                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveVirtualInvokeMap(iie, context);
                     for (Map.Entry<AllocNode, SootMethod> entry: 
-                        GeoPTA.v().resolveVirtualInvokeMap(iie, context).entrySet()) {
+                        virtualCallMap.entrySet()) {
                         // Only the virtual calls do the following test
                         if ( entry.getValue() == target ) {
                             processEdge(rCFGNode, curEdge, context, entry.getKey(), appEdgesOut, allEdges, 4);
                             break;
                         }   
-                    }
+                    } 
                 } catch (CannotFindMethodException e) {
                     logger.error("Cannot resolve method during RCFG creation: {}", iie);
                     droidsafe.main.Main.exit(1);
@@ -444,7 +512,7 @@ public class RCFG {
             }
         }
     }
-
+    
     /** 
      * Return true if the class of the input event is in the ignore list, and thus the 
      * input event should be ignored.
