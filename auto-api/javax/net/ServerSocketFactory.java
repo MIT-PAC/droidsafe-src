@@ -30,7 +30,7 @@ public abstract class ServerSocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.426 -0400", hash_original_method = "698CB8A5B4145A1BDB9AB7D216CE6832", hash_generated_method = "E17B1C6F11E272EF5328B87C8A39725D")
     public ServerSocket createServerSocket() throws IOException {
-        throw new SocketException("Unbound server sockets not implemented");
+        if (DroidSafeAndroidRuntime.control) throw new SocketException("Unbound server sockets not implemented");
         // ---------- Original Method ----------
         //throw new SocketException("Unbound server sockets not implemented");
         return new ServerSocket();
