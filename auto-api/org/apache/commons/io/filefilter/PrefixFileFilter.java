@@ -100,9 +100,9 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public boolean accept(File file) {
         String name = file.getName();
         {
-            Iterator<String> var98C669A857944B4526CB9DC2FE1EC119_1607582392 = (this.prefixes).iterator();
-            var98C669A857944B4526CB9DC2FE1EC119_1607582392.hasNext();
-            String prefix = var98C669A857944B4526CB9DC2FE1EC119_1607582392.next();
+            //Iterator<String> var98C669A857944B4526CB9DC2FE1EC119_1607582392 = (this.prefixes).iterator();
+            //var98C669A857944B4526CB9DC2FE1EC119_1607582392.hasNext();
+            String prefix = this.prefixes[0];
             {
                 {
                     boolean var112396BEC915222BC05CB4EFD4DD6376_788313734 = (caseSensitivity.checkStartsWith(name, prefix));
@@ -127,9 +127,9 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     @Override
     public boolean accept(File file, String name) {
         {
-            Iterator<String> var00D98A86401AE6211A371DB8CDF5D96D_1295123264 = (prefixes).iterator();
-            var00D98A86401AE6211A371DB8CDF5D96D_1295123264.hasNext();
-            String prefix = var00D98A86401AE6211A371DB8CDF5D96D_1295123264.next();
+            //Iterator<String> var00D98A86401AE6211A371DB8CDF5D96D_1295123264 = (prefixes).iterator();
+            //var00D98A86401AE6211A371DB8CDF5D96D_1295123264.hasNext();
+            String prefix = prefixes[0];
             {
                 {
                     boolean var112396BEC915222BC05CB4EFD4DD6376_1012003643 = (caseSensitivity.checkStartsWith(name, prefix));

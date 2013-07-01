@@ -80,6 +80,7 @@ public final class ReasonFlags {
             super.setEncodingContent(out);
         }
     };
+    /*
     // orphaned legacy method
     public void setEncodingContent(BerOutputStream out) {
             out.content = ((ReasonFlags) out.content).flags;
@@ -91,5 +92,6 @@ public final class ReasonFlags {
             return new ReasonFlags((boolean[]) super.getDecodedObject(in));
         }
     
+    */
 }
 

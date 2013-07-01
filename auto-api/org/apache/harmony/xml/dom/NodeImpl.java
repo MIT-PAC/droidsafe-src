@@ -39,8 +39,8 @@ public abstract class NodeImpl implements Node {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.315 -0400", hash_original_method = "2014C4DBC7F925271C7D07A1BBA7C167", hash_generated_method = "79482AFAA555B5637FF2DF58F8E2AAF9")
     public Node appendChild(Node newChild) throws DOMException {
-        if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         addTaint(newChild.getTaint());
+        throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         // ---------- Original Method ----------
         //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
@@ -224,9 +224,9 @@ public abstract class NodeImpl implements Node {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.339 -0400", hash_original_method = "02900D7407B8981D4618C0943B784132", hash_generated_method = "617F6B66ECDBA72611816581457BD4A3")
     public Node insertBefore(Node newChild, Node refChild) throws DOMException {
-        if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         addTaint(newChild.getTaint());
         addTaint(refChild.getTaint());
+        throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         // ---------- Original Method ----------
         //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
@@ -252,8 +252,8 @@ public abstract class NodeImpl implements Node {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.340 -0400", hash_original_method = "C0BCC4253F844D2665FCB84131264ACF", hash_generated_method = "FE717F7796FE21AB7A918AF615E52C34")
     public Node removeChild(Node oldChild) throws DOMException {
-        if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         addTaint(oldChild.getTaint());
+        throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         // ---------- Original Method ----------
         //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
@@ -261,9 +261,9 @@ public abstract class NodeImpl implements Node {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.340 -0400", hash_original_method = "3CB9ABDC605D3811167E9E73D3AF8E67", hash_generated_method = "A322881ED50C77810DAE5B16E19CB0DD")
     public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
-        if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         addTaint(newChild.getTaint());
         addTaint(oldChild.getTaint());
+        throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         // ---------- Original Method ----------
         //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }

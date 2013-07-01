@@ -867,6 +867,7 @@ public abstract class LogFactory {
     }
     
     // orphaned legacy method
+    /*
     public Object run() {
                     try {
                         InputStream stream = url.openStream();
@@ -883,6 +884,7 @@ public abstract class LogFactory {
                     }
                     return null;
                 }
+    */
     
 }
 

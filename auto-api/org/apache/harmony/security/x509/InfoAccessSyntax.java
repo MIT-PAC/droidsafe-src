@@ -68,7 +68,7 @@ public final class InfoAccessSyntax extends ExtensionValue {
         res.append("\n---- InfoAccessSyntax:");
         {
             {
-                Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_332091518 = (accessDescriptions).iterator();
+                Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_332091518 = (Iterator<Object>) (accessDescriptions).iterator();
                 var5E094A91BA5D34A81EEFA278B694B106_332091518.hasNext();
                 Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_332091518.next();
                 {
@@ -106,7 +106,7 @@ public final class InfoAccessSyntax extends ExtensionValue {
             } //End block
             {
                 {
-                    Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_1625829309 = (accessDescriptions).iterator();
+                    Iterator<Object> var5E094A91BA5D34A81EEFA278B694B106_1625829309 = (Iterator<Object>) (accessDescriptions).iterator();
                     var5E094A91BA5D34A81EEFA278B694B106_1625829309.hasNext();
                     Object accessDescription = var5E094A91BA5D34A81EEFA278B694B106_1625829309.next();
                     {
@@ -140,6 +140,7 @@ public final class InfoAccessSyntax extends ExtensionValue {
             return ((InfoAccessSyntax) object).accessDescriptions;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection getValues(Object object) {
             return ((InfoAccessSyntax) object).accessDescriptions;
@@ -150,5 +151,6 @@ public final class InfoAccessSyntax extends ExtensionValue {
             return new InfoAccessSyntax((List<?>) in.content, in.getEncoded());
         }
     
+    */
 }
 

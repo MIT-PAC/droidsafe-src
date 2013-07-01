@@ -112,6 +112,7 @@ public final class DistributionPoint {
             values[2] = dp.cRLIssuer;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             DistributionPoint dp = (DistributionPoint) object;
@@ -127,5 +128,6 @@ public final class DistributionPoint {
                     (ReasonFlags) values[1], (GeneralNames) values[2]);
         }
     
+    */
 }
 

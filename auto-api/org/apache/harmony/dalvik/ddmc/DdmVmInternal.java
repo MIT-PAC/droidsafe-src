@@ -40,7 +40,9 @@ public class DdmVmInternal {
 
     
     public static StackTraceElement[] getStackTraceById(int threadId) {
-                //DSFIXME:  This shouldn't happen!
+    	StackTraceElement[] ste = new StackTraceElement[]{new StackTraceElement()};
+    	ste[0].taint.addTaint(threadId);
+    	return ste;
     }
 
     

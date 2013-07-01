@@ -74,6 +74,7 @@ public final class EDIPartyName {
             values[1] = epn.partyName;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             EDIPartyName epn = (EDIPartyName) object;
@@ -88,5 +89,6 @@ public final class EDIPartyName {
                     in.getEncoded());
         }
     
+    */
 }
 

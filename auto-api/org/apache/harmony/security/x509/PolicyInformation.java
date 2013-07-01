@@ -83,6 +83,7 @@ public final class PolicyInformation {
             values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             PolicyInformation pi = (PolicyInformation) object;
@@ -95,5 +96,6 @@ public final class PolicyInformation {
             return new PolicyInformation(ObjectIdentifier.toString((int[]) values[0]));
         }
     
+    */
 }
 

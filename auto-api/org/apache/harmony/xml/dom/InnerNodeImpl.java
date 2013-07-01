@@ -45,7 +45,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
         NodeList varB4EAC82CA7396A68D541C85D26508E83_172396503 = null; //Variable for return #1
         NodeListImpl list = new NodeListImpl();
         {
-            Iterator<NodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1663059677 = (children).iterator();
+            Iterator<LeafNodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1663059677 = (children).iterator();
             varF58ADF1EBC9DDE72E3BE9125144A2DC8_1663059677.hasNext();
             NodeImpl node = varF58ADF1EBC9DDE72E3BE9125144A2DC8_1663059677.next();
             {
@@ -235,7 +235,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.160 -0400", hash_original_method = "2E387D6B5E2ABD0B7044442BD7493DDC", hash_generated_method = "D16AA0D292629F344208EC0D260A51E0")
     @Override
     public final void normalize() {
-        Node next;
+        Node next = null;
         {
             Node node = getFirstChild();
             node = next;
@@ -420,7 +420,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.170 -0400", hash_original_method = "FBC9DCE28E1410ABABC4D8105012C635", hash_generated_method = "BC7C693F4F82967C67619D63D719B936")
      void getElementsByTagName(NodeListImpl out, String name) {
         {
-            Iterator<NodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_96871479 = (children).iterator();
+            Iterator<LeafNodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_96871479 = (children).iterator();
             varF58ADF1EBC9DDE72E3BE9125144A2DC8_96871479.hasNext();
             NodeImpl node = varF58ADF1EBC9DDE72E3BE9125144A2DC8_96871479.next();
             {
@@ -457,7 +457,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.175 -0400", hash_original_method = "E06ADC8546BD526D25CE87ECAD401587", hash_generated_method = "5FFFFB5011B1E75071E2100E8621C193")
      void getElementsByTagNameNS(NodeListImpl out, String namespaceURI, String localName) {
         {
-            Iterator<NodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1031272512 = (children).iterator();
+            Iterator<LeafNodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1031272512 = (children).iterator();
             varF58ADF1EBC9DDE72E3BE9125144A2DC8_1031272512.hasNext();
             NodeImpl node = varF58ADF1EBC9DDE72E3BE9125144A2DC8_1031272512.next();
             {

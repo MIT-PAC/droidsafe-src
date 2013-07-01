@@ -267,6 +267,7 @@ public final class SignerInfo {
         }
    };
     // orphaned legacy method
+   /*
     @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new SignerInfo(
@@ -300,5 +301,6 @@ public final class SignerInfo {
             values[6] = si.unauthenticatedAttributes;
         }
     
+    */
 }
 

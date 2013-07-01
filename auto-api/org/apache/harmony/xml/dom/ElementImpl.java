@@ -254,7 +254,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
         Element varB4EAC82CA7396A68D541C85D26508E83_405773705 = null; //Variable for return #3
         Element varB4EAC82CA7396A68D541C85D26508E83_1138650721 = null; //Variable for return #4
         {
-            Iterator<Attr> var85569F768AA62BA2E033CE436AD30008_270620055 = (attributes).iterator();
+            Iterator<AttrImpl> var85569F768AA62BA2E033CE436AD30008_270620055 = (attributes).iterator();
             var85569F768AA62BA2E033CE436AD30008_270620055.hasNext();
             Attr attr = var85569F768AA62BA2E033CE436AD30008_270620055.next();
             {
@@ -273,7 +273,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<NodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1460517762 = (children).iterator();
+            Iterator<LeafNodeImpl> varF58ADF1EBC9DDE72E3BE9125144A2DC8_1460517762 = (children).iterator();
             varF58ADF1EBC9DDE72E3BE9125144A2DC8_1460517762.hasNext();
             NodeImpl node = varF58ADF1EBC9DDE72E3BE9125144A2DC8_1460517762.next();
             {

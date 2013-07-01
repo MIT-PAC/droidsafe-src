@@ -453,6 +453,7 @@ public final class TBSCertList {
                 values[2] = rcert.crlEntryExtensions;
             }
         };
+        /*
         // orphaned legacy method
         @Override protected void getValues(Object object, Object[] values) {
                 RevokedCertificate rcert = (RevokedCertificate) object;
@@ -471,6 +472,7 @@ public final class TBSCertList {
                         );
             }
         
+        */
     }
 
 
@@ -521,6 +523,7 @@ public final class TBSCertList {
             values[6] = tbs.crlExtensions;
         }
     };
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             TBSCertList tbs = (TBSCertList) object;
@@ -551,5 +554,6 @@ public final class TBSCertList {
                     );
         }
     
+    */
 }
 

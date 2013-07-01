@@ -440,6 +440,7 @@ public final class AttributeTypeAndValue {
             }
         }
     
+    /*
     // orphaned legacy method
     @Override protected void getValues(Object object, Object[] values) {
             AttributeTypeAndValue atav = (AttributeTypeAndValue) object;
@@ -453,11 +454,13 @@ public final class AttributeTypeAndValue {
             return new AttributeTypeAndValue((int[]) values[0], (AttributeValue) values[1]);
         }
     
+    */
     // orphaned legacy method
     public boolean checkTag(int tag) {
             return true;
         }
     
+    /*
     // orphaned legacy method
     @Override public int getEncodedLength(BerOutputStream out) { 
             AttributeValue av = (AttributeValue) out.content;
@@ -481,6 +484,7 @@ public final class AttributeTypeAndValue {
                 out.encodeString();
             }
         }
+    */
     
     // orphaned legacy method
     public Object decode(BerInputStream in) throws IOException {

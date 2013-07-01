@@ -398,8 +398,8 @@ public abstract class HandshakeProtocol {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.187 -0400", hash_original_method = "B5635FDA5542E47B9F75EEEF571EFF38", hash_generated_method = "C44E96A83E7BDD2779031CF983A5074B")
     protected void computerVerifyDataSSLv3(byte[] sender, byte[] buf) {
-        MessageDigest md5;
-        MessageDigest sha;
+        MessageDigest md5 = null;
+        MessageDigest sha = null;
         try 
         {
             md5 = MessageDigest.getInstance("MD5");

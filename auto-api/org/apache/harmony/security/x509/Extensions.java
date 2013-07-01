@@ -212,7 +212,7 @@ public final class Extensions {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.941 -0400", hash_original_method = "67C71F044BBB9B405BEFA4564A602892", hash_generated_method = "CE32495C5ABE025AEC3B4EEBD5BC3DE1")
     public boolean[] valueOfKeyUsage() {
         Extension extension = getExtensionByOID("2.5.29.15");
-        KeyUsage kUsage;
+        KeyUsage kUsage = null;
         {
             boolean varF3595B2B157720F192ED02C0BBBDFB37_1652842127 = ((extension == null) || ((kUsage = extension.getKeyUsageValue()) == null));
         } //End collapsed parenthetic
@@ -261,7 +261,7 @@ public final class Extensions {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.944 -0400", hash_original_method = "CD9DAABD8089C73414664CD384AA791C", hash_generated_method = "1E6F7C2C52C89E07132CF9A17E51402D")
     public int valueOfBasicConstrains() {
         Extension extension = getExtensionByOID("2.5.29.19");
-        BasicConstraints bc;
+        BasicConstraints bc = null;
         {
             boolean varD6D8B93AD6192498EF11D9085C76974A_1042069418 = ((extension == null) || ((bc = extension.getBasicConstraintsValue()) == null));
         } //End collapsed parenthetic
@@ -464,6 +464,7 @@ public final class Extensions {
             return (extensions.extensions == null) ? new ArrayList() : extensions.extensions;
         }
     };
+    /*
     // orphaned legacy method
     @Override public Collection getValues(Object object) {
             Extensions extensions = (Extensions) object;
@@ -474,6 +475,6 @@ public final class Extensions {
     @Override public Object getDecodedObject(BerInputStream in) {
             return new Extensions((List<Extension>) in.content);
         }
-    
+   */ 
 }
 
