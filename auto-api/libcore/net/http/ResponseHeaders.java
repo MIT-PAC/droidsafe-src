@@ -163,9 +163,7 @@ public final class ResponseHeaders {
                                                         } //End block
                                                     } //End collapsed parenthetic
                                                     {
-                                                        Iterator<String> var154416020BE200D943446034B260BA51_1343928621 = (value.split(",")).iterator();
-                                                        var154416020BE200D943446034B260BA51_1343928621.hasNext();
-                                                        String varyField = var154416020BE200D943446034B260BA51_1343928621.next();
+                                                        String varyField = value.split(",")[0];
                                                         {
                                                             varyFields.add(varyField.trim());
                                                         } //End block
@@ -814,22 +812,5 @@ public final class ResponseHeaders {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.667 -0400", hash_original_field = "DDACC30001586FA5A6ADAB14BD771FAB", hash_generated_field = "AFD1C82C7B74A7F57C473B3A0514C0CC")
 
     private static final String RECEIVED_MILLIS = "X-Android-Received-Millis";
-    // orphaned legacy method
-    @Override public void handle(String directive, String parameter) {
-                if (directive.equalsIgnoreCase("no-cache")) {
-                    noCache = true;
-                } else if (directive.equalsIgnoreCase("no-store")) {
-                    noStore = true;
-                } else if (directive.equalsIgnoreCase("max-age")) {
-                    maxAgeSeconds = HeaderParser.parseSeconds(parameter);
-                } else if (directive.equalsIgnoreCase("s-maxage")) {
-                    sMaxAgeSeconds = HeaderParser.parseSeconds(parameter);
-                } else if (directive.equalsIgnoreCase("public")) {
-                    isPublic = true;
-                } else if (directive.equalsIgnoreCase("must-revalidate")) {
-                    mustRevalidate = true;
-                }
-            }
-    
 }
 

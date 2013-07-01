@@ -461,15 +461,6 @@ public class SingleClientConnManager implements ClientConnectionManager {
     public final static String MISUSE_MESSAGE =
     "Invalid use of SingleClientConnManager: connection still allocated.\n" +
     "Make sure to release the connection before allocating another one.";
-    // orphaned legacy method
-    public ManagedClientConnection getConnection(
-                    long timeout, TimeUnit tunit) {
-    			return SingleClientConnManager.this.getConnection(timeout, tunit);
-            }
-    
-    // orphaned legacy method
-    public void abortRequest() {
-            }
     
 }
 

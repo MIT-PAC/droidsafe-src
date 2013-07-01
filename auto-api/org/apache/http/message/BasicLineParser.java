@@ -107,7 +107,7 @@ public class BasicLineParser implements LineParser {
         } //End block
         catch (NumberFormatException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ParseException
+        	throw new ParseException
                 ("Invalid protocol major version number: " + 
                  buffer.substring(indexFrom, indexTo));
         } //End block
@@ -123,7 +123,7 @@ public class BasicLineParser implements LineParser {
         } //End block
         catch (NumberFormatException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new ParseException(
+        	throw new ParseException(
                 "Invalid protocol minor version number: " + 
                 buffer.substring(indexFrom, indexTo));
         } //End block

@@ -767,25 +767,5 @@ public class ConnPoolByRoute extends AbstractConnPool {
             //poolLock.unlock();
         //}
     }
-
-    
-    // orphaned legacy method
-    public BasicPoolEntry getPoolEntry(
-                    long timeout,
-                    TimeUnit tunit)
-                        throws InterruptedException, ConnectionPoolTimeoutException {
-                return getEntryBlocking(route, state, timeout, tunit, aborter);
-            }
-    
-    // orphaned legacy method
-    public void abortRequest() {
-                poolLock.lock();
-                try {
-                    aborter.abort();
-                } finally {
-                    poolLock.unlock();
-                }
-            }
-    
 }
 

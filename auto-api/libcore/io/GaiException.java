@@ -66,8 +66,7 @@ public final class GaiException extends RuntimeException {
     public UnknownHostException rethrowAsUnknownHostException(String detailMessage) throws UnknownHostException {
         UnknownHostException newException = new UnknownHostException(detailMessage);
         newException.initCause(this);
-        if (DroidSafeAndroidRuntime.control) throw newException;
-        addTaint(detailMessage.getTaint());
+        throw newException;
         // ---------- Original Method ----------
         //UnknownHostException newException = new UnknownHostException(detailMessage);
         //newException.initCause(this);
@@ -77,7 +76,7 @@ public final class GaiException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.115 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "1F1035B2C54E0A812B5D92858BC61427")
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
-        if (DroidSafeAndroidRuntime.control) throw rethrowAsUnknownHostException(getMessage());
+    	throw rethrowAsUnknownHostException(getMessage());
         // ---------- Original Method ----------
         //throw rethrowAsUnknownHostException(getMessage());
     }

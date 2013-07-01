@@ -49,9 +49,7 @@ public abstract class CookieSpecBase extends AbstractCookieSpec {
         List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1060870520 = null; //Variable for return #1
         List<Cookie> cookies = new ArrayList<Cookie>(elems.length);
         {
-            Iterator<HeaderElement> var64E4248F3E9583EF9C3B3FA1CE66BA8F_1122194688 = (elems).iterator();
-            var64E4248F3E9583EF9C3B3FA1CE66BA8F_1122194688.hasNext();
-            HeaderElement headerelement = var64E4248F3E9583EF9C3B3FA1CE66BA8F_1122194688.next();
+            HeaderElement headerelement = elems[0];
             {
                 String name = headerelement.getName();
                 String value = headerelement.getValue();

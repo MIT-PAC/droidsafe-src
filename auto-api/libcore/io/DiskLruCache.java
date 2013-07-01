@@ -791,9 +791,7 @@ public final class DiskLruCache implements Closeable {
         @Override
         public void close() {
             {
-                Iterator<InputStream> var395649F0A5A2CED044849C6D2E7C0EE8_1528156953 = (ins).iterator();
-                var395649F0A5A2CED044849C6D2E7C0EE8_1528156953.hasNext();
-                InputStream in = var395649F0A5A2CED044849C6D2E7C0EE8_1528156953.next();
+                InputStream in = ins[0];
                 {
                     IoUtils.closeQuietly(in);
                 } //End block
@@ -1145,8 +1143,7 @@ public final class DiskLruCache implements Closeable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.017 -0400", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "D6244078B0DF0446716611B264ECFCE5")
         private IOException invalidLengths(String[] strings) throws IOException {
-            if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + Arrays.toString(strings));
-            addTaint(strings[0].getTaint());
+        	throw new IOException("unexpected journal line: " + Arrays.toString(strings));
             // ---------- Original Method ----------
             //throw new IOException("unexpected journal line: " + Arrays.toString(strings));
         }

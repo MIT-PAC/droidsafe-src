@@ -120,7 +120,7 @@ public final class HttpResponseCache extends ResponseCache {
         } //End block
         catch (IOException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1438153327 = null;
+        	return null;
         } //End block
         {
             boolean var7D158C8C8D146A47EF280B1AAB085822_571608166 = (!entry.matches(uri, requestMethod, requestHeaders));
@@ -789,9 +789,7 @@ public final class HttpResponseCache extends ResponseCache {
             {
                 writer.write(Integer.toString(certificates.length) + '\n');
                 {
-                    Iterator<Certificate> var7EE4E12E9D6FC4CD0C5BC82D3516CBC4_2125266633 = (certificates).iterator();
-                    var7EE4E12E9D6FC4CD0C5BC82D3516CBC4_2125266633.hasNext();
-                    Certificate certificate = var7EE4E12E9D6FC4CD0C5BC82D3516CBC4_2125266633.next();
+                    Certificate certificate = certificates[0];
                     {
                         byte[] bytes = certificate.getEncoded();
                         String line = Base64.encode(bytes);

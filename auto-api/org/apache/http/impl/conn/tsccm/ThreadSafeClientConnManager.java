@@ -270,33 +270,5 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     }
 
     
-    // orphaned legacy method
-    public ManagedClientConnection getConnection(
-                    long timeout, TimeUnit tunit) throws InterruptedException,
-                    ConnectionPoolTimeoutException {
-                if (route == null) {
-                    throw new IllegalArgumentException("Route may not be null.");
-                }
-                if (log.isDebugEnabled()) {
-                    log.debug("ThreadSafeClientConnManager.getConnection: "
-                        + route + ", timeout = " + timeout);
-                }
-                BasicPoolEntry entry = poolRequest.getPoolEntry(timeout, tunit);
-                try {
-                    final Socket socket = entry.getConnection().getSocket();
-                    if (socket != null) {
-                        SocketTagger.get().tag(socket);
-                    }
-                } catch (IOException iox) {
-                    log.debug("Problem tagging socket.", iox);
-                }
-                return new BasicPooledConnAdapter(ThreadSafeClientConnManager.this, entry);
-            }
-    
-    // orphaned legacy method
-    public void abortRequest() {
-                poolRequest.abortRequest();
-            }
-    
 }
 

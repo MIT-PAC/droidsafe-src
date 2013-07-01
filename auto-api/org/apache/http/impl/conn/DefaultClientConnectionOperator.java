@@ -195,7 +195,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
         } //End block
         catch (ConnectException ex)
         {
-            if (DroidSafeAndroidRuntime.control) throw new HttpHostConnectException(target, ex);
+        	throw new HttpHostConnectException(target, ex);
         } //End block
         prepareSocket(sock, context, params);
         conn.update(sock, target, lsf.isSecure(sock), params);

@@ -573,22 +573,5 @@ public final class RequestHeaders {
             //}
         //}
     }
-
-    
-    // orphaned legacy method
-    @Override public void handle(String directive, String parameter) {
-                if (directive.equalsIgnoreCase("no-cache")) {
-                    noCache = true;
-                } else if (directive.equalsIgnoreCase("max-age")) {
-                    maxAgeSeconds = HeaderParser.parseSeconds(parameter);
-                } else if (directive.equalsIgnoreCase("max-stale")) {
-                    maxStaleSeconds = HeaderParser.parseSeconds(parameter);
-                } else if (directive.equalsIgnoreCase("min-fresh")) {
-                    minFreshSeconds = HeaderParser.parseSeconds(parameter);
-                } else if (directive.equalsIgnoreCase("only-if-cached")) {
-                    onlyIfCached = true;
-                }
-            }
-    
 }
 

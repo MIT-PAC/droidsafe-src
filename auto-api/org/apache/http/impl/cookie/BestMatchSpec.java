@@ -126,9 +126,7 @@ public class BestMatchSpec implements CookieSpec {
         boolean versioned = false;
         boolean netscape = false;
         {
-            Iterator<HeaderElement> var439D9EF276A31E7FACE3630192C7AAE7_931942007 = (helems).iterator();
-            var439D9EF276A31E7FACE3630192C7AAE7_931942007.hasNext();
-            HeaderElement helem = var439D9EF276A31E7FACE3630192C7AAE7_931942007.next();
+            HeaderElement helem = helems[0];
             {
                 {
                     boolean varE34162F97A451B6F70D25E27B65335FF_402891061 = (helem.getParameterByName("version") != null);
