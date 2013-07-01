@@ -311,7 +311,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         } //End block
         catch (UnsupportedEncodingException e)
         {
-            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
+            throw new AssertionError(e);
         } //End block
         ArrayList<String> values = new ArrayList<String>();
         int start = 0;

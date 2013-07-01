@@ -846,16 +846,6 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
 
     private static final String TAG = "ContentProvider";
     // orphaned legacy method
-    @Override
-                protected Object doInBackground(Object... params) {
-                    func.writeDataToPipe(fds[1], uri, mimeType, opts, args);
-                    try {
-                        fds[1].close();
-                    } catch (IOException e) {
-                        Log.w(TAG, "Failure closing pipe", e);
-                    }
-                    return null;
-                }
-    
+       
 }
 

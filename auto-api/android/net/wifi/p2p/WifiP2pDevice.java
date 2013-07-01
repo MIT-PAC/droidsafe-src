@@ -57,9 +57,7 @@ public class WifiP2pDevice implements Parcelable {
             deviceAddress = string;
         } //End block
         {
-            Iterator<String> varD67D8F347A2D26FE6847991011252D61_11406408 = (tokens).iterator();
-            varD67D8F347A2D26FE6847991011252D61_11406408.hasNext();
-            String token = varD67D8F347A2D26FE6847991011252D61_11406408.next();
+            String token = tokens[0];
             {
                 String[] nameValue = token.split("=");
                 {

@@ -121,27 +121,6 @@ public final class TransceiveResult implements Parcelable {
             return new TransceiveResult[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public TransceiveResult createFromParcel(Parcel in) {
-            int result = in.readInt();
-            byte[] responseData;
-
-            if (result == RESULT_SUCCESS) {
-                int responseLength = in.readInt();
-                responseData = new byte[responseLength];
-                in.readByteArray(responseData);
-            } else {
-                responseData = null;
-            }
-            return new TransceiveResult(result, responseData);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public TransceiveResult[] newArray(int size) {
-            return new TransceiveResult[size];
-        }
-    
+   
 }
 

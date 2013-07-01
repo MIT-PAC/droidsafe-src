@@ -116,9 +116,7 @@ public class WifiConfiguration implements Parcelable {
             wepKeys[i] = null;
         } //End collapsed parenthetic
         {
-            Iterator<EnterpriseField> var678F2F58729F4ED0BC9B36F9AFA65128_783114894 = (enterpriseFields).iterator();
-            var678F2F58729F4ED0BC9B36F9AFA65128_783114894.hasNext();
-            EnterpriseField field = var678F2F58729F4ED0BC9B36F9AFA65128_783114894.next();
+            EnterpriseField field = enterpriseFields[0];
             {
                 field.setValue(null);
             } //End block

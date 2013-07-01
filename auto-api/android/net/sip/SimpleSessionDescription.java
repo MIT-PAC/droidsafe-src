@@ -45,9 +45,8 @@ public class SimpleSessionDescription {
         String[] lines = message.trim().replaceAll(" +", " ").split("[\r\n]+");
         Fields fields = mFields;
         {
-            Iterator<String> varCF93D539A3E58828AD23375CCE318758_475713531 = (lines).iterator();
-            varCF93D539A3E58828AD23375CCE318758_475713531.hasNext();
-            String line = varCF93D539A3E58828AD23375CCE318758_475713531.next();
+
+            String line = lines[0];
             {
                 try 
                 {
@@ -66,9 +65,8 @@ public class SimpleSessionDescription {
                             (ports.length < 2) ? 1 : Integer.parseInt(ports[1]),
                             parts[2]);//DSFIXME:  CODE0008: Nested ternary operator in expression
                             {
-                                Iterator<String> varB518E18E62D7B28384963CA02D6A0575_1109591231 = (parts[3].split(" ")).iterator();
-                                varB518E18E62D7B28384963CA02D6A0575_1109591231.hasNext();
-                                String format = varB518E18E62D7B28384963CA02D6A0575_1109591231.next();
+                                
+                                String format = parts[3].split(" ")[0];
                                 {
                                     media.setFormat(format, null);
                                 } //End block

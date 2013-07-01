@@ -408,14 +408,7 @@ public class Binder implements IBinder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.890 -0400", hash_original_field = "3147923060A83925CA1E6CB29A0BFBA4", hash_generated_field = "CF05878F048D3E24EFB57B124A2E1127")
 
     private static final String TAG = "Binder";
-    // orphaned legacy method
-    public void run() {
-                try {
-                    dump(fd, pw, args);
-                } finally {
-                    pw.flush();
-                }
-            }
+
     
 }
 
@@ -466,7 +459,9 @@ final class BinderProxy implements IBinder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "EA4B3F54BFD9578B1A4BA99DF2C0FDB9")
     public String getInterfaceDescriptor() throws RemoteException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        String s = new String();
+        s.addTaint(this.taint);
+        return s;
     }
 
     

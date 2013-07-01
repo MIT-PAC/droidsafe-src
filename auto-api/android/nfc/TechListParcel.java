@@ -86,22 +86,6 @@ public class TechListParcel implements Parcelable {
             return new TechListParcel[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public TechListParcel createFromParcel(Parcel source) {
-            int count = source.readInt();
-            String[][] techLists = new String[count][];
-            for (int i = 0; i < count; i++) {
-                techLists[i] = source.readStringArray();
-            }
-            return new TechListParcel(techLists);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public TechListParcel[] newArray(int size) {
-            return new TechListParcel[size];
-        }
-    
+        
 }
 

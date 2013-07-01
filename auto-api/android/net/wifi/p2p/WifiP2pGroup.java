@@ -52,9 +52,7 @@ public class WifiP2pGroup implements Parcelable {
                 mInterface = tokens[1];
                 mIsGroupOwner = tokens[2].equals("GO");
                 {
-                    Iterator<String> varD67D8F347A2D26FE6847991011252D61_284510690 = (tokens).iterator();
-                    varD67D8F347A2D26FE6847991011252D61_284510690.hasNext();
-                    String token = varD67D8F347A2D26FE6847991011252D61_284510690.next();
+                    String token = tokens[0];
                     {
                         String[] nameValue = token.split("=");
                         {
@@ -82,9 +80,7 @@ public class WifiP2pGroup implements Parcelable {
                 boolean varED019E61DDA09D9AB4B17841FE657010_843632570 = (tokens[0].equals("P2P-INVITATION-RECEIVED"));
                 {
                     {
-                        Iterator<String> varD67D8F347A2D26FE6847991011252D61_793293130 = (tokens).iterator();
-                        varD67D8F347A2D26FE6847991011252D61_793293130.hasNext();
-                        String token = varD67D8F347A2D26FE6847991011252D61_793293130.next();
+                    	String token = tokens[0];
                         {
                             String[] nameValue = token.split("=");
                             {

@@ -47,7 +47,7 @@ public class AudioSystem {
 
     
     public static String getParameters(String keys) {
-                //DSFIXME:  This shouldn't happen!
+    	return new String();
     }
 
     

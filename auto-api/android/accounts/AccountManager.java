@@ -307,7 +307,7 @@ public class AccountManager {
         }.start();
         addTaint(type.getTaint());
         addTaint(features[0].getTaint());
-        addTaint(callback[0].getTaint());
+        addTaint(callback.getTaint());
         addTaint(handler.getTaint());
         varB4EAC82CA7396A68D541C85D26508E83_983205156.addTaint(getTaint()); //Add taint from parent
         return varB4EAC82CA7396A68D541C85D26508E83_983205156;

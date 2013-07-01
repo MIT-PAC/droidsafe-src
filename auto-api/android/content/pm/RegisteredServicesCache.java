@@ -706,11 +706,7 @@ public abstract class RegisteredServicesCache<V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.092 -0400", hash_original_field = "799B1C7045AB9A1990EA02A1923DD877", hash_generated_field = "E87B09140D2B39BDC1A082AB48B400E2")
 
     private static final String TAG = "PackageManager";
-    // orphaned legacy method
-    @Override
-            public void onReceive(Context context1, Intent intent) {
-                generateServicesMap();
-            }
+   
     
 }
 

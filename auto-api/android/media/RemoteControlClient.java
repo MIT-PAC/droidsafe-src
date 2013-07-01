@@ -566,7 +566,7 @@ public class RemoteControlClient {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.472 -0400", hash_original_method = "3FF219DE1407B1650498BA4CB70E771E", hash_generated_method = "8733CE8F5E836126EF8C3D827D0AABA1")
         public Object clone() throws CloneNotSupportedException {
-            if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
+            throw new CloneNotSupportedException();
             // ---------- Original Method ----------
             //throw new CloneNotSupportedException();
         }

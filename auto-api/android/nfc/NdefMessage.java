@@ -159,20 +159,6 @@ public final class NdefMessage implements Parcelable {
             return new NdefMessage[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public NdefMessage createFromParcel(Parcel in) {
-            int recordsLength = in.readInt();
-            NdefRecord[] records = new NdefRecord[recordsLength];
-            in.readTypedArray(records, NdefRecord.CREATOR);
-            return new NdefMessage(records);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public NdefMessage[] newArray(int size) {
-            return new NdefMessage[size];
-        }
     
 }
 

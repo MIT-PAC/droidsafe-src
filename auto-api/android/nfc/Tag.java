@@ -432,33 +432,6 @@ public final class Tag implements Parcelable {
             return new Tag[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public Tag createFromParcel(Parcel in) {
-            INfcTag tagService;
-
-            
-            byte[] id = Tag.readBytesWithNull(in);
-            int[] techList = new int[in.readInt()];
-            in.readIntArray(techList);
-            Bundle[] techExtras = in.createTypedArray(Bundle.CREATOR);
-            int serviceHandle = in.readInt();
-            int isMock = in.readInt();
-            if (isMock == 0) {
-                tagService = INfcTag.Stub.asInterface(in.readStrongBinder());
-            }
-            else {
-                tagService = null;
-            }
-
-            return new Tag(id, techList, techExtras, serviceHandle, tagService);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public Tag[] newArray(int size) {
-            return new Tag[size];
-        }
-    
+   
 }
 

@@ -81,13 +81,13 @@ public class Movie {
 
     
     public static Movie decodeStream(InputStream is) {
-                //DSFIXME:  This shouldn't happen!
+    	return new Movie(0);
     }
 
     
     public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
-                //DSFIXME:  This shouldn't happen!
+    	return new Movie(0);
     }
 
     

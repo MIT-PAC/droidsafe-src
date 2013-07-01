@@ -721,7 +721,9 @@ public class MediaPlayer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.387 -0400", hash_original_method = "E7BF05B3622AAF2F5F3BF2C4557A0B3B", hash_generated_method = "BE7FFC2E098F8066660793B3DA145138")
     public Bitmap getFrameAt(int msec) throws IllegalStateException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        Bitmap bm = new Bitmap();
+        bm.addTaint(this.taint);
+        return bm;
     }
 
     

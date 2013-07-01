@@ -1,19 +1,22 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-
-// needed for enhanced for control translations
-import java.util.Iterator;
-import android.os.ParcelFileDescriptor;
-import android.util.Log;
-import android.util.TypedValue;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+// needed for enhanced for control translations
+import java.util.Iterator;
+
+import android.os.ParcelFileDescriptor;
+import android.util.TypedValue;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class AssetManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.388 -0400", hash_original_field = "89FC4D18C6865D9655DB03AE7EA21F19", hash_generated_field = "184B6A2C79F6E655DC652C734EA9E31F")

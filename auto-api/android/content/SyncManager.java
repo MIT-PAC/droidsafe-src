@@ -960,7 +960,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         pw.println();
         pw.println("SyncAdapters:");
         {
-            Iterator<ServiceInfo<SyncAdapterType>> var66FF787B46917F4C470825A4AACF9C4B_1213736860 = (mSyncAdapters.getAllServices()).iterator();
+            Iterator<RegisteredServicesCache.ServiceInfo<SyncAdapterType>> var66FF787B46917F4C470825A4AACF9C4B_1213736860 = (mSyncAdapters.getAllServices()).iterator();
             var66FF787B46917F4C470825A4AACF9C4B_1213736860.hasNext();
             RegisteredServicesCache.ServiceInfo info = var66FF787B46917F4C470825A4AACF9C4B_1213736860.next();
             {

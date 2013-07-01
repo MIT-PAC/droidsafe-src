@@ -271,7 +271,7 @@ public class LocalSocket {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.216 -0400", hash_original_method = "F9B2122C93F2E3BBD4E1C8511037E48C", hash_generated_method = "C792F183FB2E709EF24CB3BBD46C7852")
     public LocalSocketAddress getRemoteSocketAddress() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

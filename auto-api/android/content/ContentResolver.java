@@ -1841,9 +1841,6 @@ public abstract class ContentResolver {
 
     private static final String TAG = "ContentResolver";
     // orphaned legacy method
-    public void onStatusChanged(int which) throws RemoteException {
-                    callback.onStatusChanged(which);
-                }
-    
+        
 }
 

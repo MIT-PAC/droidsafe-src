@@ -101,7 +101,9 @@ class LocalSocketImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "91E7A83B201CCE6F03E99B6B97993D3C", hash_generated_method = "BF4DB921189260FDA30B994461CFCF87")
     private FileDescriptor create_native(boolean stream) throws IOException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        FileDescriptor fd = new FileDescriptor();
+        fd.addTaint(this.taint);
+        return fd;
     }
 
     
@@ -118,7 +120,9 @@ class LocalSocketImpl {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "0137F99D53D5E10D02D5A211BB31B969", hash_generated_method = "5F1B13E48615D9E4FD0789735B8F4C85")
     private Credentials getPeerCredentials_native(
             FileDescriptor fd) throws IOException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Credentials creds = new Credentials(0, 0, 0);
+    	creds.addTaint(this.taint);
+    	return creds;
     }
 
     
@@ -137,7 +141,9 @@ class LocalSocketImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.249 -0400", hash_original_method = "AD93B21D07861EA052C26EC40030E4DA", hash_generated_method = "0BA24B5688D235E53CBDA81423459803")
     private FileDescriptor accept(FileDescriptor fd, LocalSocketImpl s) throws IOException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        FileDescriptor fd2 = new FileDescriptor();
+        fd2.addTaint(this.taint);
+        return fd2;
     }
 
     

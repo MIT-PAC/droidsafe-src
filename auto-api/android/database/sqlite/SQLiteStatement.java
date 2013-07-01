@@ -368,13 +368,14 @@ public class SQLiteStatement extends SQLiteProgram {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "07DFC0F07DCBF43769548BE4FBA916EE", hash_generated_method = "28030A1C7DC39244AA70D827443E96B9")
     private final String native_1x1_string() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String foo = new String();
+    	return foo;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "D5A94C086543C65F36827FC2C8B73314", hash_generated_method = "2FF5ECD0A356350F1F45EEEF9C01561B")
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new ParcelFileDescriptor();
     }
 
     

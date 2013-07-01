@@ -66,7 +66,7 @@ public class NetworkUtils {
 
     
     public static String getDhcpError() {
-                //DSFIXME:  This shouldn't happen!
+    	return new String();
     }
 
     

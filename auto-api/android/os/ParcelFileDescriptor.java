@@ -27,6 +27,10 @@ public class ParcelFileDescriptor implements Parcelable {
 
     private ParcelFileDescriptor mParcelDescriptor;
     
+    public ParcelFileDescriptor() {
+    	
+    }
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.865 -0400", hash_original_method = "DB42A2A8BBE574C2950DCEEDDCE79B62", hash_generated_method = "0D84580F8C4180A00E40F7A16F093250")
     public  ParcelFileDescriptor(ParcelFileDescriptor descriptor) {
         super();
@@ -97,7 +101,7 @@ public class ParcelFileDescriptor implements Parcelable {
 
     
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
-                //DSFIXME:  This shouldn't happen!
+    	return new FileDescriptor();
     }
 
     
@@ -108,7 +112,7 @@ public class ParcelFileDescriptor implements Parcelable {
 
     
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
-                //DSFIXME:  This shouldn't happen!
+    	return new FileDescriptor();
     }
 
     
