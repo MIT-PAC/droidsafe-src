@@ -1690,8 +1690,9 @@ public final class Parcel {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.814 -0400", hash_original_method = "5B57CBCFFAE68CC288C10DD7232B6ED1", hash_generated_method = "44CAE844D4E5A4CBF2E99C7605E5B931")
 	public final IBinder readStrongBinder() {
-		// DSFIXME: CODE0013: Native method returns a complex type and requires
-		// manual reviews
+		Binder b = new Binder();
+		b.addTaint(this.taint);
+		return b;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.815 -0400", hash_original_method = "624419D3E87C84C27536CFAE1C7248DF", hash_generated_method = "9584F170256FC97C276440AE5E1C9420")
