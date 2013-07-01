@@ -908,9 +908,8 @@ public class KeyStore {
             } //End collapsed parenthetic
             boolean isAllX509Certificates = true;
             {
-                Iterator<Certificate> varB335C8C1C3504C9C715374E281DA5D4A_719463562 = (chain).iterator();
-                varB335C8C1C3504C9C715374E281DA5D4A_719463562.hasNext();
-                Certificate cert = varB335C8C1C3504C9C715374E281DA5D4A_719463562.next();
+                
+                Certificate cert = chain[0];
                 {
                     {
                         isAllX509Certificates = false;

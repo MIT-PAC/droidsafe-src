@@ -1058,7 +1058,7 @@ public class SimpleDateFormat extends DateFormat {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        Date date;
+        Date date = null;
         try 
         {
             date = calendar.getTime();
@@ -1111,7 +1111,7 @@ public class SimpleDateFormat extends DateFormat {
         Number varB4EAC82CA7396A68D541C85D26508E83_1229379496 = null; //Variable for return #1
         Number varB4EAC82CA7396A68D541C85D26508E83_184289852 = null; //Variable for return #2
         Number varB4EAC82CA7396A68D541C85D26508E83_1854145775 = null; //Variable for return #3
-        int digit;
+        int digit = 0;
         int length = string.length();
         int result = 0;
         int index = position.getIndex();

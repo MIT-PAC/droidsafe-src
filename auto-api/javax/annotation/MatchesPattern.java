@@ -1,19 +1,14 @@
 package javax.annotation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-
-// needed for enhanced for control translations
-import java.util.Iterator;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.regex.Pattern;
-import javax.annotation.meta.TypeQualifier;
+
 import javax.annotation.meta.TypeQualifierValidator;
 import javax.annotation.meta.When;
+// needed for enhanced for control translations
 
 @Documented @TypeQualifier(applicableTo = String.class) @Retention(RetentionPolicy.RUNTIME) public @interface MatchesPattern {
     @RegEx

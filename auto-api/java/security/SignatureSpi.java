@@ -190,7 +190,7 @@ protected abstract void engineSetParameter(String param, Object value)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.880 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "7D60887B06E007D941A2154E83C7DFA5")
     protected AlgorithmParameters engineGetParameters() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

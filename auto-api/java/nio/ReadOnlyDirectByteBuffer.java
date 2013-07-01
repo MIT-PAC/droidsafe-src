@@ -44,7 +44,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.884 -0400", hash_original_method = "E9BD68C2A3E399E8B6F437AA7B03F4EC", hash_generated_method = "D5E46093681AF6A8F8AD951CFA704E70")
     @Override
     public ByteBuffer compact() {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -75,8 +75,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.887 -0400", hash_original_method = "7260EDFD38A12D119BC6271ED3EA27DF", hash_generated_method = "2C6BD91056AC353F93B58588DABF2E82")
     @Override
     public ByteBuffer put(byte value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+        throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -85,9 +85,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.888 -0400", hash_original_method = "1C2CBE90B4E9D1A3B1F660933A2EE69D", hash_generated_method = "02C99795A90A724D78B7854ECEF3A2CC")
     @Override
     public ByteBuffer put(int index, byte value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -96,10 +94,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.889 -0400", hash_original_method = "951D4EAC88501D9206E4E1A989B35D3E", hash_generated_method = "FDF56450842EBED47B98E414D691AC0C")
     @Override
     public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(src[0]);
-        addTaint(srcOffset);
-        addTaint(byteCount);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -108,8 +103,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.890 -0400", hash_original_method = "A805DD85D5AD0B04A08295FCAF525294", hash_generated_method = "D70859699741A6891DCEA0F5409BEFC2")
     @Override
     public ByteBuffer putDouble(double value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+        throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -118,9 +113,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.890 -0400", hash_original_method = "B21C449764944752357064F64E16A04C", hash_generated_method = "1C7A537CC802D3829D7FC4A928A62556")
     @Override
     public ByteBuffer putDouble(int index, double value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+        throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -129,8 +123,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.891 -0400", hash_original_method = "0936EB19B88AD6A1540E67EF21842269", hash_generated_method = "7FBAE86B9FFB68D33B671BDD9D245E19")
     @Override
     public ByteBuffer putFloat(float value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+         throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -139,9 +133,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.892 -0400", hash_original_method = "6EDCFEA9CE18908F355474CE24EE73F3", hash_generated_method = "0AFEFAA6FED13154E3C147AD9EB2A042")
     @Override
     public ByteBuffer putFloat(int index, float value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -150,8 +142,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.892 -0400", hash_original_method = "6D4DC7AF194DC54CDF161D65F1FDDEA8", hash_generated_method = "CB96D7D28156A59A32CFEB7A913328E7")
     @Override
     public ByteBuffer putInt(int value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+        throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -160,9 +152,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.893 -0400", hash_original_method = "596A6D4589A1478BD0E76A52D09F2DF6", hash_generated_method = "A16FBFAB90E8A7D3AA329600BBB1BBF6")
     @Override
     public ByteBuffer putInt(int index, int value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -171,9 +161,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.893 -0400", hash_original_method = "6CDC02834F940A2320A4AB5E7F512207", hash_generated_method = "801A42EFD5AB018EC4D38A73586C4D6D")
     @Override
     public ByteBuffer putLong(int index, long value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+         throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -182,8 +170,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.894 -0400", hash_original_method = "4935387395F1528D3182F7E3202284B4", hash_generated_method = "4C2A2570CCABB47FB826876A8A454017")
     @Override
     public ByteBuffer putLong(long value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -192,9 +179,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.894 -0400", hash_original_method = "3FFCBC2284BD734FFA5002B7F6F7C258", hash_generated_method = "0BF978FBE2613C05BA52A754063443D2")
     @Override
     public ByteBuffer putShort(int index, short value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(index);
-        addTaint(value);
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -203,8 +188,8 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.895 -0400", hash_original_method = "1212B9E4C2EAD5C33D73EC873813CB4B", hash_generated_method = "415AD4B6ED60213B12BB212CE2906F94")
     @Override
     public ByteBuffer putShort(short value) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(value);
+        throw new ReadOnlyBufferException();
+        
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
@@ -213,8 +198,7 @@ final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.895 -0400", hash_original_method = "927CD040BA02D17CD9D13CDD471B3CCF", hash_generated_method = "3C60D238D34B91E8F4288E5C1E8E295A")
     @Override
     public ByteBuffer put(ByteBuffer buf) {
-        if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        addTaint(buf.getTaint());
+        throw new ReadOnlyBufferException();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }

@@ -37,9 +37,8 @@ public abstract class Charset implements Comparable<Charset> {
         this.aliasesSet = new HashSet<String>();
         {
             {
-                Iterator<String> var06384BB0465CAA9396B17F3A4E2F7242_372192098 = (aliases).iterator();
-                var06384BB0465CAA9396B17F3A4E2F7242_372192098.hasNext();
-                String alias = var06384BB0465CAA9396B17F3A4E2F7242_372192098.next();
+                
+                String alias = aliases[0];
                 {
                     checkCharsetName(alias);
                     this.aliasesSet.add(alias);

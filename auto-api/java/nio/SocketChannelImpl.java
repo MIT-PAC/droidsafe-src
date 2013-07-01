@@ -254,7 +254,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.519 -0400", hash_original_method = "06F6825183E6F900AF6E00DC91481B34", hash_generated_method = "9E9444C8E8C622F9938FAD8B7A8B35CF")
     private void initLocalAddressAndPort() {
-        SocketAddress sa;
+        SocketAddress sa = null;
         try 
         {
             sa = Libcore.os.getsockname(fd);

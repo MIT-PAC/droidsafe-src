@@ -44,7 +44,7 @@ public final class MathContext implements Serializable {
     public  MathContext(String s) {
         int precisionLength = "precision=".length();
         int roundingModeLength = "roundingMode=".length();
-        int spaceIndex;
+        int spaceIndex = 0;
         {
             boolean varE58FA2F905EE0CA86ACE28C0E63C71DD_669069295 = (!s.startsWith("precision=") || (spaceIndex = s.indexOf(' ', precisionLength)) == -1);
             {
@@ -77,9 +77,7 @@ public final class MathContext implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.928 -0400", hash_original_method = "426953F7355AB3CD325EF2685FB1287C", hash_generated_method = "F9F53B9C9B9F6DE23C1BDA476BD13DD7")
     private IllegalArgumentException invalidMathContext(String reason, String s) {
-        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(reason + ": " + s);
-        addTaint(reason.getTaint());
-        addTaint(s.getTaint());
+    	throw new IllegalArgumentException(reason + ": " + s);
         // ---------- Original Method ----------
         //throw new IllegalArgumentException(reason + ": " + s);
     }

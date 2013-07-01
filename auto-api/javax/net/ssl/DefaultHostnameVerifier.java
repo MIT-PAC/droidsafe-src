@@ -29,7 +29,7 @@ class DefaultHostnameVerifier implements HostnameVerifier {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.483 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "F0C7B4E51638CA6F146E06A88F2FBD1D")
     public final boolean verify(String host, SSLSession session) {
-        Certificate[] certs;
+        Certificate[] certs = null;
         try 
         {
             certs = session.getPeerCertificates();
@@ -187,7 +187,7 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         List<String> varB4EAC82CA7396A68D541C85D26508E83_950623639 = null; //Variable for return #1
         List<String> varB4EAC82CA7396A68D541C85D26508E83_365650371 = null; //Variable for return #2
         List<String> varB4EAC82CA7396A68D541C85D26508E83_1862439589 = null; //Variable for return #3
-        Collection<List<?>> subjectAlternativeNames;
+        Collection<List<?>> subjectAlternativeNames = null;
         try 
         {
             subjectAlternativeNames = cert.getSubjectAlternativeNames();
