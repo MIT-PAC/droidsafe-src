@@ -599,7 +599,7 @@ public class X509Name extends ASN1Encodable {
         {
             boolean var68F84D0793BBFC5B2D2B404A60842FDE_10451717 = (this.getDERObject().equals(derO));
         } //End collapsed parenthetic
-        X509Name other;
+        X509Name other = null;
         try 
         {
             other = X509Name.getInstance(obj);
@@ -680,7 +680,7 @@ public class X509Name extends ASN1Encodable {
         {
             boolean var68F84D0793BBFC5B2D2B404A60842FDE_1194858027 = (this.getDERObject().equals(derO));
         } //End collapsed parenthetic
-        X509Name other;
+        X509Name other = null;
         try 
         {
             other = X509Name.getInstance(obj);

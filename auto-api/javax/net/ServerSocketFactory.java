@@ -33,6 +33,7 @@ public abstract class ServerSocketFactory {
         throw new SocketException("Unbound server sockets not implemented");
         // ---------- Original Method ----------
         //throw new SocketException("Unbound server sockets not implemented");
+        return new ServerSocket();
     }
 
     

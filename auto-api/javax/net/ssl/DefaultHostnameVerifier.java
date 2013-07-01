@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
@@ -187,7 +188,11 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         List<String> varB4EAC82CA7396A68D541C85D26508E83_950623639 = null; //Variable for return #1
         List<String> varB4EAC82CA7396A68D541C85D26508E83_365650371 = null; //Variable for return #2
         List<String> varB4EAC82CA7396A68D541C85D26508E83_1862439589 = null; //Variable for return #3
+<<<<<<< HEAD
+        Collection<List<?>> subjectAlternativeNames = new LinkedList<List<?>>();
+=======
         Collection<List<?>> subjectAlternativeNames = null;
+>>>>>>> 37aac3a01203cfc65b07e8f7f0d7e8681e5c9979
         try 
         {
             subjectAlternativeNames = cert.getSubjectAlternativeNames();
@@ -202,10 +207,11 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         } //End block
         List<String> subjectAltList = new ArrayList<String>();
         {
-            subjectAlternativeNames.iterator().hasNext();
-            List<?> pair = subjectAlternativeNames.iterator().next();
+        	List<?> pair = (List<?>)subjectAlternativeNames.toArray()[0];
+            
             {
                 int type = (Integer) pair.get(0);
+                addTaint(type);
                 {
                     subjectAltList.add((String) pair.get(1));
                 } //End block

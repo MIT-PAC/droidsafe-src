@@ -402,36 +402,7 @@ abstract public class ASN1Set extends ASN1Object {
     }
 
     
-    // orphaned legacy method
-    public DERObject getLoadedObject()
-            {
-                return outer;
-            }
-    
-    // orphaned legacy method
-    public DEREncodable readObject() throws IOException
-            {
-                if (index == max)
-                {
-                    return null;
-                }
-                DEREncodable obj = getObjectAt(index++);
-                if (obj instanceof ASN1Sequence)
-                {
-                    return ((ASN1Sequence)obj).parser();
-                }
-                if (obj instanceof ASN1Set)
-                {
-                    return ((ASN1Set)obj).parser();
-                }
-                return obj;
-            }
-    
-    // orphaned legacy method
-    public DERObject getDERObject()
-            {
-                return outer;
-            }
+  
     
     // orphaned legacy field
     private int index;

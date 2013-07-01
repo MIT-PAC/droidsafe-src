@@ -130,6 +130,8 @@ public final class X500Principal implements Serializable, Principal {
         iae.initCause(e);
         if (DroidSafeAndroidRuntime.control) throw iae;
         addTaint(e.getTaint());
+        iae.addTaint(e.getTaint());
+        return iae;
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input encoding");
         //iae.initCause(e);
@@ -144,6 +146,9 @@ public final class X500Principal implements Serializable, Principal {
         if (DroidSafeAndroidRuntime.control) throw iae;
         addTaint(e.getTaint());
         addTaint(name.getTaint());
+        
+        iae.addTaint(e.getTaint());
+        return iae;
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input name:" + name);
         //iae.initCause(e);

@@ -34,6 +34,7 @@ public abstract class SocketFactory {
         throw new SocketException("Unconnected sockets not implemented");
         // ---------- Original Method ----------
         //throw new SocketException("Unconnected sockets not implemented");
+        return new Socket();
     }
 
     

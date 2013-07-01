@@ -58,21 +58,29 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
 		// return EmptyArray.STRING;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.495 -0400", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "CD0F0F0CDE476F807ABE0A42201BFF5C")
-	@Override
-	public ServerSocket createServerSocket(int port) throws IOException {
-		throw new SocketException(errMessage);
-		// ---------- Original Method ----------
-		// throw new SocketException(errMessage);
-	}
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.495 -0400", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "CD0F0F0CDE476F807ABE0A42201BFF5C")
+    @Override
+    public ServerSocket createServerSocket(int port) throws IOException {
+        if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
+        addTaint(port);
+        // ---------- Original Method ----------
+        //throw new SocketException(errMessage);
+        return new ServerSocket(port);
+    }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.495 -0400", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "4DA4E5590F28C7F9DA1E7B2C6BF50B3B")
-	@Override
-	public ServerSocket createServerSocket(int port, int backlog) throws IOException {
-		throw new SocketException(errMessage);
-		// ---------- Original Method ----------
-		// throw new SocketException(errMessage);
-	}
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.495 -0400", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "4DA4E5590F28C7F9DA1E7B2C6BF50B3B")
+    @Override
+    public ServerSocket createServerSocket(int port, int backlog) throws IOException {
+        if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
+        addTaint(port);
+        addTaint(backlog);
+        // ---------- Original Method ----------
+        //throw new SocketException(errMessage);
+        return new ServerSocket(port, backlog);
+    }
+
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.496 -0400", hash_original_method = "46FACB6F6AB575F914E1C4CC8DD6AA24", hash_generated_method = "3806206BD7814E64E72096C13D146997")
 	@Override

@@ -85,9 +85,7 @@ public class JSONObject {
     public  JSONObject(JSONObject copyFrom, String[] names) throws JSONException {
         this();
         {
-            Iterator<String> var0B4471083E71D104FA84944F144C9814_1162077715 = (names).iterator();
-            var0B4471083E71D104FA84944F144C9814_1162077715.hasNext();
-            String name = var0B4471083E71D104FA84944F144C9814_1162077715.next();
+            String name = names[0];
             {
                 Object value = copyFrom.opt(name);
                 {
