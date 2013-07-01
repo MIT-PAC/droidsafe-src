@@ -101,20 +101,27 @@ public final class DexFile {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "EFFED9465789BB2ED3870D97E83E0FF9")
     public Class loadClassBinaryName(String name, ClassLoader loader) {
+    	/* Removing the class loader call to defineClass
         Class varB4EAC82CA7396A68D541C85D26508E83_722685957 = null; //Variable for return #1
         varB4EAC82CA7396A68D541C85D26508E83_722685957 = defineClass(name, loader, mCookie);
+        */
         addTaint(name.getTaint());
         addTaint(loader.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_722685957.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_722685957;
+        Class newClass = (Class)new Object();
+        addTaint(newClass.getTaint());
+        return newClass;
+        //varB4EAC82CA7396A68D541C85D26508E83_722685957.addTaint(getTaint()); //Add taint from parent
+        //return varB4EAC82CA7396A68D541C85D26508E83_722685957;
         // ---------- Original Method ----------
         //return defineClass(name, loader, mCookie);
     }
 
     
+    /* Removing the class loader call to defineClass
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
                 //DSFIXME:  This shouldn't happen!
     }
+    */
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.652 -0400", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "38D5B706B89751CC14553B038B813969")
@@ -129,8 +136,8 @@ public final class DexFile {
 
     
     private static String[] getClassNameList(int cookie) {
-    	String s = new String();
-    	s.addTaint(taint);
+    	String[] s = new String[0];
+    	s.addTaint(cookie);
     	return s;
     }
 
