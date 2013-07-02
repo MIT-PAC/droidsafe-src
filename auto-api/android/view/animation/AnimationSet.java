@@ -569,12 +569,13 @@ public class AnimationSet extends Animation {
         long[] storedOffsets = mStoredOffsets;
         {
             {
-                storedOffsets = mStoredOffsets = new long[count];
+                mStoredOffsets = new long[count];
             } 
         } 
         {
-            storedOffsets = mStoredOffsets = null;
+            mStoredOffsets = null;
         } 
+        storedOffsets = mStoredOffsets; 
         {
             int i = 0;
             {
