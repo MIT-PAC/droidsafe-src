@@ -97,7 +97,9 @@ public class Main {
         logger.info("Setting Harness Main as entry point.");
         setHarnessMainAsEntryPoint();
 
-        // The JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // JSA analysis fails if it follows AddAllocsForAPICalls.run()
+        // Set up the analysis object no matter what. 
+        JSAStrings.init(Config.v());
         if (Config.v().runStringAnalysis) {
             jsaAnalysis();
         }
@@ -184,7 +186,6 @@ public class Main {
      * Run the JSA analysis
      */ 
     private static void jsaAnalysis() {
-        JSAStrings.init(Config.v());
         JSAUtils.setUpHotspots();
         JSAStrings.run();
         // Debugging.

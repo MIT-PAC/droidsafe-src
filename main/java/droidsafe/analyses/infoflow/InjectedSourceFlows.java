@@ -35,6 +35,16 @@ import soot.SootField;
 import soot.util.Chain;
 
 /**
+ * This analysis will calculate the sources of dynamic flows in the program.  Flows are attached to 
+ * allocation nodes, and are determined by the values of the fields of an allocation node, as calculated 
+ * by value analysis. 
+ * 
+ * In this class there is a list of fields, and for each field, a map of values to info kinds
+ *  
+ * One can add entries to this map to define potential dynamic flows for Android
+ * 
+ * Currently, we test for the possible dynamic value using string contains the against the values in the 
+ * map entries for the field.  If not a string, we use .equals on the objects.
  * 
  * 
  * @author mgordon and dpetters
@@ -193,6 +203,7 @@ public class InjectedSourceFlows {
         for (Object value : values) {
             for (Entry<Object, MyKind> flowTest : possibleFlows.entrySet()) {
                 boolean testTrue = false;
+                
                 System.out.printf("** Testing: %s (%s) and %s (%s)\n", value, value.getClass(), 
                     flowTest.getKey(), flowTest.getKey().getClass());
 

@@ -69,6 +69,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -138,7 +139,14 @@ public class ValueAnalysis {
     private Set<SootMethod> simulatedMethods;
 
     /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", "onActivityResult"));
+    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", 
+                "onActivityResult",
+                "query",
+                "translateIntent",
+                "toString",
+                "<init>",
+                "_init_",
+                "parse"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -190,10 +198,6 @@ public class ValueAnalysis {
         }
 
         jsa = JSAStrings.v();
-        if(!jsa.hasRun()){
-            logger.error("JSA's results are not available. Attribute analysis requires them.");
-            droidsafe.main.Main.exit(1);
-        }
     }
 
 
@@ -201,7 +205,7 @@ public class ValueAnalysis {
     // Public Methods
     //==================================================================================================================
 
-    
+
     /**
      * Getter for analysis result
      */
@@ -209,22 +213,22 @@ public class ValueAnalysis {
         return this.objectToModelMap;
     }
 
-    
+
     /**
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
         return this.objectToModelMap.containsKey(node) &&
-                !this.objectToModelMap.get(node).invalidated();
+            !this.objectToModelMap.get(node).invalidated();
     }
-    
+
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public ValueAnalysisModeledObject getResult(AllocNode node) {
         return this.objectToModelMap.get(node);
     }
-    
+
     /**
      * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
      *
@@ -281,6 +285,7 @@ public class ValueAnalysis {
             runOnce();
         } while(changed);
 
+        runOnce();
         // log the results and statistics    
         am.log();
     }
@@ -459,7 +464,6 @@ public class ValueAnalysis {
         if(methodName.equals("<init>")){
             methodName = "_init_";
         }
-
         try {
             // get the method we are going to simulate
             Class[] paramObjectClassArray = paramObjectClasses.toArray(new Class[paramObjectClasses.size()]);
@@ -487,8 +491,8 @@ public class ValueAnalysis {
                     error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
                 }
                 this.logError(error);
-               // The method isn't modeled, so we must invalidate every argument that we modeled
-               this.invalidateParamObjects(paramObjectCartesianProduct);
+                // The method isn't modeled, so we must invalidate every argument that we modeled
+                this.invalidateParamObjects(paramObjectCartesianProduct);
 
             }
         }
@@ -699,179 +703,202 @@ public class ValueAnalysis {
                     if(((RefType)paramTypes.get(i)).getSootClass().getName().equals("android.net.Uri$1"))
                         continue;
                 }
-
-                // If the argument is a constant, we box it up. We don't model primitives.
-                // If the argument is a RefType, then we use PTA to find all possible AllocNodes and their
-                // corresponding model
-                // We can't simulate this invokeExpr if the argument doesn't fall in those two cases (yet)
-                if(arg instanceof Constant) {
-                    if(arg instanceof NullConstant){
-                        try {
+                if(ValueAnalysis.this.valueToModelAttrMap.containsKey(arg)){
+                    Object obj = ValueAnalysis.this.valueToModelAttrMap.get(arg);
+                    paramObjectSets.get(i).add(obj);
+                    paramClasses.add(i, obj.getClass());
+                } else {
+                    // If the argument is a constant, we box it up. We don't model primitives.
+                    // If the argument is a RefType, then we use PTA to find all possible AllocNodes and their
+                    // corresponding model
+                    // We can't simulate this invokeExpr if the argument doesn't fall in those two cases (yet)
+                    if(arg instanceof Constant) {
+                        if(arg instanceof NullConstant){
+                            try {
+                                try {
+                                    paramClasses.get(i);
+                                } catch (IndexOutOfBoundsException e) {
+                                    paramClasses.add(i, ValueAnalysis.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                                }
+                            } catch(Exception e) {
+                                ValueAnalysis.this.logError("Type of parameter #" + i + " of method " + invokeExpr 
+                                        + " isn't modeled yet: " + e.toString());
+                                return;
+                            }
+                            paramObjectSets.get(i).add(null);
+                        } else {
+                            Object obj;
+                            if(valueToModelAttrMap.containsKey(arg)){
+                                obj = valueToModelAttrMap.get(arg);
+                            } else {
+                                try {
+                                    if(arg instanceof NullConstant) {
+                                        obj = null;
+                                    } else if (arg instanceof IntConstant) {
+                                        obj = new ValueAnalysisInt(((IntConstant)arg).value);
+                                    } else if (arg instanceof StringConstant) {
+                                        obj = new String(((StringConstant)arg).value);
+                                    } else if (arg instanceof LongConstant) {
+                                        obj = new ValueAnalysisLong(((LongConstant)arg).value);
+                                    } else if (arg instanceof DoubleConstant) {
+                                        obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
+                                    } else if (arg instanceof FloatConstant) {
+                                        obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
+                                    } else if (arg instanceof ClassConstant) {
+                                        String className = ((ClassConstant)arg).value.replace("/", ".");
+                                        obj = Project.v().getAppJavaClass(className);
+                                    } else {
+                                        throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                                    }
+                                    valueToModelAttrMap.put(arg, obj);
+                                } catch (ClassNotFoundException cnfe){
+                                    ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
+                                            + cnfe + "\n");
+                                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                        modeledObject.invalidate();
+                                    }
+                                    return;
+                                }
+                            }
                             try {
                                 paramClasses.get(i);
-                            } catch (IndexOutOfBoundsException e) {
-                                paramClasses.add(i, ValueAnalysis.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                            } catch(IndexOutOfBoundsException e) {
+                                paramClasses.add(i, Set.class);
                             }
-                        } catch(Exception e) {
-                            ValueAnalysis.this.logError("Type of parameter #" + i + " of method " + invokeExpr 
-                                    + " isn't modeled yet: " + e.toString());
-                            return;
+                            paramObjectSets.get(i).add(Sets.newHashSet(obj));
                         }
-                        paramObjectSets.get(i).add(null);
-                    } else {
-                        Object obj;
-                        if(valueToModelAttrMap.containsKey(arg)){
+                    } else if(type instanceof RefType) {
+                        Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
+                        // If the arg is a ref to a java.lang.String, check to see if the nodes found by pta are all
+                        // StringConstantNodes and if so, use their values. Otherwise, fall back to JSA's results. 
+                        RefType refType = (RefType)type;
+                        String className = refType.getClassName();
+                        if(className.equals("java.lang.String")){
+                            Set<String> constantStrVals = new HashSet<String>();
+                            boolean allStringConstants = true;
+                            for(AllocNode allocNode : allocNodeSet) {
+                                if(allocNode instanceof StringConstantNode) {
+                                    constantStrVals.add(((StringConstantNode)allocNode).getString());
+                                } else {
+                                    allStringConstants = false;
+                                    break;
+                                }
+                            }
+                            // if all allocnodes were StringConstantNodes, use their values. Otherwise fall back to JSA.
+                            if(allStringConstants) {
+                                paramObjectSets.get(i).add(constantStrVals); 
+                            } else {
+                                String strVal = new String(jsa.getRegex(arg));
+                                Set<String> strVals = Sets.newHashSet(strVal);
+                                paramObjectSets.get(i).add(strVals);
+                            }
+                            // String -> Set<String> always
+                            paramClasses.add(i, Set.class);
+                        } else {
+                            // use PTA to find all possible AllocNodes and their corresponding models
+                            if(valueToModelAttrMap.containsKey(arg)){
+                                Object modelAttr = valueToModelAttrMap.get(arg);
+                                try {
+                                    paramClasses.get(i);
+                                } catch (IndexOutOfBoundsException e) {
+                                    paramClasses.add(i, modelAttr.getClass());
+                                }
+                                paramObjectSets.get(i).add(modelAttr); 
+                            } else {
+                                if (allocNodeSet.size() != 0){
+                                    for (AllocNode node : allocNodeSet) {
+                                        ValueAnalysisModeledObject modeledParamObject = createAndGetModel(node);
+                                        if(modeledParamObject != null){
+                                            paramObjectSets.get(i).add(modeledParamObject);
+                                            try {
+                                                try {
+                                                    paramClasses.get(i);
+                                                } catch (IndexOutOfBoundsException e) {
+                                                    RefType paramRef = (RefType)paramTypes.get(i);
+                                                    paramClasses.add(i, ValueAnalysis.this.getDroidsafeClass(paramRef));
+                                                }
+                                            } catch(ClassNotFoundException cnfe) {
+                                                ValueAnalysis.this.logError("Couldn't getDroidsafeClass for arg " + arg 
+                                                        + "\n"); return;
+                                            }
+                                            // Store the param object model so that we can later invalidate it if we 
+                                            // haven't modeled the method
+                                            paramObjectModels.add(modeledParamObject);
+                                        } else {
+                                            // We couldn't model the argument node, so invalidate any param models we've 
+                                            // already created
+                                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                                modeledObject.invalidate();
+                                            }
+                                            ValueAnalysis.this.logError("Couldn't model argument " + i + " " + node 
+                                                    + " for method" + invokeExpr 
+                                                    + ValueAnalysis.this.sourceLocation);
+                                            return;
+                                        }
+                                    } 
+                                } else {
+                                    ValueAnalysis.this.logError("PTA didn't find any AllocNodes and the analysis"
+                                            + " dind't find any model attributes for arg #" + i 
+                                            + " of instanceInvokeExpr " + invokeExpr);
+                                    // invalidate any param models we've already created
+                                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
+                                        modeledObject.invalidate();
+                                    }
+                                    return;
+                                }
+                            }
+                        }
+                    } else if(arg.getType() instanceof PrimType) {
+                        Object obj = null;
+                        if(valueToModelAttrMap.containsKey(arg)) {
                             obj = valueToModelAttrMap.get(arg);
                         } else {
-                            try {
-                                if(arg instanceof NullConstant) {
-                                    obj = null;
-                                } else if (arg instanceof IntConstant) {
-                                    obj = new ValueAnalysisInt(((IntConstant)arg).value);
-                                } else if (arg instanceof StringConstant) {
-                                    obj = new String(((StringConstant)arg).value);
-                                } else if (arg instanceof LongConstant) {
-                                    obj = new ValueAnalysisLong(((LongConstant)arg).value);
-                                } else if (arg instanceof DoubleConstant) {
-                                    obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
-                                } else if (arg instanceof FloatConstant) {
-                                    obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
-                                } else if (arg instanceof ClassConstant) {
-                                    String className = ((ClassConstant)arg).value.replace("/", ".");
-                                    obj = Project.v().getAppJavaClass(className);
-                                } else {
-                                    throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
-                                }
-                                valueToModelAttrMap.put(arg, obj);
-                            } catch (ClassNotFoundException cnfe){
-                                ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
-                                        + cnfe + "\n");
-                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                    modeledObject.invalidate();
-                                }
-                                return;
+                            if(type instanceof BooleanType) {
+                                obj = new ValueAnalysisBoolean();
+                            } else if (type instanceof ByteType) {
+                                obj = new ValueAnalysisByte();
+                            } else if (type instanceof CharType) {
+                                obj = new ValueAnalysisChar();
+                            } else if (type instanceof DoubleType) {
+                                obj = new ValueAnalysisDouble();
+                            } else if(type instanceof FloatType) {
+                                obj = new ValueAnalysisFloat();
+                            } else if(type instanceof Integer127Type) {
+                                logger.error("unhandled Integer127Type: {}", type);
+                                droidsafe.main.Main.exit(1);
+                            } else if(type instanceof Integer1Type) {
+                                logger.error("unhandled Integer1Type: {}", type);
+                                droidsafe.main.Main.exit(1);
+                            } else if (type instanceof Integer32767Type) {
+                                logger.error("unhandled Integer32676Type: {}", type);
+                                droidsafe.main.Main.exit(1);
+                            } else if (type instanceof IntType) {
+                                obj =  new ValueAnalysisInt();
+                            } else if (type instanceof LongType) {
+                                obj = new ValueAnalysisLong();
+                            } else if (type instanceof ShortType) {
+                                obj = new ValueAnalysisShort();
+                            } else {
+                                logger.error("unhandled PrimType: {}", type);
+                                droidsafe.main.Main.exit(1);
                             }
-                        }
-                        try {
-                            paramClasses.get(i);
-                        } catch(IndexOutOfBoundsException e) {
-                            paramClasses.add(i, Set.class);
+                            valueToModelAttrMap.put(arg, obj);
                         }
                         paramObjectSets.get(i).add(Sets.newHashSet(obj));
-                    }
-                } else if(type instanceof RefType) {
-
-                    // If the argument is a reference to a java.lang.String, look up its value in JSA's results
-                    RefType refType = (RefType)type;
-                    String className = refType.getClassName();
-                    if(className.equals("java.lang.String")){
-                        String strVal = new String(jsa.getRegex(arg));
-                        Set<String> strVals = Sets.newHashSet(strVal);
                         paramClasses.add(i, Set.class);
-                        paramObjectSets.get(i).add(strVals);
                     } else {
-                        // use PTA to find all possible AllocNodes and their corresponding models
-                        Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
-                        if(valueToModelAttrMap.containsKey(arg)){
-                            Object modelAttr = valueToModelAttrMap.get(arg);
-                            try {
-                                paramClasses.get(i);
-                            } catch (IndexOutOfBoundsException e) {
-                                paramClasses.add(i, modelAttr.getClass());
-                            }
-                            paramObjectSets.get(i).add(modelAttr); 
-                        } else {
-                            if (allocNodeSet.size() != 0){
-                                for (AllocNode node : allocNodeSet) {
-                                    ValueAnalysisModeledObject modeledParamObject = createAndGetModel(node);
-                                    if(modeledParamObject != null){
-                                        paramObjectSets.get(i).add(modeledParamObject);
-                                        try {
-                                            try {
-                                                paramClasses.get(i);
-                                            } catch (IndexOutOfBoundsException e) {
-                                                RefType paramRef = (RefType)paramTypes.get(i);
-                                                paramClasses.add(i, ValueAnalysis.this.getDroidsafeClass(paramRef));
-                                            }
-                                        } catch(ClassNotFoundException cnfe) {
-                                            ValueAnalysis.this.logError("Couldn't getDroidsafeClass for arg " + arg 
-                                                    + "\n"); return;
-                                        }
-                                        // Store the param object model so that we can later invalidate it if we 
-                                        // haven't modeled the method
-                                        paramObjectModels.add(modeledParamObject);
-                                    } else {
-                                        // We couldn't model the argument node, so invalidate any param models we've 
-                                        // already created
-                                        for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                            modeledObject.invalidate();
-                                        }
-                                        ValueAnalysis.this.logError("Couldn't model argument " + i + " " + node 
-                                                + " for method" + invokeExpr 
-                                                + ValueAnalysis.this.sourceLocation);
-                                        return;
-                                    }
-                                } 
-                            } else {
-                                ValueAnalysis.this.logError("PTA didn't find any AllocNodes and the analysis"
-                                        + " dind't find any model attributes for arg #" + i 
-                                        + " of instanceInvokeExpr " + invokeExpr);
-                                // invalidate any param models we've already created
-                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                    modeledObject.invalidate();
-                                }
-                                return;
-                            }
+                        ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 
+                                + " isn't a constant or a RefType." 
+                                + " Not sure what to do - invalidating other arguments " 
+                                + "and not simulating.");
+                        // invalidate any param models we've already created
+                        for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                            ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
+                            modeledObject.invalidate();
                         }
+                        return;
                     }
-                } else if(arg.getType() instanceof PrimType) {
-                    Object obj = null;
-                    if(valueToModelAttrMap.containsKey(arg)) {
-                        obj = valueToModelAttrMap.get(arg);
-                    } else {
-                        if(type instanceof BooleanType) {
-                            obj = new ValueAnalysisBoolean();
-                        } else if (type instanceof ByteType) {
-                            obj = new ValueAnalysisByte();
-                        } else if (type instanceof CharType) {
-                            obj = new ValueAnalysisChar();
-                        } else if (type instanceof DoubleType) {
-                            obj = new ValueAnalysisDouble();
-                        } else if(type instanceof FloatType) {
-                            obj = new ValueAnalysisFloat();
-                        } else if(type instanceof Integer127Type) {
-                            logger.error("unhandled Integer127Type: {}", type);
-                            droidsafe.main.Main.exit(1);
-                        } else if(type instanceof Integer1Type) {
-                            logger.error("unhandled Integer1Type: {}", type);
-                            droidsafe.main.Main.exit(1);
-                        } else if (type instanceof Integer32767Type) {
-                            logger.error("unhandled Integer32676Type: {}", type);
-                            droidsafe.main.Main.exit(1);
-                        } else if (type instanceof IntType) {
-                            obj =  new ValueAnalysisInt();
-                        } else if (type instanceof LongType) {
-                            obj = new ValueAnalysisLong();
-                        } else if (type instanceof ShortType) {
-                            obj = new ValueAnalysisShort();
-                        } else {
-                            logger.error("unhandled PrimType: {}", type);
-                            droidsafe.main.Main.exit(1);
-                        }
-                        valueToModelAttrMap.put(arg, obj);
-                    }
-                    paramObjectSets.get(i).add(Sets.newHashSet(obj));
-                    paramClasses.add(i, Set.class);
-                } else {
-                    ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 
-                            + " isn't a constant or a RefType." 
-                            + " Not sure what to do - invalidating other params" 
-                            + "and not simulating.");
-                    // invalidate any param models we've already created
-                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                        modeledObject.invalidate();
-                    }
-                    return;
                 }
             }
 
