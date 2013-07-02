@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.BooleanType;
+import soot.ByteType;
 import soot.CharType;
 import soot.IntType;
 import soot.Type;
@@ -32,6 +33,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.BooleanValue;
+import droidsafe.speclang.ByteValue;
 import droidsafe.speclang.CharValue;
 import droidsafe.speclang.ClassValue;
 import droidsafe.speclang.ConcreteArgumentValue;
@@ -299,8 +301,11 @@ public class RCFGToSSL {
 				listArg.add(new CharValue((char)intValue));
 			} else if (type instanceof IntType) {
 				listArg.add(new IntValue(intValue));
+			} else if (type instanceof ByteType) {
+			    listArg.add(new ByteValue((byte)intValue));
 			} else {
 				logger.error("Unknown type for int constant when converting to method: {}", type);
+				droidsafe.main.Main.exit(1);
 			}
 			return listArg;
 		} else if (value instanceof LongConstant) {
