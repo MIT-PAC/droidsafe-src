@@ -43,9 +43,9 @@ public class Config {
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
   /** location of configuration files */
-  public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+  public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator + "system_class_files.txt";
 
-  public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
+  public static final String SYSTEM_METHODS_FILE = "config-files" + File.separator + "android-api-methods.txt";
   /** location of api modeling base directory relative to apac_home */
 
   public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
@@ -81,10 +81,7 @@ public class Config {
 
   public boolean dumpCallGraph = false;
 
-  /** 
-   * If true, run string analysis on app classes.
-   * true by default 
-   */
+  /** determines whether to use jsa or not */
   public boolean runStringAnalysis = true;
 
   /** if true, string analysis is done for all soot application classes.  Otherwise, it is
@@ -117,6 +114,9 @@ public class Config {
     Option debugLog =
         new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
     options.addOption(debugLog);
+
+    Option jsa = new Option("nojsa", "Do not use JSA");
+    options.addOption(jsa);
 
     Option writeJimple =
         new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -199,6 +199,9 @@ public class Config {
 
     if (cmd.hasOption("jimple")) this.writeJimpleAppClasses = true;
 
+    if (cmd.hasOption("nojsa")) {
+      this.runStringAnalysis = false;
+    }
 
     if (cmd.hasOption("infoflow")) {
       this.infoFlow = true;

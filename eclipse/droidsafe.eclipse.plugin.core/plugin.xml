@@ -420,8 +420,5 @@
             restorable="true">
       </view>
    </extension>
-   <extension
-         point="org.eclipse.ui.handlers">
-   </extension>
 
 </plugin>
