@@ -106,7 +106,7 @@ public class JSAStrings {
    * Return true if this value is a hotspot that was resolved by JSA.
    */
   public boolean isHotspotValue(Value v) {
-      return nonterminals.containsKey(v);
+      return this.hasRun && nonterminals.containsKey(v);
   }
   
   public Map<String, List<Hotspot>> getSignatureToHotspotMap() {

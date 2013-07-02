@@ -198,10 +198,6 @@ public class ValueAnalysis {
         }
 
         jsa = JSAStrings.v();
-        if(!jsa.hasRun()){
-            logger.error("JSA's results are not available. Attribute analysis requires them.");
-            droidsafe.main.Main.exit(1);
-        }
     }
 
 
