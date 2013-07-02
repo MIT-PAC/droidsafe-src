@@ -678,8 +678,133 @@ public class ResourcesSoot {
     
     
     
-    private boolean addFragment_ID(Integer intId) {
-    	return false;
+    /**
+     * method called to addFragment_ID
+     * @param intId
+     * @return
+     */
+    private boolean addGetFragment_ID(Integer intId) {
+
+    	/* we want to do this:
+    	 * getFragment_XYZ(context) {
+    	 * 	if (fragment == null)
+    			fragment = instantiate(context, "classname");
+    		}
+    	 */
+
+    	UISootObject obj = mUiObjectTable.get(intId);    
+    	logger.info("addGetFragment_ID({}:{}) ", intId.toString(), String.format("%x", intId));
+
+    	if (obj == null) {
+    		logger.warn("Object for id {} does not exist ", intId);
+    		return false;
+    	}
+    	if (obj.sootField == null)  {
+    		logger.warn("No sootfield previously created ");
+    		return false;
+    	}
+
+    	List<Type> params = new LinkedList<Type>();
+    	params.add(RefType.v("android.content.Context"));
+
+    	RefType returnType = (RefType) obj.sootField.getType(); 
+
+    	
+    	/*
+    	SootMethod viewInitMethod = 
+    			Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+    					returnType.getSootClass(), mFragmentInitMethod);
+
+    	if (viewInitMethod == null) {
+    		logger.warn("Cannot locate proper constructor for {})", returnType);
+    		return false;
+    	}
+
+    	String funcName = "getFragment_" + String.format("%x", intId);
+    	//instantiate a method
+    	SootMethod method = new SootMethod(funcName, params, returnType, 
+    			Modifier.PUBLIC | Modifier.STATIC);
+
+    	obj.lookupMethod = method;
+
+    	// add the method to the class
+    	mSootClass.addMethod(method);
+
+    	// create active body, and set the body active
+    	JimpleBody body = Jimple.v().newBody(method);
+    	method.setActiveBody(body);
+
+    	Chain<Unit> units = body.getUnits();
+
+    	// extract parameter
+    	Local argContext = 
+    			Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+
+    	// android.content.Context paramActivity;
+    	body.getLocals().add(argContext);
+
+    	// local Argument for view
+    	Local localFragment = Jimple.v().newLocal("localFragment",  returnType);
+    	body.getLocals().add(localFragment);
+
+    	// paramActivity = @paramter0
+    	units.add(Jimple.v().newIdentityStmt(argContext,
+    			Jimple.v().newParameterRef(RefType.v("android.content.Context"), 0)));
+
+    	FieldRef  fieldRef = Jimple.v().newStaticFieldRef(obj.sootField.makeRef());
+
+    	// localFragment =  fieldRef
+    	units.add(Jimple.v().newAssignStmt(localFragment, fieldRef));
+
+    	// beforeIF block
+    	Stmt beforeIf = (Stmt) units.getLast();
+
+    	// IF block: adding more code for if block
+    	Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+
+    	units.add(Jimple.v().newAssignStmt(localFragment, newExpr));
+
+    	units.add(Jimple.v().newInvokeStmt(
+    			Jimple.v().newVirtualInvokeExpr(localFragment, viewInitMethod.makeRef(), 
+    					argContext))); 
+
+    	for (String attrName: obj.attributes.keySet()) {
+    		SootMethod setter = AttributeSetterMap.v().resolveSetter(
+    				attrName, returnType.getSootClass());
+
+    		// if there is no setter match, skip the attribute
+    		if (setter == null) {
+    			// logger.debug("attr {}, class {} CANNOT resolve ", 
+    			//             attrName, returnType.getSootClass());
+    			continue;
+    		} 
+
+    		// at this point, we have a setter, need to call the setter with values
+    		logger.debug("attr {} => setter {} ", attrName, setter);
+
+
+    		Set<String> textSet = new HashSet<String>();
+    		String attrValue = obj.attributes.get(attrName);
+
+    	}
+
+    	units.add(Jimple.v().newAssignStmt(fieldRef, localFragment));
+
+    	// afterIF: return localFragment
+    	Stmt afterIf = Jimple.v().newReturnStmt(localFragment);
+    	units.add(afterIf);
+
+    	// condition expression and statement (not equal expr)
+    	ConditionExpr condExpr = Jimple.v().newNeExpr(localFragment, NullConstant.v());
+
+    	// condition statement
+    	Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
+
+    	logger.debug("condStmt {} ", condStmt);
+    	units.insertAfter(condStmt, beforeIf);
+    */	
+
+    	return true;
     }
     
     
