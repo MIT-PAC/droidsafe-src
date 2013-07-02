@@ -218,7 +218,17 @@ public class Main {
         }
     }
 
+    /**
+     * Handles the error in the analysis. If the flag Config.callSystemExitOnError is true, the
+     * application will exit, otherwise it will just throw an exception. 
+     * 
+     * @param status
+     */
     public static void exit(int status) {
+      if (Config.v().getCallSystehExitOnError()) {
         System.exit(1);
+      } else {
+        throw new IllegalStateException();
+      }
     }
 }
