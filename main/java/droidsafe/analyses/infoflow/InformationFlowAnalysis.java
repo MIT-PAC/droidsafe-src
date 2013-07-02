@@ -1849,6 +1849,8 @@ class MemoryAccessAnalysis {
             statics.put(srcMethod, ImmutableList.copyOf(fields));
             arrays.put(srcMethod, ImmutableList.copyOf(addresses));
         }
+
+        return;
     }
 
     private Set<AddressField> accessi(List<Block> blocks, FrameHeapStatics frameHeapStatics) {
