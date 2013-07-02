@@ -7,7 +7,7 @@ public class ValueAnalysisInt extends ValueAnalysisModeledObject {
     int value;
 
     public ValueAnalysisInt() {
-        this.invalidated = false;
+        this.__ds__invalidated = false;
     }
 
     public ValueAnalysisInt(int valueParam) {

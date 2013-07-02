@@ -7,7 +7,7 @@ public class ValueAnalysisByte extends ValueAnalysisModeledObject {
     byte value;
 
     public ValueAnalysisByte() {
-        this.invalidated = false;
+        this.__ds__invalidated = false;
     }
 
     public ValueAnalysisByte(byte valueParam) {

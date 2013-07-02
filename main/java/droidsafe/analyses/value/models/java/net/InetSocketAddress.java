@@ -159,7 +159,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
      */
 //    
 //    public final InetAddress getAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return addr;
@@ -200,7 +200,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
      */
 //    
 //    public final boolean isUnresolved() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return addr == null;
@@ -216,7 +216,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public String toString() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return ((addr != null) ? addr.toString() : hostname) + ":" + port;
@@ -236,7 +236,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public final boolean equals(Object socketAddr) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        if (this == socketAddr) {
@@ -262,7 +262,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public final int hashCode() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        if (addr == null) {
@@ -274,7 +274,7 @@ public class InetSocketAddress extends ValueAnalysisModeledObject {
 
 //    
 //    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        stream.defaultReadObject();
 //        */

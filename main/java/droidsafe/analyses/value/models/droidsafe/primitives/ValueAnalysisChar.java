@@ -7,7 +7,7 @@ public class ValueAnalysisChar extends ValueAnalysisModeledObject {
     char value;
 
     public ValueAnalysisChar() {
-        this.invalidated = false;
+        this.__ds__invalidated = false;
     }
 
     public ValueAnalysisChar(char valueParam) {

@@ -48,7 +48,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     URL or has an unsupported protocol.
      */
     public void _init_(URL context, Set<String> spec) throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         /*
         this(context, spec, null);
         */
@@ -65,7 +65,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     be parsed as a URL or an invalid protocol has been found.
      */
     public void _init_(URL context, Set<String> spec, URLStreamHandler handler) throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (spec == null) {
             throw new MalformedURLException();
@@ -119,7 +119,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     represent a valid URL or if the protocol is invalid.
      */
     public void _init_(Set<String> protocol, Set<String> host, Set<String> file) throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         /*
         this(protocol, host, -1, file, null);
         */
@@ -136,7 +136,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     represent a valid URL or if the protocol is invalid.
      */
     public void _init_(Set<String> protocol, Set<String> host, Set<ValueAnalysisInt> port, Set<String> file) throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         /*
         this(protocol, host, port, file, null);
         */
@@ -155,7 +155,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     represent a valid URL or if the protocol is invalid.
      */
     public void _init_(Set<String> protocol, Set<String> host, Set<ValueAnalysisInt> port, Set<String> file, URLStreamHandler handler) throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (port < -1) {
             throw new MalformedURLException("port < -1: " + port);
@@ -217,7 +217,7 @@ public final class URL extends ValueAnalysisModeledObject {
     }
 
     void fixURL(Set<ValueAnalysisBoolean> fixHost) {
-        invalidate();
+        __ds__invalidate();
         /*
         int index;
         if (host != null && host.length() > 0) {
@@ -250,7 +250,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * existing URL instance. A URL is generally constant.
      */
     protected void set(Set<String> protocol, Set<String> host, Set<ValueAnalysisInt> port, Set<String> file, Set<String> ref) {
-        invalidate();
+        __ds__invalidate();
         /*
         if (this.protocol == null) {
             this.protocol = protocol;
@@ -294,7 +294,7 @@ public final class URL extends ValueAnalysisModeledObject {
      */
     @Override
     public boolean equals(Object o) {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         if (o == null) {
@@ -315,7 +315,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * All URL components except the reference field are compared.
      */
     public boolean sameFile(URL otherURL) {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         return streamHandler.sameFile(this, otherURL);
@@ -324,7 +324,7 @@ public final class URL extends ValueAnalysisModeledObject {
 
     @Override
     public int hashCode() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         if (hashCode == 0) {
@@ -345,7 +345,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * @throws MalformedURLException if no reasonable handler is available.
      */
     void setupStreamHandler() {
-        invalidate();
+        __ds__invalidate();
         /*
         // the requested protocol.
         streamHandler = streamHandlers.get(protocol);
@@ -408,7 +408,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * of the response is unknown.
      */
     public final Object getContent() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return openConnection().getContent();
@@ -420,7 +420,7 @@ public final class URL extends ValueAnalysisModeledObject {
      */
     @SuppressWarnings("unchecked")
     public final Object getContent(Class[] types) throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return openConnection().getContent(types);
@@ -431,7 +431,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Equivalent to {@code openConnection().getInputStream(types)}.
      */
     public final InputStream openStream() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return openConnection().getInputStream();
@@ -444,7 +444,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * @throws IOException if an error occurs while opening the connection.
      */
     public URLConnection openConnection() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return streamHandler.openConnection(this);
@@ -462,7 +462,7 @@ public final class URL extends ValueAnalysisModeledObject {
      *     support opening connections through proxies.
      */
     public URLConnection openConnection(Proxy proxy) throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (proxy == null) {
@@ -478,7 +478,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * @throws URISyntaxException if this URL cannot be converted into a URI.
      */
     public URI toURI() throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return new URI(toExternalForm());
@@ -492,7 +492,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * @hide
      */
     public URI toURILenient() throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (streamHandler == null) {
@@ -509,7 +509,7 @@ public final class URL extends ValueAnalysisModeledObject {
      */
     @Override
     public String toString() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return toExternalForm();
@@ -521,7 +521,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * this URL.
      */
     public String toExternalForm() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (streamHandler == null) {
@@ -532,7 +532,7 @@ public final class URL extends ValueAnalysisModeledObject {
     }
 
     private void readObject(ObjectInputStream stream) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         try {
             stream.defaultReadObject();
@@ -562,7 +562,7 @@ public final class URL extends ValueAnalysisModeledObject {
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         s.defaultWriteObject();
         */
@@ -570,7 +570,7 @@ public final class URL extends ValueAnalysisModeledObject {
 
     /** @hide */
     public int getEffectivePort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         return URI.getEffectivePort(protocol, port);
@@ -582,7 +582,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * known as the scheme. The returned string is lower case.
      */
     public String getProtocol() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return protocol;
@@ -594,7 +594,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * authority.
      */
     public String getAuthority() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return authority;
@@ -605,7 +605,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Returns the user info of this URL, or null if this URL has no user info.
      */
     public String getUserInfo() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return userInfo;
@@ -616,7 +616,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Returns the host name or IP address of this URL.
      */
     public String getHost() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return host;
@@ -631,7 +631,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * will use its {@link #getDefaultPort() default port}.
      */
     public int getPort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         return port;
@@ -646,7 +646,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * @see URLStreamHandler#getDefaultPort
      */
     public int getDefaultPort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         return streamHandler.getDefaultPort();
@@ -657,7 +657,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Returns the file of this URL.
      */
     public String getFile() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return file;
@@ -668,7 +668,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Returns the path part of this URL.
      */
     public String getPath() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return path;
@@ -679,7 +679,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * Returns the query part of this URL, or null if this URL has no query.
      */
     public String getQuery() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return query;
@@ -691,7 +691,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * has no reference part. This is also known as the fragment.
      */
     public String getRef() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return ref;
@@ -704,7 +704,7 @@ public final class URL extends ValueAnalysisModeledObject {
      * existing URL instance. A URL is generally constant.
      */
     protected void set(Set<String> protocol, Set<String> host, Set<ValueAnalysisInt> port, Set<String> authority, Set<String> userInfo, Set<String> path, Set<String> query, Set<String> ref) {
-        invalidate();
+        __ds__invalidate();
         /*
         String file = path;
         if (query != null && !query.isEmpty()) {

@@ -30,7 +30,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_() {
-        invalidate();
+        __ds__invalidate();
         /*
         this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl();
         this.proxy = null;
@@ -39,7 +39,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
 //    
 //    public void _init_(Proxy proxy) {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        if (proxy == null || proxy.type() == Proxy.Type.HTTP) {
 //            throw new IllegalArgumentException("Invalid proxy: " + proxy);
@@ -61,7 +61,7 @@ public class Socket extends ValueAnalysisModeledObject {
         this.localAddress = localAddress;
         this.destAddress = new InetSocketAddress(null);
         destAddress._init_(dstName,dstPort);
-        // invalidate();
+        // __ds__invalidate();
         /*
         this();
         tryAllAddresses(dstName, dstPort, localAddress, localPort, true);
@@ -70,7 +70,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_(Set<String> hostName, Set<ValueAnalysisInt> port, Set<ValueAnalysisBoolean> streaming) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         this();
         tryAllAddresses(hostName, port, null, 0, streaming);
@@ -79,7 +79,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_(InetAddress dstAddress, Set<ValueAnalysisInt> dstPort) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         this();
         checkDestination(dstAddress, dstPort);
@@ -89,7 +89,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_(InetAddress dstAddress, Set<ValueAnalysisInt> dstPort, InetAddress localAddress, Set<ValueAnalysisInt> localPort) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         this();
         checkDestination(dstAddress, dstPort);
@@ -99,7 +99,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_(InetAddress addr, Set<ValueAnalysisInt> port, Set<ValueAnalysisBoolean> streaming) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         this();
         checkDestination(addr, port);
@@ -109,7 +109,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     protected void _init_(SocketImpl impl) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         this.impl = impl;
         this.proxy = null;
@@ -137,7 +137,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     private void tryAllAddresses(Set<String> dstName, Set<ValueAnalysisInt> dstPort, InetAddress localAddress, Set<ValueAnalysisInt> localPort, Set<ValueAnalysisBoolean> streaming) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         InetAddress[] dstAddresses = InetAddress.getAllByName(dstName);
         // Loop through all the destination addresses except the last, trying to
@@ -173,7 +173,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     private void checkDestination(InetAddress destAddr, Set<ValueAnalysisInt> dstPort) {
-        invalidate();
+        __ds__invalidate();
         /*
         if (dstPort < 0 || dstPort > 65535) {
             throw new IllegalArgumentException("Port out of range: " + dstPort);
@@ -190,7 +190,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized void close() throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         isClosed = true;
         // RI compatibility: the RI returns the any address (but the original local port) after close.
@@ -205,7 +205,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public InetAddress getInetAddress() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!isConnected()) {
@@ -225,7 +225,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public InputStream getInputStream() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         checkOpenAndCreate(false);
@@ -241,7 +241,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public boolean getKeepAlive() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         checkOpenAndCreate(true);
@@ -255,7 +255,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public InetAddress getLocalAddress() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return localAddress;
@@ -267,7 +267,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public int getLocalPort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         if (!isBound()) {
@@ -287,7 +287,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public OutputStream getOutputStream() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         checkOpenAndCreate(false);
@@ -304,7 +304,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public int getPort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         if (!isConnected()) {
@@ -320,7 +320,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public int getSoLinger() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         checkOpenAndCreate(true);
@@ -339,7 +339,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized int getReceiveBufferSize() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         checkOpenAndCreate(true);
@@ -352,7 +352,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized int getSendBufferSize() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         checkOpenAndCreate(true);
@@ -365,7 +365,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized int getSoTimeout() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         checkOpenAndCreate(true);
@@ -378,7 +378,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public boolean getTcpNoDelay() throws SocketException {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         checkOpenAndCreate(true);
@@ -391,7 +391,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public void setKeepAlive(Set<ValueAnalysisBoolean> keepAlive) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (impl != null) {
             checkOpenAndCreate(true);
@@ -424,7 +424,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized void setSendBufferSize(Set<ValueAnalysisInt> size) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         checkOpenAndCreate(true);
         if (size < 1) {
@@ -439,7 +439,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized void setReceiveBufferSize(Set<ValueAnalysisInt> size) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         checkOpenAndCreate(true);
         if (size < 1) {
@@ -455,7 +455,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public void setSoLinger(Set<ValueAnalysisBoolean> on, Set<ValueAnalysisInt> timeout) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         checkOpenAndCreate(true);
         // The RI explicitly guarantees this idiocy in the SocketOptions.setOption documentation.
@@ -477,7 +477,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public synchronized void setSoTimeout(Set<ValueAnalysisInt> timeout) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         checkOpenAndCreate(true);
         if (timeout < 0) {
@@ -492,7 +492,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public void setTcpNoDelay(Set<ValueAnalysisBoolean> on) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         checkOpenAndCreate(true);
         impl.setOption(SocketOptions.TCP_NODELAY, Boolean.valueOf(on));
@@ -517,7 +517,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     private void startupSocket(InetAddress dstAddress, Set<ValueAnalysisInt> dstPort, InetAddress localAddress, Set<ValueAnalysisInt> localPort, Set<ValueAnalysisBoolean> streaming) throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (localPort < 0 || localPort > 65535) {
             throw new IllegalArgumentException("Local port out of range: " + localPort);
@@ -545,7 +545,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     private boolean usingSocks() {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         return proxy != null && proxy.type() == Proxy.Type.SOCKS;
@@ -561,7 +561,7 @@ public class Socket extends ValueAnalysisModeledObject {
     @Override
     
     public String toString() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!isConnected()) {
@@ -583,7 +583,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public void shutdownInput() throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (isInputShutdown()) {
             throw new SocketException("Socket input is shutdown");
@@ -606,7 +606,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public void shutdownOutput() throws IOException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (isOutputShutdown()) {
             throw new SocketException("Socket output is shutdown");
@@ -626,7 +626,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     private void checkOpenAndCreate(Set<ValueAnalysisBoolean> create) throws SocketException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (isClosed()) {
             throw new SocketException("Socket is closed");
@@ -669,7 +669,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public SocketAddress getLocalSocketAddress() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!isBound()) {
@@ -687,7 +687,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
     
     public SocketAddress getRemoteSocketAddress() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!isConnected()) {
@@ -705,7 +705,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isBound() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return isBound;
@@ -719,7 +719,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isConnected() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return isConnected;
@@ -733,7 +733,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isClosed() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return isClosed;
@@ -756,7 +756,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void bind(SocketAddress localAddr) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        checkOpenAndCreate(true);
 //        if (isBound()) {
@@ -804,7 +804,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void connect(SocketAddress remoteAddr) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        connect(remoteAddr, 0);
 //        */
@@ -830,7 +830,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void connect(SocketAddress remoteAddr, Set<ValueAnalysisInt> timeout) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        checkOpenAndCreate(true);
 //        if (timeout < 0) {
@@ -887,7 +887,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isInputShutdown() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return isInputShutdown;
@@ -903,7 +903,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isOutputShutdown() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return isOutputShutdown;
@@ -915,7 +915,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void setReuseAddress(Set<ValueAnalysisBoolean> reuse) throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        checkOpenAndCreate(true);
 //        impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.valueOf(reuse));
@@ -927,7 +927,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean getReuseAddress() throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        checkOpenAndCreate(true);
@@ -940,7 +940,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void setOOBInline(Set<ValueAnalysisBoolean> oobinline) throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        checkOpenAndCreate(true);
 //        impl.setOption(SocketOptions.SO_OOBINLINE, Boolean.valueOf(oobinline));
@@ -952,7 +952,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean getOOBInline() throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        checkOpenAndCreate(true);
@@ -965,7 +965,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void setTrafficClass(Set<ValueAnalysisInt> value) throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        checkOpenAndCreate(true);
 //        if (value < 0 || value > 255) {
@@ -980,7 +980,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public int getTrafficClass() throws SocketException {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        checkOpenAndCreate(true);
@@ -999,7 +999,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void sendUrgentData(Set<ValueAnalysisInt> value) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        impl.sendUrgentData(value);
 //        */
@@ -1013,7 +1013,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    void accepted() {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        isCreated = isBound = isConnected = true;
 //        cacheLocalAddress();
@@ -1022,7 +1022,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
 //    
 //    private void cacheLocalAddress() {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        this.localAddress = IoBridge.getSocketLocalAddress(impl.fd);
 //        */
@@ -1038,7 +1038,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public SocketChannel getChannel() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return null;
@@ -1050,7 +1050,7 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public FileDescriptor getFileDescriptor$() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return impl.fd;
@@ -1072,6 +1072,6 @@ public class Socket extends ValueAnalysisModeledObject {
      */
 //    
 //    public void setPerformancePreferences(Set<ValueAnalysisInt> connectionTime, Set<ValueAnalysisInt> latency, Set<ValueAnalysisInt> bandwidth) {
-//        invalidate();
+//        __ds__invalidate();
 //    }
 }

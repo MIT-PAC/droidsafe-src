@@ -42,7 +42,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @param scheme the URI scheme, or null for a non-absolute URI.
      */
     public void _init_(Set<String> scheme, Set<String> schemeSpecificPart, Set<String> fragment) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         StringBuilder uri = new StringBuilder();
         if (scheme != null) {
@@ -67,7 +67,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @param scheme the URI scheme, or null for a non-absolute URI.
      */
     public void _init_(Set<String> scheme, Set<String> userInfo, Set<String> host, Set<ValueAnalysisInt> port, Set<String> path, Set<String> query, Set<String> fragment) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (scheme == null && userInfo == null && host == null && path == null
                 && query == null && fragment == null) {
@@ -131,7 +131,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @param scheme the URI scheme, or null for a non-absolute URI.
      */
     public void _init_(Set<String> scheme, Set<String> host, Set<String> path, Set<String> fragment) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         this(scheme, null, host, -1, path, null, fragment);
         */
@@ -143,7 +143,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @param scheme the URI scheme, or null for a non-absolute URI.
      */
     public void _init_(Set<String> scheme, Set<String> authority, Set<String> path, Set<String> query, Set<String> fragment) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/') {
             throw new URISyntaxException(path, "Relative path");
@@ -188,7 +188,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *   [user-info@][host][:port]
      */
     private void parseURI(Set<String> uri, Set<ValueAnalysisBoolean> forceServer) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         string = uri;
 
@@ -254,7 +254,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private String validateScheme(Set<String> uri, Set<ValueAnalysisInt> end) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (end == 0) {
@@ -282,7 +282,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *     errors; this unpredictable behavior is consistent with the RI.
      */
     private void parseAuthority(Set<ValueAnalysisBoolean> forceServer) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         if (authority == null) {
             return;
@@ -352,7 +352,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private void validateUserInfo(Set<String> uri, Set<String> userInfo, Set<ValueAnalysisInt> index) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         /*
         for (int i = 0; i < userInfo.length(); i++) {
             char ch = userInfo.charAt(i);
@@ -371,7 +371,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *     unpredictable behavior is consistent with the RI.
      */
     private boolean isValidHost(Set<ValueAnalysisBoolean> forceServer, Set<String> host) throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         if (host.startsWith("[")) {
@@ -424,7 +424,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private boolean isValidDomainName(Set<String> host) {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         try {
@@ -471,7 +471,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @return the value representing the order of the two instances.
      */
     public int compareTo(URI uri) {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         int ret;
@@ -603,7 +603,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private URI duplicate() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         URI clone = new URI();
@@ -628,7 +628,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * converts the hex values following the '%' to lowercase
      */
     private String convertHexToLowerCase(Set<String> s) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         StringBuilder result = new StringBuilder("");
@@ -652,7 +652,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * unescaping hex sequences like %F1 and %2b.
      */
     private boolean escapedEquals(Set<String> first, Set<String> second) {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         if (first.indexOf('%') != second.indexOf('%')) {
@@ -683,7 +683,7 @@ public final class URI extends ValueAnalysisModeledObject {
 
     @Override
     public boolean equals(Object o) {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         if (!(o instanceof URI)) {
@@ -771,7 +771,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * is also known as the protocol.
      */
     public String getScheme() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return scheme;
@@ -783,7 +783,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * has no scheme-specific part.
      */
     public String getSchemeSpecificPart() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(schemeSpecificPart);
@@ -795,7 +795,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * has no scheme-specific part.
      */
     public String getRawSchemeSpecificPart() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return schemeSpecificPart;
@@ -807,7 +807,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * no authority.
      */
     public String getAuthority() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(authority);
@@ -819,7 +819,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * authority.
      */
     public String getRawAuthority() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return authority;
@@ -831,7 +831,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * user info.
      */
     public String getUserInfo() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(userInfo);
@@ -843,7 +843,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * user info.
      */
     public String getRawUserInfo() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return userInfo;
@@ -854,7 +854,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the host of this URI, or null if this URI has no host.
      */
     public String getHost() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return host;
@@ -866,7 +866,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * explicit port.
      */
     public int getPort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         return port;
@@ -875,7 +875,7 @@ public final class URI extends ValueAnalysisModeledObject {
 
     /** @hide */
     public int getEffectivePort() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         return getEffectivePort(scheme, port);
@@ -909,7 +909,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the decoded path of this URI, or null if this URI has no path.
      */
     public String getPath() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(path);
@@ -920,7 +920,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the encoded path of this URI, or null if this URI has no path.
      */
     public String getRawPath() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return path;
@@ -931,7 +931,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the decoded query of this URI, or null if this URI has no query.
      */
     public String getQuery() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(query);
@@ -942,7 +942,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the encoded query of this URI, or null if this URI has no query.
      */
     public String getRawQuery() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return query;
@@ -954,7 +954,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * fragment.
      */
     public String getFragment() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return decode(fragment);
@@ -966,7 +966,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * fragment.
      */
     public String getRawFragment() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return fragment;
@@ -975,7 +975,7 @@ public final class URI extends ValueAnalysisModeledObject {
 
     @Override
     public int hashCode() {
-        invalidate();
+        __ds__invalidate();
         return 0;
         /*
         if (hash == -1) {
@@ -990,7 +990,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * defined.
      */
     public boolean isAbsolute() {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         // TODO: simplify to 'scheme != null' ?
@@ -1004,7 +1004,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * parts except scheme, scheme-specific and fragment are undefined.
      */
     public boolean isOpaque() {
-        invalidate();
+        __ds__invalidate();
         return false;
         /*
         return opaque;
@@ -1015,7 +1015,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * Returns the normalized path.
      */
     private String normalize(Set<String> path, Set<ValueAnalysisBoolean> discardRelativePrefix) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         path = UrlUtils.canonicalizePath(path, discardRelativePrefix);
@@ -1043,7 +1043,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *         path.
      */
     public URI normalize() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (opaque) {
@@ -1074,7 +1074,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *             authority.
      */
     public URI parseServerAuthority() throws URISyntaxException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!serverAuthority) {
@@ -1093,7 +1093,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @return the relative URI.
      */
     public URI relativize(URI relative) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (relative.opaque || opaque) {
@@ -1151,7 +1151,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @return the resolved URI.
      */
     public URI resolve(URI relative) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (relative.absolute || opaque) {
@@ -1200,7 +1200,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * resolved or normalized URIs
      */
     private void setSchemeSpecificPart() {
-        invalidate();
+        __ds__invalidate();
         /*
         // ssp = [//authority][path][?query]
         StringBuilder ssp = new StringBuilder();
@@ -1230,7 +1230,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @return the created and resolved URI.
      */
     public URI resolve(Set<String> relative) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return resolve(create(relative));
@@ -1238,7 +1238,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private String decode(Set<String> s) {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return s != null ? UriCodec.decode(s) : null;
@@ -1252,7 +1252,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * @return the US-ASCII string representation of this URI.
      */
     public String toASCIIString() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         StringBuilder result = new StringBuilder();
@@ -1266,7 +1266,7 @@ public final class URI extends ValueAnalysisModeledObject {
      */
     @Override
     public String toString() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (string != null) {
@@ -1312,7 +1312,7 @@ public final class URI extends ValueAnalysisModeledObject {
      * and converts escaped octets to lowercase.
      */
     private String getHashString() {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         StringBuilder result = new StringBuilder();
@@ -1366,7 +1366,7 @@ public final class URI extends ValueAnalysisModeledObject {
      *             handler could be found.
      */
     public URL toURL() throws MalformedURLException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         if (!absolute) {
@@ -1377,7 +1377,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        invalidate();
+        __ds__invalidate();
         /*
         in.defaultReadObject();
         try {
@@ -1389,7 +1389,7 @@ public final class URI extends ValueAnalysisModeledObject {
     }
 
     private void writeObject(ObjectOutputStream out) throws IOException, ClassNotFoundException {
-        invalidate();
+        __ds__invalidate();
         /*
         // call toString() to ensure the value of string field is calculated
         toString();

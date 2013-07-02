@@ -28,7 +28,7 @@ public class File extends ValueAnalysisModeledObject {
         if (dir == null) {
             this.path.addAll(name);
         } else {
-            invalidate();
+            __ds__invalidate();
         }
 
         /*
@@ -50,7 +50,7 @@ public class File extends ValueAnalysisModeledObject {
                 this.path.add(d + '/' + f);
             }
         }
-        invalidate();
+        __ds__invalidate();
         /*
         if (name == null) {
             throw new NullPointerException();
@@ -68,7 +68,7 @@ public class File extends ValueAnalysisModeledObject {
     public void _init_(URI uri) {
         // FIXME: URI Should return a set of strings, so we should addAll. Need to integrate URI model.
         this.path.add(uri.getPath());
-        // invalidate();
+        // __ds__invalidate();
         /*
         // check pre-conditions
         checkURI(uri);
@@ -166,7 +166,7 @@ public class File extends ValueAnalysisModeledObject {
      * @since 1.6
      */
 //    public boolean canExecute() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doAccess(X_OK);
@@ -179,7 +179,7 @@ public class File extends ValueAnalysisModeledObject {
      * @return {@code true} if this file can be read, {@code false} otherwise.
      */
 //    public boolean canRead() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doAccess(R_OK);
@@ -193,7 +193,7 @@ public class File extends ValueAnalysisModeledObject {
      *         otherwise.
      */
 //    public boolean canWrite() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doAccess(W_OK);
@@ -202,7 +202,7 @@ public class File extends ValueAnalysisModeledObject {
 
 //    
 //    private boolean doAccess(Set<ValueAnalysisInt> mode) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -225,7 +225,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public int compareTo(File another) {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        return this.getPath().compareTo(another.getPath());
@@ -242,7 +242,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean delete() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -271,7 +271,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public void deleteOnExit() {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        DeleteOnExit.getInstance().addFile(getAbsolutePath());
 //        */
@@ -289,7 +289,7 @@ public class File extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public boolean equals(Object obj) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        if (!(obj instanceof File)) {
@@ -307,7 +307,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean exists() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doAccess(F_OK);
@@ -371,7 +371,7 @@ public class File extends ValueAnalysisModeledObject {
      */
     
     public String getCanonicalPath() throws IOException {
-        invalidate();
+        __ds__invalidate();
         return null;
         /*
         return realpath(getAbsolutePath());
@@ -403,7 +403,7 @@ public class File extends ValueAnalysisModeledObject {
     
     public File getCanonicalFile() throws IOException {
         return this;
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
         /*
         return new File(getCanonicalPath());
@@ -418,7 +418,7 @@ public class File extends ValueAnalysisModeledObject {
      */
     
     public Set<String> getName() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
         return this.path;
         /*
@@ -436,7 +436,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public String getParent() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        int length = path.length(), firstInPath = 0;
@@ -467,7 +467,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public File getParentFile() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        String tempParent = getParent();
@@ -501,7 +501,7 @@ public class File extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public int hashCode() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        return getPath().hashCode() ^ 1234321;
@@ -519,7 +519,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isAbsolute() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return path.length() > 0 && path.charAt(0) == separatorChar;
@@ -535,7 +535,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isDirectory() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -555,7 +555,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isFile() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -578,7 +578,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean isHidden() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        if (path.isEmpty()) {
@@ -597,7 +597,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public long lastModified() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        try {
@@ -625,7 +625,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setLastModified(Set<Long> time) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        if (time < 0) {
@@ -647,7 +647,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setReadOnly() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return setWritable(false, false);
@@ -677,7 +677,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setExecutable(Set<ValueAnalysisBoolean> executable, Set<ValueAnalysisBoolean> ownerOnly) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable);
@@ -691,7 +691,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setExecutable(Set<ValueAnalysisBoolean> executable) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return setExecutable(executable, true);
@@ -718,7 +718,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setReadable(Set<ValueAnalysisBoolean> readable, Set<ValueAnalysisBoolean> ownerOnly) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable);
@@ -732,7 +732,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setReadable(Set<ValueAnalysisBoolean> readable) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return setReadable(readable, true);
@@ -757,7 +757,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setWritable(Set<ValueAnalysisBoolean> writable, Set<ValueAnalysisBoolean> ownerOnly) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable);
@@ -771,7 +771,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean setWritable(Set<ValueAnalysisBoolean> writable) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        return setWritable(writable, true);
@@ -780,7 +780,7 @@ public class File extends ValueAnalysisModeledObject {
 
 //    
 //    private boolean doChmod(Set<ValueAnalysisInt> mask, Set<ValueAnalysisBoolean> set) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -803,7 +803,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public long length() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        try {
@@ -827,7 +827,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public String[] list() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return listImpl(path);
@@ -855,7 +855,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public String[] list(FilenameFilter filter) {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        String[] filenames = list();
@@ -882,7 +882,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public File[] listFiles() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return filenamesToFiles(list());
@@ -905,7 +905,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public File[] listFiles(FilenameFilter filter) {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return filenamesToFiles(list(filter));
@@ -927,7 +927,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public File[] listFiles(FileFilter filter) {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        File[] files = listFiles();
@@ -952,7 +952,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    private File[] filenamesToFiles(String[] filenames) {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        if (filenames == null) {
@@ -980,7 +980,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean mkdir() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -1007,7 +1007,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean mkdirs() {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        /* If the terminal directory already exists, answer false */
@@ -1051,7 +1051,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean createNewFile() throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        FileDescriptor fd = null;
@@ -1162,7 +1162,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public boolean renameTo(File newPath) {
-//        invalidate();
+//        __ds__invalidate();
 //        return false;
 //        /*
 //        try {
@@ -1183,7 +1183,7 @@ public class File extends ValueAnalysisModeledObject {
 //    @Override
 //    
 //    public String toString() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        return path;
@@ -1199,7 +1199,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public URI toURI() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        String name = getAbsoluteName();
@@ -1232,7 +1232,7 @@ public class File extends ValueAnalysisModeledObject {
 //    @Deprecated
 //    
 //    public URL toURL() throws java.net.MalformedURLException {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        String name = getAbsoluteName();
@@ -1249,7 +1249,7 @@ public class File extends ValueAnalysisModeledObject {
     // TODO: is this really necessary, or can it be replaced with getAbsolutePath? 
 //    
 //    private String getAbsoluteName() {
-//        invalidate();
+//        __ds__invalidate();
 //        return null;
 //        /*
 //        File f = getAbsoluteFile();
@@ -1267,7 +1267,7 @@ public class File extends ValueAnalysisModeledObject {
 
 //    
 //    private void writeObject(ObjectOutputStream stream) throws IOException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        stream.defaultWriteObject();
 //        stream.writeChar(separatorChar);
@@ -1276,7 +1276,7 @@ public class File extends ValueAnalysisModeledObject {
 
 //    
 //    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-//        invalidate();
+//        __ds__invalidate();
 //        /*
 //        stream.defaultReadObject();
 //        char inSeparator = stream.readChar();
@@ -1292,7 +1292,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public long getTotalSpace() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        try {
@@ -1319,7 +1319,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public long getUsableSpace() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        try {
@@ -1342,7 +1342,7 @@ public class File extends ValueAnalysisModeledObject {
      */
 //    
 //    public long getFreeSpace() {
-//        invalidate();
+//        __ds__invalidate();
 //        return 0;
 //        /*
 //        try {
