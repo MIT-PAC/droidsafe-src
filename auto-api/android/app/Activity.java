@@ -215,6 +215,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     public Activity ()
     {
         //Synthesized constructor
+    	super();
     }
 
 
@@ -2300,22 +2301,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.740 -0400", hash_original_method = "30D6BE1E6EC7F84FBEF609A16BE7CA4B", hash_generated_method = "B137FC071652C17D355793D1C802296C")
     public void startActivityForResult(Intent intent, int requestCode) {
-        {
-            Instrumentation.ActivityResult ar = mInstrumentation.execStartActivity(
-                    this, mMainThread.getApplicationThread(), mToken, this,
-                    intent, requestCode);
-            {
-                mMainThread.sendActivityResult(
-                    mToken, mEmbeddedID, requestCode, ar.getResultCode(),
-                    ar.getResultData());
-            } //End block
-            {
-                mStartedActivity = true;
-            } //End block
-        } //End block
-        {
-            mParent.startActivityFromChild(this, intent, requestCode);
-        } //End block
+    	
+    	Intent resultIntent = new Intent();
+
+		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
+
+		this.onActivityResult(requestCode, /* just make this up */ -1,
+				resultIntent);
+		
         addTaint(intent.getTaint());
         addTaint(requestCode);
         // ---------- Original Method ----------
